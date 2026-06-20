@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Consumable_Grenade_Smoke#18",
+  "generatedAtUtc": "2026-04-15T22:56:10.5936673Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Consumable_Grenade_Smoke#18",
+      "displayName": "Item",
+      "file": "0018_Consumable_Grenade_Smoke.json"
+    },
+    {
+      "targetType": "ItemConsumableBehaviour",
+      "targetKey": "Consumable_Grenade_Smoke#18/ConsumableBehaviour",
+      "displayName": "Consumable Behaviour",
+      "file": "ConsumableBehaviour.json"
+    }
+  ]
+}

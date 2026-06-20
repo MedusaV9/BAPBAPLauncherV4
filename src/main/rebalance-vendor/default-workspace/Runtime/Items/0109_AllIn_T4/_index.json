@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "AllIn_T4#109",
+  "generatedAtUtc": "2026-03-26T22:05:33.5523087Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "AllIn_T4#109",
+      "displayName": "Item",
+      "file": "0109_AllIn_T4.json"
+    }
+  ]
+}

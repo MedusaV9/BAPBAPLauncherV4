@@ -1,0 +1,2287 @@
+{
+  "schemaVersion": 10,
+  "targetType": "ArenaLobbySettings",
+  "targetKey": "ArenaLobby#Current",
+  "displayName": "Current Lobby",
+  "resolvedName": "Current Lobby",
+  "generatedAtUtc": "2026-03-26T22:08:06.1832421Z",
+  "sourceRole": "current_lobby",
+  "applyTiming": "restart_recommended",
+  "safetyLevel": "experimental",
+  "quickEdit": [
+    {
+      "setting": "Points Per Kill",
+      "category": "Rules",
+      "path": "PointsPerKill",
+      "editable": true,
+      "valueType": "integer",
+      "value": 85,
+      "defaultValue": 85,
+      "whatItDoes": "Points granted for each kill.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 10,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Points Per Round Win",
+      "category": "Rules",
+      "path": "PointsPerRoundWin",
+      "editable": true,
+      "valueType": "integer",
+      "value": 300,
+      "defaultValue": 300,
+      "whatItDoes": "Lobby-model mirror of the round-win score reward.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 10,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Points To Win",
+      "category": "Rules",
+      "path": "PointsToWin",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1000,
+      "defaultValue": 1000,
+      "whatItDoes": "Numeric value for Points To Win. Edit \u0060PointsToWin\u0060 to change how \u0060ArenaLobby#Current\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4000,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Augments Per Round",
+      "category": "Augments",
+      "path": "AugmentsPerRound",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "How many augment selections are added per round or zone step.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 20,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Starting Augments",
+      "category": "Augments",
+      "path": "StartingAugments",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "How many augment selections players start the match with.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 20,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Total Rerolls",
+      "category": "Augments",
+      "path": "TotalRerolls",
+      "editable": true,
+      "valueType": "integer",
+      "value": 90,
+      "defaultValue": 90,
+      "whatItDoes": "Lobby-model mirror for the total rerolls available in the custom game setup.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 20,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Bot Count",
+      "category": "Bots",
+      "path": "BotCount",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "How many bots the custom arena lobby should add.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 64,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 20,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 64,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Bot Difficulty",
+      "category": "Bots",
+      "path": "BotDifficulty",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Difficulty setting used for bots in the custom arena lobby.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 10,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 10,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental",
+      "verifiedChoices": [
+        {
+          "value": 0,
+          "label": "Easy",
+          "description": "Verified lobby bot difficulty option.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 1,
+          "label": "Medium",
+          "description": "Verified lobby bot difficulty option.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 2,
+          "label": "Hard",
+          "description": "Verified lobby bot difficulty option.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 3,
+          "label": "Expert",
+          "description": "Verified lobby bot difficulty option.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 4,
+          "label": "Experimental 4",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 5,
+          "label": "Experimental 5",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 6,
+          "label": "Experimental 6",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 7,
+          "label": "Experimental 7",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 8,
+          "label": "Experimental 8",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 9,
+          "label": "Experimental 9",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 10,
+          "label": "Experimental 10",
+          "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+          "safetyLevel": "experimental"
+        }
+      ]
+    },
+    {
+      "setting": "Allow Team Editing",
+      "category": "Lobby",
+      "path": "AllowTeamEditing",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Controls whether players can manually edit teams in the custom lobby.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Game Mode",
+      "category": "Lobby",
+      "path": "GameMode",
+      "editable": true,
+      "valueType": "integer",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Selected game mode identifier for the custom lobby.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 160,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 16,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 160,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental",
+      "verifiedChoices": [
+        {
+          "value": 0,
+          "label": "None",
+          "description": "Known from the local decompiled enum/class mapping.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 1,
+          "label": "Battle Royale",
+          "description": "Known from the local decompiled enum/class mapping.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 2,
+          "label": "Training",
+          "description": "Known from the local decompiled enum/class mapping.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 3,
+          "label": "FFA",
+          "description": "Known from the local decompiled enum/class mapping.",
+          "safetyLevel": "experimental"
+        },
+        {
+          "value": 4,
+          "label": "Arena",
+          "description": "Known from the local decompiled enum/class mapping.",
+          "safetyLevel": "safe"
+        }
+      ]
+    },
+    {
+      "setting": "Lobby Name",
+      "category": "Lobby",
+      "path": "LobbyName",
+      "editable": true,
+      "valueType": "string",
+      "value": "Sonic0810\u0027s Lobby",
+      "defaultValue": "Sonic0810\u0027s Lobby",
+      "whatItDoes": "Text or key value for Lobby Name. This controls the string or named reference stored at \u0060LobbyName\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Lobby Size",
+      "category": "Lobby",
+      "path": "LobbySize",
+      "editable": true,
+      "valueType": "integer",
+      "value": 6,
+      "defaultValue": 6,
+      "whatItDoes": "Maximum number of players allowed in the arena lobby.",
+      "valueRange": {
+        "minimum": 1,
+        "maximum": 32,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 1,
+        "maximum": 12,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 1,
+        "maximum": 32,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Map",
+      "category": "Lobby",
+      "path": "MapId",
+      "editable": true,
+      "valueType": "integer",
+      "value": -1,
+      "defaultValue": -1,
+      "whatItDoes": "Selected map identifier for the custom arena match.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Team Size",
+      "category": "Lobby",
+      "path": "TeamSize",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "How many players are allowed per team in the custom arena lobby.",
+      "valueRange": {
+        "minimum": 1,
+        "maximum": 32,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 1,
+        "maximum": 4,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 1,
+        "maximum": 32,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental",
+      "verifiedChoices": [
+        {
+          "value": 1,
+          "label": "Solo",
+          "description": "Verified team-size label used by the lobby.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 2,
+          "label": "Duos",
+          "description": "Verified team-size label used by the lobby.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 3,
+          "label": "Trios",
+          "description": "Verified team-size label used by the lobby.",
+          "safetyLevel": "safe"
+        },
+        {
+          "value": 4,
+          "label": "4v4",
+          "description": "Verified team-size label used by the lobby.",
+          "safetyLevel": "safe"
+        }
+      ]
+    },
+    {
+      "setting": "Force Random Characters",
+      "category": "Behavior",
+      "path": "ForceRandomCharacters",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether the lobby forces random characters instead of free selection.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Show Characters",
+      "category": "Behavior",
+      "path": "ShowCharacters",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Controls whether the lobby shows character selection to players.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Selected Preset",
+      "category": "General",
+      "path": "CurrentPreset",
+      "editable": true,
+      "valueType": "integer",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Selected arena preset index stored on the lobby settings model.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 80,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 8,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 80,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "experimental"
+    },
+    {
+      "setting": "Serialized Arena Settings",
+      "category": "General",
+      "path": "SerializedSettingsJson",
+      "editable": true,
+      "valueType": "string",
+      "value": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+      "defaultValue": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+      "whatItDoes": "Serialized arena settings payload used by the game to rebuild the detailed arena configuration.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "advanced"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for lobby and arena settings \u0027Current Lobby\u0027. You can change Rules, Augments, Bots, Lobby, Behavior, General.",
+    "whatYouCanChange": [
+      "Rules",
+      "Augments",
+      "Bots",
+      "Lobby",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [],
+    "groups": [
+      {
+        "category": "Rules",
+        "entries": [
+          {
+            "name": "Points Per Kill",
+            "path": "PointsPerKill",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Points granted for each kill.",
+            "defaultValue": 85,
+            "currentValue": 85,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 10,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Points Per Round Win",
+            "path": "PointsPerRoundWin",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Lobby-model mirror of the round-win score reward.",
+            "defaultValue": 300,
+            "currentValue": 300,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 10,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Points To Win",
+            "path": "PointsToWin",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for Points To Win. Edit \u0060PointsToWin\u0060 to change how \u0060ArenaLobby#Current\u0060 behaves.",
+            "defaultValue": 1000,
+            "currentValue": 1000,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4000,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          }
+        ]
+      },
+      {
+        "category": "Augments",
+        "entries": [
+          {
+            "name": "Augments Per Round",
+            "path": "AugmentsPerRound",
+            "editable": true,
+            "valueType": "integer",
+            "description": "How many augment selections are added per round or zone step.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 20,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Starting Augments",
+            "path": "StartingAugments",
+            "editable": true,
+            "valueType": "integer",
+            "description": "How many augment selections players start the match with.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 20,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Total Rerolls",
+            "path": "TotalRerolls",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Lobby-model mirror for the total rerolls available in the custom game setup.",
+            "defaultValue": 90,
+            "currentValue": 90,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 20,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          }
+        ]
+      },
+      {
+        "category": "Bots",
+        "entries": [
+          {
+            "name": "Bot Count",
+            "path": "BotCount",
+            "editable": true,
+            "valueType": "integer",
+            "description": "How many bots the custom arena lobby should add.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 64,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 20,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 64,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Bot Difficulty",
+            "path": "BotDifficulty",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Difficulty setting used for bots in the custom arena lobby.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 10,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 10,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental",
+            "verifiedChoices": [
+              {
+                "value": 0,
+                "label": "Easy",
+                "description": "Verified lobby bot difficulty option.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 1,
+                "label": "Medium",
+                "description": "Verified lobby bot difficulty option.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 2,
+                "label": "Hard",
+                "description": "Verified lobby bot difficulty option.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 3,
+                "label": "Expert",
+                "description": "Verified lobby bot difficulty option.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 4,
+                "label": "Experimental 4",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 5,
+                "label": "Experimental 5",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 6,
+                "label": "Experimental 6",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 7,
+                "label": "Experimental 7",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 8,
+                "label": "Experimental 8",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 9,
+                "label": "Experimental 9",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 10,
+                "label": "Experimental 10",
+                "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+                "safetyLevel": "experimental"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Lobby",
+        "entries": [
+          {
+            "name": "Allow Team Editing",
+            "path": "AllowTeamEditing",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether players can manually edit teams in the custom lobby.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Game Mode",
+            "path": "GameMode",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Selected game mode identifier for the custom lobby.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 160,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 16,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 160,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental",
+            "verifiedChoices": [
+              {
+                "value": 0,
+                "label": "None",
+                "description": "Known from the local decompiled enum/class mapping.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 1,
+                "label": "Battle Royale",
+                "description": "Known from the local decompiled enum/class mapping.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 2,
+                "label": "Training",
+                "description": "Known from the local decompiled enum/class mapping.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 3,
+                "label": "FFA",
+                "description": "Known from the local decompiled enum/class mapping.",
+                "safetyLevel": "experimental"
+              },
+              {
+                "value": 4,
+                "label": "Arena",
+                "description": "Known from the local decompiled enum/class mapping.",
+                "safetyLevel": "safe"
+              }
+            ]
+          },
+          {
+            "name": "Lobby Name",
+            "path": "LobbyName",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Lobby Name. This controls the string or named reference stored at \u0060LobbyName\u0060.",
+            "defaultValue": "Sonic0810\u0027s Lobby",
+            "currentValue": "Sonic0810\u0027s Lobby",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Lobby Size",
+            "path": "LobbySize",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Maximum number of players allowed in the arena lobby.",
+            "defaultValue": 6,
+            "currentValue": 6,
+            "valueRange": {
+              "minimum": 1,
+              "maximum": 32,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 1,
+              "maximum": 12,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 1,
+              "maximum": 32,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Map",
+            "path": "MapId",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Selected map identifier for the custom arena match.",
+            "defaultValue": -1,
+            "currentValue": -1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Team Size",
+            "path": "TeamSize",
+            "editable": true,
+            "valueType": "integer",
+            "description": "How many players are allowed per team in the custom arena lobby.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 1,
+              "maximum": 32,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 1,
+              "maximum": 4,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 1,
+              "maximum": 32,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental",
+            "verifiedChoices": [
+              {
+                "value": 1,
+                "label": "Solo",
+                "description": "Verified team-size label used by the lobby.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 2,
+                "label": "Duos",
+                "description": "Verified team-size label used by the lobby.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 3,
+                "label": "Trios",
+                "description": "Verified team-size label used by the lobby.",
+                "safetyLevel": "safe"
+              },
+              {
+                "value": 4,
+                "label": "4v4",
+                "description": "Verified team-size label used by the lobby.",
+                "safetyLevel": "safe"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Force Random Characters",
+            "path": "ForceRandomCharacters",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether the lobby forces random characters instead of free selection.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Show Characters",
+            "path": "ShowCharacters",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether the lobby shows character selection to players.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Selected Preset",
+            "path": "CurrentPreset",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Selected arena preset index stored on the lobby settings model.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 80,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 8,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 80,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "experimental"
+          },
+          {
+            "name": "Serialized Arena Settings",
+            "path": "SerializedSettingsJson",
+            "editable": true,
+            "valueType": "string",
+            "description": "Serialized arena settings payload used by the game to rebuild the detailed arena configuration.",
+            "defaultValue": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+            "currentValue": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "advanced"
+          }
+        ]
+      }
+    ]
+  },
+  "sectionSummaries": [
+    {
+      "sectionId": "rules",
+      "label": "Rules",
+      "description": "Core win conditions, score flow, augments, and other match rules.",
+      "entryCount": 3,
+      "editableCount": 3,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "experimental",
+      "sourcePaths": [
+        "PointsPerKill",
+        "PointsPerRoundWin",
+        "PointsToWin"
+      ]
+    },
+    {
+      "sectionId": "augments",
+      "label": "Augments",
+      "description": "Generated runtime section for Augments.",
+      "entryCount": 3,
+      "editableCount": 3,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "experimental",
+      "sourcePaths": [
+        "AugmentsPerRound",
+        "StartingAugments",
+        "TotalRerolls"
+      ]
+    },
+    {
+      "sectionId": "bots",
+      "label": "Bots",
+      "description": "Bot count, difficulty, and related match-fill settings.",
+      "entryCount": 2,
+      "editableCount": 2,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "experimental",
+      "sourcePaths": [
+        "BotCount",
+        "BotDifficulty"
+      ]
+    },
+    {
+      "sectionId": "lobby",
+      "label": "Lobby",
+      "description": "Lobby size, team settings, and visible custom-lobby setup.",
+      "entryCount": 6,
+      "editableCount": 6,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "experimental",
+      "sourcePaths": [
+        "AllowTeamEditing",
+        "GameMode",
+        "LobbyName",
+        "LobbySize",
+        "MapId",
+        "TeamSize"
+      ]
+    },
+    {
+      "sectionId": "behavior",
+      "label": "Behavior",
+      "description": "Generated runtime section for Behavior.",
+      "entryCount": 2,
+      "editableCount": 2,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "safe",
+      "sourcePaths": [
+        "ForceRandomCharacters",
+        "ShowCharacters"
+      ]
+    },
+    {
+      "sectionId": "general",
+      "label": "General",
+      "description": "Generated runtime section for General.",
+      "entryCount": 2,
+      "editableCount": 2,
+      "applyTiming": "restart_recommended",
+      "safetyLevel": "experimental",
+      "sourcePaths": [
+        "CurrentPreset",
+        "SerializedSettingsJson"
+      ]
+    }
+  ],
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": false,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": false,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.size",
+      "label": "Size",
+      "category": "Basics",
+      "description": "Adjust scale, size, radius, or area-style values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.size"
+      ]
+    },
+    {
+      "slotId": "presentation.text",
+      "label": "Title And Description",
+      "category": "Basics",
+      "description": "Set literal title and description text for launcher-created or custom content.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "presentation.title",
+        "presentation.description"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.size",
+      "label": "Size",
+      "category": "Basics",
+      "description": "Use this when you want a bigger or smaller hitbox, projectile, or area.",
+      "targetPath": "LobbySize",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Lobby Size",
+          "description": "Maximum number of players allowed in the arena lobby.",
+          "valueType": "integer",
+          "defaultValue": 6,
+          "options": []
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Arena",
+    "label": "Arena Settings",
+    "source": "RebalanceBAP",
+    "arenaVisible": true,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "textTokens": [
+    {
+      "token": "%pointsPerKill%",
+      "label": "Points Per Kill",
+      "description": "Points granted for each kill.",
+      "sourcePath": "PointsPerKill",
+      "valueType": "integer",
+      "previewValue": 85,
+      "previewText": "85"
+    },
+    {
+      "token": "%pointsPerRoundWin%",
+      "label": "Points Per Round Win",
+      "description": "Lobby-model mirror of the round-win score reward.",
+      "sourcePath": "PointsPerRoundWin",
+      "valueType": "integer",
+      "previewValue": 300,
+      "previewText": "300"
+    },
+    {
+      "token": "%pointsToWin%",
+      "label": "Points To Win",
+      "description": "Numeric value for Points To Win. Edit \u0060PointsToWin\u0060 to change how \u0060ArenaLobby#Current\u0060 behaves.",
+      "sourcePath": "PointsToWin",
+      "valueType": "integer",
+      "previewValue": 1000,
+      "previewText": "1000"
+    },
+    {
+      "token": "%augmentsPerRound%",
+      "label": "Augments Per Round",
+      "description": "How many augment selections are added per round or zone step.",
+      "sourcePath": "AugmentsPerRound",
+      "valueType": "integer",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%startingAugments%",
+      "label": "Starting Augments",
+      "description": "How many augment selections players start the match with.",
+      "sourcePath": "StartingAugments",
+      "valueType": "integer",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%totalRerolls%",
+      "label": "Total Rerolls",
+      "description": "Lobby-model mirror for the total rerolls available in the custom game setup.",
+      "sourcePath": "TotalRerolls",
+      "valueType": "integer",
+      "previewValue": 90,
+      "previewText": "90"
+    },
+    {
+      "token": "%botCount%",
+      "label": "Bot Count",
+      "description": "How many bots the custom arena lobby should add.",
+      "sourcePath": "BotCount",
+      "valueType": "integer",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%botDifficulty%",
+      "label": "Bot Difficulty",
+      "description": "Difficulty setting used for bots in the custom arena lobby.",
+      "sourcePath": "BotDifficulty",
+      "valueType": "integer",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%allowTeamEditing%",
+      "label": "Allow Team Editing",
+      "description": "Controls whether players can manually edit teams in the custom lobby.",
+      "sourcePath": "AllowTeamEditing",
+      "valueType": "boolean",
+      "previewValue": true,
+      "previewText": "On"
+    },
+    {
+      "token": "%gameMode%",
+      "label": "Game Mode",
+      "description": "Selected game mode identifier for the custom lobby.",
+      "sourcePath": "GameMode",
+      "valueType": "integer",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%lobbyName%",
+      "label": "Lobby Name",
+      "description": "Text or key value for Lobby Name. This controls the string or named reference stored at \u0060LobbyName\u0060.",
+      "sourcePath": "LobbyName",
+      "valueType": "string",
+      "previewValue": "Sonic0810\u0027s Lobby",
+      "previewText": "Sonic0810\u0027s Lobby"
+    },
+    {
+      "token": "%lobbySize%",
+      "label": "Lobby Size",
+      "description": "Maximum number of players allowed in the arena lobby.",
+      "sourcePath": "LobbySize",
+      "valueType": "integer",
+      "previewValue": 6,
+      "previewText": "6"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default.",
+    "This file mirrors the broader arena lobby model, including team size, lobby size, map, bots, and quick score values.",
+    "Some values are mirrored into the serialized arena preset too, so keep CurrentLobby.json and CurrentPreset.json aligned when you push them far beyond vanilla."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "PointsPerKill",
+        "displayName": "Points Per Kill",
+        "label": "Points Per Kill",
+        "category": "Rules",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Points granted for each kill.",
+        "defaultValue": 85,
+        "currentValue": 85,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 10,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "PointsPerRoundWin",
+        "displayName": "Points Per Round Win",
+        "label": "Points Per Round Win",
+        "category": "Rules",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Lobby-model mirror of the round-win score reward.",
+        "defaultValue": 300,
+        "currentValue": 300,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 10,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "PointsToWin",
+        "displayName": "Points To Win",
+        "label": "Points To Win",
+        "category": "Rules",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Points To Win. Edit \u0060PointsToWin\u0060 to change how \u0060ArenaLobby#Current\u0060 behaves.",
+        "defaultValue": 1000,
+        "currentValue": 1000,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4000,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "AugmentsPerRound",
+        "displayName": "Augments Per Round",
+        "label": "Augments Per Round",
+        "category": "Augments",
+        "valueType": "integer",
+        "editable": true,
+        "description": "How many augment selections are added per round or zone step.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 20,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "StartingAugments",
+        "displayName": "Starting Augments",
+        "label": "Starting Augments",
+        "category": "Augments",
+        "valueType": "integer",
+        "editable": true,
+        "description": "How many augment selections players start the match with.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 20,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "TotalRerolls",
+        "displayName": "Total Rerolls",
+        "label": "Total Rerolls",
+        "category": "Augments",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Lobby-model mirror for the total rerolls available in the custom game setup.",
+        "defaultValue": 90,
+        "currentValue": 90,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 20,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "BotCount",
+        "displayName": "Bot Count",
+        "label": "Bot Count",
+        "category": "Bots",
+        "valueType": "integer",
+        "editable": true,
+        "description": "How many bots the custom arena lobby should add.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 64,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 20,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 64,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "BotDifficulty",
+        "displayName": "Bot Difficulty",
+        "label": "Bot Difficulty",
+        "category": "Bots",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Difficulty setting used for bots in the custom arena lobby.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 10,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 10,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental",
+        "verifiedChoices": [
+          {
+            "value": 0,
+            "label": "Easy",
+            "description": "Verified lobby bot difficulty option.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 1,
+            "label": "Medium",
+            "description": "Verified lobby bot difficulty option.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 2,
+            "label": "Hard",
+            "description": "Verified lobby bot difficulty option.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 3,
+            "label": "Expert",
+            "description": "Verified lobby bot difficulty option.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 4,
+            "label": "Experimental 4",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 5,
+            "label": "Experimental 5",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 6,
+            "label": "Experimental 6",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 7,
+            "label": "Experimental 7",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 8,
+            "label": "Experimental 8",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 9,
+            "label": "Experimental 9",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 10,
+            "label": "Experimental 10",
+            "description": "Extended bot difficulty value added by the mod. Treat as experimental until verified in-game.",
+            "safetyLevel": "experimental"
+          }
+        ]
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "AllowTeamEditing",
+        "displayName": "Allow Team Editing",
+        "label": "Allow Team Editing",
+        "category": "Lobby",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether players can manually edit teams in the custom lobby.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "GameMode",
+        "displayName": "Game Mode",
+        "label": "Game Mode",
+        "category": "Lobby",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Selected game mode identifier for the custom lobby.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 160,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 16,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 160,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental",
+        "verifiedChoices": [
+          {
+            "value": 0,
+            "label": "None",
+            "description": "Known from the local decompiled enum/class mapping.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 1,
+            "label": "Battle Royale",
+            "description": "Known from the local decompiled enum/class mapping.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 2,
+            "label": "Training",
+            "description": "Known from the local decompiled enum/class mapping.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 3,
+            "label": "FFA",
+            "description": "Known from the local decompiled enum/class mapping.",
+            "safetyLevel": "experimental"
+          },
+          {
+            "value": 4,
+            "label": "Arena",
+            "description": "Known from the local decompiled enum/class mapping.",
+            "safetyLevel": "safe"
+          }
+        ]
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "LobbyName",
+        "displayName": "Lobby Name",
+        "label": "Lobby Name",
+        "category": "Lobby",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Lobby Name. This controls the string or named reference stored at \u0060LobbyName\u0060.",
+        "defaultValue": "Sonic0810\u0027s Lobby",
+        "currentValue": "Sonic0810\u0027s Lobby",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "LobbySize",
+        "displayName": "Lobby Size",
+        "label": "Lobby Size",
+        "category": "Lobby",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Maximum number of players allowed in the arena lobby.",
+        "defaultValue": 6,
+        "currentValue": 6,
+        "valueRange": {
+          "minimum": 1,
+          "maximum": 32,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 1,
+          "maximum": 12,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 1,
+          "maximum": 32,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "MapId",
+        "displayName": "Map",
+        "label": "Map",
+        "category": "Lobby",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Selected map identifier for the custom arena match.",
+        "defaultValue": -1,
+        "currentValue": -1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "TeamSize",
+        "displayName": "Team Size",
+        "label": "Team Size",
+        "category": "Lobby",
+        "valueType": "integer",
+        "editable": true,
+        "description": "How many players are allowed per team in the custom arena lobby.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 1,
+          "maximum": 32,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 1,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 1,
+          "maximum": 32,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental",
+        "verifiedChoices": [
+          {
+            "value": 1,
+            "label": "Solo",
+            "description": "Verified team-size label used by the lobby.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 2,
+            "label": "Duos",
+            "description": "Verified team-size label used by the lobby.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 3,
+            "label": "Trios",
+            "description": "Verified team-size label used by the lobby.",
+            "safetyLevel": "safe"
+          },
+          {
+            "value": 4,
+            "label": "4v4",
+            "description": "Verified team-size label used by the lobby.",
+            "safetyLevel": "safe"
+          }
+        ]
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "ForceRandomCharacters",
+        "displayName": "Force Random Characters",
+        "label": "Force Random Characters",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether the lobby forces random characters instead of free selection.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "ShowCharacters",
+        "displayName": "Show Characters",
+        "label": "Show Characters",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether the lobby shows character selection to players.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "CurrentPreset",
+        "displayName": "Selected Preset",
+        "label": "Selected Preset",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Selected arena preset index stored on the lobby settings model.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "experimental"
+      },
+      {
+        "targetType": "ArenaLobbySettings",
+        "targetKey": "ArenaLobby#Current",
+        "path": "SerializedSettingsJson",
+        "displayName": "Serialized Arena Settings",
+        "label": "Serialized Arena Settings",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Serialized arena settings payload used by the game to rebuild the detailed arena configuration.",
+        "defaultValue": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+        "currentValue": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "advanced"
+      }
+    ],
+    "defaults": {
+      "AllowTeamEditing": true,
+      "AugmentsPerRound": 1,
+      "BotCount": 0,
+      "BotDifficulty": 0,
+      "CurrentPreset": 2,
+      "ForceRandomCharacters": false,
+      "GameMode": 4,
+      "LobbyName": "Sonic0810\u0027s Lobby",
+      "LobbySize": 6,
+      "MapId": -1,
+      "PointsPerKill": 85,
+      "PointsPerRoundWin": 300,
+      "PointsToWin": 1000,
+      "SerializedSettingsJson": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+      "ShowCharacters": true,
+      "StartingAugments": 1,
+      "TeamSize": 1,
+      "TotalRerolls": 90
+    },
+    "effectiveValues": {
+      "AllowTeamEditing": true,
+      "AugmentsPerRound": 1,
+      "BotCount": 0,
+      "BotDifficulty": 0,
+      "CurrentPreset": 2,
+      "ForceRandomCharacters": false,
+      "GameMode": 4,
+      "LobbyName": "Sonic0810\u0027s Lobby",
+      "LobbySize": 6,
+      "MapId": -1,
+      "PointsPerKill": 85,
+      "PointsPerRoundWin": 300,
+      "PointsToWin": 1000,
+      "SerializedSettingsJson": "EnCons=1;EnMP=1;WinScore=1000;PointsWin=300;PointsKill=85;EnVaultItems=1;VaultedItems=;EnVaultEnt=1;VaultedEnt=;EnVaultAug=1;VaultedAug=257\u002610\u002611\u002612\u002613\u002615\u002619\u002623\u002633\u002635\u002647\u002649\u002650\u002654\u002655\u002665\u002669\u002670\u002671\u002672\u002673\u002674\u002680\u002682\u002683\u002687\u002690\u002691\u002692\u002695\u0026103\u0026105\u0026107\u0026115\u0026118\u0026124\u0026127\u0026128\u0026129\u0026133\u0026135\u0026136\u0026137\u0026138\u0026139\u0026140\u0026142\u0026144\u0026145\u0026148\u0026150\u0026153\u0026154\u0026155\u0026156\u0026159\u0026162\u0026163\u0026164\u0026165\u0026167\u0026168\u0026170\u0026171\u0026172\u0026173\u0026174\u0026176\u0026178\u0026180\u0026181\u0026182\u0026183\u0026184\u0026185\u0026186\u0026187\u0026188\u0026189\u0026190\u0026196\u0026197\u0026198\u0026199\u0026200\u0026201\u0026202\u0026204\u0026205\u0026206\u0026207\u0026210\u0026211\u0026212\u0026216\u0026218\u0026219\u0026220\u0026222\u0026223\u0026224\u0026226\u0026227\u0026228\u0026229\u0026232\u0026234\u0026240\u0026241\u0026242\u0026243\u0026244\u0026245\u0026246\u0026247\u0026249\u0026250\u0026251\u0026254\u0026255\u0026256\u0026258\u0026259\u0026260\u0026261\u0026262\u0026264\u0026268\u0026269\u0026270\u0026272\u0026273\u0026275\u0026276\u0026277\u0026280\u0026281\u0026283\u0026285\u0026288\u0026289\u0026291\u0026294\u0026300\u0026302\u0026306\u0026308\u0026310\u0026311\u0026312\u0026313\u0026320\u0026321\u0026325\u0026327\u0026328\u0026329\u0026330\u0026331\u0026332\u0026333\u0026334\u0026335\u0026338\u0026339\u0026340\u0026341\u0026343\u0026344\u0026345\u0026349\u0026352\u0026355\u0026357\u0026358\u0026359\u0026360\u0026363\u0026364\u0026383\u0026385\u0026387\u0026396\u0026406\u0026411\u0026413\u0026414\u0026416\u0026418\u0026100\u002697\u002698\u002699\u0026101\u002658\u002659\u002660\u0026400\u002661\u002637\u002638\u002636\u002639\u0026397\u0026398\u002624\u002628\u002626\u002625\u002651\u002656\u002657\u002653\u002652\u0026410\u0026402\u0026122\u0026123\u0026125\u0026126\u0026412\u0026134\u0026130\u0026132\u0026141\u002645\u002646\u002640\u002642\u002648\u002641\u002644\u002643\u0026399\u0026120\u0026121\u0026114\u0026119\u0026116\u0026117\u0026238\u0026113\u0026143\u0026147\u0026149\u0026146\u002663\u002666\u002667\u002664\u002662\u002668\u0026109\u0026110\u0026108\u0026111\u0026112\u0026104\u0026102\u0026106\u0026362\u002630\u002634\u002629\u0026305\u002631\u0026239\u0026274\u002632\u0026271\u002620\u002621\u002617\u002616\u002622\u002684\u002686\u002685\u002678\u002688\u002689\u002675\u002676\u002681\u002693\u0026230\u0026315\u0026179\u0026299\u0026278\u0026351\u002694\u0026381\u0026376\u0026324\u0026214\u0026208\u0026282\u0026267\u0026286\u0026346\u0026252\u0026378\u0026322\u0026377\u0026375\u0026295\u0026384\u0026209\u0026213\u0026379\u0026350\u0026307\u0026382\u0026361\u0026191\u0026175\u0026177\u0026215\u0026318\u0026290\u0026353\u0026347\u0026365\u0026217\u0026369\u0026237\u0026303\u0026157\u0026342\u0026263\u0026235\u0026236\u0026408\u0026203\u0026407\u0026417\u0026404\u0026415\u0026405\u002677\u002696\u0026356\u0026293\u002679;EnAug=1;EnAugRoundZone=0;FreeRerolls=90;AddSelPlayerStart=1;AddSelRoundEnd=1;RoundEndAugSelWinT=0;AugSelLimit=0;AugSelLimitNum=1;AugSelRerollRoundEnd=0;EnZone=1;ZoneSpdMult=1;ZoneDmgMult=1;EnGlBuffAllPlayers=1;GlBuffAllPlayers=#0#0#0#0;GlBuffPlayerId=;",
+      "ShowCharacters": true,
+      "StartingAugments": 1,
+      "TeamSize": 1,
+      "TotalRerolls": 90
+    }
+  }
+}

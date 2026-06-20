@@ -1,0 +1,86 @@
+﻿{
+  "schemaVersion": 2,
+  "targetType": "CharacterIndex",
+  "targetKey": "ROCKY#14",
+  "generatedAtUtc": "2026-04-15T22:57:32.6271270Z",
+  "instructions": [
+    "Open one of the listed files to edit that part of the character.",
+    "Each target file contains defaults, overrides, and effectiveValues.",
+    "Abilities are split into separate files under the Abilities folder.",
+    "AbilitySwap.json lets you pick another exported ability source per slot. Incompatible swaps are skipped safely."
+  ],
+  "files": [
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[0]",
+      "displayName": "Rocky / Basic",
+      "file": "Abilities/00_Ability_1.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[1]",
+      "displayName": "Rocky / Special",
+      "file": "Abilities/01_Ability_2.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[2]",
+      "displayName": "Rocky / Tactical",
+      "file": "Abilities/02_Ability_3.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[3]",
+      "displayName": "Rocky / Ultimate",
+      "file": "Abilities/03_Ability_4.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[4]",
+      "displayName": "Rocky / Ability 5",
+      "file": "Abilities/04_Ability_5.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[5]",
+      "displayName": "Rocky / Ability 6",
+      "file": "Abilities/05_Ability_6.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[6]",
+      "displayName": "Rocky / Ability 7",
+      "file": "Abilities/06_Ability_7.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ROCKY#14/Ability[7]",
+      "displayName": "Rocky / Ability 8",
+      "file": "Abilities/07_Ability_8.json"
+    },
+    {
+      "targetType": "CharacterAbilitySwap",
+      "targetKey": "ROCKY#14/AbilitySwap",
+      "displayName": "Rocky / Ability Swap",
+      "file": "AbilitySwap.json"
+    },
+    {
+      "targetType": "CharacterState",
+      "targetKey": "ROCKY#14/CharacterState",
+      "displayName": "CharacterState",
+      "file": "CharacterState.json"
+    },
+    {
+      "targetType": "CharacterHurtbox",
+      "targetKey": "ROCKY#14/Hurtbox",
+      "displayName": "Hurtbox",
+      "file": "Hurtbox.json"
+    },
+    {
+      "targetType": "CharacterMovement",
+      "targetKey": "ROCKY#14/Movement",
+      "displayName": "Movement",
+      "file": "Movement.json"
+    }
+  ]
+}

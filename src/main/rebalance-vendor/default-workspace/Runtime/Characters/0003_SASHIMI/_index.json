@@ -1,0 +1,86 @@
+﻿{
+  "schemaVersion": 2,
+  "targetType": "CharacterIndex",
+  "targetKey": "SASHIMI#3",
+  "generatedAtUtc": "2026-04-15T22:57:30.4510611Z",
+  "instructions": [
+    "Open one of the listed files to edit that part of the character.",
+    "Each target file contains defaults, overrides, and effectiveValues.",
+    "Abilities are split into separate files under the Abilities folder.",
+    "AbilitySwap.json lets you pick another exported ability source per slot. Incompatible swaps are skipped safely."
+  ],
+  "files": [
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[0]",
+      "displayName": "Sashimi / Basic",
+      "file": "Abilities/00_Ability_1.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[1]",
+      "displayName": "Sashimi / Special",
+      "file": "Abilities/01_Ability_2.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[2]",
+      "displayName": "Sashimi / Tactical",
+      "file": "Abilities/02_Ability_3.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[3]",
+      "displayName": "Sashimi / Ultimate",
+      "file": "Abilities/03_Ability_4.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[4]",
+      "displayName": "Sashimi / Ability 5",
+      "file": "Abilities/04_Ability_5.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[5]",
+      "displayName": "Sashimi / Ability 6",
+      "file": "Abilities/05_Ability_6.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[6]",
+      "displayName": "Sashimi / Ability 7",
+      "file": "Abilities/06_Ability_7.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SASHIMI#3/Ability[7]",
+      "displayName": "Sashimi / Ability 8",
+      "file": "Abilities/07_Ability_8.json"
+    },
+    {
+      "targetType": "CharacterAbilitySwap",
+      "targetKey": "SASHIMI#3/AbilitySwap",
+      "displayName": "Sashimi / Ability Swap",
+      "file": "AbilitySwap.json"
+    },
+    {
+      "targetType": "CharacterState",
+      "targetKey": "SASHIMI#3/CharacterState",
+      "displayName": "CharacterState",
+      "file": "CharacterState.json"
+    },
+    {
+      "targetType": "CharacterHurtbox",
+      "targetKey": "SASHIMI#3/Hurtbox",
+      "displayName": "Hurtbox",
+      "file": "Hurtbox.json"
+    },
+    {
+      "targetType": "CharacterMovement",
+      "targetKey": "SASHIMI#3/Movement",
+      "displayName": "Movement",
+      "file": "Movement.json"
+    }
+  ]
+}

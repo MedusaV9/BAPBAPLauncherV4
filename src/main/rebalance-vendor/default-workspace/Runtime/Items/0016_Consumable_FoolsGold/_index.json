@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Consumable_FoolsGold#16",
+  "generatedAtUtc": "2026-04-15T22:56:10.5516795Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Consumable_FoolsGold#16",
+      "displayName": "Item",
+      "file": "0016_Consumable_FoolsGold.json"
+    },
+    {
+      "targetType": "ItemConsumableBehaviour",
+      "targetKey": "Consumable_FoolsGold#16/ConsumableBehaviour",
+      "displayName": "Consumable Behaviour",
+      "file": "ConsumableBehaviour.json"
+    }
+  ]
+}

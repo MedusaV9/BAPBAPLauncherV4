@@ -1,0 +1,219 @@
+/* Create page (Custom Builder) — two-column layout with sticky preview */
+
+/* ─── Main layout grid ─── */
+.task-workspace-shell,
+.create-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: var(--space-lg, 24px);
+  align-items: start;
+  width: 100%;
+}
+
+/* ─── Left column: field sections stack with proper gap ─── */
+.task-workspace-fields,
+.create-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg, 24px);
+  min-width: 0;
+}
+
+/* ─── Right column: sticky preview panel ─── */
+.task-workspace-preview,
+.create-preview {
+  position: sticky;
+  top: 1rem;
+  min-width: 0;
+}
+
+/* ─── Live preview card ─── */
+.task-workspace-preview-card,
+.create-preview-card {
+  background: var(--bg-1, #070911);
+  border: 1px solid var(--line, #283456);
+  border-radius: 16px;
+  padding: var(--space-lg, 24px);
+  overflow: hidden;
+}
+
+/* Preview card interior — matches game card format */
+.task-workspace-preview-card .preview-title,
+.create-preview-card .preview-title {
+  color: var(--text, #f6f3ee);
+  font-size: var(--type-subtitle-size, 0.875rem);
+  font-weight: 700;
+  margin-bottom: var(--space-sm, 8px);
+}
+
+.task-workspace-preview-card .preview-body,
+.create-preview-card .preview-body {
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-body-size, 0.8125rem);
+  line-height: 1.5;
+}
+
+.task-workspace-preview-card .preview-image,
+.create-preview-card .preview-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: var(--space-md, 12px);
+  object-fit: cover;
+}
+
+/* ─── Add Block button: .v2-button--secondary (outlined) ─── */
+.create-add-block-btn,
+.task-workspace-add-block-btn {
+  /* Inherits from .v2-button--secondary — outlined style */
+}
+
+/* ─── Save Draft button: .v2-button--primary (cream fill) ─── */
+.create-save-btn,
+.task-workspace-save-btn {
+  /* Inherits from .v2-button--primary — cream fill style */
+}
+
+/* --------------------------------------------------------------------------
+   Medium viewports (900px–1280px) — narrower preview column
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1280px) and (min-width: 900px) {
+  .task-workspace-shell,
+  .create-layout {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: var(--space-md, 16px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Narrow viewports (<900px) — single column, preview stacks above
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  .task-workspace-shell,
+  .create-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Preview moves above the fields on narrow screens */
+  .task-workspace-preview,
+  .create-preview {
+    position: static;
+    order: -1;
+  }
+}
+
+/* ==========================================================================
+   Game Card Preview — Live preview of the augment/ability being created
+   ========================================================================== */
+
+.game-card-preview {
+  background: linear-gradient(180deg, #0a0e14 0%, #060910 100%);
+  border: 1px solid var(--line, #283456);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Card header with gradient accent */
+.game-card-preview__header {
+  padding: 1.25rem 1.25rem 0.75rem;
+  background: linear-gradient(180deg, rgba(88, 113, 255, 0.08) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(88, 113, 255, 0.1);
+}
+
+.game-card-preview__name {
+  font-family: "RebalanceGameCardTitle", var(--display-font, "BAPBAP Archivo");
+  font-size: 1.125rem;
+  font-weight: 900;
+  color: var(--text, #f6f3ee);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.game-card-preview__type {
+  font-size: 0.6875rem;
+  color: var(--text-muted, #a4aec6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* Card body with stats */
+.game-card-preview__body {
+  padding: 1rem 1.25rem;
+  font-family: "RebalanceGameCardBody", var(--body-font, "BAPBAP Archivo");
+}
+
+.game-card-preview__description {
+  font-size: 0.8125rem;
+  color: var(--text-muted, #a4aec6);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+/* Stat rows */
+.game-card-preview__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.game-card-preview__stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.5rem;
+  background: rgba(88, 113, 255, 0.04);
+  border-radius: 6px;
+}
+
+.game-card-preview__stat-label {
+  font-size: 0.6875rem;
+  color: var(--text-muted, #a4aec6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.game-card-preview__stat-value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text, #f6f3ee);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card footer */
+.game-card-preview__footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--line, #283456);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-card-preview__rarity {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8ea4ff;
+}
+
+/* Shimmer effect on the card while data updates */
+.game-card-preview--updating {
+  position: relative;
+}
+.game-card-preview--updating::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(88, 113, 255, 0.06), transparent);
+  animation: card-preview-shimmer 1.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes card-preview-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}

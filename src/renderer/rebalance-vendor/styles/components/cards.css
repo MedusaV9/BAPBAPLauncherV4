@@ -1,0 +1,636 @@
+/* cards.css — Card component styles using Launcher V2 tokens */
+
+/* ---- Base card ---- */
+.v2-card {
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.7));
+  backdrop-filter: var(--blur-glass, blur(16px));
+  -webkit-backdrop-filter: var(--blur-glass, blur(16px));
+  border: 1px solid var(--line, #222d4a);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 4px 20px rgba(0, 0, 0, 0.2);
+  padding: var(--space-lg, 24px);
+  min-width: 0;
+  width: 100%;
+  transition: background 250ms ease, border-color 250ms ease, box-shadow 250ms ease, transform 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Adjacent card spacing — remove decorative border between stacked cards ---- */
+.v2-card + .v2-card {
+  border-top: none;
+  margin-top: 0;
+}
+
+/* ---- Compact variant ---- */
+.v2-card--compact {
+  padding: 1rem 1.25rem;
+  min-width: 0;
+  width: 100%;
+}
+
+/* ---- Interactive variant ---- */
+.v2-card--interactive {
+  cursor: pointer;
+}
+
+.v2-card--interactive:hover {
+  background: var(--bg-2-glass, rgba(21, 28, 46, 0.75));
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 0 16px rgba(99, 102, 241, 0.12);
+}
+
+.v2-card--interactive:active {
+  transform: translateY(0px) scale(0.985);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+  transition-duration: 80ms;
+}
+
+.v2-card--interactive:focus,
+.v2-card--interactive:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* ---- Elevated variant ---- */
+.v2-card--elevated {
+  background: var(--bg-2-glass, rgba(21, 28, 46, 0.75));
+}
+
+.v2-card--elevated:hover {
+  background: linear-gradient(180deg, var(--bg-2-glass, rgba(21, 28, 46, 0.75)), rgba(99, 102, 241, 0.02));
+}
+
+/* ---- Selected variant ---- */
+.v2-card--selected {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 
+    0 0 0 2px rgba(99, 102, 241, 0.12),
+    0 4px 20px rgba(99, 102, 241, 0.1);
+}
+
+/* ---- Card group hover effect — dim siblings ---- */
+.rebalance-home-launcher-grid:hover > .v2-card--interactive:not(:hover) {
+  opacity: 0.70;
+  transition: opacity 200ms ease;
+}
+.rebalance-home-launcher-grid:hover > .v2-card--interactive:hover {
+  opacity: 1;
+}
+
+/* Override .soft-panel to use the new card style */
+.soft-panel {
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.5));
+  backdrop-filter: var(--blur-glass, blur(20px));
+  -webkit-backdrop-filter: var(--blur-glass, blur(20px));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.01), 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Override .support-card similarly */
+.support-card {
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.5));
+  backdrop-filter: var(--blur-glass, blur(20px));
+  -webkit-backdrop-filter: var(--blur-glass, blur(20px));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.01), 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---- Card content transitions for smooth data updates ---- */
+.v2-card__value,
+.v2-card__status,
+.v2-card__progress {
+  transition: color 200ms ease, opacity 200ms ease;
+}
+
+/* Highlight flash when value changes */
+.v2-card--highlight-change {
+  animation: card-value-flash 0.6s ease-out;
+}
+
+@keyframes card-value-flash {
+  0% { background: rgba(88, 113, 255, 0.08); }
+  100% { background: transparent; }
+}
+
+/* Card loading state — dims content */
+.v2-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Card success state — brief green border flash */
+.v2-card--success {
+  animation: card-success-flash 1s ease-out forwards;
+}
+
+@keyframes card-success-flash {
+  0% { border-color: rgba(34, 197, 94, 0.6); box-shadow: 0 0 12px rgba(34, 197, 94, 0.15); }
+  100% { border-color: var(--line, #283456); box-shadow: none; }
+}
+
+/* Card error state — brief red border flash */
+.v2-card--error {
+  animation: card-error-flash 1s ease-out forwards;
+}
+
+@keyframes card-error-flash {
+  0% { border-color: rgba(220, 38, 38, 0.6); box-shadow: 0 0 12px rgba(220, 38, 38, 0.15); }
+  100% { border-color: var(--line, #283456); box-shadow: none; }
+}
+
+/* ---- Interactive hover value highlight ---- */
+.v2-card--interactive:hover .v2-card__value {
+  color: var(--text, #f6f3ee);
+}
+
+/* ---- Expandable card height transition ---- */
+.v2-card--expandable {
+  overflow: hidden;
+  transition: max-height 300ms ease, padding 200ms ease;
+}
+
+/* GPU-promote only while actively expanding/collapsing */
+.v2-card--expandable.is-expanding {
+  will-change: max-height;
+}
+
+/* ==========================================================================
+   Alert / Notification Banners
+   Used for inline warnings, tips, and important messages
+   ========================================================================== */
+
+.v2-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md, 10px);
+  font-size: var(--type-body-size, clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem));
+  line-height: 1.5;
+}
+
+.v2-alert__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.v2-alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.v2-alert__title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.v2-alert__description {
+  color: inherit;
+  opacity: 0.8;
+}
+
+/* --- Info variant (default) --- */
+.v2-alert--info {
+  background: rgba(88, 113, 255, 0.06);
+  border: 1px solid rgba(88, 113, 255, 0.15);
+  color: #c8d4ff;
+}
+.v2-alert--info .v2-alert__icon {
+  color: #5871ff;
+}
+
+/* --- Success variant --- */
+.v2-alert--success {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  color: #86efac;
+}
+.v2-alert--success .v2-alert__icon {
+  color: #22c55e;
+}
+
+/* --- Warning variant --- */
+.v2-alert--warning {
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+}
+.v2-alert--warning .v2-alert__icon {
+  color: #f59e0b;
+}
+
+/* --- Error/destructive variant --- */
+.v2-alert--error {
+  background: rgba(220, 38, 38, 0.06);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  color: #fca5a5;
+}
+.v2-alert--error .v2-alert__icon {
+  color: #dc2626;
+}
+
+/* --- Dismissible (has close button) --- */
+.v2-alert--dismissible {
+  padding-right: 2.5rem;
+  position: relative;
+}
+.v2-alert__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 150ms;
+  border-radius: 4px;
+}
+.v2-alert__close:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Drag and Drop Indicators
+   Visual feedback for drag operations on cards, list items, and files
+   ========================================================================== */
+
+/* Item being dragged */
+.is-dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-color: rgba(88, 113, 255, 0.4) !important;
+  z-index: 5;
+  transition: none;
+}
+
+/* Drop target indicator */
+.is-drop-target {
+  border-color: rgba(88, 113, 255, 0.6) !important;
+  box-shadow: inset 0 0 0 2px rgba(88, 113, 255, 0.15);
+}
+
+/* Drop target with item hovering over it */
+.is-drop-target--hover {
+  background: rgba(88, 113, 255, 0.04) !important;
+  border-color: #5871ff !important;
+  box-shadow: inset 0 0 0 2px rgba(88, 113, 255, 0.2), 0 0 12px rgba(88, 113, 255, 0.1);
+}
+
+/* Insertion line between items */
+.drop-insertion-line {
+  position: relative;
+}
+
+.drop-insertion-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #5871ff;
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(88, 113, 255, 0.4);
+  pointer-events: none;
+}
+
+.drop-insertion-line--top::before {
+  top: -1px;
+}
+
+.drop-insertion-line--bottom::before {
+  bottom: -1px;
+}
+
+/* Drag ghost/preview */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.9;
+  transform: rotate(2deg) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-md, 10px);
+  max-width: 300px;
+}
+
+/* Disabled drop zone */
+.is-drop-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Content Loading States
+   Applied to cards/sections when their data is being fetched
+   ========================================================================== */
+
+/* Content placeholder shimmer */
+.content-loading {
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.content-loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(88, 113, 255, 0.04) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: content-loading-shimmer 1.5s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+@keyframes content-loading-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Blur content that's stale (waiting for refresh) */
+.content-stale {
+  filter: blur(1px);
+  opacity: 0.7;
+  transition: filter 200ms, opacity 200ms;
+}
+
+/* Fresh content (just loaded) — brief highlight */
+.content-fresh {
+  animation: content-fresh-highlight 0.8s ease-out;
+}
+
+@keyframes content-fresh-highlight {
+  0% { box-shadow: inset 0 0 0 1px rgba(88, 113, 255, 0.2); }
+  100% { box-shadow: inset 0 0 0 1px transparent; }
+}
+
+/* Pulsing placeholder for individual fields */
+.field-loading {
+  height: var(--control-height-lg, 48px);
+  border-radius: var(--control-radius, 6px);
+  background: linear-gradient(90deg, var(--bg-1, #070911) 25%, var(--bg-2, #10172a) 50%, var(--bg-1, #070911) 75%);
+  background-size: 200% 100%;
+  animation: content-loading-shimmer 1.5s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   Avatar Component
+   ========================================================================== */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full, 9999px);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--bg-2, #10172a);
+  color: var(--text-muted, #a4aec6);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.avatar--sm { width: 24px; height: 24px; font-size: 0.5rem; }
+.avatar--md { width: 32px; height: 32px; font-size: 0.625rem; }
+.avatar--lg { width: 40px; height: 40px; font-size: 0.75rem; }
+.avatar--xl { width: 56px; height: 56px; font-size: 1rem; }
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar--bordered {
+  border: 2px solid var(--line, #283456);
+}
+
+.avatar--online::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cool, #5871ff);
+  border: 2px solid var(--bg-1, #070911);
+}
+
+/* Avatar group (stacked) */
+.avatar-group {
+  display: flex;
+}
+
+.avatar-group .avatar {
+  margin-left: -8px;
+  border: 2px solid var(--bg-0, #030407);
+}
+
+.avatar-group .avatar:first-child {
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   Accordion / Expandable Sections
+   ========================================================================== */
+
+.accordion {
+  border: 1px solid var(--line, #283456);
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+}
+
+.accordion + .accordion {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.accordion:first-child {
+  border-top-left-radius: var(--radius-md, 12px);
+  border-top-right-radius: var(--radius-md, 12px);
+}
+
+.accordion:last-child {
+  border-bottom-left-radius: var(--radius-md, 12px);
+  border-bottom-right-radius: var(--radius-md, 12px);
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text, #f6f3ee);
+  font-size: var(--type-body-size, 0.8125rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms;
+  text-align: left;
+}
+
+.accordion__trigger:hover {
+  background: rgba(88, 113, 255, 0.03);
+}
+
+.accordion__icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted, #a4aec6);
+  transition: transform 200ms var(--ease-default, cubic-bezier(0.4, 0, 0.2, 1));
+  flex-shrink: 0;
+}
+
+.accordion.is-open .accordion__icon {
+  transform: rotate(180deg);
+}
+
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 250ms var(--ease-default, cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.accordion.is-open .accordion__panel {
+  grid-template-rows: 1fr;
+}
+
+.accordion__panel-inner {
+  overflow: hidden;
+}
+
+.accordion__content {
+  padding: 0 1rem 1rem;
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-body-size, 0.8125rem);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   3D Tilt Effect — Perspective-based hover for premium cards
+   Uses pure CSS for the container, JS would handle per-pixel tracking
+   ========================================================================== */
+
+/* Container with perspective for 3D children */
+.card-perspective {
+  perspective: 800px;
+}
+
+/* Card that tilts on hover */
+.v2-card--tilt {
+  transform-style: preserve-3d;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.v2-card--tilt:hover {
+  transform: rotateX(-2deg) rotateY(2deg) translateZ(4px);
+  box-shadow:
+    -4px 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Inner content gets a subtle parallax shift on hover */
+.v2-card--tilt:hover .v2-card__inner {
+  transform: translateZ(8px);
+}
+
+.v2-card__inner {
+  transition: transform 300ms ease;
+}
+
+/* Shine/glare overlay that moves on hover */
+.v2-card--tilt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.v2-card--tilt:hover::after {
+  opacity: 1;
+}
+
+/* Featured card variant (for the dashboard hero cards) */
+.v2-card--featured {
+  position: relative;
+  overflow: hidden;
+}
+
+.v2-card--featured::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cool, #5871ff), #8ea4ff, var(--accent-cool, #5871ff));
+  background-size: 200% 100%;
+  animation: featured-border-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes featured-border-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Card glow on hover for featured */
+.v2-card--featured:hover {
+  box-shadow:
+    0 0 30px rgba(88, 113, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Global Card/Tile Border Radius Harmonization — Universally Compatible
+   ========================================================================== */
+[class*="card"],
+[class*="Card"],
+[class*="tile"],
+[class*="Tile"] {
+  border-radius: 12px !important;
+}
+
+.v2-card,
+.soft-panel,
+.support-card {
+  border-radius: 16px !important;
+}
+
+

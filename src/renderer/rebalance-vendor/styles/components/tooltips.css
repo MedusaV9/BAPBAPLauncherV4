@@ -1,0 +1,115 @@
+/* ─── Custom Tooltips ─── */
+
+[data-tooltip] {
+  position: relative;
+}
+
+/* Arrow (appears below the tooltip bubble) */
+[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: var(--bg-2, #10172a);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms;
+  z-index: 200;
+}
+
+/* Tooltip bubble */
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  padding: 6px 10px;
+  background: var(--bg-2, #10172a);
+  border: 1px solid var(--line, #283456);
+  border-radius: 6px;
+  color: var(--text, #f6f3ee);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms, transform 150ms;
+  z-index: 200;
+}
+
+/* Show on hover */
+[data-tooltip]:hover::before {
+  opacity: 1;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ─── Position: Bottom ─── */
+[data-tooltip-position="bottom"]::before {
+  bottom: auto;
+  top: calc(100% + 4px);
+  border-top-color: transparent;
+  border-bottom-color: var(--bg-2, #10172a);
+}
+
+[data-tooltip-position="bottom"]::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+
+/* ─── Position: Left ─── */
+[data-tooltip-position="left"]::before {
+  bottom: auto;
+  top: 50%;
+  left: auto;
+  right: calc(100% + 4px);
+  transform: translateY(-50%);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: var(--bg-2, #10172a);
+}
+
+[data-tooltip-position="left"]::after {
+  bottom: auto;
+  top: 50%;
+  left: auto;
+  right: calc(100% + 8px);
+  transform: translateY(-50%) scale(0.95);
+}
+
+[data-tooltip-position="left"]:hover::after {
+  transform: translateY(-50%) scale(1);
+}
+
+/* ─── Position: Right ─── */
+[data-tooltip-position="right"]::before {
+  bottom: auto;
+  top: 50%;
+  left: calc(100% + 4px);
+  transform: translateY(-50%);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: var(--bg-2, #10172a);
+}
+
+[data-tooltip-position="right"]::after {
+  bottom: auto;
+  top: 50%;
+  left: calc(100% + 8px);
+  transform: translateY(-50%) scale(0.95);
+}
+
+[data-tooltip-position="right"]:hover::after {
+  transform: translateY(-50%) scale(1);
+}
+
+/* ─── Tooltip with keyboard shortcut ─── */
+[data-tooltip][data-tooltip-kbd]::after {
+  content: attr(data-tooltip) "  " attr(data-tooltip-kbd);
+}

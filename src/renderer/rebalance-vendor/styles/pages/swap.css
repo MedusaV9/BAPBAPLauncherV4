@@ -1,0 +1,280 @@
+/* Swap page — step indicator, ability card grid, and selection states */
+
+/* ─── Swap page container ─── */
+.swap-page,
+.task-swap-page {
+  width: 100%;
+  max-width: none;
+}
+
+/* ─── Step indicator ─── */
+.task-swap-slot,
+.swap-step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+/* Current step */
+.task-swap-slot.is-active,
+.swap-step.is-active {
+  background: var(--accent, #6366f1);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.4);
+}
+
+/* Completed step */
+.task-swap-slot.is-complete,
+.swap-step.is-complete {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent, #6366f1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Upcoming step */
+.task-swap-slot:not(.is-active):not(.is-complete),
+.swap-step:not(.is-active):not(.is-complete) {
+  border: 1px solid var(--line, #222d4a);
+  background: transparent;
+  color: var(--text-muted, #a4aec6);
+}
+
+/* Connector line between steps */
+.swap-step-connector,
+.task-swap-connector {
+  height: 2px;
+  flex: 1;
+  background: var(--line, #222d4a);
+  transition: background 0.2s;
+}
+
+.swap-step-connector.is-complete,
+.task-swap-connector.is-complete {
+  background: var(--accent, #6366f1);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3);
+}
+
+/* ─── Ability card grid ─── */
+.swap-source-list,
+.task-swap-source-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-md, 12px);
+  width: 100%;
+}
+
+/* Cards expand to fill available width */
+.swap-source-card,
+.task-swap-source-card {
+  width: 100%;
+  min-width: 0;
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.7));
+  border: 1px solid var(--line, #222d4a);
+  backdrop-filter: var(--blur-glass, blur(16px));
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* ─── Selected ability card ─── */
+.swap-source-card.is-active,
+.task-swap-source-card.is-active {
+  border: 2px solid var(--accent, #6366f1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px) scale(1.03);
+  background: rgba(21, 28, 46, 0.6);
+}
+
+/* ─── Hovered card ─── */
+.swap-source-card:hover:not(.is-active),
+.task-swap-source-card:hover:not(.is-active) {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Character selection list — horizontal scroll ─── */
+.swap-character-list,
+.task-swap-character-list {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-md, 12px);
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(88, 113, 255, 0.3) transparent;
+}
+
+.swap-character-list::-webkit-scrollbar,
+.task-swap-character-list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.swap-character-list::-webkit-scrollbar-track,
+.task-swap-character-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.swap-character-list::-webkit-scrollbar-thumb,
+.task-swap-character-list::-webkit-scrollbar-thumb {
+  background: rgba(88, 113, 255, 0.3);
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Wizard Step Progress
+   Multi-step flow indicator with connected dots
+   ========================================================================== */
+
+.wizard-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 0 1.5rem;
+}
+
+.wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.wizard-step__circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: background 200ms, color 200ms, border-color 200ms, box-shadow 200ms;
+  flex-shrink: 0;
+}
+
+/* Upcoming step */
+.wizard-step--upcoming .wizard-step__circle {
+  background: transparent;
+  border: 1px solid var(--line, #283456);
+  color: var(--text-muted, #a4aec6);
+}
+
+/* Current/active step */
+.wizard-step--current .wizard-step__circle {
+  background: var(--accent, #6366f1);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.4), 0 0 0 4px rgba(99, 102, 241, 0.2);
+}
+
+/* Completed step */
+.wizard-step--complete .wizard-step__circle {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: var(--accent, #6366f1);
+}
+
+/* Connector line */
+.wizard-step__connector {
+  flex: 1;
+  height: 2px;
+  min-width: 24px;
+  background: var(--line, #222d4a);
+  transition: background 200ms;
+}
+
+.wizard-step--complete + .wizard-step .wizard-step__connector,
+.wizard-step--complete .wizard-step__connector {
+  background: var(--accent, #6366f1);
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.2);
+}
+
+/* Step label (below circle) */
+.wizard-step__label {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6875rem;
+  color: var(--text-muted, #a4aec6);
+  white-space: nowrap;
+  transition: color 200ms;
+}
+
+.wizard-step--current .wizard-step__label {
+  color: var(--text, #f6f3ee);
+  font-weight: 600;
+}
+
+/* Horizontal scrollable for many steps */
+.wizard-steps--scrollable {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.wizard-steps--scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   Scroll Snap — Horizontal lists snap to items for better UX
+   ========================================================================== */
+
+/* Character selection list — snap to each card */
+.swap-character-list,
+.task-swap-character-list {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--space-md, 12px);
+  -webkit-overflow-scrolling: touch;
+}
+
+.swap-character-list > *,
+.task-swap-character-list > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Fade edges to hint scrollability */
+.scroll-fade-container {
+  position: relative;
+}
+
+.scroll-fade-container::before,
+.scroll-fade-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scroll-fade-container::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--bg-0, #030407), transparent);
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.scroll-fade-container::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--bg-0, #030407), transparent);
+}
+
+/* Show left fade when scrolled */
+.scroll-fade-container.is-scrolled::before {
+  opacity: 1;
+}
+
+/* Hide right fade when at end */
+.scroll-fade-container.is-at-end::after {
+  opacity: 0;
+}

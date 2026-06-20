@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Consumable_Revolver#35",
+  "generatedAtUtc": "2026-04-15T22:56:10.9622824Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Consumable_Revolver#35",
+      "displayName": "Item",
+      "file": "0035_Consumable_Revolver.json"
+    },
+    {
+      "targetType": "ItemConsumableBehaviour",
+      "targetKey": "Consumable_Revolver#35/ConsumableBehaviour",
+      "displayName": "Consumable Behaviour",
+      "file": "ConsumableBehaviour.json"
+    }
+  ]
+}

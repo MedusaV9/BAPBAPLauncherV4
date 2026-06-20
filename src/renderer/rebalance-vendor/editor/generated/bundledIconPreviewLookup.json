@@ -1,0 +1,8667 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-04-25T00:21:23.882Z",
+  "sourceRoots": [
+    "bundled-default-workspace"
+  ],
+  "entries": [
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "kitsu#0/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "anna#1/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "chuck#2/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "sashimi#3/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "kiddo#4/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "zook#5/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "skinny#6/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "froggy#7/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "teevee#8/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "sofia#9/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "jiro#10/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "bishop#11/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "eve#12/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "kat#13/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[0] Ability1 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "rocky#14/ability[0]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "kitsu#0/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "anna#1/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "chuck#2/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "sashimi#3/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "kiddo#4/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "zook#5/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "skinny#6/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "froggy#7/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "teevee#8/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "sofia#9/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "jiro#10/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "bishop#11/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "eve#12/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "kat#13/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[1] Ability2 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "rocky#14/ability[1]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "kitsu#0/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "anna#1/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "chuck#2/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "sashimi#3/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "kiddo#4/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "zook#5/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "skinny#6/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "froggy#7/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "teevee#8/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "sofia#9/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "jiro#10/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "bishop#11/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "eve#12/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "kat#13/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[2] Ability3 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "rocky#14/ability[2]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "kitsu#0/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "anna#1/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "chuck#2/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "sashimi#3/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "kiddo#4/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "zook#5/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "skinny#6/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "froggy#7/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "teevee#8/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "sofia#9/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "jiro#10/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "bishop#11/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "eve#12/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "kat#13/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[3] Ability4 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "rocky#14/ability[3]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "kitsu#0/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "anna#1/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "chuck#2/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "sashimi#3/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "kiddo#4/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "zook#5/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "skinny#6/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "froggy#7/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "teevee#8/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "sofia#9/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "jiro#10/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "bishop#11/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "eve#12/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "kat#13/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[4] Ability5 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "rocky#14/ability[4]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "kitsu#0/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "anna#1/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "chuck#2/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "sashimi#3/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "kiddo#4/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "zook#5/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "skinny#6/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "froggy#7/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "teevee#8/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "sofia#9/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "jiro#10/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "bishop#11/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "eve#12/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "kat#13/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[5] Ability6 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "rocky#14/ability[5]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "kitsu#0/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "anna#1/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "chuck#2/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "sashimi#3/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "kiddo#4/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "zook#5/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "skinny#6/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "froggy#7/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "teevee#8/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "sofia#9/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "jiro#10/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "bishop#11/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "eve#12/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "kat#13/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[6] Ability7 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "rocky#14/ability[6]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "kitsu#0/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "anna#1/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "chuck#2/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "sashimi#3/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "kiddo#4/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "zook#5/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "gold",
+      "keys": [
+        "skinny#6/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "sapphire",
+      "keys": [
+        "froggy#7/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "violet",
+      "keys": [
+        "teevee#8/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "sofia#9/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "jiro#10/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "bishop#11/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "azure",
+      "keys": [
+        "eve#12/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "coral",
+      "keys": [
+        "kat#13/ability[7]"
+      ]
+    },
+    {
+      "label": "Ability[7] Ability8 (Ability)",
+      "theme": "ember",
+      "keys": [
+        "rocky#14/ability[7]"
+      ]
+    },
+    {
+      "label": "AdrenalinePin_T1#205",
+      "theme": "azure",
+      "keys": [
+        "adrenalinepin_t1#205",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "AdrenalinePin_T2#206",
+      "theme": "ember",
+      "keys": [
+        "adrenalinepin_t2#206",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "AdrenalinePin_T3#207",
+      "theme": "sapphire",
+      "keys": [
+        "adrenalinepin_t3#207",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "AdrenalinePin_T4#208",
+      "theme": "azure",
+      "keys": [
+        "adrenalinepin_t4#208",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "AdrenalinePin_T5#209",
+      "theme": "ember",
+      "keys": [
+        "adrenalinepin_t5#209",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "AllIn_T1#106",
+      "theme": "ember",
+      "keys": [
+        "allin_t1#106",
+        "sprite:item_torso_eyestop"
+      ]
+    },
+    {
+      "label": "AllIn_T2#107",
+      "theme": "azure",
+      "keys": [
+        "allin_t2#107",
+        "sprite:item_torso_eyestop"
+      ]
+    },
+    {
+      "label": "AllIn_T3#108",
+      "theme": "sapphire",
+      "keys": [
+        "allin_t3#108",
+        "sprite:item_torso_eyestop"
+      ]
+    },
+    {
+      "label": "AllIn_T4#109",
+      "theme": "ember",
+      "keys": [
+        "allin_t4#109",
+        "sprite:item_torso_eyestop"
+      ]
+    },
+    {
+      "label": "AllIn_T5#110",
+      "theme": "violet",
+      "keys": [
+        "allin_t5#110",
+        "sprite:item_torso_eyestop"
+      ]
+    },
+    {
+      "label": "AngelBoots#400",
+      "theme": "violet",
+      "keys": [
+        "angelboots#400",
+        "sprite:angelboots_t5_thumb"
+      ]
+    },
+    {
+      "label": "AngelPin_T1#210",
+      "theme": "sapphire",
+      "keys": [
+        "angelpin_t1#210",
+        "sprite:angelpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "AngelPin_T2#211",
+      "theme": "ember",
+      "keys": [
+        "angelpin_t2#211",
+        "sprite:angelpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "AngelPin_T3#212",
+      "theme": "azure",
+      "keys": [
+        "angelpin_t3#212",
+        "sprite:angelpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "AngelPin_T4#213",
+      "theme": "sapphire",
+      "keys": [
+        "angelpin_t4#213",
+        "sprite:angelpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "AngelPin_T5#214",
+      "theme": "ember",
+      "keys": [
+        "angelpin_t5#214",
+        "sprite:angelpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Anna / Ability Swap",
+      "theme": "azure",
+      "keys": [
+        "anna#1/abilityswap"
+      ]
+    },
+    {
+      "label": "ANNA#1",
+      "theme": "azure",
+      "keys": [
+        "anna#1"
+      ]
+    },
+    {
+      "label": "ApplyPoisonToHitboxes",
+      "theme": "sapphire",
+      "keys": [
+        "p_applypoisontohitboxes#223"
+      ]
+    },
+    {
+      "label": "Arena Game Mode",
+      "theme": "gold",
+      "keys": [
+        "arenagamemode#live"
+      ]
+    },
+    {
+      "label": "Arena Lobby Config",
+      "theme": "coral",
+      "keys": [
+        "arenalobbyconfig#default"
+      ]
+    },
+    {
+      "label": "AtmasBag#401",
+      "theme": "sapphire",
+      "keys": [
+        "atmasbag#401",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "AugmentManager",
+      "theme": "azure",
+      "keys": [
+        "augmentmanager"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "ember",
+      "keys": [
+        "item_ability_bloodknife#434/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "violet",
+      "keys": [
+        "item_ability_brainfreeze#435/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "violet",
+      "keys": [
+        "item_ability_chains#436/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_dash#437/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "violet",
+      "keys": [
+        "item_ability_knockback#439/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "azure",
+      "keys": [
+        "item_ability_oxygendash#440/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_protectzone#441/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "coral",
+      "keys": [
+        "item_ability_reboot#442/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "violet",
+      "keys": [
+        "item_ability_slimedash#443/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "azure",
+      "keys": [
+        "item_ability_slimejump#444/behaviour"
+      ]
+    },
+    {
+      "label": "Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_virus#447/behaviour"
+      ]
+    },
+    {
+      "label": "BerserkerPin_T1#215",
+      "theme": "gold",
+      "keys": [
+        "berserkerpin_t1#215",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "BerserkerPin_T2#216",
+      "theme": "coral",
+      "keys": [
+        "berserkerpin_t2#216",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "BerserkerPin_T3#217",
+      "theme": "violet",
+      "keys": [
+        "berserkerpin_t3#217",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "BerserkerPin_T4#218",
+      "theme": "gold",
+      "keys": [
+        "berserkerpin_t4#218",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "BerserkerPin_T5#219",
+      "theme": "coral",
+      "keys": [
+        "berserkerpin_t5#219",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Bishop / Ability Swap",
+      "theme": "sapphire",
+      "keys": [
+        "bishop#11/abilityswap"
+      ]
+    },
+    {
+      "label": "BISHOP#11",
+      "theme": "ember",
+      "keys": [
+        "bishop#11"
+      ]
+    },
+    {
+      "label": "BlitzBuff",
+      "theme": "gold",
+      "keys": [
+        "p_blitzbuff#386"
+      ]
+    },
+    {
+      "label": "Blood Hunter",
+      "theme": "gold",
+      "keys": [
+        "p_buff_bloodhunter#197"
+      ]
+    },
+    {
+      "label": "BloodBoots#402",
+      "theme": "azure",
+      "keys": [
+        "bloodboots#402",
+        "sprite:bloodboots_thumb"
+      ]
+    },
+    {
+      "label": "BulkyBag_T1#160",
+      "theme": "coral",
+      "keys": [
+        "bulkybag_t1#160",
+        "sprite:item_backpack_hp"
+      ]
+    },
+    {
+      "label": "BulkyBag_T2#161",
+      "theme": "gold",
+      "keys": [
+        "bulkybag_t2#161",
+        "sprite:item_backpack_hp"
+      ]
+    },
+    {
+      "label": "BulkyBag_T3#162",
+      "theme": "violet",
+      "keys": [
+        "bulkybag_t3#162",
+        "sprite:item_backpack_hp"
+      ]
+    },
+    {
+      "label": "BulkyBag_T4#163",
+      "theme": "coral",
+      "keys": [
+        "bulkybag_t4#163",
+        "sprite:item_backpack_hp"
+      ]
+    },
+    {
+      "label": "BulkyBag_T5#164",
+      "theme": "gold",
+      "keys": [
+        "bulkybag_t5#164",
+        "sprite:item_backpack_hp"
+      ]
+    },
+    {
+      "label": "BulkyBoots_T1#165",
+      "theme": "coral",
+      "keys": [
+        "bulkyboots_t1#165",
+        "sprite:item_boots_hp"
+      ]
+    },
+    {
+      "label": "BulkyBoots_T2#166",
+      "theme": "gold",
+      "keys": [
+        "bulkyboots_t2#166",
+        "sprite:item_boots_hp"
+      ]
+    },
+    {
+      "label": "BulkyBoots_T3#167",
+      "theme": "violet",
+      "keys": [
+        "bulkyboots_t3#167",
+        "sprite:item_boots_hp"
+      ]
+    },
+    {
+      "label": "BulkyBoots_T4#168",
+      "theme": "coral",
+      "keys": [
+        "bulkyboots_t4#168",
+        "sprite:item_boots_hp"
+      ]
+    },
+    {
+      "label": "BulkyBoots_T5#169",
+      "theme": "gold",
+      "keys": [
+        "bulkyboots_t5#169",
+        "sprite:item_boots_hp"
+      ]
+    },
+    {
+      "label": "BulkyCap_T1#170",
+      "theme": "ember",
+      "keys": [
+        "bulkycap_t1#170",
+        "sprite:item_hat_hp"
+      ]
+    },
+    {
+      "label": "BulkyCap_T2#171",
+      "theme": "sapphire",
+      "keys": [
+        "bulkycap_t2#171",
+        "sprite:item_hat_hp"
+      ]
+    },
+    {
+      "label": "BulkyCap_T3#172",
+      "theme": "azure",
+      "keys": [
+        "bulkycap_t3#172",
+        "sprite:item_hat_hp"
+      ]
+    },
+    {
+      "label": "BulkyCap_T4#173",
+      "theme": "ember",
+      "keys": [
+        "bulkycap_t4#173",
+        "sprite:item_hat_hp"
+      ]
+    },
+    {
+      "label": "BulkyCap_T5#174",
+      "theme": "sapphire",
+      "keys": [
+        "bulkycap_t5#174",
+        "sprite:item_hat_hp"
+      ]
+    },
+    {
+      "label": "ChainLightningPin_T1#220",
+      "theme": "coral",
+      "keys": [
+        "chainlightningpin_t1#220",
+        "sprite:chainlightningpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ChainLightningPin_T2#221",
+      "theme": "violet",
+      "keys": [
+        "chainlightningpin_t2#221",
+        "sprite:chainlightningpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ChainLightningPin_T3#222",
+      "theme": "gold",
+      "keys": [
+        "chainlightningpin_t3#222",
+        "sprite:chainlightningpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ChainLightningPin_T4#223",
+      "theme": "coral",
+      "keys": [
+        "chainlightningpin_t4#223",
+        "sprite:chainlightningpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ChainLightningPin_T5#224",
+      "theme": "violet",
+      "keys": [
+        "chainlightningpin_t5#224",
+        "sprite:chainlightningpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "ember",
+      "keys": [
+        "kitsu#0/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "coral",
+      "keys": [
+        "anna#1/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "azure",
+      "keys": [
+        "chuck#2/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "coral",
+      "keys": [
+        "sashimi#3/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "violet",
+      "keys": [
+        "kiddo#4/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "ember",
+      "keys": [
+        "zook#5/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "azure",
+      "keys": [
+        "skinny#6/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "violet",
+      "keys": [
+        "froggy#7/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "ember",
+      "keys": [
+        "teevee#8/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "gold",
+      "keys": [
+        "sofia#9/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "coral",
+      "keys": [
+        "jiro#10/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "violet",
+      "keys": [
+        "bishop#11/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "coral",
+      "keys": [
+        "eve#12/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "sapphire",
+      "keys": [
+        "kat#13/characterstate"
+      ]
+    },
+    {
+      "label": "CharacterState",
+      "theme": "coral",
+      "keys": [
+        "rocky#14/characterstate"
+      ]
+    },
+    {
+      "label": "ChronoBag_T1#175",
+      "theme": "coral",
+      "keys": [
+        "chronobag_t1#175",
+        "sprite:item_backpack_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBag_T2#176",
+      "theme": "gold",
+      "keys": [
+        "chronobag_t2#176",
+        "sprite:item_backpack_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBag_T3#177",
+      "theme": "violet",
+      "keys": [
+        "chronobag_t3#177",
+        "sprite:item_backpack_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBag_T4#178",
+      "theme": "coral",
+      "keys": [
+        "chronobag_t4#178",
+        "sprite:item_backpack_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBag_T5#179",
+      "theme": "gold",
+      "keys": [
+        "chronobag_t5#179",
+        "sprite:item_backpack_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBoots_T1#180",
+      "theme": "azure",
+      "keys": [
+        "chronoboots_t1#180",
+        "sprite:item_boots_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBoots_T2#181",
+      "theme": "ember",
+      "keys": [
+        "chronoboots_t2#181",
+        "sprite:item_boots_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBoots_T3#182",
+      "theme": "sapphire",
+      "keys": [
+        "chronoboots_t3#182",
+        "sprite:item_boots_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBoots_T4#183",
+      "theme": "azure",
+      "keys": [
+        "chronoboots_t4#183",
+        "sprite:item_boots_cdr"
+      ]
+    },
+    {
+      "label": "ChronoBoots_T5#184",
+      "theme": "ember",
+      "keys": [
+        "chronoboots_t5#184",
+        "sprite:item_boots_cdr"
+      ]
+    },
+    {
+      "label": "ChronoCap_T1#185",
+      "theme": "ember",
+      "keys": [
+        "chronocap_t1#185",
+        "sprite:item_hat_cdr"
+      ]
+    },
+    {
+      "label": "ChronoCap_T2#186",
+      "theme": "sapphire",
+      "keys": [
+        "chronocap_t2#186",
+        "sprite:item_hat_cdr"
+      ]
+    },
+    {
+      "label": "ChronoCap_T3#187",
+      "theme": "azure",
+      "keys": [
+        "chronocap_t3#187",
+        "sprite:item_hat_cdr"
+      ]
+    },
+    {
+      "label": "ChronoCap_T4#188",
+      "theme": "ember",
+      "keys": [
+        "chronocap_t4#188",
+        "sprite:item_hat_cdr"
+      ]
+    },
+    {
+      "label": "ChronoCap_T5#189",
+      "theme": "sapphire",
+      "keys": [
+        "chronocap_t5#189",
+        "sprite:item_hat_cdr"
+      ]
+    },
+    {
+      "label": "Chuck / Ability Swap",
+      "theme": "violet",
+      "keys": [
+        "chuck#2/abilityswap"
+      ]
+    },
+    {
+      "label": "CHUCK#2",
+      "theme": "coral",
+      "keys": [
+        "chuck#2"
+      ]
+    },
+    {
+      "label": "Clower#403",
+      "theme": "sapphire",
+      "keys": [
+        "clower#403",
+        "sprite:item_torso_flowercow"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_bananapeel#0/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_barrel#1/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_barrelfrost#2/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_barrelpushable#3/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_baseballbat#4/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_beartrap#5/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_beehive#6/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_brainfreeze#7/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_bumper#8/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_cactus#9/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_claymore#10/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_explosive_c4#11/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_fish_piranha#12/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_fish_puffer#13/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_fish_slime#14/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_flamethrower#15/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_foolsgold#16/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "azure",
+      "keys": [
+        "consumable_grenade_lob#17/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_grenade_smoke#18/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_grenade_stun#19/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_harpoon#20/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_hourglass#21/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_jetpack#22/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_juice#23/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_jumppad#24/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_jumppadinvisible#25/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_katana#26/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "azure",
+      "keys": [
+        "consumable_machinegun#29/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "azure",
+      "keys": [
+        "consumable_pistol#30/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_pizza#31/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_rcdrone#32/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_rcxd#33/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_revive#34/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_revolver#35/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_rock#36/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_rpg#37/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_shieldpowder#38/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "azure",
+      "keys": [
+        "consumable_shotgun#39/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_sincityfollower#40/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_slimedash#41/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_slimejump#42/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_sniper#43/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_snowman#44/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_sword#45/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_telescope#46/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_translocator#47/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_turret#50/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_voidgrenade#51/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_ward#52/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_l_attackspeed#53/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_bapclone#54/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_chains#55/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "azure",
+      "keys": [
+        "consumable_l_dash#56/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_firewaveempower#57/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_gravity#58/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_hpbonus#59/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_knockback#60/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "gold",
+      "keys": [
+        "consumable_l_protectzone#61/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "ember",
+      "keys": [
+        "consumable_l_reboot#62/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_l_virus#63/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable Behaviour",
+      "theme": "coral",
+      "keys": [
+        "consumable_l_swapper#448/consumablebehaviour"
+      ]
+    },
+    {
+      "label": "Consumable_BananaPeel#0",
+      "theme": "ember",
+      "keys": [
+        "consumable_bananapeel#0",
+        "sprite:consumable_bananapeel_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Barrel#1",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_barrel#1",
+        "sprite:consumable_barrel_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BarrelFrost#2",
+      "theme": "gold",
+      "keys": [
+        "consumable_barrelfrost#2",
+        "sprite:consumable_barrelfrost_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BarrelPushable#3",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_barrelpushable#3",
+        "sprite:consumable_pushable_barrel_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BaseballBat#4",
+      "theme": "azure",
+      "keys": [
+        "consumable_baseballbat#4",
+        "sprite:consumable_baseballbat_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BearTrap#5",
+      "theme": "coral",
+      "keys": [
+        "consumable_beartrap#5",
+        "sprite:consumable_beartrap_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BeeHive#6",
+      "theme": "coral",
+      "keys": [
+        "consumable_beehive#6",
+        "sprite:consumable_beehive_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_BrainFreeze#7",
+      "theme": "coral",
+      "keys": [
+        "consumable_brainfreeze#7",
+        "sprite:consumable_brainfreeze_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Bumper#8",
+      "theme": "ember",
+      "keys": [
+        "consumable_bumper#8",
+        "sprite:bumper_base_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Cactus#9",
+      "theme": "gold",
+      "keys": [
+        "consumable_cactus#9",
+        "sprite:consumable_cactus_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Claymore#10",
+      "theme": "azure",
+      "keys": [
+        "consumable_claymore#10",
+        "sprite:consumable_claymore_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Explosive_C4#11",
+      "theme": "azure",
+      "keys": [
+        "consumable_explosive_c4#11",
+        "sprite:challengetutorial_winmatches"
+      ]
+    },
+    {
+      "label": "Consumable_Fish_Piranha#12",
+      "theme": "ember",
+      "keys": [
+        "consumable_fish_piranha#12",
+        "sprite:consumable_fish_piranha_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Fish_Puffer#13",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_fish_puffer#13",
+        "sprite:consumable_fish_puffer_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Fish_Slime#14",
+      "theme": "violet",
+      "keys": [
+        "consumable_fish_slime#14",
+        "sprite:consumable_fish_slime_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Flamethrower#15",
+      "theme": "gold",
+      "keys": [
+        "consumable_flamethrower#15",
+        "sprite:consumable_flamethrower_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_FoolsGold#16",
+      "theme": "gold",
+      "keys": [
+        "consumable_foolsgold#16",
+        "sprite:foolsgold_consumable_outlined_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Grenade_Lob#17",
+      "theme": "coral",
+      "keys": [
+        "consumable_grenade_lob#17",
+        "sprite:t_vfx_flare_02"
+      ]
+    },
+    {
+      "label": "Consumable_Grenade_Smoke#18",
+      "theme": "ember",
+      "keys": [
+        "consumable_grenade_smoke#18",
+        "sprite:passive_explosivecharm_icon"
+      ]
+    },
+    {
+      "label": "Consumable_Grenade_Stun#19",
+      "theme": "ember",
+      "keys": [
+        "consumable_grenade_stun#19",
+        "sprite:thememode_dark"
+      ]
+    },
+    {
+      "label": "Consumable_Harpoon#20",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_harpoon#20",
+        "sprite:consumable_harpoon_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Hourglass#21",
+      "theme": "ember",
+      "keys": [
+        "consumable_hourglass#21",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Jetpack#22",
+      "theme": "gold",
+      "keys": [
+        "consumable_jetpack#22",
+        "sprite:consumable_jetpack_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Juice#23",
+      "theme": "ember",
+      "keys": [
+        "consumable_juice#23",
+        "sprite:item_healthpotion"
+      ]
+    },
+    {
+      "label": "Consumable_JumpPad#24",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_jumppad#24",
+        "sprite:consumable_jumppad_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_JumpPadInvisible#25",
+      "theme": "ember",
+      "keys": [
+        "consumable_jumppadinvisible#25",
+        "sprite:consumable_jumppadinvisible_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Katana#26",
+      "theme": "violet",
+      "keys": [
+        "consumable_katana#26",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "Consumable_Key_Kingdom#28",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_key_kingdom#28",
+        "sprite:consumable_locked_crate_key_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Key#27",
+      "theme": "coral",
+      "keys": [
+        "consumable_key#27",
+        "sprite:consumable_locked_crate_key_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_L_AttackSpeed#53",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_attackspeed#53",
+        "sprite:ability_attackmelee"
+      ]
+    },
+    {
+      "label": "Consumable_L_BapClone#54",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_bapclone#54",
+        "sprite:teevee_space_sprite"
+      ]
+    },
+    {
+      "label": "Consumable_L_Chains#55",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_chains#55",
+        "sprite:lootability_chains"
+      ]
+    },
+    {
+      "label": "Consumable_L_Dash#56",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_dash#56",
+        "sprite:lootability_dash"
+      ]
+    },
+    {
+      "label": "Consumable_L_FirewaveEmpower#57",
+      "theme": "ember",
+      "keys": [
+        "consumable_l_firewaveempower#57",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_L_Gravity#58",
+      "theme": "gold",
+      "keys": [
+        "consumable_l_gravity#58",
+        "sprite:donotship"
+      ]
+    },
+    {
+      "label": "Consumable_L_HpBonus#59",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_hpbonus#59",
+        "sprite:p_stat_hp"
+      ]
+    },
+    {
+      "label": "Consumable_L_Knockback#60",
+      "theme": "coral",
+      "keys": [
+        "consumable_l_knockback#60",
+        "sprite:lootability_knockback"
+      ]
+    },
+    {
+      "label": "Consumable_L_ProtectZone#61",
+      "theme": "ember",
+      "keys": [
+        "consumable_l_protectzone#61",
+        "sprite:lootability_allyshield"
+      ]
+    },
+    {
+      "label": "Consumable_L_Reboot#62",
+      "theme": "violet",
+      "keys": [
+        "consumable_l_reboot#62",
+        "sprite:lootability_cooldown"
+      ]
+    },
+    {
+      "label": "Consumable_L_Swapper#448",
+      "theme": "azure",
+      "keys": [
+        "consumable_l_swapper#448",
+        "sprite:lootability_swapper"
+      ]
+    },
+    {
+      "label": "Consumable_L_Virus#63",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_l_virus#63",
+        "sprite:lootability_poison"
+      ]
+    },
+    {
+      "label": "Consumable_MachineGun#29",
+      "theme": "violet",
+      "keys": [
+        "consumable_machinegun#29",
+        "sprite:consumable_machinegun_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Pistol#30",
+      "theme": "gold",
+      "keys": [
+        "consumable_pistol#30",
+        "sprite:consumable_pistol_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Pizza#31",
+      "theme": "coral",
+      "keys": [
+        "consumable_pizza#31",
+        "sprite:consumable_pizza_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_RCDrone#32",
+      "theme": "coral",
+      "keys": [
+        "consumable_rcdrone#32",
+        "sprite:consumable_rcdrone_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_RCXD#33",
+      "theme": "ember",
+      "keys": [
+        "consumable_rcxd#33",
+        "sprite:consumable_rcxd_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Revive#34",
+      "theme": "gold",
+      "keys": [
+        "consumable_revive#34",
+        "sprite:revive_icon"
+      ]
+    },
+    {
+      "label": "Consumable_Revolver#35",
+      "theme": "azure",
+      "keys": [
+        "consumable_revolver#35",
+        "sprite:consumable_revolver_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Rock#36",
+      "theme": "violet",
+      "keys": [
+        "consumable_rock#36",
+        "sprite:consumable_rock_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_RPG#37",
+      "theme": "ember",
+      "keys": [
+        "consumable_rpg#37",
+        "sprite:consumable_rpg_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_ShieldPowder#38",
+      "theme": "sapphire",
+      "keys": [
+        "consumable_shieldpowder#38",
+        "sprite:consumable_shieldpowder_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Shotgun#39",
+      "theme": "violet",
+      "keys": [
+        "consumable_shotgun#39",
+        "sprite:consumable_shotgun_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_SinCityFollower#40",
+      "theme": "ember",
+      "keys": [
+        "consumable_sincityfollower#40",
+        "sprite:passive_sincity_bleed_sprite_0"
+      ]
+    },
+    {
+      "label": "Consumable_SlimeDash#41",
+      "theme": "ember",
+      "keys": [
+        "consumable_slimedash#41",
+        "sprite:lootability_slimedash"
+      ]
+    },
+    {
+      "label": "Consumable_SlimeJump#42",
+      "theme": "coral",
+      "keys": [
+        "consumable_slimejump#42",
+        "sprite:lootability_slimejump"
+      ]
+    },
+    {
+      "label": "Consumable_Sniper#43",
+      "theme": "violet",
+      "keys": [
+        "consumable_sniper#43",
+        "sprite:ability_turret"
+      ]
+    },
+    {
+      "label": "Consumable_Snowman#44",
+      "theme": "ember",
+      "keys": [
+        "consumable_snowman#44",
+        "sprite:consumable_snowman_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Sword#45",
+      "theme": "gold",
+      "keys": [
+        "consumable_sword#45",
+        "sprite:area_header_bottom"
+      ]
+    },
+    {
+      "label": "Consumable_Telescope#46",
+      "theme": "violet",
+      "keys": [
+        "consumable_telescope#46",
+        "sprite:consumable_telescope_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Translocator#47",
+      "theme": "azure",
+      "keys": [
+        "consumable_translocator#47",
+        "sprite:consumable_translocator_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_Trash1#48",
+      "theme": "ember",
+      "keys": [
+        "consumable_trash1#48",
+        "sprite:sticker_youtrash"
+      ]
+    },
+    {
+      "label": "Consumable_Trash2#49",
+      "theme": "azure",
+      "keys": [
+        "consumable_trash2#49",
+        "sprite:sticker_youtrash"
+      ]
+    },
+    {
+      "label": "Consumable_Turret#50",
+      "theme": "ember",
+      "keys": [
+        "consumable_turret#50",
+        "sprite:consumable_turret_thumb"
+      ]
+    },
+    {
+      "label": "Consumable_VoidGrenade#51",
+      "theme": "gold",
+      "keys": [
+        "consumable_voidgrenade#51",
+        "sprite:bishop_space_sprite"
+      ]
+    },
+    {
+      "label": "Consumable_Ward#52",
+      "theme": "ember",
+      "keys": [
+        "consumable_ward#52",
+        "sprite:consumable_translocator_thumb"
+      ]
+    },
+    {
+      "label": "CritBag_T1#190",
+      "theme": "gold",
+      "keys": [
+        "critbag_t1#190",
+        "sprite:critbag_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBag_T2#191",
+      "theme": "coral",
+      "keys": [
+        "critbag_t2#191",
+        "sprite:critbag_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBag_T3#192",
+      "theme": "violet",
+      "keys": [
+        "critbag_t3#192",
+        "sprite:critbag_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBag_T4#193",
+      "theme": "gold",
+      "keys": [
+        "critbag_t4#193",
+        "sprite:critbag_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBag_T5#194",
+      "theme": "coral",
+      "keys": [
+        "critbag_t5#194",
+        "sprite:critbag_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBoots_T1#195",
+      "theme": "coral",
+      "keys": [
+        "critboots_t1#195",
+        "sprite:critboots_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBoots_T2#196",
+      "theme": "gold",
+      "keys": [
+        "critboots_t2#196",
+        "sprite:critboots_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBoots_T3#197",
+      "theme": "violet",
+      "keys": [
+        "critboots_t3#197",
+        "sprite:critboots_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBoots_T4#198",
+      "theme": "coral",
+      "keys": [
+        "critboots_t4#198",
+        "sprite:critboots_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritBoots_T5#199",
+      "theme": "gold",
+      "keys": [
+        "critboots_t5#199",
+        "sprite:critboots_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritCap_T1#200",
+      "theme": "coral",
+      "keys": [
+        "critcap_t1#200",
+        "sprite:critcap_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritCap_T2#201",
+      "theme": "gold",
+      "keys": [
+        "critcap_t2#201",
+        "sprite:critcap_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritCap_T3#202",
+      "theme": "violet",
+      "keys": [
+        "critcap_t3#202",
+        "sprite:critcap_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritCap_T4#203",
+      "theme": "coral",
+      "keys": [
+        "critcap_t4#203",
+        "sprite:critcap_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritCap_T5#204",
+      "theme": "gold",
+      "keys": [
+        "critcap_t5#204",
+        "sprite:critcap_t1_thumb"
+      ]
+    },
+    {
+      "label": "CritGlasses#404",
+      "theme": "violet",
+      "keys": [
+        "critglasses#404",
+        "sprite:item_sunglasses"
+      ]
+    },
+    {
+      "label": "CriticalAbilityPin_T1#225",
+      "theme": "sapphire",
+      "keys": [
+        "criticalabilitypin_t1#225",
+        "sprite:criticalabilitypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "CriticalAbilityPin_T2#226",
+      "theme": "ember",
+      "keys": [
+        "criticalabilitypin_t2#226",
+        "sprite:criticalabilitypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "CriticalAbilityPin_T3#227",
+      "theme": "azure",
+      "keys": [
+        "criticalabilitypin_t3#227",
+        "sprite:criticalabilitypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "CriticalAbilityPin_T4#228",
+      "theme": "sapphire",
+      "keys": [
+        "criticalabilitypin_t4#228",
+        "sprite:criticalabilitypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "CriticalAbilityPin_T5#229",
+      "theme": "ember",
+      "keys": [
+        "criticalabilitypin_t5#229",
+        "sprite:criticalabilitypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Current Arena Settings",
+      "theme": "sapphire",
+      "keys": [
+        "arenapreset#current"
+      ]
+    },
+    {
+      "label": "Current Lobby",
+      "theme": "coral",
+      "keys": [
+        "arenalobby#current"
+      ]
+    },
+    {
+      "label": "DamageCD_T1#111",
+      "theme": "azure",
+      "keys": [
+        "damagecd_t1#111",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "DamageCD_T2#112",
+      "theme": "sapphire",
+      "keys": [
+        "damagecd_t2#112",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "DamageCD_T3#113",
+      "theme": "ember",
+      "keys": [
+        "damagecd_t3#113",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "DamageCD_T4#114",
+      "theme": "azure",
+      "keys": [
+        "damagecd_t4#114",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "DamageCD_T5#115",
+      "theme": "sapphire",
+      "keys": [
+        "damagecd_t5#115",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "DamagingBlowPin_T1#230",
+      "theme": "violet",
+      "keys": [
+        "damagingblowpin_t1#230",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "DamagingBlowPin_T2#231",
+      "theme": "gold",
+      "keys": [
+        "damagingblowpin_t2#231",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "DamagingBlowPin_T3#232",
+      "theme": "coral",
+      "keys": [
+        "damagingblowpin_t3#232",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "DamagingBlowPin_T4#233",
+      "theme": "violet",
+      "keys": [
+        "damagingblowpin_t4#233",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "DamagingBlowPin_T5#234",
+      "theme": "gold",
+      "keys": [
+        "damagingblowpin_t5#234",
+        "sprite:item_sword"
+      ]
+    },
+    {
+      "label": "Default Preset",
+      "theme": "sapphire",
+      "keys": [
+        "arenapreset#default"
+      ]
+    },
+    {
+      "label": "Dmg_Mod",
+      "theme": "coral",
+      "keys": [
+        "p_dmg_mod#257"
+      ]
+    },
+    {
+      "label": "EagleEye_T1#116",
+      "theme": "sapphire",
+      "keys": [
+        "eagleeye_t1#116",
+        "sprite:item_head_slimebuckethat"
+      ]
+    },
+    {
+      "label": "EagleEye_T2#117",
+      "theme": "ember",
+      "keys": [
+        "eagleeye_t2#117",
+        "sprite:item_head_slimebuckethat"
+      ]
+    },
+    {
+      "label": "EagleEye_T3#118",
+      "theme": "azure",
+      "keys": [
+        "eagleeye_t3#118",
+        "sprite:item_head_slimebuckethat"
+      ]
+    },
+    {
+      "label": "EagleEye_T4#119",
+      "theme": "sapphire",
+      "keys": [
+        "eagleeye_t4#119",
+        "sprite:item_head_slimebuckethat"
+      ]
+    },
+    {
+      "label": "EagleEye_T5#120",
+      "theme": "gold",
+      "keys": [
+        "eagleeye_t5#120",
+        "sprite:item_head_slimebuckethat"
+      ]
+    },
+    {
+      "label": "EmergencyFreezePin_T1#235",
+      "theme": "azure",
+      "keys": [
+        "emergencyfreezepin_t1#235",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "EmergencyFreezePin_T2#236",
+      "theme": "sapphire",
+      "keys": [
+        "emergencyfreezepin_t2#236",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "EmergencyFreezePin_T3#237",
+      "theme": "ember",
+      "keys": [
+        "emergencyfreezepin_t3#237",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "EmergencyFreezePin_T4#238",
+      "theme": "azure",
+      "keys": [
+        "emergencyfreezepin_t4#238",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "EmergencyFreezePin_T5#239",
+      "theme": "sapphire",
+      "keys": [
+        "emergencyfreezepin_t5#239",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "Eve / Ability Swap",
+      "theme": "ember",
+      "keys": [
+        "eve#12/abilityswap"
+      ]
+    },
+    {
+      "label": "EVE#12",
+      "theme": "ember",
+      "keys": [
+        "eve#12"
+      ]
+    },
+    {
+      "label": "ExplosionCap#405",
+      "theme": "gold",
+      "keys": [
+        "explosioncap#405",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExplosivePin_T1#240",
+      "theme": "gold",
+      "keys": [
+        "explosivepin_t1#240",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExplosivePin_T2#241",
+      "theme": "coral",
+      "keys": [
+        "explosivepin_t2#241",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExplosivePin_T3#242",
+      "theme": "violet",
+      "keys": [
+        "explosivepin_t3#242",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExplosivePin_T4#243",
+      "theme": "gold",
+      "keys": [
+        "explosivepin_t4#243",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExplosivePin_T5#244",
+      "theme": "coral",
+      "keys": [
+        "explosivepin_t5#244",
+        "sprite:explosioncap_t5_thumb"
+      ]
+    },
+    {
+      "label": "ExtraHPPin_T1#245",
+      "theme": "gold",
+      "keys": [
+        "extrahppin_t1#245",
+        "sprite:extrahppin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ExtraHPPin_T2#246",
+      "theme": "coral",
+      "keys": [
+        "extrahppin_t2#246",
+        "sprite:extrahppin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ExtraHPPin_T3#247",
+      "theme": "violet",
+      "keys": [
+        "extrahppin_t3#247",
+        "sprite:extrahppin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ExtraHPPin_T4#248",
+      "theme": "gold",
+      "keys": [
+        "extrahppin_t4#248",
+        "sprite:extrahppin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ExtraHPPin_T5#249",
+      "theme": "coral",
+      "keys": [
+        "extrahppin_t5#249",
+        "sprite:extrahppin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FirePin_T1#250",
+      "theme": "gold",
+      "keys": [
+        "firepin_t1#250",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "FirePin_T2#251",
+      "theme": "violet",
+      "keys": [
+        "firepin_t2#251",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "FirePin_T3#252",
+      "theme": "coral",
+      "keys": [
+        "firepin_t3#252",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "FirePin_T4#253",
+      "theme": "gold",
+      "keys": [
+        "firepin_t4#253",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "FirePin_T5#254",
+      "theme": "violet",
+      "keys": [
+        "firepin_t5#254",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "FireWavePin_T1#255",
+      "theme": "coral",
+      "keys": [
+        "firewavepin_t1#255",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FireWavePin_T2#256",
+      "theme": "gold",
+      "keys": [
+        "firewavepin_t2#256",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FireWavePin_T3#257",
+      "theme": "violet",
+      "keys": [
+        "firewavepin_t3#257",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FireWavePin_T4#258",
+      "theme": "coral",
+      "keys": [
+        "firewavepin_t4#258",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FireWavePin_T5#259",
+      "theme": "gold",
+      "keys": [
+        "firewavepin_t5#259",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "FishingCap#406",
+      "theme": "gold",
+      "keys": [
+        "fishingcap#406",
+        "sprite:fishingcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "FishingRod",
+      "theme": "azure",
+      "keys": [
+        "arenafishingrod#fishingrod"
+      ]
+    },
+    {
+      "label": "Froggy / Ability Swap",
+      "theme": "sapphire",
+      "keys": [
+        "froggy#7/abilityswap"
+      ]
+    },
+    {
+      "label": "FROGGY#7",
+      "theme": "ember",
+      "keys": [
+        "froggy#7"
+      ]
+    },
+    {
+      "label": "Gold#64",
+      "theme": "violet",
+      "keys": [
+        "gold#64",
+        "sprite:golditem_icon"
+      ]
+    },
+    {
+      "label": "Headband_T1#66",
+      "theme": "ember",
+      "keys": [
+        "headband_t1#66",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "Headband_T2#67",
+      "theme": "azure",
+      "keys": [
+        "headband_t2#67",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "Headband_T3#68",
+      "theme": "sapphire",
+      "keys": [
+        "headband_t3#68",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "Headband_T4#69",
+      "theme": "ember",
+      "keys": [
+        "headband_t4#69",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "Headband_T5#70",
+      "theme": "violet",
+      "keys": [
+        "headband_t5#70",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "HealingSkillsPin_T1#260",
+      "theme": "ember",
+      "keys": [
+        "healingskillspin_t1#260",
+        "sprite:healingskillspin_t1_thumb"
+      ]
+    },
+    {
+      "label": "HealingSkillsPin_T2#261",
+      "theme": "sapphire",
+      "keys": [
+        "healingskillspin_t2#261",
+        "sprite:healingskillspin_t1_thumb"
+      ]
+    },
+    {
+      "label": "HealingSkillsPin_T3#262",
+      "theme": "azure",
+      "keys": [
+        "healingskillspin_t3#262",
+        "sprite:healingskillspin_t1_thumb"
+      ]
+    },
+    {
+      "label": "HealingSkillsPin_T4#263",
+      "theme": "ember",
+      "keys": [
+        "healingskillspin_t4#263",
+        "sprite:healingskillspin_t1_thumb"
+      ]
+    },
+    {
+      "label": "HealingSkillsPin_T5#264",
+      "theme": "sapphire",
+      "keys": [
+        "healingskillspin_t5#264",
+        "sprite:healingskillspin_t1_thumb"
+      ]
+    },
+    {
+      "label": "HealZoneBag#407",
+      "theme": "azure",
+      "keys": [
+        "healzonebag#407",
+        "sprite:item_torso_squarebackpack"
+      ]
+    },
+    {
+      "label": "HeartBag_T1#71",
+      "theme": "violet",
+      "keys": [
+        "heartbag_t1#71",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "HeartBag_T2#72",
+      "theme": "coral",
+      "keys": [
+        "heartbag_t2#72",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "HeartBag_T3#73",
+      "theme": "gold",
+      "keys": [
+        "heartbag_t3#73",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "HeartBag_T4#74",
+      "theme": "violet",
+      "keys": [
+        "heartbag_t4#74",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "HeartBag_T5#75",
+      "theme": "coral",
+      "keys": [
+        "heartbag_t5#75",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "HittyWittyPin_T1#265",
+      "theme": "sapphire",
+      "keys": [
+        "hittywittypin_t1#265",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "HittyWittyPin_T2#266",
+      "theme": "ember",
+      "keys": [
+        "hittywittypin_t2#266",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "HittyWittyPin_T3#267",
+      "theme": "azure",
+      "keys": [
+        "hittywittypin_t3#267",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "HittyWittyPin_T4#268",
+      "theme": "sapphire",
+      "keys": [
+        "hittywittypin_t4#268",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "HittyWittyPin_T5#269",
+      "theme": "ember",
+      "keys": [
+        "hittywittypin_t5#269",
+        "sprite:consumable_hourglass_thumb"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "ember",
+      "keys": [
+        "kitsu#0/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "gold",
+      "keys": [
+        "anna#1/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "azure",
+      "keys": [
+        "chuck#2/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "violet",
+      "keys": [
+        "sashimi#3/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "violet",
+      "keys": [
+        "kiddo#4/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "sapphire",
+      "keys": [
+        "zook#5/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "sapphire",
+      "keys": [
+        "skinny#6/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "coral",
+      "keys": [
+        "froggy#7/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "sapphire",
+      "keys": [
+        "teevee#8/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "gold",
+      "keys": [
+        "sofia#9/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "violet",
+      "keys": [
+        "jiro#10/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "gold",
+      "keys": [
+        "bishop#11/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "gold",
+      "keys": [
+        "eve#12/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "ember",
+      "keys": [
+        "kat#13/hurtbox"
+      ]
+    },
+    {
+      "label": "Hurtbox",
+      "theme": "coral",
+      "keys": [
+        "rocky#14/hurtbox"
+      ]
+    },
+    {
+      "label": "Item_Ability_BloodDive#433",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_blooddive#433",
+        "sprite:passive_sincity_bleed_sprite_0"
+      ]
+    },
+    {
+      "label": "Item_Ability_BloodKnife#434",
+      "theme": "ember",
+      "keys": [
+        "item_ability_bloodknife#434",
+        "sprite:item_damage_icon"
+      ]
+    },
+    {
+      "label": "Item_Ability_BrainFreeze#435",
+      "theme": "violet",
+      "keys": [
+        "item_ability_brainfreeze#435",
+        "sprite:lootability_freeze"
+      ]
+    },
+    {
+      "label": "Item_Ability_Chains#436",
+      "theme": "gold",
+      "keys": [
+        "item_ability_chains#436",
+        "sprite:lootability_chains"
+      ]
+    },
+    {
+      "label": "Item_Ability_Dash#437",
+      "theme": "azure",
+      "keys": [
+        "item_ability_dash#437",
+        "sprite:lootability_dash"
+      ]
+    },
+    {
+      "label": "Item_Ability_HpBonus#438",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_hpbonus#438",
+        "sprite:p_stat_hp"
+      ]
+    },
+    {
+      "label": "Item_Ability_Knockback#439",
+      "theme": "coral",
+      "keys": [
+        "item_ability_knockback#439",
+        "sprite:lootability_knockback"
+      ]
+    },
+    {
+      "label": "Item_Ability_OxygenDash#440",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_oxygendash#440",
+        "sprite:lootability_dash"
+      ]
+    },
+    {
+      "label": "Item_Ability_ProtectZone#441",
+      "theme": "ember",
+      "keys": [
+        "item_ability_protectzone#441",
+        "sprite:lootability_allyshield"
+      ]
+    },
+    {
+      "label": "Item_Ability_Reboot#442",
+      "theme": "violet",
+      "keys": [
+        "item_ability_reboot#442",
+        "sprite:lootability_cooldown"
+      ]
+    },
+    {
+      "label": "Item_Ability_SlimeDash#443",
+      "theme": "gold",
+      "keys": [
+        "item_ability_slimedash#443",
+        "sprite:lootability_slimedash"
+      ]
+    },
+    {
+      "label": "Item_Ability_SlimeJump#444",
+      "theme": "sapphire",
+      "keys": [
+        "item_ability_slimejump#444",
+        "sprite:lootability_slimejump"
+      ]
+    },
+    {
+      "label": "Item_Ability_SlowArea#445",
+      "theme": "coral",
+      "keys": [
+        "item_ability_slowarea#445",
+        "sprite:lootability_slow"
+      ]
+    },
+    {
+      "label": "Item_Ability_SpawnableBumper#446",
+      "theme": "azure",
+      "keys": [
+        "item_ability_spawnablebumper#446",
+        "sprite:consumable_bumper_thumb"
+      ]
+    },
+    {
+      "label": "Item_Ability_Virus#447",
+      "theme": "azure",
+      "keys": [
+        "item_ability_virus#447",
+        "sprite:lootability_poison"
+      ]
+    },
+    {
+      "label": "ItemManager",
+      "theme": "azure",
+      "keys": [
+        "itemmanager"
+      ]
+    },
+    {
+      "label": "Jeezys_T1#76",
+      "theme": "sapphire",
+      "keys": [
+        "jeezys_t1#76",
+        "sprite:item_jeezys"
+      ]
+    },
+    {
+      "label": "Jeezys_T2#77",
+      "theme": "azure",
+      "keys": [
+        "jeezys_t2#77",
+        "sprite:item_jeezys"
+      ]
+    },
+    {
+      "label": "Jeezys_T3#78",
+      "theme": "ember",
+      "keys": [
+        "jeezys_t3#78",
+        "sprite:item_jeezys"
+      ]
+    },
+    {
+      "label": "Jeezys_T4#79",
+      "theme": "sapphire",
+      "keys": [
+        "jeezys_t4#79",
+        "sprite:item_jeezys"
+      ]
+    },
+    {
+      "label": "Jeezys_T5#80",
+      "theme": "violet",
+      "keys": [
+        "jeezys_t5#80",
+        "sprite:item_jeezys"
+      ]
+    },
+    {
+      "label": "JellyPin_T1#270",
+      "theme": "gold",
+      "keys": [
+        "jellypin_t1#270",
+        "sprite:jellypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "JellyPin_T2#271",
+      "theme": "coral",
+      "keys": [
+        "jellypin_t2#271",
+        "sprite:jellypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "JellyPin_T3#272",
+      "theme": "violet",
+      "keys": [
+        "jellypin_t3#272",
+        "sprite:jellypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "JellyPin_T4#273",
+      "theme": "gold",
+      "keys": [
+        "jellypin_t4#273",
+        "sprite:jellypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "JellyPin_T5#274",
+      "theme": "coral",
+      "keys": [
+        "jellypin_t5#274",
+        "sprite:jellypin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Jiro / Ability Swap",
+      "theme": "sapphire",
+      "keys": [
+        "jiro#10/abilityswap"
+      ]
+    },
+    {
+      "label": "JIRO#10",
+      "theme": "azure",
+      "keys": [
+        "jiro#10"
+      ]
+    },
+    {
+      "label": "Kat / Ability Swap",
+      "theme": "gold",
+      "keys": [
+        "kat#13/abilityswap"
+      ]
+    },
+    {
+      "label": "KAT#13",
+      "theme": "coral",
+      "keys": [
+        "kat#13"
+      ]
+    },
+    {
+      "label": "Kiddo / Ability Swap",
+      "theme": "azure",
+      "keys": [
+        "kiddo#4/abilityswap"
+      ]
+    },
+    {
+      "label": "KIDDO#4",
+      "theme": "azure",
+      "keys": [
+        "kiddo#4"
+      ]
+    },
+    {
+      "label": "Kitsu / Ability Swap",
+      "theme": "coral",
+      "keys": [
+        "kitsu#0/abilityswap"
+      ]
+    },
+    {
+      "label": "KITSU#0",
+      "theme": "violet",
+      "keys": [
+        "kitsu#0"
+      ]
+    },
+    {
+      "label": "LastChance_T1#121",
+      "theme": "coral",
+      "keys": [
+        "lastchance_t1#121",
+        "sprite:item_torso_bubblesatchel"
+      ]
+    },
+    {
+      "label": "LastChance_T2#122",
+      "theme": "gold",
+      "keys": [
+        "lastchance_t2#122",
+        "sprite:item_torso_bubblesatchel"
+      ]
+    },
+    {
+      "label": "LastChance_T3#123",
+      "theme": "violet",
+      "keys": [
+        "lastchance_t3#123",
+        "sprite:item_torso_bubblesatchel"
+      ]
+    },
+    {
+      "label": "LastChance_T4#124",
+      "theme": "coral",
+      "keys": [
+        "lastchance_t4#124",
+        "sprite:item_torso_bubblesatchel"
+      ]
+    },
+    {
+      "label": "LastChance_T5#125",
+      "theme": "gold",
+      "keys": [
+        "lastchance_t5#125",
+        "sprite:item_torso_bubblesatchel"
+      ]
+    },
+    {
+      "label": "LMBP01_T1#126",
+      "theme": "sapphire",
+      "keys": [
+        "lmbp01_t1#126",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP01_T2#127",
+      "theme": "ember",
+      "keys": [
+        "lmbp01_t2#127",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP01_T3#128",
+      "theme": "azure",
+      "keys": [
+        "lmbp01_t3#128",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP01_T4#129",
+      "theme": "sapphire",
+      "keys": [
+        "lmbp01_t4#129",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP01_T5#130",
+      "theme": "gold",
+      "keys": [
+        "lmbp01_t5#130",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP02_T1#131",
+      "theme": "violet",
+      "keys": [
+        "lmbp02_t1#131",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP02_T2#132",
+      "theme": "gold",
+      "keys": [
+        "lmbp02_t2#132",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP02_T3#133",
+      "theme": "coral",
+      "keys": [
+        "lmbp02_t3#133",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP02_T4#134",
+      "theme": "violet",
+      "keys": [
+        "lmbp02_t4#134",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP02_T5#135",
+      "theme": "gold",
+      "keys": [
+        "lmbp02_t5#135",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP03_T1#136",
+      "theme": "gold",
+      "keys": [
+        "lmbp03_t1#136",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP03_T2#137",
+      "theme": "violet",
+      "keys": [
+        "lmbp03_t2#137",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP03_T3#138",
+      "theme": "coral",
+      "keys": [
+        "lmbp03_t3#138",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP03_T4#139",
+      "theme": "gold",
+      "keys": [
+        "lmbp03_t4#139",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "LMBP03_T5#140",
+      "theme": "azure",
+      "keys": [
+        "lmbp03_t5#140",
+        "sprite:item_boots_hugs"
+      ]
+    },
+    {
+      "label": "Luck",
+      "theme": "ember",
+      "keys": [
+        "p_stat_luck#383"
+      ]
+    },
+    {
+      "label": "LuckyDancePin_T1#275",
+      "theme": "gold",
+      "keys": [
+        "luckydancepin_t1#275",
+        "sprite:luckydancepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "LuckyDancePin_T2#276",
+      "theme": "violet",
+      "keys": [
+        "luckydancepin_t2#276",
+        "sprite:luckydancepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "LuckyDancePin_T3#277",
+      "theme": "coral",
+      "keys": [
+        "luckydancepin_t3#277",
+        "sprite:luckydancepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "LuckyDancePin_T4#278",
+      "theme": "gold",
+      "keys": [
+        "luckydancepin_t4#278",
+        "sprite:luckydancepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "LuckyDancePin_T5#279",
+      "theme": "violet",
+      "keys": [
+        "luckydancepin_t5#279",
+        "sprite:luckydancepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MetalBoots#408",
+      "theme": "coral",
+      "keys": [
+        "metalboots#408",
+        "sprite:metalboots_t5_thumb"
+      ]
+    },
+    {
+      "label": "MetalMadePin_T1#280",
+      "theme": "azure",
+      "keys": [
+        "metalmadepin_t1#280",
+        "sprite:metalmadepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MetalMadePin_T2#281",
+      "theme": "ember",
+      "keys": [
+        "metalmadepin_t2#281",
+        "sprite:metalmadepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MetalMadePin_T3#282",
+      "theme": "sapphire",
+      "keys": [
+        "metalmadepin_t3#282",
+        "sprite:metalmadepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MetalMadePin_T4#283",
+      "theme": "azure",
+      "keys": [
+        "metalmadepin_t4#283",
+        "sprite:metalmadepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MetalMadePin_T5#284",
+      "theme": "ember",
+      "keys": [
+        "metalmadepin_t5#284",
+        "sprite:metalmadepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MoneyIsPowerPin_T1#285",
+      "theme": "sapphire",
+      "keys": [
+        "moneyispowerpin_t1#285",
+        "sprite:moneyispowerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MoneyIsPowerPin_T2#286",
+      "theme": "ember",
+      "keys": [
+        "moneyispowerpin_t2#286",
+        "sprite:moneyispowerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MoneyIsPowerPin_T3#287",
+      "theme": "azure",
+      "keys": [
+        "moneyispowerpin_t3#287",
+        "sprite:moneyispowerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MoneyIsPowerPin_T4#288",
+      "theme": "sapphire",
+      "keys": [
+        "moneyispowerpin_t4#288",
+        "sprite:moneyispowerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "MoneyIsPowerPin_T5#289",
+      "theme": "ember",
+      "keys": [
+        "moneyispowerpin_t5#289",
+        "sprite:moneyispowerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "gold",
+      "keys": [
+        "kitsu#0/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "ember",
+      "keys": [
+        "anna#1/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "gold",
+      "keys": [
+        "chuck#2/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "sapphire",
+      "keys": [
+        "sashimi#3/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "ember",
+      "keys": [
+        "kiddo#4/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "gold",
+      "keys": [
+        "zook#5/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "coral",
+      "keys": [
+        "skinny#6/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "ember",
+      "keys": [
+        "froggy#7/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "gold",
+      "keys": [
+        "teevee#8/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "azure",
+      "keys": [
+        "sofia#9/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "sapphire",
+      "keys": [
+        "jiro#10/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "azure",
+      "keys": [
+        "bishop#11/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "azure",
+      "keys": [
+        "eve#12/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "coral",
+      "keys": [
+        "kat#13/movement"
+      ]
+    },
+    {
+      "label": "Movement",
+      "theme": "ember",
+      "keys": [
+        "rocky#14/movement"
+      ]
+    },
+    {
+      "label": "OnDamage_NoodleCombo_Debuff",
+      "theme": "violet",
+      "keys": [
+        "p_ondamage_noodlecombo_debuff#411"
+      ]
+    },
+    {
+      "label": "OnDamage_ThousandCuts_Debuff",
+      "theme": "coral",
+      "keys": [
+        "p_ondamage_thousandcuts_debuff#413"
+      ]
+    },
+    {
+      "label": "P_52Pickup#218",
+      "theme": "ember",
+      "keys": [
+        "52pickup",
+        "p_52pickup#218",
+        "sprite:stat_hp",
+        "stat_hp"
+      ]
+    },
+    {
+      "label": "P_AcidReload#219",
+      "theme": "sapphire",
+      "keys": [
+        "acid reload_0",
+        "acidreload",
+        "p_acidreload#219",
+        "sprite:acid reload_0"
+      ]
+    },
+    {
+      "label": "P_AggroShield#220",
+      "theme": "coral",
+      "keys": [
+        "aggroshield",
+        "p_aggroshield#220",
+        "p_protectivebubble_pin#319",
+        "p_protectivebubble_temp#320",
+        "passive_shield_sprite",
+        "protectivebubble_pin",
+        "protectivebubble_temp",
+        "sprite:passive_shield_sprite"
+      ]
+    },
+    {
+      "label": "P_AO_FearSkull#9",
+      "theme": "coral",
+      "keys": [
+        "ao_fearskull",
+        "p_ao_fearskull#9",
+        "skull_throw_thumb",
+        "sprite:skull_throw_thumb"
+      ]
+    },
+    {
+      "label": "P_AO_Flamethrower#1",
+      "theme": "sapphire",
+      "keys": [
+        "ao_flamethrower",
+        "consumable_flamethrower_thumb",
+        "p_ao_flamethrower#1",
+        "sprite:consumable_flamethrower_thumb"
+      ]
+    },
+    {
+      "label": "P_AO_Harpoon#2",
+      "theme": "ember",
+      "keys": [
+        "ao_harpoon",
+        "consumable_harpoon_thumb",
+        "p_ao_harpoon#2",
+        "sprite:consumable_harpoon_thumb"
+      ]
+    },
+    {
+      "label": "P_AO_MachineGun#3",
+      "theme": "violet",
+      "keys": [
+        "ao_machinegun",
+        "consumable_machinegun_thumb",
+        "p_ao_machinegun#3",
+        "sprite:consumable_machinegun_thumb"
+      ]
+    },
+    {
+      "label": "P_AO_Pistol#4",
+      "theme": "azure",
+      "keys": [
+        "ao_pistol",
+        "ao_revolver",
+        "ao_sniper",
+        "dz_pistol_icon",
+        "p_ao_pistol#4",
+        "p_ao_revolver#5",
+        "p_ao_sniper#392",
+        "sprite:dz_pistol_icon"
+      ]
+    },
+    {
+      "label": "P_AO_RPG#6",
+      "theme": "azure",
+      "keys": [
+        "ao rpg",
+        "consumable_rpg_thumb",
+        "p_ao_rpg#6",
+        "sprite:consumable_rpg_thumb"
+      ]
+    },
+    {
+      "label": "P_AO_SawedOffShotgun#7",
+      "theme": "violet",
+      "keys": [
+        "ao_sawedoffshotgun",
+        "ao_shotgun",
+        "consumable_shotgun_thumb",
+        "p_ao_sawedoffshotgun#7",
+        "p_ao_shotgun#8",
+        "sprite:consumable_shotgun_thumb"
+      ]
+    },
+    {
+      "label": "P_AppliedBurn_Pin#221",
+      "theme": "coral",
+      "keys": [
+        "appliedburn_pin",
+        "p_appliedburn_pin#221",
+        "p_permaburned#310",
+        "permaburned",
+        "sprite:stat_burn",
+        "stat_burn"
+      ]
+    },
+    {
+      "label": "P_AtkSpeedxMoveSpeed#224",
+      "theme": "gold",
+      "keys": [
+        "atkspeedxmovespeed",
+        "p_atkspeedxmovespeed#224",
+        "p_ragingsprint#321",
+        "raging spirit_0",
+        "ragingsprint",
+        "sprite:raging spirit_0"
+      ]
+    },
+    {
+      "label": "P_AtmasBag#225",
+      "theme": "violet",
+      "keys": [
+        "atmasbag",
+        "item_heartbag",
+        "p_atmasbag#225",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "P_Aura_Orbit#226",
+      "theme": "ember",
+      "keys": [
+        "aura_orbit",
+        "p_aura_orbit#226",
+        "sprite:you-tried-star",
+        "you-tried-star"
+      ]
+    },
+    {
+      "label": "P_Aura_Spawn_JellyFish#102",
+      "theme": "violet",
+      "keys": [
+        "aura_spawn_jellyfish",
+        "p_aura_spawn_jellyfish#102",
+        "sashimi - jelly fishing_0",
+        "sprite:sashimi - jelly fishing_0"
+      ]
+    },
+    {
+      "label": "P_Aura_Weaken#95",
+      "theme": "gold",
+      "keys": [
+        "aura_weaken",
+        "charaugment_sashimi_oncd_bubblemodule",
+        "closequartersreduction",
+        "p_aura_weaken#95",
+        "p_charaugment_sashimi_oncd_bubblemodule#108",
+        "p_closequartersreduction#187",
+        "p_potectiveaura#313",
+        "p_protectiveaura_pin#317",
+        "p_protectivebubble#318",
+        "potectiveaura",
+        "protective aura_0",
+        "protective bubble",
+        "protectiveaura_pin",
+        "sprite:protective aura_0"
+      ]
+    },
+    {
+      "label": "P_Bank2Win#227",
+      "theme": "gold",
+      "keys": [
+        "bank2win",
+        "golditem_icon",
+        "p_bank2win#227",
+        "sprite:golditem_icon"
+      ]
+    },
+    {
+      "label": "P_BapCoin#228",
+      "theme": "ember",
+      "keys": [
+        "bapcoin",
+        "meta_gold_icon",
+        "p_bapcoin#228",
+        "sprite:meta_gold_icon"
+      ]
+    },
+    {
+      "label": "P_BapperSlayer#229",
+      "theme": "violet",
+      "keys": [
+        "ability crit_0",
+        "bapperslayer",
+        "criticalability",
+        "criticalability_pin",
+        "p_bapperslayer#229",
+        "p_criticalability#247",
+        "p_criticalability_pin#248",
+        "p_ultimatum#358",
+        "p_ultrecast#359",
+        "p_winsoosblade#364",
+        "sprite:ability crit_0",
+        "ultimatum",
+        "ultrecast",
+        "winsoosblade"
+      ]
+    },
+    {
+      "label": "P_BerserkerCap#14",
+      "theme": "sapphire",
+      "keys": [
+        "berserkercap",
+        "berserkerpin_t1_thumb",
+        "p_berserkercap#14",
+        "sprite:berserkerpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "P_Blood_ExtraDmg#191",
+      "theme": "azure",
+      "keys": [
+        "blood_extradmg",
+        "blood_rune",
+        "p_blood_extradmg#191",
+        "sprite:blood_rune"
+      ]
+    },
+    {
+      "label": "P_Blood_LifeSteal#192",
+      "theme": "ember",
+      "keys": [
+        "blood_lifesteal",
+        "p_blood_lifesteal#192",
+        "p_secondaryvamp#330",
+        "passive_bloodlifesteal_sprite",
+        "secondaryvamp",
+        "sprite:passive_bloodlifesteal_sprite"
+      ]
+    },
+    {
+      "label": "P_Blood_OnKill_GainGold#194",
+      "theme": "ember",
+      "keys": [
+        "blood_onkill_gaingold",
+        "meta_gold",
+        "p_blood_onkill_gaingold#194",
+        "sprite:meta_gold"
+      ]
+    },
+    {
+      "label": "P_Blood_OnKill_Shield#195",
+      "theme": "gold",
+      "keys": [
+        "blood_onkill_shield",
+        "p_blood_onkill_shield#195",
+        "sprite:stat_shield",
+        "stat_shield"
+      ]
+    },
+    {
+      "label": "P_BloodDive#196",
+      "theme": "ember",
+      "keys": [
+        "blooddive",
+        "p_blooddive#196",
+        "passive_sincity_sprite_0",
+        "sprite:passive_sincity_sprite_0"
+      ]
+    },
+    {
+      "label": "P_Box#234",
+      "theme": "ember",
+      "keys": [
+        "3 items_0",
+        "box",
+        "p_box#234",
+        "sprite:3 items_0"
+      ]
+    },
+    {
+      "label": "P_Buff_Cdr_Persistent#10",
+      "theme": "sapphire",
+      "keys": [
+        "buff_cdr_persistent",
+        "p_buff_cdr_persistent#10",
+        "p_stat_cd",
+        "p_stat_cdr#376",
+        "p_stat_negativecdr#418",
+        "sprite:p_stat_cd",
+        "stat_cdr",
+        "stat_negativecdr"
+      ]
+    },
+    {
+      "label": "P_Buff_Dmg_Persistent#11",
+      "theme": "azure",
+      "keys": [
+        "buff_dmg_persistent",
+        "p_buff_dmg_persistent#11",
+        "p_stat_damage#379",
+        "p_stat_dmg",
+        "p_stat_minor_damage#390",
+        "sprite:p_stat_dmg",
+        "stat_damage",
+        "stat_minor_damage"
+      ]
+    },
+    {
+      "label": "P_Buff_HP_LoseDmg#235",
+      "theme": "sapphire",
+      "keys": [
+        "buff_hp_losedmg",
+        "life for power_0",
+        "p_buff_hp_losedmg#235",
+        "sprite:life for power_0"
+      ]
+    },
+    {
+      "label": "P_Buff_HP_LoseMS#236",
+      "theme": "violet",
+      "keys": [
+        "buff_hp_losems",
+        "p_buff_hp_losems#236",
+        "slow but sturdy_0",
+        "sprite:slow but sturdy_0"
+      ]
+    },
+    {
+      "label": "P_Buff_Hp_Persistent#12",
+      "theme": "gold",
+      "keys": [
+        "buff_hp_persistent",
+        "buff_hpregen",
+        "give_item_hp.bonus",
+        "p_buff_hp_persistent#12",
+        "p_buff_hpregen#237",
+        "p_give_item_hp.bonus#212",
+        "p_stat_hp",
+        "p_stat_hp#381",
+        "p_stat_minor_hp#391",
+        "sprite:p_stat_hp",
+        "stat_hp",
+        "stat_minor_hp"
+      ]
+    },
+    {
+      "label": "P_Buff_HP_Shield#406",
+      "theme": "ember",
+      "keys": [
+        "buff_hp_shield",
+        "lootability_allyshield",
+        "p_buff_hp_shield#406",
+        "sprite:lootability_allyshield"
+      ]
+    },
+    {
+      "label": "P_Buff_MoveSpd_Persistent#13",
+      "theme": "ember",
+      "keys": [
+        "buff_movespd_persistent",
+        "p_buff_movespd_persistent#13",
+        "p_stat_movespeed",
+        "p_stat_movespeed#384",
+        "sprite:p_stat_movespeed",
+        "stat_movespeed"
+      ]
+    },
+    {
+      "label": "P_Buff_SinCityDamage#198",
+      "theme": "azure",
+      "keys": [
+        "buff_sincitydamage",
+        "diggerscurse",
+        "item_damage_icon",
+        "p_buff_sincitydamage#198",
+        "p_diggerscurse#256",
+        "sprite:item_damage_icon"
+      ]
+    },
+    {
+      "label": "P_Buff_WalkingBoots#238",
+      "theme": "coral",
+      "keys": [
+        "buff_walkingboots",
+        "p_buff_walkingboots#238",
+        "sprite:walking boots_0",
+        "walking boots_0"
+      ]
+    },
+    {
+      "label": "P_BuffX_AtkSpeed_Attack_Kitsu#70",
+      "theme": "azure",
+      "keys": [
+        "buffx_atkspeed_attack_kitsu",
+        "donotship",
+        "give_item_gravitypull",
+        "gravityaura",
+        "gravityaura_hax",
+        "p_buffx_atkspeed_attack_kitsu#70",
+        "p_give_item_gravitypull#211",
+        "p_gravityaura#275",
+        "p_gravityaura_hax#276",
+        "sprite:donotship"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_DashOverdrive#16",
+      "theme": "sapphire",
+      "keys": [
+        "anna - long dash_0",
+        "charaugment_anna_dashoverdrive",
+        "p_charaugment_anna_dashoverdrive#16",
+        "sprite:anna - long dash_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_DieDieDie#17",
+      "theme": "violet",
+      "keys": [
+        "anna - big ult_0",
+        "charaugment_anna_diediedie",
+        "p_charaugment_anna_diediedie#17",
+        "sprite:anna - big ult_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_EnergyBlast#393",
+      "theme": "sapphire",
+      "keys": [
+        "anna - tornado blast_0",
+        "charaugment_anna_energyblast",
+        "p_charaugment_anna_energyblast#393",
+        "sprite:anna - tornado blast_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_FlamingDash#18",
+      "theme": "azure",
+      "keys": [
+        "ability_firestorm",
+        "blood_onkill_explosion",
+        "charaugment_anna_flamingdash",
+        "p_blood_onkill_explosion#193",
+        "p_charaugment_anna_flamingdash#18",
+        "sprite:ability_firestorm"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_HighSpeed#19",
+      "theme": "azure",
+      "keys": [
+        "anna_space_sprite",
+        "charaugment_anna_highspeed",
+        "p_charaugment_anna_highspeed#19",
+        "sprite:anna_space_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_MachineGun#20",
+      "theme": "azure",
+      "keys": [
+        "anna - machine gun_0",
+        "charaugment_anna_machinegun",
+        "p_charaugment_anna_machinegun#20",
+        "sprite:anna - machine gun_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Anna_PrecisionShot#21",
+      "theme": "sapphire",
+      "keys": [
+        "anna - precision shot_0",
+        "charaugment_anna_precisionshot",
+        "p_charaugment_anna_precisionshot#21",
+        "sprite:anna - precision shot_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_BigShot_1#71",
+      "theme": "sapphire",
+      "keys": [
+        "ability_firemeteorite",
+        "charaugment_bigshot_1",
+        "charaugment_bigshot_2",
+        "charaugment_bigshot_3",
+        "hotheals",
+        "p_charaugment_bigshot_1#71",
+        "p_charaugment_bigshot_2#72",
+        "p_charaugment_bigshot_3#73",
+        "p_hotheals#285",
+        "sprite:ability_firemeteorite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_BadBreath#394",
+      "theme": "violet",
+      "keys": [
+        "bishop - bad breath_0",
+        "charaugment_bishop_badbreath",
+        "p_charaugment_bishop_badbreath#394",
+        "sprite:bishop - bad breath_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_BigMouth#23",
+      "theme": "azure",
+      "keys": [
+        "bishop_q_sprite",
+        "charaugment_bishop_bigmouth",
+        "charaugment_bishop_shinyteeth",
+        "p_charaugment_bishop_bigmouth#23",
+        "p_charaugment_bishop_shinyteeth#396",
+        "sprite:bishop_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_FearBlast#395",
+      "theme": "violet",
+      "keys": [
+        "bishop_e_sprite",
+        "charaugment_bishop_fearblast",
+        "p_charaugment_bishop_fearblast#395",
+        "sprite:bishop_e_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_HpStacks#24",
+      "theme": "gold",
+      "keys": [
+        "bishop - life bind_0",
+        "charaugment_bishop_hpstacks",
+        "p_charaugment_bishop_hpstacks#24",
+        "sprite:bishop - life bind_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_MouthRange#25",
+      "theme": "gold",
+      "keys": [
+        "bishop - hunger range_0",
+        "charaugment_bishop_mouthrange",
+        "p_charaugment_bishop_mouthrange#25",
+        "sprite:bishop - hunger range_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_Munch#26",
+      "theme": "coral",
+      "keys": [
+        "bishop - shiny teeth_0",
+        "charaugment_bishop_munch",
+        "p_charaugment_bishop_munch#26",
+        "sprite:bishop - shiny teeth_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_TetherAmp#27",
+      "theme": "coral",
+      "keys": [
+        "bishop - ommetaphobia_0",
+        "charaugment_bishop_tetheramp",
+        "p_charaugment_bishop_tetheramp#27",
+        "sprite:bishop - ommetaphobia_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Bishop_TetherCounter#28",
+      "theme": "sapphire",
+      "keys": [
+        "bishop - retribution link_0",
+        "charaugment_bishop_tethercounter",
+        "p_charaugment_bishop_tethercounter#28",
+        "sprite:bishop - retribution link_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_BlindShot#74",
+      "theme": "ember",
+      "keys": [
+        "ability_teleportshot",
+        "charaugment_blindshot",
+        "chosenshovel",
+        "p_charaugment_blindshot#74",
+        "p_chosenshovel#240",
+        "sprite:ability_teleportshot"
+      ]
+    },
+    {
+      "label": "P_CharAugment_BounceProjectile_Kitsu_Ult#76",
+      "theme": "violet",
+      "keys": [
+        "charaugment_bounceprojectile_kitsu_ult",
+        "kitsu - bounce ult_0",
+        "p_charaugment_bounceprojectile_kitsu_ult#76",
+        "sprite:kitsu - bounce ult_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_BounceProjectile#75",
+      "theme": "coral",
+      "keys": [
+        "charaugment_bounceprojectile",
+        "kitsu - bounce shot_0",
+        "p_charaugment_bounceprojectile#75",
+        "sprite:kitsu - bounce shot_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_ChuckReset#29",
+      "theme": "violet",
+      "keys": [
+        "charaugment_chuck_chuckreset",
+        "chuck - final reset_0",
+        "p_charaugment_chuck_chuckreset#29",
+        "sprite:chuck - final reset_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_DuckyJump#30",
+      "theme": "azure",
+      "keys": [
+        "charaugment_chuck_duckyjump",
+        "chuck - ducky jump_0",
+        "p_charaugment_chuck_duckyjump#30",
+        "sprite:chuck - ducky jump_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_Hug#31",
+      "theme": "violet",
+      "keys": [
+        "charaugment_chuck_hug",
+        "chuck - chuck hug_0",
+        "p_charaugment_chuck_hug#31",
+        "sprite:chuck - chuck hug_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_LockerSlam#32",
+      "theme": "coral",
+      "keys": [
+        "charaugment_chuck_lockerslam",
+        "chuck - locker slam_0",
+        "p_charaugment_chuck_lockerslam#32",
+        "sprite:chuck - locker slam_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_RageWade#33",
+      "theme": "gold",
+      "keys": [
+        "charaugment_chuck_ragewade",
+        "chuck_lmb_sprite",
+        "p_charaugment_chuck_ragewade#33",
+        "sprite:chuck_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_Raidboss#34",
+      "theme": "gold",
+      "keys": [
+        "charaugment_chuck_raidboss",
+        "chuck - raid boss_0",
+        "p_charaugment_chuck_raidboss#34",
+        "sprite:chuck - raid boss_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Chuck_TitansTradeoff#239",
+      "theme": "violet",
+      "keys": [
+        "charaugment_chuck_titanstradeoff",
+        "chuck - titan's tradeoff_0",
+        "p_charaugment_chuck_titanstradeoff#239",
+        "sprite:chuck - titan's tradeoff_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_ExplosiveIceBlock#36",
+      "theme": "gold",
+      "keys": [
+        "charaugment_eve_explosiveiceblock",
+        "eve - explosive ice block_0",
+        "p_charaugment_eve_explosiveiceblock#36",
+        "sprite:eve - explosive ice block_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_FreezingHeal#37",
+      "theme": "violet",
+      "keys": [
+        "charaugment_eve_freezingheal",
+        "emergency freeze_0",
+        "emergencyfreeze",
+        "p_charaugment_eve_freezingheal#37",
+        "p_emergencyfreeze#258",
+        "sprite:emergency freeze_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_FrostDetonation#397",
+      "theme": "violet",
+      "keys": [
+        "charaugment_eve_frostdetonation",
+        "eve - frost detonation_0",
+        "p_charaugment_eve_frostdetonation#397",
+        "sprite:eve - frost detonation_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_IceBlockSlide#38",
+      "theme": "gold",
+      "keys": [
+        "charaugment_eve_iceblockslide",
+        "eve - glacial slide_0",
+        "p_charaugment_eve_iceblockslide#38",
+        "sprite:eve - glacial slide_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_IceSkating#39",
+      "theme": "coral",
+      "keys": [
+        "charaugment_eve_iceskating",
+        "eve - ice skating_0",
+        "p_charaugment_eve_iceskating#39",
+        "sprite:eve - ice skating_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Eve_LongShot#398",
+      "theme": "coral",
+      "keys": [
+        "charaugment_eve_longshot",
+        "eve - long shot_0",
+        "p_charaugment_eve_longshot#398",
+        "sprite:eve - long shot_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Explosive_Jump#77",
+      "theme": "azure",
+      "keys": [
+        "charaugment_explosive_jump",
+        "explosive tactics_0",
+        "p_charaugment_explosive_jump#77",
+        "sprite:explosive tactics_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_ExtraMileage#78",
+      "theme": "violet",
+      "keys": [
+        "charaugment_extramileage",
+        "kitsu - extra mileage_0",
+        "p_charaugment_extramileage#78",
+        "sprite:kitsu - extra mileage_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_FoxTrap#79",
+      "theme": "ember",
+      "keys": [
+        "charaugment_foxtrap",
+        "defensivebeartrap",
+        "p_charaugment_foxtrap#79",
+        "p_defensivebeartrap#255",
+        "sprite:tactile trap_0",
+        "tactile trap_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_BigSwamp#40",
+      "theme": "gold",
+      "keys": [
+        "charaugment_froggy_bigswamp",
+        "froggy - big swamp_0",
+        "p_charaugment_froggy_bigswamp#40",
+        "p_custom_firewave_plus#5000",
+        "sprite:froggy - big swamp_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_DashExecute#41",
+      "theme": "gold",
+      "keys": [
+        "charaugment_froggy_dashexecute",
+        "froggy - execute dash_0",
+        "p_charaugment_froggy_dashexecute#41",
+        "sprite:froggy - execute dash_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_ExtendoTongue#399",
+      "theme": "coral",
+      "keys": [
+        "charaugment_froggy_extendotongue",
+        "froggy - extendo tongue_0",
+        "p_charaugment_froggy_extendotongue#399",
+        "sprite:froggy - extendo tongue_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_HealingHop#42",
+      "theme": "ember",
+      "keys": [
+        "charaugment_froggy_healinghop",
+        "froggy - healing hop_0",
+        "p_charaugment_froggy_healinghop#42",
+        "sprite:froggy - healing hop_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_HealthyLeap#43",
+      "theme": "violet",
+      "keys": [
+        "charaugment_froggy_healthyleap",
+        "froggy - healthy leap_0",
+        "p_charaugment_froggy_healthyleap#43",
+        "sprite:froggy - healthy leap_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_HealthyTongue#44",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_froggy_healthytongue",
+        "froggy - healthy tongue_0",
+        "p_charaugment_froggy_healthytongue#44",
+        "sprite:froggy - healthy tongue_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_HippityHop#45",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_froggy_hippityhop",
+        "froggy - hippity hop_0",
+        "p_charaugment_froggy_hippityhop#45",
+        "sprite:froggy - hippity hop_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_LickyWicky#46",
+      "theme": "ember",
+      "keys": [
+        "charaugment_froggy_lickywicky",
+        "froggy - licky wicky_0",
+        "p_charaugment_froggy_lickywicky#46",
+        "sprite:froggy - licky wicky_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_OneTwoDagger#47",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_froggy_onetwodagger",
+        "froggy_lmb_sprite",
+        "p_charaugment_froggy_onetwodagger#47",
+        "sprite:froggy_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_TonguePull#48",
+      "theme": "ember",
+      "keys": [
+        "charaugment_froggy_tonguepull",
+        "froggy - tongue pull_0",
+        "p_charaugment_froggy_tonguepull#48",
+        "sprite:froggy - tongue pull_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Froggy_Yuck#49",
+      "theme": "azure",
+      "keys": [
+        "charaugment_froggy_yuck",
+        "froggy_q_sprite",
+        "p_charaugment_froggy_yuck#49",
+        "sprite:froggy_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_HitboxDmgTtl#80",
+      "theme": "azure",
+      "keys": [
+        "ability_blink_icon",
+        "charaugment_hitboxdmgttl",
+        "p_charaugment_hitboxdmgttl#80",
+        "sprite:ability_blink_icon"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_BrothWave#50",
+      "theme": "ember",
+      "keys": [
+        "charaugment_jiro_brothwave",
+        "jiro_q_sprite",
+        "p_charaugment_jiro_brothwave#50",
+        "sprite:jiro_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_Concuss#51",
+      "theme": "gold",
+      "keys": [
+        "charaugment_jiro_concuss",
+        "jiro - concuss_0",
+        "p_charaugment_jiro_concuss#51",
+        "sprite:jiro - concuss_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_DeflectingKick#52",
+      "theme": "gold",
+      "keys": [
+        "charaugment_jiro_deflectingkick",
+        "jiro - deflecting kick_0",
+        "p_charaugment_jiro_deflectingkick#52",
+        "sprite:jiro - deflecting kick_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_DoorDash#53",
+      "theme": "coral",
+      "keys": [
+        "charaugment_jiro_doordash",
+        "jiro - door dash_0",
+        "p_charaugment_jiro_doordash#53",
+        "sprite:jiro - door dash_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_DropTargetItem#54",
+      "theme": "coral",
+      "keys": [
+        "charaugment_jiro_droptargetitem",
+        "p_charaugment_jiro_droptargetitem#54",
+        "p_workbench#365",
+        "p_workbench_pin#366",
+        "sprite:workbench_0",
+        "workbench",
+        "workbench_0",
+        "workbench_pin"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_FlurryOfKicks#55",
+      "theme": "violet",
+      "keys": [
+        "charaugment_jiro_flurryofkicks",
+        "jiro_lmb_sprite",
+        "p_charaugment_jiro_flurryofkicks#55",
+        "sprite:jiro_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_LmbDash#56",
+      "theme": "gold",
+      "keys": [
+        "charaugment_jiro_lmbdash",
+        "jiro - starter dish_0",
+        "p_charaugment_jiro_lmbdash#56",
+        "sprite:jiro - starter dish_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Jiro_TastyFood#57",
+      "theme": "azure",
+      "keys": [
+        "charaugment_jiro_tastyfood",
+        "jiro - send noods_0",
+        "p_charaugment_jiro_tastyfood#57",
+        "sprite:jiro - send noods_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kat_AggroCats#58",
+      "theme": "violet",
+      "keys": [
+        "charaugment_kat_aggrocats",
+        "kat - hissing cats_0",
+        "p_charaugment_kat_aggrocats#58",
+        "sprite:kat - hissing cats_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kat_PolymorphHeal#59",
+      "theme": "gold",
+      "keys": [
+        "charaugment_kat_polymorphheal",
+        "kat - polymorph heal_0",
+        "p_charaugment_kat_polymorphheal#59",
+        "sprite:kat - polymorph heal_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kat_QRecast#60",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kat_qrecast",
+        "kat - twin kittens_0",
+        "p_charaugment_kat_qrecast#60",
+        "sprite:kat - twin kittens_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kat_TeleportationModule#400",
+      "theme": "violet",
+      "keys": [
+        "charaugment_kat_teleportationmodule",
+        "kat - telecat_0",
+        "p_charaugment_kat_teleportationmodule#400",
+        "sprite:kat - telecat_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kat_UltHealingCats#61",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kat_ulthealingcats",
+        "kat - feline surge_0",
+        "p_charaugment_kat_ulthealingcats#61",
+        "sprite:kat - feline surge_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_AutoShield#62",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kiddo_autoshield",
+        "kiddo - auto shield_0",
+        "p_charaugment_kiddo_autoshield#62",
+        "sprite:kiddo - auto shield_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_BlazingCrator#63",
+      "theme": "gold",
+      "keys": [
+        "charaugment_kiddo_blazingcrator",
+        "kiddo - blazing crater_0",
+        "p_charaugment_kiddo_blazingcrator#63",
+        "sprite:kiddo - blazing crater_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_CalamityMeteor#64",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kiddo_calamitymeteor",
+        "kiddo - calamity meteor_0",
+        "p_charaugment_kiddo_calamitymeteor#64",
+        "sprite:kiddo - calamity meteor_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_HeatingUp#65",
+      "theme": "ember",
+      "keys": [
+        "charaugment_kiddo_heatingup",
+        "kiddo_lmb_sprite",
+        "p_charaugment_kiddo_heatingup#65",
+        "sprite:kiddo_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_MeteorShower#66",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_kiddo_meteorshower",
+        "kiddo - meteor shower_0",
+        "p_charaugment_kiddo_meteorshower#66",
+        "sprite:kiddo - meteor shower_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_RisingFlame#67",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_kiddo_risingflame",
+        "kiddo - rising flame_0",
+        "p_charaugment_kiddo_risingflame#67",
+        "sprite:kiddo - rising flame_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_ThornShield#68",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kiddo_thornshield",
+        "kiddo - thorny shield_0",
+        "p_charaugment_kiddo_thornshield#68",
+        "sprite:kiddo - thorny shield_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kiddo_VisionsInTheFlames#69",
+      "theme": "azure",
+      "keys": [
+        "charaugment_kiddo_visionsintheflames",
+        "eye_small_icon",
+        "p_charaugment_kiddo_visionsintheflames#69",
+        "sprite:eye_small_icon"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_Charge_Pulsar#81",
+      "theme": "ember",
+      "keys": [
+        "charaugment_kitsu_charge_pulsar",
+        "kitsu - charge pulsar_0",
+        "p_charaugment_kitsu_charge_pulsar#81",
+        "sprite:kitsu - charge pulsar_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_HealingShot#82",
+      "theme": "gold",
+      "keys": [
+        "ability_healingarea_2",
+        "charaugment_kitsu_healingshot",
+        "emergencyheal",
+        "p_charaugment_kitsu_healingshot#82",
+        "p_emergencyheal#259",
+        "sprite:ability_healingarea_2"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_Repel#83",
+      "theme": "ember",
+      "keys": [
+        "ability_area_icon",
+        "charaugment_kitsu_repel",
+        "p_charaugment_kitsu_repel#83",
+        "sprite:ability_area_icon"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_TrilunarBarrage#84",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_kitsu_trilunarbarrage",
+        "kitsu - trilunar barrage",
+        "p_charaugment_kitsu_trilunarbarrage#84",
+        "sprite:kitsu - trilunar barrage"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_UltTrail#85",
+      "theme": "gold",
+      "keys": [
+        "charaugment_kitsu_ulttrail",
+        "kitsu - ult trail",
+        "p_charaugment_kitsu_ulttrail#85",
+        "sprite:kitsu - ult trail"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Kitsu_Vanish#86",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_kitsu_vanish",
+        "kitsu - vanish",
+        "p_charaugment_kitsu_vanish#86",
+        "sprite:kitsu - vanish"
+      ]
+    },
+    {
+      "label": "P_CharAugment_MoonCallExtendTtl#87",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_mooncallextendttl",
+        "kitsu_q_sprite",
+        "p_charaugment_mooncallextendttl#87",
+        "sprite:kitsu_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Rocky_Bouldering#97",
+      "theme": "ember",
+      "keys": [
+        "charaugment_rocky_bouldering",
+        "p_charaugment_rocky_bouldering#97",
+        "rocky - big rock_0",
+        "sprite:rocky - big rock_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Rocky_ChargedShot#98",
+      "theme": "azure",
+      "keys": [
+        "charaugment_rocky_chargedshot",
+        "p_charaugment_rocky_chargedshot#98",
+        "rocky - charged rock_0",
+        "sprite:rocky - charged rock_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Rocky_Muscle#99",
+      "theme": "azure",
+      "keys": [
+        "charaugment_rocky_muscle",
+        "p_charaugment_rocky_muscle#99",
+        "rocky - more rocks more muscle_0",
+        "sprite:rocky - more rocks more muscle_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Rocky_Recast#100",
+      "theme": "azure",
+      "keys": [
+        "charaugment_rocky_recast",
+        "p_charaugment_rocky_recast#100",
+        "rocky - double wall_0",
+        "sprite:rocky - double wall_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_BigBoom#103",
+      "theme": "azure",
+      "keys": [
+        "charaugment_sashimi_bigboom",
+        "p_charaugment_sashimi_bigboom#103",
+        "sashimi_lmb_sprite",
+        "sprite:sashimi_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_BounceRoll#104",
+      "theme": "violet",
+      "keys": [
+        "charaugment_sashimi_bounceroll",
+        "p_charaugment_sashimi_bounceroll#104",
+        "sashimi - bounce and roll_0",
+        "sprite:sashimi - bounce and roll_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_ClapClap#105",
+      "theme": "violet",
+      "keys": [
+        "charaugment_sashimi_clapclap",
+        "p_charaugment_sashimi_clapclap#105",
+        "sashimi_q_sprite",
+        "sprite:sashimi_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_Earthquake#106",
+      "theme": "gold",
+      "keys": [
+        "charaugment_sashimi_earthquake",
+        "p_charaugment_sashimi_earthquake#106",
+        "sashimi - earthquake_0",
+        "sprite:sashimi - earthquake_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_MacroModule#107",
+      "theme": "coral",
+      "keys": [
+        "ability_energydome",
+        "charaugment_sashimi_macromodule",
+        "p_charaugment_sashimi_macromodule#107",
+        "sprite:ability_energydome"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_Overcharge#109",
+      "theme": "violet",
+      "keys": [
+        "charaugment_sashimi_overcharge",
+        "p_charaugment_sashimi_overcharge#109",
+        "sashimi - overcharge_0",
+        "sprite:sashimi - overcharge_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_ShieldRoll#110",
+      "theme": "coral",
+      "keys": [
+        "charaugment_sashimi_shieldroll",
+        "p_charaugment_sashimi_shieldroll#110",
+        "sashimi - shield roll_0",
+        "sprite:sashimi - shield roll_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_SlamStun#111",
+      "theme": "gold",
+      "keys": [
+        "charaugment_sashimi_slamstun",
+        "p_charaugment_sashimi_slamstun#111",
+        "sashimi - slam stun_0",
+        "sprite:sashimi - slam stun_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sashimi_TeleportationModule#112",
+      "theme": "coral",
+      "keys": [
+        "charaugment_sashimi_teleportationmodule",
+        "p_charaugment_sashimi_teleportationmodule#112",
+        "sashimi - teleportation module_0",
+        "sprite:sashimi - teleportation module_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_ScatterShot_1#88",
+      "theme": "azure",
+      "keys": [
+        "charaugment_scattershot_1",
+        "kitsu - scatter shot_0",
+        "p_charaugment_scattershot_1#88",
+        "sprite:kitsu - scatter shot_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_ScatterShot_2#89",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_scattershot_2",
+        "kitsu - scatter shot+_0",
+        "p_charaugment_scattershot_2#89",
+        "sprite:kitsu - scatter shot+_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_ScatterShot_3#90",
+      "theme": "gold",
+      "keys": [
+        "ability_arrowrecoil",
+        "charaugment_scattershot_3",
+        "charaugment_splitprojectile",
+        "charaugment_teevee_scattershot",
+        "p_charaugment_scattershot_3#90",
+        "p_charaugment_splitprojectile#91",
+        "p_charaugment_teevee_scattershot#138",
+        "sprite:ability_arrowrecoil"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_360Scythe#113",
+      "theme": "gold",
+      "keys": [
+        "charaugment_skinny_360scythe",
+        "p_charaugment_skinny_360scythe#113",
+        "skinny - 360 scythe_0",
+        "sprite:kiddo - thorny shield_0",
+        "sprite:skinny - 360 scythe_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_BigScythe#114",
+      "theme": "coral",
+      "keys": [
+        "charaugment_skinny_bigscythe",
+        "p_charaugment_skinny_bigscythe#114",
+        "skinny - big scythe_0",
+        "sprite:skinny - big scythe_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_InvisReset#115",
+      "theme": "ember",
+      "keys": [
+        "charaugment_skinny_invisreset",
+        "p_charaugment_skinny_invisreset#115",
+        "skinny_space_sprite",
+        "sprite:skinny_space_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_LongconAmbush#116",
+      "theme": "coral",
+      "keys": [
+        "charaugment_skinny_longconambush",
+        "p_charaugment_skinny_longconambush#116",
+        "skinny - long con ambush_0",
+        "sprite:skinny - long con ambush_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_Restealth#117",
+      "theme": "ember",
+      "keys": [
+        "charaugment_skinny_restealth",
+        "p_charaugment_skinny_restealth#117",
+        "skinny - restealth_0",
+        "sprite:skinny - restealth_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_ScytheStorm#118",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_skinny_scythestorm",
+        "p_charaugment_skinny_scythestorm#118",
+        "skinny_lmb_sprite",
+        "sprite:skinny_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_SeismicSlash#119",
+      "theme": "azure",
+      "keys": [
+        "charaugment_skinny_seismicslash",
+        "p_charaugment_skinny_seismicslash#119",
+        "skinny - seismic slash_0",
+        "sprite:skinny - seismic slash_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_Sleep#120",
+      "theme": "violet",
+      "keys": [
+        "charaugment_skinny_sleep",
+        "p_charaugment_skinny_sleep#120",
+        "skinny - sleep touch_0",
+        "sprite:skinny - sleep touch_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Skinny_Sneak#121",
+      "theme": "coral",
+      "keys": [
+        "charaugment_skinny_sneak",
+        "p_charaugment_skinny_sneak#121",
+        "skinny - sneaky_0",
+        "sprite:skinny - sneaky_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_BurningDash#122",
+      "theme": "coral",
+      "keys": [
+        "charaugment_sofia_burningdash",
+        "p_charaugment_sofia_burningdash#122",
+        "sofia - burning dash_0",
+        "sprite:sofia - burning dash_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_Combustion#123",
+      "theme": "azure",
+      "keys": [
+        "charaugment_sofia_combustion",
+        "p_charaugment_sofia_combustion#123",
+        "sofia - combustion_0",
+        "sprite:sofia - combustion_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_CrushingBlow#124",
+      "theme": "gold",
+      "keys": [
+        "charaugment_sofia_crushingblow",
+        "p_charaugment_sofia_crushingblow#124",
+        "sofia_lmb_sprite",
+        "sprite:sofia_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_EnergyBlast#401",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_sofia_energyblast",
+        "p_charaugment_sofia_energyblast#401",
+        "sofia - energy blast_0",
+        "sprite:sofia - energy blast_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_FireyCounter#125",
+      "theme": "azure",
+      "keys": [
+        "charaugment_sofia_fireycounter",
+        "p_charaugment_sofia_fireycounter#125",
+        "sofia - ultimate counter_0",
+        "sprite:sofia - ultimate counter_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_FlamePortal#126",
+      "theme": "violet",
+      "keys": [
+        "charaugment_sofia_flameportal",
+        "p_charaugment_sofia_flameportal#126",
+        "sofia - flame portal_0",
+        "sprite:sofia - flame portal_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_Pyroblast#127",
+      "theme": "coral",
+      "keys": [
+        "charaugment_sofia_pyroblast",
+        "charaugment_sofia_superchargedprojectile",
+        "p_charaugment_sofia_pyroblast#127",
+        "p_charaugment_sofia_superchargedprojectile#402",
+        "sofia - pyroblast_0",
+        "sprite:sofia - pyroblast_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_Revenge#128",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_sofia_revenge",
+        "p_charaugment_sofia_revenge#128",
+        "sofia_q_sprite",
+        "sprite:sofia_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Sofia_StackingDash#129",
+      "theme": "violet",
+      "keys": [
+        "charaugment_sofia_stackingdash",
+        "p_charaugment_sofia_stackingdash#129",
+        "sofia_space_sprite",
+        "sprite:sofia_space_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_Clone_Duration#130",
+      "theme": "gold",
+      "keys": [
+        "charaugment_teevee_clone_duration",
+        "p_charaugment_teevee_clone_duration#130",
+        "sprite:teevee - clone duration_0",
+        "teevee - clone duration_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_Clone_Tether#131",
+      "theme": "ember",
+      "keys": [
+        "charaugment_teevee_clone_tether",
+        "charaugment_teevee_ultimateclone",
+        "p_charaugment_teevee_clone_tether#131",
+        "p_charaugment_teevee_ultimateclone#140",
+        "sprite:teevee_e_sprite",
+        "teevee_e_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_CloneAOE#132",
+      "theme": "violet",
+      "keys": [
+        "charaugment_teevee_cloneaoe",
+        "charaugment_teevee_swapdmg",
+        "p_charaugment_teevee_cloneaoe#132",
+        "p_charaugment_teevee_swapdmg#139",
+        "sprite:teevee_space_sprite",
+        "teevee_space_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_CloneBomb#133",
+      "theme": "coral",
+      "keys": [
+        "charaugment_teevee_clonebomb",
+        "charaugment_teevee_laserstun",
+        "charaugment_teevee_morelasers",
+        "p_charaugment_teevee_clonebomb#133",
+        "p_charaugment_teevee_laserstun#135",
+        "p_charaugment_teevee_morelasers#136",
+        "sprite:teevee_q_sprite",
+        "teevee_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_ExtraSwap#134",
+      "theme": "ember",
+      "keys": [
+        "charaugment_teevee_extraswap",
+        "p_charaugment_teevee_extraswap#134",
+        "sprite:teevee - extra swap_0",
+        "teevee - extra swap_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Teevee_ReducedLaser#137",
+      "theme": "violet",
+      "keys": [
+        "charaugment_teevee_reducedlaser",
+        "p_charaugment_teevee_reducedlaser#137",
+        "sprite:teevee_lmb_sprite",
+        "teevee_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Tevee_ExtraClone#141",
+      "theme": "violet",
+      "keys": [
+        "charaugment_tevee_extraclone",
+        "p_charaugment_tevee_extraclone#141",
+        "sprite:teevee - extra clones_0",
+        "teevee - extra clones_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_TrilunarBarrage#92",
+      "theme": "azure",
+      "keys": [
+        "ability_2_multipleicedarts",
+        "charaugment_trilunarbarrage",
+        "p_charaugment_trilunarbarrage#92",
+        "sprite:ability_2_multipleicedarts"
+      ]
+    },
+    {
+      "label": "P_CharAugment_UltraViolet#93",
+      "theme": "violet",
+      "keys": [
+        "charaugment_ultraviolet",
+        "kitsu_e_sprite",
+        "p_charaugment_ultraviolet#93",
+        "sprite:kitsu_e_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_BiggerExplosions#142",
+      "theme": "coral",
+      "keys": [
+        "charaugment_zook_biggerexplosions",
+        "charaugment_zook_lmbmines",
+        "p_charaugment_zook_biggerexplosions#142",
+        "p_charaugment_zook_lmbmines#145",
+        "sprite:zook_lmb_sprite",
+        "zook_lmb_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_ChargedShot#143",
+      "theme": "azure",
+      "keys": [
+        "charaugment_zook_chargedshot",
+        "p_charaugment_zook_chargedshot#143",
+        "sprite:zook - charged shot_0",
+        "zook - charged shot_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_Evacuate#144",
+      "theme": "violet",
+      "keys": [
+        "charaugment_zook_bigjump",
+        "charaugment_zook_evacuate",
+        "p_charaugment_zook_bigjump#403",
+        "p_charaugment_zook_evacuate#144",
+        "sprite:zook_space_sprite",
+        "zook_space_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_MineTurret#146",
+      "theme": "azure",
+      "keys": [
+        "charaugment_zook_mineturret",
+        "p_charaugment_zook_mineturret#146",
+        "sprite:zook - central turret_0",
+        "zook - central turret_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_MoreMines#147",
+      "theme": "gold",
+      "keys": [
+        "charaugment_zook_moremines",
+        "p_charaugment_zook_moremines#147",
+        "sprite:zook - more mines_0",
+        "zook - more mines_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_MultiMissile#148",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_zook_multimissile",
+        "p_charaugment_zook_multimissile#148",
+        "sprite:zook_q_sprite",
+        "zook_q_sprite"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_PermaHoming#149",
+      "theme": "violet",
+      "keys": [
+        "charaugment_zook_permahoming",
+        "p_charaugment_zook_permahoming#149",
+        "sprite:zook - perma rocket_0",
+        "zook - perma rocket_0"
+      ]
+    },
+    {
+      "label": "P_CharAugment_Zook_SuperPoweredMine#150",
+      "theme": "sapphire",
+      "keys": [
+        "charaugment_zook_superpoweredmine",
+        "p_charaugment_zook_superpoweredmine#150",
+        "sprite:zook_e_sprite",
+        "zook_e_sprite"
+      ]
+    },
+    {
+      "label": "P_Chuck_Gigantic#241",
+      "theme": "ember",
+      "keys": [
+        "ability_invisible",
+        "chuck_gigantic",
+        "gigantic",
+        "p_chuck_gigantic#241",
+        "p_gigantic#272",
+        "sprite:ability_invisible"
+      ]
+    },
+    {
+      "label": "P_CooldownForAtkSpd_Q#242",
+      "theme": "violet",
+      "keys": [
+        "cooldownforatkspd_q",
+        "cooldownforatkspd_space",
+        "cooldownforatkspd_ult",
+        "lootability_cooldown",
+        "p_cooldownforatkspd_q#242",
+        "p_cooldownforatkspd_space#243",
+        "p_cooldownforatkspd_ult#244",
+        "sprite:lootability_cooldown"
+      ]
+    },
+    {
+      "label": "P_CritAtkSpd#245",
+      "theme": "ember",
+      "keys": [
+        "critatkspd",
+        "critexpose",
+        "critknockback",
+        "critshield",
+        "frontdamagemitigate",
+        "p_critatkspd#245",
+        "p_critexpose#246",
+        "p_critknockback#249",
+        "p_critshield#250",
+        "p_frontdamagemitigate#269",
+        "p_stat_crit",
+        "p_stat_critchance#377",
+        "p_stat_critdamage#378",
+        "sprite:p_stat_crit",
+        "stat_critchance",
+        "stat_critdamage"
+      ]
+    },
+    {
+      "label": "P_D_Atlantis#199",
+      "theme": "azure",
+      "keys": [
+        "circleicon_sashimi",
+        "d_atlantis",
+        "p_d_atlantis#199",
+        "sprite:circleicon_sashimi"
+      ]
+    },
+    {
+      "label": "P_D_Pixel#200",
+      "theme": "gold",
+      "keys": [
+        "d_pixel",
+        "p_d_pixel#200",
+        "pixel_smooth",
+        "sprite:pixel_smooth"
+      ]
+    },
+    {
+      "label": "P_D_SinCity#201",
+      "theme": "coral",
+      "keys": [
+        "d_sincity",
+        "p_d_sincity#201",
+        "passive_sincity_bleed_sprite_0",
+        "sprite:passive_sincity_bleed_sprite_0"
+      ]
+    },
+    {
+      "label": "P_DamageCap#151",
+      "theme": "azure",
+      "keys": [
+        "damage cap",
+        "damage cap stun",
+        "p_damagecap#151",
+        "p_damagecapstun#152",
+        "p_skullshield#333",
+        "skull shield_0",
+        "skullshield",
+        "sprite:skull shield_0"
+      ]
+    },
+    {
+      "label": "P_DamageStacks#251",
+      "theme": "sapphire",
+      "keys": [
+        "damagestacks",
+        "p_damagestacks#251",
+        "sprite:stat_damage",
+        "stat_damage"
+      ]
+    },
+    {
+      "label": "P_DamagingAtkSpeed#94",
+      "theme": "azure",
+      "keys": [
+        "damagingatkspeed",
+        "p_damagingatkspeed#94",
+        "sprite:stop hitting yourself",
+        "stop hitting yourself"
+      ]
+    },
+    {
+      "label": "P_DamagingBlow#252",
+      "theme": "coral",
+      "keys": [
+        "damaging blow",
+        "damaging blow_0",
+        "damagingblow_pin",
+        "p_damagingblow#252",
+        "p_damagingblow_pin#253",
+        "sprite:damaging blow_0"
+      ]
+    },
+    {
+      "label": "P_DeadTurret#254",
+      "theme": "violet",
+      "keys": [
+        "ability_turret",
+        "deadturret",
+        "p_deadturret#254",
+        "sprite:ability_turret"
+      ]
+    },
+    {
+      "label": "P_Debuff_Bleed#202",
+      "theme": "gold",
+      "keys": [
+        "debuff_bleed",
+        "p_debuff_bleed#202",
+        "passive_bloodletter_sprite_0",
+        "sprite:passive_bloodletter_sprite_0"
+      ]
+    },
+    {
+      "label": "P_DoubleRandom#407",
+      "theme": "violet",
+      "keys": [
+        "double random",
+        "double random_0",
+        "p_doublerandom#407",
+        "sprite:double random_0"
+      ]
+    },
+    {
+      "label": "P_Dronenator#408",
+      "theme": "ember",
+      "keys": [
+        "dronenator",
+        "dronenator_0",
+        "p_dronenator#408",
+        "sprite:dronenator_0"
+      ]
+    },
+    {
+      "label": "P_EmpoweringFreeze#260",
+      "theme": "sapphire",
+      "keys": [
+        "empoweringfreeze",
+        "p_empoweringfreeze#260",
+        "p_snowcap#337",
+        "passive_snow_sprite",
+        "snowcap",
+        "sprite:passive_snow_sprite"
+      ]
+    },
+    {
+      "label": "P_Executioner#261",
+      "theme": "ember",
+      "keys": [
+        "executioner",
+        "loadingstar",
+        "p_executioner#261",
+        "sprite:loadingstar"
+      ]
+    },
+    {
+      "label": "P_ExpertFishing#262",
+      "theme": "sapphire",
+      "keys": [
+        "expertfishing",
+        "freefishing",
+        "healthyfishing",
+        "icon_fishing",
+        "p_expertfishing#262",
+        "p_freefishing#268",
+        "p_healthyfishing#280",
+        "sprite:icon_fishing"
+      ]
+    },
+    {
+      "label": "P_ExplosiveCharm#263",
+      "theme": "violet",
+      "keys": [
+        "explosive charm",
+        "explosive_charm",
+        "p_explosivecharm#263",
+        "sprite:explosive_charm"
+      ]
+    },
+    {
+      "label": "P_ExposingHit#188",
+      "theme": "gold",
+      "keys": [
+        "exposinghit",
+        "p_exposinghit#188",
+        "sprite:stat_amplify",
+        "stat_amplify"
+      ]
+    },
+    {
+      "label": "P_FallingImmunity#264",
+      "theme": "violet",
+      "keys": [
+        "fallingimmunity",
+        "fallingimmunity_pin",
+        "p_fallingimmunity#264",
+        "p_fallingimmunity_pin#265",
+        "passive_angel_sprite",
+        "sprite:passive_angel_sprite"
+      ]
+    },
+    {
+      "label": "P_Fireball#157",
+      "theme": "sapphire",
+      "keys": [
+        "fireball",
+        "fireball_0",
+        "p_fireball#157",
+        "sprite:fireball_0"
+      ]
+    },
+    {
+      "label": "P_Firewave_AoE#159",
+      "theme": "ember",
+      "keys": [
+        "fire wave_0",
+        "firewave_aoe",
+        "firewave_burn",
+        "firewave_cooldown",
+        "firewave_dmg",
+        "firewave_noabilities",
+        "firewave_passthruenemy",
+        "firewave_passthruobstacle",
+        "firewave_pin",
+        "firewave_range",
+        "firewave_size",
+        "firewave_stun",
+        "p_firewave_aoe#159",
+        "p_firewave_burn#160",
+        "p_firewave_cooldown#161",
+        "p_firewave_dmg#162",
+        "p_firewave_noabilities#163",
+        "p_firewave_passthruenemy#164",
+        "p_firewave_passthruobstacle#165",
+        "p_firewave_pin#266",
+        "p_firewave_range#166",
+        "p_firewave_size#167",
+        "p_firewave_stun#168",
+        "sprite:fire wave_0"
+      ]
+    },
+    {
+      "label": "P_Firewave#158",
+      "theme": "gold",
+      "keys": [
+        "fire wave",
+        "fire_wave_basic",
+        "p_charaugment_froggy_bigswamp#40",
+        "p_custom_firewave_plus",
+        "p_custom_heavy_burst",
+        "p_custom_poison_wave",
+        "p_firewave#158",
+        "p_stat_damage#379",
+        "sprite:fire_wave_basic"
+      ]
+    },
+    {
+      "label": "P_FireyCape#267",
+      "theme": "gold",
+      "keys": [
+        "firey cape",
+        "firey_cape",
+        "p_fireycape#267",
+        "sprite:firey_cape"
+      ]
+    },
+    {
+      "label": "P_FreezeShot#409",
+      "theme": "ember",
+      "keys": [
+        "freezeshot",
+        "lootability_freeze",
+        "p_freezeshot#409",
+        "sprite:lootability_freeze"
+      ]
+    },
+    {
+      "label": "P_Gain_Shield_Big#270",
+      "theme": "coral",
+      "keys": [
+        "gain_shield_big",
+        "p_gain_shield_big#270",
+        "shieldbag_t5_thumb",
+        "sprite:shieldbag_t5_thumb"
+      ]
+    },
+    {
+      "label": "P_GainSizeByHp_GiganticSize#271",
+      "theme": "gold",
+      "keys": [
+        "gainsizebyhp_giganticsize",
+        "p_gainsizebyhp_giganticsize#271",
+        "sprite:vitality growth_0",
+        "vitality growth_0"
+      ]
+    },
+    {
+      "label": "P_Give_Item_AttackSpeed#207",
+      "theme": "ember",
+      "keys": [
+        "ability_attackmelee",
+        "give_item_attackspeed",
+        "p_give_item_attackspeed#207",
+        "sprite:ability_attackmelee"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Chains#208",
+      "theme": "azure",
+      "keys": [
+        "give_item_chains",
+        "lootability_chains_icon",
+        "p_give_item_chains#208",
+        "sprite:lootability_chains_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Dash#209",
+      "theme": "violet",
+      "keys": [
+        "give_item_dash",
+        "lootability_dash_icon",
+        "p_give_item_dash#209",
+        "sprite:lootability_dash_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_FireWaveEmpowered#210",
+      "theme": "ember",
+      "keys": [
+        "firewavepin_t1_thumb",
+        "give_item_firewaveempowered",
+        "p_give_item_firewaveempowered#210",
+        "sprite:firewavepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Knockback#213",
+      "theme": "violet",
+      "keys": [
+        "give_item_knockback",
+        "lootability_knockback_icon",
+        "p_give_item_knockback#213",
+        "sprite:lootability_knockback_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_ProtectZone#214",
+      "theme": "azure",
+      "keys": [
+        "give_item_protectzone",
+        "lootability_allyshield_icon",
+        "p_give_item_protectzone#214",
+        "sprite:lootability_allyshield_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Reboot#215",
+      "theme": "coral",
+      "keys": [
+        "give_item_reboot",
+        "lootability_cooldown_icon",
+        "p_give_item_reboot#215",
+        "sprite:lootability_cooldown_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Swapper#404",
+      "theme": "ember",
+      "keys": [
+        "give_item_swapper",
+        "lootability_swapper_icon",
+        "p_give_item_swapper#404",
+        "sprite:lootability_swapper_icon"
+      ]
+    },
+    {
+      "label": "P_Give_Item_Virus#216",
+      "theme": "ember",
+      "keys": [
+        "give_item_virus",
+        "lootability_poison_icon",
+        "p_give_item_virus#216",
+        "sprite:lootability_poison_icon"
+      ]
+    },
+    {
+      "label": "P_GoldRock#273",
+      "theme": "coral",
+      "keys": [
+        "game_gold",
+        "goldrock",
+        "p_goldrock#273",
+        "sprite:game_gold"
+      ]
+    },
+    {
+      "label": "P_GravitationalOrbit_GiganticSize#274",
+      "theme": "ember",
+      "keys": [
+        "gravitational orbit_0",
+        "gravitationalorbit_giganticsize",
+        "p_gravitationalorbit_giganticsize#274",
+        "sprite:gravitational orbit_0"
+      ]
+    },
+    {
+      "label": "P_HealingRain#277",
+      "theme": "ember",
+      "keys": [
+        "ability_healingarea",
+        "healingrain",
+        "overheal",
+        "p_healingrain#277",
+        "p_overheal#308",
+        "p_rejuvination#327",
+        "rejuvination",
+        "sprite:ability_healingarea"
+      ]
+    },
+    {
+      "label": "P_HealingSkills#278",
+      "theme": "coral",
+      "keys": [
+        "healing skills",
+        "healing skills_0",
+        "healingskills_pin",
+        "p_healingskills#278",
+        "p_healingskills_pin#279",
+        "sprite:healing skills_0"
+      ]
+    },
+    {
+      "label": "P_HeavyHitter#281",
+      "theme": "azure",
+      "keys": [
+        "heavyhitter",
+        "p_heavyhitter#281",
+        "sprite:x-octagon",
+        "x-octagon"
+      ]
+    },
+    {
+      "label": "P_HittyWitty#282",
+      "theme": "gold",
+      "keys": [
+        "hitty witty",
+        "hitty witty_0",
+        "hittywitty_crittree",
+        "hittywitty_pin",
+        "p_hittywitty#282",
+        "p_hittywitty_crittree#283",
+        "p_hittywitty_pin#284",
+        "sprite:hitty witty_0"
+      ]
+    },
+    {
+      "label": "P_JellySplash#286",
+      "theme": "violet",
+      "keys": [
+        "jelly hit_0",
+        "jelly splash",
+        "jellysplash_pin",
+        "p_jellysplash#286",
+        "p_jellysplash_pin#287",
+        "sprite:jelly hit_0"
+      ]
+    },
+    {
+      "label": "P_JumpBuff#288",
+      "theme": "gold",
+      "keys": [
+        "jump buff_0",
+        "jumpbuff",
+        "p_jumpbuff#288",
+        "sprite:jump buff_0"
+      ]
+    },
+    {
+      "label": "P_JumpSprint#289",
+      "theme": "violet",
+      "keys": [
+        "consumable_jumppad_thumb",
+        "jumpsprint",
+        "p_jumpsprint#289",
+        "sprite:consumable_jumppad_thumb"
+      ]
+    },
+    {
+      "label": "P_Kamikaze#290",
+      "theme": "azure",
+      "keys": [
+        "kamikaze",
+        "kamikaze_0",
+        "p_kamikaze#290",
+        "sprite:kamikaze_0"
+      ]
+    },
+    {
+      "label": "P_KnockbackPilled#291",
+      "theme": "violet",
+      "keys": [
+        "ability_heatwave",
+        "knockbackpilled",
+        "p_knockbackpilled#291",
+        "sprite:ability_heatwave"
+      ]
+    },
+    {
+      "label": "P_LmbForUlt#293",
+      "theme": "violet",
+      "keys": [
+        "lmbforult",
+        "p_lmbforult#293",
+        "primary for ult_0",
+        "sprite:primary for ult_0"
+      ]
+    },
+    {
+      "label": "P_LoneWolf#294",
+      "theme": "coral",
+      "keys": [
+        "lone wolf_0",
+        "lonewolf",
+        "p_lonewolf#294",
+        "sprite:lone wolf_0"
+      ]
+    },
+    {
+      "label": "P_LuckyDance#295",
+      "theme": "violet",
+      "keys": [
+        "lucky dance",
+        "lucky dance_0",
+        "luckydance_pin",
+        "p_luckydance#295",
+        "p_luckydance_pin#296",
+        "sprite:lucky dance_0"
+      ]
+    },
+    {
+      "label": "P_MetalBoots#297",
+      "theme": "ember",
+      "keys": [
+        "metalboots",
+        "metalboots_pin",
+        "p_metalboots#297",
+        "p_metalboots_pin#298",
+        "passive_metal_sprite",
+        "sprite:passive_metal_sprite"
+      ]
+    },
+    {
+      "label": "P_MetalUlt#299",
+      "theme": "azure",
+      "keys": [
+        "metal made",
+        "metal_made",
+        "p_metalult#299",
+        "sprite:metal_made"
+      ]
+    },
+    {
+      "label": "P_MobilityUpgrade#300",
+      "theme": "sapphire",
+      "keys": [
+        "mobilityupgrade",
+        "p_mobilityupgrade#300",
+        "p_ultimatespeed_sprint#357",
+        "passive_sprint_sprite",
+        "sprite:passive_sprint_sprite",
+        "ultimatespeed_sprint"
+      ]
+    },
+    {
+      "label": "P_MoneyIsHealth#153",
+      "theme": "coral",
+      "keys": [
+        "extra bulk_0",
+        "moneyishealth",
+        "ondamageddelay",
+        "ondamagedstun",
+        "p_moneyishealth#153",
+        "p_ondamageddelay#154",
+        "p_ondamagedstun#155",
+        "p_xtrabulk#367",
+        "p_xtrabulk_pin#368",
+        "p_xtraxtrabulk#156",
+        "sprite:extra bulk_0",
+        "xtrabulk",
+        "xtrabulk_pin",
+        "xtraxtrabulk"
+      ]
+    },
+    {
+      "label": "P_MoneyIsPower_Pin#301",
+      "theme": "coral",
+      "keys": [
+        "money is power_0",
+        "moneyispower_pin",
+        "p_moneyispower_pin#301",
+        "sprite:money is power_0"
+      ]
+    },
+    {
+      "label": "P_OnCd_Bleed#203",
+      "theme": "sapphire",
+      "keys": [
+        "blood hunt_0",
+        "oncd_bleed",
+        "p_oncd_bleed#203",
+        "sprite:blood hunt_0"
+      ]
+    },
+    {
+      "label": "P_OnCd_MountainShield#101",
+      "theme": "coral",
+      "keys": [
+        "oncd_mountainshield",
+        "p_oncd_mountainshield#101",
+        "rocky_e_sprite",
+        "sprite:rocky_e_sprite"
+      ]
+    },
+    {
+      "label": "P_OnDamage_NoodleCombo#410",
+      "theme": "gold",
+      "keys": [
+        "jiro - noodle combo_0",
+        "ondamage_noodlecombo",
+        "p_ondamage_noodlecombo#410",
+        "sprite:jiro - noodle combo_0"
+      ]
+    },
+    {
+      "label": "P_OnDamage_ThousandCuts#412",
+      "theme": "violet",
+      "keys": [
+        "ondamage_thousandcuts",
+        "p_ondamage_thousandcuts#412",
+        "sofia - thousand cuts_0",
+        "sprite:sofia - thousand cuts_0"
+      ]
+    },
+    {
+      "label": "P_OnHit_Lighting_ApplyAbilities#169",
+      "theme": "ember",
+      "keys": [
+        "lightning strike_0",
+        "lightningstrike_pin",
+        "onhit_lighting_applyabilities",
+        "onhit_lighting_applylmb",
+        "onhit_lighting_crit",
+        "onhit_lighting_damage",
+        "onhit_lighting_expose",
+        "onhit_lighting_range",
+        "onhit_lighting_sprint",
+        "onhit_lighting_target_gainatkspd",
+        "onhit_lightingstrike_abilitiesx",
+        "onhit_lightingstrike_lmb",
+        "p_lightningstrike_pin#292",
+        "p_onhit_lighting_applyabilities#169",
+        "p_onhit_lighting_applylmb#170",
+        "p_onhit_lighting_crit#171",
+        "p_onhit_lighting_damage#172",
+        "p_onhit_lighting_expose#173",
+        "p_onhit_lighting_range#174",
+        "p_onhit_lighting_sprint#175",
+        "p_onhit_lighting_target_gainatkspd#176",
+        "p_onhit_lightingstrike_abilitiesx#178",
+        "p_onhit_lightingstrike_lmb#179",
+        "sprite:lightning strike_0"
+      ]
+    },
+    {
+      "label": "P_OnHit_LightingStrike_Abilities#177",
+      "theme": "gold",
+      "keys": [
+        "lighting abilities",
+        "onhit_lightingstrike_abilities",
+        "p_onhit_lightingstrike_abilities#177",
+        "sprite:lighting abilities"
+      ]
+    },
+    {
+      "label": "P_OnHit_Lmb_ResetBullets#22",
+      "theme": "violet",
+      "keys": [
+        "anna - dash reset_0",
+        "onhit_lmb_resetbullets",
+        "p_onhit_lmb_resetbullets#22",
+        "sprite:anna - dash reset_0"
+      ]
+    },
+    {
+      "label": "P_OnHit_PoisonCrit#180",
+      "theme": "sapphire",
+      "keys": [
+        "appliedpoison",
+        "onhit_poisoncrit",
+        "p_appliedpoison#222",
+        "p_onhit_poisoncrit#180",
+        "p_poisondmg#181",
+        "p_poisonduration#182",
+        "p_poisonexplosion#183",
+        "p_poisonhit#184",
+        "p_poisonrush#311",
+        "p_poisonshield#185",
+        "p_poisonslow#186",
+        "p_swiftingpoison#349",
+        "p_toxicwave#355",
+        "poisondmg",
+        "poisonduration",
+        "poisonexplosion",
+        "poisonhit",
+        "poisonrush",
+        "poisonshield",
+        "poisonslow",
+        "sprite:stat_poison",
+        "stat_poison",
+        "swiftingpoison",
+        "toxicwave"
+      ]
+    },
+    {
+      "label": "P_OnHit3Times_ApplyKnockup#302",
+      "theme": "ember",
+      "keys": [
+        "onhit3times_applyknockup",
+        "p_onhit3times_applyknockup#302",
+        "sprite:stat_knocked",
+        "stat_knocked"
+      ]
+    },
+    {
+      "label": "P_OnStill_Polymorph#414",
+      "theme": "coral",
+      "keys": [
+        "arrow_down_next",
+        "onstill_polymorph",
+        "p_onstill_polymorph#414",
+        "sprite:arrow_down_next"
+      ]
+    },
+    {
+      "label": "P_OnTakeDmg_QDmg#96",
+      "theme": "coral",
+      "keys": [
+        "ontakedmg_qdmg",
+        "p_ontakedmg_qdmg#96",
+        "recoil blast_0",
+        "sprite:recoil blast_0"
+      ]
+    },
+    {
+      "label": "P_OnUse_Dmg#303",
+      "theme": "violet",
+      "keys": [
+        "ability damage_0",
+        "onuse_dmg",
+        "p_onuse_dmg#303",
+        "sprite:ability damage_0"
+      ]
+    },
+    {
+      "label": "P_OnUse_Lmb_OnHit_Poison_FFA#304",
+      "theme": "violet",
+      "keys": [
+        "empowered poison_0",
+        "onuse_lmb_onhit_poison_ffa",
+        "p_onuse_lmb_onhit_poison_ffa#304",
+        "p_toxictempo#353",
+        "p_toxictempo_pin#354",
+        "sprite:empowered poison_0",
+        "toxic tempo",
+        "toxictempo_pin"
+      ]
+    },
+    {
+      "label": "P_OnUse_Lmb_Push_Speed#305",
+      "theme": "violet",
+      "keys": [
+        "chuck - push punch_0",
+        "onuse_lmb_push_speed",
+        "p_onuse_lmb_push_speed#305",
+        "sprite:chuck - push punch_0"
+      ]
+    },
+    {
+      "label": "P_OnUse_Q_Dash#306",
+      "theme": "azure",
+      "keys": [
+        "ability_dash",
+        "onuse_q_dash",
+        "p_onuse_q_dash#306",
+        "sprite:ability_dash"
+      ]
+    },
+    {
+      "label": "P_OnUse_SnareAll#35",
+      "theme": "gold",
+      "keys": [
+        "ability_heavymeleepunch",
+        "onuse_snareall",
+        "p_onuse_snareall#35",
+        "sprite:ability_heavymeleepunch"
+      ]
+    },
+    {
+      "label": "P_OnUse_Ult_Dmg#307",
+      "theme": "coral",
+      "keys": [
+        "onuse_ult_dmg",
+        "p_onuse_ult_dmg#307",
+        "sprite:ultimate damage",
+        "ultimate damage"
+      ]
+    },
+    {
+      "label": "P_Pages#309",
+      "theme": "ember",
+      "keys": [
+        "bg_white_border",
+        "p_pages#309",
+        "pages",
+        "sprite:bg_white_border"
+      ]
+    },
+    {
+      "label": "P_PotionBoost#314",
+      "theme": "ember",
+      "keys": [
+        "item_healthpotion",
+        "p_potionboost#314",
+        "potionboost",
+        "sprite:item_healthpotion"
+      ]
+    },
+    {
+      "label": "P_PowerOrb_CDR#371",
+      "theme": "gold",
+      "keys": [
+        "p_powerorb_cdr#371",
+        "passive_core_chrono",
+        "powerorb_cdr",
+        "sprite:passive_core_chrono"
+      ]
+    },
+    {
+      "label": "P_PowerOrb_DMG#372",
+      "theme": "gold",
+      "keys": [
+        "p_powerorb_dmg#372",
+        "passive_core_sharp",
+        "powerorb_dmg",
+        "sprite:passive_core_sharp"
+      ]
+    },
+    {
+      "label": "P_PowerOrb_HP#373",
+      "theme": "ember",
+      "keys": [
+        "p_powerorb_hp#373",
+        "passive_core_bulky",
+        "powerorb_hp",
+        "sprite:passive_core_bulky"
+      ]
+    },
+    {
+      "label": "P_PowerOrb_VAMP#374",
+      "theme": "violet",
+      "keys": [
+        "p_powerorb_vamp#374",
+        "passive_core_vamp",
+        "powerorb_vamp",
+        "sprite:passive_core_vamp"
+      ]
+    },
+    {
+      "label": "P_PrimaryCharging#315",
+      "theme": "sapphire",
+      "keys": [
+        "p_primarycharging#315",
+        "p_primarycharging_pin#316",
+        "primary charge_0",
+        "primary charging",
+        "primarycharging_pin",
+        "sprite:primary charge_0"
+      ]
+    },
+    {
+      "label": "P_PushAndPull#417",
+      "theme": "ember",
+      "keys": [
+        "p_pushandpull#417",
+        "push and pull",
+        "push and pull_0",
+        "sprite:push and pull_0"
+      ]
+    },
+    {
+      "label": "P_RapidFire#322",
+      "theme": "gold",
+      "keys": [
+        "p_rapidfire#322",
+        "p_rapidfire_pin#323",
+        "rapid fire",
+        "rapidfire_pin",
+        "snappy strike_0",
+        "sprite:snappy strike_0"
+      ]
+    },
+    {
+      "label": "P_RechargingShield#324",
+      "theme": "ember",
+      "keys": [
+        "p_rechargingshield#324",
+        "p_rechargingshield2#325",
+        "p_rechargingshield_pin#326",
+        "recharging shield",
+        "recharging shield_0",
+        "rechargingshield2",
+        "rechargingshield_pin",
+        "sprite:recharging shield_0"
+      ]
+    },
+    {
+      "label": "P_Scavenger#328",
+      "theme": "violet",
+      "keys": [
+        "ability_mechshot",
+        "p_scavenger#328",
+        "scavenger",
+        "sprite:ability_mechshot"
+      ]
+    },
+    {
+      "label": "P_SE_ShowShieldEffect#329",
+      "theme": "ember",
+      "keys": [
+        "item_shield_icon",
+        "p_se_showshieldeffect#329",
+        "se_showshieldeffect",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "P_ShieldRush#331",
+      "theme": "sapphire",
+      "keys": [
+        "p_shieldrush#331",
+        "passive_sprint_icon",
+        "shieldrush",
+        "sprite:passive_sprint_icon"
+      ]
+    },
+    {
+      "label": "P_ShieldStun#189",
+      "theme": "violet",
+      "keys": [
+        "p_shieldstun#189",
+        "shieldstun",
+        "sprite:stat_stun",
+        "stat_stun"
+      ]
+    },
+    {
+      "label": "P_SinCity_RespawnTracker#204",
+      "theme": "azure",
+      "keys": [
+        "meta_challenge_live_0",
+        "p_sincity_respawntracker#204",
+        "sincity_respawntracker",
+        "sprite:meta_challenge_live",
+        "sprite:meta_challenge_live_0"
+      ]
+    },
+    {
+      "label": "P_SkullPotato#233",
+      "theme": "ember",
+      "keys": [
+        "p_skullpotato#233",
+        "skullpotato",
+        "sprite:vfx_p_loop_skull_thumb",
+        "vfx_p_loop_skull_thumb"
+      ]
+    },
+    {
+      "label": "P_SlowingHit#334",
+      "theme": "ember",
+      "keys": [
+        "p_slowinghit#334",
+        "slowinghit",
+        "sprite:stat_slow",
+        "stat_slow"
+      ]
+    },
+    {
+      "label": "P_SnapCritsSodium#335",
+      "theme": "coral",
+      "keys": [
+        "p_snapcritssodium#335",
+        "p_snapcritssodium_pin#336",
+        "salt",
+        "snapcritssodium",
+        "snapcritssodium_pin",
+        "sprite:salt"
+      ]
+    },
+    {
+      "label": "P_SoulStealer#338",
+      "theme": "violet",
+      "keys": [
+        "p_soulstealer#338",
+        "soulstealer",
+        "sprite:t_vfx_flare_02",
+        "t_vfx_flare_02"
+      ]
+    },
+    {
+      "label": "P_SpawnEntity_SlimeBoss#217",
+      "theme": "sapphire",
+      "keys": [
+        "ally slime_0",
+        "p_spawnentity_slimeboss#217",
+        "spawnentity_slimeboss",
+        "sprite:ally slime_0"
+      ]
+    },
+    {
+      "label": "P_SpawnEntity_Tank#405",
+      "theme": "ember",
+      "keys": [
+        "p_spawnentity_tank#405",
+        "spawnentity_tank",
+        "sprite:tank_0",
+        "tank_0"
+      ]
+    },
+    {
+      "label": "P_SpeedIsAtkSpd#339",
+      "theme": "violet",
+      "keys": [
+        "item_movespeed_icon",
+        "p_speedisatkspd#339",
+        "p_speedpellet#340",
+        "speedisatkspd",
+        "speedpellet",
+        "sprite:item_movespeed_icon"
+      ]
+    },
+    {
+      "label": "P_SpeedyWeedy#342",
+      "theme": "violet",
+      "keys": [
+        "p_speedyweedy#342",
+        "speedy weedy",
+        "sprite:speedy weedy"
+      ]
+    },
+    {
+      "label": "P_SpiritAura#343",
+      "theme": "sapphire",
+      "keys": [
+        "ability_healzone",
+        "p_spiritaura#343",
+        "spiritaura",
+        "sprite:ability_healzone"
+      ]
+    },
+    {
+      "label": "P_SprintingArmor#345",
+      "theme": "coral",
+      "keys": [
+        "p_sprintingarmor#345",
+        "sprinting armor_0",
+        "sprintingarmor",
+        "sprite:sprinting armor_0"
+      ]
+    },
+    {
+      "label": "P_Stat_AttackSpeed#375",
+      "theme": "coral",
+      "keys": [
+        "p_stat_atkspeed",
+        "p_stat_attackspeed#375",
+        "p_stat_minor_attackspeed#389",
+        "sprite:p_stat_atkspeed",
+        "stat_attackspeed",
+        "stat_minor_attackspeed"
+      ]
+    },
+    {
+      "label": "P_Stat_DamageReduction#380",
+      "theme": "sapphire",
+      "keys": [
+        "p_stat_damagereduction#380",
+        "p_stat_shield",
+        "sprite:p_stat_shield",
+        "stat_damagereduction"
+      ]
+    },
+    {
+      "label": "P_Stat_LifeSteal#382",
+      "theme": "gold",
+      "keys": [
+        "p_stat_lifesteal",
+        "p_stat_lifesteal#382",
+        "sprite:p_stat_lifesteal",
+        "stat_lifesteal"
+      ]
+    },
+    {
+      "label": "P_StickyBomb#346",
+      "theme": "ember",
+      "keys": [
+        "p_stickybomb#346",
+        "sprite:sticky bomb_0",
+        "sticky bomb",
+        "sticky bomb_0"
+      ]
+    },
+    {
+      "label": "P_StyleFactor#347",
+      "theme": "ember",
+      "keys": [
+        "p_stylefactor#347",
+        "p_stylefactor_pin#348",
+        "sprite:style factor_0",
+        "style factor",
+        "style factor_0",
+        "stylefactor_pin"
+      ]
+    },
+    {
+      "label": "P_TakedownTonic#350",
+      "theme": "sapphire",
+      "keys": [
+        "p_takedowntonic#350",
+        "sprite:takedown tonic_0",
+        "takedown tonic",
+        "takedown tonic_0"
+      ]
+    },
+    {
+      "label": "P_Thorns#351",
+      "theme": "gold",
+      "keys": [
+        "p_thorns#351",
+        "sprite:thorns",
+        "thorns"
+      ]
+    },
+    {
+      "label": "P_Tile_Invuln#205",
+      "theme": "ember",
+      "keys": [
+        "ontimer_invulnerable",
+        "p_ontimer_invulnerable#415",
+        "p_tile_invuln#205",
+        "p_tile_invulnerable#206",
+        "precise immunity_0",
+        "sprite:precise immunity_0",
+        "tile_invuln",
+        "tile_invulnerable"
+      ]
+    },
+    {
+      "label": "P_Timed_Dmg#352",
+      "theme": "sapphire",
+      "keys": [
+        "ontimer_gainstats",
+        "p_ontimer_gainstats#387",
+        "p_timed_dmg#352",
+        "sprite:time_icon",
+        "time_icon",
+        "timed_dmg"
+      ]
+    },
+    {
+      "label": "P_UltimateHittyWitty#356",
+      "theme": "ember",
+      "keys": [
+        "p_ultimatehittywitty#356",
+        "sprite:ultimate hitty witty_0",
+        "ultimate hitty witty_0",
+        "ultimatehittywitty"
+      ]
+    },
+    {
+      "label": "P_VampiricBackup#360",
+      "theme": "azure",
+      "keys": [
+        "item_lifesteal_icon",
+        "p_vampiricbackup#360",
+        "sprite:item_lifesteal_icon",
+        "vampiricbackup"
+      ]
+    },
+    {
+      "label": "P_Vengeance#15",
+      "theme": "sapphire",
+      "keys": [
+        "berserk",
+        "berserk_pin",
+        "berserker_0",
+        "bloodberserk",
+        "p_berserk#230",
+        "p_berserk_pin#231",
+        "p_bloodberserk#232",
+        "p_sinofberserk#332",
+        "p_speedyberserk#341",
+        "p_vengeance#15",
+        "sinofberserk",
+        "speedyberserk",
+        "sprite:berserker_0",
+        "vengeance"
+      ]
+    },
+    {
+      "label": "P_Vengeance#361",
+      "theme": "azure",
+      "keys": [
+        "p_vengeance#361",
+        "sprite:vengeance",
+        "vengeance"
+      ]
+    },
+    {
+      "label": "P_WaterShield#362",
+      "theme": "coral",
+      "keys": [
+        "p_watershield#362",
+        "sashimi - water shield_0",
+        "sprite:sashimi - water shield_0",
+        "water shield"
+      ]
+    },
+    {
+      "label": "P_WeakeningHit#190",
+      "theme": "sapphire",
+      "keys": [
+        "p_weakeninghit#190",
+        "p_weakeninghit#363",
+        "sprite:stat_weaken",
+        "stat_weaken",
+        "weakeninghit"
+      ]
+    },
+    {
+      "label": "P_ZombieTurrets#369",
+      "theme": "gold",
+      "keys": [
+        "p_zombieturrets#369",
+        "p_zombieturrets_pin#370",
+        "sprite:zombie turrets_0",
+        "zombie turrets_0",
+        "zombieturrets",
+        "zombieturrets_pin"
+      ]
+    },
+    {
+      "label": "Page#65",
+      "theme": "gold",
+      "keys": [
+        "page#65"
+      ]
+    },
+    {
+      "label": "PoisonReloadPin_T1#290",
+      "theme": "sapphire",
+      "keys": [
+        "poisonreloadpin_t1#290",
+        "sprite:poisonreloadpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "PoisonReloadPin_T2#291",
+      "theme": "azure",
+      "keys": [
+        "poisonreloadpin_t2#291",
+        "sprite:poisonreloadpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "PoisonReloadPin_T3#292",
+      "theme": "ember",
+      "keys": [
+        "poisonreloadpin_t3#292",
+        "sprite:poisonreloadpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "PoisonReloadPin_T4#293",
+      "theme": "sapphire",
+      "keys": [
+        "poisonreloadpin_t4#293",
+        "sprite:poisonreloadpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "PoisonReloadPin_T5#294",
+      "theme": "azure",
+      "keys": [
+        "poisonreloadpin_t5#294",
+        "sprite:poisonreloadpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "Polymorph1",
+      "theme": "azure",
+      "keys": [
+        "p_polymorph1#416"
+      ]
+    },
+    {
+      "label": "PolymorphCrystal",
+      "theme": "sapphire",
+      "keys": [
+        "p_polymorphcrystal#312"
+      ]
+    },
+    {
+      "label": "PrimaryCharging_T1#295",
+      "theme": "ember",
+      "keys": [
+        "primarycharging_t1#295",
+        "sprite:primarycharging_t1_thumb"
+      ]
+    },
+    {
+      "label": "PrimaryCharging_T2#296",
+      "theme": "sapphire",
+      "keys": [
+        "primarycharging_t2#296",
+        "sprite:primarycharging_t1_thumb"
+      ]
+    },
+    {
+      "label": "PrimaryCharging_T3#297",
+      "theme": "azure",
+      "keys": [
+        "primarycharging_t3#297",
+        "sprite:primarycharging_t1_thumb"
+      ]
+    },
+    {
+      "label": "PrimaryCharging_T4#298",
+      "theme": "ember",
+      "keys": [
+        "primarycharging_t4#298",
+        "sprite:primarycharging_t1_thumb"
+      ]
+    },
+    {
+      "label": "PrimaryCharging_T5#299",
+      "theme": "sapphire",
+      "keys": [
+        "primarycharging_t5#299",
+        "sprite:primarycharging_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveAuraPin_T1#300",
+      "theme": "gold",
+      "keys": [
+        "protectiveaurapin_t1#300",
+        "sprite:protectiveaurapin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveAuraPin_T2#301",
+      "theme": "coral",
+      "keys": [
+        "protectiveaurapin_t2#301",
+        "sprite:protectiveaurapin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveAuraPin_T3#302",
+      "theme": "violet",
+      "keys": [
+        "protectiveaurapin_t3#302",
+        "sprite:protectiveaurapin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveAuraPin_T4#303",
+      "theme": "gold",
+      "keys": [
+        "protectiveaurapin_t4#303",
+        "sprite:protectiveaurapin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveAuraPin_T5#304",
+      "theme": "coral",
+      "keys": [
+        "protectiveaurapin_t5#304",
+        "sprite:protectiveaurapin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveBubblePin_T1#305",
+      "theme": "gold",
+      "keys": [
+        "protectivebubblepin_t1#305",
+        "sprite:protectivebubblepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveBubblePin_T2#306",
+      "theme": "coral",
+      "keys": [
+        "protectivebubblepin_t2#306",
+        "sprite:protectivebubblepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveBubblePin_T3#307",
+      "theme": "violet",
+      "keys": [
+        "protectivebubblepin_t3#307",
+        "sprite:protectivebubblepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveBubblePin_T4#308",
+      "theme": "gold",
+      "keys": [
+        "protectivebubblepin_t4#308",
+        "sprite:protectivebubblepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "ProtectiveBubblePin_T5#309",
+      "theme": "coral",
+      "keys": [
+        "protectivebubblepin_t5#309",
+        "sprite:protectivebubblepin_t1_thumb"
+      ]
+    },
+    {
+      "label": "RapidFirePin_T1#310",
+      "theme": "azure",
+      "keys": [
+        "rapidfirepin_t1#310",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "RapidFirePin_T2#311",
+      "theme": "sapphire",
+      "keys": [
+        "rapidfirepin_t2#311",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "RapidFirePin_T3#312",
+      "theme": "ember",
+      "keys": [
+        "rapidfirepin_t3#312",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "RapidFirePin_T4#313",
+      "theme": "azure",
+      "keys": [
+        "rapidfirepin_t4#313",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "RapidFirePin_T5#314",
+      "theme": "sapphire",
+      "keys": [
+        "rapidfirepin_t5#314",
+        "sprite:item_headband"
+      ]
+    },
+    {
+      "label": "RechargingShieldPin_T1#315",
+      "theme": "ember",
+      "keys": [
+        "rechargingshieldpin_t1#315",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "RechargingShieldPin_T2#316",
+      "theme": "sapphire",
+      "keys": [
+        "rechargingshieldpin_t2#316",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "RechargingShieldPin_T3#317",
+      "theme": "azure",
+      "keys": [
+        "rechargingshieldpin_t3#317",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "RechargingShieldPin_T4#318",
+      "theme": "ember",
+      "keys": [
+        "rechargingshieldpin_t4#318",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "RechargingShieldPin_T5#319",
+      "theme": "sapphire",
+      "keys": [
+        "rechargingshieldpin_t5#319",
+        "sprite:item_shield_icon"
+      ]
+    },
+    {
+      "label": "RefundCD_T1#141",
+      "theme": "azure",
+      "keys": [
+        "refundcd_t1#141",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "RefundCD_T2#142",
+      "theme": "ember",
+      "keys": [
+        "refundcd_t2#142",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "RefundCD_T3#143",
+      "theme": "sapphire",
+      "keys": [
+        "refundcd_t3#143",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "RefundCD_T4#144",
+      "theme": "azure",
+      "keys": [
+        "refundcd_t4#144",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "RefundCD_T5#145",
+      "theme": "ember",
+      "keys": [
+        "refundcd_t5#145",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "ResetBoots#409",
+      "theme": "sapphire",
+      "keys": [
+        "resetboots#409",
+        "sprite:resetboots_t5_thumb"
+      ]
+    },
+    {
+      "label": "Rocky / Ability Swap",
+      "theme": "azure",
+      "keys": [
+        "rocky#14/abilityswap"
+      ]
+    },
+    {
+      "label": "ROCKY#14",
+      "theme": "ember",
+      "keys": [
+        "rocky#14"
+      ]
+    },
+    {
+      "label": "Sashimi / Ability Swap",
+      "theme": "ember",
+      "keys": [
+        "sashimi#3/abilityswap"
+      ]
+    },
+    {
+      "label": "SASHIMI#3",
+      "theme": "azure",
+      "keys": [
+        "sashimi#3"
+      ]
+    },
+    {
+      "label": "Saved Custom Preset 1",
+      "theme": "gold",
+      "keys": [
+        "arenapreset#saved01"
+      ]
+    },
+    {
+      "label": "Saved Custom Preset 2",
+      "theme": "azure",
+      "keys": [
+        "arenapreset#saved02"
+      ]
+    },
+    {
+      "label": "Saved Custom Preset 3",
+      "theme": "coral",
+      "keys": [
+        "arenapreset#saved03"
+      ]
+    },
+    {
+      "label": "Saved Custom Preset 4",
+      "theme": "ember",
+      "keys": [
+        "arenapreset#saved04"
+      ]
+    },
+    {
+      "label": "Saved Custom Preset 5",
+      "theme": "violet",
+      "keys": [
+        "arenapreset#saved05"
+      ]
+    },
+    {
+      "label": "SharpBag_T1#340",
+      "theme": "ember",
+      "keys": [
+        "sharpbag_t1#340",
+        "sprite:item_backpack_dmg"
+      ]
+    },
+    {
+      "label": "SharpBag_T2#341",
+      "theme": "azure",
+      "keys": [
+        "sharpbag_t2#341",
+        "sprite:item_backpack_dmg"
+      ]
+    },
+    {
+      "label": "SharpBag_T3#342",
+      "theme": "sapphire",
+      "keys": [
+        "sharpbag_t3#342",
+        "sprite:item_backpack_dmg"
+      ]
+    },
+    {
+      "label": "SharpBag_T4#343",
+      "theme": "ember",
+      "keys": [
+        "sharpbag_t4#343",
+        "sprite:item_backpack_dmg"
+      ]
+    },
+    {
+      "label": "SharpBag_T5#344",
+      "theme": "azure",
+      "keys": [
+        "sharpbag_t5#344",
+        "sprite:item_backpack_dmg"
+      ]
+    },
+    {
+      "label": "SharpBoots_T1#345",
+      "theme": "ember",
+      "keys": [
+        "sharpboots_t1#345",
+        "sprite:item_boots_dmg"
+      ]
+    },
+    {
+      "label": "SharpBoots_T2#346",
+      "theme": "azure",
+      "keys": [
+        "sharpboots_t2#346",
+        "sprite:item_boots_dmg"
+      ]
+    },
+    {
+      "label": "SharpBoots_T3#347",
+      "theme": "sapphire",
+      "keys": [
+        "sharpboots_t3#347",
+        "sprite:item_boots_dmg"
+      ]
+    },
+    {
+      "label": "SharpBoots_T4#348",
+      "theme": "ember",
+      "keys": [
+        "sharpboots_t4#348",
+        "sprite:item_boots_dmg"
+      ]
+    },
+    {
+      "label": "SharpBoots_T5#349",
+      "theme": "azure",
+      "keys": [
+        "sharpboots_t5#349",
+        "sprite:item_boots_dmg"
+      ]
+    },
+    {
+      "label": "SharpCap_T1#350",
+      "theme": "coral",
+      "keys": [
+        "sharpcap_t1#350",
+        "sprite:item_hat_dmg"
+      ]
+    },
+    {
+      "label": "SharpCap_T2#351",
+      "theme": "gold",
+      "keys": [
+        "sharpcap_t2#351",
+        "sprite:item_hat_dmg"
+      ]
+    },
+    {
+      "label": "SharpCap_T3#352",
+      "theme": "violet",
+      "keys": [
+        "sharpcap_t3#352",
+        "sprite:item_hat_dmg"
+      ]
+    },
+    {
+      "label": "SharpCap_T4#353",
+      "theme": "coral",
+      "keys": [
+        "sharpcap_t4#353",
+        "sprite:item_hat_dmg"
+      ]
+    },
+    {
+      "label": "SharpCap_T5#354",
+      "theme": "gold",
+      "keys": [
+        "sharpcap_t5#354",
+        "sprite:item_hat_dmg"
+      ]
+    },
+    {
+      "label": "ShellBag#410",
+      "theme": "ember",
+      "keys": [
+        "shellbag#410",
+        "sprite:item_heartbag"
+      ]
+    },
+    {
+      "label": "ShieldBag#411",
+      "theme": "ember",
+      "keys": [
+        "shieldbag#411",
+        "sprite:shieldbag_t5_thumb"
+      ]
+    },
+    {
+      "label": "Shred",
+      "theme": "violet",
+      "keys": [
+        "p_stat_shred#385"
+      ]
+    },
+    {
+      "label": "Skinny / Ability Swap",
+      "theme": "violet",
+      "keys": [
+        "skinny#6/abilityswap"
+      ]
+    },
+    {
+      "label": "SKINNY#6",
+      "theme": "violet",
+      "keys": [
+        "skinny#6"
+      ]
+    },
+    {
+      "label": "SlimeCap#412",
+      "theme": "sapphire",
+      "keys": [
+        "slimecap#412",
+        "sprite:slimecap_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnapBag_T1#355",
+      "theme": "ember",
+      "keys": [
+        "snapbag_t1#355",
+        "sprite:item_backpack_crit"
+      ]
+    },
+    {
+      "label": "SnapBag_T2#356",
+      "theme": "azure",
+      "keys": [
+        "snapbag_t2#356",
+        "sprite:item_backpack_crit"
+      ]
+    },
+    {
+      "label": "SnapBag_T3#357",
+      "theme": "sapphire",
+      "keys": [
+        "snapbag_t3#357",
+        "sprite:item_backpack_crit"
+      ]
+    },
+    {
+      "label": "SnapBag_T4#358",
+      "theme": "ember",
+      "keys": [
+        "snapbag_t4#358",
+        "sprite:item_backpack_crit"
+      ]
+    },
+    {
+      "label": "SnapBag_T5#359",
+      "theme": "azure",
+      "keys": [
+        "snapbag_t5#359",
+        "sprite:item_backpack_crit"
+      ]
+    },
+    {
+      "label": "SnapBoots_T1#360",
+      "theme": "gold",
+      "keys": [
+        "snapboots_t1#360",
+        "sprite:item_boots_crit"
+      ]
+    },
+    {
+      "label": "SnapBoots_T2#361",
+      "theme": "violet",
+      "keys": [
+        "snapboots_t2#361",
+        "sprite:item_boots_crit"
+      ]
+    },
+    {
+      "label": "SnapBoots_T3#362",
+      "theme": "coral",
+      "keys": [
+        "snapboots_t3#362",
+        "sprite:item_boots_crit"
+      ]
+    },
+    {
+      "label": "SnapBoots_T4#363",
+      "theme": "gold",
+      "keys": [
+        "snapboots_t4#363",
+        "sprite:item_boots_crit"
+      ]
+    },
+    {
+      "label": "SnapBoots_T5#364",
+      "theme": "violet",
+      "keys": [
+        "snapboots_t5#364",
+        "sprite:item_boots_crit"
+      ]
+    },
+    {
+      "label": "SnapCap_T1#365",
+      "theme": "coral",
+      "keys": [
+        "snapcap_t1#365",
+        "sprite:item_hat_crit"
+      ]
+    },
+    {
+      "label": "SnapCap_T2#366",
+      "theme": "gold",
+      "keys": [
+        "snapcap_t2#366",
+        "sprite:item_hat_crit"
+      ]
+    },
+    {
+      "label": "SnapCap_T3#367",
+      "theme": "violet",
+      "keys": [
+        "snapcap_t3#367",
+        "sprite:item_hat_crit"
+      ]
+    },
+    {
+      "label": "SnapCap_T4#368",
+      "theme": "coral",
+      "keys": [
+        "snapcap_t4#368",
+        "sprite:item_hat_crit"
+      ]
+    },
+    {
+      "label": "SnapCap_T5#369",
+      "theme": "gold",
+      "keys": [
+        "snapcap_t5#369",
+        "sprite:item_hat_crit"
+      ]
+    },
+    {
+      "label": "SnapCritSodiumPin_T1#320",
+      "theme": "sapphire",
+      "keys": [
+        "snapcritsodiumpin_t1#320",
+        "sprite:snapcritsodiumpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnapCritSodiumPin_T2#321",
+      "theme": "ember",
+      "keys": [
+        "snapcritsodiumpin_t2#321",
+        "sprite:snapcritsodiumpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnapCritSodiumPin_T3#322",
+      "theme": "azure",
+      "keys": [
+        "snapcritsodiumpin_t3#322",
+        "sprite:snapcritsodiumpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnapCritSodiumPin_T4#323",
+      "theme": "sapphire",
+      "keys": [
+        "snapcritsodiumpin_t4#323",
+        "sprite:snapcritsodiumpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnapCritSodiumPin_T5#324",
+      "theme": "ember",
+      "keys": [
+        "snapcritsodiumpin_t5#324",
+        "sprite:snapcritsodiumpin_t1_thumb"
+      ]
+    },
+    {
+      "label": "SnowCap#413",
+      "theme": "ember",
+      "keys": [
+        "snowcap#413",
+        "sprite:snowcap_t5_thumb"
+      ]
+    },
+    {
+      "label": "Sofia / Ability Swap",
+      "theme": "azure",
+      "keys": [
+        "sofia#9/abilityswap"
+      ]
+    },
+    {
+      "label": "SOFIA#9",
+      "theme": "ember",
+      "keys": [
+        "sofia#9"
+      ]
+    },
+    {
+      "label": "SpikeArmor_T1#81",
+      "theme": "coral",
+      "keys": [
+        "spikearmor_t1#81",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "SpikeArmor_T2#82",
+      "theme": "gold",
+      "keys": [
+        "spikearmor_t2#82",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "SpikeArmor_T3#83",
+      "theme": "violet",
+      "keys": [
+        "spikearmor_t3#83",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "SpikeArmor_T4#84",
+      "theme": "coral",
+      "keys": [
+        "spikearmor_t4#84",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "SpikeArmor_T5#85",
+      "theme": "gold",
+      "keys": [
+        "spikearmor_t5#85",
+        "sprite:item_spikearmor"
+      ]
+    },
+    {
+      "label": "SpikyBag_T1#370",
+      "theme": "violet",
+      "keys": [
+        "spikybag_t1#370",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBag_T2#371",
+      "theme": "coral",
+      "keys": [
+        "spikybag_t2#371",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBag_T3#372",
+      "theme": "gold",
+      "keys": [
+        "spikybag_t3#372",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBag_T4#373",
+      "theme": "violet",
+      "keys": [
+        "spikybag_t4#373",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBag_T5#374",
+      "theme": "coral",
+      "keys": [
+        "spikybag_t5#374",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBag#414",
+      "theme": "azure",
+      "keys": [
+        "spikybag#414",
+        "sprite:item_backpack_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBoots_T1#375",
+      "theme": "coral",
+      "keys": [
+        "spikyboots_t1#375",
+        "sprite:item_boots_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBoots_T2#376",
+      "theme": "gold",
+      "keys": [
+        "spikyboots_t2#376",
+        "sprite:item_boots_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBoots_T3#377",
+      "theme": "violet",
+      "keys": [
+        "spikyboots_t3#377",
+        "sprite:item_boots_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBoots_T4#378",
+      "theme": "coral",
+      "keys": [
+        "spikyboots_t4#378",
+        "sprite:item_boots_thorns"
+      ]
+    },
+    {
+      "label": "SpikyBoots_T5#379",
+      "theme": "gold",
+      "keys": [
+        "spikyboots_t5#379",
+        "sprite:item_boots_thorns"
+      ]
+    },
+    {
+      "label": "SpikyCap_T1#380",
+      "theme": "azure",
+      "keys": [
+        "spikycap_t1#380",
+        "sprite:item_hat_thorns"
+      ]
+    },
+    {
+      "label": "SpikyCap_T2#381",
+      "theme": "ember",
+      "keys": [
+        "spikycap_t2#381",
+        "sprite:item_hat_thorns"
+      ]
+    },
+    {
+      "label": "SpikyCap_T3#382",
+      "theme": "sapphire",
+      "keys": [
+        "spikycap_t3#382",
+        "sprite:item_hat_thorns"
+      ]
+    },
+    {
+      "label": "SpikyCap_T4#383",
+      "theme": "azure",
+      "keys": [
+        "spikycap_t4#383",
+        "sprite:item_hat_thorns"
+      ]
+    },
+    {
+      "label": "SpikyCap_T5#384",
+      "theme": "ember",
+      "keys": [
+        "spikycap_t5#384",
+        "sprite:item_hat_thorns"
+      ]
+    },
+    {
+      "label": "Spriest_Disperse",
+      "theme": "coral",
+      "keys": [
+        "p_spriest_disperse#344"
+      ]
+    },
+    {
+      "label": "SprintBoots#415",
+      "theme": "sapphire",
+      "keys": [
+        "sprintboots#415",
+        "sprite:sprintboots_t5_thumb"
+      ]
+    },
+    {
+      "label": "Sunglasses_T1#86",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_sunglasses",
+        "sunglasses_t1#86"
+      ]
+    },
+    {
+      "label": "Sunglasses_T2#87",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_sunglasses",
+        "sunglasses_t2#87"
+      ]
+    },
+    {
+      "label": "Sunglasses_T3#88",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_sunglasses",
+        "sunglasses_t3#88"
+      ]
+    },
+    {
+      "label": "Sunglasses_T4#89",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_sunglasses",
+        "sunglasses_t4#89"
+      ]
+    },
+    {
+      "label": "Sunglasses_T5#90",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_sunglasses",
+        "sunglasses_t5#90"
+      ]
+    },
+    {
+      "label": "SupBoots_T1#146",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "supboots_t1#146"
+      ]
+    },
+    {
+      "label": "SupBoots_T2#147",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "supboots_t2#147"
+      ]
+    },
+    {
+      "label": "SupBoots_T3#148",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "supboots_t3#148"
+      ]
+    },
+    {
+      "label": "SupBoots_T4#149",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "supboots_t4#149"
+      ]
+    },
+    {
+      "label": "SupBoots_T5#150",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "supboots_t5#150"
+      ]
+    },
+    {
+      "label": "SwiftBag_T1#385",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_backpack_ms",
+        "swiftbag_t1#385"
+      ]
+    },
+    {
+      "label": "SwiftBag_T2#386",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_backpack_ms",
+        "swiftbag_t2#386"
+      ]
+    },
+    {
+      "label": "SwiftBag_T3#387",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_backpack_ms",
+        "swiftbag_t3#387"
+      ]
+    },
+    {
+      "label": "SwiftBag_T4#388",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_backpack_ms",
+        "swiftbag_t4#388"
+      ]
+    },
+    {
+      "label": "SwiftBag_T5#389",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_backpack_ms",
+        "swiftbag_t5#389"
+      ]
+    },
+    {
+      "label": "SwiftBoots_T1#390",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_ms",
+        "swiftboots_t1#390"
+      ]
+    },
+    {
+      "label": "SwiftBoots_T2#391",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_boots_ms",
+        "swiftboots_t2#391"
+      ]
+    },
+    {
+      "label": "SwiftBoots_T3#392",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_boots_ms",
+        "swiftboots_t3#392"
+      ]
+    },
+    {
+      "label": "SwiftBoots_T4#393",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_ms",
+        "swiftboots_t4#393"
+      ]
+    },
+    {
+      "label": "SwiftBoots_T5#394",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_boots_ms",
+        "swiftboots_t5#394"
+      ]
+    },
+    {
+      "label": "SwiftCap_T1#395",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_hat_ms",
+        "swiftcap_t1#395"
+      ]
+    },
+    {
+      "label": "SwiftCap_T2#396",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_hat_ms",
+        "swiftcap_t2#396"
+      ]
+    },
+    {
+      "label": "SwiftCap_T3#397",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_hat_ms",
+        "swiftcap_t3#397"
+      ]
+    },
+    {
+      "label": "SwiftCap_T4#398",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_hat_ms",
+        "swiftcap_t4#398"
+      ]
+    },
+    {
+      "label": "SwiftCap_T5#399",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_hat_ms",
+        "swiftcap_t5#399"
+      ]
+    },
+    {
+      "label": "Sword_T1#91",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_sword",
+        "sword_t1#91"
+      ]
+    },
+    {
+      "label": "Sword_T2#92",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_sword",
+        "sword_t2#92"
+      ]
+    },
+    {
+      "label": "Sword_T3#93",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_sword",
+        "sword_t3#93"
+      ]
+    },
+    {
+      "label": "Sword_T4#94",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_sword",
+        "sword_t4#94"
+      ]
+    },
+    {
+      "label": "Sword_T5#95",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_sword",
+        "sword_t5#95"
+      ]
+    },
+    {
+      "label": "TankyBoots_T1#151",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_jeezys",
+        "tankyboots_t1#151"
+      ]
+    },
+    {
+      "label": "TankyBoots_T2#152",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_jeezys",
+        "tankyboots_t2#152"
+      ]
+    },
+    {
+      "label": "TankyBoots_T3#153",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_jeezys",
+        "tankyboots_t3#153"
+      ]
+    },
+    {
+      "label": "TankyBoots_T4#154",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_jeezys",
+        "tankyboots_t4#154"
+      ]
+    },
+    {
+      "label": "TankyBoots_T5#155",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_jeezys",
+        "tankyboots_t5#155"
+      ]
+    },
+    {
+      "label": "Team Battle Preset",
+      "theme": "ember",
+      "keys": [
+        "arenapreset#teambattle"
+      ]
+    },
+    {
+      "label": "Teeth_T1#96",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_teeth",
+        "teeth_t1#96"
+      ]
+    },
+    {
+      "label": "Teeth_T2#97",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_teeth",
+        "teeth_t2#97"
+      ]
+    },
+    {
+      "label": "Teeth_T3#98",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_teeth",
+        "teeth_t3#98"
+      ]
+    },
+    {
+      "label": "Teeth_T4#99",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_teeth",
+        "teeth_t4#99"
+      ]
+    },
+    {
+      "label": "Teeth_T5#100",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_teeth",
+        "teeth_t5#100"
+      ]
+    },
+    {
+      "label": "Teevee / Ability Swap",
+      "theme": "violet",
+      "keys": [
+        "teevee#8/abilityswap"
+      ]
+    },
+    {
+      "label": "TEEVEE#8",
+      "theme": "gold",
+      "keys": [
+        "teevee#8"
+      ]
+    },
+    {
+      "label": "ThornsPin_T1#325",
+      "theme": "azure",
+      "keys": [
+        "sprite:thornspin_t1_thumb",
+        "thornspin_t1#325"
+      ]
+    },
+    {
+      "label": "ThornsPin_T2#326",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:thornspin_t1_thumb",
+        "thornspin_t2#326"
+      ]
+    },
+    {
+      "label": "ThornsPin_T3#327",
+      "theme": "ember",
+      "keys": [
+        "sprite:thornspin_t1_thumb",
+        "thornspin_t3#327"
+      ]
+    },
+    {
+      "label": "ThornsPin_T4#328",
+      "theme": "azure",
+      "keys": [
+        "sprite:thornspin_t1_thumb",
+        "thornspin_t4#328"
+      ]
+    },
+    {
+      "label": "ThornsPin_T5#329",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:thornspin_t1_thumb",
+        "thornspin_t5#329"
+      ]
+    },
+    {
+      "label": "TurretBag#416",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_torso_cylinderbackpack",
+        "turretbag#416"
+      ]
+    },
+    {
+      "label": "VampBag_T1#418",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_backpack_ls",
+        "vampbag_t1#418"
+      ]
+    },
+    {
+      "label": "VampBag_T2#419",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_backpack_ls",
+        "vampbag_t2#419"
+      ]
+    },
+    {
+      "label": "VampBag_T3#420",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_backpack_ls",
+        "vampbag_t3#420"
+      ]
+    },
+    {
+      "label": "VampBag_T4#421",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_backpack_ls",
+        "vampbag_t4#421"
+      ]
+    },
+    {
+      "label": "VampBag_T5#422",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_backpack_ls",
+        "vampbag_t5#422"
+      ]
+    },
+    {
+      "label": "VampBoots_T1#423",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_ls",
+        "vampboots_t1#423"
+      ]
+    },
+    {
+      "label": "VampBoots_T2#424",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_boots_ls",
+        "vampboots_t2#424"
+      ]
+    },
+    {
+      "label": "VampBoots_T3#425",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_boots_ls",
+        "vampboots_t3#425"
+      ]
+    },
+    {
+      "label": "VampBoots_T4#426",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_boots_ls",
+        "vampboots_t4#426"
+      ]
+    },
+    {
+      "label": "VampBoots_T5#427",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_boots_ls",
+        "vampboots_t5#427"
+      ]
+    },
+    {
+      "label": "VampCap_T1#428",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_hat_ls",
+        "vampcap_t1#428"
+      ]
+    },
+    {
+      "label": "VampCap_T2#429",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_hat_ls",
+        "vampcap_t2#429"
+      ]
+    },
+    {
+      "label": "VampCap_T3#430",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_hat_ls",
+        "vampcap_t3#430"
+      ]
+    },
+    {
+      "label": "VampCap_T4#431",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_hat_ls",
+        "vampcap_t4#431"
+      ]
+    },
+    {
+      "label": "VampCap_T5#432",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_hat_ls",
+        "vampcap_t5#432"
+      ]
+    },
+    {
+      "label": "Watch_T1#101",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_watch",
+        "watch_t1#101"
+      ]
+    },
+    {
+      "label": "Watch_T2#102",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_watch",
+        "watch_t2#102"
+      ]
+    },
+    {
+      "label": "Watch_T3#103",
+      "theme": "sapphire",
+      "keys": [
+        "sprite:item_watch",
+        "watch_t3#103"
+      ]
+    },
+    {
+      "label": "Watch_T4#104",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_watch",
+        "watch_t4#104"
+      ]
+    },
+    {
+      "label": "Watch_T5#105",
+      "theme": "azure",
+      "keys": [
+        "sprite:item_watch",
+        "watch_t5#105"
+      ]
+    },
+    {
+      "label": "Well_Fed",
+      "theme": "violet",
+      "keys": [
+        "p_well_fed#388"
+      ]
+    },
+    {
+      "label": "WorkBenchPin_T1#330",
+      "theme": "coral",
+      "keys": [
+        "sprite:workbenchpin_t1_thumb",
+        "workbenchpin_t1#330"
+      ]
+    },
+    {
+      "label": "WorkBenchPin_T2#331",
+      "theme": "violet",
+      "keys": [
+        "sprite:workbenchpin_t1_thumb",
+        "workbenchpin_t2#331"
+      ]
+    },
+    {
+      "label": "WorkBenchPin_T3#332",
+      "theme": "gold",
+      "keys": [
+        "sprite:workbenchpin_t1_thumb",
+        "workbenchpin_t3#332"
+      ]
+    },
+    {
+      "label": "WorkBenchPin_T4#333",
+      "theme": "coral",
+      "keys": [
+        "sprite:workbenchpin_t1_thumb",
+        "workbenchpin_t4#333"
+      ]
+    },
+    {
+      "label": "WorkBenchPin_T5#334",
+      "theme": "violet",
+      "keys": [
+        "sprite:workbenchpin_t1_thumb",
+        "workbenchpin_t5#334"
+      ]
+    },
+    {
+      "label": "WtfTorso_T1#156",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_spikearmor",
+        "wtftorso_t1#156"
+      ]
+    },
+    {
+      "label": "WtfTorso_T2#157",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_spikearmor",
+        "wtftorso_t2#157"
+      ]
+    },
+    {
+      "label": "WtfTorso_T3#158",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_spikearmor",
+        "wtftorso_t3#158"
+      ]
+    },
+    {
+      "label": "WtfTorso_T4#159",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_spikearmor",
+        "wtftorso_t4#159"
+      ]
+    },
+    {
+      "label": "XBulkBoots#417",
+      "theme": "ember",
+      "keys": [
+        "sprite:item_boots_greenclips",
+        "xbulkboots#417"
+      ]
+    },
+    {
+      "label": "ZombieTurretPin_T1#335",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_watch",
+        "zombieturretpin_t1#335"
+      ]
+    },
+    {
+      "label": "ZombieTurretPin_T2#336",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_watch",
+        "zombieturretpin_t2#336"
+      ]
+    },
+    {
+      "label": "ZombieTurretPin_T3#337",
+      "theme": "coral",
+      "keys": [
+        "sprite:item_watch",
+        "zombieturretpin_t3#337"
+      ]
+    },
+    {
+      "label": "ZombieTurretPin_T4#338",
+      "theme": "gold",
+      "keys": [
+        "sprite:item_watch",
+        "zombieturretpin_t4#338"
+      ]
+    },
+    {
+      "label": "ZombieTurretPin_T5#339",
+      "theme": "violet",
+      "keys": [
+        "sprite:item_watch",
+        "zombieturretpin_t5#339"
+      ]
+    },
+    {
+      "label": "Zook / Ability Swap",
+      "theme": "violet",
+      "keys": [
+        "zook#5/abilityswap"
+      ]
+    },
+    {
+      "label": "ZOOK#5",
+      "theme": "coral",
+      "keys": [
+        "zook#5"
+      ]
+    }
+  ]
+}

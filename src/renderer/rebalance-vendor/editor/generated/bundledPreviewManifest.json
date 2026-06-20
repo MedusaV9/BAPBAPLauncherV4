@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-04-25T00:21:23.881Z",
+  "sourceRoots": [
+    "bundled-default-workspace"
+  ],
+  "defaultCard": {
+    "backgroundAssetId": "gamecard/daily-rare-bg",
+    "frameAssetId": "gamecard/content-border",
+    "overlayAssetId": "gamecard/content-border",
+    "templateAssetId": "gamecard/inspect-card-template",
+    "titleFontAssetId": "gamecard/font-title",
+    "bodyFontAssetId": "gamecard/font-body"
+  },
+  "kindDefaults": {
+    "augment": {
+      "backgroundAssetId": "gamecard/daily-rare-bg",
+      "frameAssetId": "gamecard/content-border",
+      "overlayAssetId": "gamecard/content-border"
+    },
+    "item": {
+      "backgroundAssetId": "gamecard/reward-obtained-bg",
+      "frameAssetId": "gamecard/content-border",
+      "overlayAssetId": "gamecard/content-border"
+    }
+  }
+}

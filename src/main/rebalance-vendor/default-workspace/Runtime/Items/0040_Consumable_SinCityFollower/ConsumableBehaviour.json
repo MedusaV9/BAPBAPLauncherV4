@@ -1,0 +1,1312 @@
+﻿{
+  "schemaVersion": 10,
+  "targetType": "ItemConsumableBehaviour",
+  "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+  "displayName": "Consumable Behaviour",
+  "resolvedName": "Consumable Behaviour",
+  "generatedAtUtc": "2026-04-15T23:25:20.6218475Z",
+  "quickEdit": [
+    {
+      "setting": "Cast Time",
+      "category": "Timing",
+      "path": "configuration.castTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.5,
+      "defaultValue": 0.5,
+      "whatItDoes": "Cast time in seconds before the ability completes.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Lerp Speed",
+      "category": "Movement",
+      "path": "configuration.lerpSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Lerp Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Radiu 1 / Radius",
+      "category": "Area",
+      "path": "configuration.radius[0]",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Radius of the affected area around the target point or source.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Radiu 2 / Radius",
+      "category": "Area",
+      "path": "configuration.radius[1]",
+      "editable": true,
+      "valueType": "number",
+      "value": 10,
+      "defaultValue": 10,
+      "whatItDoes": "Radius of the affected area around the target point or source.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Radiu 3 / Radius",
+      "category": "Area",
+      "path": "configuration.radius[2]",
+      "editable": true,
+      "valueType": "number",
+      "value": 20,
+      "defaultValue": 20,
+      "whatItDoes": "Radius of the affected area around the target point or source.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Radiu 4 / Radius",
+      "category": "Area",
+      "path": "configuration.radius[3]",
+      "editable": true,
+      "valueType": "number",
+      "value": 30,
+      "defaultValue": 30,
+      "whatItDoes": "Radius of the affected area around the target point or source.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cancelable",
+      "category": "Behavior",
+      "path": "configuration.cancelable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Silenceable",
+      "category": "Behavior",
+      "path": "configuration.silenceable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Usable While Downed",
+      "category": "Behavior",
+      "path": "configuration.usableWhileDowned",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Input Type",
+      "category": "General",
+      "path": "configuration.inputType",
+      "editable": true,
+      "valueType": "string",
+      "value": "Down",
+      "defaultValue": "Down",
+      "whatItDoes": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for \u0027Consumable Behaviour\u0027. You can change Timing, Movement, Area, Behavior, General.",
+    "whatYouCanChange": [
+      "Timing",
+      "Movement",
+      "Area",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config."
+    ],
+    "groups": [
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Cast Time",
+            "path": "configuration.castTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cast time in seconds before the ability completes.",
+            "defaultValue": 0.5,
+            "currentValue": 0.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Lerp Speed",
+            "path": "configuration.lerpSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Lerp Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Area",
+        "entries": [
+          {
+            "name": "Radiu 1 / Radius",
+            "path": "configuration.radius[0]",
+            "editable": true,
+            "valueType": "number",
+            "description": "Radius of the affected area around the target point or source.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Radiu 2 / Radius",
+            "path": "configuration.radius[1]",
+            "editable": true,
+            "valueType": "number",
+            "description": "Radius of the affected area around the target point or source.",
+            "defaultValue": 10,
+            "currentValue": 10,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Radiu 3 / Radius",
+            "path": "configuration.radius[2]",
+            "editable": true,
+            "valueType": "number",
+            "description": "Radius of the affected area around the target point or source.",
+            "defaultValue": 20,
+            "currentValue": 20,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Radiu 4 / Radius",
+            "path": "configuration.radius[3]",
+            "editable": true,
+            "valueType": "number",
+            "description": "Radius of the affected area around the target point or source.",
+            "defaultValue": 30,
+            "currentValue": 30,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Cancelable",
+            "path": "configuration.cancelable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Silenceable",
+            "path": "configuration.silenceable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Usable While Downed",
+            "path": "configuration.usableWhileDowned",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Input Type",
+            "path": "configuration.inputType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+            "defaultValue": "Down",
+            "currentValue": "Down",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "configuration.lerpSpeed",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Lerp Speed",
+          "description": "Lerp Speed value. Higher values usually make the movement, projectile, or effect faster.",
+          "valueType": "number",
+          "defaultValue": 1,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "configuration.dimension",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Dimension",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "GameObject:DZ_SinCity",
+          "options": [
+            "GameObject:DZ_SinCity",
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_StunEffect_Loop",
+            "PassiveSO:P_Berserk",
+            "PassiveSO:P_D_SinCity",
+            "Sprite:Ability_FireStorm",
+            "Sprite:Anna - Big Ult_0",
+            "Sprite:Anna - Dash Reset_0",
+            "Sprite:Anna - Long Dash_0",
+            "Sprite:Anna - Machine Gun_0",
+            "Sprite:Anna - Precision Shot_0",
+            "Sprite:Anna_Space_Sprite",
+            "Sprite:BerserkerPin_T1_Thumb",
+            "Sprite:Berserker_0",
+            "Sprite:Consumable_Flamethrower_Thumb",
+            "Sprite:Consumable_Harpoon_Thumb",
+            "Sprite:Consumable_MachineGun_Thumb",
+            "Sprite:Consumable_RPG_Thumb",
+            "Sprite:Consumable_Shotgun_Thumb",
+            "Sprite:Dz_Pistol_Icon",
+            "Sprite:P_Stat_Cd",
+            "Sprite:P_Stat_Dmg",
+            "Sprite:P_Stat_Hp",
+            "Sprite:P_Stat_MoveSpeed",
+            "Sprite:Passive_SinCity_Bleed_Sprite_0",
+            "Sprite:Skull_Throw_Thumb",
+            "StatusEffectSO:SE_Burn",
+            "StatusEffectSO:SE_Fear",
+            "StatusEffectSO:SE_Knocked",
+            "StatusEffectSO:SE_Pulled",
+            "StatusEffectSO:SE_Stunned"
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "configuration.dimension",
+      "label": "Dimension",
+      "currentReference": "GameObject:DZ_SinCity",
+      "referenceType": "Reference",
+      "suggestions": [
+        "Reference"
+      ],
+      "availableReferences": [
+        "GameObject:DZ_SinCity",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_StunEffect_Loop",
+        "PassiveSO:P_Berserk",
+        "PassiveSO:P_D_SinCity",
+        "Sprite:Ability_FireStorm",
+        "Sprite:Anna - Big Ult_0",
+        "Sprite:Anna - Dash Reset_0",
+        "Sprite:Anna - Long Dash_0",
+        "Sprite:Anna - Machine Gun_0",
+        "Sprite:Anna - Precision Shot_0",
+        "Sprite:Anna_Space_Sprite",
+        "Sprite:BerserkerPin_T1_Thumb",
+        "Sprite:Berserker_0",
+        "Sprite:Consumable_Flamethrower_Thumb",
+        "Sprite:Consumable_Harpoon_Thumb",
+        "Sprite:Consumable_MachineGun_Thumb",
+        "Sprite:Consumable_RPG_Thumb",
+        "Sprite:Consumable_Shotgun_Thumb",
+        "Sprite:Dz_Pistol_Icon",
+        "Sprite:P_Stat_Cd",
+        "Sprite:P_Stat_Dmg",
+        "Sprite:P_Stat_Hp",
+        "Sprite:P_Stat_MoveSpeed",
+        "Sprite:Passive_SinCity_Bleed_Sprite_0",
+        "Sprite:Skull_Throw_Thumb",
+        "StatusEffectSO:SE_Burn",
+        "StatusEffectSO:SE_Fear",
+        "StatusEffectSO:SE_Knocked",
+        "StatusEffectSO:SE_Pulled",
+        "StatusEffectSO:SE_Stunned"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Dz Sin City",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Items",
+    "label": "Items - Details",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:configuration.dimension:reference",
+      "operationType": "clear",
+      "path": "configuration.dimension",
+      "mode": "soft",
+      "label": "Clear Dimension",
+      "description": "Remove the current Reference from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Dz Sin City",
+      "previewSubtitle": "GameObject:DZ_SinCity",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:DZ_SinCity",
+      "afterValue": null,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%castTime%",
+      "label": "Cast Time",
+      "description": "Cast time in seconds before the ability completes.",
+      "sourcePath": "configuration.castTime",
+      "valueType": "number",
+      "previewValue": 0.5,
+      "previewText": "0.5"
+    },
+    {
+      "token": "%lerpSpeed%",
+      "label": "Lerp Speed",
+      "description": "Lerp Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.lerpSpeed",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%radiu1/Radius%",
+      "label": "Radiu 1 / Radius",
+      "description": "Radius of the affected area around the target point or source.",
+      "sourcePath": "configuration.radius[0]",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%radiu2/Radius%",
+      "label": "Radiu 2 / Radius",
+      "description": "Radius of the affected area around the target point or source.",
+      "sourcePath": "configuration.radius[1]",
+      "valueType": "number",
+      "previewValue": 10,
+      "previewText": "10"
+    },
+    {
+      "token": "%radiu3/Radius%",
+      "label": "Radiu 3 / Radius",
+      "description": "Radius of the affected area around the target point or source.",
+      "sourcePath": "configuration.radius[2]",
+      "valueType": "number",
+      "previewValue": 20,
+      "previewText": "20"
+    },
+    {
+      "token": "%radiu4/Radius%",
+      "label": "Radiu 4 / Radius",
+      "description": "Radius of the affected area around the target point or source.",
+      "sourcePath": "configuration.radius[3]",
+      "valueType": "number",
+      "previewValue": 30,
+      "previewText": "30"
+    },
+    {
+      "token": "%cancelable%",
+      "label": "Cancelable",
+      "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.cancelable",
+      "valueType": "boolean",
+      "previewValue": false,
+      "previewText": "Off"
+    },
+    {
+      "token": "%silenceable%",
+      "label": "Silenceable",
+      "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.silenceable",
+      "valueType": "boolean",
+      "previewValue": false,
+      "previewText": "Off"
+    },
+    {
+      "token": "%usableWhileDowned%",
+      "label": "Usable While Downed",
+      "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.usableWhileDowned",
+      "valueType": "boolean",
+      "previewValue": false,
+      "previewText": "Off"
+    },
+    {
+      "token": "%inputType%",
+      "label": "Input Type",
+      "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "sourcePath": "configuration.inputType",
+      "valueType": "string",
+      "previewValue": "Down",
+      "previewText": "Down"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.castTime",
+        "displayName": "Cast Time",
+        "label": "Cast Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cast time in seconds before the ability completes.",
+        "defaultValue": 0.5,
+        "currentValue": 0.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.lerpSpeed",
+        "displayName": "Lerp Speed",
+        "label": "Lerp Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Lerp Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.radius[0]",
+        "displayName": "Radiu 1 / Radius",
+        "label": "Radius",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Radius of the affected area around the target point or source.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.radius[1]",
+        "displayName": "Radiu 2 / Radius",
+        "label": "Radius",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Radius of the affected area around the target point or source.",
+        "defaultValue": 10,
+        "currentValue": 10,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.radius[2]",
+        "displayName": "Radiu 3 / Radius",
+        "label": "Radius",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Radius of the affected area around the target point or source.",
+        "defaultValue": 20,
+        "currentValue": 20,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.radius[3]",
+        "displayName": "Radiu 4 / Radius",
+        "label": "Radius",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Radius of the affected area around the target point or source.",
+        "defaultValue": 30,
+        "currentValue": 30,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.cancelable",
+        "displayName": "Cancelable",
+        "label": "Cancelable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.silenceable",
+        "displayName": "Silenceable",
+        "label": "Silenceable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.usableWhileDowned",
+        "displayName": "Usable While Downed",
+        "label": "Usable While Downed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.inputType",
+        "displayName": "Input Type",
+        "label": "Input Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+        "defaultValue": "Down",
+        "currentValue": "Down",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.order",
+        "displayName": "Order",
+        "label": "Order",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Sort order used by the game UI or internal lists.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "id",
+        "displayName": "ID",
+        "label": "ID",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Internal identifier for this entry. Changing IDs can break references from pools, managers, or other data.",
+        "defaultValue": 32,
+        "currentValue": 32,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 1280,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 128,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 1280,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_SinCityFollower#40/ConsumableBehaviour",
+        "path": "configuration.dimension",
+        "displayName": "Dimension",
+        "label": "Dimension",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Dimension. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:DZ_SinCity",
+        "currentValue": "GameObject:DZ_SinCity",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      }
+    ],
+    "defaults": {
+      "configuration.cancelable": false,
+      "configuration.castTime": 0.5,
+      "configuration.dimension": "GameObject:DZ_SinCity",
+      "configuration.inputType": "Down",
+      "configuration.lerpSpeed": 1,
+      "configuration.order": 0,
+      "configuration.radius[0]": 0,
+      "configuration.radius[1]": 10,
+      "configuration.radius[2]": 20,
+      "configuration.radius[3]": 30,
+      "configuration.silenceable": false,
+      "configuration.usableWhileDowned": false,
+      "id": 32
+    },
+    "effectiveValues": {
+      "configuration.cancelable": false,
+      "configuration.castTime": 0.5,
+      "configuration.dimension": "GameObject:DZ_SinCity",
+      "configuration.inputType": "Down",
+      "configuration.lerpSpeed": 1,
+      "configuration.order": 0,
+      "configuration.radius[0]": 0,
+      "configuration.radius[1]": 10,
+      "configuration.radius[2]": 20,
+      "configuration.radius[3]": 30,
+      "configuration.silenceable": false,
+      "configuration.usableWhileDowned": false,
+      "id": 32
+    }
+  }
+}

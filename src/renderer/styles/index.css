@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+/* ════════════════════════════════════════════════════════════════
+   BAPBAP BRAND TOKENS (lifted from the marketing site).
+   Single source of truth for color, the comic-book pop shadows,
+   and the unified motion easing.
+   ════════════════════════════════════════════════════════════════ */
+@theme {
+  --color-navy: #0e1a2b;
+  --color-cream: #f4f6f9;
+  --color-magenta: #e91e8c;
+  --color-magenta-deep: #b11468;
+  --color-magenta-light: #ff5daa;
+  --color-cyan: #22d3ee;
+  --color-red: #ff5a5a;
+  --color-gold: #ffb800;
+  --color-purple: #7c3aed;
+
+  /* Modern soft elevation language (dark UI). */
+  --shadow-soft-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-soft-lg: 0 12px 40px rgba(0, 0, 0, 0.55);
+
+  /* Unified motion easing */
+  --ease-pop: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --bap-magenta: #e91e8c;
+  --bap-magenta-deep: #b11468;
+  --bap-cyan: #22d3ee;
+  --bap-gold: #ffb800;
+  --bap-purple: #7c3aed;
+
+  /* ── shadcn contract, dark modern launcher theme ── */
+  --radius: 0.75rem;
+  --background: #0b0d12;
+  --foreground: #e7e9ef;
+  --card: #14171f;
+  --card-foreground: #e7e9ef;
+  --popover: #181b24;
+  --popover-foreground: #e7e9ef;
+  --primary: #e91e8c;
+  --primary-foreground: #ffffff;
+  --secondary: #1c2029;
+  --secondary-foreground: #e7e9ef;
+  --muted: #1c2029;
+  --muted-foreground: #8b91a1;
+  --accent: #e91e8c;
+  --accent-foreground: #ffffff;
+  --destructive: #ff5a5a;
+  --destructive-foreground: #ffffff;
+  --border: #262b36;
+  --input: #2b313d;
+  --ring: #e91e8c;
+}
+
+/* Map the shadcn variables onto Tailwind color utilities (v4 inline theme). */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+/* Display type helper — Archivo Black, uppercase. */
+.font-display {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+/* Body type helper (explicit Inter). */
+.font-body {
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Modern surface card — subtle border + soft shadow on dark. */
+.bap-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft-sm);
+}
+
+/* Consistent keyboard focus ring for custom interactive elements. */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--bap-magenta);
+  border-radius: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--bap-magenta);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bap-magenta);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+/* Branded scrollbar (dark). */
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #2b313d;
+    border-radius: 99px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #3a414f; }
+}
+
+/* Marquee ticker band. */
+.bap-marquee { overflow: hidden; user-select: none; }
+.bap-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: bap-marquee 30s linear infinite;
+}
+.bap-marquee[data-reverse="true"] .bap-marquee-track { animation-direction: reverse; }
+.bap-marquee:hover .bap-marquee-track { animation-play-state: paused; }
+@keyframes bap-marquee { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .bap-marquee-track { animation: none; }
+}
+
+/* Brand gradients (used sparingly as accents on dark). */
+:root {
+  --gradient-sunrise: linear-gradient(120deg, #e91e8c, #ffb800);
+  --gradient-vapor: linear-gradient(120deg, #7c3aed, #22d3ee);
+  --gradient-ember: linear-gradient(120deg, #ff2e2e, #e91e8c 55%, #ffb800);
+}
+
+/* Gradient-clipped text for focal headings. */
+.text-gradient {
+  background: var(--gradient-sunrise);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Ambient radial glow behind hero areas (subtle, dark-friendly). */
+.bap-glow {
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(233, 30, 140, 0.12), transparent 70%);
+}

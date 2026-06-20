@@ -1,0 +1,22 @@
+/* Brand fonts.
+   To self-host for offline use, drop the woff2 files into src/renderer/fonts/
+   and uncomment the @font-face blocks below. Until then the helpers fall back
+   to the system stacks declared in index.css (.font-display / .font-body), so
+   the UI stays legible without the brand faces.
+
+@font-face {
+  font-family: "Archivo Black";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/archivo-black-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("../fonts/inter-variable.woff2") format("woff2");
+}
+*/

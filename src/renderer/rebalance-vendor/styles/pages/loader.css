@@ -1,0 +1,344 @@
+/* ─── Shader loader fallback ─── */
+
+.shader-loader-fallback {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-0, #030407);
+  overflow: hidden;
+}
+
+.shader-loader-fallback__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 45%, rgba(88, 113, 255, 0.12), transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(142, 164, 255, 0.05), transparent 60%),
+    var(--bg-0, #030407);
+}
+
+/* ─── Particles ─── */
+
+.shader-loader-fallback__particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.shader-loader-fallback__particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  animation: fallback-particle-rise linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes fallback-particle-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ─── Content ─── */
+
+.shader-loader-fallback__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 1;
+}
+
+/* ─── Phase label with fade transition ─── */
+
+.shader-loader-fallback__phase {
+  font-size: var(--type-caption-size, clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem));
+  color: var(--text-muted, #a4aec6);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: opacity 250ms ease, transform 250ms ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shader-loader-fallback__phase[data-visible="false"] {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* ─── Progress bar ─── */
+
+.shader-loader-fallback__bar-track {
+  width: 240px;
+  height: 4px;
+  background: var(--bg-2, #10172a);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.shader-loader-fallback__bar-fill {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #5871ff, #8ea4ff);
+  border-radius: 2px;
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.shader-loader-fallback__bar-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  animation: fallback-bar-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes fallback-bar-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ─── Percentage counter ─── */
+
+.shader-loader-fallback__percent {
+  font-size: var(--type-body-size, clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem));
+  color: var(--text, #f6f3ee);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: opacity 200ms ease;
+}
+
+/* ─── Rebalance loading card ─── */
+
+@keyframes loader-pulse {
+  0%, 100% { box-shadow: 0 0 40px rgba(88, 113, 255, 0.06); }
+  50% { box-shadow: 0 0 60px rgba(88, 113, 255, 0.15); }
+}
+
+.rebalance-loading-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-1, #070911);
+  border: 1px solid var(--line, #283456);
+  border-radius: 20px;
+  box-shadow: 0 0 60px rgba(88, 113, 255, 0.08);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  animation: loader-pulse 3s ease-in-out infinite;
+  will-change: box-shadow;
+}
+
+.rebalance-loading-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text, #f6f3ee);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.rebalance-loading-head .spinner,
+.rebalance-loading-head svg {
+  color: var(--accent-cool, #5871ff);
+}
+
+/* ─── Embedded loading shell ─── */
+
+.rebalance-embedded-loading-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--bg-0, #030407);
+}
+
+/* ==========================================================================
+   Enhanced Skeleton Placeholders
+   More realistic shapes matching actual component layouts
+   ========================================================================== */
+
+/* Skeleton base shimmer (reusable on any element) */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-1, #070911) 25%,
+    var(--bg-2, #10172a) 50%,
+    var(--bg-1, #070911) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Skeleton variants by shape */
+.skeleton--text {
+  height: 14px;
+  width: 80%;
+  border-radius: 4px;
+}
+
+.skeleton--text-short {
+  height: 14px;
+  width: 45%;
+  border-radius: 4px;
+}
+
+.skeleton--heading {
+  height: 24px;
+  width: 60%;
+  border-radius: 6px;
+}
+
+.skeleton--avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton--button {
+  height: 48px;
+  width: 120px;
+  border-radius: 14px;
+}
+
+.skeleton--card {
+  height: 120px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.skeleton--field {
+  height: 48px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.skeleton--image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+}
+
+/* Stagger animation delay for lists */
+.skeleton:nth-child(1) { animation-delay: 0s; }
+.skeleton:nth-child(2) { animation-delay: 0.1s; }
+.skeleton:nth-child(3) { animation-delay: 0.2s; }
+.skeleton:nth-child(4) { animation-delay: 0.3s; }
+.skeleton:nth-child(5) { animation-delay: 0.4s; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+    background: var(--bg-1, #070911);
+  }
+}
+
+/* ==========================================================================
+   Wave Skeleton — Premium loading placeholder with traveling light wave
+   ========================================================================== */
+
+.skeleton-wave {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-1, #070911);
+  border-radius: 8px;
+}
+
+.skeleton-wave::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(88, 113, 255, 0.06) 45%,
+    rgba(88, 113, 255, 0.12) 50%,
+    rgba(88, 113, 255, 0.06) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: skeleton-wave-slide 2s ease-in-out infinite;
+}
+
+@keyframes skeleton-wave-slide {
+  0% { transform: translateX(-100%); }
+  60% { transform: translateX(100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Wave variants */
+.skeleton-wave--text { height: 14px; width: 80%; }
+.skeleton-wave--heading { height: 24px; width: 55%; }
+.skeleton-wave--field { height: 48px; width: 100%; }
+.skeleton-wave--card { height: 120px; width: 100%; border-radius: var(--radius-lg, 16px); }
+.skeleton-wave--avatar { width: 40px; height: 40px; border-radius: 50%; }
+.skeleton-wave--button { height: 48px; width: 140px; border-radius: var(--radius-lg, 16px); }
+
+/* Layout compositions */
+.skeleton-wave-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md, 12px);
+}
+
+.skeleton-wave-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 8px);
+}
+
+/* Stagger wave delays for natural feel */
+.skeleton-wave:nth-child(1) { --wave-delay: 0s; }
+.skeleton-wave:nth-child(2) { --wave-delay: 0.15s; }
+.skeleton-wave:nth-child(3) { --wave-delay: 0.3s; }
+.skeleton-wave:nth-child(4) { --wave-delay: 0.45s; }
+.skeleton-wave:nth-child(5) { --wave-delay: 0.6s; }
+
+.skeleton-wave::before {
+  animation-delay: var(--wave-delay, 0s);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-wave::before {
+    animation: none;
+  }
+}

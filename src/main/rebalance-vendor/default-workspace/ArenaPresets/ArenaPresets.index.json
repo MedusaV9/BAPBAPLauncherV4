@@ -1,0 +1,10 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:07:05.5444350Z",
+  "instructions": [
+    "This folder contains named arena presets that RebalanceBAP can inject into the in-game arena preset dropdown.",
+    "showInArenaUi controls whether a preset is listed in the in-game dropdown.",
+    "serializedSettingsJson stores the arena gameplay settings payload, while lobbySettingsOverrides can carry broader lobby model values such as map, lobby size, or bot settings."
+  ],
+  "entries": []
+}

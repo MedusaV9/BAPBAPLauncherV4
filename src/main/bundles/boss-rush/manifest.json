@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "boss-rush",
+  "name": "Boss Rush",
+  "channel": "stable",
+  "version": "0.1.0",
+  "buildNumber": 1,
+  "publishedAtUtc": "2026-05-26T18:37:50Z",
+  "compatibility": {
+    "minLauncherVersion": "0.2.2",
+    "minGameVersion": "1.0"
+  },
+  "sourceUrl": {
+    "manifest": "https://raw.githubusercontent.com/<placeholder-owner>/<placeholder-repo>/main/manifest/bundle-updates.json"
+  },
+  "changelog": {
+    "notes": "Initial bundled Boss Rush release."
+  },
+  "files": [],
+  "extra": {
+    "isPlaceholder": true
+  }
+}

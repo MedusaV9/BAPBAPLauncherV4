@@ -1,0 +1,50 @@
+{
+  "blocks": [
+    {
+      "blockId": "presentation.description",
+      "values": {
+        "text": "A slower burst-style starter draft for heavier one-shot tests."
+      }
+    },
+    {
+      "blockId": "basic.damage",
+      "values": {
+        "value": 420
+      }
+    },
+    {
+      "blockId": "basic.cooldown",
+      "values": {
+        "value": 5.25
+      }
+    }
+  ],
+  "description": "A cloned Firewave starter tuned for fewer but heavier bursts.",
+  "displayName": "Heavy Burst",
+  "enabled": true,
+  "icon": {
+    "sourcePassiveKey": "P_Firewave#158"
+  },
+  "id": 5002,
+  "key": "P_CUSTOM_HEAVY_BURST",
+  "launcher": {
+    "savedShortDescription": "%damage% damage, %cooldown%s cooldown"
+  },
+  "overrides": {
+    "configuration.levelStats.levels[0].tiers[0].damageScaling": 1.2,
+    "configuration.speed": 14,
+    "configuration.ttl": 0.55
+  },
+  "pools": {
+    "addToAllAugments": true,
+    "addToFallbackPool": false,
+    "addToGenericPool": true,
+    "addToStartingTree": true,
+    "addToWildCardRareTree": false,
+    "addToWildCardTree": false,
+    "characterIds": []
+  },
+  "schemaVersion": 1,
+  "shortDescription": "%damage% damage, %cooldown%s cooldown",
+  "templatePassiveKey": "P_Firewave#158"
+}

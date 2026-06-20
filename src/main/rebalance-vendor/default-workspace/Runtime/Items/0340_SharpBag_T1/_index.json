@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "SharpBag_T1#340",
+  "generatedAtUtc": "2026-03-26T22:05:36.8230934Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "SharpBag_T1#340",
+      "displayName": "Item",
+      "file": "0340_SharpBag_T1.json"
+    }
+  ]
+}

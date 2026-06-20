@@ -1,0 +1,1525 @@
+﻿{
+  "schemaVersion": 10,
+  "targetType": "ItemBehaviour",
+  "targetKey": "Item_Ability_Dash#437/Behaviour",
+  "displayName": "Behaviour",
+  "resolvedName": "Behaviour",
+  "generatedAtUtc": "2026-04-15T23:03:21.3579535Z",
+  "quickEdit": [
+    {
+      "setting": "Base Cooldown",
+      "category": "Timing",
+      "path": "configuration.baseCooldown",
+      "editable": true,
+      "valueType": "number",
+      "value": 14,
+      "defaultValue": 14,
+      "whatItDoes": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Casting Time",
+      "category": "Timing",
+      "path": "configuration.castingTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.1,
+      "defaultValue": 0.1,
+      "whatItDoes": "Casting Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Dash Time",
+      "category": "Timing",
+      "path": "configuration.dashTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.3,
+      "defaultValue": 0.3,
+      "whatItDoes": "Dash Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Starting Cooldown",
+      "category": "Timing",
+      "path": "configuration.startCooldownTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 14,
+      "defaultValue": 14,
+      "whatItDoes": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Dash Speed",
+      "category": "Movement",
+      "path": "configuration.dashSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 25,
+      "defaultValue": 25,
+      "whatItDoes": "Dash Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cancelable",
+      "category": "Behavior",
+      "path": "configuration.cancelable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Silenceable",
+      "category": "Behavior",
+      "path": "configuration.silenceable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Usable While Downed",
+      "category": "Behavior",
+      "path": "configuration.usableWhileDowned",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Dash Decel",
+      "category": "General",
+      "path": "configuration.dashDecel",
+      "editable": true,
+      "valueType": "number",
+      "value": -80,
+      "defaultValue": -80,
+      "whatItDoes": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 3200,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 320,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 3200,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Input Type",
+      "category": "General",
+      "path": "configuration.inputType",
+      "editable": true,
+      "valueType": "string",
+      "value": "Down",
+      "defaultValue": "Down",
+      "whatItDoes": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for \u0027Behaviour\u0027. You can change Timing, Movement, Behavior, General.",
+    "whatYouCanChange": [
+      "Timing",
+      "Movement",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config."
+    ],
+    "groups": [
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Base Cooldown",
+            "path": "configuration.baseCooldown",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+            "defaultValue": 14,
+            "currentValue": 14,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Casting Time",
+            "path": "configuration.castingTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0.1,
+            "currentValue": 0.1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Dash Time",
+            "path": "configuration.dashTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Dash Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0.3,
+            "currentValue": 0.3,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Starting Cooldown",
+            "path": "configuration.startCooldownTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+            "defaultValue": 14,
+            "currentValue": 14,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Dash Speed",
+            "path": "configuration.dashSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Dash Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 25,
+            "currentValue": 25,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Cancelable",
+            "path": "configuration.cancelable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Silenceable",
+            "path": "configuration.silenceable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Usable While Downed",
+            "path": "configuration.usableWhileDowned",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Dash Decel",
+            "path": "configuration.dashDecel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+            "defaultValue": -80,
+            "currentValue": -80,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 3200,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 320,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 3200,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Input Type",
+            "path": "configuration.inputType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+            "defaultValue": "Down",
+            "currentValue": "Down",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Adjust cooldown timing without searching raw JSON paths by hand.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.cooldown"
+      ]
+    },
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Use this when you want to shorten or extend cooldown timing.",
+      "targetPath": "configuration.baseCooldown",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Base Cooldown",
+          "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+          "valueType": "number",
+          "defaultValue": 14,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "configuration.dashSpeed",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Dash Speed",
+          "description": "Dash Speed value. Higher values usually make the movement, projectile, or effect faster.",
+          "valueType": "number",
+          "defaultValue": 25,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "configuration.vfxCastPrefab",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Vfx Cast Prefab",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "GameObject:VFX_MoveDash_Trail",
+          "options": [
+            "GameObject:BearTrap_Large_Consumable",
+            "GameObject:Bumper_Bubble_NoD",
+            "GameObject:ExplosiveBarrelPassive",
+            "GameObject:Hitbox_Augment_Jiro_Shield",
+            "GameObject:Hitbox_Augment_Teevee_AOE",
+            "GameObject:Hitbox_Augment_Teevee_CloneTether",
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_Blitz_AOE_Teevee",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Jiro_BrothWave",
+            "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+            "GameObject:Hitbox_P_HealZone",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_Rocky_Boulder",
+            "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+            "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+            "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+            "GameObject:SlipperyZone_IceBlockSlide",
+            "GameObject:SlipperyZone_Trail",
+            "GameObject:TastyFood",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+            "GameObject:VFX_MoveDash_Trail",
+            "GameObject:VFX_P_Loop_Aura_Weakening",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_MountainShield_Ready",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_Slide_Smoke_Trail",
+            "GameObject:VFX_Slow_Loop",
+            "GameObject:VFX_StunEffect_Loop"
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "configuration.vfxCastPrefab",
+      "label": "Vfx Cast Prefab",
+      "currentReference": "GameObject:VFX_MoveDash_Trail",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_MoveDash_Trail",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Vfx Move Dash Trail",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Items",
+    "label": "Items - Details",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:configuration.vfxCastPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.vfxCastPrefab",
+      "mode": "soft",
+      "label": "Clear Vfx Cast Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Vfx Move Dash Trail",
+      "previewSubtitle": "GameObject:VFX_MoveDash_Trail",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:VFX_MoveDash_Trail",
+      "afterValue": null,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%baseCooldown%",
+      "label": "Base Cooldown",
+      "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+      "sourcePath": "configuration.baseCooldown",
+      "valueType": "number",
+      "previewValue": 14,
+      "previewText": "14"
+    },
+    {
+      "token": "%castingTime%",
+      "label": "Casting Time",
+      "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.castingTime",
+      "valueType": "number",
+      "previewValue": 0.1,
+      "previewText": "0.1"
+    },
+    {
+      "token": "%dashTime%",
+      "label": "Dash Time",
+      "description": "Dash Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.dashTime",
+      "valueType": "number",
+      "previewValue": 0.3,
+      "previewText": "0.3"
+    },
+    {
+      "token": "%startingCooldown%",
+      "label": "Starting Cooldown",
+      "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+      "sourcePath": "configuration.startCooldownTime",
+      "valueType": "number",
+      "previewValue": 14,
+      "previewText": "14"
+    },
+    {
+      "token": "%dashSpeed%",
+      "label": "Dash Speed",
+      "description": "Dash Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.dashSpeed",
+      "valueType": "number",
+      "previewValue": 25,
+      "previewText": "25"
+    },
+    {
+      "token": "%cancelable%",
+      "label": "Cancelable",
+      "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.cancelable",
+      "valueType": "boolean",
+      "previewValue": true,
+      "previewText": "On"
+    },
+    {
+      "token": "%silenceable%",
+      "label": "Silenceable",
+      "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.silenceable",
+      "valueType": "boolean",
+      "previewValue": true,
+      "previewText": "On"
+    },
+    {
+      "token": "%usableWhileDowned%",
+      "label": "Usable While Downed",
+      "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.usableWhileDowned",
+      "valueType": "boolean",
+      "previewValue": false,
+      "previewText": "Off"
+    },
+    {
+      "token": "%dashDecel%",
+      "label": "Dash Decel",
+      "description": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+      "sourcePath": "configuration.dashDecel",
+      "valueType": "number",
+      "previewValue": -80,
+      "previewText": "-80"
+    },
+    {
+      "token": "%inputType%",
+      "label": "Input Type",
+      "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "sourcePath": "configuration.inputType",
+      "valueType": "string",
+      "previewValue": "Down",
+      "previewText": "Down"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.baseCooldown",
+        "displayName": "Base Cooldown",
+        "label": "Base Cooldown",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+        "defaultValue": 14,
+        "currentValue": 14,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.castingTime",
+        "displayName": "Casting Time",
+        "label": "Casting Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0.1,
+        "currentValue": 0.1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.dashTime",
+        "displayName": "Dash Time",
+        "label": "Dash Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Dash Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0.3,
+        "currentValue": 0.3,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.startCooldownTime",
+        "displayName": "Starting Cooldown",
+        "label": "Starting Cooldown",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+        "defaultValue": 14,
+        "currentValue": 14,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.dashSpeed",
+        "displayName": "Dash Speed",
+        "label": "Dash Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Dash Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 25,
+        "currentValue": 25,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.cancelable",
+        "displayName": "Cancelable",
+        "label": "Cancelable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.silenceable",
+        "displayName": "Silenceable",
+        "label": "Silenceable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.usableWhileDowned",
+        "displayName": "Usable While Downed",
+        "label": "Usable While Downed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.dashDecel",
+        "displayName": "Dash Decel",
+        "label": "Dash Decel",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+        "defaultValue": -80,
+        "currentValue": -80,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 3200,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 320,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 3200,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.inputType",
+        "displayName": "Input Type",
+        "label": "Input Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+        "defaultValue": "Down",
+        "currentValue": "Down",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.Guid.IsNull",
+        "displayName": "Sfx Cast / Guid / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.IsNull",
+        "displayName": "Sfx Cast / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.order",
+        "displayName": "Order",
+        "label": "Order",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Sort order used by the game UI or internal lists.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "id",
+        "displayName": "ID",
+        "label": "ID",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Internal identifier for this entry. Changing IDs can break references from pools, managers, or other data.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data1",
+        "displayName": "Sfx Cast / Guid / Data 1",
+        "label": "Data 1",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 1. Edit \u0060configuration.sfxCast.Guid.Data1\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+        "defaultValue": 1886659981,
+        "currentValue": 1886659981,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 75466399240,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7546639924,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 75466399240,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data2",
+        "displayName": "Sfx Cast / Guid / Data 2",
+        "label": "Data 2",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 2. Edit \u0060configuration.sfxCast.Guid.Data2\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+        "defaultValue": 1251633814,
+        "currentValue": 1251633814,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 50065352560,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 5006535256,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 50065352560,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data3",
+        "displayName": "Sfx Cast / Guid / Data 3",
+        "label": "Data 3",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 3. Edit \u0060configuration.sfxCast.Guid.Data3\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+        "defaultValue": 1997949363,
+        "currentValue": 1997949363,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 79917974520,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7991797452,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 79917974520,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data4",
+        "displayName": "Sfx Cast / Guid / Data 4",
+        "label": "Data 4",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 4. Edit \u0060configuration.sfxCast.Guid.Data4\u0060 to change how \u0060Item_Ability_Dash#437/Behaviour\u0060 behaves.",
+        "defaultValue": -1641868450,
+        "currentValue": -1641868450,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 65674738000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 6567473800,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 65674738000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_Dash#437/Behaviour",
+        "path": "configuration.vfxCastPrefab",
+        "displayName": "Vfx Cast Prefab",
+        "label": "Vfx Cast Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Vfx Cast Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:VFX_MoveDash_Trail",
+        "currentValue": "GameObject:VFX_MoveDash_Trail",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      }
+    ],
+    "defaults": {
+      "configuration.baseCooldown": 14,
+      "configuration.cancelable": true,
+      "configuration.castingTime": 0.1,
+      "configuration.dashDecel": -80,
+      "configuration.dashSpeed": 25,
+      "configuration.dashTime": 0.3,
+      "configuration.inputType": "Down",
+      "configuration.order": 0,
+      "configuration.sfxCast.Guid.Data1": 1886659981,
+      "configuration.sfxCast.Guid.Data2": 1251633814,
+      "configuration.sfxCast.Guid.Data3": 1997949363,
+      "configuration.sfxCast.Guid.Data4": -1641868450,
+      "configuration.sfxCast.Guid.IsNull": false,
+      "configuration.sfxCast.IsNull": false,
+      "configuration.silenceable": true,
+      "configuration.startCooldownTime": 14,
+      "configuration.usableWhileDowned": false,
+      "configuration.vfxCastPrefab": "GameObject:VFX_MoveDash_Trail",
+      "id": 0
+    },
+    "effectiveValues": {
+      "configuration.baseCooldown": 14,
+      "configuration.cancelable": true,
+      "configuration.castingTime": 0.1,
+      "configuration.dashDecel": -80,
+      "configuration.dashSpeed": 25,
+      "configuration.dashTime": 0.3,
+      "configuration.inputType": "Down",
+      "configuration.order": 0,
+      "configuration.sfxCast.Guid.Data1": 1886659981,
+      "configuration.sfxCast.Guid.Data2": 1251633814,
+      "configuration.sfxCast.Guid.Data3": 1997949363,
+      "configuration.sfxCast.Guid.Data4": -1641868450,
+      "configuration.sfxCast.Guid.IsNull": false,
+      "configuration.sfxCast.IsNull": false,
+      "configuration.silenceable": true,
+      "configuration.startCooldownTime": 14,
+      "configuration.usableWhileDowned": false,
+      "configuration.vfxCastPrefab": "GameObject:VFX_MoveDash_Trail",
+      "id": 0
+    }
+  }
+}

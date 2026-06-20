@@ -1,0 +1,27 @@
+appId: com.bapbap.launcher.v4
+productName: BAPBAP Launcher
+directories:
+  output: release/build
+  buildResources: build
+files:
+  - dist/main/**
+  - dist/preload/**
+  - dist/renderer/**
+  - package.json
+extraResources:
+  - from: build/icon.ico
+    to: icon.ico
+extraMetadata:
+  main: dist/main/main.cjs
+win:
+  icon: build/icon.ico
+  signAndEditExecutable: false
+  target:
+    - nsis
+  artifactName: "${productName} Setup ${version}.${ext}"
+nsis:
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true

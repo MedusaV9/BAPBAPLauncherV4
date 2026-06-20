@@ -1,0 +1,86 @@
+﻿{
+  "schemaVersion": 2,
+  "targetType": "CharacterIndex",
+  "targetKey": "SOFIA#9",
+  "generatedAtUtc": "2026-04-15T22:57:31.4884979Z",
+  "instructions": [
+    "Open one of the listed files to edit that part of the character.",
+    "Each target file contains defaults, overrides, and effectiveValues.",
+    "Abilities are split into separate files under the Abilities folder.",
+    "AbilitySwap.json lets you pick another exported ability source per slot. Incompatible swaps are skipped safely."
+  ],
+  "files": [
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[0]",
+      "displayName": "Sofia / Basic",
+      "file": "Abilities/00_Ability_1.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[1]",
+      "displayName": "Sofia / Special",
+      "file": "Abilities/01_Ability_2.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[2]",
+      "displayName": "Sofia / Tactical",
+      "file": "Abilities/02_Ability_3.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[3]",
+      "displayName": "Sofia / Ultimate",
+      "file": "Abilities/03_Ability_4.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[4]",
+      "displayName": "Sofia / Ability 5",
+      "file": "Abilities/04_Ability_5.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[5]",
+      "displayName": "Sofia / Ability 6",
+      "file": "Abilities/05_Ability_6.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[6]",
+      "displayName": "Sofia / Ability 7",
+      "file": "Abilities/06_Ability_7.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SOFIA#9/Ability[7]",
+      "displayName": "Sofia / Ability 8",
+      "file": "Abilities/07_Ability_8.json"
+    },
+    {
+      "targetType": "CharacterAbilitySwap",
+      "targetKey": "SOFIA#9/AbilitySwap",
+      "displayName": "Sofia / Ability Swap",
+      "file": "AbilitySwap.json"
+    },
+    {
+      "targetType": "CharacterState",
+      "targetKey": "SOFIA#9/CharacterState",
+      "displayName": "CharacterState",
+      "file": "CharacterState.json"
+    },
+    {
+      "targetType": "CharacterHurtbox",
+      "targetKey": "SOFIA#9/Hurtbox",
+      "displayName": "Hurtbox",
+      "file": "Hurtbox.json"
+    },
+    {
+      "targetType": "CharacterMovement",
+      "targetKey": "SOFIA#9/Movement",
+      "displayName": "Movement",
+      "file": "Movement.json"
+    }
+  ]
+}

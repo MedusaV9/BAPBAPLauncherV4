@@ -1,0 +1,554 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Rebalance Utility Classes
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Typography Utilities
+   -------------------------------------------------------------------------- */
+
+.text-caption {
+  font-size: var(--type-caption-size, clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem));
+  font-weight: var(--type-caption-weight, 500);
+  line-height: var(--type-caption-leading, 1.4);
+  letter-spacing: var(--type-caption-tracking, 0.01em);
+  font-family: var(--type-caption-family, "BAPBAP Archivo");
+}
+
+.text-body {
+  font-size: var(--type-body-size, clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem));
+  font-weight: var(--type-body-weight, 500);
+  line-height: var(--type-body-leading, 1.5);
+  letter-spacing: var(--type-body-tracking, 0);
+  font-family: var(--type-body-family, "BAPBAP Archivo");
+}
+
+.text-subtitle {
+  font-size: var(--type-subtitle-size, clamp(0.875rem, 0.84rem + 0.14vw, 0.9375rem));
+  font-weight: var(--type-subtitle-weight, 600);
+  line-height: var(--type-subtitle-leading, 1.4);
+  letter-spacing: var(--type-subtitle-tracking, -0.005em);
+  font-family: var(--type-subtitle-family, "BAPBAP Archivo");
+}
+
+.text-heading {
+  font-size: var(--type-heading-size, clamp(1.125rem, 1.05rem + 0.2vw, 1.25rem));
+  font-weight: var(--type-heading-weight, 900);
+  line-height: var(--type-heading-leading, 1.25);
+  letter-spacing: var(--type-heading-tracking, -0.015em);
+  font-family: var(--type-heading-family, "BAPBAP Archivo");
+}
+
+.text-title {
+  font-size: var(--type-title-size, clamp(1.5rem, 1.35rem + 0.4vw, 1.875rem));
+  font-weight: var(--type-title-weight, 900);
+  line-height: var(--type-title-leading, 1.15);
+  letter-spacing: var(--type-title-tracking, -0.02em);
+  font-family: var(--type-title-family, "BAPBAP Archivo");
+}
+
+/* --------------------------------------------------------------------------
+   2. Elevation Utilities
+   -------------------------------------------------------------------------- */
+
+.elevation-surface {
+  background: var(--bg-1, #070911);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.elevation-raised {
+  background: var(--bg-1, #070911);
+  border: 1px solid var(--line, #283456);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.elevation-floating {
+  background: var(--bg-2, #10172a);
+  border: 1px solid var(--line, #283456);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   3. Motion Utilities
+   -------------------------------------------------------------------------- */
+
+[data-motion-item] {
+  will-change: auto;
+  /* Ensure items are visible by default — GSAP will override inline */
+  opacity: 1;
+}
+
+.motion-active {
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   4. Scrollbar Styling
+   -------------------------------------------------------------------------- */
+
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--accent-cool, #5871ff);
+  border-radius: 3px;
+}
+
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-lime, #7f93ff);
+}
+
+/* --------------------------------------------------------------------------
+   5. Number Display & Counter Utilities
+   -------------------------------------------------------------------------- */
+
+/* Tabular numbers for consistent width in counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Monospace digits for alignment */
+.mono-digits {
+  font-feature-settings: "tnum" on;
+}
+
+/* Large stat number (used in summaries) */
+.stat-number {
+  font-size: clamp(1.5rem, 1.2rem + 0.8vw, 2.5rem);
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--text, #f6f3ee);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Stat label below a number */
+.stat-label {
+  font-size: var(--type-caption-size, clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem));
+  color: var(--text-muted, #a4aec6);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+/* Inline counter badge (shows "3 items" style) */
+.inline-counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: rgba(88, 113, 255, 0.15);
+  color: #8ea4ff;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Progress text (e.g., "45%") */
+.progress-text {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text, #f6f3ee);
+}
+
+/* Change indicator (shows +/- values) */
+.change-positive {
+  color: #86efac;
+}
+.change-negative {
+  color: #fca5a5;
+}
+.change-neutral {
+  color: var(--text-muted, #a4aec6);
+}
+
+/* --------------------------------------------------------------------------
+   6. Transition Utilities
+   -------------------------------------------------------------------------- */
+
+.transition-number {
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease;
+}
+
+/* ==========================================================================
+   Link and Text Interaction Utilities
+   ========================================================================== */
+
+/* Inline link styling */
+.link {
+  color: #8ea4ff;
+  text-decoration: none;
+  transition: color 150ms, text-decoration-color 150ms;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  color: #b8c8ff;
+  text-decoration: underline;
+  text-decoration-color: rgba(88, 113, 255, 0.4);
+}
+
+.link:active {
+  color: #5871ff;
+}
+
+/* Muted link */
+.link--muted {
+  color: var(--text-muted, #a4aec6);
+}
+.link--muted:hover {
+  color: var(--text, #f6f3ee);
+}
+
+/* Truncated text with tooltip hint */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Highlighted/marked text */
+.highlight {
+  background: rgba(88, 113, 255, 0.12);
+  color: #c8d4ff;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+/* Search match highlight */
+.search-match {
+  background: rgba(88, 113, 255, 0.2);
+  color: var(--text, #f6f3ee);
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* Monospace inline code */
+.code-inline {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85em;
+  background: var(--bg-2, #10172a);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #8ea4ff;
+}
+
+/* Muted small text */
+.text-xs-muted {
+  font-size: 0.6875rem;
+  color: var(--text-muted, #a4aec6);
+  opacity: 0.7;
+}
+
+/* Gradient text (for headings that need visual pop) */
+.text-gradient {
+  background: linear-gradient(135deg, var(--text, #f6f3ee) 0%, #8ea4ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==========================================================================
+   Aspect Ratio & Image Utilities
+   ========================================================================== */
+.aspect-square { aspect-ratio: 1; }
+.aspect-video { aspect-ratio: 16/9; }
+.aspect-card { aspect-ratio: 3/4; }
+
+.img-cover { object-fit: cover; width: 100%; height: 100%; }
+.img-contain { object-fit: contain; width: 100%; height: 100%; }
+
+/* Image loading placeholder */
+.img-loading {
+  background: var(--bg-2, #10172a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   Spacing Utilities
+   ========================================================================== */
+.gap-xs { gap: var(--space-xs, 4px); }
+.gap-sm { gap: var(--space-sm, 8px); }
+.gap-md { gap: var(--space-md, 12px); }
+.gap-lg { gap: var(--space-lg, 24px); }
+.gap-xl { gap: var(--space-xl, 24px); }
+
+/* ==========================================================================
+   Display Utilities
+   ========================================================================== */
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-1 { flex: 1; }
+.min-w-0 { min-width: 0; }
+.w-full { width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ==========================================================================
+   Dividers & Separators
+   ========================================================================== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--line, #283456);
+  margin: var(--space-md, 12px) 0;
+  border: none;
+}
+
+.divider--subtle {
+  background: rgba(40, 52, 86, 0.4);
+}
+
+.divider--accent {
+  background: linear-gradient(90deg, transparent, var(--accent-cool, #5871ff), transparent);
+  height: 1px;
+  opacity: 0.3;
+}
+
+/* Vertical divider */
+.divider-v {
+  width: 1px;
+  height: 100%;
+  min-height: 20px;
+  background: var(--line, #283456);
+  margin: 0 var(--space-sm, 8px);
+}
+
+/* Divider with text label */
+.divider-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md, 12px);
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-caption-size, 0.6875rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.divider-label::before,
+.divider-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line, #283456);
+}
+
+/* ==========================================================================
+   Status Dots & Indicators
+   ========================================================================== */
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot--sm { width: 6px; height: 6px; }
+.dot--lg { width: 10px; height: 10px; }
+.dot--blue { background: var(--accent-cool, #5871ff); }
+.dot--green { background: var(--accent-cool, #5871ff); }
+.dot--red { background: #dc2626; }
+.dot--amber { background: #f59e0b; }
+.dot--muted { background: var(--text-muted, #a4aec6); opacity: 0.5; }
+
+/* Pulsing dot */
+.dot--pulse {
+  animation: dot-pulse 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+/* ==========================================================================
+   Visibility Utilities
+   ========================================================================== */
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+.opacity-0 { opacity: 0; }
+.opacity-50 { opacity: 0.5; }
+.opacity-100 { opacity: 1; }
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+/* ==========================================================================
+   Position Utilities
+   ========================================================================== */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; top: 0; }
+.inset-0 { inset: 0; }
+.z-10 { z-index: 10; }
+.z-50 { z-index: 50; }
+.z-100 { z-index: 100; }
+
+/* ==========================================================================
+   Transition Utilities (using design tokens)
+   ========================================================================== */
+.transition-fast { transition-duration: var(--duration-fast, 100ms); transition-timing-function: var(--ease-default, cubic-bezier(0.4, 0, 0.2, 1)); }
+.transition-normal { transition-duration: var(--duration-normal, 200ms); transition-timing-function: var(--ease-default, cubic-bezier(0.4, 0, 0.2, 1)); }
+.transition-slow { transition-duration: var(--duration-slow, 300ms); transition-timing-function: var(--ease-default, cubic-bezier(0.4, 0, 0.2, 1)); }
+.transition-none { transition: none; }
+
+/* Specific property transitions */
+.transition-opacity { transition-property: opacity; transition-duration: var(--duration-normal, 200ms); }
+.transition-transform { transition-property: transform; transition-duration: var(--duration-normal, 200ms); }
+.transition-colors { transition-property: color, background-color, border-color; transition-duration: var(--duration-fast, 100ms); }
+.transition-shadow { transition-property: box-shadow; transition-duration: var(--duration-normal, 200ms); }
+/* PERF: transition-all is expensive — prefer specific property utilities above.
+   Kept as legacy compat for old Tailwind-style classes; avoid in new code. */
+.transition-all { transition-property: color, background-color, border-color, opacity, transform, box-shadow; transition-duration: var(--duration-normal, 200ms); }
+
+/* ==========================================================================
+   Color Utilities
+   ========================================================================== */
+.text-primary { color: var(--text, #f6f3ee); }
+.text-muted { color: var(--text-muted, #a4aec6); }
+.text-accent { color: var(--accent-cool, #5871ff); }
+.text-success { color: #93a3ff; }
+.text-error { color: #fca5a5; }
+.text-warning { color: #fcd34d; }
+
+.bg-base { background: var(--bg-0, #030407); }
+.bg-surface { background: var(--bg-1, #070911); }
+.bg-elevated { background: var(--bg-2, #10172a); }
+
+/* ==========================================================================
+   Border Utilities
+   ========================================================================== */
+.border { border: 1px solid var(--line, #283456); }
+.border-t { border-top: 1px solid var(--line, #283456); }
+.border-b { border-bottom: 1px solid var(--line, #283456); }
+.border-accent { border-color: var(--accent-cool, #5871ff); }
+.rounded-sm { border-radius: var(--radius-sm, 6px); }
+.rounded-md { border-radius: var(--radius-md, 12px); }
+.rounded-lg { border-radius: var(--radius-lg, 16px); }
+.rounded-full { border-radius: var(--radius-full, 9999px); }
+
+
+
+/* ==========================================================================
+   Phase 3 Task 6 — Universal Focus-Visible System
+   --------------------------------------------------------------------------
+   Addresses agent-20-controls-visual-audit finding #1 (Select focus invisible
+   in embedded mode) and global keyboard-navigation gaps.
+
+   Single global rule for every interactive target. Mirrors the
+   PRESSABLE_SELECTOR list from motion.ts so every clickable surface gets a
+   visible focus ring on keyboard navigation, in both standalone and embedded
+   modes. Uses :focus-visible (not :focus) to avoid showing rings on mouse
+   click — only on keyboard/aria activation.
+   ========================================================================== */
+
+[data-rebalance-pressable="true"]:focus-visible,
+.v2-button:focus-visible,
+.v2-card--interactive:focus-visible,
+.v2-switch:focus-visible,
+.task-record:focus-visible,
+.task-choice:focus-visible,
+.task-group-button:focus-visible,
+.task-icon-choice:focus-visible,
+.task-mode-switch-button:focus-visible,
+.task-value-browser-row:focus-visible,
+.task-value-browser-tab:focus-visible,
+.task-segmented button:focus-visible,
+.task-empty-workspace-pill:focus-visible,
+.task-effect-reference-grid button:focus-visible,
+.task-linked-effect-actions button:focus-visible,
+.task-effect-picker-results button:focus-visible,
+.task-swap-source-card:focus-visible,
+.swap-source-card:focus-visible,
+.rebalance-search-result-card:focus-visible,
+.rebalance-workspace-tool-button:focus-visible,
+.rebalance-nav-drawer-item:focus-visible,
+.rebalance-home-flow-card:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible,
+[role="menuitem"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="option"]:focus-visible,
+[role="checkbox"]:focus-visible,
+[role="radio"]:focus-visible,
+[role="switch"]:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--accent-cool, #5871ff);
+  outline-offset: 2px;
+  box-shadow: var(--shadow-focus, 0 0 0 3px rgba(88, 113, 255, 0.35));
+  /* Make sure the ring is on top of nearby borders/shadows */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure embedded mode does not strip the ring from native form controls.
+   Even though styles.css:7004 once reset .v2-select-shell focus, those resets
+   should not apply to :focus-visible. We assert here in case override order
+   ever drifts. */
+.rebalance-embedded-root [data-rebalance-pressable="true"]:focus-visible,
+.rebalance-embedded-root .v2-button:focus-visible,
+.rebalance-embedded-root .v2-switch:focus-visible,
+.rebalance-embedded-root .task-record:focus-visible,
+.rebalance-embedded-root .task-choice:focus-visible,
+.rebalance-embedded-root .task-mode-switch-button:focus-visible,
+.rebalance-embedded-root [role="button"]:focus-visible,
+.rebalance-embedded-root [role="switch"]:focus-visible,
+.rebalance-embedded-root [role="tab"]:focus-visible,
+.rebalance-embedded-root a:focus-visible,
+.rebalance-embedded-root button:focus-visible,
+.rebalance-embedded-root input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+.rebalance-embedded-root select:focus-visible,
+.rebalance-embedded-root textarea:focus-visible,
+.rebalance-embedded-root summary:focus-visible {
+  outline: 2px solid var(--accent-cool, #5871ff) !important;
+  outline-offset: 2px !important;
+  box-shadow: var(--shadow-focus, 0 0 0 3px rgba(88, 113, 255, 0.35)) !important;
+}
+
+/* Native select keyboard focus — embedded mode previously had this reset */
+.rebalance-embedded-root .v2-select-shell:focus-within,
+.v2-select-shell:focus-within {
+  border-color: var(--accent-cool, #5871ff) !important;
+  box-shadow: var(--shadow-focus, 0 0 0 3px rgba(88, 113, 255, 0.35)) !important;
+}
+
+/* Reduced-motion users: still show ring, just no transition */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none !important;
+  }
+}

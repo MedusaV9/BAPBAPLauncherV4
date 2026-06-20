@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Item_Ability_Dash#437",
+  "generatedAtUtc": "2026-04-15T22:56:19.7835045Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Item_Ability_Dash#437",
+      "displayName": "Item",
+      "file": "0437_Item_Ability_Dash.json"
+    },
+    {
+      "targetType": "ItemBehaviour",
+      "targetKey": "Item_Ability_Dash#437/Behaviour",
+      "displayName": "Behaviour",
+      "file": "Behaviour.json"
+    }
+  ]
+}

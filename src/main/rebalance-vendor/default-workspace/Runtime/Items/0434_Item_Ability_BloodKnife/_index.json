@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Item_Ability_BloodKnife#434",
+  "generatedAtUtc": "2026-04-15T22:56:19.6990137Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Item_Ability_BloodKnife#434",
+      "displayName": "Item",
+      "file": "0434_Item_Ability_BloodKnife.json"
+    },
+    {
+      "targetType": "ItemBehaviour",
+      "targetKey": "Item_Ability_BloodKnife#434/Behaviour",
+      "displayName": "Behaviour",
+      "file": "Behaviour.json"
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Input Element Styles
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Input Shell (wrapper around text inputs)
+   --------------------------------------------------------------------------- */
+.v2-input-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 1rem;
+  border: 1px solid var(--line, #283456);
+  border-radius: 12px;
+  background: var(--bg-1, #070911);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.v2-input-shell:focus-within {
+  border-color: var(--accent-cool, #5871ff);
+  box-shadow: 0 0 0 3px rgba(88, 113, 255, 0.14);
+}
+
+/* Animated underline on focus */
+.v2-input-shell::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-cool, #5871ff);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+  border-radius: 1px;
+}
+
+.v2-input-shell:focus-within::after {
+  transform: scaleX(1);
+}
+
+/* Active/typing state */
+.v2-input-shell.has-value {
+  border-color: rgba(88, 113, 255, 0.2);
+}
+
+.v2-input-shell.is-invalid,
+.v2-input-shell[data-invalid] {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.08);
+}
+
+/* ---------------------------------------------------------------------------
+   Input Element (the actual <input>)
+   --------------------------------------------------------------------------- */
+.v2-input-element {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text, #f6f3ee);
+  caret-color: var(--accent-cool, #5871ff);
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.v2-input-element::placeholder {
+  color: var(--text-muted, #6b7a99);
+  opacity: 1;
+  transition: opacity 200ms, transform 200ms;
+}
+
+.v2-input-element:focus::placeholder {
+  opacity: 0.4;
+  transform: translateX(4px);
+}
+
+/* ---------------------------------------------------------------------------
+   Input Label (floats/highlights on focus)
+   --------------------------------------------------------------------------- */
+.v2-input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-body-size, clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem));
+  font-weight: 500;
+  transition: color 150ms, font-size 150ms, transform 150ms;
+}
+
+.v2-input-shell:focus-within + .v2-input-label,
+.v2-input-shell:focus-within ~ .v2-input-label {
+  color: var(--accent-cool, #5871ff);
+}
+
+/* ---------------------------------------------------------------------------
+   Select Shell (wrapper around select dropdowns)
+   --------------------------------------------------------------------------- */
+.v2-select-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0 1rem;
+  border: 1px solid var(--line, #283456);
+  border-radius: 12px;
+  background: var(--bg-1, #070911);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.v2-select-shell:focus-within {
+  border-color: var(--accent-cool, #5871ff);
+  box-shadow: 0 0 0 3px rgba(88, 113, 255, 0.14);
+}
+
+.v2-select-shell.is-invalid,
+.v2-select-shell[data-invalid] {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.08);
+}
+
+/* Custom dropdown arrow */
+.v2-select-shell::after {
+  content: "";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--text-muted, #6b7a99);
+  pointer-events: none;
+}
+
+.v2-select-shell select {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text, #f6f3ee);
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.4;
+  padding-right: 1.5rem;
+  cursor: pointer;
+}
+
+.v2-select-shell select option {
+  background: var(--bg-1, #070911);
+  color: var(--text, #f6f3ee);
+}
+
+/* ---------------------------------------------------------------------------
+   Textarea Shell (wrapper around textareas)
+   --------------------------------------------------------------------------- */
+.v2-textarea-shell {
+  display: flex;
+  width: 100%;
+  min-height: 120px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line, #283456);
+  border-radius: 12px;
+  background: var(--bg-1, #070911);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.v2-textarea-shell:focus-within {
+  border-color: var(--accent-cool, #5871ff);
+  box-shadow: 0 0 0 3px rgba(88, 113, 255, 0.14);
+}
+
+.v2-textarea-shell.is-invalid,
+.v2-textarea-shell[data-invalid] {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.08);
+}
+
+.v2-textarea-shell textarea {
+  width: 100%;
+  min-height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text, #f6f3ee);
+  caret-color: var(--accent-cool, #5871ff);
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.v2-textarea-shell textarea::placeholder {
+  color: var(--text-muted, #6b7a99);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   Form Field Group Layout
+   ========================================================================== */
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 8px);
+}
+
+.field-group__label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text, #f6f3ee);
+  font-size: var(--type-body-size, 0.8125rem);
+  font-weight: 600;
+}
+
+.field-group__label-required {
+  color: var(--accent-cool, #5871ff);
+  font-weight: 700;
+}
+
+.field-group__hint {
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-caption-size, 0.6875rem);
+  line-height: 1.4;
+}
+
+.field-group__error {
+  color: #fca5a5;
+  font-size: var(--type-caption-size, 0.6875rem);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Field row (horizontal label + input) */
+.field-row {
+  display: grid;
+  grid-template-columns: minmax(100px, 0.4fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-md, 12px);
+}
+
+@media (max-width: 640px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Number input with +/- stepper buttons */
+.input-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.input-stepper .v2-input-shell {
+  border-radius: 0;
+  text-align: center;
+}
+
+.input-stepper__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 48px;
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-2, #10172a);
+  color: var(--text-muted, #a4aec6);
+  cursor: pointer;
+  transition: background 100ms, color 100ms;
+}
+
+.input-stepper__btn:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.input-stepper__btn:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.input-stepper__btn:hover {
+  background: rgba(88, 113, 255, 0.08);
+  color: var(--text, #f6f3ee);
+}
+
+/* ==========================================================================
+   Global Input Height Harmonization
+   ========================================================================== */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  min-height: 44px !important;
+}
+
+.v2-input-element,
+.v2-select-shell select {
+  min-height: 44px !important;
+}
+
+
+
+
+/* ==========================================================================
+   Phase 3 Task 8 — Embedded-Mode Control Contrast Lock
+   --------------------------------------------------------------------------
+   Authoritative block that pins text/caret/placeholder/option color for all
+   text-entry controls in embedded mode at high specificity, defending against
+   any drift from later overrides in styles.css. Targets WCAG AA minimum
+   contrast (≥ 4.5:1 against --bg-2).
+
+   Addresses editor-audit-2026-04-07 finding #1 ("Value fields are not
+   visually safe enough in embedded mode") and finding #4 ("Flat buttons are
+   too quiet against the surrounding dark panels").
+   ========================================================================== */
+
+.rebalance-embedded-root .v2-input-element,
+.rebalance-embedded-root .v2-select-input,
+.rebalance-embedded-root .v2-textarea-shell,
+.rebalance-embedded-root .v2-textarea-shell textarea,
+.rebalance-embedded-root .v2-select-shell select,
+.rebalance-embedded-root input.v2-input-element,
+.rebalance-embedded-root input[type="text"],
+.rebalance-embedded-root input[type="number"],
+.rebalance-embedded-root input[type="search"],
+.rebalance-embedded-root input[type="email"],
+.rebalance-embedded-root input[type="url"],
+.rebalance-embedded-root input[type="password"] {
+  color: var(--text, #f6f3ee) !important;
+  -webkit-text-fill-color: var(--text, #f6f3ee) !important;
+  caret-color: var(--accent-warm, #f59e0b) !important;
+  background: transparent !important;
+  text-shadow: none !important;
+  font-weight: 500;
+}
+
+.rebalance-embedded-root .v2-input-element::placeholder,
+.rebalance-embedded-root .v2-textarea-shell textarea::placeholder,
+.rebalance-embedded-root input::placeholder,
+.rebalance-embedded-root textarea::placeholder {
+  color: var(--text-muted, #a4aec6) !important;
+  -webkit-text-fill-color: var(--text-muted, #a4aec6) !important;
+  opacity: 0.85 !important;
+}
+
+/* Native dropdown options must remain readable on light/dark OS palettes */
+.rebalance-embedded-root .v2-select-shell select option,
+.rebalance-embedded-root select option {
+  color: var(--text, #f6f3ee) !important;
+  background: var(--bg-2, #10172a) !important;
+}
+
+/* Webkit autofill is the most likely place where text turns dark — reset
+   completely so saved profile values still read clearly. */
+.rebalance-embedded-root .v2-input-element:-webkit-autofill,
+.rebalance-embedded-root input:-webkit-autofill,
+.rebalance-embedded-root textarea:-webkit-autofill,
+.rebalance-embedded-root select:-webkit-autofill {
+  -webkit-text-fill-color: var(--text, #f6f3ee) !important;
+  -webkit-box-shadow: 0 0 0 9999px var(--bg-1, #070911) inset !important;
+  caret-color: var(--accent-warm, #f59e0b) !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Disabled controls — clearly unavailable, no chrome doubles. */
+.rebalance-embedded-root .v2-input-shell:has(input:disabled),
+.rebalance-embedded-root .v2-input-shell[data-disabled="true"],
+.rebalance-embedded-root .v2-select-shell:has(select:disabled),
+.rebalance-embedded-root .v2-select-shell[data-disabled="true"],
+.rebalance-embedded-root .v2-textarea-shell:has(textarea:disabled),
+.rebalance-embedded-root .v2-textarea-shell[data-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--line, #283456) !important;
+  box-shadow: none !important;
+}
+
+.rebalance-embedded-root input:disabled,
+.rebalance-embedded-root select:disabled,
+.rebalance-embedded-root textarea:disabled {
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Flat / Secondary Button Contrast Floor (Phase 3 Task 8)
+   --------------------------------------------------------------------------
+   Ensure flat reset/reload-style actions remain unmistakably interactive on
+   dark cards. Previously embedded override at styles.css:6988 re-applied
+   chrome to disabled flat buttons; we lock the enabled and disabled treatment
+   here.
+   ========================================================================== */
+
+.rebalance-embedded-root .v2-button--ghost:not(.v2-button--disabled),
+.rebalance-embedded-root .v2-button--secondary:not(.v2-button--disabled) {
+  color: var(--text, #f6f3ee) !important;
+  -webkit-text-fill-color: var(--text, #f6f3ee) !important;
+  border-color: rgba(99, 102, 241, 0.32) !important;
+  background: rgba(99, 102, 241, 0.06) !important;
+}
+
+.rebalance-embedded-root .v2-button--ghost:hover:not(.v2-button--disabled),
+.rebalance-embedded-root .v2-button--secondary:hover:not(.v2-button--disabled) {
+  border-color: rgba(99, 102, 241, 0.55) !important;
+  background: rgba(99, 102, 241, 0.12) !important;
+}
+
+.rebalance-embedded-root .v2-button--disabled,
+.rebalance-embedded-root button[disabled],
+.rebalance-embedded-root .v2-button[aria-disabled="true"] {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+  border-color: var(--line, #283456) !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  /* No hover lift for disabled */
+  transform: none !important;
+}
+
+/* ==========================================================================
+   Phase 3 Task 7 — Hover-State Affordances
+   --------------------------------------------------------------------------
+   Adds clear hover feedback to picker rows and selectable cards (agent-20
+   finding #4: shared picker cards have no hover affordance). Token: indigo
+   tint border + soft bg lift via --bg-1.
+   ========================================================================== */
+
+.task-record:not([disabled]):not(.is-active):hover,
+.task-choice:not([disabled]):not(.is-active):hover,
+.task-mode-switch-button:not([disabled]):not(.is-active):hover,
+.task-value-browser-row:not([disabled]):not(.is-active):hover,
+.task-icon-choice:not([disabled]):not(.is-active):hover,
+.swap-source-card:not([disabled]):not(.is-active):hover,
+.task-swap-source-card:not([disabled]):not(.is-active):hover {
+  border-color: rgba(99, 102, 241, 0.45);
+  background-color: rgba(99, 102, 241, 0.06);
+  transition: border-color 140ms ease, background-color 140ms ease;
+}
+
+.task-record[disabled],
+.task-choice[disabled],
+.task-mode-switch-button[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Embedded variant must reassert hover (override-order safety) */
+.rebalance-embedded-root .task-record:not([disabled]):not(.is-active):hover,
+.rebalance-embedded-root .task-choice:not([disabled]):not(.is-active):hover,
+.rebalance-embedded-root .task-mode-switch-button:not([disabled]):not(.is-active):hover,
+.rebalance-embedded-root .task-value-browser-row:not([disabled]):not(.is-active):hover {
+  border-color: rgba(99, 102, 241, 0.5) !important;
+  background-color: rgba(99, 102, 241, 0.08) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .task-record,
+  .task-choice,
+  .task-mode-switch-button,
+  .task-value-browser-row,
+  .swap-source-card,
+  .task-swap-source-card {
+    transition: none !important;
+  }
+}

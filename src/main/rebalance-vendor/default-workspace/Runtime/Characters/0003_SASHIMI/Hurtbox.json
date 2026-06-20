@@ -1,0 +1,3254 @@
+{
+  "schemaVersion": 10,
+  "targetType": "CharacterHurtbox",
+  "targetKey": "SASHIMI#3/Hurtbox",
+  "displayName": "Hurtbox",
+  "resolvedName": "Hurtbox",
+  "generatedAtUtc": "2026-03-26T22:05:42.8688877Z",
+  "quickEdit": [
+    {
+      "setting": "Damage Taken From Npcs Multiplier",
+      "category": "Damage",
+      "path": "damageTakenFromNpcsMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Multiplier applied to damage taken from NPCs. Values above 1 increase incoming NPC damage, values below 1 reduce it.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage Taken Modifer Uncapped",
+      "category": "Damage",
+      "path": "damageTakenModiferUncapped",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Uncapped modifier applied to incoming damage before clamping or other safety limits.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage Taken Modifer",
+      "category": "Damage",
+      "path": "damageTakenModifer",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Modifier applied to incoming damage. Values above 1 increase damage taken, values below 1 reduce it.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Zone Damage Multiplier",
+      "category": "Damage",
+      "path": "zoneDamageMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Multiplier applied to zone damage taken.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "In Player Combat Duration",
+      "category": "Timing",
+      "path": "inPlayerCombatDuration",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "How long, in seconds, this target stays flagged as in player combat after recent player interaction.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Last Players Hit Duration",
+      "category": "Timing",
+      "path": "lastPlayersHitDuration",
+      "editable": true,
+      "valueType": "number",
+      "value": 10,
+      "defaultValue": 10,
+      "whatItDoes": "How long, in seconds, the game remembers recent player attackers for this target.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Out Of Combat Duration",
+      "category": "Timing",
+      "path": "outOfCombatDuration",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "How long, in seconds, the target must avoid combat before it is considered out of combat again.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Base HP",
+      "category": "Health",
+      "path": "baseHp",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1750,
+      "defaultValue": 1750,
+      "whatItDoes": "Base HP before runtime changes. This is the safest value to edit when you want a different starting health pool.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "HP",
+      "category": "Health",
+      "path": "hp",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1750,
+      "defaultValue": 0,
+      "whatItDoes": "Current HP value. For spawn defaults, this is usually the live health the character starts with.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max HP",
+      "category": "Health",
+      "path": "maxHp",
+      "editable": true,
+      "valueType": "integer",
+      "value": 1750,
+      "defaultValue": 0,
+      "whatItDoes": "Maximum HP cap for this unit or object.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "HP Danger Effect Percentage",
+      "category": "Health",
+      "path": "hpDangerEffectPercentage",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.1,
+      "defaultValue": 0.1,
+      "whatItDoes": "Health percentage threshold that triggers low-health warning effects or visuals.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Shield",
+      "category": "Health",
+      "path": "maxShield",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Maximum shield amount this target or object can hold.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Shield",
+      "category": "Health",
+      "path": "shield",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Shield amount available before health is lost.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Ignored By Targeting",
+      "category": "Behavior",
+      "path": "ignoredByTargeting",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether targeting systems ignore this hurtbox or target.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Is Non Hittable",
+      "category": "Behavior",
+      "path": "isNonHittable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether hits can connect with this target.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Min 1 HP",
+      "category": "Behavior",
+      "path": "min1Hp",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether this target can be reduced below 1 HP.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Non Damagable",
+      "category": "Behavior",
+      "path": "nonDamagable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether incoming damage is ignored entirely.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Only Take 1 Damage",
+      "category": "Behavior",
+      "path": "onlyTake1Damage",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Controls whether each incoming hit is clamped to 1 damage.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Life Steal Npc Penalty Percent",
+      "category": "General",
+      "path": "lifeStealNPCPenaltyPercent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.25,
+      "defaultValue": 0.25,
+      "whatItDoes": "Penalty applied to life steal against NPCs. Higher values reduce the healing gained from NPC damage.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Thorns Percent",
+      "category": "General",
+      "path": "thornsPercent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Thorns Percent. Edit \u0060thornsPercent\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for character target \u0027Hurtbox\u0027. You can change Damage, Timing, Health, Behavior, General.",
+    "whatYouCanChange": [
+      "Damage",
+      "Timing",
+      "Health",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [],
+    "groups": [
+      {
+        "category": "Damage",
+        "entries": [
+          {
+            "name": "Damage Taken From Npcs Multiplier",
+            "path": "damageTakenFromNpcsMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Multiplier applied to damage taken from NPCs. Values above 1 increase incoming NPC damage, values below 1 reduce it.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage Taken Modifer Uncapped",
+            "path": "damageTakenModiferUncapped",
+            "editable": true,
+            "valueType": "number",
+            "description": "Uncapped modifier applied to incoming damage before clamping or other safety limits.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage Taken Modifer",
+            "path": "damageTakenModifer",
+            "editable": true,
+            "valueType": "number",
+            "description": "Modifier applied to incoming damage. Values above 1 increase damage taken, values below 1 reduce it.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Zone Damage Multiplier",
+            "path": "zoneDamageMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Multiplier applied to zone damage taken.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "In Player Combat Duration",
+            "path": "inPlayerCombatDuration",
+            "editable": true,
+            "valueType": "number",
+            "description": "How long, in seconds, this target stays flagged as in player combat after recent player interaction.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Last Players Hit Duration",
+            "path": "lastPlayersHitDuration",
+            "editable": true,
+            "valueType": "number",
+            "description": "How long, in seconds, the game remembers recent player attackers for this target.",
+            "defaultValue": 10,
+            "currentValue": 10,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Out Of Combat Duration",
+            "path": "outOfCombatDuration",
+            "editable": true,
+            "valueType": "number",
+            "description": "How long, in seconds, the target must avoid combat before it is considered out of combat again.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Health",
+        "entries": [
+          {
+            "name": "Base HP",
+            "path": "baseHp",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Base HP before runtime changes. This is the safest value to edit when you want a different starting health pool.",
+            "defaultValue": 1750,
+            "currentValue": 1750,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "HP",
+            "path": "hp",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Current HP value. For spawn defaults, this is usually the live health the character starts with.",
+            "defaultValue": 0,
+            "currentValue": 1750,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max HP",
+            "path": "maxHp",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Maximum HP cap for this unit or object.",
+            "defaultValue": 0,
+            "currentValue": 1750,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "HP Danger Effect Percentage",
+            "path": "hpDangerEffectPercentage",
+            "editable": true,
+            "valueType": "number",
+            "description": "Health percentage threshold that triggers low-health warning effects or visuals.",
+            "defaultValue": 0.1,
+            "currentValue": 0.1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Shield",
+            "path": "maxShield",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Maximum shield amount this target or object can hold.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Shield",
+            "path": "shield",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Shield amount available before health is lost.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Ignored By Targeting",
+            "path": "ignoredByTargeting",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether targeting systems ignore this hurtbox or target.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Is Non Hittable",
+            "path": "isNonHittable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether hits can connect with this target.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Min 1 HP",
+            "path": "min1Hp",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether this target can be reduced below 1 HP.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Non Damagable",
+            "path": "nonDamagable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether incoming damage is ignored entirely.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Only Take 1 Damage",
+            "path": "onlyTake1Damage",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Controls whether each incoming hit is clamped to 1 damage.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Life Steal Npc Penalty Percent",
+            "path": "lifeStealNPCPenaltyPercent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Penalty applied to life steal against NPCs. Higher values reduce the healing gained from NPC damage.",
+            "defaultValue": 0.25,
+            "currentValue": 0.25,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Thorns Percent",
+            "path": "thornsPercent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Thorns Percent. Edit \u0060thornsPercent\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": false,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": false,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Add or rebalance direct damage values and damage scaling.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.damage"
+      ]
+    },
+    {
+      "slotId": "slot.duration",
+      "label": "Duration",
+      "category": "Basics",
+      "description": "Adjust duration, lifetime, or tick timing values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.duration"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Use this when you want a simple damage slider or number input.",
+      "targetPath": "damageTakenFromNpcsMultiplier",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Damage Taken From Npcs Multiplier",
+          "description": "Multiplier applied to damage taken from NPCs. Values above 1 increase incoming NPC damage, values below 1 reduce it.",
+          "valueType": "number",
+          "defaultValue": 1,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.duration",
+      "label": "Duration",
+      "category": "Basics",
+      "description": "Use this when you want a longer effect or projectile lifetime.",
+      "targetPath": "inPlayerCombatDuration",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "In Player Combat Duration",
+          "description": "How long, in seconds, this target stays flagged as in player combat after recent player interaction.",
+          "valueType": "number",
+          "defaultValue": 1,
+          "options": []
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "CharacterHurtbox",
+    "label": "CharacterHurtbox",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "remove:enabled:soft-flag",
+      "operationType": "remove",
+      "path": "enabled",
+      "mode": "soft",
+      "label": "Disable Hurtbox",
+      "description": "Soft-disable this entry without removing its surrounding file or data structure.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Hurtbox",
+      "previewSubtitle": "Controls whether this component, manager entry, or behaviour is active at all.",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": true,
+      "afterValue": false,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%damageTakenFromNpcsMultiplier%",
+      "label": "Damage Taken From Npcs Multiplier",
+      "description": "Multiplier applied to damage taken from NPCs. Values above 1 increase incoming NPC damage, values below 1 reduce it.",
+      "sourcePath": "damageTakenFromNpcsMultiplier",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%damageTakenModiferUncapped%",
+      "label": "Damage Taken Modifer Uncapped",
+      "description": "Uncapped modifier applied to incoming damage before clamping or other safety limits.",
+      "sourcePath": "damageTakenModiferUncapped",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%damageTakenModifer%",
+      "label": "Damage Taken Modifer",
+      "description": "Modifier applied to incoming damage. Values above 1 increase damage taken, values below 1 reduce it.",
+      "sourcePath": "damageTakenModifer",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%zoneDamageMultiplier%",
+      "label": "Zone Damage Multiplier",
+      "description": "Multiplier applied to zone damage taken.",
+      "sourcePath": "zoneDamageMultiplier",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%inPlayerCombatDuration%",
+      "label": "In Player Combat Duration",
+      "description": "How long, in seconds, this target stays flagged as in player combat after recent player interaction.",
+      "sourcePath": "inPlayerCombatDuration",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%lastPlayersHitDuration%",
+      "label": "Last Players Hit Duration",
+      "description": "How long, in seconds, the game remembers recent player attackers for this target.",
+      "sourcePath": "lastPlayersHitDuration",
+      "valueType": "number",
+      "previewValue": 10,
+      "previewText": "10"
+    },
+    {
+      "token": "%outOfCombatDuration%",
+      "label": "Out Of Combat Duration",
+      "description": "How long, in seconds, the target must avoid combat before it is considered out of combat again.",
+      "sourcePath": "outOfCombatDuration",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%baseHP%",
+      "label": "Base HP",
+      "description": "Base HP before runtime changes. This is the safest value to edit when you want a different starting health pool.",
+      "sourcePath": "baseHp",
+      "valueType": "integer",
+      "previewValue": 1750,
+      "previewText": "1750"
+    },
+    {
+      "token": "%hP%",
+      "label": "HP",
+      "description": "Current HP value. For spawn defaults, this is usually the live health the character starts with.",
+      "sourcePath": "hp",
+      "valueType": "integer",
+      "previewValue": 1750,
+      "previewText": "1750"
+    },
+    {
+      "token": "%maxHP%",
+      "label": "Max HP",
+      "description": "Maximum HP cap for this unit or object.",
+      "sourcePath": "maxHp",
+      "valueType": "integer",
+      "previewValue": 1750,
+      "previewText": "1750"
+    },
+    {
+      "token": "%hPDangerEffectPercentage%",
+      "label": "HP Danger Effect Percentage",
+      "description": "Health percentage threshold that triggers low-health warning effects or visuals.",
+      "sourcePath": "hpDangerEffectPercentage",
+      "valueType": "number",
+      "previewValue": 0.1,
+      "previewText": "0.1"
+    },
+    {
+      "token": "%maxShield%",
+      "label": "Max Shield",
+      "description": "Maximum shield amount this target or object can hold.",
+      "sourcePath": "maxShield",
+      "valueType": "integer",
+      "previewValue": 0,
+      "previewText": "0"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {
+    "hp": 1750,
+    "maxHp": 1750
+  },
+  "overrideStatus": {
+    "appliedCount": 2,
+    "failedCount": 0,
+    "entries": [
+      {
+        "path": "hp",
+        "applied": true,
+        "requestedValue": 1750,
+        "resultingValue": 1750,
+        "message": "Applied successfully."
+      },
+      {
+        "path": "maxHp",
+        "applied": true,
+        "requestedValue": 1750,
+        "resultingValue": 1750,
+        "message": "Applied successfully."
+      }
+    ]
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default.",
+    "Character folders are generated for every character at startup from prefab defaults and are refreshed with live runtime values after that character loads in a match or training."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "damageTakenFromNpcsMultiplier",
+        "displayName": "Damage Taken From Npcs Multiplier",
+        "label": "Damage Taken From Npcs Multiplier",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Multiplier applied to damage taken from NPCs. Values above 1 increase incoming NPC damage, values below 1 reduce it.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "damageTakenModifer",
+        "displayName": "Damage Taken Modifer",
+        "label": "Damage Taken Modifer",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Modifier applied to incoming damage. Values above 1 increase damage taken, values below 1 reduce it.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "damageTakenModiferUncapped",
+        "displayName": "Damage Taken Modifer Uncapped",
+        "label": "Damage Taken Modifer Uncapped",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Uncapped modifier applied to incoming damage before clamping or other safety limits.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "zoneDamageMultiplier",
+        "displayName": "Zone Damage Multiplier",
+        "label": "Zone Damage Multiplier",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Multiplier applied to zone damage taken.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "inPlayerCombatDuration",
+        "displayName": "In Player Combat Duration",
+        "label": "In Player Combat Duration",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "How long, in seconds, this target stays flagged as in player combat after recent player interaction.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastPlayersHitDuration",
+        "displayName": "Last Players Hit Duration",
+        "label": "Last Players Hit Duration",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "How long, in seconds, the game remembers recent player attackers for this target.",
+        "defaultValue": 10,
+        "currentValue": 10,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "outOfCombatDuration",
+        "displayName": "Out Of Combat Duration",
+        "label": "Out Of Combat Duration",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "How long, in seconds, the target must avoid combat before it is considered out of combat again.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "Hp",
+        "displayName": "HP",
+        "label": "HP",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Current HP value. For spawn defaults, this is usually the live health the character starts with.",
+        "defaultValue": 0,
+        "currentValue": 1750,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "MaxHp",
+        "displayName": "Max HP",
+        "label": "Max HP",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Maximum HP cap for this unit or object.",
+        "defaultValue": 0,
+        "currentValue": 1750,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "baseHp",
+        "displayName": "Base HP",
+        "label": "Base HP",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Base HP before runtime changes. This is the safest value to edit when you want a different starting health pool.",
+        "defaultValue": 1750,
+        "currentValue": 1750,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "hp",
+        "displayName": "HP",
+        "label": "HP",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Current HP value. For spawn defaults, this is usually the live health the character starts with.",
+        "defaultValue": 0,
+        "currentValue": 1750,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "hpDangerEffectPercentage",
+        "displayName": "HP Danger Effect Percentage",
+        "label": "HP Danger Effect Percentage",
+        "category": "Health",
+        "valueType": "number",
+        "editable": true,
+        "description": "Health percentage threshold that triggers low-health warning effects or visuals.",
+        "defaultValue": 0.1,
+        "currentValue": 0.1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "maxHp",
+        "displayName": "Max HP",
+        "label": "Max HP",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Maximum HP cap for this unit or object.",
+        "defaultValue": 0,
+        "currentValue": 1750,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "maxShield",
+        "displayName": "Max Shield",
+        "label": "Max Shield",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Maximum shield amount this target or object can hold.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "shield",
+        "displayName": "Shield",
+        "label": "Shield",
+        "category": "Health",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Shield amount available before health is lost.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "ignoredByTargeting",
+        "displayName": "Ignored By Targeting",
+        "label": "Ignored By Targeting",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether targeting systems ignore this hurtbox or target.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "isNonHittable",
+        "displayName": "Is Non Hittable",
+        "label": "Is Non Hittable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether hits can connect with this target.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "min1Hp",
+        "displayName": "Min 1 HP",
+        "label": "Min 1 HP",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether this target can be reduced below 1 HP.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "nonDamagable",
+        "displayName": "Non Damagable",
+        "label": "Non Damagable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether incoming damage is ignored entirely.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "onlyTake1Damage",
+        "displayName": "Only Take 1 Damage",
+        "label": "Only Take 1 Damage",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether each incoming hit is clamped to 1 damage.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lifeStealNPCPenaltyPercent",
+        "displayName": "Life Steal Npc Penalty Percent",
+        "label": "Life Steal Npc Penalty Percent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Penalty applied to life steal against NPCs. Higher values reduce the healing gained from NPC damage.",
+        "defaultValue": 0.25,
+        "currentValue": 0.25,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "thornsPercent",
+        "displayName": "Thorns Percent",
+        "label": "Thorns Percent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Thorns Percent. Edit \u0060thornsPercent\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastSyncTime",
+        "displayName": "Last Sync Time",
+        "label": "Last Sync Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Last Sync Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charHpBar",
+        "displayName": "Char HP Bar",
+        "label": "Char HP Bar",
+        "category": "Health",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char HP Bar on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "maxCamShakeTraumaHpPerc",
+        "displayName": "Max Cam Shake Trauma HP Perc",
+        "label": "Max Cam Shake Trauma HP Perc",
+        "category": "Health",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Max Cam Shake Trauma HP Perc. Edit \u0060maxCamShakeTraumaHpPerc\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0.6,
+        "currentValue": 0.6,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "onHpChangedHookAction",
+        "displayName": "On HP Changed Hook Action",
+        "label": "On HP Changed Hook Action",
+        "category": "Health",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On HP Changed Hook Action on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "LastHitDir.x",
+        "displayName": "Last Hit Dir / Last Hit Dir X",
+        "label": "Last Hit Dir X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "X-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "LastHitDir.y",
+        "displayName": "Last Hit Dir / Last Hit Dir Y",
+        "label": "Last Hit Dir Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Y-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "LastHitDir.z",
+        "displayName": "Last Hit Dir / Last Hit Dir Z",
+        "label": "Last Hit Dir Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Z-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastHitDir.x",
+        "displayName": "Last Hit Dir / Last Hit Dir X",
+        "label": "Last Hit Dir X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastHitDir.y",
+        "displayName": "Last Hit Dir / Last Hit Dir Y",
+        "label": "Last Hit Dir Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastHitDir.z",
+        "displayName": "Last Hit Dir / Last Hit Dir Z",
+        "label": "Last Hit Dir Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Last Hit Dir.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "IsInPlayerCombatTimer",
+        "displayName": "Is In Player Combat Timer",
+        "label": "Is In Player Combat Timer",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is In Player Combat Timer. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "enabled",
+        "displayName": "Enabled",
+        "label": "Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether this component, manager entry, or behaviour is active at all.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "isActiveAndEnabled",
+        "displayName": "Is Active And Enabled",
+        "label": "Is Active And Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Active And Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "isDead",
+        "displayName": "Is Dead",
+        "label": "Is Dead",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Runtime dead/alive state for this target. This is usually not a balance default, but it is editable.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "isOutOfCombat",
+        "displayName": "Is Out Of Combat",
+        "label": "Is Out Of Combat",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Runtime combat-state flag that marks the target as out of combat.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "isRecentlyDamaged",
+        "displayName": "Is Recently Damaged",
+        "label": "Is Recently Damaged",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Is Recently Damaged dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "showDmgPoints",
+        "displayName": "Show Damage Points",
+        "label": "Show Damage Points",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Show Damage Points. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "showKillPopup",
+        "displayName": "Show Kill Popup",
+        "label": "Show Kill Popup",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Show Kill Popup. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "useGUILayout",
+        "displayName": "Use Gui Layout",
+        "label": "Use Gui Layout",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Use Gui Layout. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "ComponentIndex",
+        "displayName": "Component Index",
+        "label": "Component Index",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Component Index. Edit \u0060ComponentIndex\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "InvincibilityLocks",
+        "displayName": "Invincibility Locks",
+        "label": "Invincibility Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Invincibility Locks. Edit \u0060InvincibilityLocks\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "amplifyModifer",
+        "displayName": "Amplify Modifer",
+        "label": "Amplify Modifer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Amplify Modifer. Edit \u0060amplifyModifer\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "camShake",
+        "displayName": "Cam Shake",
+        "label": "Cam Shake",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Cam Shake on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charAbilities",
+        "displayName": "Char Abilities",
+        "label": "Char Abilities",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Abilities on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charAnim",
+        "displayName": "Char Anim",
+        "label": "Char Anim",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Anim on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charDowned",
+        "displayName": "Char Downed",
+        "label": "Char Downed",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Downed on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charFx",
+        "displayName": "Char Fx",
+        "label": "Char Fx",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Fx on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charHidden",
+        "displayName": "Char Hidden",
+        "label": "Char Hidden",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Hidden on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charMaterial",
+        "displayName": "Char Material",
+        "label": "Char Material",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Material on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "charTriggerbox",
+        "displayName": "Char Triggerbox",
+        "label": "Char Triggerbox",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Triggerbox on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "entityManager",
+        "displayName": "Entity Manager",
+        "label": "Entity Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Entity Manager on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "gameManager",
+        "displayName": "Game Manager",
+        "label": "Game Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Game Manager on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "immuneLocks",
+        "displayName": "Immune Locks",
+        "label": "Immune Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Immune Locks. Edit \u0060immuneLocks\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "inPlayerCombatTimer",
+        "displayName": "In Player Combat Timer",
+        "label": "In Player Combat Timer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Player Combat Timer. Edit \u0060inPlayerCombatTimer\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "invincibilityLocks",
+        "displayName": "Invincibility Locks",
+        "label": "Invincibility Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Invincibility Locks. Edit \u0060invincibilityLocks\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "lastHitTimer",
+        "displayName": "Last Hit Timer",
+        "label": "Last Hit Timer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Last Hit Timer. Edit \u0060lastHitTimer\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "m_CancellationTokenSource",
+        "displayName": "M Cancellation Token Source",
+        "label": "M Cancellation Token Source",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for M Cancellation Token Source on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "onHitAction",
+        "displayName": "On Hit Action",
+        "label": "On Hit Action",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Hit Action on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "onKilledEntity",
+        "displayName": "On Killed Entity",
+        "label": "On Killed Entity",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Killed Entity on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "onSelfKilled",
+        "displayName": "On Self Killed",
+        "label": "On Self Killed",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Self Killed on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "outOfCombatTimer",
+        "displayName": "Out Of Combat Timer",
+        "label": "Out Of Combat Timer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Of Combat Timer. Edit \u0060outOfCombatTimer\u0060 to change how \u0060SASHIMI#3/Hurtbox\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "uiManager",
+        "displayName": "UI Manager",
+        "label": "UI Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for UI Manager on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterHurtbox",
+        "targetKey": "SASHIMI#3/Hurtbox",
+        "path": "uiPopUp",
+        "displayName": "UI Pop Up",
+        "label": "UI Pop Up",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for UI Pop Up on \u0060SASHIMI#3/Hurtbox\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      }
+    ],
+    "defaults": {
+      "ComponentIndex": 0,
+      "Hp": 0,
+      "InvincibilityLocks": 0,
+      "IsInPlayerCombatTimer": false,
+      "LastHitDir.x": 0,
+      "LastHitDir.y": 0,
+      "LastHitDir.z": 0,
+      "MaxHp": 0,
+      "amplifyModifer": 1,
+      "baseHp": 1750,
+      "camShake": null,
+      "charAbilities": null,
+      "charAnim": null,
+      "charDowned": null,
+      "charFx": null,
+      "charHidden": null,
+      "charHpBar": null,
+      "charMaterial": null,
+      "charTriggerbox": null,
+      "damageTakenFromNpcsMultiplier": 1,
+      "damageTakenModifer": 1,
+      "damageTakenModiferUncapped": 1,
+      "enabled": true,
+      "entityManager": null,
+      "gameManager": null,
+      "hp": 0,
+      "hpDangerEffectPercentage": 0.1,
+      "ignoredByTargeting": false,
+      "immuneLocks": 0,
+      "inPlayerCombatDuration": 1,
+      "inPlayerCombatTimer": 0,
+      "invincibilityLocks": 0,
+      "isActiveAndEnabled": false,
+      "isDead": false,
+      "isNonHittable": false,
+      "isOutOfCombat": false,
+      "isRecentlyDamaged": true,
+      "lastHitDir.x": 0,
+      "lastHitDir.y": 0,
+      "lastHitDir.z": 0,
+      "lastHitTimer": 0,
+      "lastPlayersHitDuration": 10,
+      "lastSyncTime": 0,
+      "lifeStealNPCPenaltyPercent": 0.25,
+      "m_CancellationTokenSource": null,
+      "maxCamShakeTraumaHpPerc": 0.6,
+      "maxHp": 0,
+      "maxShield": 0,
+      "min1Hp": false,
+      "nonDamagable": false,
+      "onHitAction": null,
+      "onHpChangedHookAction": null,
+      "onKilledEntity": null,
+      "onSelfKilled": null,
+      "onlyTake1Damage": false,
+      "outOfCombatDuration": 1,
+      "outOfCombatTimer": 0,
+      "shield": 0,
+      "showDmgPoints": true,
+      "showKillPopup": true,
+      "thornsPercent": 0,
+      "uiManager": null,
+      "uiPopUp": null,
+      "useGUILayout": true,
+      "zoneDamageMultiplier": 1
+    },
+    "effectiveValues": {
+      "ComponentIndex": 0,
+      "Hp": 1750,
+      "InvincibilityLocks": 0,
+      "IsInPlayerCombatTimer": false,
+      "LastHitDir.x": 0,
+      "LastHitDir.y": 0,
+      "LastHitDir.z": 0,
+      "MaxHp": 1750,
+      "amplifyModifer": 1,
+      "baseHp": 1750,
+      "camShake": null,
+      "charAbilities": null,
+      "charAnim": null,
+      "charDowned": null,
+      "charFx": null,
+      "charHidden": null,
+      "charHpBar": null,
+      "charMaterial": null,
+      "charTriggerbox": null,
+      "damageTakenFromNpcsMultiplier": 1,
+      "damageTakenModifer": 1,
+      "damageTakenModiferUncapped": 1,
+      "enabled": true,
+      "entityManager": null,
+      "gameManager": null,
+      "hp": 1750,
+      "hpDangerEffectPercentage": 0.1,
+      "ignoredByTargeting": false,
+      "immuneLocks": 0,
+      "inPlayerCombatDuration": 1,
+      "inPlayerCombatTimer": 0,
+      "invincibilityLocks": 0,
+      "isActiveAndEnabled": false,
+      "isDead": false,
+      "isNonHittable": false,
+      "isOutOfCombat": false,
+      "isRecentlyDamaged": true,
+      "lastHitDir.x": 0,
+      "lastHitDir.y": 0,
+      "lastHitDir.z": 0,
+      "lastHitTimer": 0,
+      "lastPlayersHitDuration": 10,
+      "lastSyncTime": 0,
+      "lifeStealNPCPenaltyPercent": 0.25,
+      "m_CancellationTokenSource": null,
+      "maxCamShakeTraumaHpPerc": 0.6,
+      "maxHp": 1750,
+      "maxShield": 0,
+      "min1Hp": false,
+      "nonDamagable": false,
+      "onHitAction": null,
+      "onHpChangedHookAction": null,
+      "onKilledEntity": null,
+      "onSelfKilled": null,
+      "onlyTake1Damage": false,
+      "outOfCombatDuration": 1,
+      "outOfCombatTimer": 0,
+      "shield": 0,
+      "showDmgPoints": true,
+      "showKillPopup": true,
+      "thornsPercent": 0,
+      "uiManager": null,
+      "uiPopUp": null,
+      "useGUILayout": true,
+      "zoneDamageMultiplier": 1
+    }
+  }
+}

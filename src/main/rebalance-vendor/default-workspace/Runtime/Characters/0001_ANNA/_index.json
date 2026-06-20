@@ -1,0 +1,86 @@
+﻿{
+  "schemaVersion": 2,
+  "targetType": "CharacterIndex",
+  "targetKey": "ANNA#1",
+  "generatedAtUtc": "2026-04-15T22:57:30.0951292Z",
+  "instructions": [
+    "Open one of the listed files to edit that part of the character.",
+    "Each target file contains defaults, overrides, and effectiveValues.",
+    "Abilities are split into separate files under the Abilities folder.",
+    "AbilitySwap.json lets you pick another exported ability source per slot. Incompatible swaps are skipped safely."
+  ],
+  "files": [
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[0]",
+      "displayName": "Anna / Basic",
+      "file": "Abilities/00_Ability_1.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[1]",
+      "displayName": "Anna / Special",
+      "file": "Abilities/01_Ability_2.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[2]",
+      "displayName": "Anna / Tactical",
+      "file": "Abilities/02_Ability_3.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[3]",
+      "displayName": "Anna / Ultimate",
+      "file": "Abilities/03_Ability_4.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[4]",
+      "displayName": "Anna / Ability 5",
+      "file": "Abilities/04_Ability_5.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[5]",
+      "displayName": "Anna / Ability 6",
+      "file": "Abilities/05_Ability_6.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[6]",
+      "displayName": "Anna / Ability 7",
+      "file": "Abilities/06_Ability_7.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "ANNA#1/Ability[7]",
+      "displayName": "Anna / Ability 8",
+      "file": "Abilities/07_Ability_8.json"
+    },
+    {
+      "targetType": "CharacterAbilitySwap",
+      "targetKey": "ANNA#1/AbilitySwap",
+      "displayName": "Anna / Ability Swap",
+      "file": "AbilitySwap.json"
+    },
+    {
+      "targetType": "CharacterState",
+      "targetKey": "ANNA#1/CharacterState",
+      "displayName": "CharacterState",
+      "file": "CharacterState.json"
+    },
+    {
+      "targetType": "CharacterHurtbox",
+      "targetKey": "ANNA#1/Hurtbox",
+      "displayName": "Hurtbox",
+      "file": "Hurtbox.json"
+    },
+    {
+      "targetType": "CharacterMovement",
+      "targetKey": "ANNA#1/Movement",
+      "displayName": "Movement",
+      "file": "Movement.json"
+    }
+  ]
+}

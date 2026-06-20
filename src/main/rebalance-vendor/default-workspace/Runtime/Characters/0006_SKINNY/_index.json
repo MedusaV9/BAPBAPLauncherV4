@@ -1,0 +1,86 @@
+﻿{
+  "schemaVersion": 2,
+  "targetType": "CharacterIndex",
+  "targetKey": "SKINNY#6",
+  "generatedAtUtc": "2026-04-15T22:57:30.9761868Z",
+  "instructions": [
+    "Open one of the listed files to edit that part of the character.",
+    "Each target file contains defaults, overrides, and effectiveValues.",
+    "Abilities are split into separate files under the Abilities folder.",
+    "AbilitySwap.json lets you pick another exported ability source per slot. Incompatible swaps are skipped safely."
+  ],
+  "files": [
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[0]",
+      "displayName": "Skinny / Basic",
+      "file": "Abilities/00_Ability_1.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[1]",
+      "displayName": "Skinny / Special",
+      "file": "Abilities/01_Ability_2.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[2]",
+      "displayName": "Skinny / Tactical",
+      "file": "Abilities/02_Ability_3.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[3]",
+      "displayName": "Skinny / Ultimate",
+      "file": "Abilities/03_Ability_4.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[4]",
+      "displayName": "Skinny / Ability 5",
+      "file": "Abilities/04_Ability_5.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[5]",
+      "displayName": "Skinny / Ability 6",
+      "file": "Abilities/05_Ability_6.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[6]",
+      "displayName": "Skinny / Ability 7",
+      "file": "Abilities/06_Ability_7.json"
+    },
+    {
+      "targetType": "CharacterAbility",
+      "targetKey": "SKINNY#6/Ability[7]",
+      "displayName": "Skinny / Ability 8",
+      "file": "Abilities/07_Ability_8.json"
+    },
+    {
+      "targetType": "CharacterAbilitySwap",
+      "targetKey": "SKINNY#6/AbilitySwap",
+      "displayName": "Skinny / Ability Swap",
+      "file": "AbilitySwap.json"
+    },
+    {
+      "targetType": "CharacterState",
+      "targetKey": "SKINNY#6/CharacterState",
+      "displayName": "CharacterState",
+      "file": "CharacterState.json"
+    },
+    {
+      "targetType": "CharacterHurtbox",
+      "targetKey": "SKINNY#6/Hurtbox",
+      "displayName": "Hurtbox",
+      "file": "Hurtbox.json"
+    },
+    {
+      "targetType": "CharacterMovement",
+      "targetKey": "SKINNY#6/Movement",
+      "displayName": "Movement",
+      "file": "Movement.json"
+    }
+  ]
+}

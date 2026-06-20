@@ -1,0 +1,34 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:05:42.3978392Z",
+  "instructions": [
+    "The launcher can store exportable shared collections here, such as favorites or starter groups for packs.",
+    "This file is intentionally simple so packs can merge it safely later."
+  ],
+  "favorites": [],
+  "collections": [
+    {
+      "id": "starter-basics",
+      "label": "Starter Basics",
+      "description": "A calm starting bucket for the most common balance changes.",
+      "optionIds": [
+        "basic.health",
+        "basic.damage",
+        "basic.cooldown",
+        "basic.duration",
+        "basic.range",
+        "basic.price"
+      ]
+    },
+    {
+      "id": "starter-effects",
+      "label": "Starter Effects",
+      "description": "Common reusable effect families for status or linked-effect tuning.",
+      "optionIds": [
+        "effect.status-burn",
+        "effect.status-poison",
+        "effect.linked-passive"
+      ]
+    }
+  ]
+}

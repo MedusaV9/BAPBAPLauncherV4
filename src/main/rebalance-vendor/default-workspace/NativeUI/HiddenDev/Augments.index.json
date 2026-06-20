@@ -1,0 +1,950 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:05:49.3629632Z",
+  "instructions": [
+    "This file lists the augments exposed in the custom NativeUI Hidden/Dev section.",
+    "Open the referenced Runtime/Passives JSON files to change the actual values of those augments."
+  ],
+  "entries": [
+    {
+      "id": 10,
+      "targetKey": "P_Buff_Cdr_Persistent#10",
+      "file": "Passives/0010_P_Buff_Cdr_Persistent.json"
+    },
+    {
+      "id": 11,
+      "targetKey": "P_Buff_Dmg_Persistent#11",
+      "file": "Passives/0011_P_Buff_Dmg_Persistent.json"
+    },
+    {
+      "id": 12,
+      "targetKey": "P_Buff_Hp_Persistent#12",
+      "file": "Passives/0012_P_Buff_Hp_Persistent.json"
+    },
+    {
+      "id": 13,
+      "targetKey": "P_Buff_MoveSpd_Persistent#13",
+      "file": "Passives/0013_P_Buff_MoveSpd_Persistent.json"
+    },
+    {
+      "id": 15,
+      "targetKey": "P_Vengeance#15",
+      "file": "Passives/0015_P_Vengeance.json"
+    },
+    {
+      "id": 19,
+      "targetKey": "P_CharAugment_Anna_HighSpeed#19",
+      "file": "Passives/0019_P_CharAugment_Anna_HighSpeed.json"
+    },
+    {
+      "id": 23,
+      "targetKey": "P_CharAugment_Bishop_BigMouth#23",
+      "file": "Passives/0023_P_CharAugment_Bishop_BigMouth.json"
+    },
+    {
+      "id": 33,
+      "targetKey": "P_CharAugment_Chuck_RageWade#33",
+      "file": "Passives/0033_P_CharAugment_Chuck_RageWade.json"
+    },
+    {
+      "id": 35,
+      "targetKey": "P_OnUse_SnareAll#35",
+      "file": "Passives/0035_P_OnUse_SnareAll.json"
+    },
+    {
+      "id": 47,
+      "targetKey": "P_CharAugment_Froggy_OneTwoDagger#47",
+      "file": "Passives/0047_P_CharAugment_Froggy_OneTwoDagger.json"
+    },
+    {
+      "id": 49,
+      "targetKey": "P_CharAugment_Froggy_Yuck#49",
+      "file": "Passives/0049_P_CharAugment_Froggy_Yuck.json"
+    },
+    {
+      "id": 50,
+      "targetKey": "P_CharAugment_Jiro_BrothWave#50",
+      "file": "Passives/0050_P_CharAugment_Jiro_BrothWave.json"
+    },
+    {
+      "id": 54,
+      "targetKey": "P_CharAugment_Jiro_DropTargetItem#54",
+      "file": "Passives/0054_P_CharAugment_Jiro_DropTargetItem.json"
+    },
+    {
+      "id": 55,
+      "targetKey": "P_CharAugment_Jiro_FlurryOfKicks#55",
+      "file": "Passives/0055_P_CharAugment_Jiro_FlurryOfKicks.json"
+    },
+    {
+      "id": 65,
+      "targetKey": "P_CharAugment_Kiddo_HeatingUp#65",
+      "file": "Passives/0065_P_CharAugment_Kiddo_HeatingUp.json"
+    },
+    {
+      "id": 69,
+      "targetKey": "P_CharAugment_Kiddo_VisionsInTheFlames#69",
+      "file": "Passives/0069_P_CharAugment_Kiddo_VisionsInTheFlames.json"
+    },
+    {
+      "id": 70,
+      "targetKey": "P_BuffX_AtkSpeed_Attack_Kitsu#70",
+      "file": "Passives/0070_P_BuffX_AtkSpeed_Attack_Kitsu.json"
+    },
+    {
+      "id": 71,
+      "targetKey": "P_CharAugment_BigShot_1#71",
+      "file": "Passives/0071_P_CharAugment_BigShot_1.json"
+    },
+    {
+      "id": 72,
+      "targetKey": "P_CharAugment_BigShot_2#72",
+      "file": "Passives/0072_P_CharAugment_BigShot_2.json"
+    },
+    {
+      "id": 73,
+      "targetKey": "P_CharAugment_BigShot_3#73",
+      "file": "Passives/0073_P_CharAugment_BigShot_3.json"
+    },
+    {
+      "id": 74,
+      "targetKey": "P_CharAugment_BlindShot#74",
+      "file": "Passives/0074_P_CharAugment_BlindShot.json"
+    },
+    {
+      "id": 80,
+      "targetKey": "P_CharAugment_HitboxDmgTtl#80",
+      "file": "Passives/0080_P_CharAugment_HitboxDmgTtl.json"
+    },
+    {
+      "id": 82,
+      "targetKey": "P_CharAugment_Kitsu_HealingShot#82",
+      "file": "Passives/0082_P_CharAugment_Kitsu_HealingShot.json"
+    },
+    {
+      "id": 83,
+      "targetKey": "P_CharAugment_Kitsu_Repel#83",
+      "file": "Passives/0083_P_CharAugment_Kitsu_Repel.json"
+    },
+    {
+      "id": 87,
+      "targetKey": "P_CharAugment_MoonCallExtendTtl#87",
+      "file": "Passives/0087_P_CharAugment_MoonCallExtendTtl.json"
+    },
+    {
+      "id": 90,
+      "targetKey": "P_CharAugment_ScatterShot_3#90",
+      "file": "Passives/0090_P_CharAugment_ScatterShot_3.json"
+    },
+    {
+      "id": 91,
+      "targetKey": "P_CharAugment_SplitProjectile#91",
+      "file": "Passives/0091_P_CharAugment_SplitProjectile.json"
+    },
+    {
+      "id": 92,
+      "targetKey": "P_CharAugment_TrilunarBarrage#92",
+      "file": "Passives/0092_P_CharAugment_TrilunarBarrage.json"
+    },
+    {
+      "id": 95,
+      "targetKey": "P_Aura_Weaken#95",
+      "file": "Passives/0095_P_Aura_Weaken.json"
+    },
+    {
+      "id": 103,
+      "targetKey": "P_CharAugment_Sashimi_BigBoom#103",
+      "file": "Passives/0103_P_CharAugment_Sashimi_BigBoom.json"
+    },
+    {
+      "id": 105,
+      "targetKey": "P_CharAugment_Sashimi_ClapClap#105",
+      "file": "Passives/0105_P_CharAugment_Sashimi_ClapClap.json"
+    },
+    {
+      "id": 107,
+      "targetKey": "P_CharAugment_Sashimi_MacroModule#107",
+      "file": "Passives/0107_P_CharAugment_Sashimi_MacroModule.json"
+    },
+    {
+      "id": 115,
+      "targetKey": "P_CharAugment_Skinny_InvisReset#115",
+      "file": "Passives/0115_P_CharAugment_Skinny_InvisReset.json"
+    },
+    {
+      "id": 118,
+      "targetKey": "P_CharAugment_Skinny_ScytheStorm#118",
+      "file": "Passives/0118_P_CharAugment_Skinny_ScytheStorm.json"
+    },
+    {
+      "id": 124,
+      "targetKey": "P_CharAugment_Sofia_CrushingBlow#124",
+      "file": "Passives/0124_P_CharAugment_Sofia_CrushingBlow.json"
+    },
+    {
+      "id": 127,
+      "targetKey": "P_CharAugment_Sofia_Pyroblast#127",
+      "file": "Passives/0127_P_CharAugment_Sofia_Pyroblast.json"
+    },
+    {
+      "id": 128,
+      "targetKey": "P_CharAugment_Sofia_Revenge#128",
+      "file": "Passives/0128_P_CharAugment_Sofia_Revenge.json"
+    },
+    {
+      "id": 129,
+      "targetKey": "P_CharAugment_Sofia_StackingDash#129",
+      "file": "Passives/0129_P_CharAugment_Sofia_StackingDash.json"
+    },
+    {
+      "id": 133,
+      "targetKey": "P_CharAugment_Teevee_CloneBomb#133",
+      "file": "Passives/0133_P_CharAugment_Teevee_CloneBomb.json"
+    },
+    {
+      "id": 135,
+      "targetKey": "P_CharAugment_Teevee_LaserStun#135",
+      "file": "Passives/0135_P_CharAugment_Teevee_LaserStun.json"
+    },
+    {
+      "id": 136,
+      "targetKey": "P_CharAugment_Teevee_MoreLasers#136",
+      "file": "Passives/0136_P_CharAugment_Teevee_MoreLasers.json"
+    },
+    {
+      "id": 137,
+      "targetKey": "P_CharAugment_Teevee_ReducedLaser#137",
+      "file": "Passives/0137_P_CharAugment_Teevee_ReducedLaser.json"
+    },
+    {
+      "id": 138,
+      "targetKey": "P_CharAugment_Teevee_ScatterShot#138",
+      "file": "Passives/0138_P_CharAugment_Teevee_ScatterShot.json"
+    },
+    {
+      "id": 139,
+      "targetKey": "P_CharAugment_Teevee_SwapDmg#139",
+      "file": "Passives/0139_P_CharAugment_Teevee_SwapDmg.json"
+    },
+    {
+      "id": 140,
+      "targetKey": "P_CharAugment_Teevee_UltimateClone#140",
+      "file": "Passives/0140_P_CharAugment_Teevee_UltimateClone.json"
+    },
+    {
+      "id": 142,
+      "targetKey": "P_CharAugment_Zook_BiggerExplosions#142",
+      "file": "Passives/0142_P_CharAugment_Zook_BiggerExplosions.json"
+    },
+    {
+      "id": 144,
+      "targetKey": "P_CharAugment_Zook_Evacuate#144",
+      "file": "Passives/0144_P_CharAugment_Zook_Evacuate.json"
+    },
+    {
+      "id": 145,
+      "targetKey": "P_CharAugment_Zook_LmbMines#145",
+      "file": "Passives/0145_P_CharAugment_Zook_LmbMines.json"
+    },
+    {
+      "id": 148,
+      "targetKey": "P_CharAugment_Zook_MultiMissile#148",
+      "file": "Passives/0148_P_CharAugment_Zook_MultiMissile.json"
+    },
+    {
+      "id": 150,
+      "targetKey": "P_CharAugment_Zook_SuperPoweredMine#150",
+      "file": "Passives/0150_P_CharAugment_Zook_SuperPoweredMine.json"
+    },
+    {
+      "id": 153,
+      "targetKey": "P_MoneyIsHealth#153",
+      "file": "Passives/0153_P_MoneyIsHealth.json"
+    },
+    {
+      "id": 154,
+      "targetKey": "P_OnDamagedDelay#154",
+      "file": "Passives/0154_P_OnDamagedDelay.json"
+    },
+    {
+      "id": 155,
+      "targetKey": "P_OnDamagedStun#155",
+      "file": "Passives/0155_P_OnDamagedStun.json"
+    },
+    {
+      "id": 156,
+      "targetKey": "P_XtraXtraBulk#156",
+      "file": "Passives/0156_P_XtraXtraBulk.json"
+    },
+    {
+      "id": 159,
+      "targetKey": "P_Firewave_AoE#159",
+      "file": "Passives/0159_P_Firewave_AoE.json"
+    },
+    {
+      "id": 162,
+      "targetKey": "P_Firewave_Dmg#162",
+      "file": "Passives/0162_P_Firewave_Dmg.json"
+    },
+    {
+      "id": 163,
+      "targetKey": "P_Firewave_NoAbilities#163",
+      "file": "Passives/0163_P_Firewave_NoAbilities.json"
+    },
+    {
+      "id": 164,
+      "targetKey": "P_Firewave_PassthruEnemy#164",
+      "file": "Passives/0164_P_Firewave_PassthruEnemy.json"
+    },
+    {
+      "id": 165,
+      "targetKey": "P_Firewave_PassthruObstacle#165",
+      "file": "Passives/0165_P_Firewave_PassthruObstacle.json"
+    },
+    {
+      "id": 167,
+      "targetKey": "P_Firewave_Size#167",
+      "file": "Passives/0167_P_Firewave_Size.json"
+    },
+    {
+      "id": 168,
+      "targetKey": "P_Firewave_Stun#168",
+      "file": "Passives/0168_P_Firewave_Stun.json"
+    },
+    {
+      "id": 170,
+      "targetKey": "P_OnHit_Lighting_ApplyLMB#170",
+      "file": "Passives/0170_P_OnHit_Lighting_ApplyLMB.json"
+    },
+    {
+      "id": 171,
+      "targetKey": "P_OnHit_Lighting_Crit#171",
+      "file": "Passives/0171_P_OnHit_Lighting_Crit.json"
+    },
+    {
+      "id": 172,
+      "targetKey": "P_OnHit_Lighting_Damage#172",
+      "file": "Passives/0172_P_OnHit_Lighting_Damage.json"
+    },
+    {
+      "id": 173,
+      "targetKey": "P_OnHit_Lighting_Expose#173",
+      "file": "Passives/0173_P_OnHit_Lighting_Expose.json"
+    },
+    {
+      "id": 174,
+      "targetKey": "P_OnHit_Lighting_Range#174",
+      "file": "Passives/0174_P_OnHit_Lighting_Range.json"
+    },
+    {
+      "id": 176,
+      "targetKey": "P_OnHit_Lighting_Target_GainAtkSpd#176",
+      "file": "Passives/0176_P_OnHit_Lighting_Target_GainAtkSpd.json"
+    },
+    {
+      "id": 178,
+      "targetKey": "P_OnHit_LightingStrike_AbilitiesX#178",
+      "file": "Passives/0178_P_OnHit_LightingStrike_AbilitiesX.json"
+    },
+    {
+      "id": 180,
+      "targetKey": "P_OnHit_PoisonCrit#180",
+      "file": "Passives/0180_P_OnHit_PoisonCrit.json"
+    },
+    {
+      "id": 181,
+      "targetKey": "P_PoisonDmg#181",
+      "file": "Passives/0181_P_PoisonDmg.json"
+    },
+    {
+      "id": 182,
+      "targetKey": "P_PoisonDuration#182",
+      "file": "Passives/0182_P_PoisonDuration.json"
+    },
+    {
+      "id": 183,
+      "targetKey": "P_PoisonExplosion#183",
+      "file": "Passives/0183_P_PoisonExplosion.json"
+    },
+    {
+      "id": 184,
+      "targetKey": "P_PoisonHit#184",
+      "file": "Passives/0184_P_PoisonHit.json"
+    },
+    {
+      "id": 185,
+      "targetKey": "P_PoisonShield#185",
+      "file": "Passives/0185_P_PoisonShield.json"
+    },
+    {
+      "id": 186,
+      "targetKey": "P_PoisonSlow#186",
+      "file": "Passives/0186_P_PoisonSlow.json"
+    },
+    {
+      "id": 187,
+      "targetKey": "P_CloseQuartersReduction#187",
+      "file": "Passives/0187_P_CloseQuartersReduction.json"
+    },
+    {
+      "id": 188,
+      "targetKey": "P_ExposingHit#188",
+      "file": "Passives/0188_P_ExposingHit.json"
+    },
+    {
+      "id": 189,
+      "targetKey": "P_ShieldStun#189",
+      "file": "Passives/0189_P_ShieldStun.json"
+    },
+    {
+      "id": 190,
+      "targetKey": "P_WeakeningHit#190",
+      "file": "Passives/0190_P_WeakeningHit.json"
+    },
+    {
+      "id": 196,
+      "targetKey": "P_BloodDive#196",
+      "file": "Passives/0196_P_BloodDive.json"
+    },
+    {
+      "id": 197,
+      "targetKey": "P_Buff_BloodHunter#197",
+      "file": "Passives/0197_P_Buff_BloodHunter.json"
+    },
+    {
+      "id": 198,
+      "targetKey": "P_Buff_SinCityDamage#198",
+      "file": "Passives/0198_P_Buff_SinCityDamage.json"
+    },
+    {
+      "id": 199,
+      "targetKey": "P_D_Atlantis#199",
+      "file": "Passives/0199_P_D_Atlantis.json"
+    },
+    {
+      "id": 200,
+      "targetKey": "P_D_Pixel#200",
+      "file": "Passives/0200_P_D_Pixel.json"
+    },
+    {
+      "id": 201,
+      "targetKey": "P_D_SinCity#201",
+      "file": "Passives/0201_P_D_SinCity.json"
+    },
+    {
+      "id": 202,
+      "targetKey": "P_Debuff_Bleed#202",
+      "file": "Passives/0202_P_Debuff_Bleed.json"
+    },
+    {
+      "id": 204,
+      "targetKey": "P_SinCity_RespawnTracker#204",
+      "file": "Passives/0204_P_SinCity_RespawnTracker.json"
+    },
+    {
+      "id": 205,
+      "targetKey": "P_Tile_Invuln#205",
+      "file": "Passives/0205_P_Tile_Invuln.json"
+    },
+    {
+      "id": 206,
+      "targetKey": "P_Tile_Invulnerable#206",
+      "file": "Passives/0206_P_Tile_Invulnerable.json"
+    },
+    {
+      "id": 207,
+      "targetKey": "P_Give_Item_AttackSpeed#207",
+      "file": "Passives/0207_P_Give_Item_AttackSpeed.json"
+    },
+    {
+      "id": 210,
+      "targetKey": "P_Give_Item_FireWaveEmpowered#210",
+      "file": "Passives/0210_P_Give_Item_FireWaveEmpowered.json"
+    },
+    {
+      "id": 211,
+      "targetKey": "P_Give_Item_GravityPull#211",
+      "file": "Passives/0211_P_Give_Item_GravityPull.json"
+    },
+    {
+      "id": 212,
+      "targetKey": "P_Give_Item_Hp.Bonus#212",
+      "file": "Passives/0212_P_Give_Item_Hp.Bonus.json"
+    },
+    {
+      "id": 216,
+      "targetKey": "P_Give_Item_Virus#216",
+      "file": "Passives/0216_P_Give_Item_Virus.json"
+    },
+    {
+      "id": 218,
+      "targetKey": "P_52Pickup#218",
+      "file": "Passives/0218_P_52Pickup.json"
+    },
+    {
+      "id": 219,
+      "targetKey": "P_AcidReload#219",
+      "file": "Passives/0219_P_AcidReload.json"
+    },
+    {
+      "id": 220,
+      "targetKey": "P_AggroShield#220",
+      "file": "Passives/0220_P_AggroShield.json"
+    },
+    {
+      "id": 222,
+      "targetKey": "P_AppliedPoison#222",
+      "file": "Passives/0222_P_AppliedPoison.json"
+    },
+    {
+      "id": 223,
+      "targetKey": "P_ApplyPoisonToHitboxes#223",
+      "file": "Passives/0223_P_ApplyPoisonToHitboxes.json"
+    },
+    {
+      "id": 224,
+      "targetKey": "P_AtkSpeedxMoveSpeed#224",
+      "file": "Passives/0224_P_AtkSpeedxMoveSpeed.json"
+    },
+    {
+      "id": 226,
+      "targetKey": "P_Aura_Orbit#226",
+      "file": "Passives/0226_P_Aura_Orbit.json"
+    },
+    {
+      "id": 227,
+      "targetKey": "P_Bank2Win#227",
+      "file": "Passives/0227_P_Bank2Win.json"
+    },
+    {
+      "id": 228,
+      "targetKey": "P_BapCoin#228",
+      "file": "Passives/0228_P_BapCoin.json"
+    },
+    {
+      "id": 229,
+      "targetKey": "P_BapperSlayer#229",
+      "file": "Passives/0229_P_BapperSlayer.json"
+    },
+    {
+      "id": 232,
+      "targetKey": "P_BloodBerserk#232",
+      "file": "Passives/0232_P_BloodBerserk.json"
+    },
+    {
+      "id": 234,
+      "targetKey": "P_Box#234",
+      "file": "Passives/0234_P_Box.json"
+    },
+    {
+      "id": 240,
+      "targetKey": "P_ChosenShovel#240",
+      "file": "Passives/0240_P_ChosenShovel.json"
+    },
+    {
+      "id": 241,
+      "targetKey": "P_Chuck_Gigantic#241",
+      "file": "Passives/0241_P_Chuck_Gigantic.json"
+    },
+    {
+      "id": 242,
+      "targetKey": "P_CooldownForAtkSpd_Q#242",
+      "file": "Passives/0242_P_CooldownForAtkSpd_Q.json"
+    },
+    {
+      "id": 243,
+      "targetKey": "P_CooldownForAtkSpd_Space#243",
+      "file": "Passives/0243_P_CooldownForAtkSpd_Space.json"
+    },
+    {
+      "id": 244,
+      "targetKey": "P_CooldownForAtkSpd_Ult#244",
+      "file": "Passives/0244_P_CooldownForAtkSpd_Ult.json"
+    },
+    {
+      "id": 245,
+      "targetKey": "P_CritAtkSpd#245",
+      "file": "Passives/0245_P_CritAtkSpd.json"
+    },
+    {
+      "id": 246,
+      "targetKey": "P_CritExpose#246",
+      "file": "Passives/0246_P_CritExpose.json"
+    },
+    {
+      "id": 247,
+      "targetKey": "P_CriticalAbility#247",
+      "file": "Passives/0247_P_CriticalAbility.json"
+    },
+    {
+      "id": 249,
+      "targetKey": "P_CritKnockBack#249",
+      "file": "Passives/0249_P_CritKnockBack.json"
+    },
+    {
+      "id": 250,
+      "targetKey": "P_CritShield#250",
+      "file": "Passives/0250_P_CritShield.json"
+    },
+    {
+      "id": 251,
+      "targetKey": "P_DamageStacks#251",
+      "file": "Passives/0251_P_DamageStacks.json"
+    },
+    {
+      "id": 254,
+      "targetKey": "P_DeadTurret#254",
+      "file": "Passives/0254_P_DeadTurret.json"
+    },
+    {
+      "id": 255,
+      "targetKey": "P_DefensiveBearTrap#255",
+      "file": "Passives/0255_P_DefensiveBearTrap.json"
+    },
+    {
+      "id": 256,
+      "targetKey": "P_DiggersCurse#256",
+      "file": "Passives/0256_P_DiggersCurse.json"
+    },
+    {
+      "id": 258,
+      "targetKey": "P_EmergencyFreeze#258",
+      "file": "Passives/0258_P_EmergencyFreeze.json"
+    },
+    {
+      "id": 259,
+      "targetKey": "P_EmergencyHeal#259",
+      "file": "Passives/0259_P_EmergencyHeal.json"
+    },
+    {
+      "id": 260,
+      "targetKey": "P_EmpoweringFreeze#260",
+      "file": "Passives/0260_P_EmpoweringFreeze.json"
+    },
+    {
+      "id": 261,
+      "targetKey": "P_Executioner#261",
+      "file": "Passives/0261_P_Executioner.json"
+    },
+    {
+      "id": 262,
+      "targetKey": "P_ExpertFishing#262",
+      "file": "Passives/0262_P_ExpertFishing.json"
+    },
+    {
+      "id": 264,
+      "targetKey": "P_FallingImmunity#264",
+      "file": "Passives/0264_P_FallingImmunity.json"
+    },
+    {
+      "id": 268,
+      "targetKey": "P_FreeFishing#268",
+      "file": "Passives/0268_P_FreeFishing.json"
+    },
+    {
+      "id": 269,
+      "targetKey": "P_FrontDamageMitigate#269",
+      "file": "Passives/0269_P_FrontDamageMitigate.json"
+    },
+    {
+      "id": 270,
+      "targetKey": "P_Gain_Shield_Big#270",
+      "file": "Passives/0270_P_Gain_Shield_Big.json"
+    },
+    {
+      "id": 272,
+      "targetKey": "P_Gigantic#272",
+      "file": "Passives/0272_P_Gigantic.json"
+    },
+    {
+      "id": 273,
+      "targetKey": "P_GoldRock#273",
+      "file": "Passives/0273_P_GoldRock.json"
+    },
+    {
+      "id": 275,
+      "targetKey": "P_GravityAura#275",
+      "file": "Passives/0275_P_GravityAura.json"
+    },
+    {
+      "id": 276,
+      "targetKey": "P_GravityAura_HAX#276",
+      "file": "Passives/0276_P_GravityAura_HAX.json"
+    },
+    {
+      "id": 277,
+      "targetKey": "P_HealingRain#277",
+      "file": "Passives/0277_P_HealingRain.json"
+    },
+    {
+      "id": 280,
+      "targetKey": "P_HealthyFishing#280",
+      "file": "Passives/0280_P_HealthyFishing.json"
+    },
+    {
+      "id": 281,
+      "targetKey": "P_HeavyHitter#281",
+      "file": "Passives/0281_P_HeavyHitter.json"
+    },
+    {
+      "id": 283,
+      "targetKey": "P_HittyWitty_CritTree#283",
+      "file": "Passives/0283_P_HittyWitty_CritTree.json"
+    },
+    {
+      "id": 285,
+      "targetKey": "P_HotHeals#285",
+      "file": "Passives/0285_P_HotHeals.json"
+    },
+    {
+      "id": 288,
+      "targetKey": "P_JumpBuff#288",
+      "file": "Passives/0288_P_JumpBuff.json"
+    },
+    {
+      "id": 289,
+      "targetKey": "P_JumpSprint#289",
+      "file": "Passives/0289_P_JumpSprint.json"
+    },
+    {
+      "id": 291,
+      "targetKey": "P_KnockbackPilled#291",
+      "file": "Passives/0291_P_KnockbackPilled.json"
+    },
+    {
+      "id": 294,
+      "targetKey": "P_LoneWolf#294",
+      "file": "Passives/0294_P_LoneWolf.json"
+    },
+    {
+      "id": 300,
+      "targetKey": "P_MobilityUpgrade#300",
+      "file": "Passives/0300_P_MobilityUpgrade.json"
+    },
+    {
+      "id": 302,
+      "targetKey": "P_OnHit3Times_ApplyKnockup#302",
+      "file": "Passives/0302_P_OnHit3Times_ApplyKnockup.json"
+    },
+    {
+      "id": 306,
+      "targetKey": "P_OnUse_Q_Dash#306",
+      "file": "Passives/0306_P_OnUse_Q_Dash.json"
+    },
+    {
+      "id": 308,
+      "targetKey": "P_OverHeal#308",
+      "file": "Passives/0308_P_OverHeal.json"
+    },
+    {
+      "id": 310,
+      "targetKey": "P_PermaBurned#310",
+      "file": "Passives/0310_P_PermaBurned.json"
+    },
+    {
+      "id": 311,
+      "targetKey": "P_PoisonRush#311",
+      "file": "Passives/0311_P_PoisonRush.json"
+    },
+    {
+      "id": 312,
+      "targetKey": "P_PolymorphCrystal#312",
+      "file": "Passives/0312_P_PolymorphCrystal.json"
+    },
+    {
+      "id": 313,
+      "targetKey": "P_PotectiveAura#313",
+      "file": "Passives/0313_P_PotectiveAura.json"
+    },
+    {
+      "id": 320,
+      "targetKey": "P_ProtectiveBubble_Temp#320",
+      "file": "Passives/0320_P_ProtectiveBubble_Temp.json"
+    },
+    {
+      "id": 321,
+      "targetKey": "P_RagingSprint#321",
+      "file": "Passives/0321_P_RagingSprint.json"
+    },
+    {
+      "id": 325,
+      "targetKey": "P_RechargingShield2#325",
+      "file": "Passives/0325_P_RechargingShield2.json"
+    },
+    {
+      "id": 327,
+      "targetKey": "P_Rejuvination#327",
+      "file": "Passives/0327_P_Rejuvination.json"
+    },
+    {
+      "id": 328,
+      "targetKey": "P_Scavenger#328",
+      "file": "Passives/0328_P_Scavenger.json"
+    },
+    {
+      "id": 329,
+      "targetKey": "P_SE_ShowShieldEffect#329",
+      "file": "Passives/0329_P_SE_ShowShieldEffect.json"
+    },
+    {
+      "id": 330,
+      "targetKey": "P_SecondaryVamp#330",
+      "file": "Passives/0330_P_SecondaryVamp.json"
+    },
+    {
+      "id": 331,
+      "targetKey": "P_ShieldRush#331",
+      "file": "Passives/0331_P_ShieldRush.json"
+    },
+    {
+      "id": 332,
+      "targetKey": "P_SinOfBerserk#332",
+      "file": "Passives/0332_P_SinOfBerserk.json"
+    },
+    {
+      "id": 333,
+      "targetKey": "P_SkullShield#333",
+      "file": "Passives/0333_P_SkullShield.json"
+    },
+    {
+      "id": 334,
+      "targetKey": "P_SlowingHit#334",
+      "file": "Passives/0334_P_SlowingHit.json"
+    },
+    {
+      "id": 335,
+      "targetKey": "P_SnapCritsSodium#335",
+      "file": "Passives/0335_P_SnapCritsSodium.json"
+    },
+    {
+      "id": 338,
+      "targetKey": "P_SoulStealer#338",
+      "file": "Passives/0338_P_SoulStealer.json"
+    },
+    {
+      "id": 339,
+      "targetKey": "P_SpeedIsAtkSpd#339",
+      "file": "Passives/0339_P_SpeedIsAtkSpd.json"
+    },
+    {
+      "id": 340,
+      "targetKey": "P_SpeedPellet#340",
+      "file": "Passives/0340_P_SpeedPellet.json"
+    },
+    {
+      "id": 341,
+      "targetKey": "P_SpeedyBerserk#341",
+      "file": "Passives/0341_P_SpeedyBerserk.json"
+    },
+    {
+      "id": 343,
+      "targetKey": "P_SpiritAura#343",
+      "file": "Passives/0343_P_SpiritAura.json"
+    },
+    {
+      "id": 344,
+      "targetKey": "P_Spriest_Disperse#344",
+      "file": "Passives/0344_P_Spriest_Disperse.json"
+    },
+    {
+      "id": 345,
+      "targetKey": "P_SprintingArmor#345",
+      "file": "Passives/0345_P_SprintingArmor.json"
+    },
+    {
+      "id": 349,
+      "targetKey": "P_SwiftingPoison#349",
+      "file": "Passives/0349_P_SwiftingPoison.json"
+    },
+    {
+      "id": 352,
+      "targetKey": "P_Timed_Dmg#352",
+      "file": "Passives/0352_P_Timed_Dmg.json"
+    },
+    {
+      "id": 355,
+      "targetKey": "P_ToxicWave#355",
+      "file": "Passives/0355_P_ToxicWave.json"
+    },
+    {
+      "id": 357,
+      "targetKey": "P_UltimateSpeed_Sprint#357",
+      "file": "Passives/0357_P_UltimateSpeed_Sprint.json"
+    },
+    {
+      "id": 358,
+      "targetKey": "P_Ultimatum#358",
+      "file": "Passives/0358_P_Ultimatum.json"
+    },
+    {
+      "id": 359,
+      "targetKey": "P_UltRecast#359",
+      "file": "Passives/0359_P_UltRecast.json"
+    },
+    {
+      "id": 360,
+      "targetKey": "P_VampiricBackup#360",
+      "file": "Passives/0360_P_VampiricBackup.json"
+    },
+    {
+      "id": 363,
+      "targetKey": "P_WeakeningHit#363",
+      "file": "Passives/0363_P_WeakeningHit.json"
+    },
+    {
+      "id": 364,
+      "targetKey": "P_WinsoosBlade#364",
+      "file": "Passives/0364_P_WinsoosBlade.json"
+    },
+    {
+      "id": 383,
+      "targetKey": "P_Stat_Luck#383",
+      "file": "Passives/0383_P_Stat_Luck.json"
+    },
+    {
+      "id": 385,
+      "targetKey": "P_Stat_Shred#385",
+      "file": "Passives/0385_P_Stat_Shred.json"
+    },
+    {
+      "id": 387,
+      "targetKey": "P_OnTimer_GainStats#387",
+      "file": "Passives/0387_P_OnTimer_GainStats.json"
+    },
+    {
+      "id": 396,
+      "targetKey": "P_CharAugment_Bishop_ShinyTeeth#396",
+      "file": "Passives/0396_P_CharAugment_Bishop_ShinyTeeth.json"
+    },
+    {
+      "id": 406,
+      "targetKey": "P_Buff_HP_Shield#406",
+      "file": "Passives/0406_P_Buff_HP_Shield.json"
+    },
+    {
+      "id": 411,
+      "targetKey": "P_OnDamage_NoodleCombo_Debuff#411",
+      "file": "Passives/0411_P_OnDamage_NoodleCombo_Debuff.json"
+    },
+    {
+      "id": 413,
+      "targetKey": "P_OnDamage_ThousandCuts_Debuff#413",
+      "file": "Passives/0413_P_OnDamage_ThousandCuts_Debuff.json"
+    },
+    {
+      "id": 414,
+      "targetKey": "P_OnStill_Polymorph#414",
+      "file": "Passives/0414_P_OnStill_Polymorph.json"
+    },
+    {
+      "id": 416,
+      "targetKey": "P_Polymorph1#416",
+      "file": "Passives/0416_P_Polymorph1.json"
+    },
+    {
+      "id": 418,
+      "targetKey": "P_Stat_NegativeCDR#418",
+      "file": "Passives/0418_P_Stat_NegativeCDR.json"
+    }
+  ]
+}

@@ -1,0 +1,2864 @@
+﻿{
+  "schemaVersion": 10,
+  "targetType": "ItemConsumableBehaviour",
+  "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+  "displayName": "Consumable Behaviour",
+  "resolvedName": "Consumable Behaviour",
+  "generatedAtUtc": "2026-04-15T23:25:20.2649502Z",
+  "quickEdit": [
+    {
+      "setting": "Damage Scaling",
+      "category": "Damage",
+      "path": "configuration.damageScaling",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Damage scaling factor used when the game converts power or other stats into extra damage.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage",
+      "category": "Damage",
+      "path": "configuration.damage",
+      "editable": true,
+      "valueType": "integer",
+      "value": 200,
+      "defaultValue": 200,
+      "whatItDoes": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Bomb Delay",
+      "category": "Timing",
+      "path": "configuration.bombDelay",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.5,
+      "defaultValue": 0.5,
+      "whatItDoes": "Numeric value for Bomb Delay. Edit \u0060configuration.bombDelay\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cast Time",
+      "category": "Timing",
+      "path": "configuration.castTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.1,
+      "defaultValue": 0.1,
+      "whatItDoes": "Cast time in seconds before the ability completes.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Lifetime",
+      "category": "Timing",
+      "path": "configuration.ttl",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.5,
+      "defaultValue": 0.5,
+      "whatItDoes": "Lifetime in seconds before the spawned effect expires automatically.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed",
+      "category": "Movement",
+      "path": "configuration.speed",
+      "editable": true,
+      "valueType": "number",
+      "value": 18,
+      "defaultValue": 18,
+      "whatItDoes": "Movement or projectile speed for this effect. Higher values make it travel faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Firing Point Offset",
+      "category": "Area",
+      "path": "configuration.firingPointOffset",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.5,
+      "defaultValue": 0.5,
+      "whatItDoes": "Numeric value for Firing Point Offset. Edit \u0060configuration.firingPointOffset\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -20,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Half Scale / Indicator Half Scale X",
+      "category": "Area",
+      "path": "configuration.indicatorHalfScale.x",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.4,
+      "defaultValue": 0.4,
+      "whatItDoes": "X-axis value for Indicator Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Half Scale / Indicator Half Scale Y",
+      "category": "Area",
+      "path": "configuration.indicatorHalfScale.y",
+      "editable": true,
+      "valueType": "number",
+      "value": 9,
+      "defaultValue": 9,
+      "whatItDoes": "Y-axis value for Indicator Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Offset / Indicator Offset X",
+      "category": "Area",
+      "path": "configuration.indicatorOffset.x",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "X-axis value for Indicator Offset.",
+      "valueRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -20,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Offset / Indicator Offset Y",
+      "category": "Area",
+      "path": "configuration.indicatorOffset.y",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Y-axis value for Indicator Offset.",
+      "valueRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -20,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Distance",
+      "category": "Area",
+      "path": "configuration.maxDistance",
+      "editable": true,
+      "valueType": "number",
+      "value": 8,
+      "defaultValue": 8,
+      "whatItDoes": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Radius",
+      "category": "Area",
+      "path": "configuration.radius",
+      "editable": true,
+      "valueType": "number",
+      "value": 2.4,
+      "defaultValue": 2.4,
+      "whatItDoes": "Radius of the affected area around the target point or source.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cancelable",
+      "category": "Behavior",
+      "path": "configuration.cancelable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Indicator Clamp To Mouse",
+      "category": "Behavior",
+      "path": "configuration.indicatorClampToMouse",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Indicator Clamp To Mouse. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Indicator Do Collision",
+      "category": "Behavior",
+      "path": "configuration.indicatorDoCollision",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Indicator Do Collision. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Interupt Cast On Damage",
+      "category": "Behavior",
+      "path": "configuration.interuptCastOnDamage",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Silenceable",
+      "category": "Behavior",
+      "path": "configuration.silenceable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Usable While Downed",
+      "category": "Behavior",
+      "path": "configuration.usableWhileDowned",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Indicator Prefab",
+      "category": "General",
+      "path": "configuration.indicatorPrefab",
+      "editable": true,
+      "valueType": "reference",
+      "value": "GameObject:Indicator_Ability_Arrow",
+      "defaultValue": "GameObject:Indicator_Ability_Arrow",
+      "whatItDoes": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Input Type",
+      "category": "General",
+      "path": "configuration.inputType",
+      "editable": true,
+      "valueType": "string",
+      "value": "Down",
+      "defaultValue": "Down",
+      "whatItDoes": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Motion Lock Type",
+      "category": "General",
+      "path": "configuration.motionLockType",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Rotation Lock Type",
+      "category": "General",
+      "path": "configuration.rotationLockType",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for \u0027Consumable Behaviour\u0027. You can change Damage, Timing, Movement, Area, Behavior, General.",
+    "whatYouCanChange": [
+      "Damage",
+      "Timing",
+      "Movement",
+      "Area",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config."
+    ],
+    "groups": [
+      {
+        "category": "Damage",
+        "entries": [
+          {
+            "name": "Damage Scaling",
+            "path": "configuration.damageScaling",
+            "editable": true,
+            "valueType": "number",
+            "description": "Damage scaling factor used when the game converts power or other stats into extra damage.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage",
+            "path": "configuration.damage",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+            "defaultValue": 200,
+            "currentValue": 200,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Bomb Delay",
+            "path": "configuration.bombDelay",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Bomb Delay. Edit \u0060configuration.bombDelay\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+            "defaultValue": 0.5,
+            "currentValue": 0.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Cast Time",
+            "path": "configuration.castTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cast time in seconds before the ability completes.",
+            "defaultValue": 0.1,
+            "currentValue": 0.1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Lifetime",
+            "path": "configuration.ttl",
+            "editable": true,
+            "valueType": "number",
+            "description": "Lifetime in seconds before the spawned effect expires automatically.",
+            "defaultValue": 0.5,
+            "currentValue": 0.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Speed",
+            "path": "configuration.speed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Movement or projectile speed for this effect. Higher values make it travel faster.",
+            "defaultValue": 18,
+            "currentValue": 18,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Area",
+        "entries": [
+          {
+            "name": "Firing Point Offset",
+            "path": "configuration.firingPointOffset",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Firing Point Offset. Edit \u0060configuration.firingPointOffset\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+            "defaultValue": 0.5,
+            "currentValue": 0.5,
+            "valueRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -20,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Half Scale / Indicator Half Scale X",
+            "path": "configuration.indicatorHalfScale.x",
+            "editable": true,
+            "valueType": "number",
+            "description": "X-axis value for Indicator Half Scale.",
+            "defaultValue": 0.4,
+            "currentValue": 0.4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Half Scale / Indicator Half Scale Y",
+            "path": "configuration.indicatorHalfScale.y",
+            "editable": true,
+            "valueType": "number",
+            "description": "Y-axis value for Indicator Half Scale.",
+            "defaultValue": 9,
+            "currentValue": 9,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Offset / Indicator Offset X",
+            "path": "configuration.indicatorOffset.x",
+            "editable": true,
+            "valueType": "number",
+            "description": "X-axis value for Indicator Offset.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -20,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Offset / Indicator Offset Y",
+            "path": "configuration.indicatorOffset.y",
+            "editable": true,
+            "valueType": "number",
+            "description": "Y-axis value for Indicator Offset.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -20,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Distance",
+            "path": "configuration.maxDistance",
+            "editable": true,
+            "valueType": "number",
+            "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+            "defaultValue": 8,
+            "currentValue": 8,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Radius",
+            "path": "configuration.radius",
+            "editable": true,
+            "valueType": "number",
+            "description": "Radius of the affected area around the target point or source.",
+            "defaultValue": 2.4,
+            "currentValue": 2.4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Cancelable",
+            "path": "configuration.cancelable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Indicator Clamp To Mouse",
+            "path": "configuration.indicatorClampToMouse",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Indicator Clamp To Mouse. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Indicator Do Collision",
+            "path": "configuration.indicatorDoCollision",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Indicator Do Collision. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Interupt Cast On Damage",
+            "path": "configuration.interuptCastOnDamage",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Silenceable",
+            "path": "configuration.silenceable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Usable While Downed",
+            "path": "configuration.usableWhileDowned",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Indicator Prefab",
+            "path": "configuration.indicatorPrefab",
+            "editable": true,
+            "valueType": "reference",
+            "description": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+            "defaultValue": "GameObject:Indicator_Ability_Arrow",
+            "currentValue": "GameObject:Indicator_Ability_Arrow",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Input Type",
+            "path": "configuration.inputType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+            "defaultValue": "Down",
+            "currentValue": "Down",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Motion Lock Type",
+            "path": "configuration.motionLockType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Rotation Lock Type",
+            "path": "configuration.rotationLockType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Add or rebalance direct damage values and damage scaling.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.damage"
+      ]
+    },
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Use this when you want a simple damage slider or number input.",
+      "targetPath": "configuration.damage",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Damage",
+          "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+          "valueType": "integer",
+          "defaultValue": 200,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "configuration.speed",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Speed",
+          "description": "Movement or projectile speed for this effect. Higher values make it travel faster.",
+          "valueType": "number",
+          "defaultValue": 18,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "configuration.indicatorPrefab",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Indicator Prefab",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "GameObject:Indicator_Ability_Arrow",
+          "options": [
+            "GameObject:BearTrap_Large_Consumable",
+            "GameObject:Bumper_Bubble_NoD",
+            "GameObject:ExplosiveBarrelPassive",
+            "GameObject:Hitbox_Augment_Jiro_Shield",
+            "GameObject:Hitbox_Augment_Teevee_AOE",
+            "GameObject:Hitbox_Augment_Teevee_CloneTether",
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_Blitz_AOE_Teevee",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Jiro_BrothWave",
+            "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+            "GameObject:Hitbox_P_HealZone",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_Rocky_Boulder",
+            "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+            "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+            "GameObject:Indicator_Ability_Arrow",
+            "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+            "GameObject:SlipperyZone_IceBlockSlide",
+            "GameObject:SlipperyZone_Trail",
+            "GameObject:TastyFood",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+            "GameObject:VFX_P_Loop_Aura_Weakening",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_MountainShield_Ready",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_Slide_Smoke_Trail",
+            "GameObject:VFX_Slow_Loop",
+            "GameObject:VFX_StunEffect_Loop"
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "configuration.indicatorPrefab",
+      "label": "Indicator Prefab",
+      "currentReference": "GameObject:Indicator_Ability_Arrow",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Arrow",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Indicator Ability Arrow",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.c4BombPrefab",
+      "label": "C 4 Bomb Prefab",
+      "currentReference": "GameObject:Hitbox_Consumable_C4_Bomb",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_Consumable_C4_Bomb",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Hitbox Consumable C 4 Bomb",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.c4FollowPrefab",
+      "label": "C 4 Follow Prefab",
+      "currentReference": "GameObject:Hitbox_Consumable_C4_Follow",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_Consumable_C4_Follow",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Hitbox Consumable C 4 Follow",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.c4ThrowPrefab",
+      "label": "C 4 Throw Prefab",
+      "currentReference": "GameObject:Hitbox_Consumable_C4_Throw",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_Consumable_C4_Throw",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Hitbox Consumable C 4 Throw",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Items",
+    "label": "Items - Details",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:configuration.c4BombPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.c4BombPrefab",
+      "mode": "soft",
+      "label": "Clear C 4 Bomb Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Hitbox Consumable C 4 Bomb",
+      "previewSubtitle": "GameObject:Hitbox_Consumable_C4_Bomb",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:Hitbox_Consumable_C4_Bomb",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.c4FollowPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.c4FollowPrefab",
+      "mode": "soft",
+      "label": "Clear C 4 Follow Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Hitbox Consumable C 4 Follow",
+      "previewSubtitle": "GameObject:Hitbox_Consumable_C4_Follow",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:Hitbox_Consumable_C4_Follow",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.c4ThrowPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.c4ThrowPrefab",
+      "mode": "soft",
+      "label": "Clear C 4 Throw Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Hitbox Consumable C 4 Throw",
+      "previewSubtitle": "GameObject:Hitbox_Consumable_C4_Throw",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:Hitbox_Consumable_C4_Throw",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.indicatorPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.indicatorPrefab",
+      "mode": "soft",
+      "label": "Clear Indicator Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Indicator Ability Arrow",
+      "previewSubtitle": "GameObject:Indicator_Ability_Arrow",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:Indicator_Ability_Arrow",
+      "afterValue": null,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%damageScaling%",
+      "label": "Damage Scaling",
+      "description": "Damage scaling factor used when the game converts power or other stats into extra damage.",
+      "sourcePath": "configuration.damageScaling",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%damage%",
+      "label": "Damage",
+      "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+      "sourcePath": "configuration.damage",
+      "valueType": "integer",
+      "previewValue": 200,
+      "previewText": "200"
+    },
+    {
+      "token": "%bombDelay%",
+      "label": "Bomb Delay",
+      "description": "Numeric value for Bomb Delay. Edit \u0060configuration.bombDelay\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+      "sourcePath": "configuration.bombDelay",
+      "valueType": "number",
+      "previewValue": 0.5,
+      "previewText": "0.5"
+    },
+    {
+      "token": "%castTime%",
+      "label": "Cast Time",
+      "description": "Cast time in seconds before the ability completes.",
+      "sourcePath": "configuration.castTime",
+      "valueType": "number",
+      "previewValue": 0.1,
+      "previewText": "0.1"
+    },
+    {
+      "token": "%lifetime%",
+      "label": "Lifetime",
+      "description": "Lifetime in seconds before the spawned effect expires automatically.",
+      "sourcePath": "configuration.ttl",
+      "valueType": "number",
+      "previewValue": 0.5,
+      "previewText": "0.5"
+    },
+    {
+      "token": "%speed%",
+      "label": "Speed",
+      "description": "Movement or projectile speed for this effect. Higher values make it travel faster.",
+      "sourcePath": "configuration.speed",
+      "valueType": "number",
+      "previewValue": 18,
+      "previewText": "18"
+    },
+    {
+      "token": "%firingPointOffset%",
+      "label": "Firing Point Offset",
+      "description": "Numeric value for Firing Point Offset. Edit \u0060configuration.firingPointOffset\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+      "sourcePath": "configuration.firingPointOffset",
+      "valueType": "number",
+      "previewValue": 0.5,
+      "previewText": "0.5"
+    },
+    {
+      "token": "%indicatorHalfScale/IndicatorHalfScaleX%",
+      "label": "Indicator Half Scale / Indicator Half Scale X",
+      "description": "X-axis value for Indicator Half Scale.",
+      "sourcePath": "configuration.indicatorHalfScale.x",
+      "valueType": "number",
+      "previewValue": 0.4,
+      "previewText": "0.4"
+    },
+    {
+      "token": "%indicatorHalfScale/IndicatorHalfScaleY%",
+      "label": "Indicator Half Scale / Indicator Half Scale Y",
+      "description": "Y-axis value for Indicator Half Scale.",
+      "sourcePath": "configuration.indicatorHalfScale.y",
+      "valueType": "number",
+      "previewValue": 9,
+      "previewText": "9"
+    },
+    {
+      "token": "%indicatorOffset/IndicatorOffsetX%",
+      "label": "Indicator Offset / Indicator Offset X",
+      "description": "X-axis value for Indicator Offset.",
+      "sourcePath": "configuration.indicatorOffset.x",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%indicatorOffset/IndicatorOffsetY%",
+      "label": "Indicator Offset / Indicator Offset Y",
+      "description": "Y-axis value for Indicator Offset.",
+      "sourcePath": "configuration.indicatorOffset.y",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%maxDistance%",
+      "label": "Max Distance",
+      "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+      "sourcePath": "configuration.maxDistance",
+      "valueType": "number",
+      "previewValue": 8,
+      "previewText": "8"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.damage",
+        "displayName": "Damage",
+        "label": "Damage",
+        "category": "Damage",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+        "defaultValue": 200,
+        "currentValue": 200,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.damageScaling",
+        "displayName": "Damage Scaling",
+        "label": "Damage Scaling",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Damage scaling factor used when the game converts power or other stats into extra damage.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.bombDelay",
+        "displayName": "Bomb Delay",
+        "label": "Bomb Delay",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Bomb Delay. Edit \u0060configuration.bombDelay\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0.5,
+        "currentValue": 0.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.castTime",
+        "displayName": "Cast Time",
+        "label": "Cast Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cast time in seconds before the ability completes.",
+        "defaultValue": 0.1,
+        "currentValue": 0.1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.ttl",
+        "displayName": "Lifetime",
+        "label": "Lifetime",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Lifetime in seconds before the spawned effect expires automatically.",
+        "defaultValue": 0.5,
+        "currentValue": 0.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.speed",
+        "displayName": "Speed",
+        "label": "Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Movement or projectile speed for this effect. Higher values make it travel faster.",
+        "defaultValue": 18,
+        "currentValue": 18,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.firingPointOffset",
+        "displayName": "Firing Point Offset",
+        "label": "Firing Point Offset",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Firing Point Offset. Edit \u0060configuration.firingPointOffset\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0.5,
+        "currentValue": 0.5,
+        "valueRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -20,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorHalfScale.x",
+        "displayName": "Indicator Half Scale / Indicator Half Scale X",
+        "label": "Indicator Half Scale X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Indicator Half Scale.",
+        "defaultValue": 0.4,
+        "currentValue": 0.4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorHalfScale.y",
+        "displayName": "Indicator Half Scale / Indicator Half Scale Y",
+        "label": "Indicator Half Scale Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Indicator Half Scale.",
+        "defaultValue": 9,
+        "currentValue": 9,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorOffset.x",
+        "displayName": "Indicator Offset / Indicator Offset X",
+        "label": "Indicator Offset X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Indicator Offset.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -20,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorOffset.y",
+        "displayName": "Indicator Offset / Indicator Offset Y",
+        "label": "Indicator Offset Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Indicator Offset.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -20,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.maxDistance",
+        "displayName": "Max Distance",
+        "label": "Max Distance",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+        "defaultValue": 8,
+        "currentValue": 8,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.radius",
+        "displayName": "Radius",
+        "label": "Radius",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Radius of the affected area around the target point or source.",
+        "defaultValue": 2.4,
+        "currentValue": 2.4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.cancelable",
+        "displayName": "Cancelable",
+        "label": "Cancelable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorClampToMouse",
+        "displayName": "Indicator Clamp To Mouse",
+        "label": "Indicator Clamp To Mouse",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Indicator Clamp To Mouse. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorDoCollision",
+        "displayName": "Indicator Do Collision",
+        "label": "Indicator Do Collision",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Indicator Do Collision. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.interuptCastOnDamage",
+        "displayName": "Interupt Cast On Damage",
+        "label": "Interupt Cast On Damage",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.silenceable",
+        "displayName": "Silenceable",
+        "label": "Silenceable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.usableWhileDowned",
+        "displayName": "Usable While Downed",
+        "label": "Usable While Downed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.indicatorPrefab",
+        "displayName": "Indicator Prefab",
+        "label": "Indicator Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:Indicator_Ability_Arrow",
+        "currentValue": "GameObject:Indicator_Ability_Arrow",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.inputType",
+        "displayName": "Input Type",
+        "label": "Input Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+        "defaultValue": "Down",
+        "currentValue": "Down",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.motionLockType",
+        "displayName": "Motion Lock Type",
+        "label": "Motion Lock Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.rotationLockType",
+        "displayName": "Rotation Lock Type",
+        "label": "Rotation Lock Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.Guid.IsNull",
+        "displayName": "Sfx Cast / Guid / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.IsNull",
+        "displayName": "Sfx Cast / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.order",
+        "displayName": "Order",
+        "label": "Order",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Sort order used by the game UI or internal lists.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "id",
+        "displayName": "ID",
+        "label": "ID",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Internal identifier for this entry. Changing IDs can break references from pools, managers, or other data.",
+        "defaultValue": 27,
+        "currentValue": 27,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 1080,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 108,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 1080,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.c4BombPrefab",
+        "displayName": "C 4 Bomb Prefab",
+        "label": "C 4 Bomb Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for C 4 Bomb Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:Hitbox_Consumable_C4_Bomb",
+        "currentValue": "GameObject:Hitbox_Consumable_C4_Bomb",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.c4FollowPrefab",
+        "displayName": "C 4 Follow Prefab",
+        "label": "C 4 Follow Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for C 4 Follow Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:Hitbox_Consumable_C4_Follow",
+        "currentValue": "GameObject:Hitbox_Consumable_C4_Follow",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.c4ThrowPrefab",
+        "displayName": "C 4 Throw Prefab",
+        "label": "C 4 Throw Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for C 4 Throw Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:Hitbox_Consumable_C4_Throw",
+        "currentValue": "GameObject:Hitbox_Consumable_C4_Throw",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.Guid.Data1",
+        "displayName": "Sfx Cast / Guid / Data 1",
+        "label": "Data 1",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 1. Edit \u0060configuration.sfxCast.Guid.Data1\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.Guid.Data2",
+        "displayName": "Sfx Cast / Guid / Data 2",
+        "label": "Data 2",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 2. Edit \u0060configuration.sfxCast.Guid.Data2\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.Guid.Data3",
+        "displayName": "Sfx Cast / Guid / Data 3",
+        "label": "Data 3",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 3. Edit \u0060configuration.sfxCast.Guid.Data3\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.sfxCast.Guid.Data4",
+        "displayName": "Sfx Cast / Guid / Data 4",
+        "label": "Data 4",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 4. Edit \u0060configuration.sfxCast.Guid.Data4\u0060 to change how \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+        "path": "configuration.vfxCastPrefab",
+        "displayName": "Vfx Cast Prefab",
+        "label": "Vfx Cast Prefab",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Vfx Cast Prefab on \u0060Consumable_Explosive_C4#11/ConsumableBehaviour\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      }
+    ],
+    "defaults": {
+      "configuration.bombDelay": 0.5,
+      "configuration.c4BombPrefab": "GameObject:Hitbox_Consumable_C4_Bomb",
+      "configuration.c4FollowPrefab": "GameObject:Hitbox_Consumable_C4_Follow",
+      "configuration.c4ThrowPrefab": "GameObject:Hitbox_Consumable_C4_Throw",
+      "configuration.cancelable": true,
+      "configuration.castTime": 0.1,
+      "configuration.damage": 200,
+      "configuration.damageScaling": 1,
+      "configuration.firingPointOffset": 0.5,
+      "configuration.indicatorClampToMouse": true,
+      "configuration.indicatorDoCollision": false,
+      "configuration.indicatorHalfScale.x": 0.4,
+      "configuration.indicatorHalfScale.y": 9,
+      "configuration.indicatorOffset.x": 0,
+      "configuration.indicatorOffset.y": 0,
+      "configuration.indicatorPrefab": "GameObject:Indicator_Ability_Arrow",
+      "configuration.inputType": "Down",
+      "configuration.interuptCastOnDamage": false,
+      "configuration.maxDistance": 8,
+      "configuration.motionLockType": "None",
+      "configuration.order": 0,
+      "configuration.radius": 2.4,
+      "configuration.rotationLockType": "None",
+      "configuration.sfxCast.Guid.Data1": 0,
+      "configuration.sfxCast.Guid.Data2": 0,
+      "configuration.sfxCast.Guid.Data3": 0,
+      "configuration.sfxCast.Guid.Data4": 0,
+      "configuration.sfxCast.Guid.IsNull": true,
+      "configuration.sfxCast.IsNull": true,
+      "configuration.silenceable": true,
+      "configuration.speed": 18,
+      "configuration.ttl": 0.5,
+      "configuration.usableWhileDowned": true,
+      "configuration.vfxCastPrefab": null,
+      "id": 27
+    },
+    "effectiveValues": {
+      "configuration.bombDelay": 0.5,
+      "configuration.c4BombPrefab": "GameObject:Hitbox_Consumable_C4_Bomb",
+      "configuration.c4FollowPrefab": "GameObject:Hitbox_Consumable_C4_Follow",
+      "configuration.c4ThrowPrefab": "GameObject:Hitbox_Consumable_C4_Throw",
+      "configuration.cancelable": true,
+      "configuration.castTime": 0.1,
+      "configuration.damage": 200,
+      "configuration.damageScaling": 1,
+      "configuration.firingPointOffset": 0.5,
+      "configuration.indicatorClampToMouse": true,
+      "configuration.indicatorDoCollision": false,
+      "configuration.indicatorHalfScale.x": 0.4,
+      "configuration.indicatorHalfScale.y": 9,
+      "configuration.indicatorOffset.x": 0,
+      "configuration.indicatorOffset.y": 0,
+      "configuration.indicatorPrefab": "GameObject:Indicator_Ability_Arrow",
+      "configuration.inputType": "Down",
+      "configuration.interuptCastOnDamage": false,
+      "configuration.maxDistance": 8,
+      "configuration.motionLockType": "None",
+      "configuration.order": 0,
+      "configuration.radius": 2.4,
+      "configuration.rotationLockType": "None",
+      "configuration.sfxCast.Guid.Data1": 0,
+      "configuration.sfxCast.Guid.Data2": 0,
+      "configuration.sfxCast.Guid.Data3": 0,
+      "configuration.sfxCast.Guid.Data4": 0,
+      "configuration.sfxCast.Guid.IsNull": true,
+      "configuration.sfxCast.IsNull": true,
+      "configuration.silenceable": true,
+      "configuration.speed": 18,
+      "configuration.ttl": 0.5,
+      "configuration.usableWhileDowned": true,
+      "configuration.vfxCastPrefab": null,
+      "id": 27
+    }
+  }
+}

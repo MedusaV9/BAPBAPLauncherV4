@@ -1,0 +1,5658 @@
+{
+  "schemaVersion": 10,
+  "targetType": "CharacterMovement",
+  "targetKey": "BISHOP#11/Movement",
+  "displayName": "Movement",
+  "resolvedName": "Movement",
+  "generatedAtUtc": "2026-03-26T22:05:43.7078171Z",
+  "quickEdit": [
+    {
+      "setting": "Out Of Movement Combat Duration",
+      "category": "Timing",
+      "path": "outOfMovementCombatDuration",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.01,
+      "defaultValue": 0.01,
+      "whatItDoes": "Out Of Movement Combat Duration in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Out Of Movement Combat Ramp Duration",
+      "category": "Timing",
+      "path": "outOfMovementCombatRampDuration",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.01,
+      "defaultValue": 0.01,
+      "whatItDoes": "Out Of Movement Combat Ramp Duration in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Additive Speed Out Of Movement Combat Multiplier",
+      "category": "Movement",
+      "path": "additiveSpeedOutOfMovementCombatMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Additive Speed Out Of Movement Combat Multiplier value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Additive Speed",
+      "category": "Movement",
+      "path": "additiveSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Additive Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Base Run Speed",
+      "category": "Movement",
+      "path": "baseRunSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Base Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Base Walk Speed",
+      "category": "Movement",
+      "path": "baseWalkSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 3,
+      "defaultValue": 3,
+      "whatItDoes": "Base Walk Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Out Of Combat Run Speed",
+      "category": "Movement",
+      "path": "maxOutOfCombatRunSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 8,
+      "defaultValue": 8,
+      "whatItDoes": "Max Out Of Combat Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Run Speed",
+      "category": "Movement",
+      "path": "maxRunSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 6,
+      "defaultValue": 6,
+      "whatItDoes": "Max Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Move Accel",
+      "category": "Movement",
+      "path": "moveAccel",
+      "editable": true,
+      "valueType": "number",
+      "value": 800,
+      "defaultValue": 800,
+      "whatItDoes": "Numeric value for Move Accel. Edit \u0060moveAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 32000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3200,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 32000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Move Decel",
+      "category": "Movement",
+      "path": "moveDecel",
+      "editable": true,
+      "valueType": "number",
+      "value": -400,
+      "defaultValue": -400,
+      "whatItDoes": "Numeric value for Move Decel. Edit \u0060moveDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 16000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 1600,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 16000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Out Of Movement Combat Speed Bonus",
+      "category": "Movement",
+      "path": "outOfMovementCombatSpeedBonus",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Out Of Movement Combat Speed Bonus value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": -500,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -500,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Rb Slippery Drag",
+      "category": "Movement",
+      "path": "rbSlipperyDrag",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.1,
+      "defaultValue": 0.1,
+      "whatItDoes": "Numeric value for Rb Slippery Drag. Edit \u0060rbSlipperyDrag\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Run Speed",
+      "category": "Movement",
+      "path": "runSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Running speed used for movement.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slippery Accel",
+      "category": "Movement",
+      "path": "slipperyAccel",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.035,
+      "defaultValue": 0.035,
+      "whatItDoes": "Numeric value for Slippery Accel. Edit \u0060slipperyAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slippery Decel",
+      "category": "Movement",
+      "path": "slipperyDecel",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.01,
+      "defaultValue": 0.01,
+      "whatItDoes": "Numeric value for Slippery Decel. Edit \u0060slipperyDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slippery Max Speed",
+      "category": "Movement",
+      "path": "slipperyMaxSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 11,
+      "defaultValue": 11,
+      "whatItDoes": "Slippery Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slippery Other Decel Mult",
+      "category": "Movement",
+      "path": "slipperyOtherDecelMult",
+      "editable": true,
+      "valueType": "number",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Numeric value for Slippery Other Decel Mult. Edit \u0060slipperyOtherDecelMult\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": -32,
+        "maximum": 80,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -8,
+        "maximum": 8,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -32,
+        "maximum": 80,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slippery Speed",
+      "category": "Movement",
+      "path": "slipperySpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 8,
+      "defaultValue": 8,
+      "whatItDoes": "Slippery Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Slow Percent",
+      "category": "Movement",
+      "path": "slowPercent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Slow Percent. Edit \u0060slowPercent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": "%",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Walk Speed",
+      "category": "Movement",
+      "path": "walkSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Walking speed used for movement.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for character target \u0027Movement\u0027. You can change Timing, Movement.",
+    "whatYouCanChange": [
+      "Timing",
+      "Movement"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [],
+    "groups": [
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Out Of Movement Combat Duration",
+            "path": "outOfMovementCombatDuration",
+            "editable": true,
+            "valueType": "number",
+            "description": "Out Of Movement Combat Duration in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0.01,
+            "currentValue": 0.01,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Out Of Movement Combat Ramp Duration",
+            "path": "outOfMovementCombatRampDuration",
+            "editable": true,
+            "valueType": "number",
+            "description": "Out Of Movement Combat Ramp Duration in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0.01,
+            "currentValue": 0.01,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Additive Speed Out Of Movement Combat Multiplier",
+            "path": "additiveSpeedOutOfMovementCombatMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Additive Speed Out Of Movement Combat Multiplier value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Additive Speed",
+            "path": "additiveSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Additive Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Base Run Speed",
+            "path": "baseRunSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Base Walk Speed",
+            "path": "baseWalkSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base Walk Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 3,
+            "currentValue": 3,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Out Of Combat Run Speed",
+            "path": "maxOutOfCombatRunSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Max Out Of Combat Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 8,
+            "currentValue": 8,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Run Speed",
+            "path": "maxRunSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Max Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 6,
+            "currentValue": 6,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Move Accel",
+            "path": "moveAccel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Move Accel. Edit \u0060moveAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 800,
+            "currentValue": 800,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 32000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3200,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 32000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Move Decel",
+            "path": "moveDecel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Move Decel. Edit \u0060moveDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": -400,
+            "currentValue": -400,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 16000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 1600,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 16000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Out Of Movement Combat Speed Bonus",
+            "path": "outOfMovementCombatSpeedBonus",
+            "editable": true,
+            "valueType": "number",
+            "description": "Out Of Movement Combat Speed Bonus value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -500,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -500,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Rb Slippery Drag",
+            "path": "rbSlipperyDrag",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Rb Slippery Drag. Edit \u0060rbSlipperyDrag\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 0.1,
+            "currentValue": 0.1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Run Speed",
+            "path": "runSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Running speed used for movement.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slippery Accel",
+            "path": "slipperyAccel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Slippery Accel. Edit \u0060slipperyAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 0.035,
+            "currentValue": 0.035,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slippery Decel",
+            "path": "slipperyDecel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Slippery Decel. Edit \u0060slipperyDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 0.01,
+            "currentValue": 0.01,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slippery Max Speed",
+            "path": "slipperyMaxSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Slippery Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 11,
+            "currentValue": 11,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slippery Other Decel Mult",
+            "path": "slipperyOtherDecelMult",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Slippery Other Decel Mult. Edit \u0060slipperyOtherDecelMult\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": -32,
+              "maximum": 80,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -8,
+              "maximum": 8,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -32,
+              "maximum": 80,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slippery Speed",
+            "path": "slipperySpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Slippery Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 8,
+            "currentValue": 8,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Slow Percent",
+            "path": "slowPercent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Slow Percent. Edit \u0060slowPercent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": "%",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Walk Speed",
+            "path": "walkSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Walking speed used for movement.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": false,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": false,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.duration",
+      "label": "Duration",
+      "category": "Basics",
+      "description": "Adjust duration, lifetime, or tick timing values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.duration"
+      ]
+    },
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.duration",
+      "label": "Duration",
+      "category": "Basics",
+      "description": "Use this when you want a longer effect or projectile lifetime.",
+      "targetPath": "outOfMovementCombatDuration",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Out Of Movement Combat Duration",
+          "description": "Out Of Movement Combat Duration in seconds. Higher values keep the effect active longer.",
+          "valueType": "number",
+          "defaultValue": 0.01,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "additiveSpeed",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Additive Speed",
+          "description": "Additive Speed value. Higher values usually make the movement, projectile, or effect faster.",
+          "valueType": "number",
+          "defaultValue": 0,
+          "options": []
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "CharacterMovement",
+    "label": "CharacterMovement",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "remove:ccEnabled:soft-flag",
+      "operationType": "remove",
+      "path": "ccEnabled",
+      "mode": "soft",
+      "label": "Disable Movement",
+      "description": "Soft-disable this entry without removing its surrounding file or data structure.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Movement",
+      "previewSubtitle": "Boolean toggle for Cc Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": true,
+      "afterValue": false,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "remove:enabled:soft-flag",
+      "operationType": "remove",
+      "path": "enabled",
+      "mode": "soft",
+      "label": "Disable Movement",
+      "description": "Soft-disable this entry without removing its surrounding file or data structure.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Movement",
+      "previewSubtitle": "Controls whether this component, manager entry, or behaviour is active at all.",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": true,
+      "afterValue": false,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%outOfMovementCombatDuration%",
+      "label": "Out Of Movement Combat Duration",
+      "description": "Out Of Movement Combat Duration in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "outOfMovementCombatDuration",
+      "valueType": "number",
+      "previewValue": 0.01,
+      "previewText": "0.01"
+    },
+    {
+      "token": "%outOfMovementCombatRampDuration%",
+      "label": "Out Of Movement Combat Ramp Duration",
+      "description": "Out Of Movement Combat Ramp Duration in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "outOfMovementCombatRampDuration",
+      "valueType": "number",
+      "previewValue": 0.01,
+      "previewText": "0.01"
+    },
+    {
+      "token": "%additiveSpeedOutOfMovementCombatMultiplier%",
+      "label": "Additive Speed Out Of Movement Combat Multiplier",
+      "description": "Additive Speed Out Of Movement Combat Multiplier value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "additiveSpeedOutOfMovementCombatMultiplier",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%additiveSpeed%",
+      "label": "Additive Speed",
+      "description": "Additive Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "additiveSpeed",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%baseRunSpeed%",
+      "label": "Base Run Speed",
+      "description": "Base Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "baseRunSpeed",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%baseWalkSpeed%",
+      "label": "Base Walk Speed",
+      "description": "Base Walk Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "baseWalkSpeed",
+      "valueType": "number",
+      "previewValue": 3,
+      "previewText": "3"
+    },
+    {
+      "token": "%maxOutOfCombatRunSpeed%",
+      "label": "Max Out Of Combat Run Speed",
+      "description": "Max Out Of Combat Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "maxOutOfCombatRunSpeed",
+      "valueType": "number",
+      "previewValue": 8,
+      "previewText": "8"
+    },
+    {
+      "token": "%maxRunSpeed%",
+      "label": "Max Run Speed",
+      "description": "Max Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "maxRunSpeed",
+      "valueType": "number",
+      "previewValue": 6,
+      "previewText": "6"
+    },
+    {
+      "token": "%moveAccel%",
+      "label": "Move Accel",
+      "description": "Numeric value for Move Accel. Edit \u0060moveAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "sourcePath": "moveAccel",
+      "valueType": "number",
+      "previewValue": 800,
+      "previewText": "800"
+    },
+    {
+      "token": "%moveDecel%",
+      "label": "Move Decel",
+      "description": "Numeric value for Move Decel. Edit \u0060moveDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "sourcePath": "moveDecel",
+      "valueType": "number",
+      "previewValue": -400,
+      "previewText": "-400"
+    },
+    {
+      "token": "%outOfMovementCombatSpeedBonus%",
+      "label": "Out Of Movement Combat Speed Bonus",
+      "description": "Out Of Movement Combat Speed Bonus value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "outOfMovementCombatSpeedBonus",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%rbSlipperyDrag%",
+      "label": "Rb Slippery Drag",
+      "description": "Numeric value for Rb Slippery Drag. Edit \u0060rbSlipperyDrag\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+      "sourcePath": "rbSlipperyDrag",
+      "valueType": "number",
+      "previewValue": 0.1,
+      "previewText": "0.1"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default.",
+    "Character folders are generated for every character at startup from prefab defaults and are refreshed with live runtime values after that character loads in a match or training."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatDuration",
+        "displayName": "Out Of Movement Combat Duration",
+        "label": "Out Of Movement Combat Duration",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Out Of Movement Combat Duration in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0.01,
+        "currentValue": 0.01,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatRampDuration",
+        "displayName": "Out Of Movement Combat Ramp Duration",
+        "label": "Out Of Movement Combat Ramp Duration",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Out Of Movement Combat Ramp Duration in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0.01,
+        "currentValue": 0.01,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "additiveSpeed",
+        "displayName": "Additive Speed",
+        "label": "Additive Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Additive Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "additiveSpeedOutOfMovementCombatMultiplier",
+        "displayName": "Additive Speed Out Of Movement Combat Multiplier",
+        "label": "Additive Speed Out Of Movement Combat Multiplier",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Additive Speed Out Of Movement Combat Multiplier value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "baseRunSpeed",
+        "displayName": "Base Run Speed",
+        "label": "Base Run Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "baseWalkSpeed",
+        "displayName": "Base Walk Speed",
+        "label": "Base Walk Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base Walk Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 3,
+        "currentValue": 3,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "maxOutOfCombatRunSpeed",
+        "displayName": "Max Out Of Combat Run Speed",
+        "label": "Max Out Of Combat Run Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Max Out Of Combat Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 8,
+        "currentValue": 8,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "maxRunSpeed",
+        "displayName": "Max Run Speed",
+        "label": "Max Run Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Max Run Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 6,
+        "currentValue": 6,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "moveAccel",
+        "displayName": "Move Accel",
+        "label": "Move Accel",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Move Accel. Edit \u0060moveAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 800,
+        "currentValue": 800,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 32000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3200,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 32000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "moveDecel",
+        "displayName": "Move Decel",
+        "label": "Move Decel",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Move Decel. Edit \u0060moveDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": -400,
+        "currentValue": -400,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 16000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 1600,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 16000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatSpeedBonus",
+        "displayName": "Out Of Movement Combat Speed Bonus",
+        "label": "Out Of Movement Combat Speed Bonus",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Out Of Movement Combat Speed Bonus value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -500,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -500,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "rbSlipperyDrag",
+        "displayName": "Rb Slippery Drag",
+        "label": "Rb Slippery Drag",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Rb Slippery Drag. Edit \u0060rbSlipperyDrag\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0.1,
+        "currentValue": 0.1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "runSpeed",
+        "displayName": "Run Speed",
+        "label": "Run Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Running speed used for movement.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperyAccel",
+        "displayName": "Slippery Accel",
+        "label": "Slippery Accel",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Slippery Accel. Edit \u0060slipperyAccel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0.035,
+        "currentValue": 0.035,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperyDecel",
+        "displayName": "Slippery Decel",
+        "label": "Slippery Decel",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Slippery Decel. Edit \u0060slipperyDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0.01,
+        "currentValue": 0.01,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperyMaxSpeed",
+        "displayName": "Slippery Max Speed",
+        "label": "Slippery Max Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Slippery Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 11,
+        "currentValue": 11,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperyOtherDecelMult",
+        "displayName": "Slippery Other Decel Mult",
+        "label": "Slippery Other Decel Mult",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Slippery Other Decel Mult. Edit \u0060slipperyOtherDecelMult\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": -32,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -8,
+          "maximum": 8,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -32,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperySpeed",
+        "displayName": "Slippery Speed",
+        "label": "Slippery Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Slippery Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 8,
+        "currentValue": 8,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slowPercent",
+        "displayName": "Slow Percent",
+        "label": "Slow Percent",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Slow Percent. Edit \u0060slowPercent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": "%",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "walkSpeed",
+        "displayName": "Walk Speed",
+        "label": "Walk Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Walking speed used for movement.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "lastSyncTime",
+        "displayName": "Last Sync Time",
+        "label": "Last Sync Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Last Sync Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_Time",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M Time",
+        "label": "M Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "M Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].time",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Time",
+        "label": "Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_Time",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M Time",
+        "label": "M Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "M Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].time",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Time",
+        "label": "Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "OnSlipperyChanged",
+        "displayName": "On Slippery Changed",
+        "label": "On Slippery Changed",
+        "category": "Movement",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Slippery Changed on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "RunSpeed",
+        "displayName": "Run Speed",
+        "label": "Run Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": false,
+        "description": "Running speed used for movement.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "SlipperyLocks",
+        "displayName": "Slippery Locks",
+        "label": "Slippery Locks",
+        "category": "Movement",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Slippery Locks. Edit \u0060SlipperyLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "WalkSpeed",
+        "displayName": "Walk Speed",
+        "label": "Walk Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": false,
+        "description": "Walking speed used for movement.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "constantGhostSpeed",
+        "displayName": "Constant Ghost Speed",
+        "label": "Constant Ghost Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Constant Ghost Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 3,
+        "currentValue": 3,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "constantWalkSpeed",
+        "displayName": "Constant Walk Speed",
+        "label": "Constant Walk Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Constant Walk Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "movementLocks",
+        "displayName": "Movement Locks",
+        "label": "Movement Locks",
+        "category": "Movement",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Movement Locks. Edit \u0060movementLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatRampTimer",
+        "displayName": "Out Of Movement Combat Ramp Timer",
+        "label": "Out Of Movement Combat Ramp Timer",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Of Movement Combat Ramp Timer. Edit \u0060outOfMovementCombatRampTimer\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatTimer",
+        "displayName": "Out Of Movement Combat Timer",
+        "label": "Out Of Movement Combat Timer",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Of Movement Combat Timer. Edit \u0060outOfMovementCombatTimer\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "rbBaseDrag",
+        "displayName": "Rb Base Drag",
+        "label": "Rb Base Drag",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Rb Base Drag. Edit \u0060rbBaseDrag\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "slipperyLocks",
+        "displayName": "Slippery Locks",
+        "label": "Slippery Locks",
+        "category": "Movement",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Slippery Locks. Edit \u0060slipperyLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "MoveVel.x",
+        "displayName": "Move Vel / Move Vel X",
+        "label": "Move Vel X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "X-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "MoveVel.y",
+        "displayName": "Move Vel / Move Vel Y",
+        "label": "Move Vel Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Y-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "MoveVel.z",
+        "displayName": "Move Vel / Move Vel Z",
+        "label": "Move Vel Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Z-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "OtherVel.x",
+        "displayName": "Other Vel / Other Vel X",
+        "label": "Other Vel X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "X-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "OtherVel.y",
+        "displayName": "Other Vel / Other Vel Y",
+        "label": "Other Vel Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Y-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "OtherVel.z",
+        "displayName": "Other Vel / Other Vel Z",
+        "label": "Other Vel Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Z-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "Velocity.x",
+        "displayName": "Velocity / Velocity X",
+        "label": "Velocity X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "X-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "Velocity.y",
+        "displayName": "Velocity / Velocity Y",
+        "label": "Velocity Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Y-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "Velocity.z",
+        "displayName": "Velocity / Velocity Z",
+        "label": "Velocity Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": false,
+        "description": "Z-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "forceVel.x",
+        "displayName": "Force Vel / Force Vel X",
+        "label": "Force Vel X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Force Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "forceVel.y",
+        "displayName": "Force Vel / Force Vel Y",
+        "label": "Force Vel Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Force Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "forceVel.z",
+        "displayName": "Force Vel / Force Vel Z",
+        "label": "Force Vel Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Force Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "moveVel.x",
+        "displayName": "Move Vel / Move Vel X",
+        "label": "Move Vel X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "moveVel.y",
+        "displayName": "Move Vel / Move Vel Y",
+        "label": "Move Vel Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "moveVel.z",
+        "displayName": "Move Vel / Move Vel Z",
+        "label": "Move Vel Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Move Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherVel.x",
+        "displayName": "Other Vel / Other Vel X",
+        "label": "Other Vel X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherVel.y",
+        "displayName": "Other Vel / Other Vel Y",
+        "label": "Other Vel Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherVel.z",
+        "displayName": "Other Vel / Other Vel Z",
+        "label": "Other Vel Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Other Vel.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "prevPos.x",
+        "displayName": "Prev Pos / Prev Pos X",
+        "label": "Prev Pos X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Prev Pos.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "prevPos.y",
+        "displayName": "Prev Pos / Prev Pos Y",
+        "label": "Prev Pos Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Prev Pos.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "prevPos.z",
+        "displayName": "Prev Pos / Prev Pos Z",
+        "label": "Prev Pos Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Prev Pos.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "velocity.x",
+        "displayName": "Velocity / Velocity X",
+        "label": "Velocity X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "velocity.y",
+        "displayName": "Velocity / Velocity Y",
+        "label": "Velocity Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "velocity.z",
+        "displayName": "Velocity / Velocity Z",
+        "label": "Velocity Z",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Z-axis value for Velocity.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "CcEnabled",
+        "displayName": "Cc Enabled",
+        "label": "Cc Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Cc Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "asleep",
+        "displayName": "Asleep",
+        "label": "Asleep",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Asleep. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "ccEnabled",
+        "displayName": "Cc Enabled",
+        "label": "Cc Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cc Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "enabled",
+        "displayName": "Enabled",
+        "label": "Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether this component, manager entry, or behaviour is active at all.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "ghostWalking",
+        "displayName": "Ghost Walking",
+        "label": "Ghost Walking",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Ghost Walking. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "hasMomentum",
+        "displayName": "Has Momentum",
+        "label": "Has Momentum",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Has Momentum. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "hasRb",
+        "displayName": "Has Rb",
+        "label": "Has Rb",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Has Rb. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "isActiveAndEnabled",
+        "displayName": "Is Active And Enabled",
+        "label": "Is Active And Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Active And Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "isMoving",
+        "displayName": "Is Moving",
+        "label": "Is Moving",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Is Moving. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "isOutOfMovementCombat",
+        "displayName": "Is Out Of Movement Combat",
+        "label": "Is Out Of Movement Combat",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Is Out Of Movement Combat. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "isPushed",
+        "displayName": "Is Pushed",
+        "label": "Is Pushed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Is Pushed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherEntityLockToNavMesh",
+        "displayName": "Other Entity Lock To Nav Mesh",
+        "label": "Other Entity Lock To Nav Mesh",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Other Entity Lock To Nav Mesh. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherEntityLockYAxis",
+        "displayName": "Other Entity Lock Y Axis",
+        "label": "Other Entity Lock Y Axis",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Other Entity Lock Y Axis. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "useGUILayout",
+        "displayName": "Use Gui Layout",
+        "label": "Use Gui Layout",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Use Gui Layout. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "CharacterController",
+        "displayName": "Character Controller",
+        "label": "Character Controller",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": false,
+        "description": "Editable value for Character Controller on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "ComponentIndex",
+        "displayName": "Component Index",
+        "label": "Component Index",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Component Index. Edit \u0060ComponentIndex\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "ControllerLocks",
+        "displayName": "Controller Locks",
+        "label": "Controller Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Controller Locks. Edit \u0060ControllerLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "OnCollisionAction",
+        "displayName": "On Collision Action",
+        "label": "On Collision Action",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Collision Action on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "Rigidbody",
+        "displayName": "Rigidbody",
+        "label": "Rigidbody",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": false,
+        "description": "Editable value for Rigidbody on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "agent",
+        "displayName": "Agent",
+        "label": "Agent",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Agent on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "aoi",
+        "displayName": "Aoi",
+        "label": "Aoi",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Aoi on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "charAnim",
+        "displayName": "Char Anim",
+        "label": "Char Anim",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Anim on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "charController",
+        "displayName": "Char Controller",
+        "label": "Char Controller",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Controller on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "constantWalkLocks",
+        "displayName": "Constant Walk Locks",
+        "label": "Constant Walk Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Constant Walk Locks. Edit \u0060constantWalkLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "controllerLocks",
+        "displayName": "Controller Locks",
+        "label": "Controller Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Controller Locks. Edit \u0060controllerLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "debugGameplayM",
+        "displayName": "Debug Gameplay M",
+        "label": "Debug Gameplay M",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Debug Gameplay M on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "entityManager",
+        "displayName": "Entity Manager",
+        "label": "Entity Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Entity Manager on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "gameNetManager",
+        "displayName": "Game Net Manager",
+        "label": "Game Net Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Game Net Manager on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "m_CancellationTokenSource",
+        "displayName": "M Cancellation Token Source",
+        "label": "M Cancellation Token Source",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for M Cancellation Token Source on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "obstacleMask.m_Mask",
+        "displayName": "Obstacle Mask / M Mask",
+        "label": "M Mask",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for M Mask. Edit \u0060obstacleMask.m_Mask\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "obstacleMask.value",
+        "displayName": "Obstacle Mask / Value",
+        "label": "Value",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Value. Edit \u0060obstacleMask.value\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "otherDecel",
+        "displayName": "Other Decel",
+        "label": "Other Decel",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Other Decel. Edit \u0060otherDecel\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].inTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / In Tangent",
+        "label": "In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Tangent. Edit \u0060outOfMovementCombatCurve.keys[0].inTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].inWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / In Weight",
+        "label": "In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Weight. Edit \u0060outOfMovementCombatCurve.keys[0].inWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_InTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M In Tangent",
+        "label": "M In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Tangent. Edit \u0060outOfMovementCombatCurve.keys[0].m_InTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_InWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M In Weight",
+        "label": "M In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Weight. Edit \u0060outOfMovementCombatCurve.keys[0].m_InWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_OutTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M Out Tangent",
+        "label": "M Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Tangent. Edit \u0060outOfMovementCombatCurve.keys[0].m_OutTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_OutWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M Out Weight",
+        "label": "M Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Weight. Edit \u0060outOfMovementCombatCurve.keys[0].m_OutWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_Value",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M Value",
+        "label": "M Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Value. Edit \u0060outOfMovementCombatCurve.keys[0].m_Value\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].m_WeightedMode",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / M Weighted Mode",
+        "label": "M Weighted Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for M Weighted Mode. Edit \u0060outOfMovementCombatCurve.keys[0].m_WeightedMode\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].outTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Out Tangent",
+        "label": "Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Tangent. Edit \u0060outOfMovementCombatCurve.keys[0].outTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].outWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Out Weight",
+        "label": "Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Weight. Edit \u0060outOfMovementCombatCurve.keys[0].outWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].tangentMode",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Tangent Mode",
+        "label": "Tangent Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode. Edit \u0060outOfMovementCombatCurve.keys[0].tangentMode\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].tangentModeInternal",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Tangent Mode Internal",
+        "label": "Tangent Mode Internal",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode Internal. Edit \u0060outOfMovementCombatCurve.keys[0].tangentModeInternal\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].value",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Value",
+        "label": "Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Value. Edit \u0060outOfMovementCombatCurve.keys[0].value\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[0].weightedMode",
+        "displayName": "Out Of Movement Combat Curve / Key 1 / Weighted Mode",
+        "label": "Weighted Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060outOfMovementCombatCurve.keys[0].weightedMode\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].inTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / In Tangent",
+        "label": "In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Tangent. Edit \u0060outOfMovementCombatCurve.keys[1].inTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].inWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / In Weight",
+        "label": "In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Weight. Edit \u0060outOfMovementCombatCurve.keys[1].inWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_InTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M In Tangent",
+        "label": "M In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Tangent. Edit \u0060outOfMovementCombatCurve.keys[1].m_InTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_InWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M In Weight",
+        "label": "M In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Weight. Edit \u0060outOfMovementCombatCurve.keys[1].m_InWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_OutTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M Out Tangent",
+        "label": "M Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Tangent. Edit \u0060outOfMovementCombatCurve.keys[1].m_OutTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_OutWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M Out Weight",
+        "label": "M Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Weight. Edit \u0060outOfMovementCombatCurve.keys[1].m_OutWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_Value",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M Value",
+        "label": "M Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Value. Edit \u0060outOfMovementCombatCurve.keys[1].m_Value\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].m_WeightedMode",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / M Weighted Mode",
+        "label": "M Weighted Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for M Weighted Mode. Edit \u0060outOfMovementCombatCurve.keys[1].m_WeightedMode\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].outTangent",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Out Tangent",
+        "label": "Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Tangent. Edit \u0060outOfMovementCombatCurve.keys[1].outTangent\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].outWeight",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Out Weight",
+        "label": "Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Weight. Edit \u0060outOfMovementCombatCurve.keys[1].outWeight\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].tangentMode",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Tangent Mode",
+        "label": "Tangent Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode. Edit \u0060outOfMovementCombatCurve.keys[1].tangentMode\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].tangentModeInternal",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Tangent Mode Internal",
+        "label": "Tangent Mode Internal",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode Internal. Edit \u0060outOfMovementCombatCurve.keys[1].tangentModeInternal\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].value",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Value",
+        "label": "Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Value. Edit \u0060outOfMovementCombatCurve.keys[1].value\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.keys[1].weightedMode",
+        "displayName": "Out Of Movement Combat Curve / Key 2 / Weighted Mode",
+        "label": "Weighted Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060outOfMovementCombatCurve.keys[1].weightedMode\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.length",
+        "displayName": "Out Of Movement Combat Curve / Length",
+        "label": "Length",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Length. Edit \u0060outOfMovementCombatCurve.length\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 8,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.postWrapMode",
+        "displayName": "Out Of Movement Combat Curve / Post Wrap Mode",
+        "label": "Post Wrap Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Post Wrap Mode. This controls the string or named reference stored at \u0060outOfMovementCombatCurve.postWrapMode\u0060.",
+        "defaultValue": "ClampForever",
+        "currentValue": "ClampForever",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "outOfMovementCombatCurve.preWrapMode",
+        "displayName": "Out Of Movement Combat Curve / Pre Wrap Mode",
+        "label": "Pre Wrap Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Pre Wrap Mode. This controls the string or named reference stored at \u0060outOfMovementCombatCurve.preWrapMode\u0060.",
+        "defaultValue": "ClampForever",
+        "currentValue": "ClampForever",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "rb",
+        "displayName": "Rb",
+        "label": "Rb",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Rb on \u0060BISHOP#11/Movement\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterMovement",
+        "targetKey": "BISHOP#11/Movement",
+        "path": "walkLocks",
+        "displayName": "Walk Locks",
+        "label": "Walk Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Walk Locks. Edit \u0060walkLocks\u0060 to change how \u0060BISHOP#11/Movement\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      }
+    ],
+    "defaults": {
+      "CcEnabled": true,
+      "CharacterController": null,
+      "ComponentIndex": 0,
+      "ControllerLocks": 0,
+      "MoveVel.x": 0,
+      "MoveVel.y": 0,
+      "MoveVel.z": 0,
+      "OnCollisionAction": null,
+      "OnSlipperyChanged": null,
+      "OtherVel.x": 0,
+      "OtherVel.y": 0,
+      "OtherVel.z": 0,
+      "Rigidbody": null,
+      "RunSpeed": 0,
+      "SlipperyLocks": 0,
+      "Velocity.x": 0,
+      "Velocity.y": 0,
+      "Velocity.z": 0,
+      "WalkSpeed": 0,
+      "additiveSpeed": 0,
+      "additiveSpeedOutOfMovementCombatMultiplier": 1,
+      "agent": null,
+      "aoi": null,
+      "asleep": false,
+      "baseRunSpeed": 4,
+      "baseWalkSpeed": 3,
+      "ccEnabled": true,
+      "charAnim": null,
+      "charController": null,
+      "constantGhostSpeed": 3,
+      "constantWalkLocks": 0,
+      "constantWalkSpeed": 2,
+      "controllerLocks": 0,
+      "debugGameplayM": null,
+      "enabled": true,
+      "entityManager": null,
+      "forceVel.x": 0,
+      "forceVel.y": 0,
+      "forceVel.z": 0,
+      "gameNetManager": null,
+      "ghostWalking": false,
+      "hasMomentum": false,
+      "hasRb": false,
+      "isActiveAndEnabled": false,
+      "isMoving": false,
+      "isOutOfMovementCombat": false,
+      "isPushed": false,
+      "lastSyncTime": 0,
+      "m_CancellationTokenSource": null,
+      "maxOutOfCombatRunSpeed": 8,
+      "maxRunSpeed": 6,
+      "moveAccel": 800,
+      "moveDecel": -400,
+      "moveVel.x": 0,
+      "moveVel.y": 0,
+      "moveVel.z": 0,
+      "movementLocks": 0,
+      "obstacleMask.m_Mask": 0,
+      "obstacleMask.value": 0,
+      "otherDecel": 0,
+      "otherEntityLockToNavMesh": true,
+      "otherEntityLockYAxis": true,
+      "otherVel.x": 0,
+      "otherVel.y": 0,
+      "otherVel.z": 0,
+      "outOfMovementCombatCurve.keys[0].inTangent": 0,
+      "outOfMovementCombatCurve.keys[0].inWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_InTangent": 0,
+      "outOfMovementCombatCurve.keys[0].m_InWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_OutTangent": 0,
+      "outOfMovementCombatCurve.keys[0].m_OutWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_Time": 0,
+      "outOfMovementCombatCurve.keys[0].m_Value": 0,
+      "outOfMovementCombatCurve.keys[0].m_WeightedMode": 0,
+      "outOfMovementCombatCurve.keys[0].outTangent": 0,
+      "outOfMovementCombatCurve.keys[0].outWeight": 0,
+      "outOfMovementCombatCurve.keys[0].tangentMode": 0,
+      "outOfMovementCombatCurve.keys[0].tangentModeInternal": 0,
+      "outOfMovementCombatCurve.keys[0].time": 0,
+      "outOfMovementCombatCurve.keys[0].value": 0,
+      "outOfMovementCombatCurve.keys[0].weightedMode": "None",
+      "outOfMovementCombatCurve.keys[1].inTangent": 2,
+      "outOfMovementCombatCurve.keys[1].inWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_InTangent": 2,
+      "outOfMovementCombatCurve.keys[1].m_InWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_OutTangent": 2,
+      "outOfMovementCombatCurve.keys[1].m_OutWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_Time": 1,
+      "outOfMovementCombatCurve.keys[1].m_Value": 1,
+      "outOfMovementCombatCurve.keys[1].m_WeightedMode": 0,
+      "outOfMovementCombatCurve.keys[1].outTangent": 2,
+      "outOfMovementCombatCurve.keys[1].outWeight": 0,
+      "outOfMovementCombatCurve.keys[1].tangentMode": 0,
+      "outOfMovementCombatCurve.keys[1].tangentModeInternal": 0,
+      "outOfMovementCombatCurve.keys[1].time": 1,
+      "outOfMovementCombatCurve.keys[1].value": 1,
+      "outOfMovementCombatCurve.keys[1].weightedMode": "None",
+      "outOfMovementCombatCurve.length": 2,
+      "outOfMovementCombatCurve.postWrapMode": "ClampForever",
+      "outOfMovementCombatCurve.preWrapMode": "ClampForever",
+      "outOfMovementCombatDuration": 0.01,
+      "outOfMovementCombatRampDuration": 0.01,
+      "outOfMovementCombatRampTimer": 0,
+      "outOfMovementCombatSpeedBonus": 0,
+      "outOfMovementCombatTimer": 0,
+      "prevPos.x": 0,
+      "prevPos.y": 0,
+      "prevPos.z": 0,
+      "rb": null,
+      "rbBaseDrag": 0,
+      "rbSlipperyDrag": 0.1,
+      "runSpeed": 0,
+      "slipperyAccel": 0.035,
+      "slipperyDecel": 0.01,
+      "slipperyLocks": 0,
+      "slipperyMaxSpeed": 11,
+      "slipperyOtherDecelMult": 2,
+      "slipperySpeed": 8,
+      "slowPercent": 0,
+      "useGUILayout": true,
+      "velocity.x": 0,
+      "velocity.y": 0,
+      "velocity.z": 0,
+      "walkLocks": 0,
+      "walkSpeed": 0
+    },
+    "effectiveValues": {
+      "CcEnabled": true,
+      "CharacterController": null,
+      "ComponentIndex": 0,
+      "ControllerLocks": 0,
+      "MoveVel.x": 0,
+      "MoveVel.y": 0,
+      "MoveVel.z": 0,
+      "OnCollisionAction": null,
+      "OnSlipperyChanged": null,
+      "OtherVel.x": 0,
+      "OtherVel.y": 0,
+      "OtherVel.z": 0,
+      "Rigidbody": null,
+      "RunSpeed": 0,
+      "SlipperyLocks": 0,
+      "Velocity.x": 0,
+      "Velocity.y": 0,
+      "Velocity.z": 0,
+      "WalkSpeed": 0,
+      "additiveSpeed": 0,
+      "additiveSpeedOutOfMovementCombatMultiplier": 1,
+      "agent": null,
+      "aoi": null,
+      "asleep": false,
+      "baseRunSpeed": 4,
+      "baseWalkSpeed": 3,
+      "ccEnabled": true,
+      "charAnim": null,
+      "charController": null,
+      "constantGhostSpeed": 3,
+      "constantWalkLocks": 0,
+      "constantWalkSpeed": 2,
+      "controllerLocks": 0,
+      "debugGameplayM": null,
+      "enabled": true,
+      "entityManager": null,
+      "forceVel.x": 0,
+      "forceVel.y": 0,
+      "forceVel.z": 0,
+      "gameNetManager": null,
+      "ghostWalking": false,
+      "hasMomentum": false,
+      "hasRb": false,
+      "isActiveAndEnabled": false,
+      "isMoving": false,
+      "isOutOfMovementCombat": false,
+      "isPushed": false,
+      "lastSyncTime": 0,
+      "m_CancellationTokenSource": null,
+      "maxOutOfCombatRunSpeed": 8,
+      "maxRunSpeed": 6,
+      "moveAccel": 800,
+      "moveDecel": -400,
+      "moveVel.x": 0,
+      "moveVel.y": 0,
+      "moveVel.z": 0,
+      "movementLocks": 0,
+      "obstacleMask.m_Mask": 0,
+      "obstacleMask.value": 0,
+      "otherDecel": 0,
+      "otherEntityLockToNavMesh": true,
+      "otherEntityLockYAxis": true,
+      "otherVel.x": 0,
+      "otherVel.y": 0,
+      "otherVel.z": 0,
+      "outOfMovementCombatCurve.keys[0].inTangent": 0,
+      "outOfMovementCombatCurve.keys[0].inWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_InTangent": 0,
+      "outOfMovementCombatCurve.keys[0].m_InWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_OutTangent": 0,
+      "outOfMovementCombatCurve.keys[0].m_OutWeight": 0,
+      "outOfMovementCombatCurve.keys[0].m_Time": 0,
+      "outOfMovementCombatCurve.keys[0].m_Value": 0,
+      "outOfMovementCombatCurve.keys[0].m_WeightedMode": 0,
+      "outOfMovementCombatCurve.keys[0].outTangent": 0,
+      "outOfMovementCombatCurve.keys[0].outWeight": 0,
+      "outOfMovementCombatCurve.keys[0].tangentMode": 0,
+      "outOfMovementCombatCurve.keys[0].tangentModeInternal": 0,
+      "outOfMovementCombatCurve.keys[0].time": 0,
+      "outOfMovementCombatCurve.keys[0].value": 0,
+      "outOfMovementCombatCurve.keys[0].weightedMode": "None",
+      "outOfMovementCombatCurve.keys[1].inTangent": 2,
+      "outOfMovementCombatCurve.keys[1].inWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_InTangent": 2,
+      "outOfMovementCombatCurve.keys[1].m_InWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_OutTangent": 2,
+      "outOfMovementCombatCurve.keys[1].m_OutWeight": 0,
+      "outOfMovementCombatCurve.keys[1].m_Time": 1,
+      "outOfMovementCombatCurve.keys[1].m_Value": 1,
+      "outOfMovementCombatCurve.keys[1].m_WeightedMode": 0,
+      "outOfMovementCombatCurve.keys[1].outTangent": 2,
+      "outOfMovementCombatCurve.keys[1].outWeight": 0,
+      "outOfMovementCombatCurve.keys[1].tangentMode": 0,
+      "outOfMovementCombatCurve.keys[1].tangentModeInternal": 0,
+      "outOfMovementCombatCurve.keys[1].time": 1,
+      "outOfMovementCombatCurve.keys[1].value": 1,
+      "outOfMovementCombatCurve.keys[1].weightedMode": "None",
+      "outOfMovementCombatCurve.length": 2,
+      "outOfMovementCombatCurve.postWrapMode": "ClampForever",
+      "outOfMovementCombatCurve.preWrapMode": "ClampForever",
+      "outOfMovementCombatDuration": 0.01,
+      "outOfMovementCombatRampDuration": 0.01,
+      "outOfMovementCombatRampTimer": 0,
+      "outOfMovementCombatSpeedBonus": 0,
+      "outOfMovementCombatTimer": 0,
+      "prevPos.x": 0,
+      "prevPos.y": 0,
+      "prevPos.z": 0,
+      "rb": null,
+      "rbBaseDrag": 0,
+      "rbSlipperyDrag": 0.1,
+      "runSpeed": 0,
+      "slipperyAccel": 0.035,
+      "slipperyDecel": 0.01,
+      "slipperyLocks": 0,
+      "slipperyMaxSpeed": 11,
+      "slipperyOtherDecelMult": 2,
+      "slipperySpeed": 8,
+      "slowPercent": 0,
+      "useGUILayout": true,
+      "velocity.x": 0,
+      "velocity.y": 0,
+      "velocity.z": 0,
+      "walkLocks": 0,
+      "walkSpeed": 0
+    }
+  }
+}

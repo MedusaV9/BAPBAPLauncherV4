@@ -1,0 +1,190 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:05:18.3571532Z",
+  "rootPath": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod",
+  "summary": "Top-level overview of what RebalanceBAP writes under UserData/BalanceMod and which parts are legacy, generated, editable, or managed.",
+  "instructions": [
+    "Use Runtime for the main generated per-target JSON docs.",
+    "Use Library for launcher-facing catalogs and exhaustive option search.",
+    "Use Custom for hand-authored custom augments and icons.",
+    "Treat the three .cfg files as legacy manual tweak files, not as the complete game export."
+  ],
+  "sections": [
+    {
+      "id": "legacy-general-cfg",
+      "label": "general.cfg",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\general.cfg",
+      "editMode": "legacy-manual",
+      "description": "Small global mod toggles such as enabling balance tweaks or hidden augments.",
+      "contains": [
+        "global mod switches"
+      ],
+      "notes": [
+        "This is intentionally tiny.",
+        "It is hand-defined in Core.cs and is not a full game export."
+      ]
+    },
+    {
+      "id": "legacy-augments-cfg",
+      "label": "augments.cfg",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\augments.cfg",
+      "editMode": "legacy-manual",
+      "description": "Old hand-curated augment tweak file created through MelonPreferences addConfig calls.",
+      "contains": [
+        "selected augment stat values",
+        "legacy quick tweaks"
+      ],
+      "notes": [
+        "Only contains values explicitly registered in Core.cs.",
+        "Missing entries usually live in Runtime instead."
+      ]
+    },
+    {
+      "id": "legacy-characters-cfg",
+      "label": "characters.cfg",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\characters.cfg",
+      "editMode": "legacy-manual",
+      "description": "Old hand-curated character and ability tweak file created through MelonPreferences addConfig calls.",
+      "contains": [
+        "selected character values",
+        "selected ability values"
+      ],
+      "notes": [
+        "Only contains values explicitly registered in Core.cs.",
+        "It is not a complete character export."
+      ]
+    },
+    {
+      "id": "runtime",
+      "label": "Runtime",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\Runtime",
+      "editMode": "generated-editable",
+      "description": "Main generated JSON docs for passives, items, characters, managers, and arena settings.",
+      "contains": [
+        "Passives",
+        "Items",
+        "Characters",
+        "Managers",
+        "ArenaSettings",
+        "Augments.index.json",
+        "Items.index.json"
+      ],
+      "notes": [
+        "This is the main place to edit shipped game data.",
+        "README.md inside Runtime explains quickEdit, simpleSettings, overrides, operations, and advanced fields."
+      ]
+    },
+    {
+      "id": "library",
+      "label": "Library",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\Library",
+      "editMode": "generated-reference",
+      "description": "Launcher-facing metadata and catalogs such as blocks, effects, icons, templates, and AllOptions.",
+      "contains": [
+        "Blocks.index.json",
+        "Effects.index.json",
+        "Icons.index.json",
+        "Templates.index.json",
+        "AllOptions.index.json"
+      ],
+      "notes": [
+        "Generated locally for the launcher.",
+        "Usually reference-only, not the main hand-edit surface."
+      ]
+    },
+    {
+      "id": "custom",
+      "label": "Custom",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\Custom",
+      "editMode": "hand-authored",
+      "description": "Custom augments and optional custom PNG icons authored by the user.",
+      "contains": [
+        "Augments",
+        "Icons",
+        "Icons.index.json",
+        "README.md"
+      ],
+      "notes": [
+        "Use this when building completely new content.",
+        "Custom README explains templatePassiveKey, blocks, overrides, ids, and icon sources."
+      ]
+    },
+    {
+      "id": "nativeui",
+      "label": "NativeUI",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\NativeUI",
+      "editMode": "generated-helper",
+      "description": "Helper files for extra arena settings UI categories and lists.",
+      "contains": [
+        "HiddenDev",
+        "Custom",
+        "ArenaCategories.index.json",
+        "README.md"
+      ],
+      "notes": [
+        "This does not replace Runtime.",
+        "Actual values still live in Runtime and ArenaSettings."
+      ]
+    },
+    {
+      "id": "arena-presets",
+      "label": "ArenaPresets",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\ArenaPresets",
+      "editMode": "hand-authored-or-managed",
+      "description": "Arena preset files that can be edited, shared, exported, and installed alongside content packs.",
+      "contains": [
+        "preset files",
+        "ArenaPresets.index.json",
+        "README.md"
+      ],
+      "notes": [
+        "These are separate from the single-active content-pack model.",
+        "Many named arena presets can coexist."
+      ]
+    },
+    {
+      "id": "pack-drop",
+      "label": "PackDrop",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\PackDrop",
+      "editMode": "managed-inbox",
+      "description": "Drop .rbpack files here when you want the mod to ingest them on launch.",
+      "contains": [
+        "incoming packs",
+        "Processed",
+        "Failed"
+      ],
+      "notes": [
+        "This is an inbox, not a content authoring folder."
+      ]
+    },
+    {
+      "id": "installed-packs",
+      "label": "InstalledPacks",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\InstalledPacks",
+      "editMode": "managed-state",
+      "description": "Managed snapshots and active-pack state for the installed content-pack system.",
+      "contains": [
+        "active-pack.json",
+        "installed pack snapshots"
+      ],
+      "notes": [
+        "Normally launcher-managed.",
+        "One active content pack at a time."
+      ]
+    },
+    {
+      "id": "import-receipts",
+      "label": "ImportReceipts",
+      "path": "C:\\Users\\Administrator\\Downloads\\BapBapRebalnce\\Gamefiles\\Latest\\UserData\\BalanceMod\\ImportReceipts",
+      "editMode": "managed-history",
+      "description": "Receipts and backups written when packs are imported or applied.",
+      "contains": [
+        "receipt files",
+        "backup copies"
+      ],
+      "notes": [
+        "Useful for rollback or audit, not for normal editing."
+      ]
+    }
+  ]
+}

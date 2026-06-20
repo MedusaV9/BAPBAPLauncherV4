@@ -1,0 +1,5364 @@
+﻿{
+  "schemaVersion": 10,
+  "targetType": "ItemBehaviour",
+  "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+  "displayName": "Behaviour",
+  "resolvedName": "Behaviour",
+  "generatedAtUtc": "2026-04-15T23:03:21.4361407Z",
+  "quickEdit": [
+    {
+      "setting": "Base Cooldown",
+      "category": "Timing",
+      "path": "configuration.baseCooldown",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.5,
+      "defaultValue": 0.5,
+      "whatItDoes": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Casting Time",
+      "category": "Timing",
+      "path": "configuration.castingTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 0.1,
+      "defaultValue": 0.1,
+      "whatItDoes": "Casting Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M Time",
+      "category": "Timing",
+      "path": "configuration.speedCurve.keys[0].m_Time",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "M Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Time",
+      "category": "Timing",
+      "path": "configuration.speedCurve.keys[0].time",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M Time",
+      "category": "Timing",
+      "path": "configuration.speedCurve.keys[1].m_Time",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "M Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Time",
+      "category": "Timing",
+      "path": "configuration.speedCurve.keys[1].time",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Time in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Starting Cooldown",
+      "category": "Timing",
+      "path": "configuration.startCooldownTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Dash Speed End",
+      "category": "Movement",
+      "path": "configuration.dashSpeedEnd",
+      "editable": true,
+      "valueType": "number",
+      "value": 10,
+      "defaultValue": 10,
+      "whatItDoes": "Dash Speed End value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Dash Speed Start",
+      "category": "Movement",
+      "path": "configuration.dashSpeedStart",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Dash Speed Start value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Impulse Decel Speed",
+      "category": "Movement",
+      "path": "configuration.impulseDecelSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Impulse Decel Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Time To Max Speed",
+      "category": "Movement",
+      "path": "configuration.timeToMaxSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Time To Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cancelable",
+      "category": "Behavior",
+      "path": "configuration.cancelable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Silenceable",
+      "category": "Behavior",
+      "path": "configuration.silenceable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Usable While Downed",
+      "category": "Behavior",
+      "path": "configuration.usableWhileDowned",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Dash Decel",
+      "category": "General",
+      "path": "configuration.dashDecel",
+      "editable": true,
+      "valueType": "number",
+      "value": -20,
+      "defaultValue": -20,
+      "whatItDoes": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 800,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 80,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 800,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Dash Impulse",
+      "category": "General",
+      "path": "configuration.dashImpulse",
+      "editable": true,
+      "valueType": "number",
+      "value": 9,
+      "defaultValue": 9,
+      "whatItDoes": "Numeric value for Dash Impulse. Edit \u0060configuration.dashImpulse\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 360,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 36,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 360,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Drive Cost",
+      "category": "General",
+      "path": "configuration.driveCost",
+      "editable": true,
+      "valueType": "number",
+      "value": 1.2,
+      "defaultValue": 1.2,
+      "whatItDoes": "Numeric value for Drive Cost. Edit \u0060configuration.driveCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 48.00000190734863,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4.800000190734863,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 48.00000190734863,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Impulse Cost",
+      "category": "General",
+      "path": "configuration.impulseCost",
+      "editable": true,
+      "valueType": "number",
+      "value": 6,
+      "defaultValue": 6,
+      "whatItDoes": "Numeric value for Impulse Cost. Edit \u0060configuration.impulseCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 240,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 24,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 240,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Input Type",
+      "category": "General",
+      "path": "configuration.inputType",
+      "editable": true,
+      "valueType": "string",
+      "value": "Down",
+      "defaultValue": "Down",
+      "whatItDoes": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Max Velocity",
+      "category": "General",
+      "path": "configuration.maxVelocity",
+      "editable": true,
+      "valueType": "number",
+      "value": 3,
+      "defaultValue": 3,
+      "whatItDoes": "Numeric value for Max Velocity. Edit \u0060configuration.maxVelocity\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 120,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 12,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 120,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / In Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].inTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[0].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / In Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].inWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[0].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M In Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_InTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[0].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M In Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_InWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[0].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M Out Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_OutTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[0].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M Out Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_OutWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[0].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M Value",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_Value",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[0].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / M Weighted Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].m_WeightedMode",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[0].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Out Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].outTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[0].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Out Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].outWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[0].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Tangent Mode Internal",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].tangentModeInternal",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[0].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Tangent Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].tangentMode",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[0].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Value",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].value",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[0].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 1 / Weighted Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[0].weightedMode",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[0].weightedMode\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / In Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].inTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[1].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / In Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].inWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[1].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M In Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_InTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[1].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M In Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_InWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[1].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M Out Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_OutTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[1].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M Out Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_OutWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[1].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M Value",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_Value",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[1].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / M Weighted Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].m_WeightedMode",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[1].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Out Tangent",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].outTangent",
+      "editable": true,
+      "valueType": "number",
+      "value": 2,
+      "defaultValue": 2,
+      "whatItDoes": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[1].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Out Weight",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].outWeight",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[1].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Tangent Mode Internal",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].tangentModeInternal",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[1].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Tangent Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].tangentMode",
+      "editable": true,
+      "valueType": "integer",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[1].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Value",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].value",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[1].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Speed Curve / Key 2 / Weighted Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.keys[1].weightedMode",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[1].weightedMode\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Speed Curve / Post Wrap Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.postWrapMode",
+      "editable": true,
+      "valueType": "string",
+      "value": "ClampForever",
+      "defaultValue": "ClampForever",
+      "whatItDoes": "Text or key value for Post Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.postWrapMode\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Speed Curve / Pre Wrap Mode",
+      "category": "General",
+      "path": "configuration.speedCurve.preWrapMode",
+      "editable": true,
+      "valueType": "string",
+      "value": "ClampForever",
+      "defaultValue": "ClampForever",
+      "whatItDoes": "Text or key value for Pre Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.preWrapMode\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for \u0027Behaviour\u0027. You can change Timing, Movement, Behavior, General.",
+    "whatYouCanChange": [
+      "Timing",
+      "Movement",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config."
+    ],
+    "groups": [
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Base Cooldown",
+            "path": "configuration.baseCooldown",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+            "defaultValue": 0.5,
+            "currentValue": 0.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Casting Time",
+            "path": "configuration.castingTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0.1,
+            "currentValue": 0.1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M Time",
+            "path": "configuration.speedCurve.keys[0].m_Time",
+            "editable": true,
+            "valueType": "number",
+            "description": "M Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Time",
+            "path": "configuration.speedCurve.keys[0].time",
+            "editable": true,
+            "valueType": "number",
+            "description": "Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M Time",
+            "path": "configuration.speedCurve.keys[1].m_Time",
+            "editable": true,
+            "valueType": "number",
+            "description": "M Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Time",
+            "path": "configuration.speedCurve.keys[1].time",
+            "editable": true,
+            "valueType": "number",
+            "description": "Time in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Starting Cooldown",
+            "path": "configuration.startCooldownTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Dash Speed End",
+            "path": "configuration.dashSpeedEnd",
+            "editable": true,
+            "valueType": "number",
+            "description": "Dash Speed End value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 10,
+            "currentValue": 10,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Dash Speed Start",
+            "path": "configuration.dashSpeedStart",
+            "editable": true,
+            "valueType": "number",
+            "description": "Dash Speed Start value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Impulse Decel Speed",
+            "path": "configuration.impulseDecelSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Impulse Decel Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Time To Max Speed",
+            "path": "configuration.timeToMaxSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Time To Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Cancelable",
+            "path": "configuration.cancelable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Silenceable",
+            "path": "configuration.silenceable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Usable While Downed",
+            "path": "configuration.usableWhileDowned",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Dash Decel",
+            "path": "configuration.dashDecel",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": -20,
+            "currentValue": -20,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 800,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 80,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 800,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Dash Impulse",
+            "path": "configuration.dashImpulse",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Dash Impulse. Edit \u0060configuration.dashImpulse\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 9,
+            "currentValue": 9,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 360,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 36,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 360,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Drive Cost",
+            "path": "configuration.driveCost",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Drive Cost. Edit \u0060configuration.driveCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 1.2,
+            "currentValue": 1.2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 48.00000190734863,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4.800000190734863,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 48.00000190734863,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Impulse Cost",
+            "path": "configuration.impulseCost",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Impulse Cost. Edit \u0060configuration.impulseCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 6,
+            "currentValue": 6,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 240,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 24,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 240,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Input Type",
+            "path": "configuration.inputType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+            "defaultValue": "Down",
+            "currentValue": "Down",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Max Velocity",
+            "path": "configuration.maxVelocity",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Max Velocity. Edit \u0060configuration.maxVelocity\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 3,
+            "currentValue": 3,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 120,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 12,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 120,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / In Tangent",
+            "path": "configuration.speedCurve.keys[0].inTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[0].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / In Weight",
+            "path": "configuration.speedCurve.keys[0].inWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[0].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M In Tangent",
+            "path": "configuration.speedCurve.keys[0].m_InTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[0].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M In Weight",
+            "path": "configuration.speedCurve.keys[0].m_InWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[0].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M Out Tangent",
+            "path": "configuration.speedCurve.keys[0].m_OutTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[0].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M Out Weight",
+            "path": "configuration.speedCurve.keys[0].m_OutWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[0].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M Value",
+            "path": "configuration.speedCurve.keys[0].m_Value",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[0].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / M Weighted Mode",
+            "path": "configuration.speedCurve.keys[0].m_WeightedMode",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[0].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Out Tangent",
+            "path": "configuration.speedCurve.keys[0].outTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[0].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Out Weight",
+            "path": "configuration.speedCurve.keys[0].outWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[0].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Tangent Mode Internal",
+            "path": "configuration.speedCurve.keys[0].tangentModeInternal",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[0].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Tangent Mode",
+            "path": "configuration.speedCurve.keys[0].tangentMode",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[0].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Value",
+            "path": "configuration.speedCurve.keys[0].value",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[0].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 1 / Weighted Mode",
+            "path": "configuration.speedCurve.keys[0].weightedMode",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[0].weightedMode\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Speed Curve / Key 2 / In Tangent",
+            "path": "configuration.speedCurve.keys[1].inTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[1].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / In Weight",
+            "path": "configuration.speedCurve.keys[1].inWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[1].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M In Tangent",
+            "path": "configuration.speedCurve.keys[1].m_InTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[1].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M In Weight",
+            "path": "configuration.speedCurve.keys[1].m_InWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[1].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M Out Tangent",
+            "path": "configuration.speedCurve.keys[1].m_OutTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[1].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M Out Weight",
+            "path": "configuration.speedCurve.keys[1].m_OutWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[1].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M Value",
+            "path": "configuration.speedCurve.keys[1].m_Value",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[1].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / M Weighted Mode",
+            "path": "configuration.speedCurve.keys[1].m_WeightedMode",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[1].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Out Tangent",
+            "path": "configuration.speedCurve.keys[1].outTangent",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[1].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 2,
+            "currentValue": 2,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Out Weight",
+            "path": "configuration.speedCurve.keys[1].outWeight",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[1].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Tangent Mode Internal",
+            "path": "configuration.speedCurve.keys[1].tangentModeInternal",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[1].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Tangent Mode",
+            "path": "configuration.speedCurve.keys[1].tangentMode",
+            "editable": true,
+            "valueType": "integer",
+            "description": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[1].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Value",
+            "path": "configuration.speedCurve.keys[1].value",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[1].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Speed Curve / Key 2 / Weighted Mode",
+            "path": "configuration.speedCurve.keys[1].weightedMode",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[1].weightedMode\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Speed Curve / Post Wrap Mode",
+            "path": "configuration.speedCurve.postWrapMode",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Post Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.postWrapMode\u0060.",
+            "defaultValue": "ClampForever",
+            "currentValue": "ClampForever",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Speed Curve / Pre Wrap Mode",
+            "path": "configuration.speedCurve.preWrapMode",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Pre Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.preWrapMode\u0060.",
+            "defaultValue": "ClampForever",
+            "currentValue": "ClampForever",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Adjust cooldown timing without searching raw JSON paths by hand.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.cooldown"
+      ]
+    },
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Use this when you want to shorten or extend cooldown timing.",
+      "targetPath": "configuration.baseCooldown",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Base Cooldown",
+          "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+          "valueType": "number",
+          "defaultValue": 0.5,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "configuration.speedCurve.keys[0].m_Time",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "M Time",
+          "description": "M Time in seconds. Higher values keep the effect active longer.",
+          "valueType": "number",
+          "defaultValue": 0,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "configuration.vfxCastPrefab",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Vfx Cast Prefab",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "GameObject:VFX_MoveDash_Trail",
+          "options": [
+            "GameObject:BearTrap_Large_Consumable",
+            "GameObject:Bumper_Bubble_NoD",
+            "GameObject:ExplosiveBarrelPassive",
+            "GameObject:Hitbox_Augment_Jiro_Shield",
+            "GameObject:Hitbox_Augment_Teevee_AOE",
+            "GameObject:Hitbox_Augment_Teevee_CloneTether",
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_Blitz_AOE_Teevee",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Jiro_BrothWave",
+            "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+            "GameObject:Hitbox_P_HealZone",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_Rocky_Boulder",
+            "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+            "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+            "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+            "GameObject:SlipperyZone_IceBlockSlide",
+            "GameObject:SlipperyZone_Trail",
+            "GameObject:TastyFood",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+            "GameObject:VFX_MoveDash_Trail",
+            "GameObject:VFX_P_Loop_Aura_Weakening",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_MountainShield_Ready",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_Slide_Smoke_Trail",
+            "GameObject:VFX_Slow_Loop",
+            "GameObject:VFX_StunEffect_Loop"
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "configuration.vfxCastPrefab",
+      "label": "Vfx Cast Prefab",
+      "currentReference": "GameObject:VFX_MoveDash_Trail",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_MoveDash_Trail",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Vfx Move Dash Trail",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Items",
+    "label": "Items - Details",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:configuration.vfxCastPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.vfxCastPrefab",
+      "mode": "soft",
+      "label": "Clear Vfx Cast Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Vfx Move Dash Trail",
+      "previewSubtitle": "GameObject:VFX_MoveDash_Trail",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:VFX_MoveDash_Trail",
+      "afterValue": null,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%baseCooldown%",
+      "label": "Base Cooldown",
+      "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+      "sourcePath": "configuration.baseCooldown",
+      "valueType": "number",
+      "previewValue": 0.5,
+      "previewText": "0.5"
+    },
+    {
+      "token": "%castingTime%",
+      "label": "Casting Time",
+      "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.castingTime",
+      "valueType": "number",
+      "previewValue": 0.1,
+      "previewText": "0.1"
+    },
+    {
+      "token": "%speedCurve/Key1/MTime%",
+      "label": "Speed Curve / Key 1 / M Time",
+      "description": "M Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.speedCurve.keys[0].m_Time",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%speedCurve/Key1/Time%",
+      "label": "Speed Curve / Key 1 / Time",
+      "description": "Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.speedCurve.keys[0].time",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%speedCurve/Key2/MTime%",
+      "label": "Speed Curve / Key 2 / M Time",
+      "description": "M Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.speedCurve.keys[1].m_Time",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%speedCurve/Key2/Time%",
+      "label": "Speed Curve / Key 2 / Time",
+      "description": "Time in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.speedCurve.keys[1].time",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%startingCooldown%",
+      "label": "Starting Cooldown",
+      "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+      "sourcePath": "configuration.startCooldownTime",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%dashSpeedEnd%",
+      "label": "Dash Speed End",
+      "description": "Dash Speed End value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.dashSpeedEnd",
+      "valueType": "number",
+      "previewValue": 10,
+      "previewText": "10"
+    },
+    {
+      "token": "%dashSpeedStart%",
+      "label": "Dash Speed Start",
+      "description": "Dash Speed Start value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.dashSpeedStart",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%impulseDecelSpeed%",
+      "label": "Impulse Decel Speed",
+      "description": "Impulse Decel Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.impulseDecelSpeed",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%timeToMaxSpeed%",
+      "label": "Time To Max Speed",
+      "description": "Time To Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "configuration.timeToMaxSpeed",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%cancelable%",
+      "label": "Cancelable",
+      "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.cancelable",
+      "valueType": "boolean",
+      "previewValue": true,
+      "previewText": "On"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.baseCooldown",
+        "displayName": "Base Cooldown",
+        "label": "Base Cooldown",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base cooldown in seconds before upgrades, modifiers, or runtime reductions are applied.",
+        "defaultValue": 0.5,
+        "currentValue": 0.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.castingTime",
+        "displayName": "Casting Time",
+        "label": "Casting Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Casting Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0.1,
+        "currentValue": 0.1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_Time",
+        "displayName": "Speed Curve / Key 1 / M Time",
+        "label": "M Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "M Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].time",
+        "displayName": "Speed Curve / Key 1 / Time",
+        "label": "Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_Time",
+        "displayName": "Speed Curve / Key 2 / M Time",
+        "label": "M Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "M Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].time",
+        "displayName": "Speed Curve / Key 2 / Time",
+        "label": "Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.startCooldownTime",
+        "displayName": "Starting Cooldown",
+        "label": "Starting Cooldown",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cooldown already applied when the match starts. Higher values delay the first use longer.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.dashSpeedEnd",
+        "displayName": "Dash Speed End",
+        "label": "Dash Speed End",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Dash Speed End value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 10,
+        "currentValue": 10,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.dashSpeedStart",
+        "displayName": "Dash Speed Start",
+        "label": "Dash Speed Start",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Dash Speed Start value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.impulseDecelSpeed",
+        "displayName": "Impulse Decel Speed",
+        "label": "Impulse Decel Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Impulse Decel Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.timeToMaxSpeed",
+        "displayName": "Time To Max Speed",
+        "label": "Time To Max Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Time To Max Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.cancelable",
+        "displayName": "Cancelable",
+        "label": "Cancelable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.silenceable",
+        "displayName": "Silenceable",
+        "label": "Silenceable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.usableWhileDowned",
+        "displayName": "Usable While Downed",
+        "label": "Usable While Downed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.dashDecel",
+        "displayName": "Dash Decel",
+        "label": "Dash Decel",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Dash Decel. Edit \u0060configuration.dashDecel\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": -20,
+        "currentValue": -20,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 800,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 80,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 800,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.dashImpulse",
+        "displayName": "Dash Impulse",
+        "label": "Dash Impulse",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Dash Impulse. Edit \u0060configuration.dashImpulse\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 9,
+        "currentValue": 9,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 360,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 36,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 360,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.driveCost",
+        "displayName": "Drive Cost",
+        "label": "Drive Cost",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Drive Cost. Edit \u0060configuration.driveCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1.2,
+        "currentValue": 1.2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 48.00000190734863,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4.800000190734863,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 48.00000190734863,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.impulseCost",
+        "displayName": "Impulse Cost",
+        "label": "Impulse Cost",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Impulse Cost. Edit \u0060configuration.impulseCost\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 6,
+        "currentValue": 6,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 240,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 24,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 240,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.inputType",
+        "displayName": "Input Type",
+        "label": "Input Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+        "defaultValue": "Down",
+        "currentValue": "Down",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.maxVelocity",
+        "displayName": "Max Velocity",
+        "label": "Max Velocity",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Max Velocity. Edit \u0060configuration.maxVelocity\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 3,
+        "currentValue": 3,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 120,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 12,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 120,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].inTangent",
+        "displayName": "Speed Curve / Key 1 / In Tangent",
+        "label": "In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[0].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].inWeight",
+        "displayName": "Speed Curve / Key 1 / In Weight",
+        "label": "In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[0].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_InTangent",
+        "displayName": "Speed Curve / Key 1 / M In Tangent",
+        "label": "M In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[0].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_InWeight",
+        "displayName": "Speed Curve / Key 1 / M In Weight",
+        "label": "M In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[0].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_OutTangent",
+        "displayName": "Speed Curve / Key 1 / M Out Tangent",
+        "label": "M Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[0].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_OutWeight",
+        "displayName": "Speed Curve / Key 1 / M Out Weight",
+        "label": "M Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[0].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_Value",
+        "displayName": "Speed Curve / Key 1 / M Value",
+        "label": "M Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[0].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].m_WeightedMode",
+        "displayName": "Speed Curve / Key 1 / M Weighted Mode",
+        "label": "M Weighted Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[0].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].outTangent",
+        "displayName": "Speed Curve / Key 1 / Out Tangent",
+        "label": "Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[0].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].outWeight",
+        "displayName": "Speed Curve / Key 1 / Out Weight",
+        "label": "Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[0].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].tangentMode",
+        "displayName": "Speed Curve / Key 1 / Tangent Mode",
+        "label": "Tangent Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[0].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].tangentModeInternal",
+        "displayName": "Speed Curve / Key 1 / Tangent Mode Internal",
+        "label": "Tangent Mode Internal",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[0].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].value",
+        "displayName": "Speed Curve / Key 1 / Value",
+        "label": "Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[0].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[0].weightedMode",
+        "displayName": "Speed Curve / Key 1 / Weighted Mode",
+        "label": "Weighted Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[0].weightedMode\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].inTangent",
+        "displayName": "Speed Curve / Key 2 / In Tangent",
+        "label": "In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Tangent. Edit \u0060configuration.speedCurve.keys[1].inTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].inWeight",
+        "displayName": "Speed Curve / Key 2 / In Weight",
+        "label": "In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for In Weight. Edit \u0060configuration.speedCurve.keys[1].inWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_InTangent",
+        "displayName": "Speed Curve / Key 2 / M In Tangent",
+        "label": "M In Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Tangent. Edit \u0060configuration.speedCurve.keys[1].m_InTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_InWeight",
+        "displayName": "Speed Curve / Key 2 / M In Weight",
+        "label": "M In Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M In Weight. Edit \u0060configuration.speedCurve.keys[1].m_InWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_OutTangent",
+        "displayName": "Speed Curve / Key 2 / M Out Tangent",
+        "label": "M Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Tangent. Edit \u0060configuration.speedCurve.keys[1].m_OutTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_OutWeight",
+        "displayName": "Speed Curve / Key 2 / M Out Weight",
+        "label": "M Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Out Weight. Edit \u0060configuration.speedCurve.keys[1].m_OutWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_Value",
+        "displayName": "Speed Curve / Key 2 / M Value",
+        "label": "M Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for M Value. Edit \u0060configuration.speedCurve.keys[1].m_Value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].m_WeightedMode",
+        "displayName": "Speed Curve / Key 2 / M Weighted Mode",
+        "label": "M Weighted Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for M Weighted Mode. Edit \u0060configuration.speedCurve.keys[1].m_WeightedMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].outTangent",
+        "displayName": "Speed Curve / Key 2 / Out Tangent",
+        "label": "Out Tangent",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Tangent. Edit \u0060configuration.speedCurve.keys[1].outTangent\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].outWeight",
+        "displayName": "Speed Curve / Key 2 / Out Weight",
+        "label": "Out Weight",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Out Weight. Edit \u0060configuration.speedCurve.keys[1].outWeight\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].tangentMode",
+        "displayName": "Speed Curve / Key 2 / Tangent Mode",
+        "label": "Tangent Mode",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode. Edit \u0060configuration.speedCurve.keys[1].tangentMode\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].tangentModeInternal",
+        "displayName": "Speed Curve / Key 2 / Tangent Mode Internal",
+        "label": "Tangent Mode Internal",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Tangent Mode Internal. Edit \u0060configuration.speedCurve.keys[1].tangentModeInternal\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].value",
+        "displayName": "Speed Curve / Key 2 / Value",
+        "label": "Value",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Value. Edit \u0060configuration.speedCurve.keys[1].value\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.keys[1].weightedMode",
+        "displayName": "Speed Curve / Key 2 / Weighted Mode",
+        "label": "Weighted Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Weighted Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.keys[1].weightedMode\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.postWrapMode",
+        "displayName": "Speed Curve / Post Wrap Mode",
+        "label": "Post Wrap Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Post Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.postWrapMode\u0060.",
+        "defaultValue": "ClampForever",
+        "currentValue": "ClampForever",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.preWrapMode",
+        "displayName": "Speed Curve / Pre Wrap Mode",
+        "label": "Pre Wrap Mode",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Pre Wrap Mode. This controls the string or named reference stored at \u0060configuration.speedCurve.preWrapMode\u0060.",
+        "defaultValue": "ClampForever",
+        "currentValue": "ClampForever",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.Guid.IsNull",
+        "displayName": "Sfx Cast / Guid / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.IsNull",
+        "displayName": "Sfx Cast / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.order",
+        "displayName": "Order",
+        "label": "Order",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Sort order used by the game UI or internal lists.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "id",
+        "displayName": "ID",
+        "label": "ID",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Internal identifier for this entry. Changing IDs can break references from pools, managers, or other data.",
+        "defaultValue": 10,
+        "currentValue": 10,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 400,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 400,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data1",
+        "displayName": "Sfx Cast / Guid / Data 1",
+        "label": "Data 1",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 1. Edit \u0060configuration.sfxCast.Guid.Data1\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1886659981,
+        "currentValue": 1886659981,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 75466399240,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7546639924,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 75466399240,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data2",
+        "displayName": "Sfx Cast / Guid / Data 2",
+        "label": "Data 2",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 2. Edit \u0060configuration.sfxCast.Guid.Data2\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1251633814,
+        "currentValue": 1251633814,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 50065352560,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 5006535256,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 50065352560,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data3",
+        "displayName": "Sfx Cast / Guid / Data 3",
+        "label": "Data 3",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 3. Edit \u0060configuration.sfxCast.Guid.Data3\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 1997949363,
+        "currentValue": 1997949363,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 79917974520,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7991797452,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 79917974520,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.sfxCast.Guid.Data4",
+        "displayName": "Sfx Cast / Guid / Data 4",
+        "label": "Data 4",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 4. Edit \u0060configuration.sfxCast.Guid.Data4\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": -1641868450,
+        "currentValue": -1641868450,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 65674738000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 6567473800,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 65674738000,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.speedCurve.length",
+        "displayName": "Speed Curve / Length",
+        "label": "Length",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Length. Edit \u0060configuration.speedCurve.length\u0060 to change how \u0060Item_Ability_OxygenDash#440/Behaviour\u0060 behaves.",
+        "defaultValue": 2,
+        "currentValue": 2,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemBehaviour",
+        "targetKey": "Item_Ability_OxygenDash#440/Behaviour",
+        "path": "configuration.vfxCastPrefab",
+        "displayName": "Vfx Cast Prefab",
+        "label": "Vfx Cast Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Vfx Cast Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:VFX_MoveDash_Trail",
+        "currentValue": "GameObject:VFX_MoveDash_Trail",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      }
+    ],
+    "defaults": {
+      "configuration.baseCooldown": 0.5,
+      "configuration.cancelable": true,
+      "configuration.castingTime": 0.1,
+      "configuration.dashDecel": -20,
+      "configuration.dashImpulse": 9,
+      "configuration.dashSpeedEnd": 10,
+      "configuration.dashSpeedStart": 0,
+      "configuration.driveCost": 1.2,
+      "configuration.impulseCost": 6,
+      "configuration.impulseDecelSpeed": 4,
+      "configuration.inputType": "Down",
+      "configuration.maxVelocity": 3,
+      "configuration.order": 0,
+      "configuration.sfxCast.Guid.Data1": 1886659981,
+      "configuration.sfxCast.Guid.Data2": 1251633814,
+      "configuration.sfxCast.Guid.Data3": 1997949363,
+      "configuration.sfxCast.Guid.Data4": -1641868450,
+      "configuration.sfxCast.Guid.IsNull": false,
+      "configuration.sfxCast.IsNull": false,
+      "configuration.silenceable": true,
+      "configuration.speedCurve.keys[0].inTangent": 0,
+      "configuration.speedCurve.keys[0].inWeight": 0,
+      "configuration.speedCurve.keys[0].m_InTangent": 0,
+      "configuration.speedCurve.keys[0].m_InWeight": 0,
+      "configuration.speedCurve.keys[0].m_OutTangent": 0,
+      "configuration.speedCurve.keys[0].m_OutWeight": 0,
+      "configuration.speedCurve.keys[0].m_Time": 0,
+      "configuration.speedCurve.keys[0].m_Value": 0,
+      "configuration.speedCurve.keys[0].m_WeightedMode": 0,
+      "configuration.speedCurve.keys[0].outTangent": 0,
+      "configuration.speedCurve.keys[0].outWeight": 0,
+      "configuration.speedCurve.keys[0].tangentMode": 0,
+      "configuration.speedCurve.keys[0].tangentModeInternal": 0,
+      "configuration.speedCurve.keys[0].time": 0,
+      "configuration.speedCurve.keys[0].value": 0,
+      "configuration.speedCurve.keys[0].weightedMode": "None",
+      "configuration.speedCurve.keys[1].inTangent": 2,
+      "configuration.speedCurve.keys[1].inWeight": 0,
+      "configuration.speedCurve.keys[1].m_InTangent": 2,
+      "configuration.speedCurve.keys[1].m_InWeight": 0,
+      "configuration.speedCurve.keys[1].m_OutTangent": 2,
+      "configuration.speedCurve.keys[1].m_OutWeight": 0,
+      "configuration.speedCurve.keys[1].m_Time": 1,
+      "configuration.speedCurve.keys[1].m_Value": 1,
+      "configuration.speedCurve.keys[1].m_WeightedMode": 0,
+      "configuration.speedCurve.keys[1].outTangent": 2,
+      "configuration.speedCurve.keys[1].outWeight": 0,
+      "configuration.speedCurve.keys[1].tangentMode": 0,
+      "configuration.speedCurve.keys[1].tangentModeInternal": 0,
+      "configuration.speedCurve.keys[1].time": 1,
+      "configuration.speedCurve.keys[1].value": 1,
+      "configuration.speedCurve.keys[1].weightedMode": "None",
+      "configuration.speedCurve.length": 2,
+      "configuration.speedCurve.postWrapMode": "ClampForever",
+      "configuration.speedCurve.preWrapMode": "ClampForever",
+      "configuration.startCooldownTime": 1,
+      "configuration.timeToMaxSpeed": 4,
+      "configuration.usableWhileDowned": false,
+      "configuration.vfxCastPrefab": "GameObject:VFX_MoveDash_Trail",
+      "id": 10
+    },
+    "effectiveValues": {
+      "configuration.baseCooldown": 0.5,
+      "configuration.cancelable": true,
+      "configuration.castingTime": 0.1,
+      "configuration.dashDecel": -20,
+      "configuration.dashImpulse": 9,
+      "configuration.dashSpeedEnd": 10,
+      "configuration.dashSpeedStart": 0,
+      "configuration.driveCost": 1.2,
+      "configuration.impulseCost": 6,
+      "configuration.impulseDecelSpeed": 4,
+      "configuration.inputType": "Down",
+      "configuration.maxVelocity": 3,
+      "configuration.order": 0,
+      "configuration.sfxCast.Guid.Data1": 1886659981,
+      "configuration.sfxCast.Guid.Data2": 1251633814,
+      "configuration.sfxCast.Guid.Data3": 1997949363,
+      "configuration.sfxCast.Guid.Data4": -1641868450,
+      "configuration.sfxCast.Guid.IsNull": false,
+      "configuration.sfxCast.IsNull": false,
+      "configuration.silenceable": true,
+      "configuration.speedCurve.keys[0].inTangent": 0,
+      "configuration.speedCurve.keys[0].inWeight": 0,
+      "configuration.speedCurve.keys[0].m_InTangent": 0,
+      "configuration.speedCurve.keys[0].m_InWeight": 0,
+      "configuration.speedCurve.keys[0].m_OutTangent": 0,
+      "configuration.speedCurve.keys[0].m_OutWeight": 0,
+      "configuration.speedCurve.keys[0].m_Time": 0,
+      "configuration.speedCurve.keys[0].m_Value": 0,
+      "configuration.speedCurve.keys[0].m_WeightedMode": 0,
+      "configuration.speedCurve.keys[0].outTangent": 0,
+      "configuration.speedCurve.keys[0].outWeight": 0,
+      "configuration.speedCurve.keys[0].tangentMode": 0,
+      "configuration.speedCurve.keys[0].tangentModeInternal": 0,
+      "configuration.speedCurve.keys[0].time": 0,
+      "configuration.speedCurve.keys[0].value": 0,
+      "configuration.speedCurve.keys[0].weightedMode": "None",
+      "configuration.speedCurve.keys[1].inTangent": 2,
+      "configuration.speedCurve.keys[1].inWeight": 0,
+      "configuration.speedCurve.keys[1].m_InTangent": 2,
+      "configuration.speedCurve.keys[1].m_InWeight": 0,
+      "configuration.speedCurve.keys[1].m_OutTangent": 2,
+      "configuration.speedCurve.keys[1].m_OutWeight": 0,
+      "configuration.speedCurve.keys[1].m_Time": 1,
+      "configuration.speedCurve.keys[1].m_Value": 1,
+      "configuration.speedCurve.keys[1].m_WeightedMode": 0,
+      "configuration.speedCurve.keys[1].outTangent": 2,
+      "configuration.speedCurve.keys[1].outWeight": 0,
+      "configuration.speedCurve.keys[1].tangentMode": 0,
+      "configuration.speedCurve.keys[1].tangentModeInternal": 0,
+      "configuration.speedCurve.keys[1].time": 1,
+      "configuration.speedCurve.keys[1].value": 1,
+      "configuration.speedCurve.keys[1].weightedMode": "None",
+      "configuration.speedCurve.length": 2,
+      "configuration.speedCurve.postWrapMode": "ClampForever",
+      "configuration.speedCurve.preWrapMode": "ClampForever",
+      "configuration.startCooldownTime": 1,
+      "configuration.timeToMaxSpeed": 4,
+      "configuration.usableWhileDowned": false,
+      "configuration.vfxCastPrefab": "GameObject:VFX_MoveDash_Trail",
+      "id": 10
+    }
+  }
+}

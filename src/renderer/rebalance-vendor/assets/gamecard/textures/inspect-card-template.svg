@@ -1,0 +1,49 @@
+<svg width="408" height="570" viewBox="0 0 408 570" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="frame" x1="18" y1="12" x2="378" y2="556" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAF7FF"/>
+      <stop offset="1" stop-color="#C3C4E8"/>
+    </linearGradient>
+    <linearGradient id="inner" x1="204" y1="26" x2="204" y2="548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171925"/>
+      <stop offset="0.56" stop-color="#232735"/>
+      <stop offset="1" stop-color="#34384A"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="204" y1="327" x2="204" y2="486" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#242634"/>
+      <stop offset="1" stop-color="#1A1E2B"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="52" y1="66" x2="330" y2="485" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="9" y="8" width="390" height="554" rx="20" fill="url(#frame)"/>
+  <path d="M29 44C29 32.9543 37.9543 24 49 24H358C369.046 24 378 32.9543 378 44V526C378 537.046 369.046 546 358 546H49C37.9543 546 29 537.046 29 526V44Z" fill="url(#inner)"/>
+  <path d="M61 24H162L138 48H29V44C29 32.9543 37.9543 24 49 24H61Z" fill="url(#frame)"/>
+  <path d="M180 24H318L292 46H154L180 24Z" fill="url(#frame)"/>
+  <path d="M340 24H358C369.046 24 378 32.9543 378 44V61H364C350.193 61 339 49.8071 339 36V25C339 24.4477 339.448 24 340 24Z" fill="url(#frame)"/>
+  <path d="M360 31C365.523 31 370 35.4772 370 41V55H362C356.477 55 352 50.5228 352 45V31H360Z" fill="#141824"/>
+  <path d="M37 50L48.5 29L60 50L48.5 39.5L37 50Z" fill="#0E1320"/>
+  <path d="M48.5 61L37 40L48.5 50.5L60 40L48.5 61Z" fill="#0E1320"/>
+
+  <path d="M54 66H351L320 96L347 130V301H61V98L54 92V66Z" fill="#161A26"/>
+  <path d="M70 355H338L338 488H70V355Z" fill="url(#panel)"/>
+  <path d="M57 355L72 340H136L149 352L260 352L274 340H338L352 355V486L338 500H70L57 486V355Z" fill="url(#panel)"/>
+
+  <path d="M100 161L212 49H336L224 161H100Z" fill="url(#shine)" fill-opacity="0.28"/>
+  <path d="M226 541L378 389V526C378 537.046 369.046 546 358 546H226Z" fill="url(#shine)" fill-opacity="0.14"/>
+  <path d="M57 304L211 150V187L96 302H57V304Z" fill="#0D111B" fill-opacity="0.46"/>
+  <path d="M296 111L344 63L378 98V211L296 163V111Z" fill="#0E111B" fill-opacity="0.24"/>
+  <path d="M73 474L194 353H246L125 474H73Z" fill="#121625" fill-opacity="0.26"/>
+
+  <path d="M165 279H243L255 286L243 293H165L153 286L165 279Z" fill="url(#frame)"/>
+  <path d="M198 286L204 279L210 286L204 293L198 286Z" fill="#0E1320"/>
+
+  <path d="M29 514H44V532H61" stroke="url(#frame)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M79 537H174" stroke="url(#frame)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M184 537H194" stroke="url(#frame)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M219 537H330" stroke="url(#frame)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M370 80V526C370 532.627 364.627 538 358 538H49C42.3726 538 37 532.627 37 526V44C37 37.3726 42.3726 32 49 32H358C364.627 32 370 37.3726 370 44V66" stroke="#F5F4FF" stroke-opacity="0.42" stroke-width="2"/>
+</svg>

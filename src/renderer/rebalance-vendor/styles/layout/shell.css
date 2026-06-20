@@ -1,0 +1,230 @@
+/* ==========================================================================
+   Shell Layout — Root grid (sidebar + main content)
+   Requirements: 2.4, 11.1, 11.3, 17.1, 17.5
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Root container
+   -------------------------------------------------------------------------- */
+
+.rebalance-root {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: var(--space-xl, 24px);
+  align-items: start;
+  min-height: 100%;
+  color: var(--text, #f6f3ee);
+  font-family: var(--body-font, "BAPBAP Archivo");
+}
+
+/* Embedded root: single column — the internal .rebalance-embedded-shell
+   handles its own 2-column grid when the drawer is open */
+.rebalance-embedded-root {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: var(--text, #f6f3ee);
+  font-family: var(--body-font, "BAPBAP Archivo");
+}
+
+/* --------------------------------------------------------------------------
+   Embedded shell — drawer closed: single column, full width
+   -------------------------------------------------------------------------- */
+
+.rebalance-embedded-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  min-height: 100%;
+  transition: grid-template-columns 180ms ease;
+}
+
+/* Embedded shell — drawer open: sidebar + content */
+.rebalance-embedded-shell[data-tool-rail-expanded="true"] {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   Embedded main — fills available width without artificial cap
+   -------------------------------------------------------------------------- */
+
+.rebalance-embedded-main {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  /* Use transform instead of margin/padding transitions to avoid layout recalc */
+  transition: transform 180ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   Embedded stage — fills available space
+   -------------------------------------------------------------------------- */
+
+.rebalance-embedded-stage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  flex: 1;
+  transition: transform 180ms ease;
+}
+
+/* Collapsed sidebar variant (48px icon rail) — only for non-embedded */
+.rebalance-root.is-sidebar-collapsed {
+  grid-template-columns: 48px minmax(0, 1fr);
+}
+
+/* --------------------------------------------------------------------------
+   Main content area — width constraints & centering
+   -------------------------------------------------------------------------- */
+
+.rebalance-root > .rebalance-main,
+.rebalance-embedded-root > .rebalance-main,
+.rebalance-root > .rebalance-embedded-main,
+.rebalance-embedded-root > .rebalance-embedded-main {
+  min-width: 0;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  padding-inline: var(--space-xl, 24px);
+}
+
+/* Single-column pages (no sidebar) get their own width floor */
+.rebalance-page-content {
+  min-width: 0;
+  max-width: none;
+  width: 100%;
+  padding-inline: var(--space-xl, 24px);
+}
+
+/* When page-content lives inside the main grid area, don't fight the parent */
+.rebalance-embedded-main .rebalance-page-content,
+.rebalance-embedded-stage .rebalance-page-content {
+  min-width: 0;
+  max-width: none;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Ultrawide (>2560px) — cap content width, auto-center
+   -------------------------------------------------------------------------- */
+
+@media (min-width: 2560px) {
+  .rebalance-root > .rebalance-main,
+  .rebalance-embedded-root > .rebalance-main,
+  .rebalance-root > .rebalance-embedded-main,
+  .rebalance-embedded-root > .rebalance-embedded-main,
+  .rebalance-page-content {
+    max-width: 1400px;
+    margin-inline: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Wide viewports (>1280px) — full sidebar, comfortable spacing
+   Already the default above — nothing extra needed.
+   -------------------------------------------------------------------------- */
+
+/* --------------------------------------------------------------------------
+   Medium viewports (900px–1280px) — reduced sidebar width
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+  .rebalance-root {
+    grid-template-columns: 200px minmax(0, 1fr);
+    gap: var(--space-lg, 24px);
+  }
+
+  .rebalance-root.is-sidebar-collapsed {
+    grid-template-columns: 48px minmax(0, 1fr);
+  }
+
+  .rebalance-embedded-shell[data-tool-rail-expanded="true"] {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  .rebalance-root > .rebalance-main,
+  .rebalance-embedded-root > .rebalance-main,
+  .rebalance-root > .rebalance-embedded-main,
+  .rebalance-embedded-root > .rebalance-embedded-main,
+  .rebalance-page-content {
+    padding-inline: var(--space-lg, 24px);
+    overflow: hidden;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Narrow viewports (<900px) — sidebar collapses/overlays, single column
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 899px) {
+  .rebalance-root,
+  .rebalance-root.is-sidebar-collapsed {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  /* Sidebar becomes an overlay on narrow viewports */
+  .rebalance-root > .rebalance-sidebar,
+  .rebalance-root > [class*="sidebar"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    background: var(--bg-0, #1a1a2e);
+  }
+
+  /* Show sidebar overlay when toggled open */
+  .rebalance-root > .rebalance-sidebar.is-open,
+  .rebalance-root > [class*="sidebar"].is-open {
+    transform: translateX(0);
+  }
+
+  /* Embedded shell drawer also overlays at narrow */
+  .rebalance-embedded-shell[data-tool-rail-expanded="true"] {
+    grid-template-columns: minmax(0, 1fr);
+    position: relative;
+  }
+
+  .rebalance-embedded-shell[data-tool-rail-expanded="true"] > :first-child {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 240px;
+    height: 100vh;
+    overflow-y: auto;
+    background: var(--bg-0, #1a1a2e);
+  }
+
+  .rebalance-page-content {
+    min-width: 0;
+    padding-inline: var(--space-sm, 0.5rem);
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
+  .rebalance-root > .rebalance-main,
+  .rebalance-embedded-root > .rebalance-main,
+  .rebalance-root > .rebalance-embedded-main,
+  .rebalance-embedded-root > .rebalance-embedded-main {
+    padding-inline: var(--space-sm, 0.5rem);
+    overflow: hidden;
+    max-width: 100vw;
+  }
+
+  .rebalance-embedded-shell,
+  .rebalance-embedded-stage {
+    overflow: hidden;
+    max-width: 100vw;
+  }
+}

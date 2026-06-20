@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Consumable_Explosive_C4#11",
+  "generatedAtUtc": "2026-04-15T22:56:10.4536349Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Consumable_Explosive_C4#11",
+      "displayName": "Item",
+      "file": "0011_Consumable_Explosive_C4.json"
+    },
+    {
+      "targetType": "ItemConsumableBehaviour",
+      "targetKey": "Consumable_Explosive_C4#11/ConsumableBehaviour",
+      "displayName": "Consumable Behaviour",
+      "file": "ConsumableBehaviour.json"
+    }
+  ]
+}

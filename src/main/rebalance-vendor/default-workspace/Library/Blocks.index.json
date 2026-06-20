@@ -1,0 +1,461 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-04-15T22:56:04.8242440Z",
+  "instructions": [
+    "These blocks are the reusable building pieces the launcher can offer in guided Add-from-Library flows.",
+    "pathHints are best-effort locations that match the current runtime export format.",
+    "editableValueKeys are the inputs a launcher should ask the user for before applying a block."
+  ],
+  "entries": [
+    {
+      "blockId": "basic.health",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Health",
+      "description": "Set or rebalance health-related values such as base HP, max HP, or bonus health.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "CharacterHurtbox",
+        "Passive"
+      ],
+      "pathHints": [
+        "baseHp",
+        "maxHp",
+        "hp",
+        "configuration.levelStats.levels[0].tiers[0].stats[0].value"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.damage",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Damage",
+      "description": "Change direct damage values for passives, abilities, or item effects.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.levelStats.levels[0].tiers[0].damage",
+        "damage"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.cooldown",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Cooldown",
+      "description": "Change base cooldown timing for abilities or augments.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour",
+        "CharacterAbilitySwap"
+      ],
+      "pathHints": [
+        "configuration.levelStats.levels[0].tiers[0].baseCooldown",
+        "cooldown"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.duration",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Duration",
+      "description": "Change how long an effect, projectile, status, or buff lasts.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.ttl",
+        "duration",
+        "configuration.levelStats.levels[0].tiers[0].duration"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Speed",
+      "description": "Change travel speed or movement-related speed values.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "CharacterMovement",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.speed",
+        "speed",
+        "runSpeed",
+        "walkSpeed"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.size",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Size",
+      "description": "Change gameplay-affecting size, scale, or radius values.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "scale",
+        "addSize",
+        "radius",
+        "pullRadius"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.range",
+      "category": "Basics",
+      "family": "Stats",
+      "label": "Range",
+      "description": "Adjust range-like values such as radius, reach, spawn distance, or lifetime-based range.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "range",
+        "radius",
+        "forwardSpawnAmount",
+        "configuration.range"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "basic.price",
+      "category": "Basics",
+      "family": "Items",
+      "label": "Price",
+      "description": "Adjust the price or cost of an item, pin, or lootable ability.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Item"
+      ],
+      "pathHints": [
+        "price",
+        "configuration.price"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "presentation.title",
+      "category": "Basics",
+      "family": "Presentation",
+      "label": "Title",
+      "description": "Set a literal title for a custom augment or visual entry.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "Item"
+      ],
+      "pathHints": [
+        "configuration.nameTrKey",
+        "title"
+      ],
+      "editableValueKeys": [
+        "text"
+      ]
+    },
+    {
+      "blockId": "presentation.description",
+      "category": "Basics",
+      "family": "Presentation",
+      "label": "Description",
+      "description": "Set a literal description shown in the UI for a custom augment or item.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "Item"
+      ],
+      "pathHints": [
+        "configuration.descriptionTrKey",
+        "description"
+      ],
+      "editableValueKeys": [
+        "text"
+      ]
+    },
+    {
+      "blockId": "presentation.short-description",
+      "category": "Basics",
+      "family": "Presentation",
+      "label": "Short Description",
+      "description": "Set the shorter card-summary text shown for a custom augment or item.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "Item"
+      ],
+      "pathHints": [
+        "configuration.shortDescriptionTrKey",
+        "configuration.ShortDescLabel"
+      ],
+      "editableValueKeys": [
+        "text"
+      ]
+    },
+    {
+      "blockId": "presentation.icon",
+      "category": "Basics",
+      "family": "Presentation",
+      "label": "Icon",
+      "description": "Choose a different existing game icon for this target.",
+      "riskLevel": "safe",
+      "supportedTargetTypes": [
+        "Passive",
+        "Item"
+      ],
+      "pathHints": [
+        "configuration.icon",
+        "icon"
+      ],
+      "editableValueKeys": [
+        "sourcePassiveKey"
+      ]
+    },
+    {
+      "blockId": "ability.target",
+      "category": "Effects",
+      "family": "Ability Targeting",
+      "label": "Target Ability",
+      "description": "Retarget a passive or augment so it affects another ability slot.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive"
+      ],
+      "pathHints": [
+        "configuration.targetAbility"
+      ],
+      "editableValueKeys": [
+        "value"
+      ]
+    },
+    {
+      "blockId": "effect.status-burn",
+      "category": "Effects",
+      "family": "Status Effects",
+      "label": "Burn",
+      "description": "Attach or rebalance a burn-style status effect.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.statusEffects",
+        "statusEffects"
+      ],
+      "editableValueKeys": [
+        "duration",
+        "multiplier"
+      ]
+    },
+    {
+      "blockId": "effect.status-poison",
+      "category": "Effects",
+      "family": "Status Effects",
+      "label": "Poison",
+      "description": "Attach or rebalance a poison-style status effect.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.statusEffects",
+        "statusEffects"
+      ],
+      "editableValueKeys": [
+        "duration",
+        "multiplier"
+      ]
+    },
+    {
+      "blockId": "effect.status-slow",
+      "category": "Effects",
+      "family": "Status Effects",
+      "label": "Slow",
+      "description": "Attach or rebalance a slow-style status effect.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.statusEffects",
+        "statusEffects"
+      ],
+      "editableValueKeys": [
+        "duration",
+        "multiplier"
+      ]
+    },
+    {
+      "blockId": "effect.status-stun",
+      "category": "Effects",
+      "family": "Status Effects",
+      "label": "Stun",
+      "description": "Attach or rebalance a stun-style status effect.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.statusEffects",
+        "statusEffects"
+      ],
+      "editableValueKeys": [
+        "duration",
+        "multiplier"
+      ]
+    },
+    {
+      "blockId": "effect.status-custom",
+      "category": "Effects",
+      "family": "Status Effects",
+      "label": "Custom Status Effect",
+      "description": "Attach any known status effect reference and tune its duration and multiplier.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "CharacterAbility",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.statusEffects",
+        "statusEffects"
+      ],
+      "editableValueKeys": [
+        "statusEffect",
+        "duration",
+        "multiplier"
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "category": "Effects",
+      "family": "Linked Effects",
+      "label": "Linked Passive",
+      "description": "Swap or clear a linked passive/effect reference.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Passive",
+        "Item",
+        "ItemBehaviour",
+        "ItemConsumableBehaviour"
+      ],
+      "pathHints": [
+        "configuration.passive",
+        "configuration.linkedPassive",
+        "passive"
+      ],
+      "editableValueKeys": [
+        "reference"
+      ]
+    },
+    {
+      "blockId": "effect.pool-entry",
+      "category": "Effects",
+      "family": "Pools",
+      "label": "Pool Entry",
+      "description": "Add, remove, or replace an entry in a known gameplay pool.",
+      "riskLevel": "medium",
+      "supportedTargetTypes": [
+        "Manager",
+        "ItemManager"
+      ],
+      "pathHints": [
+        "allAugmentIds",
+        "genericAugmentIds",
+        "gearItems",
+        "pinGearItems",
+        "lootableAbilities"
+      ],
+      "editableValueKeys": [
+        "entryId"
+      ]
+    },
+    {
+      "blockId": "effect.ability-swap",
+      "category": "Effects",
+      "family": "Character Ability Swap",
+      "label": "Ability Swap",
+      "description": "Swap a character slot to another exported ability source.",
+      "riskLevel": "advanced",
+      "supportedTargetTypes": [
+        "CharacterAbilitySwap"
+      ],
+      "pathHints": [
+        "slots[index].sourceTargetKey"
+      ],
+      "editableValueKeys": [
+        "sourceTargetKey"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Chip / Tag Component Styles
+   Used for badges, categories, and status indicators.
+   ========================================================================== */
+
+/* --- Base Chip ----------------------------------------------------------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 24px;
+  padding: 0 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-2, #10172a);
+  color: var(--text-muted, #a4aec6);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* --- Active / Selected --------------------------------------------------- */
+.chip--active,
+.chip.is-active {
+  background: rgba(88, 113, 255, 0.12);
+  border-color: rgba(88, 113, 255, 0.3);
+  color: #dce5ff;
+}
+
+/* --- Dismissible (has × close button) ------------------------------------ */
+.chip--dismissible {
+  padding-right: 0.4rem;
+}
+
+.chip__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  color: var(--text-muted, #a4aec6);
+  cursor: pointer;
+  transition: color 160ms;
+}
+
+.chip__close:hover {
+  color: #fff;
+}
+
+/* --- Color Variants ------------------------------------------------------ */
+.chip--success {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #86efac;
+}
+
+.chip--warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fcd34d;
+}
+
+.chip--error {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+}
+
+/* --- Interactive (clickable) --------------------------------------------- */
+.chip--interactive {
+  cursor: pointer;
+  transition: background 160ms, border-color 160ms, color 160ms;
+}
+
+.chip--interactive:hover {
+  background: var(--bg-3, #1a2240);
+  border-color: rgba(88, 113, 255, 0.4);
+}
+
+/* --- Legacy badge compat ------------------------------------------------- */
+.v2-badge--muted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 24px;
+  padding: 0 0.6rem;
+  border-radius: 12px;
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-2, #10172a);
+  color: var(--text-muted, #a4aec6);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.v2-badge--highlighted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 24px;
+  padding: 0 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(88, 113, 255, 0.3);
+  background: rgba(88, 113, 255, 0.12);
+  color: #dce5ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Tag / Pill Component — Larger version of chips for categorization
+   ========================================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 28px;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-2, #10172a);
+  color: var(--text, #f6f3ee);
+  font-size: var(--type-caption-size, 0.6875rem);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 150ms, border-color 150ms;
+}
+
+.tag--blue {
+  background: rgba(88, 113, 255, 0.1);
+  border-color: rgba(88, 113, 255, 0.25);
+  color: #c8d4ff;
+}
+
+.tag--green {
+  background: rgba(88, 113, 255, 0.1);
+  border-color: rgba(88, 113, 255, 0.25);
+  color: #93a3ff;
+}
+
+.tag--red {
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.25);
+  color: #fca5a5;
+}
+
+.tag--amber {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fcd34d;
+}
+
+.tag--purple {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.25);
+  color: #d8b4fe;
+}
+
+/* Removable tag (has X button) */
+.tag--removable {
+  padding-right: 0.4rem;
+}
+
+.tag__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 100ms, background 100ms;
+}
+
+.tag__remove:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tag icon */
+.tag__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Filter Chip Bar — Horizontal row of filter/sort options above content
+   ========================================================================== */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm, 8px);
+  padding: var(--space-sm, 8px) 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual filter chip */
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  height: 30px;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  border: 1px solid var(--line, #283456);
+  background: transparent;
+  color: var(--text-muted, #a4aec6);
+  font-size: var(--type-caption-size, 0.6875rem);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms, color 150ms;
+  flex-shrink: 0;
+}
+
+.filter-chip:hover {
+  border-color: rgba(88, 113, 255, 0.3);
+  color: var(--text, #f6f3ee);
+}
+
+.filter-chip.is-active {
+  background: rgba(88, 113, 255, 0.1);
+  border-color: rgba(88, 113, 255, 0.3);
+  color: #c8d4ff;
+  font-weight: 600;
+}
+
+/* Filter chip with count */
+.filter-chip__count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: rgba(88, 113, 255, 0.15);
+  color: #8ea4ff;
+  font-size: 0.5625rem;
+  font-weight: 700;
+}
+
+/* Sort direction indicator */
+.filter-chip__sort-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0.6;
+  transition: transform 200ms;
+}
+
+.filter-chip.is-active .filter-chip__sort-icon {
+  opacity: 1;
+}
+
+.filter-chip.is-desc .filter-chip__sort-icon {
+  transform: rotate(180deg);
+}
+
+/* Clear all filters button */
+.filter-bar__clear {
+  font-size: var(--type-caption-size, 0.6875rem);
+  color: var(--text-muted, #a4aec6);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0.25rem 0.5rem;
+  transition: color 150ms;
+  flex-shrink: 0;
+}
+
+.filter-bar__clear:hover {
+  color: var(--text, #f6f3ee);
+}

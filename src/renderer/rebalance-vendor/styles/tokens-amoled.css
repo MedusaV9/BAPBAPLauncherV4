@@ -1,0 +1,66 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Rebalance AMOLED Theme Variant (Phase 3 Task 21)
+   --------------------------------------------------------------------------
+   True-black surface theme designed for OLED panels. Triggered by
+   `body[data-theme="amoled"]`. Backgrounds drop to #000 / near-#000 to
+   maximise pixel-off energy savings while accent colours and text contrast
+   stay identical to the default dark theme.
+   ========================================================================== */
+
+body[data-theme="amoled"] {
+  /* ---- Surfaces: true black to near-black ---- */
+  --bg-0: #000000;
+  --bg-1: #060606;
+  --bg-2: #0d0d0d;
+  --bg-3: #161616;
+
+  /* ---- Glassmorphism (very dark) ---- */
+  --bg-1-glass: rgba(6, 6, 6, 0.82);
+  --bg-2-glass: rgba(13, 13, 13, 0.84);
+  --line-glass: rgba(255, 255, 255, 0.06);
+  --blur-glass: blur(16px);
+
+  /* ---- Text (preserved) ---- */
+  --text: #f8fafc;
+  --text-muted: #94a3b8;
+
+  /* ---- Borders: very subtle on true black ---- */
+  --line: rgba(255, 255, 255, 0.08);
+
+  /* ---- Brand accents (preserved for cross-theme identity) ---- */
+  --accent: #6366f1;
+  --accent-warm: #f59e0b;
+  --accent-cool: #3b82f6;
+  --accent-lime: #818cf8;
+
+  /* ---- Special ---- */
+  --paper: #f1f5f9;
+  --ok: #3b82f6;
+
+  /* ---- Buttons: cream primary on AMOLED black ---- */
+  --button-primary-bg: var(--paper);
+  --button-primary-text: var(--bg-0);
+  --button-primary-hover: #ffffff;
+  --button-active-border: var(--accent-cool);
+  --button-active-ring: rgba(88, 113, 255, 0.22);
+
+  /* ---- Backward-compatible aliases ---- */
+  --surface-base: var(--bg-0);
+  --surface-panel: var(--bg-1);
+  --surface-elevated: var(--bg-2);
+  --text-primary: var(--text);
+  --text-heading: var(--text);
+  --border-subtle: var(--line);
+  --border-medium: var(--line);
+  --action-primary: var(--paper);
+  --active-border: var(--accent-cool);
+  --active-bg: var(--bg-2);
+  --active-ring: rgba(88, 113, 255, 0.22);
+
+  /* ---- Shadows: deeper on true black ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.45);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.65);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.75);
+  --shadow-focus: 0 0 0 3px rgba(88, 113, 255, 0.40);
+}

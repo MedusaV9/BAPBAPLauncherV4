@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "LastChance_T5#125",
+  "generatedAtUtc": "2026-03-26T22:05:33.8580235Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "LastChance_T5#125",
+      "displayName": "Item",
+      "file": "0125_LastChance_T5.json"
+    }
+  ]
+}

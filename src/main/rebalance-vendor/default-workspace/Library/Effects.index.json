@@ -1,0 +1,148 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:05:38.9989835Z",
+  "instructions": [
+    "These effect families group common gameplay concepts into simpler launcher categories.",
+    "commonFields lists the most common runtime field names that show up for that effect family."
+  ],
+  "entries": [
+    {
+      "effectId": "stats.health",
+      "family": "Stats",
+      "label": "Health",
+      "description": "HP, max HP, shield, and bonus-health style values.",
+      "commonFields": [
+        "baseHp",
+        "hp",
+        "maxHp",
+        "maxShield",
+        "bonusHp"
+      ]
+    },
+    {
+      "effectId": "stats.damage",
+      "family": "Stats",
+      "label": "Damage",
+      "description": "Direct damage, damage scaling, crit damage, and return-damage style values.",
+      "commonFields": [
+        "damage",
+        "damageScaling",
+        "critDamage",
+        "damageReturned"
+      ]
+    },
+    {
+      "effectId": "stats.cooldown",
+      "family": "Stats",
+      "label": "Cooldown",
+      "description": "Cooldown timers, start cooldowns, and cooldown reduction.",
+      "commonFields": [
+        "baseCooldown",
+        "cooldown",
+        "startCooldownTime",
+        "cooldownReduction"
+      ]
+    },
+    {
+      "effectId": "stats.timing",
+      "family": "Stats",
+      "label": "Timing",
+      "description": "Durations, lifetime, cast times, tick rates, and time-to-live.",
+      "commonFields": [
+        "duration",
+        "ttl",
+        "castTime",
+        "damageRate"
+      ]
+    },
+    {
+      "effectId": "stats.movement",
+      "family": "Stats",
+      "label": "Movement",
+      "description": "Projectile speed, dash speed, move speed, acceleration, and travel reach.",
+      "commonFields": [
+        "speed",
+        "runSpeed",
+        "walkSpeed",
+        "dashSpeed",
+        "moveAccel"
+      ]
+    },
+    {
+      "effectId": "stats.size",
+      "family": "Stats",
+      "label": "Size",
+      "description": "Gameplay-affecting scale, area, size, and radius values.",
+      "commonFields": [
+        "scale",
+        "addSize",
+        "radius",
+        "pullRadius",
+        "forwardSpawnAmount"
+      ]
+    },
+    {
+      "effectId": "status.effects",
+      "family": "Status Effects",
+      "label": "Status Effects",
+      "description": "Status effect rows such as burn, poison, slow, and custom multipliers.",
+      "commonFields": [
+        "statusEffects",
+        "duration",
+        "multiplier",
+        "statusEffect"
+      ]
+    },
+    {
+      "effectId": "linked.references",
+      "family": "Linked Effects",
+      "label": "Linked Effects",
+      "description": "Effect references that point to another passive, prefab, or behaviour.",
+      "commonFields": [
+        "passive",
+        "linkedPassive",
+        "spellPrefab",
+        "consumableBehaviour"
+      ]
+    },
+    {
+      "effectId": "presentation",
+      "family": "Presentation",
+      "label": "Presentation",
+      "description": "Name, description, short description, icon, and UI visibility settings.",
+      "commonFields": [
+        "nameTrKey",
+        "descriptionTrKey",
+        "shortDescriptionTrKey",
+        "ShortDescLabel",
+        "icon",
+        "showUI"
+      ]
+    },
+    {
+      "effectId": "pools",
+      "family": "Pools",
+      "label": "Pools",
+      "description": "Global and per-character pools for augments and items.",
+      "commonFields": [
+        "allAugmentIds",
+        "genericAugmentIds",
+        "charAugmentIds",
+        "gearItems",
+        "pinGearItems"
+      ]
+    },
+    {
+      "effectId": "ability.swap",
+      "family": "Character Ability Swap",
+      "label": "Ability Swap",
+      "description": "Slot-to-source swaps that replace one character ability with another exported ability.",
+      "commonFields": [
+        "slots",
+        "sourceTargetKey",
+        "previewLabel",
+        "rollbackSourceTargetKey"
+      ]
+    }
+  ]
+}

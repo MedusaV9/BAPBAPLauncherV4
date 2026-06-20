@@ -1,0 +1,25 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ItemIndex",
+  "targetKey": "Consumable_Translocator#47",
+  "generatedAtUtc": "2026-04-15T22:56:11.2159901Z",
+  "instructions": [
+    "Open one of the listed files to edit this item\u0027s main data or one of its deeper behaviour targets.",
+    "The main item file stays stable for compatibility, while child behaviour files expose deeper effect logic when available.",
+    "Legacy overrides stored on the main item file under behaviour.* or consumableBehaviour.* are merged into the matching child file."
+  ],
+  "files": [
+    {
+      "targetType": "Item",
+      "targetKey": "Consumable_Translocator#47",
+      "displayName": "Item",
+      "file": "0047_Consumable_Translocator.json"
+    },
+    {
+      "targetType": "ItemConsumableBehaviour",
+      "targetKey": "Consumable_Translocator#47/ConsumableBehaviour",
+      "displayName": "Consumable Behaviour",
+      "file": "ConsumableBehaviour.json"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "blocks": [
+    {
+      "blockId": "presentation.description",
+      "values": {
+        "text": "A safer poison-focused starter draft for quick testing."
+      }
+    },
+    {
+      "blockId": "basic.damage",
+      "values": {
+        "value": 220
+      }
+    },
+    {
+      "blockId": "effect.status-poison",
+      "values": {
+        "value": 2.5
+      }
+    }
+  ],
+  "description": "A cloned Firewave starter with poison-focused blocks.",
+  "displayName": "Poison Wave",
+  "enabled": true,
+  "icon": {
+    "sourcePassiveKey": "P_Stat_Damage#379"
+  },
+  "id": 5001,
+  "key": "P_CUSTOM_POISON_WAVE",
+  "launcher": {
+    "savedShortDescription": "%damage% damage, %poison%s poison"
+  },
+  "overrides": {
+    "configuration.levelStats.levels[0].tiers[0].damageScaling": 0.92,
+    "configuration.speed": 18,
+    "configuration.ttl": 0.72
+  },
+  "pools": {
+    "addToAllAugments": true,
+    "addToFallbackPool": false,
+    "addToGenericPool": true,
+    "addToStartingTree": true,
+    "addToWildCardRareTree": false,
+    "addToWildCardTree": false,
+    "characterIds": []
+  },
+  "schemaVersion": 1,
+  "shortDescription": "%damage% damage, %poison%s poison",
+  "templatePassiveKey": "P_Firewave#158"
+}

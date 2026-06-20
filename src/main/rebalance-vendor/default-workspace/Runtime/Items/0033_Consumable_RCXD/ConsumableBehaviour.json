@@ -1,0 +1,2899 @@
+﻿{
+  "schemaVersion": 10,
+  "targetType": "ItemConsumableBehaviour",
+  "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+  "displayName": "Consumable Behaviour",
+  "resolvedName": "Consumable Behaviour",
+  "generatedAtUtc": "2026-04-15T23:25:20.5504394Z",
+  "quickEdit": [
+    {
+      "setting": "Active TTL",
+      "category": "Timing",
+      "path": "configuration.activeTtl",
+      "editable": true,
+      "valueType": "number",
+      "value": 12,
+      "defaultValue": 12,
+      "whatItDoes": "Active TTL in seconds. Higher values keep the effect active longer.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cast Time",
+      "category": "Timing",
+      "path": "configuration.castTime",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Cast time in seconds before the ability completes.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Base Half Scale / Indicator Base Half Scale X",
+      "category": "Area",
+      "path": "configuration.indicatorBaseHalfScale.x",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "X-axis value for Indicator Base Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Base Half Scale / Indicator Base Half Scale Y",
+      "category": "Area",
+      "path": "configuration.indicatorBaseHalfScale.y",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Y-axis value for Indicator Base Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Cone Angle",
+      "category": "Area",
+      "path": "configuration.indicatorConeAngle",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Indicator Cone Angle. Edit \u0060configuration.indicatorConeAngle\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+      "valueRange": {
+        "minimum": -1440,
+        "maximum": 1440,
+        "step": 1,
+        "unit": "degrees",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -360,
+        "maximum": 360,
+        "step": 1,
+        "unit": "degrees",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -1440,
+        "maximum": 1440,
+        "step": 1,
+        "unit": "degrees",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Mouse Half Scale / Indicator Mouse Half Scale X",
+      "category": "Area",
+      "path": "configuration.indicatorMouseHalfScale.x",
+      "editable": true,
+      "valueType": "number",
+      "value": 1.5,
+      "defaultValue": 1.5,
+      "whatItDoes": "X-axis value for Indicator Mouse Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Mouse Half Scale / Indicator Mouse Half Scale Y",
+      "category": "Area",
+      "path": "configuration.indicatorMouseHalfScale.y",
+      "editable": true,
+      "valueType": "number",
+      "value": 1.5,
+      "defaultValue": 1.5,
+      "whatItDoes": "Y-axis value for Indicator Mouse Half Scale.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Offset / Indicator Offset X",
+      "category": "Area",
+      "path": "configuration.indicatorOffset.x",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "X-axis value for Indicator Offset.",
+      "valueRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -20,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Indicator Offset / Indicator Offset Y",
+      "category": "Area",
+      "path": "configuration.indicatorOffset.y",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Y-axis value for Indicator Offset.",
+      "valueRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": -20,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -300,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Distance",
+      "category": "Area",
+      "path": "configuration.maxDistance",
+      "editable": true,
+      "valueType": "number",
+      "value": 4,
+      "defaultValue": 4,
+      "whatItDoes": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Point Nav Radius Amount",
+      "category": "Area",
+      "path": "configuration.pointNavRadiusAmount",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Point Nav Radius Amount used for the area, hitbox, or travel reach of this effect.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 30,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 300,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cancelable",
+      "category": "Behavior",
+      "path": "configuration.cancelable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Clamp On Line Of Sight",
+      "category": "Behavior",
+      "path": "configuration.clampOnLineOfSight",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Clamp On Line Of Sight. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Indicator Rotate With Direction",
+      "category": "Behavior",
+      "path": "configuration.indicatorRotateWithDirection",
+      "editable": true,
+      "valueType": "boolean",
+      "value": false,
+      "defaultValue": false,
+      "whatItDoes": "Boolean toggle for Indicator Rotate With Direction. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Interupt Cast On Damage",
+      "category": "Behavior",
+      "path": "configuration.interuptCastOnDamage",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Silenceable",
+      "category": "Behavior",
+      "path": "configuration.silenceable",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Usable While Downed",
+      "category": "Behavior",
+      "path": "configuration.usableWhileDowned",
+      "editable": true,
+      "valueType": "boolean",
+      "value": true,
+      "defaultValue": true,
+      "whatItDoes": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Indicator Prefab",
+      "category": "General",
+      "path": "configuration.indicatorPrefab",
+      "editable": true,
+      "valueType": "reference",
+      "value": "GameObject:Indicator_Ability_Circle_Mouse",
+      "defaultValue": "GameObject:Indicator_Ability_Circle_Mouse",
+      "whatItDoes": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Input Target Ability",
+      "category": "General",
+      "path": "configuration.inputTargetAbility",
+      "editable": true,
+      "valueType": "string",
+      "value": "Ability1",
+      "defaultValue": "Ability1",
+      "whatItDoes": "Text or key value for Input Target Ability. This controls the string or named reference stored at \u0060configuration.inputTargetAbility\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Input Type",
+      "category": "General",
+      "path": "configuration.inputType",
+      "editable": true,
+      "valueType": "string",
+      "value": "Down",
+      "defaultValue": "Down",
+      "whatItDoes": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Motion Lock Type",
+      "category": "General",
+      "path": "configuration.motionLockType",
+      "editable": true,
+      "valueType": "string",
+      "value": "WalkConstantSpeed",
+      "defaultValue": "WalkConstantSpeed",
+      "whatItDoes": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Rotation Lock Type",
+      "category": "General",
+      "path": "configuration.rotationLockType",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for \u0027Consumable Behaviour\u0027. You can change Timing, Area, Behavior, General.",
+    "whatYouCanChange": [
+      "Timing",
+      "Area",
+      "Behavior",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config."
+    ],
+    "groups": [
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Active TTL",
+            "path": "configuration.activeTtl",
+            "editable": true,
+            "valueType": "number",
+            "description": "Active TTL in seconds. Higher values keep the effect active longer.",
+            "defaultValue": 12,
+            "currentValue": 12,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Cast Time",
+            "path": "configuration.castTime",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cast time in seconds before the ability completes.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Area",
+        "entries": [
+          {
+            "name": "Indicator Base Half Scale / Indicator Base Half Scale X",
+            "path": "configuration.indicatorBaseHalfScale.x",
+            "editable": true,
+            "valueType": "number",
+            "description": "X-axis value for Indicator Base Half Scale.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Base Half Scale / Indicator Base Half Scale Y",
+            "path": "configuration.indicatorBaseHalfScale.y",
+            "editable": true,
+            "valueType": "number",
+            "description": "Y-axis value for Indicator Base Half Scale.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Cone Angle",
+            "path": "configuration.indicatorConeAngle",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Indicator Cone Angle. Edit \u0060configuration.indicatorConeAngle\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -1440,
+              "maximum": 1440,
+              "step": 1,
+              "unit": "degrees",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -360,
+              "maximum": 360,
+              "step": 1,
+              "unit": "degrees",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -1440,
+              "maximum": 1440,
+              "step": 1,
+              "unit": "degrees",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Mouse Half Scale / Indicator Mouse Half Scale X",
+            "path": "configuration.indicatorMouseHalfScale.x",
+            "editable": true,
+            "valueType": "number",
+            "description": "X-axis value for Indicator Mouse Half Scale.",
+            "defaultValue": 1.5,
+            "currentValue": 1.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Mouse Half Scale / Indicator Mouse Half Scale Y",
+            "path": "configuration.indicatorMouseHalfScale.y",
+            "editable": true,
+            "valueType": "number",
+            "description": "Y-axis value for Indicator Mouse Half Scale.",
+            "defaultValue": 1.5,
+            "currentValue": 1.5,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Offset / Indicator Offset X",
+            "path": "configuration.indicatorOffset.x",
+            "editable": true,
+            "valueType": "number",
+            "description": "X-axis value for Indicator Offset.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -20,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Indicator Offset / Indicator Offset Y",
+            "path": "configuration.indicatorOffset.y",
+            "editable": true,
+            "valueType": "number",
+            "description": "Y-axis value for Indicator Offset.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": -20,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -300,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Distance",
+            "path": "configuration.maxDistance",
+            "editable": true,
+            "valueType": "number",
+            "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+            "defaultValue": 4,
+            "currentValue": 4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Point Nav Radius Amount",
+            "path": "configuration.pointNavRadiusAmount",
+            "editable": true,
+            "valueType": "number",
+            "description": "Point Nav Radius Amount used for the area, hitbox, or travel reach of this effect.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 30,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 300,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Behavior",
+        "entries": [
+          {
+            "name": "Cancelable",
+            "path": "configuration.cancelable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Clamp On Line Of Sight",
+            "path": "configuration.clampOnLineOfSight",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Clamp On Line Of Sight. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Indicator Rotate With Direction",
+            "path": "configuration.indicatorRotateWithDirection",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Indicator Rotate With Direction. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": false,
+            "currentValue": false,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Interupt Cast On Damage",
+            "path": "configuration.interuptCastOnDamage",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Silenceable",
+            "path": "configuration.silenceable",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Usable While Downed",
+            "path": "configuration.usableWhileDowned",
+            "editable": true,
+            "valueType": "boolean",
+            "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+            "defaultValue": true,
+            "currentValue": true,
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Indicator Prefab",
+            "path": "configuration.indicatorPrefab",
+            "editable": true,
+            "valueType": "reference",
+            "description": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+            "defaultValue": "GameObject:Indicator_Ability_Circle_Mouse",
+            "currentValue": "GameObject:Indicator_Ability_Circle_Mouse",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Input Target Ability",
+            "path": "configuration.inputTargetAbility",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Target Ability. This controls the string or named reference stored at \u0060configuration.inputTargetAbility\u0060.",
+            "defaultValue": "Ability1",
+            "currentValue": "Ability1",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Input Type",
+            "path": "configuration.inputType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+            "defaultValue": "Down",
+            "currentValue": "Down",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Motion Lock Type",
+            "path": "configuration.motionLockType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+            "defaultValue": "WalkConstantSpeed",
+            "currentValue": "WalkConstantSpeed",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Rotation Lock Type",
+            "path": "configuration.rotationLockType",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Add or rebalance direct damage values and damage scaling.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.damage"
+      ]
+    },
+    {
+      "slotId": "ability.target",
+      "label": "Ability Target",
+      "category": "Effects",
+      "description": "Point an augment or passive at a different character ability slot.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "ability.target"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Use this when you want a simple damage slider or number input.",
+      "targetPath": "configuration.interuptCastOnDamage",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Interupt Cast On Damage",
+          "description": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+          "valueType": "boolean",
+          "defaultValue": true,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "configuration.indicatorPrefab",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Indicator Prefab",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "GameObject:Indicator_Ability_Circle_Mouse",
+          "options": [
+            "GameObject:BearTrap_Large_Consumable",
+            "GameObject:Bumper_Bubble_NoD",
+            "GameObject:ExplosiveBarrelPassive",
+            "GameObject:Hitbox_Augment_Jiro_Shield",
+            "GameObject:Hitbox_Augment_Teevee_AOE",
+            "GameObject:Hitbox_Augment_Teevee_CloneTether",
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_Blitz_AOE_Teevee",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Jiro_BrothWave",
+            "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+            "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+            "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+            "GameObject:Hitbox_P_HealZone",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_Rocky_Boulder",
+            "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+            "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+            "GameObject:Indicator_Ability_Circle_Mouse",
+            "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+            "GameObject:SlipperyZone_IceBlockSlide",
+            "GameObject:SlipperyZone_Trail",
+            "GameObject:TastyFood",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+            "GameObject:VFX_P_Loop_Aura_Weakening",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_MountainShield_Ready",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_Slide_Smoke_Trail",
+            "GameObject:VFX_Slow_Loop",
+            "GameObject:VFX_StunEffect_Loop"
+          ]
+        }
+      ]
+    },
+    {
+      "blockId": "ability.target",
+      "label": "Target Ability",
+      "category": "Effects",
+      "description": "Use this when you want an augment to affect a different ability slot.",
+      "targetPath": "configuration.inputTargetAbility",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Input Target Ability",
+          "description": "Text or key value for Input Target Ability. This controls the string or named reference stored at \u0060configuration.inputTargetAbility\u0060.",
+          "valueType": "string",
+          "defaultValue": "Ability1",
+          "options": []
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "configuration.indicatorPrefab",
+      "label": "Indicator Prefab",
+      "currentReference": "GameObject:Indicator_Ability_Circle_Mouse",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Indicator Ability Circle Mouse",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.loopVfx",
+      "label": "Loop Vfx",
+      "currentReference": "GameObject:VFX_CastConsumable_Loop",
+      "referenceType": "Reference",
+      "suggestions": [
+        "Reference"
+      ],
+      "availableReferences": [
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_CastConsumable_Loop",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_StunEffect_Loop",
+        "PassiveSO:P_Berserk",
+        "PassiveSO:P_D_SinCity",
+        "Sprite:Ability_FireStorm",
+        "Sprite:Anna - Big Ult_0",
+        "Sprite:Anna - Dash Reset_0",
+        "Sprite:Anna - Long Dash_0",
+        "Sprite:Anna - Machine Gun_0",
+        "Sprite:Anna - Precision Shot_0",
+        "Sprite:Anna_Space_Sprite",
+        "Sprite:BerserkerPin_T1_Thumb",
+        "Sprite:Berserker_0",
+        "Sprite:Consumable_Flamethrower_Thumb",
+        "Sprite:Consumable_Harpoon_Thumb",
+        "Sprite:Consumable_MachineGun_Thumb",
+        "Sprite:Consumable_RPG_Thumb",
+        "Sprite:Consumable_Shotgun_Thumb",
+        "Sprite:Dz_Pistol_Icon",
+        "Sprite:P_Stat_Cd",
+        "Sprite:P_Stat_Dmg",
+        "Sprite:P_Stat_Hp",
+        "Sprite:P_Stat_MoveSpeed",
+        "Sprite:Passive_SinCity_Bleed_Sprite_0",
+        "Sprite:Skull_Throw_Thumb",
+        "StatusEffectSO:SE_Burn",
+        "StatusEffectSO:SE_Fear",
+        "StatusEffectSO:SE_Knocked",
+        "StatusEffectSO:SE_Pulled",
+        "StatusEffectSO:SE_Stunned"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Vfx Cast Consumable Loop",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.rcxdPrefab",
+      "label": "Rcxd Prefab",
+      "currentReference": "GameObject:RCXD",
+      "referenceType": "Prefab",
+      "suggestions": [
+        "Spell Prefab",
+        "Visual Prefab",
+        "Indicator Prefab"
+      ],
+      "availableReferences": [
+        "GameObject:BearTrap_Large_Consumable",
+        "GameObject:Bumper_Bubble_NoD",
+        "GameObject:ExplosiveBarrelPassive",
+        "GameObject:Hitbox_Augment_Jiro_Shield",
+        "GameObject:Hitbox_Augment_Teevee_AOE",
+        "GameObject:Hitbox_Augment_Teevee_CloneTether",
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_Blitz_AOE_Teevee",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_ExplosiveBarrel_Explosion",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Jiro_BrothWave",
+        "GameObject:Hitbox_Kat_CatStompPickupBig_Angry",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Calamity",
+        "GameObject:Hitbox_Kiddo_FireMeteorite_Shower",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail",
+        "GameObject:Hitbox_Kitsu_ArrowMissile_Trail_Volley",
+        "GameObject:Hitbox_P_HealZone",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_Rocky_Boulder",
+        "GameObject:Hitbox_Sashimi_Augment_Earthquake",
+        "GameObject:Hitbox_Skinny_FatalBlow_BigAug",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:Hitbox_Zook_HomingMissile_Projectile_Charged",
+        "GameObject:Indicator_Ability_Circle_Mouse_KitsuTrilunar",
+        "GameObject:RCXD",
+        "GameObject:SlipperyZone_IceBlockSlide",
+        "GameObject:SlipperyZone_Trail",
+        "GameObject:TastyFood",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_Eve_Aug_ExplosiveBlock_Charge",
+        "GameObject:VFX_P_Loop_Aura_Weakening",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_MountainShield_Ready",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_Slide_Smoke_Trail",
+        "GameObject:VFX_Slow_Loop",
+        "GameObject:VFX_StunEffect_Loop"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Rcxd",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    },
+    {
+      "path": "configuration.usingVfx",
+      "label": "Using Vfx",
+      "currentReference": "GameObject:VFX_CastConsumable_Loop",
+      "referenceType": "Reference",
+      "suggestions": [
+        "Reference"
+      ],
+      "availableReferences": [
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_CastConsumable_Loop",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_StunEffect_Loop",
+        "PassiveSO:P_Berserk",
+        "PassiveSO:P_D_SinCity",
+        "Sprite:Ability_FireStorm",
+        "Sprite:Anna - Big Ult_0",
+        "Sprite:Anna - Dash Reset_0",
+        "Sprite:Anna - Long Dash_0",
+        "Sprite:Anna - Machine Gun_0",
+        "Sprite:Anna - Precision Shot_0",
+        "Sprite:Anna_Space_Sprite",
+        "Sprite:BerserkerPin_T1_Thumb",
+        "Sprite:Berserker_0",
+        "Sprite:Consumable_Flamethrower_Thumb",
+        "Sprite:Consumable_Harpoon_Thumb",
+        "Sprite:Consumable_MachineGun_Thumb",
+        "Sprite:Consumable_RPG_Thumb",
+        "Sprite:Consumable_Shotgun_Thumb",
+        "Sprite:Dz_Pistol_Icon",
+        "Sprite:P_Stat_Cd",
+        "Sprite:P_Stat_Dmg",
+        "Sprite:P_Stat_Hp",
+        "Sprite:P_Stat_MoveSpeed",
+        "Sprite:Passive_SinCity_Bleed_Sprite_0",
+        "Sprite:Skull_Throw_Thumb",
+        "StatusEffectSO:SE_Burn",
+        "StatusEffectSO:SE_Fear",
+        "StatusEffectSO:SE_Knocked",
+        "StatusEffectSO:SE_Pulled",
+        "StatusEffectSO:SE_Stunned"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Vfx Cast Consumable Loop",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "Items",
+    "label": "Items - Details",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:configuration.indicatorPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.indicatorPrefab",
+      "mode": "soft",
+      "label": "Clear Indicator Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Indicator Ability Circle Mouse",
+      "previewSubtitle": "GameObject:Indicator_Ability_Circle_Mouse",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:Indicator_Ability_Circle_Mouse",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.loopVfx:reference",
+      "operationType": "clear",
+      "path": "configuration.loopVfx",
+      "mode": "soft",
+      "label": "Clear Loop Vfx",
+      "description": "Remove the current Reference from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Vfx Cast Consumable Loop",
+      "previewSubtitle": "GameObject:VFX_CastConsumable_Loop",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:VFX_CastConsumable_Loop",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.rcxdPrefab:reference",
+      "operationType": "clear",
+      "path": "configuration.rcxdPrefab",
+      "mode": "soft",
+      "label": "Clear Rcxd Prefab",
+      "description": "Remove the current Prefab from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Rcxd",
+      "previewSubtitle": "GameObject:RCXD",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:RCXD",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "clear:configuration.usingVfx:reference",
+      "operationType": "clear",
+      "path": "configuration.usingVfx",
+      "mode": "soft",
+      "label": "Clear Using Vfx",
+      "description": "Remove the current Reference from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Vfx Cast Consumable Loop",
+      "previewSubtitle": "GameObject:VFX_CastConsumable_Loop",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "GameObject:VFX_CastConsumable_Loop",
+      "afterValue": null,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%activeTTL%",
+      "label": "Active TTL",
+      "description": "Active TTL in seconds. Higher values keep the effect active longer.",
+      "sourcePath": "configuration.activeTtl",
+      "valueType": "number",
+      "previewValue": 12,
+      "previewText": "12"
+    },
+    {
+      "token": "%castTime%",
+      "label": "Cast Time",
+      "description": "Cast time in seconds before the ability completes.",
+      "sourcePath": "configuration.castTime",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%indicatorBaseHalfScale/IndicatorBaseHalfScaleX%",
+      "label": "Indicator Base Half Scale / Indicator Base Half Scale X",
+      "description": "X-axis value for Indicator Base Half Scale.",
+      "sourcePath": "configuration.indicatorBaseHalfScale.x",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%indicatorBaseHalfScale/IndicatorBaseHalfScaleY%",
+      "label": "Indicator Base Half Scale / Indicator Base Half Scale Y",
+      "description": "Y-axis value for Indicator Base Half Scale.",
+      "sourcePath": "configuration.indicatorBaseHalfScale.y",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%indicatorConeAngle%",
+      "label": "Indicator Cone Angle",
+      "description": "Numeric value for Indicator Cone Angle. Edit \u0060configuration.indicatorConeAngle\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+      "sourcePath": "configuration.indicatorConeAngle",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%indicatorMouseHalfScale/IndicatorMouseHalfScaleX%",
+      "label": "Indicator Mouse Half Scale / Indicator Mouse Half Scale X",
+      "description": "X-axis value for Indicator Mouse Half Scale.",
+      "sourcePath": "configuration.indicatorMouseHalfScale.x",
+      "valueType": "number",
+      "previewValue": 1.5,
+      "previewText": "1.5"
+    },
+    {
+      "token": "%indicatorMouseHalfScale/IndicatorMouseHalfScaleY%",
+      "label": "Indicator Mouse Half Scale / Indicator Mouse Half Scale Y",
+      "description": "Y-axis value for Indicator Mouse Half Scale.",
+      "sourcePath": "configuration.indicatorMouseHalfScale.y",
+      "valueType": "number",
+      "previewValue": 1.5,
+      "previewText": "1.5"
+    },
+    {
+      "token": "%indicatorOffset/IndicatorOffsetX%",
+      "label": "Indicator Offset / Indicator Offset X",
+      "description": "X-axis value for Indicator Offset.",
+      "sourcePath": "configuration.indicatorOffset.x",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%indicatorOffset/IndicatorOffsetY%",
+      "label": "Indicator Offset / Indicator Offset Y",
+      "description": "Y-axis value for Indicator Offset.",
+      "sourcePath": "configuration.indicatorOffset.y",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%maxDistance%",
+      "label": "Max Distance",
+      "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+      "sourcePath": "configuration.maxDistance",
+      "valueType": "number",
+      "previewValue": 4,
+      "previewText": "4"
+    },
+    {
+      "token": "%pointNavRadiusAmount%",
+      "label": "Point Nav Radius Amount",
+      "description": "Point Nav Radius Amount used for the area, hitbox, or travel reach of this effect.",
+      "sourcePath": "configuration.pointNavRadiusAmount",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%cancelable%",
+      "label": "Cancelable",
+      "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+      "sourcePath": "configuration.cancelable",
+      "valueType": "boolean",
+      "previewValue": true,
+      "previewText": "On"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.activeTtl",
+        "displayName": "Active TTL",
+        "label": "Active TTL",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Active TTL in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 12,
+        "currentValue": 12,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castTime",
+        "displayName": "Cast Time",
+        "label": "Cast Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cast time in seconds before the ability completes.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorBaseHalfScale.x",
+        "displayName": "Indicator Base Half Scale / Indicator Base Half Scale X",
+        "label": "Indicator Base Half Scale X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Indicator Base Half Scale.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorBaseHalfScale.y",
+        "displayName": "Indicator Base Half Scale / Indicator Base Half Scale Y",
+        "label": "Indicator Base Half Scale Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Indicator Base Half Scale.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorConeAngle",
+        "displayName": "Indicator Cone Angle",
+        "label": "Indicator Cone Angle",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Indicator Cone Angle. Edit \u0060configuration.indicatorConeAngle\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -1440,
+          "maximum": 1440,
+          "step": 1,
+          "unit": "degrees",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -360,
+          "maximum": 360,
+          "step": 1,
+          "unit": "degrees",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -1440,
+          "maximum": 1440,
+          "step": 1,
+          "unit": "degrees",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorMouseHalfScale.x",
+        "displayName": "Indicator Mouse Half Scale / Indicator Mouse Half Scale X",
+        "label": "Indicator Mouse Half Scale X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Indicator Mouse Half Scale.",
+        "defaultValue": 1.5,
+        "currentValue": 1.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorMouseHalfScale.y",
+        "displayName": "Indicator Mouse Half Scale / Indicator Mouse Half Scale Y",
+        "label": "Indicator Mouse Half Scale Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Indicator Mouse Half Scale.",
+        "defaultValue": 1.5,
+        "currentValue": 1.5,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorOffset.x",
+        "displayName": "Indicator Offset / Indicator Offset X",
+        "label": "Indicator Offset X",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "X-axis value for Indicator Offset.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -20,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorOffset.y",
+        "displayName": "Indicator Offset / Indicator Offset Y",
+        "label": "Indicator Offset Y",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Y-axis value for Indicator Offset.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": -20,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -300,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.maxDistance",
+        "displayName": "Max Distance",
+        "label": "Max Distance",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Max Distance used for the area, hitbox, or travel reach of this effect.",
+        "defaultValue": 4,
+        "currentValue": 4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.pointNavRadiusAmount",
+        "displayName": "Point Nav Radius Amount",
+        "label": "Point Nav Radius Amount",
+        "category": "Area",
+        "valueType": "number",
+        "editable": true,
+        "description": "Point Nav Radius Amount used for the area, hitbox, or travel reach of this effect.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 30,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 300,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.cancelable",
+        "displayName": "Cancelable",
+        "label": "Cancelable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Cancelable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.clampOnLineOfSight",
+        "displayName": "Clamp On Line Of Sight",
+        "label": "Clamp On Line Of Sight",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Clamp On Line Of Sight. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorRotateWithDirection",
+        "displayName": "Indicator Rotate With Direction",
+        "label": "Indicator Rotate With Direction",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Indicator Rotate With Direction. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.interuptCastOnDamage",
+        "displayName": "Interupt Cast On Damage",
+        "label": "Interupt Cast On Damage",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Interupt Cast On Damage dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.silenceable",
+        "displayName": "Silenceable",
+        "label": "Silenceable",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Silenceable. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.usableWhileDowned",
+        "displayName": "Usable While Downed",
+        "label": "Usable While Downed",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Usable While Downed. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.indicatorPrefab",
+        "displayName": "Indicator Prefab",
+        "label": "Indicator Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Indicator Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:Indicator_Ability_Circle_Mouse",
+        "currentValue": "GameObject:Indicator_Ability_Circle_Mouse",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.inputTargetAbility",
+        "displayName": "Input Target Ability",
+        "label": "Input Target Ability",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Target Ability. This controls the string or named reference stored at \u0060configuration.inputTargetAbility\u0060.",
+        "defaultValue": "Ability1",
+        "currentValue": "Ability1",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.inputType",
+        "displayName": "Input Type",
+        "label": "Input Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Input Type. This controls the string or named reference stored at \u0060configuration.inputType\u0060.",
+        "defaultValue": "Down",
+        "currentValue": "Down",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.motionLockType",
+        "displayName": "Motion Lock Type",
+        "label": "Motion Lock Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Motion Lock Type. This controls the string or named reference stored at \u0060configuration.motionLockType\u0060.",
+        "defaultValue": "WalkConstantSpeed",
+        "currentValue": "WalkConstantSpeed",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.rotationLockType",
+        "displayName": "Rotation Lock Type",
+        "label": "Rotation Lock Type",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Rotation Lock Type. This controls the string or named reference stored at \u0060configuration.rotationLockType\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.Guid.IsNull",
+        "displayName": "Cast Sfx / Guid / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.IsNull",
+        "displayName": "Cast Sfx / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.Guid.IsNull",
+        "displayName": "Loop Sfx / Guid / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.IsNull",
+        "displayName": "Loop Sfx / Is Null",
+        "label": "Is Null",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Null. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.pointNavMeshClamp",
+        "displayName": "Point Nav Mesh Clamp",
+        "label": "Point Nav Mesh Clamp",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Point Nav Mesh Clamp. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.order",
+        "displayName": "Order",
+        "label": "Order",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Sort order used by the game UI or internal lists.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "id",
+        "displayName": "ID",
+        "label": "ID",
+        "category": "Identity",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Internal identifier for this entry. Changing IDs can break references from pools, managers, or other data.",
+        "defaultValue": 29,
+        "currentValue": 29,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 1160,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 116,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 1160,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.Guid.Data1",
+        "displayName": "Cast Sfx / Guid / Data 1",
+        "label": "Data 1",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 1. Edit \u0060configuration.castSfx.Guid.Data1\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": -1930949347,
+        "currentValue": -1930949347,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 77237973880,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7723797388,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 77237973880,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.Guid.Data2",
+        "displayName": "Cast Sfx / Guid / Data 2",
+        "label": "Data 2",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 2. Edit \u0060configuration.castSfx.Guid.Data2\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 1250909272,
+        "currentValue": 1250909272,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 50036370880,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 5003637088,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 50036370880,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.Guid.Data3",
+        "displayName": "Cast Sfx / Guid / Data 3",
+        "label": "Data 3",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 3. Edit \u0060configuration.castSfx.Guid.Data3\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 1199412366,
+        "currentValue": 1199412366,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 47976494640,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4797649464,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 47976494640,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castSfx.Guid.Data4",
+        "displayName": "Cast Sfx / Guid / Data 4",
+        "label": "Data 4",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 4. Edit \u0060configuration.castSfx.Guid.Data4\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": -1938061149,
+        "currentValue": -1938061149,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 77522445960,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 7752244596,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 77522445960,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.castVfx",
+        "displayName": "Cast Vfx",
+        "label": "Cast Vfx",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Cast Vfx on \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.Guid.Data1",
+        "displayName": "Loop Sfx / Guid / Data 1",
+        "label": "Data 1",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 1. Edit \u0060configuration.loopSfx.Guid.Data1\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.Guid.Data2",
+        "displayName": "Loop Sfx / Guid / Data 2",
+        "label": "Data 2",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 2. Edit \u0060configuration.loopSfx.Guid.Data2\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.Guid.Data3",
+        "displayName": "Loop Sfx / Guid / Data 3",
+        "label": "Data 3",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 3. Edit \u0060configuration.loopSfx.Guid.Data3\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopSfx.Guid.Data4",
+        "displayName": "Loop Sfx / Guid / Data 4",
+        "label": "Data 4",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Data 4. Edit \u0060configuration.loopSfx.Guid.Data4\u0060 to change how \u0060Consumable_RCXD#33/ConsumableBehaviour\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.loopVfx",
+        "displayName": "Loop Vfx",
+        "label": "Loop Vfx",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Loop Vfx. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:VFX_CastConsumable_Loop",
+        "currentValue": "GameObject:VFX_CastConsumable_Loop",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.rcxdPrefab",
+        "displayName": "Rcxd Prefab",
+        "label": "Rcxd Prefab",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Rcxd Prefab. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:RCXD",
+        "currentValue": "GameObject:RCXD",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "ItemConsumableBehaviour",
+        "targetKey": "Consumable_RCXD#33/ConsumableBehaviour",
+        "path": "configuration.usingVfx",
+        "displayName": "Using Vfx",
+        "label": "Using Vfx",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Using Vfx. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "GameObject:VFX_CastConsumable_Loop",
+        "currentValue": "GameObject:VFX_CastConsumable_Loop",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      }
+    ],
+    "defaults": {
+      "configuration.activeTtl": 12,
+      "configuration.cancelable": true,
+      "configuration.castSfx.Guid.Data1": -1930949347,
+      "configuration.castSfx.Guid.Data2": 1250909272,
+      "configuration.castSfx.Guid.Data3": 1199412366,
+      "configuration.castSfx.Guid.Data4": -1938061149,
+      "configuration.castSfx.Guid.IsNull": false,
+      "configuration.castSfx.IsNull": false,
+      "configuration.castTime": 1,
+      "configuration.castVfx": null,
+      "configuration.clampOnLineOfSight": false,
+      "configuration.indicatorBaseHalfScale.x": 4,
+      "configuration.indicatorBaseHalfScale.y": 4,
+      "configuration.indicatorConeAngle": 0,
+      "configuration.indicatorMouseHalfScale.x": 1.5,
+      "configuration.indicatorMouseHalfScale.y": 1.5,
+      "configuration.indicatorOffset.x": 0,
+      "configuration.indicatorOffset.y": 0,
+      "configuration.indicatorPrefab": "GameObject:Indicator_Ability_Circle_Mouse",
+      "configuration.indicatorRotateWithDirection": false,
+      "configuration.inputTargetAbility": "Ability1",
+      "configuration.inputType": "Down",
+      "configuration.interuptCastOnDamage": true,
+      "configuration.loopSfx.Guid.Data1": 0,
+      "configuration.loopSfx.Guid.Data2": 0,
+      "configuration.loopSfx.Guid.Data3": 0,
+      "configuration.loopSfx.Guid.Data4": 0,
+      "configuration.loopSfx.Guid.IsNull": true,
+      "configuration.loopSfx.IsNull": true,
+      "configuration.loopVfx": "GameObject:VFX_CastConsumable_Loop",
+      "configuration.maxDistance": 4,
+      "configuration.motionLockType": "WalkConstantSpeed",
+      "configuration.order": 0,
+      "configuration.pointNavMeshClamp": true,
+      "configuration.pointNavRadiusAmount": 1,
+      "configuration.rcxdPrefab": "GameObject:RCXD",
+      "configuration.rotationLockType": "None",
+      "configuration.silenceable": true,
+      "configuration.usableWhileDowned": true,
+      "configuration.usingVfx": "GameObject:VFX_CastConsumable_Loop",
+      "id": 29
+    },
+    "effectiveValues": {
+      "configuration.activeTtl": 12,
+      "configuration.cancelable": true,
+      "configuration.castSfx.Guid.Data1": -1930949347,
+      "configuration.castSfx.Guid.Data2": 1250909272,
+      "configuration.castSfx.Guid.Data3": 1199412366,
+      "configuration.castSfx.Guid.Data4": -1938061149,
+      "configuration.castSfx.Guid.IsNull": false,
+      "configuration.castSfx.IsNull": false,
+      "configuration.castTime": 1,
+      "configuration.castVfx": null,
+      "configuration.clampOnLineOfSight": false,
+      "configuration.indicatorBaseHalfScale.x": 4,
+      "configuration.indicatorBaseHalfScale.y": 4,
+      "configuration.indicatorConeAngle": 0,
+      "configuration.indicatorMouseHalfScale.x": 1.5,
+      "configuration.indicatorMouseHalfScale.y": 1.5,
+      "configuration.indicatorOffset.x": 0,
+      "configuration.indicatorOffset.y": 0,
+      "configuration.indicatorPrefab": "GameObject:Indicator_Ability_Circle_Mouse",
+      "configuration.indicatorRotateWithDirection": false,
+      "configuration.inputTargetAbility": "Ability1",
+      "configuration.inputType": "Down",
+      "configuration.interuptCastOnDamage": true,
+      "configuration.loopSfx.Guid.Data1": 0,
+      "configuration.loopSfx.Guid.Data2": 0,
+      "configuration.loopSfx.Guid.Data3": 0,
+      "configuration.loopSfx.Guid.Data4": 0,
+      "configuration.loopSfx.Guid.IsNull": true,
+      "configuration.loopSfx.IsNull": true,
+      "configuration.loopVfx": "GameObject:VFX_CastConsumable_Loop",
+      "configuration.maxDistance": 4,
+      "configuration.motionLockType": "WalkConstantSpeed",
+      "configuration.order": 0,
+      "configuration.pointNavMeshClamp": true,
+      "configuration.pointNavRadiusAmount": 1,
+      "configuration.rcxdPrefab": "GameObject:RCXD",
+      "configuration.rotationLockType": "None",
+      "configuration.silenceable": true,
+      "configuration.usableWhileDowned": true,
+      "configuration.usingVfx": "GameObject:VFX_CastConsumable_Loop",
+      "id": 29
+    }
+  }
+}

@@ -1,0 +1,78 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Rebalance High-Contrast Theme Variant (Phase 3 Task 21)
+   --------------------------------------------------------------------------
+   WCAG AAA contrast variant. Triggered by `body[data-theme="high-contrast"]`.
+   Designed for users with low vision, photophobia, or who simply prefer
+   maximum legibility. Text and accents lift to near-white; borders go from
+   ~6% to ~50% opacity so structural separation is unmistakable; controls
+   double their default border to 2px.
+   ========================================================================== */
+
+body[data-theme="high-contrast"] {
+  /* ---- Surfaces: pure black with tiny lifts for hierarchy ---- */
+  --bg-0: #000000;
+  --bg-1: #0a0a0a;
+  --bg-2: #141414;
+  --bg-3: #1f1f1f;
+
+  /* ---- Glassmorphism (mostly opaque to avoid contrast loss) ---- */
+  --bg-1-glass: rgba(10, 10, 10, 0.96);
+  --bg-2-glass: rgba(20, 20, 20, 0.96);
+  --line-glass: rgba(255, 255, 255, 0.55);
+  --blur-glass: blur(8px);
+
+  /* ---- Text: pure white + bright muted (~AAA) ---- */
+  --text: #ffffff;
+  --text-muted: #d0d0d0;
+
+  /* ---- Borders: clearly visible at all viewports ---- */
+  --line: rgba(255, 255, 255, 0.50);
+
+  /* ---- Accents: lighter for contrast on pitch black ---- */
+  --accent: #a5b4fc;
+  --accent-warm: #fbbf24;
+  --accent-cool: #80a0ff;
+  --accent-lime: #c4b5fd;
+
+  /* ---- Special ---- */
+  --paper: #ffffff;
+  --ok: #80a0ff;
+
+  /* ---- Doubled-up control border for visibility ---- */
+  --control-border: 2px solid var(--line);
+
+  /* ---- Buttons: high-contrast primary ---- */
+  --button-primary-bg: #ffffff;
+  --button-primary-text: #000000;
+  --button-primary-hover: #f0f0f0;
+  --button-active-border: var(--accent-cool);
+  --button-active-ring: rgba(128, 160, 255, 0.55);
+
+  /* ---- Backward-compatible aliases ---- */
+  --surface-base: var(--bg-0);
+  --surface-panel: var(--bg-1);
+  --surface-elevated: var(--bg-2);
+  --text-primary: var(--text);
+  --text-heading: var(--text);
+  --border-subtle: var(--line);
+  --border-medium: var(--line);
+  --action-primary: var(--paper);
+  --active-border: var(--accent-cool);
+  --active-bg: var(--bg-2);
+  --active-ring: rgba(128, 160, 255, 0.55);
+
+  /* ---- Strong shadows for perceptible elevation ---- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.8);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.9);
+  --shadow-focus: 0 0 0 4px rgba(128, 160, 255, 0.65);
+}
+
+/* Apply doubled control borders on focusable inputs/selects in HC mode */
+body[data-theme="high-contrast"] .v2-input-shell,
+body[data-theme="high-contrast"] .v2-select-shell,
+body[data-theme="high-contrast"] .v2-textarea-shell,
+body[data-theme="high-contrast"] .v2-button {
+  border-width: 2px !important;
+}

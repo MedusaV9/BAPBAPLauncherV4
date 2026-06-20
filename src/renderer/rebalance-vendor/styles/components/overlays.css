@@ -1,0 +1,596 @@
+/* ==========================================================================
+   BAPBAP Launcher V2 — Overlay / Modal / Drawer / Toast Styles
+   ========================================================================== */
+
+/* ─── Modal Backdrop ─── */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* ─── Modal Container ─── */
+
+.modal-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  max-width: 90vw;
+  border-radius: var(--radius-xl, 18px);
+  border: 1px solid var(--border-subtle, rgba(116, 141, 151, 0.12));
+  background: var(--surface-panel, #111821);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transform-origin: 50% 50%;
+}
+
+/* ─── Modal Content (scrollable) ─── */
+
+.modal-content {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--space-xl, 1.5rem);
+}
+
+/* ─── Drawer Backdrop ─── */
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* ─── Drawer Container (right-side panel) ─── */
+
+.drawer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 910;
+  display: flex;
+  flex-direction: column;
+  width: min(420px, 90vw);
+  border-left: 1px solid var(--border-subtle, rgba(116, 141, 151, 0.12));
+  background: var(--surface-panel, #111821);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform: translateX(0);
+}
+
+.drawer-content {
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--space-xl, 1.5rem);
+}
+
+/* ─── Toast / Notification ─── */
+
+.toast-container {
+  position: fixed;
+  top: var(--space-lg, 1rem);
+  right: var(--space-lg, 1rem);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 0.5rem);
+  pointer-events: none;
+}
+
+.toast-item {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm, 0.5rem);
+  padding: var(--space-md, 0.75rem) var(--space-lg, 1rem);
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--border-subtle, rgba(116, 141, 151, 0.12));
+  background: var(--surface-panel, #111821);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.2);
+  color: var(--text-primary, #e8edf2);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  max-width: 360px;
+}
+
+/* ==========================================================================
+   Custom Context Menu
+   Replaces the native right-click menu when triggered
+   ========================================================================== */
+
+.context-menu {
+  position: fixed;
+  z-index: 1100;
+  min-width: 180px;
+  max-width: 280px;
+  padding: 4px;
+  border-radius: var(--radius-md, 10px);
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-1, #070911);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.95);
+  transform-origin: top left;
+  animation: context-menu-enter 120ms ease-out forwards;
+}
+
+@keyframes context-menu-enter {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.context-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: var(--radius-sm, 6px);
+  background: transparent;
+  color: var(--text, #f6f3ee);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 100ms;
+  text-align: left;
+}
+
+.context-menu__item:hover {
+  background: rgba(88, 113, 255, 0.08);
+}
+
+.context-menu__item:active {
+  background: rgba(88, 113, 255, 0.15);
+}
+
+.context-menu__item--destructive {
+  color: #fca5a5;
+}
+
+.context-menu__item--destructive:hover {
+  background: rgba(220, 38, 38, 0.08);
+}
+
+.context-menu__item--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.context-menu__item-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.context-menu__item-kbd {
+  margin-left: auto;
+  font-size: 0.625rem;
+  color: var(--text-muted, #a4aec6);
+  font-family: ui-monospace, monospace;
+}
+
+.context-menu__separator {
+  height: 1px;
+  margin: 4px 8px;
+  background: var(--line, #283456);
+}
+
+.context-menu__group-label {
+  padding: 0.35rem 0.75rem 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-muted, #a4aec6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   Confirmation Dialog
+   Used for destructive actions (delete, reset, overwrite)
+   ========================================================================== */
+
+.confirm-dialog {
+  width: min(440px, 90vw);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg, 16px);
+  background: var(--bg-1, #070911);
+  border: 1px solid var(--line, #283456);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.confirm-dialog__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md, 10px);
+  margin-bottom: 1rem;
+}
+
+.confirm-dialog__icon--danger {
+  background: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+}
+
+.confirm-dialog__icon--warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.confirm-dialog__icon--info {
+  background: rgba(88, 113, 255, 0.1);
+  color: #5871ff;
+}
+
+.confirm-dialog__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text, #f6f3ee);
+  margin: 0 0 0.5rem;
+}
+
+.confirm-dialog__message {
+  font-size: var(--type-body-size, clamp(0.8125rem, 0.78rem + 0.12vw, 0.875rem));
+  color: var(--text-muted, #a4aec6);
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Destructive confirm button (red) */
+.confirm-dialog__actions .v2-button--destructive {
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #fca5a5;
+}
+.confirm-dialog__actions .v2-button--destructive:hover {
+  background: rgba(220, 38, 38, 0.25);
+}
+
+/* Detail/expandable section in confirm dialogs */
+.confirm-dialog__detail {
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  background: var(--bg-0, #030407);
+  border: 1px solid var(--line, #283456);
+  border-radius: var(--radius-md, 10px);
+  font-size: var(--type-caption-size, clamp(0.6875rem, 0.65rem + 0.1vw, 0.75rem));
+  color: var(--text-muted, #a4aec6);
+  max-height: 120px;
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   Popover / Dropdown
+   Positioned panels that appear on click/hover
+   ========================================================================== */
+
+.popover {
+  position: absolute;
+  z-index: 200;
+  min-width: 200px;
+  max-width: 320px;
+  padding: var(--space-sm, 8px);
+  border-radius: var(--radius-md, 12px);
+  border: 1px solid var(--line, #283456);
+  background: var(--bg-1, #070911);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.3));
+  opacity: 0;
+  transform: scale(0.95) translateY(-4px);
+  transform-origin: top center;
+  transition: opacity 150ms ease, transform 150ms ease;
+  pointer-events: none;
+}
+
+.popover.is-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+}
+
+/* Popover arrow */
+.popover__arrow {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 5px;
+  overflow: hidden;
+}
+
+.popover__arrow::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  background: var(--bg-1, #070911);
+  border: 1px solid var(--line, #283456);
+}
+
+/* Popover positioned below */
+.popover--bottom {
+  transform-origin: top center;
+}
+
+/* Popover positioned above */
+.popover--top {
+  transform-origin: bottom center;
+}
+
+.popover--top .popover__arrow {
+  top: auto;
+  bottom: -5px;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+/* Popover content */
+.popover__content {
+  padding: var(--space-sm, 8px);
+}
+
+.popover__header {
+  padding: var(--space-sm, 8px) var(--space-md, 12px);
+  font-size: var(--type-caption-size, 0.6875rem);
+  font-weight: 700;
+  color: var(--text-muted, #a4aec6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--line, #283456);
+}
+
+/* ==========================================================================
+   Bottom Sheet — Panel that slides up from the bottom
+   Used for pickers, detail panels, and multi-select operations
+   ========================================================================== */
+
+.bottom-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 910;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  border-radius: var(--radius-xl, 20px) var(--radius-xl, 20px) 0 0;
+  background: var(--bg-1, #070911);
+  border-top: 1px solid var(--line, #283456);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(100%);
+  transition: transform 300ms var(--ease-out, cubic-bezier(0, 0, 0.2, 1));
+}
+
+.bottom-sheet.is-open {
+  transform: translateY(0);
+}
+
+/* Drag handle */
+.bottom-sheet__handle {
+  display: flex;
+  justify-content: center;
+  padding: 0.75rem 0 0.5rem;
+  cursor: grab;
+}
+
+.bottom-sheet__handle::after {
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line, #283456);
+}
+
+/* Header */
+.bottom-sheet__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--line, #283456);
+}
+
+.bottom-sheet__title {
+  font-size: var(--type-subtitle-size, 0.9375rem);
+  font-weight: 700;
+  color: var(--text, #f6f3ee);
+  margin: 0;
+}
+
+/* Content (scrollable) */
+.bottom-sheet__content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1rem 1.25rem;
+}
+
+/* Footer with actions */
+.bottom-sheet__footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--line, #283456);
+}
+
+/* ==========================================================================
+   Inline Toast — Non-intrusive notification that appears at top-right
+   ========================================================================== */
+
+/* Toast entry animation */
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Toast exit animation */
+@keyframes toast-exit {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+  }
+}
+
+.toast-item--entering {
+  animation: toast-enter 200ms var(--ease-out, cubic-bezier(0, 0, 0.2, 1)) forwards;
+}
+
+.toast-item--exiting {
+  animation: toast-exit 150ms var(--ease-in, cubic-bezier(0.4, 0, 1, 1)) forwards;
+}
+
+/* Toast variants */
+.toast-item--success {
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.toast-item--success::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #22c55e;
+  border-radius: 10px 0 0 10px;
+}
+
+.toast-item--error {
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.toast-item--error::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #dc2626;
+  border-radius: 10px 0 0 10px;
+}
+
+.toast-item--warning {
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.toast-item--warning::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #f59e0b;
+  border-radius: 10px 0 0 10px;
+}
+
+.toast-item--info {
+  border-color: rgba(88, 113, 255, 0.2);
+}
+
+.toast-item--info::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-cool, #5871ff);
+  border-radius: 10px 0 0 10px;
+}
+
+/* Auto-dismiss progress bar at bottom of toast */
+.toast-item__dismiss-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0 0 10px 10px;
+  animation: toast-dismiss-shrink 4s linear forwards;
+}
+
+@keyframes toast-dismiss-shrink {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* Toast close button */
+.toast-item__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-muted, #a4aec6);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 150ms;
+  border-radius: 4px;
+}
+
+.toast-item:hover .toast-item__close {
+  opacity: 1;
+}
+
+.toast-item__close:hover {
+  color: var(--text, #f6f3ee);
+}
+
+/* Ensure toast items have position for the colored left bar */
+.toast-item {
+  position: relative;
+  overflow: hidden;
+}

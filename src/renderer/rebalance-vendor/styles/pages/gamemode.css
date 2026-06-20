@@ -1,0 +1,193 @@
+/* Game Mode page — augment grid, vault states, and selection */
+
+/* ─── Page container — full width ─── */
+.gamemode-page,
+.task-gamemode-page {
+  width: 100%;
+  max-width: none;
+}
+
+/* ─── Section headers ─── */
+.gamemode-section-header,
+.task-gamemode-section-header {
+  color: var(--text, #f6f3ee);
+  font-size: var(--type-subtitle-size, 0.875rem);
+  font-weight: 700;
+  margin-bottom: var(--space-md, 12px);
+  margin-top: var(--space-lg, 24px);
+}
+
+.gamemode-section-header:first-child,
+.task-gamemode-section-header:first-child {
+  margin-top: 0;
+}
+
+/* ─── Augment / ability grid ─── */
+.gamemode-grid,
+.task-gamemode-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-md, 12px);
+  width: 100%;
+}
+
+/* ─── Grid cards ─── */
+.gamemode-card,
+.task-gamemode-card {
+  width: 100%;
+  min-width: 0;
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.7));
+  border: 1px solid var(--line, #222d4a);
+  backdrop-filter: var(--blur-glass, blur(16px));
+  border-radius: 12px;
+  padding: 1rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* ─── Active card selection — blue border + glow ring (matches swap page) ─── */
+.gamemode-card.is-active,
+.task-gamemode-card.is-active {
+  border: 2px solid var(--accent, #6366f1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px) scale(1.03);
+  background: rgba(21, 28, 46, 0.6);
+}
+
+/* ─── Hovered card ─── */
+.gamemode-card:hover:not(.is-active),
+.task-gamemode-card:hover:not(.is-active) {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ─── Vaulted items: reduced opacity with checkmark badge overlay ─── */
+.gamemode-card.is-vaulted,
+.task-gamemode-card.is-vaulted,
+.task-icon-choice.is-vaulted {
+  opacity: 0.6;
+  position: relative;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.gamemode-card.is-vaulted::after,
+.task-gamemode-card.is-vaulted::after,
+.task-icon-choice.is-vaulted::after {
+  content: "✓";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
+  background: var(--accent, #6366f1);
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.4);
+}
+
+/* ─── Save Game Mode button: uses .v2-button--primary (cream fill) ─── */
+.gamemode-save-btn,
+.task-gamemode-save-btn {
+  /* Inherits from .v2-button--primary — no override needed */
+}
+
+/* ─── Categories Card Grid ─── */
+.task-gamemode-categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md, 12px);
+  width: 100%;
+}
+
+.task-gamemode-category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  background: var(--bg-1-glass, rgba(9, 13, 22, 0.7));
+  border: 1px solid var(--line, #222d4a);
+  backdrop-filter: var(--blur-glass, blur(16px));
+  border-radius: 14px;
+  padding: 1rem;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+.task-gamemode-category-card:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+.task-gamemode-category-card.is-active {
+  border: 2px solid var(--accent, #6366f1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(21, 28, 46, 0.6);
+}
+
+.task-gamemode-category-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.task-gamemode-category-title {
+  color: var(--text, #f6f3ee);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.task-gamemode-category-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent, #8ea4ff);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.task-gamemode-category-desc {
+  color: var(--text-muted, #8b9ba8);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ─── Vault Progress Bar ─── */
+.task-gamemode-vault-progress-container {
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0.9rem;
+  width: 100%;
+}
+
+.task-gamemode-progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.task-gamemode-progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #8ea4ff);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  transition: width 300ms ease;
+}
+

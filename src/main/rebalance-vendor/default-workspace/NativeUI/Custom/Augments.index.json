@@ -1,0 +1,20 @@
+﻿{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-03-26T22:05:49.3652209Z",
+  "instructions": [
+    "This file lists the augments exposed in the custom NativeUI Custom section.",
+    "Open the referenced Runtime/Passives JSON files to change the actual values of those augments."
+  ],
+  "entries": [
+    {
+      "id": 257,
+      "targetKey": "P_Dmg_Mod#257",
+      "file": "Passives/0257_P_Dmg_Mod.json"
+    },
+    {
+      "id": 5000,
+      "targetKey": "P_CUSTOM_FIREWAVE_PLUS#5000",
+      "file": "Passives/5000_P_CUSTOM_FIREWAVE_PLUS.json"
+    }
+  ]
+}

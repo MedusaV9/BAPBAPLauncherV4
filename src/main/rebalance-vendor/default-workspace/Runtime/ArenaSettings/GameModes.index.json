@@ -1,0 +1,68 @@
+﻿{
+  "schemaVersion": 1,
+  "targetType": "ArenaGameModesIndex",
+  "targetKey": "ArenaGameModes",
+  "generatedAtUtc": "2026-04-15T22:57:37.8038698Z",
+  "instructions": [
+    "This file keeps game-mode discovery separate from the main arena JSON files.",
+    "CurrentLobby.json still owns the selected numeric GameMode value, while this file explains what that id likely means.",
+    "Confidence is highest when the live lobby id and the live ArenaGameMode class both match the same local mapping.",
+    "Entries sourced only from local mappings are still useful, but they were not all observed in the current runtime session."
+  ],
+  "currentGameModeId": null,
+  "currentModeKey": "Arena",
+  "currentDisplayName": "Arena",
+  "currentClassName": "GameModeArena",
+  "entries": [
+    {
+      "gameModeId": 4,
+      "modeKey": "Arena",
+      "displayName": "Arena",
+      "className": "GameModeArena",
+      "current": true,
+      "source": "local_decompiled_enum\u002Blive_arena_type",
+      "confidence": "medium",
+      "notes": "Observed on the live arena object type and matched a local mapping."
+    },
+    {
+      "gameModeId": 0,
+      "modeKey": "None",
+      "displayName": "None",
+      "className": "GameMode",
+      "current": false,
+      "source": "local_decompiled_enum",
+      "confidence": "medium",
+      "notes": "Known from local decompiled enum/class mappings."
+    },
+    {
+      "gameModeId": 1,
+      "modeKey": "BattleRoyale",
+      "displayName": "Battle Royale",
+      "className": "GameModeBattleRoyale",
+      "current": false,
+      "source": "local_decompiled_enum",
+      "confidence": "medium",
+      "notes": "Known from local decompiled enum/class mappings."
+    },
+    {
+      "gameModeId": 2,
+      "modeKey": "Training",
+      "displayName": "Training",
+      "className": "GameModeTraining",
+      "current": false,
+      "source": "local_decompiled_enum",
+      "confidence": "medium",
+      "notes": "Known from local decompiled enum/class mappings."
+    },
+    {
+      "gameModeId": 3,
+      "modeKey": "FFA",
+      "displayName": "FFA",
+      "className": "GameModeFFA",
+      "current": false,
+      "source": "local_decompiled_enum",
+      "confidence": "medium",
+      "notes": "Known from local decompiled enum/class mappings."
+    }
+  ]
+}

@@ -1,0 +1,3158 @@
+{
+  "schemaVersion": 10,
+  "targetType": "CharacterState",
+  "targetKey": "FROGGY#7/CharacterState",
+  "displayName": "CharacterState",
+  "resolvedName": "CharacterState",
+  "generatedAtUtc": "2026-03-26T22:05:43.2841628Z",
+  "quickEdit": [
+    {
+      "setting": "Base Crit Chance",
+      "category": "Damage",
+      "path": "baseCritChance",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Base Crit Chance. Edit \u0060baseCritChance\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Base Crit Damage",
+      "category": "Damage",
+      "path": "baseCritDmg",
+      "editable": true,
+      "valueType": "number",
+      "value": 1.4,
+      "defaultValue": 1.4,
+      "whatItDoes": "Base Crit Damage dealt by this effect before other runtime modifiers are added.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 55.999999046325684,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 5.599999904632568,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 55.999999046325684,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Crit Chance",
+      "category": "Damage",
+      "path": "critChance",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Critical hit chance for this effect or stat.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Crit Damage",
+      "category": "Damage",
+      "path": "critDmg",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Crit Damage dealt by this effect before other runtime modifiers are added.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage Modifier",
+      "category": "Damage",
+      "path": "damageModifier",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Damage Modifier dealt by this effect before other runtime modifiers are added.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage Multiplier",
+      "category": "Damage",
+      "path": "damageMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Multiplier applied to damage. Values above 1 increase damage, values below 1 reduce it.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage To Players Multiplier",
+      "category": "Damage",
+      "path": "damageToPlayersMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Damage To Players Multiplier dealt by this effect before other runtime modifiers are added.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Damage",
+      "category": "Damage",
+      "path": "damage",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 9999,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 100000,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cooldown",
+      "category": "Timing",
+      "path": "cooldown",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Cooldown in seconds before this effect or action can be used again. Lower values make it available more often.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 60,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 600,
+        "step": 0.1,
+        "unit": "seconds",
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Attack Speed",
+      "category": "Movement",
+      "path": "AttackSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Attack Speed",
+      "category": "Movement",
+      "path": "attackSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Max Attack Speed",
+      "category": "Movement",
+      "path": "maxAttackSpeed",
+      "editable": true,
+      "valueType": "number",
+      "value": 10,
+      "defaultValue": 10,
+      "whatItDoes": "Max Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 50,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 500,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Base Life Steal",
+      "category": "General",
+      "path": "baseLifeSteal",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Base Life Steal. Edit \u0060baseLifeSteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Cast Flags",
+      "category": "General",
+      "path": "castFlags",
+      "editable": true,
+      "valueType": "string",
+      "value": "None",
+      "defaultValue": "None",
+      "whatItDoes": "Text or key value for Cast Flags. This controls the string or named reference stored at \u0060castFlags\u0060.",
+      "valueRange": null,
+      "vanillaRange": null,
+      "extendedRange": null,
+      "riskLevel": "safe"
+    },
+    {
+      "setting": "Lifesteal",
+      "category": "General",
+      "path": "lifesteal",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Lifesteal. Edit \u0060lifesteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Luck",
+      "category": "General",
+      "path": "luck",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Luck. Edit \u0060luck\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Shred",
+      "category": "General",
+      "path": "shred",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Shred. Edit \u0060shred\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Weaken Modifer",
+      "category": "General",
+      "path": "weakenModifer",
+      "editable": true,
+      "valueType": "number",
+      "value": 0,
+      "defaultValue": 0,
+      "whatItDoes": "Numeric value for Weaken Modifer. Edit \u0060weakenModifer\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 4,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": 0,
+        "maximum": 40,
+        "step": 0.1,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    },
+    {
+      "setting": "Zoom Multiplier",
+      "category": "General",
+      "path": "zoomMultiplier",
+      "editable": true,
+      "valueType": "number",
+      "value": 1,
+      "defaultValue": 1,
+      "whatItDoes": "Numeric value for Zoom Multiplier. Edit \u0060zoomMultiplier\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "valueRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "vanillaRange": {
+        "minimum": 0,
+        "maximum": 3,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": false
+      },
+      "extendedRange": {
+        "minimum": -10,
+        "maximum": 10,
+        "step": 0.05,
+        "unit": null,
+        "unclamped": true
+      },
+      "riskLevel": "medium"
+    }
+  ],
+  "simpleSettings": {
+    "whatThisConfigDoes": "Quick overview for character target \u0027CharacterState\u0027. You can change Damage, Timing, Movement, General.",
+    "whatYouCanChange": [
+      "Damage",
+      "Timing",
+      "Movement",
+      "General"
+    ],
+    "howToEdit": "This top section is the curated quick view. Start here. If an entry has \u0060editable: true\u0060, copy its path into overrides and assign your new value there. Entries with \u0060editable: false\u0060 are summary-only hints. Full raw data stays lower in advanced.fields, advanced.defaults, and advanced.effectiveValues.",
+    "copyAndSwapTips": [
+      "Reference fields accept the same exported \u0060Type:Name\u0060 text, so you can copy one in-game asset reference into another config.",
+      "Whole character-ability replacement is harder than passive or item swaps. Direct stat edits work well here, but full behaviour swaps usually need linked passive references, behaviour assets, or explicit code patches."
+    ],
+    "groups": [
+      {
+        "category": "Damage",
+        "entries": [
+          {
+            "name": "Base Crit Chance",
+            "path": "baseCritChance",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Base Crit Chance. Edit \u0060baseCritChance\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Base Crit Damage",
+            "path": "baseCritDmg",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base Crit Damage dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": 1.4,
+            "currentValue": 1.4,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 55.999999046325684,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 5.599999904632568,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 55.999999046325684,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Crit Chance",
+            "path": "critChance",
+            "editable": true,
+            "valueType": "number",
+            "description": "Critical hit chance for this effect or stat.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Crit Damage",
+            "path": "critDmg",
+            "editable": true,
+            "valueType": "number",
+            "description": "Crit Damage dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage Modifier",
+            "path": "damageModifier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Damage Modifier dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage Multiplier",
+            "path": "damageMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Multiplier applied to damage. Values above 1 increase damage, values below 1 reduce it.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage To Players Multiplier",
+            "path": "damageToPlayersMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Damage To Players Multiplier dealt by this effect before other runtime modifiers are added.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Damage",
+            "path": "damage",
+            "editable": true,
+            "valueType": "number",
+            "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 9999,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 100000,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Timing",
+        "entries": [
+          {
+            "name": "Cooldown",
+            "path": "cooldown",
+            "editable": true,
+            "valueType": "number",
+            "description": "Cooldown in seconds before this effect or action can be used again. Lower values make it available more often.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 60,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 600,
+              "step": 0.1,
+              "unit": "seconds",
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "Movement",
+        "entries": [
+          {
+            "name": "Attack Speed",
+            "path": "AttackSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Attack Speed",
+            "path": "attackSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Max Attack Speed",
+            "path": "maxAttackSpeed",
+            "editable": true,
+            "valueType": "number",
+            "description": "Max Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+            "defaultValue": 10,
+            "currentValue": 10,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 50,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 500,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      },
+      {
+        "category": "General",
+        "entries": [
+          {
+            "name": "Base Life Steal",
+            "path": "baseLifeSteal",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Base Life Steal. Edit \u0060baseLifeSteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Cast Flags",
+            "path": "castFlags",
+            "editable": true,
+            "valueType": "string",
+            "description": "Text or key value for Cast Flags. This controls the string or named reference stored at \u0060castFlags\u0060.",
+            "defaultValue": "None",
+            "currentValue": "None",
+            "valueRange": null,
+            "vanillaRange": null,
+            "extendedRange": null,
+            "riskLevel": "safe"
+          },
+          {
+            "name": "Lifesteal",
+            "path": "lifesteal",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Lifesteal. Edit \u0060lifesteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Luck",
+            "path": "luck",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Luck. Edit \u0060luck\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Shred",
+            "path": "shred",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Shred. Edit \u0060shred\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Weaken Modifer",
+            "path": "weakenModifer",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Weaken Modifer. Edit \u0060weakenModifer\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 0,
+            "currentValue": 0,
+            "valueRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 4,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": 0,
+              "maximum": 40,
+              "step": 0.1,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          },
+          {
+            "name": "Zoom Multiplier",
+            "path": "zoomMultiplier",
+            "editable": true,
+            "valueType": "number",
+            "description": "Numeric value for Zoom Multiplier. Edit \u0060zoomMultiplier\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+            "defaultValue": 1,
+            "currentValue": 1,
+            "valueRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "vanillaRange": {
+              "minimum": 0,
+              "maximum": 3,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": false
+            },
+            "extendedRange": {
+              "minimum": -10,
+              "maximum": 10,
+              "step": 0.05,
+              "unit": null,
+              "unclamped": true
+            },
+            "riskLevel": "medium"
+          }
+        ]
+      }
+    ]
+  },
+  "uiCapabilities": {
+    "mode": "guided",
+    "supportedActions": [
+      "edit-values",
+      "raw-overrides",
+      "pack-export",
+      "swap-reference"
+    ],
+    "supportsQuickEdit": true,
+    "supportsRawOverrides": true,
+    "supportsCollectionEditing": false,
+    "supportsReplace": false,
+    "supportsClear": true,
+    "supportsDuplicate": false,
+    "supportsReferenceSwap": true,
+    "supportsAbilitySwap": false,
+    "supportsPackExport": true,
+    "riskLevel": "low"
+  },
+  "guidedActions": [
+    {
+      "key": "change-values",
+      "label": "Change Values",
+      "description": "Start with the simple values at the top before touching advanced details.",
+      "recommendedSurface": "guided"
+    },
+    {
+      "key": "swap-reference",
+      "label": "Swap Linked Effect",
+      "description": "Reference swaps let one config borrow another effect, passive, or behaviour asset.",
+      "recommendedSurface": "guided"
+    }
+  ],
+  "librarySlots": [
+    {
+      "slotId": "slot.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Adjust cooldown timing without searching raw JSON paths by hand.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.cooldown"
+      ]
+    },
+    {
+      "slotId": "slot.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Add or rebalance direct damage values and damage scaling.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.damage"
+      ]
+    },
+    {
+      "slotId": "slot.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Adjust movement or projectile speed values.",
+      "riskLevel": "safe",
+      "suggestedBlockIds": [
+        "basic.speed"
+      ]
+    },
+    {
+      "slotId": "linked.references",
+      "label": "Linked Effects",
+      "category": "Effects",
+      "description": "Swap or clear linked passives, prefabs, and other effect references.",
+      "riskLevel": "medium",
+      "suggestedBlockIds": [
+        "effect.linked-passive"
+      ]
+    }
+  ],
+  "librarySuggestions": [
+    {
+      "blockId": "basic.cooldown",
+      "label": "Cooldown",
+      "category": "Basics",
+      "description": "Use this when you want to shorten or extend cooldown timing.",
+      "targetPath": "cooldown",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Cooldown",
+          "description": "Cooldown in seconds before this effect or action can be used again. Lower values make it available more often.",
+          "valueType": "number",
+          "defaultValue": 0,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.damage",
+      "label": "Damage",
+      "category": "Basics",
+      "description": "Use this when you want a simple damage slider or number input.",
+      "targetPath": "damage",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Damage",
+          "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+          "valueType": "number",
+          "defaultValue": 0,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "basic.speed",
+      "label": "Speed",
+      "category": "Basics",
+      "description": "Use this when you want faster movement or projectile travel.",
+      "targetPath": "AttackSpeed",
+      "operationType": "replace",
+      "riskLevel": "safe",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "value",
+          "label": "Attack Speed",
+          "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+          "valueType": "number",
+          "defaultValue": 0,
+          "options": []
+        }
+      ]
+    },
+    {
+      "blockId": "effect.linked-passive",
+      "label": "Swap Linked Effect",
+      "category": "Effects",
+      "description": "Use this when you want one config to borrow another linked effect or passive.",
+      "targetPath": "attachables[0]",
+      "operationType": "replace",
+      "riskLevel": "medium",
+      "recommendedSurface": "guided",
+      "iconPreviewPath": null,
+      "fields": [
+        {
+          "key": "reference",
+          "label": "Attachables",
+          "description": "Choose another linked passive or effect reference.",
+          "valueType": "reference",
+          "defaultValue": "Transform:Root",
+          "options": [
+            "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+            "GameObject:Hitbox_ExplosiveBarrel_Burn",
+            "GameObject:Hitbox_Harpoon_Shot",
+            "GameObject:Hitbox_Pistol_Gunshot",
+            "GameObject:Hitbox_RPG_Explosion",
+            "GameObject:Hitbox_RPG_Shot",
+            "GameObject:Hitbox_SkullThrow",
+            "GameObject:Hitbox_SkullThrow_Explosion",
+            "GameObject:VFX_Burn_Loop",
+            "GameObject:VFX_P_Loop_Gun_Flamethrower",
+            "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+            "GameObject:VFX_P_Loop_Gun_MachineGun",
+            "GameObject:VFX_P_Loop_Gun_Pistol",
+            "GameObject:VFX_P_Loop_Gun_RPG",
+            "GameObject:VFX_P_Loop_Gun_Revolver",
+            "GameObject:VFX_P_Loop_Gun_Shotgun",
+            "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+            "GameObject:VFX_P_Loop_SkullThrow",
+            "GameObject:VFX_StunEffect_Loop",
+            "PassiveSO:P_Berserk",
+            "PassiveSO:P_D_SinCity",
+            "Sprite:Ability_FireStorm",
+            "Sprite:Anna - Big Ult_0",
+            "Sprite:Anna - Dash Reset_0",
+            "Sprite:Anna - Long Dash_0",
+            "Sprite:Anna - Machine Gun_0",
+            "Sprite:Anna - Precision Shot_0",
+            "Sprite:Anna_Space_Sprite",
+            "Sprite:BerserkerPin_T1_Thumb",
+            "Sprite:Berserker_0",
+            "Sprite:Consumable_Flamethrower_Thumb",
+            "Sprite:Consumable_Harpoon_Thumb",
+            "Sprite:Consumable_MachineGun_Thumb",
+            "Sprite:Consumable_RPG_Thumb",
+            "Sprite:Consumable_Shotgun_Thumb",
+            "Sprite:Dz_Pistol_Icon",
+            "Sprite:P_Stat_Cd",
+            "Sprite:P_Stat_Dmg",
+            "Sprite:P_Stat_Hp",
+            "Sprite:P_Stat_MoveSpeed",
+            "Sprite:Passive_SinCity_Bleed_Sprite_0",
+            "Sprite:Skull_Throw_Thumb",
+            "StatusEffectSO:SE_Burn",
+            "StatusEffectSO:SE_Fear",
+            "StatusEffectSO:SE_Knocked",
+            "StatusEffectSO:SE_Pulled",
+            "StatusEffectSO:SE_Stunned",
+            "Transform:Root"
+          ]
+        }
+      ]
+    }
+  ],
+  "collectionEditors": [],
+  "referenceChoices": [
+    {
+      "path": "attachables[0]",
+      "label": "Attachables",
+      "currentReference": "Transform:Root",
+      "referenceType": "Reference",
+      "suggestions": [
+        "Reference"
+      ],
+      "availableReferences": [
+        "GameObject:Hitbox_BigEvilRobot_Flamethrower",
+        "GameObject:Hitbox_ExplosiveBarrel_Burn",
+        "GameObject:Hitbox_Harpoon_Shot",
+        "GameObject:Hitbox_Pistol_Gunshot",
+        "GameObject:Hitbox_RPG_Explosion",
+        "GameObject:Hitbox_RPG_Shot",
+        "GameObject:Hitbox_SkullThrow",
+        "GameObject:Hitbox_SkullThrow_Explosion",
+        "GameObject:VFX_Burn_Loop",
+        "GameObject:VFX_P_Loop_Gun_Flamethrower",
+        "GameObject:VFX_P_Loop_Gun_Harpoon_Gun",
+        "GameObject:VFX_P_Loop_Gun_MachineGun",
+        "GameObject:VFX_P_Loop_Gun_Pistol",
+        "GameObject:VFX_P_Loop_Gun_RPG",
+        "GameObject:VFX_P_Loop_Gun_Revolver",
+        "GameObject:VFX_P_Loop_Gun_Shotgun",
+        "GameObject:VFX_P_Loop_Gun_Shotgun_Sawed",
+        "GameObject:VFX_P_Loop_SkullThrow",
+        "GameObject:VFX_StunEffect_Loop",
+        "PassiveSO:P_Berserk",
+        "PassiveSO:P_D_SinCity",
+        "Sprite:Ability_FireStorm",
+        "Sprite:Anna - Big Ult_0",
+        "Sprite:Anna - Dash Reset_0",
+        "Sprite:Anna - Long Dash_0",
+        "Sprite:Anna - Machine Gun_0",
+        "Sprite:Anna - Precision Shot_0",
+        "Sprite:Anna_Space_Sprite",
+        "Sprite:BerserkerPin_T1_Thumb",
+        "Sprite:Berserker_0",
+        "Sprite:Consumable_Flamethrower_Thumb",
+        "Sprite:Consumable_Harpoon_Thumb",
+        "Sprite:Consumable_MachineGun_Thumb",
+        "Sprite:Consumable_RPG_Thumb",
+        "Sprite:Consumable_Shotgun_Thumb",
+        "Sprite:Dz_Pistol_Icon",
+        "Sprite:P_Stat_Cd",
+        "Sprite:P_Stat_Dmg",
+        "Sprite:P_Stat_Hp",
+        "Sprite:P_Stat_MoveSpeed",
+        "Sprite:Passive_SinCity_Bleed_Sprite_0",
+        "Sprite:Skull_Throw_Thumb",
+        "StatusEffectSO:SE_Burn",
+        "StatusEffectSO:SE_Fear",
+        "StatusEffectSO:SE_Knocked",
+        "StatusEffectSO:SE_Pulled",
+        "StatusEffectSO:SE_Stunned",
+        "Transform:Root"
+      ],
+      "allowCustomReference": true,
+      "previewLabel": "Root",
+      "previewPath": null,
+      "cropX": null,
+      "cropY": null,
+      "cropWidth": null,
+      "cropHeight": null,
+      "sourceWidth": null,
+      "sourceHeight": null
+    }
+  ],
+  "iconChoices": [],
+  "nativeUiPlacement": {
+    "kind": "CharacterState",
+    "label": "CharacterState",
+    "source": "RebalanceBAP",
+    "arenaVisible": false,
+    "hiddenDevVisible": false,
+    "customVisible": false
+  },
+  "gameModeSummary": null,
+  "removalCandidates": [
+    {
+      "id": "clear:attachables[0]:reference",
+      "operationType": "clear",
+      "path": "attachables[0]",
+      "mode": "soft",
+      "label": "Clear Attachables",
+      "description": "Remove the current Reference from this file.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "Root",
+      "previewSubtitle": "Transform:Root",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": "Transform:Root",
+      "afterValue": null,
+      "sourceCollectionId": null
+    },
+    {
+      "id": "remove:enabled:soft-flag",
+      "operationType": "remove",
+      "path": "enabled",
+      "mode": "soft",
+      "label": "Disable CharacterState",
+      "description": "Soft-disable this entry without removing its surrounding file or data structure.",
+      "safetyLevel": "safe",
+      "applyTiming": null,
+      "previewName": "CharacterState",
+      "previewSubtitle": "Controls whether this component, manager entry, or behaviour is active at all.",
+      "previewIconPath": null,
+      "previewIconCropX": null,
+      "previewIconCropY": null,
+      "previewIconCropWidth": null,
+      "previewIconCropHeight": null,
+      "previewIconSourceWidth": null,
+      "previewIconSourceHeight": null,
+      "beforeValue": true,
+      "afterValue": false,
+      "sourceCollectionId": null
+    }
+  ],
+  "textTokens": [
+    {
+      "token": "%baseCritChance%",
+      "label": "Base Crit Chance",
+      "description": "Numeric value for Base Crit Chance. Edit \u0060baseCritChance\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+      "sourcePath": "baseCritChance",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%baseCritDamage%",
+      "label": "Base Crit Damage",
+      "description": "Base Crit Damage dealt by this effect before other runtime modifiers are added.",
+      "sourcePath": "baseCritDmg",
+      "valueType": "number",
+      "previewValue": 1.4,
+      "previewText": "1.4"
+    },
+    {
+      "token": "%critChance%",
+      "label": "Crit Chance",
+      "description": "Critical hit chance for this effect or stat.",
+      "sourcePath": "critChance",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%critDamage%",
+      "label": "Crit Damage",
+      "description": "Crit Damage dealt by this effect before other runtime modifiers are added.",
+      "sourcePath": "critDmg",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%damageModifier%",
+      "label": "Damage Modifier",
+      "description": "Damage Modifier dealt by this effect before other runtime modifiers are added.",
+      "sourcePath": "damageModifier",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%damageMultiplier%",
+      "label": "Damage Multiplier",
+      "description": "Multiplier applied to damage. Values above 1 increase damage, values below 1 reduce it.",
+      "sourcePath": "damageMultiplier",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%damageToPlayersMultiplier%",
+      "label": "Damage To Players Multiplier",
+      "description": "Damage To Players Multiplier dealt by this effect before other runtime modifiers are added.",
+      "sourcePath": "damageToPlayersMultiplier",
+      "valueType": "number",
+      "previewValue": 1,
+      "previewText": "1"
+    },
+    {
+      "token": "%damage%",
+      "label": "Damage",
+      "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+      "sourcePath": "damage",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%cooldown%",
+      "label": "Cooldown",
+      "description": "Cooldown in seconds before this effect or action can be used again. Lower values make it available more often.",
+      "sourcePath": "cooldown",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%attackSpeed%",
+      "label": "Attack Speed",
+      "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "AttackSpeed",
+      "valueType": "number",
+      "previewValue": 0,
+      "previewText": "0"
+    },
+    {
+      "token": "%maxAttackSpeed%",
+      "label": "Max Attack Speed",
+      "description": "Max Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+      "sourcePath": "maxAttackSpeed",
+      "valueType": "number",
+      "previewValue": 10,
+      "previewText": "10"
+    }
+  ],
+  "operations": {
+    "entries": []
+  },
+  "operationStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "overrides": {},
+  "overrideStatus": {
+    "appliedCount": 0,
+    "failedCount": 0,
+    "entries": []
+  },
+  "instructions": [
+    "Edit quickEdit[].value for the simplest workflow, or use the raw overrides object if you want full control.",
+    "Use the simpleSettings section for the grouped quick overview of settings this mod can actually write.",
+    "uiCapabilities, guidedActions, librarySlots, librarySuggestions, collectionEditors, referenceChoices, iconChoices, and nativeUiPlacement are the launcher-facing hints that describe what the visual editor can safely do here.",
+    "operations.entries is for add/remove/replace/duplicate/clear actions that raw value overrides cannot express safely.",
+    "Use advanced.fields for the full readable list of captured values. Check the editable flag before relying on a path.",
+    "advanced.defaults contains the original values captured before any JSON overrides are applied.",
+    "operationStatus shows whether each semantic add/remove/replace/clear action was applied successfully on the last run.",
+    "overrideStatus shows whether each override in the file was applied successfully on the last run.",
+    "advanced.effectiveValues shows the currently active values after overrides were applied.",
+    "Copy a path from simpleSettings or advanced.effectiveValues into overrides and assign the new value there.",
+    "Use [index] for arrays and dot notation for fields and properties.",
+    "Exported members include public fields and Unity [SerializeField] private fields.",
+    "Direct JSON overrides are reliable for numbers, booleans, strings, and enums.",
+    "Unity object references can usually be reused by copying the exported Type:Name string back into overrides for that field. referenceChoices.availableReferences lists the best captured candidates when the launcher wants a picker.",
+    "Remove an entry from overrides to fall back to the game default.",
+    "Character folders are generated for every character at startup from prefab defaults and are refreshed with live runtime values after that character loads in a match or training."
+  ],
+  "advanced": {
+    "fields": [
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "baseCritChance",
+        "displayName": "Base Crit Chance",
+        "label": "Base Crit Chance",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Base Crit Chance. Edit \u0060baseCritChance\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "baseCritDmg",
+        "displayName": "Base Crit Damage",
+        "label": "Base Crit Damage",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base Crit Damage dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": 1.4,
+        "currentValue": 1.4,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 55.999999046325684,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 5.599999904632568,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 55.999999046325684,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "critChance",
+        "displayName": "Crit Chance",
+        "label": "Crit Chance",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Critical hit chance for this effect or stat.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "critDmg",
+        "displayName": "Crit Damage",
+        "label": "Crit Damage",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Crit Damage dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "damage",
+        "displayName": "Damage",
+        "label": "Damage",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Base damage dealt by this effect before extra scaling and other modifiers are applied.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "damageModifier",
+        "displayName": "Damage Modifier",
+        "label": "Damage Modifier",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Damage Modifier dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 9999,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 100000,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "damageMultiplier",
+        "displayName": "Damage Multiplier",
+        "label": "Damage Multiplier",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Multiplier applied to damage. Values above 1 increase damage, values below 1 reduce it.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "damageToPlayersMultiplier",
+        "displayName": "Damage To Players Multiplier",
+        "label": "Damage To Players Multiplier",
+        "category": "Damage",
+        "valueType": "number",
+        "editable": true,
+        "description": "Damage To Players Multiplier dealt by this effect before other runtime modifiers are added.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "cooldown",
+        "displayName": "Cooldown",
+        "label": "Cooldown",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Cooldown in seconds before this effect or action can be used again. Lower values make it available more often.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 60,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 600,
+          "step": 0.1,
+          "unit": "seconds",
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "AttackSpeed",
+        "displayName": "Attack Speed",
+        "label": "Attack Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "attackSpeed",
+        "displayName": "Attack Speed",
+        "label": "Attack Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "maxAttackSpeed",
+        "displayName": "Max Attack Speed",
+        "label": "Max Attack Speed",
+        "category": "Movement",
+        "valueType": "number",
+        "editable": true,
+        "description": "Max Attack Speed value. Higher values usually make the movement, projectile, or effect faster.",
+        "defaultValue": 10,
+        "currentValue": 10,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 50,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 500,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "baseLifeSteal",
+        "displayName": "Base Life Steal",
+        "label": "Base Life Steal",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Base Life Steal. Edit \u0060baseLifeSteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "castFlags",
+        "displayName": "Cast Flags",
+        "label": "Cast Flags",
+        "category": "General",
+        "valueType": "string",
+        "editable": true,
+        "description": "Text or key value for Cast Flags. This controls the string or named reference stored at \u0060castFlags\u0060.",
+        "defaultValue": "None",
+        "currentValue": "None",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "lifesteal",
+        "displayName": "Lifesteal",
+        "label": "Lifesteal",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Lifesteal. Edit \u0060lifesteal\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "luck",
+        "displayName": "Luck",
+        "label": "Luck",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Luck. Edit \u0060luck\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "shred",
+        "displayName": "Shred",
+        "label": "Shred",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Shred. Edit \u0060shred\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "weakenModifer",
+        "displayName": "Weaken Modifer",
+        "label": "Weaken Modifer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Weaken Modifer. Edit \u0060weakenModifer\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "zoomMultiplier",
+        "displayName": "Zoom Multiplier",
+        "label": "Zoom Multiplier",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Zoom Multiplier. Edit \u0060zoomMultiplier\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 1,
+        "currentValue": 1,
+        "valueRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 3,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": -10,
+          "maximum": 10,
+          "step": 0.05,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "lastSyncTime",
+        "displayName": "Last Sync Time",
+        "label": "Last Sync Time",
+        "category": "Timing",
+        "valueType": "number",
+        "editable": true,
+        "description": "Last Sync Time in seconds. Higher values keep the effect active longer.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "IsAbilityHidden",
+        "displayName": "Is Ability Hidden",
+        "label": "Is Ability Hidden",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Ability Hidden. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "consumableCastLock",
+        "displayName": "Consumable Cast Lock",
+        "label": "Consumable Cast Lock",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Consumable Cast Lock. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "enabled",
+        "displayName": "Enabled",
+        "label": "Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Controls whether this component, manager entry, or behaviour is active at all.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "forceInitializeBuffer",
+        "displayName": "Force Initialize Buffer",
+        "label": "Force Initialize Buffer",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Force Initialize Buffer. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "hitStopped",
+        "displayName": "Hit Stopped",
+        "label": "Hit Stopped",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Hit Stopped. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "isActiveAndEnabled",
+        "displayName": "Is Active And Enabled",
+        "label": "Is Active And Enabled",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": false,
+        "description": "Boolean toggle for Is Active And Enabled. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "isParrying",
+        "displayName": "Is Parrying",
+        "label": "Is Parrying",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Is Parrying. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": false,
+        "currentValue": false,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "useGUILayout",
+        "displayName": "Use Gui Layout",
+        "label": "Use Gui Layout",
+        "category": "Behavior",
+        "valueType": "boolean",
+        "editable": true,
+        "description": "Boolean toggle for Use Gui Layout. \u0060true\u0060 enables it and \u0060false\u0060 disables it.",
+        "defaultValue": true,
+        "currentValue": true,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "ComponentIndex",
+        "displayName": "Component Index",
+        "label": "Component Index",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Component Index. Edit \u0060ComponentIndex\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "ForceFullbodyAnimLocks",
+        "displayName": "Force Fullbody Anim Locks",
+        "label": "Force Fullbody Anim Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Force Fullbody Anim Locks. Edit \u0060ForceFullbodyAnimLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "OnAddSilenceLockAction",
+        "displayName": "On Add Silence Lock Action",
+        "label": "On Add Silence Lock Action",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for On Add Silence Lock Action on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "SilenceLocks",
+        "displayName": "Silence Locks",
+        "label": "Silence Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": false,
+        "description": "Numeric value for Silence Locks. Edit \u0060SilenceLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "abilitiesByPriority",
+        "displayName": "Abilities By Priority",
+        "label": "Abilities By Priority",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Abilities By Priority on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "abilitiesWithAutoCancel",
+        "displayName": "Abilities With Auto Cancel",
+        "label": "Abilities With Auto Cancel",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Abilities With Auto Cancel on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "abilityHiddenLocks",
+        "displayName": "Ability Hidden Locks",
+        "label": "Ability Hidden Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Ability Hidden Locks. Edit \u0060abilityHiddenLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "animLocks",
+        "displayName": "Anim Locks",
+        "label": "Anim Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Anim Locks. Edit \u0060animLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "attachables[0]",
+        "displayName": "Attachable 1 / Attachables",
+        "label": "Attachables",
+        "category": "General",
+        "valueType": "reference",
+        "editable": true,
+        "description": "Unity object reference for Attachables. Reuse the exported \u0060Type:Name\u0060 value to point this field at another in-game asset.",
+        "defaultValue": "Transform:Root",
+        "currentValue": "Transform:Root",
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "camController",
+        "displayName": "Cam Controller",
+        "label": "Cam Controller",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Cam Controller on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "charAnim",
+        "displayName": "Char Anim",
+        "label": "Char Anim",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Anim on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "charHidden",
+        "displayName": "Char Hidden",
+        "label": "Char Hidden",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Char Hidden on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "cmdBufferSystem",
+        "displayName": "CMD Buffer System",
+        "label": "CMD Buffer System",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for CMD Buffer System on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "forceFullbodyAnimLocks",
+        "displayName": "Force Fullbody Anim Locks",
+        "label": "Force Fullbody Anim Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Force Fullbody Anim Locks. Edit \u0060forceFullbodyAnimLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "fowController",
+        "displayName": "Fow Controller",
+        "label": "Fow Controller",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Fow Controller on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "hitStopTimer",
+        "displayName": "Hit Stop Timer",
+        "label": "Hit Stop Timer",
+        "category": "General",
+        "valueType": "number",
+        "editable": true,
+        "description": "Numeric value for Hit Stop Timer. Edit \u0060hitStopTimer\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 0.1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "m_CancellationTokenSource",
+        "displayName": "M Cancellation Token Source",
+        "label": "M Cancellation Token Source",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for M Cancellation Token Source on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "rngManager",
+        "displayName": "Rng Manager",
+        "label": "Rng Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for Rng Manager on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "silenceLocks",
+        "displayName": "Silence Locks",
+        "label": "Silence Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Silence Locks. Edit \u0060silenceLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "teleportLocks",
+        "displayName": "Teleport Locks",
+        "label": "Teleport Locks",
+        "category": "General",
+        "valueType": "integer",
+        "editable": true,
+        "description": "Numeric value for Teleport Locks. Edit \u0060teleportLocks\u0060 to change how \u0060FROGGY#7/CharacterState\u0060 behaves.",
+        "defaultValue": 0,
+        "currentValue": 0,
+        "valueRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "vanillaRange": {
+          "minimum": 0,
+          "maximum": 4,
+          "step": 1,
+          "unit": null,
+          "unclamped": false
+        },
+        "extendedRange": {
+          "minimum": 0,
+          "maximum": 40,
+          "step": 1,
+          "unit": null,
+          "unclamped": true
+        },
+        "riskLevel": "medium"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "uIPopUp",
+        "displayName": "U I Pop Up",
+        "label": "U I Pop Up",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for U I Pop Up on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "uiAbilities",
+        "displayName": "UI Abilities",
+        "label": "UI Abilities",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for UI Abilities on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      },
+      {
+        "targetType": "CharacterState",
+        "targetKey": "FROGGY#7/CharacterState",
+        "path": "uiManager",
+        "displayName": "UI Manager",
+        "label": "UI Manager",
+        "category": "General",
+        "valueType": "unknown",
+        "editable": true,
+        "description": "Editable value for UI Manager on \u0060FROGGY#7/CharacterState\u0060.",
+        "defaultValue": null,
+        "currentValue": null,
+        "valueRange": null,
+        "vanillaRange": null,
+        "extendedRange": null,
+        "riskLevel": "safe"
+      }
+    ],
+    "defaults": {
+      "AttackSpeed": 0,
+      "ComponentIndex": 0,
+      "ForceFullbodyAnimLocks": 0,
+      "IsAbilityHidden": false,
+      "OnAddSilenceLockAction": null,
+      "SilenceLocks": 0,
+      "abilitiesByPriority": null,
+      "abilitiesWithAutoCancel": null,
+      "abilityHiddenLocks": 0,
+      "animLocks": 0,
+      "attachables[0]": "Transform:Root",
+      "attackSpeed": 0,
+      "baseCritChance": 0,
+      "baseCritDmg": 1.4,
+      "baseLifeSteal": 0,
+      "camController": null,
+      "castFlags": "None",
+      "charAnim": null,
+      "charHidden": null,
+      "cmdBufferSystem": null,
+      "consumableCastLock": false,
+      "cooldown": 0,
+      "critChance": 0,
+      "critDmg": 0,
+      "damage": 0,
+      "damageModifier": 0,
+      "damageMultiplier": 1,
+      "damageToPlayersMultiplier": 1,
+      "enabled": true,
+      "forceFullbodyAnimLocks": 0,
+      "forceInitializeBuffer": false,
+      "fowController": null,
+      "hitStopTimer": 0,
+      "hitStopped": false,
+      "isActiveAndEnabled": false,
+      "isParrying": false,
+      "lastSyncTime": 0,
+      "lifesteal": 0,
+      "luck": 0,
+      "m_CancellationTokenSource": null,
+      "maxAttackSpeed": 10,
+      "rngManager": null,
+      "shred": 0,
+      "silenceLocks": 0,
+      "teleportLocks": 0,
+      "uIPopUp": null,
+      "uiAbilities": null,
+      "uiManager": null,
+      "useGUILayout": true,
+      "weakenModifer": 0,
+      "zoomMultiplier": 1
+    },
+    "effectiveValues": {
+      "AttackSpeed": 0,
+      "ComponentIndex": 0,
+      "ForceFullbodyAnimLocks": 0,
+      "IsAbilityHidden": false,
+      "OnAddSilenceLockAction": null,
+      "SilenceLocks": 0,
+      "abilitiesByPriority": null,
+      "abilitiesWithAutoCancel": null,
+      "abilityHiddenLocks": 0,
+      "animLocks": 0,
+      "attachables[0]": "Transform:Root",
+      "attackSpeed": 0,
+      "baseCritChance": 0,
+      "baseCritDmg": 1.4,
+      "baseLifeSteal": 0,
+      "camController": null,
+      "castFlags": "None",
+      "charAnim": null,
+      "charHidden": null,
+      "cmdBufferSystem": null,
+      "consumableCastLock": false,
+      "cooldown": 0,
+      "critChance": 0,
+      "critDmg": 0,
+      "damage": 0,
+      "damageModifier": 0,
+      "damageMultiplier": 1,
+      "damageToPlayersMultiplier": 1,
+      "enabled": true,
+      "forceFullbodyAnimLocks": 0,
+      "forceInitializeBuffer": false,
+      "fowController": null,
+      "hitStopTimer": 0,
+      "hitStopped": false,
+      "isActiveAndEnabled": false,
+      "isParrying": false,
+      "lastSyncTime": 0,
+      "lifesteal": 0,
+      "luck": 0,
+      "m_CancellationTokenSource": null,
+      "maxAttackSpeed": 10,
+      "rngManager": null,
+      "shred": 0,
+      "silenceLocks": 0,
+      "teleportLocks": 0,
+      "uIPopUp": null,
+      "uiAbilities": null,
+      "uiManager": null,
+      "useGUILayout": true,
+      "weakenModifer": 0,
+      "zoomMultiplier": 1
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "hints": {
+    "quick-edit-damage": {
+      "title": "Damage tuning",
+      "body": "Damage values affect how much HP is removed per hit. Most BAPBAP abilities expect a balanced 60–180 range; values above 250 typically one-shot.",
+      "example": "Try 110 for moderate combat, 220 for heavy hitters."
+    },
+    "quick-edit-cooldown": {
+      "title": "Cooldown values",
+      "body": "Cooldown is the seconds between casts. Short cooldowns feel more responsive but can break encounter pacing.",
+      "example": "3–6 seconds reads as snappy, 10+ feels like a deliberate choice."
+    },
+    "quick-edit-duration": {
+      "title": "Effect duration",
+      "body": "How long a status effect persists on a target, in seconds.",
+      "example": "Try 1.5 for tap-to-disrupt effects, 6+ for long-burn DOTs."
+    },
+    "quick-edit-radius": {
+      "title": "Effect radius",
+      "body": "Area-of-effect radius in world units. Larger values hit more enemies but trivialise crowd control.",
+      "example": "3–5 is single-target adjacent, 10+ is room-wide."
+    },
+    "quick-edit-cost": {
+      "title": "Resource cost",
+      "body": "Cost charged when this ability is used. Higher cost forces players to budget their casts.",
+      "example": "Use 0 for basic kit slots, 30–50 for ultimates."
+    },
+    "override-map": {
+      "title": "Override map",
+      "body": "The Override Map shows every value you've changed on this file as a flat JSON object. Edit JSON directly here for advanced overrides.",
+      "example": "{ \"hp\": 220, \"abilities[0].damage\": 110 }"
+    },
+    "file-picker": {
+      "title": "Change file",
+      "body": "Click to switch to another runtime document without leaving the editor. Your unsaved drafts on the current file are preserved.",
+      "example": "Use Ctrl+F to focus the file search inside the picker."
+    },
+    "effect-add": {
+      "title": "Add effect",
+      "body": "Browse the indexed catalog of known PassiveSO / StatusEffect blocks. Type to filter; pick to add to this slot.",
+      "example": "Search 'fire' returns Firewave Burn, Firewave, Style Factor Pin."
+    },
+    "effect-remove": {
+      "title": "Remove effect",
+      "body": "Removes this effect from the configuration. The block is preserved in the override map and can be restored via Undo.",
+      "example": "Cmd+Z (or Ctrl+Z) reverts an accidental removal."
+    },
+    "save-action": {
+      "title": "Save changes",
+      "body": "Writes the current overrides to disk. A timestamped backup is created automatically before each save.",
+      "example": "Restart Beat Saber after save to apply runtime changes."
+    },
+    "reset-all": {
+      "title": "Reset all values",
+      "body": "Clears every override on this file, returning every value to the standard runtime data. This action is undoable.",
+      "example": "Use sparingly — bulk resets land in the history stack."
+    },
+    "advanced-section": {
+      "title": "Behavior and advanced",
+      "body": "Less commonly tweaked fields live here. Includes raw paths, hidden defaults, and inferred deeper edits.",
+      "example": "Open this section only when quick edit doesn't expose what you need."
+    },
+    "card-art": {
+      "title": "Card art",
+      "body": "The icon shown in-game. Pick from sprite atlases or upload custom PNGs in the Custom builder.",
+      "example": "256×256 PNGs render best on standard cards."
+    },
+    "match-rules-zone": {
+      "title": "Zone rules",
+      "body": "Zone rules govern arena boundaries, spawn radii, and elimination geometry.",
+      "example": "Increase spawn radius to spread players out at game start."
+    },
+    "match-rules-bots": {
+      "title": "Bot behavior",
+      "body": "Bot density and difficulty controls. High counts can stress the runtime; verify performance before saving.",
+      "example": "8–12 bots per match keep encounters lively without lag."
+    },
+    "swap-source-pool": {
+      "title": "Source pool",
+      "body": "The Swap source pool lists every ability you can swap into this slot, grouped by recommended/family/all.",
+      "example": "Recommended sources match the original slot's role and cost."
+    }
+  }
+}
