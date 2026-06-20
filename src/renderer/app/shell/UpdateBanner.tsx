@@ -52,6 +52,7 @@ export function UpdateBanner() {
                 onClick={dismiss}
                 className="focus-ring shrink-0 rounded p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 title="Dismiss"
+                aria-label="Dismiss update banner"
             >
                 <X size={16} />
             </button>

@@ -210,6 +210,7 @@ export function RadioWorkspace() {
                                     }}
                                     className="focus-ring shrink-0 rounded p-1 transition-colors hover:bg-muted"
                                     title="Add to queue"
+                                    aria-label="Add to queue"
                                 >
                                     <ListPlus
                                         size={16}
@@ -223,6 +224,7 @@ export function RadioWorkspace() {
                                     }}
                                     className="focus-ring shrink-0 rounded p-1 transition-colors hover:bg-muted"
                                     title={fav ? "Remove favorite" : "Add favorite"}
+                                    aria-label={fav ? "Remove favorite" : "Add favorite"}
                                 >
                                     <Heart
                                         size={16}
@@ -259,6 +261,7 @@ export function RadioWorkspace() {
                                         onClick={() => removeFromQueue.mutate(track.id)}
                                         className="focus-ring shrink-0 rounded p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-destructive"
                                         title="Remove from queue"
+                                        aria-label="Remove from queue"
                                     >
                                         <X size={14} />
                                     </button>
@@ -284,13 +287,13 @@ export function RadioWorkspace() {
                     )}
                 </div>
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" onClick={previous} title="Previous" className="text-foreground hover:bg-muted">
+                    <Button variant="ghost" size="icon" onClick={previous} title="Previous" aria-label="Previous track" className="text-foreground hover:bg-muted">
                         <SkipBack size={18} />
                     </Button>
-                    <Button variant="default" size="icon" onClick={togglePlay} title={playback.isPlaying ? "Pause" : "Play"}>
+                    <Button variant="default" size="icon" onClick={togglePlay} title={playback.isPlaying ? "Pause" : "Play"} aria-label={playback.isPlaying ? "Pause" : "Play"}>
                         {playback.isPlaying ? <Pause size={18} /> : <Play size={18} />}
                     </Button>
-                    <Button variant="ghost" size="icon" onClick={next} title="Next" className="text-foreground hover:bg-muted">
+                    <Button variant="ghost" size="icon" onClick={next} title="Next" aria-label="Next track" className="text-foreground hover:bg-muted">
                         <SkipForward size={18} />
                     </Button>
                 </div>

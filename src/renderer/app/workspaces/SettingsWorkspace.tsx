@@ -86,7 +86,7 @@ export function SettingsWorkspace() {
                     <p className="mb-1 text-sm text-foreground">Instances folder</p>
                     <div className="flex items-center gap-2">
                         <Input value={settings.instancesRoot} readOnly className="flex-1" />
-                        <Button variant="outline" size="icon" onClick={chooseInstancesRoot} title="Choose folder">
+                        <Button variant="outline" size="icon" onClick={chooseInstancesRoot} title="Choose folder" aria-label="Choose instances folder">
                             <FolderOpen size={16} />
                         </Button>
                     </div>

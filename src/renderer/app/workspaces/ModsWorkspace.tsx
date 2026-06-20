@@ -157,6 +157,7 @@ export function ModsWorkspace() {
                         onClick={() => setSelected(new Set())}
                         className="focus-ring ml-auto rounded p-1 text-muted-foreground hover:text-foreground"
                         title="Clear selection"
+                        aria-label="Clear selection"
                     >
                         <X size={16} />
                     </button>

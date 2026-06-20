@@ -69,7 +69,7 @@ export function SetupWizard() {
                         <p className="mb-1 text-sm text-foreground">Instances folder</p>
                         <div className="flex items-center gap-2">
                             <Input value={effectiveRoot} readOnly className="flex-1 text-xs" />
-                            <Button variant="outline" size="icon" onClick={chooseFolder} title="Choose folder">
+                            <Button variant="outline" size="icon" onClick={chooseFolder} title="Choose folder" aria-label="Choose instances folder">
                                 <FolderOpen size={16} />
                             </Button>
                         </div>
