@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { api } from "../../api";
 import { useRadioState } from "../query/hooks";
 import { useRadioPlayerStore } from "../stores/useRadioPlayerStore";
-import { buildNextTrackId } from "../../helpers/radio-shuffle";
+import { buildAdvancePlayback } from "../../helpers/radio-shuffle";
 import { AudioEngine } from "./audioEngine";
 
 /**
@@ -39,13 +39,9 @@ export function useAudioEngine() {
             onEnded: () => {
                 const state = stateRef.current;
                 if (!state) return;
-                const nextId = buildNextTrackId(state);
+                const delta = buildAdvancePlayback(state);
                 void api.radio
-                    .setPlaybackState(
-                        nextId
-                            ? { currentTrackId: nextId, currentTimeMs: 0, isPlaying: true }
-                            : { isPlaying: false }
-                    )
+                    .setPlaybackState(delta ?? { isPlaying: false })
                     .catch(() => undefined);
             },
             onTime: ms => {

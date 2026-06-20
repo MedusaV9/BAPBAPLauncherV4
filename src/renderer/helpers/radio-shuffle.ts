@@ -1,4 +1,6 @@
-import type { RadioCollection, RadioResolvedTrack, RadioState } from "../../shared/radio";
+import type { RadioCollection, RadioResolvedTrack, RadioSetPlaybackStateInput, RadioState } from "../../shared/radio";
+
+const MAX_HISTORY = 24;
 
 type ShuffleParams = {
     tracks: RadioResolvedTrack[];
@@ -136,9 +138,65 @@ export function buildNextTrackId(state: RadioState): string | null {
     });
 }
 
-export function buildPreviousTrackId(state: RadioState): string | null {
+/**
+ * Full playback delta for advancing to the next track: consumes the queue head
+ * (so an enqueued track plays once, not forever) and pushes the outgoing track
+ * onto history (so smart-shuffle repeat-avoidance and Previous have data).
+ */
+export function buildAdvancePlayback(state: RadioState): RadioSetPlaybackStateInput | null {
+    const nextId = buildNextTrackId(state);
+    if (!nextId) {
+        return null;
+    }
+    const { currentTrackId, queueTrackIds, historyTrackIds } = state.playback;
+    const consumedFromQueue = queueTrackIds.length > 0 && queueTrackIds[0] === nextId;
+    const nextQueue = consumedFromQueue ? queueTrackIds.slice(1) : queueTrackIds;
+    const nextHistory = currentTrackId
+        ? [...historyTrackIds, currentTrackId].slice(-MAX_HISTORY)
+        : historyTrackIds;
+    return {
+        currentTrackId: nextId,
+        currentTimeMs: 0,
+        isPlaying: true,
+        queueTrackIds: nextQueue,
+        historyTrackIds: nextHistory,
+    };
+}
+
+/**
+ * Full playback delta for stepping back: pops the most recent history entry and
+ * plays it. Returns null when there is nothing to go back to.
+ */
+export function buildPreviousPlayback(state: RadioState): RadioSetPlaybackStateInput | null {
     const history = state.playback.historyTrackIds;
-    return history.length ? history[history.length - 1] : null;
+    if (!history.length) {
+        return null;
+    }
+    return {
+        currentTrackId: history[history.length - 1],
+        currentTimeMs: 0,
+        isPlaying: true,
+        historyTrackIds: history.slice(0, -1),
+    };
+}
+
+/**
+ * Full playback delta for a direct (manual) track selection. Keeps the queue
+ * intact — clicking a track in the list does not consume the queue — but pushes
+ * the outgoing track onto history so Previous works after manual selection.
+ */
+export function buildPlayTrackPlayback(state: RadioState, trackId: string): RadioSetPlaybackStateInput {
+    const { currentTrackId, historyTrackIds } = state.playback;
+    const nextHistory =
+        currentTrackId && currentTrackId !== trackId
+            ? [...historyTrackIds, currentTrackId].slice(-MAX_HISTORY)
+            : historyTrackIds;
+    return {
+        currentTrackId: trackId,
+        currentTimeMs: 0,
+        isPlaying: true,
+        historyTrackIds: nextHistory,
+    };
 }
 
 export function describeCollection(collection: RadioCollection, state: RadioState): string {

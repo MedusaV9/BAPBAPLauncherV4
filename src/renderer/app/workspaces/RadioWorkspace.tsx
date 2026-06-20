@@ -16,7 +16,7 @@ import {
     useClearQueue,
     useCreatePlaylist,
 } from "../query/hooks";
-import { buildNextTrackId, buildPreviousTrackId, resolveCollectionTrackIds } from "../../helpers/radio-shuffle";
+import { buildAdvancePlayback, buildPreviousPlayback, buildPlayTrackPlayback, resolveCollectionTrackIds } from "../../helpers/radio-shuffle";
 import type { RadioCollection } from "../../../shared/radio";
 
 function CollectionChip({ label, active, onClick }: { label: string; active: boolean; onClick: () => void }) {
@@ -83,7 +83,7 @@ export function RadioWorkspace() {
     }
 
     function playTrack(trackId: string) {
-        setPlayback.mutate({ currentTrackId: trackId, currentTimeMs: 0, isPlaying: true });
+        setPlayback.mutate(buildPlayTrackPlayback(radio!, trackId));
     }
 
     function togglePlay() {
@@ -96,13 +96,13 @@ export function RadioWorkspace() {
     }
 
     function next() {
-        const id = buildNextTrackId(radio!);
-        if (id) playTrack(id);
+        const delta = buildAdvancePlayback(radio!);
+        if (delta) setPlayback.mutate(delta);
     }
 
     function previous() {
-        const id = buildPreviousTrackId(radio!);
-        if (id) playTrack(id);
+        const delta = buildPreviousPlayback(radio!);
+        if (delta) setPlayback.mutate(delta);
     }
 
     return (
