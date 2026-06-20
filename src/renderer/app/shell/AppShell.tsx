@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { TopNav } from "./TopNav";
 import { UpdateBanner } from "./UpdateBanner";
 import { SetupWizard } from "./SetupWizard";
@@ -40,6 +41,7 @@ export function AppShell() {
     const phase = useBootstrap();
     const activeWorkspace = useShellStore(s => s.activeWorkspace);
     const fatalMessage = useShellStore(s => s.fatalMessage);
+    const reduceMotion = useReducedMotion();
     useAudioEngine();
 
     if (phase === "splash" || phase === "bootstrap") return <Splash />;
@@ -54,7 +56,15 @@ export function AppShell() {
             <UpdateBanner />
             <main className="min-h-0 flex-1 overflow-hidden">
                 <Suspense fallback={<Splash />}>
-                    <Workspace />
+                    <motion.div
+                        key={activeWorkspace}
+                        className="h-full"
+                        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        <Workspace />
+                    </motion.div>
                 </Suspense>
             </main>
         </div>
