@@ -19,8 +19,8 @@ export function SectionHeading({ children, subtitle, eyebrow, className = "" }: 
                     </span>
                 </div>
             )}
-            <h1 className="font-display text-2xl leading-tight text-foreground">{children}</h1>
-            {subtitle && <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>}
+            <h1 className="font-display text-3xl leading-[1.05] tracking-tight text-foreground">{children}</h1>
+            {subtitle && <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted-foreground">{subtitle}</p>}
         </div>
     );
 }
