@@ -49,7 +49,7 @@ function UnlockGate() {
 }
 
 export function ToolsWorkspace() {
-    const { data: settings } = useSettings();
+    const { data: settings, isLoading: settingsLoading } = useSettings();
     const { data: instances } = useInstances();
     const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -59,7 +59,13 @@ export function ToolsWorkspace() {
         }
     }, [instances, selectedId]);
 
-    if (!settings?.toolsUnlocked) {
+    // Wait for settings before deciding lock state, otherwise the UnlockGate
+    // flashes for a frame on every mount while the query resolves.
+    if (settingsLoading || !settings) {
+        return null;
+    }
+
+    if (!settings.toolsUnlocked) {
         return <UnlockGate />;
     }
 
