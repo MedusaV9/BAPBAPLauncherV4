@@ -56,7 +56,7 @@ export function SettingsWorkspace() {
 
             <div className="flex max-w-2xl flex-col gap-6">
                 <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-sm text-foreground">Updates</h2>
+                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Updates</h2>
                     <ToggleRow
                         label="Automatic updates"
                         description="Check for launcher updates on startup."
@@ -72,7 +72,7 @@ export function SettingsWorkspace() {
                 </BapCard>
 
                 <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-sm text-foreground">Launch</h2>
+                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Launch</h2>
                     <ToggleRow
                         label="Show MelonLoader console"
                         description="Open the MelonLoader console window when launching."
@@ -82,7 +82,7 @@ export function SettingsWorkspace() {
                 </BapCard>
 
                 <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-sm text-foreground">Storage</h2>
+                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Storage</h2>
                     <p className="mb-1 text-sm text-foreground">Instances folder</p>
                     <div className="flex items-center gap-2">
                         <Input value={settings.instancesRoot} readOnly className="flex-1" />
@@ -93,7 +93,7 @@ export function SettingsWorkspace() {
                 </BapCard>
 
                 <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-sm text-foreground">Manifest source</h2>
+                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Manifest source</h2>
                     <Input
                         defaultValue={settings.manifestUrl}
                         onBlur={e => {
@@ -107,7 +107,7 @@ export function SettingsWorkspace() {
                 </BapCard>
 
                 <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-sm text-foreground">Motion &amp; effects</h2>
+                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Motion &amp; effects</h2>
                     <ToggleRow
                         label="Enable motion"
                         description="Animate transitions and reveals (disable for calm mode)."

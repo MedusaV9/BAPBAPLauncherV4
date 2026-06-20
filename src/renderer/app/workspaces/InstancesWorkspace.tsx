@@ -117,7 +117,7 @@ export function InstancesWorkspace() {
             )}
 
             {/* Available to install */}
-            <h2 className="font-display mb-3 text-sm text-foreground">Available</h2>
+            <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Available</h2>
             <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {INSTANCES_HERO_TRACKS.filter(t => t !== "bundle").map(track => {
                     const meta = getInstancesHeroTrackMeta(track as InstancesHeroTrack);
@@ -164,7 +164,7 @@ export function InstancesWorkspace() {
             </div>
 
             {/* Installed profiles */}
-            <h2 className="font-display mb-3 text-sm text-foreground">Your profiles</h2>
+            <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Your profiles</h2>
             {isLoading && <p className="text-sm text-muted-foreground">Loading instances…</p>}
             {instances.length === 0 && !isLoading && (
                 <BapCard className="p-6 text-sm text-muted-foreground">
