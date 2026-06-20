@@ -80,6 +80,7 @@ export function ToolsWorkspace() {
                 <select
                     value={selectedId ?? ""}
                     onChange={e => setSelectedId(e.target.value)}
+                    aria-label="Profile"
                     className="h-10 rounded-lg border border-border bg-card px-3 text-sm text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                     {instances?.map(i => (

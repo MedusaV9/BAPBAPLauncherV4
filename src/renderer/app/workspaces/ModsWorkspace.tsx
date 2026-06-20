@@ -108,12 +108,14 @@ export function ModsWorkspace() {
                         value={query}
                         onChange={e => setQuery(e.target.value)}
                         placeholder="Search mods…"
+                        aria-label="Search mods"
                         className="pl-9"
                     />
                 </div>
                 <select
                     value={instanceId ?? ""}
                     onChange={e => setInstanceId(e.target.value)}
+                    aria-label="Profile"
                     className="h-10 rounded-lg border border-border bg-card px-3 text-sm text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                     {instances?.map(i => (
