@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { Play, Square, Terminal } from "lucide-react";
+import { Play, Square, Terminal, Boxes } from "lucide-react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
 import { BapButton } from "../../components/brand/BapButton";
 import { Badge } from "../../components/ui/badge";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { cn } from "../lib/utils";
+import { useShellStore } from "../stores/useShellStore";
 import {
     useInstances,
     useRuntimeState,
@@ -28,6 +29,7 @@ export function LaunchWorkspace() {
     const startLaunch = useStartLaunch();
     const stopLaunch = useStopLaunch();
     const setSetting = useSetSetting();
+    const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
 
     const defaultProfileId = settings?.launchDefaultProfileId ?? null;
     const [selectedId, setSelectedId] = useState<string | null>(defaultProfileId);
@@ -62,6 +64,28 @@ export function LaunchWorkspace() {
                 Start
             </SectionHeading>
 
+            {instances && instances.length === 0 ? (
+                <div className="flex min-h-0 flex-1 items-center justify-center">
+                    <BapCard className="flex max-w-md flex-col items-center gap-4 p-10 text-center">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-secondary">
+                            <Boxes size={26} className="text-accent" />
+                        </div>
+                        <div>
+                            <h2 className="font-display text-lg text-foreground">No profiles yet</h2>
+                            <p className="mt-1 text-sm text-muted-foreground">
+                                Install a game version or bundle to create your first profile, then come back here to play.
+                            </p>
+                        </div>
+                        <BapButton
+                            onClick={() => setActiveWorkspace("instances")}
+                            icon={Boxes}
+                            showChevron={false}
+                        >
+                            Go to Instances
+                        </BapButton>
+                    </BapCard>
+                </div>
+            ) : (
             <div className="flex min-h-0 flex-1 gap-6">
                 {/* Profile picker + controls */}
                 <div className="flex w-80 shrink-0 flex-col gap-3">
@@ -161,6 +185,7 @@ export function LaunchWorkspace() {
                     </ScrollArea>
                 </BapCard>
             </div>
+            )}
         </div>
     );
 }
