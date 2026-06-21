@@ -17,7 +17,8 @@
     "verify": "npm run typecheck && npm run test && npm run build",
     "smoke:nav": "node scripts/nav-smoke.mjs",
     "smoke:interaction": "node scripts/interaction-smoke.mjs",
-    "verify:all": "npm run verify && npm run smoke:nav && npm run smoke:interaction",
+    "smoke:radio": "node scripts/radio-click-smoke.mjs",
+    "verify:all": "npm run verify && npm run smoke:nav && npm run smoke:interaction && npm run smoke:radio",
     "build:win": "npm run build && electron-builder --config electron-builder.yml --publish never --win --x64"
   },
   "dependencies": {
