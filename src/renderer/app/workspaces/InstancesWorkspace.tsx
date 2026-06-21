@@ -1,5 +1,6 @@
-import { useMemo } from "react";
-import { Download, Package, Check } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Download, Package, Check, Boxes } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
 import { BapButton } from "../../components/brand/BapButton";
@@ -21,6 +22,7 @@ import {
     type InstancesHeroTrack,
 } from "../../helpers/official-version-visibility";
 import { getInstancesHeroTrackMeta, suggestProfileName, getInstallStateLabel, isInstallStateBusy } from "../../helpers/instances-ui";
+import { containerVariants, itemUp } from "../../motion";
 import type { BundleSummary } from "../../../shared/ipc";
 
 const BUNDLE_PROGRESS_LABEL: Record<string, string> = {
@@ -33,6 +35,26 @@ const BUNDLE_PROGRESS_LABEL: Record<string, string> = {
 
 const ACTION_ACCENT = "#e91e8c";
 const INSTALLED_ACCENT = "#22d3ee";
+
+function TileArt({ src, fallbackIcon: Icon = Package }: { src?: string; fallbackIcon?: typeof Package }) {
+    const [failed, setFailed] = useState(false);
+    if (!src || failed) {
+        return (
+            <div className="flex h-32 w-full items-center justify-center rounded-lg bg-gradient-to-br from-white/[0.07] to-white/[0.02]">
+                <Icon size={30} className="text-muted-foreground/55" />
+            </div>
+        );
+    }
+    return (
+        <img
+            src={src}
+            alt=""
+            loading="lazy"
+            onError={() => setFailed(true)}
+            className="h-32 w-full rounded-lg object-cover ring-1 ring-white/10"
+        />
+    );
+}
 
 function BundleTile({
     bundle,
@@ -51,15 +73,16 @@ function BundleTile({
         progress.status !== "failed";
 
     return (
-        <BapCard className="flex flex-col p-5">
+        <BapCard className="flex h-full flex-col gap-3 p-5">
+            <TileArt src={bundle.imageUrl} fallbackIcon={Boxes} />
             <div className="flex items-start justify-between gap-2">
-                <h3 className="font-display text-base text-foreground">{bundle.name}</h3>
+                <h3 className="font-display text-base leading-tight text-foreground">{bundle.name}</h3>
                 <Badge variant="accent">bundle</Badge>
             </div>
-            <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
+            <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                 {bundle.description ?? "Curated complete package with auto-update."}
             </p>
-            <div className="mt-auto pt-4">
+            <div className="mt-auto pt-1">
                 {active ? (
                     <div>
                         <p className="mb-1 text-xs text-foreground">
@@ -93,12 +116,13 @@ export function InstancesWorkspace() {
     const { data: installState } = useInstallState();
     const installOfficial = useInstallOfficial();
     const installBundle = useInstallBundle();
+    const reduceMotion = useReducedMotion();
 
     const versions = useMemo(() => gameVersions?.versions ?? [], [gameVersions]);
     const busy = installState ? isInstallStateBusy(installState) : false;
 
     return (
-        <div className="bap-glow h-full overflow-auto p-8">
+        <div className="bap-glow h-full overflow-auto px-8 pb-8 pt-20">
             <SectionHeading
                 eyebrow="Library"
                 subtitle="Install game versions and bundles, then manage your profiles."
@@ -118,22 +142,29 @@ export function InstancesWorkspace() {
 
             {/* Available to install */}
             <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Available</h2>
-            <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <motion.div
+                className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
+                variants={reduceMotion ? undefined : containerVariants}
+                initial={reduceMotion ? undefined : "hidden"}
+                animate={reduceMotion ? undefined : "show"}
+            >
                 {INSTANCES_HERO_TRACKS.filter(t => t !== "bundle").map(track => {
                     const meta = getInstancesHeroTrackMeta(track as InstancesHeroTrack);
                     const version = resolvePrimaryOfficialVersionForTrack(track as InstancesHeroTrack, versions, instances);
                     if (!version) return null;
                     const installed = isOfficialVersionInstalled(version, instances);
                     return (
-                        <BapCard key={track} className="flex flex-col p-5">
+                        <motion.div key={track} variants={reduceMotion ? undefined : itemUp}>
+                        <BapCard className="flex h-full flex-col gap-3 p-5">
+                            <TileArt src={version.imagePath} fallbackIcon={Boxes} />
                             <div className="flex items-start justify-between gap-2">
-                                <h3 className="font-display text-base text-foreground">{version.displayName}</h3>
+                                <h3 className="font-display text-base leading-tight text-foreground">{version.displayName}</h3>
                                 <Badge variant="outline">{meta.chipLabel}</Badge>
                             </div>
-                            <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
+                            <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">
                                 {version.description ?? meta.description}
                             </p>
-                            <div className="mt-auto pt-4">
+                            <div className="mt-auto pt-1">
                                 <BapButton
                                     onClick={() =>
                                         installOfficial.mutate({
@@ -150,18 +181,20 @@ export function InstancesWorkspace() {
                                 </BapButton>
                             </div>
                         </BapCard>
+                        </motion.div>
                     );
                 })}
 
                 {bundles.map(bundle => (
-                    <BundleTile
-                        key={bundle.id}
-                        bundle={bundle}
-                        onInstall={() => installBundle.mutate({ bundleId: bundle.id })}
-                        disabled={busy}
-                    />
+                    <motion.div key={bundle.id} variants={reduceMotion ? undefined : itemUp}>
+                        <BundleTile
+                            bundle={bundle}
+                            onInstall={() => installBundle.mutate({ bundleId: bundle.id })}
+                            disabled={busy}
+                        />
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* Installed profiles */}
             <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Your profiles</h2>
@@ -173,14 +206,15 @@ export function InstancesWorkspace() {
             )}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {instances.map(instance => (
-                    <BapCard key={instance.id} interactive className="p-5">
+                    <BapCard key={instance.id} interactive className="flex flex-col gap-3 p-5">
+                        <TileArt src={instance.imageUrl} fallbackIcon={Boxes} />
                         <div className="flex items-start justify-between gap-3">
-                            <h3 className="font-display text-base text-foreground">{instance.profileName}</h3>
+                            <h3 className="font-display text-base leading-tight text-foreground">{instance.profileName}</h3>
                             <Badge variant={instance.instanceType === "bundle" ? "accent" : "outline"}>
                                 {instance.instanceType === "bundle" ? "bundle" : instance.versionId}
                             </Badge>
                         </div>
-                        <p className="mt-2 truncate text-xs text-muted-foreground" title={instance.path}>
+                        <p className="truncate text-xs text-muted-foreground" title={instance.path}>
                             {instance.gameVersion || instance.version}
                         </p>
                     </BapCard>

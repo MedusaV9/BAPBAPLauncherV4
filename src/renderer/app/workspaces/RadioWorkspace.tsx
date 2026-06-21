@@ -106,7 +106,7 @@ export function RadioWorkspace() {
     }
 
     return (
-        <div className="bap-glow flex h-full flex-col overflow-hidden p-8">
+        <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-20">
             <div className="mb-4 flex items-center justify-between gap-4">
                 <SectionHeading eyebrow="Station" className="mb-0" subtitle={radio.sync.stationSubtitle ?? "Soundtrack station"}>
                     {radio.sync.stationName}

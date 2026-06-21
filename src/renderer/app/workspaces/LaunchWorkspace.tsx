@@ -59,7 +59,7 @@ export function LaunchWorkspace() {
     }
 
     return (
-        <div className="bap-glow flex h-full flex-col overflow-hidden p-8">
+        <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-20">
             <SectionHeading eyebrow="Play" subtitle="Pick a profile, launch the game, and watch live runtime logs.">
                 Start
             </SectionHeading>

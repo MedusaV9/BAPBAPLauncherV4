@@ -49,7 +49,7 @@ export function SettingsWorkspace() {
     }
 
     return (
-        <div className="bap-glow relative h-full overflow-auto p-8">
+        <div className="bap-glow relative h-full overflow-auto px-8 pb-8 pt-20">
             <SectionHeading eyebrow="Preferences" subtitle="Configure the launcher to your liking.">
                 Settings
             </SectionHeading>

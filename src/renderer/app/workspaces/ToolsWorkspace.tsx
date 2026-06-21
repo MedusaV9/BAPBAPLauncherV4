@@ -72,7 +72,7 @@ export function ToolsWorkspace() {
     const selected = instances?.find(i => i.id === selectedId) ?? null;
 
     return (
-        <div className="bap-glow flex h-full flex-col overflow-hidden p-8">
+        <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-20">
             <div className="mb-4 flex items-center justify-between gap-4">
                 <SectionHeading eyebrow="Studio" className="mb-0" subtitle="Rebalance Studio — author and tune content packs.">
                     Tools

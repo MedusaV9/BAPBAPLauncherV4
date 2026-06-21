@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Search, Plus, Check, Power, X } from "lucide-react";
+import { Search, Plus, Check, Power, X, Package as PackageIcon } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
 import { Input } from "../../components/ui/input";
@@ -9,6 +10,7 @@ import { ModSetsBar } from "../../components/mods/ModSetsBar";
 import { cn } from "../lib/utils";
 import {
     useInstances,
+    useManifestIndex,
     usePackages,
     useContentStates,
     useInstallContent,
@@ -16,9 +18,9 @@ import {
     useSetContentEnabled,
     useBulkApply,
 } from "../query/hooks";
+import { containerVariants, itemUp } from "../../motion";
 import type { ContentInstallState, ContentBulkAction } from "../../../shared/ipc";
-
-const DEFAULT_CHANNEL = "default";
+import type { PackageCard } from "../../../shared/manifest";
 
 function stateLabel(state: ContentInstallState | undefined): { text: string; variant: "secondary" | "accent" | "outline" } {
     switch (state?.status) {
@@ -33,11 +35,42 @@ function stateLabel(state: ContentInstallState | undefined): { text: string; var
     }
 }
 
+function ModArtwork({ pkg }: { pkg: PackageCard }) {
+    const [failed, setFailed] = useState(false);
+    const src = pkg.thumbnailPath || pkg.imagePath;
+    if (!src || failed) {
+        return (
+            <div className="flex h-28 w-full items-center justify-center rounded-lg bg-gradient-to-br from-white/[0.06] to-white/[0.02]">
+                <PackageIcon size={28} className="text-muted-foreground/60" />
+            </div>
+        );
+    }
+    return (
+        <img
+            src={src}
+            alt=""
+            loading="lazy"
+            onError={() => setFailed(true)}
+            className="h-28 w-full rounded-lg object-cover ring-1 ring-white/10"
+        />
+    );
+}
+
 export function ModsWorkspace() {
     const { data: instances } = useInstances();
+    const { data: manifestIndex } = useManifestIndex();
     const [instanceId, setInstanceId] = useState<string | null>(null);
     const [query, setQuery] = useState("");
     const [selected, setSelected] = useState<Set<string>>(new Set());
+    const reduceMotion = useReducedMotion();
+
+    // Resolve the live channel from the manifest index rather than hardcoding —
+    // the manifest declares "release", not "default", so a hardcoded id returned
+    // zero mods in the real app.
+    const channelId = useMemo(() => {
+        const channels = manifestIndex?.channels ?? [];
+        return channels.find(c => c.enabled !== false)?.id ?? channels[0]?.id ?? "release";
+    }, [manifestIndex]);
 
     useEffect(() => {
         if (!instanceId && instances && instances.length > 0) {
@@ -50,7 +83,7 @@ export function ModsWorkspace() {
         setSelected(new Set());
     }, [instanceId]);
 
-    const { data: packages, isLoading } = usePackages(DEFAULT_CHANNEL);
+    const { data: packages, isLoading } = usePackages(channelId);
     const { data: states } = useContentStates(instanceId ?? undefined);
     const installContent = useInstallContent();
     const uninstallContent = useUninstallContent();
@@ -90,13 +123,13 @@ export function ModsWorkspace() {
             if (version) versionByPackage[id] = version;
         }
         bulkApply.mutate(
-            { instanceId, channelId: DEFAULT_CHANNEL, packageIds, action, versionByPackage },
+            { instanceId, channelId, packageIds, action, versionByPackage },
             { onSuccess: () => setSelected(new Set()) }
         );
     }
 
     return (
-        <div className="bap-glow relative flex h-full flex-col overflow-hidden p-8">
+        <div className="bap-glow relative flex h-full flex-col overflow-hidden px-8 pb-8 pt-20">
             <SectionHeading eyebrow="Catalog" subtitle="Browse the catalog and manage mods per profile.">
                 Mods
             </SectionHeading>
@@ -137,7 +170,7 @@ export function ModsWorkspace() {
             )}
 
             {selected.size > 0 && (
-                <div className="mb-4 flex items-center gap-3 rounded-lg border border-border bg-card p-3">
+                <div className="glass mb-4 flex items-center gap-3 rounded-xl p-3">
                     <span className="font-display text-xs text-foreground">{selected.size} selected</span>
                     <div className="flex flex-wrap gap-2">
                         <Button size="sm" variant="default" disabled={bulkApply.isPending} onClick={() => runBulk("install")}>
@@ -164,7 +197,12 @@ export function ModsWorkspace() {
                 </div>
             )}
 
-            <div className="grid min-h-0 flex-1 grid-cols-1 gap-4 overflow-auto pr-1 sm:grid-cols-2 xl:grid-cols-3">
+            <motion.div
+                className="grid min-h-0 flex-1 grid-cols-1 gap-4 overflow-auto pr-1 sm:grid-cols-2 xl:grid-cols-3"
+                variants={reduceMotion ? undefined : containerVariants}
+                initial={reduceMotion ? undefined : "hidden"}
+                animate={reduceMotion ? undefined : "show"}
+            >
                 {filtered.map(pkg => {
                     const state = states?.[pkg.id];
                     const label = stateLabel(state);
@@ -174,10 +212,11 @@ export function ModsWorkspace() {
                     const isSelected = selected.has(pkg.id);
 
                     return (
+                        <motion.div key={pkg.id} variants={reduceMotion ? undefined : itemUp}>
                         <BapCard
-                            key={pkg.id}
-                            className={cn("flex flex-col p-4", isSelected && "ring-2 ring-accent")}
+                            className={cn("flex h-full flex-col gap-3 p-4", isSelected && "ring-2 ring-accent")}
                         >
+                            <ModArtwork pkg={pkg} />
                             <div className="flex items-start justify-between gap-2">
                                 <label className="flex min-w-0 items-start gap-2">
                                     <input
@@ -186,14 +225,17 @@ export function ModsWorkspace() {
                                         onChange={() => toggleSelected(pkg.id)}
                                         className="mt-0.5 h-4 w-4 shrink-0 accent-[#e91e8c]"
                                     />
-                                    <h2 className="font-display text-sm text-foreground">{pkg.name}</h2>
+                                    <h2 className="font-display text-sm leading-tight text-foreground">{pkg.name}</h2>
                                 </label>
                                 <Badge variant={label.variant}>{label.text}</Badge>
                             </div>
                             {pkg.summary && (
-                                <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{pkg.summary}</p>
+                                <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">{pkg.summary}</p>
                             )}
-                            <div className="mt-auto flex items-center gap-2 pt-3">
+                            {version && (
+                                <p className="text-[0.7rem] uppercase tracking-wide text-muted-foreground/70">v{version}</p>
+                            )}
+                            <div className="mt-auto flex items-center gap-2 pt-1">
                                 {!installed ? (
                                     <Button
                                         size="sm"
@@ -203,7 +245,7 @@ export function ModsWorkspace() {
                                             instanceId &&
                                             installContent.mutate({
                                                 instanceId,
-                                                channelId: DEFAULT_CHANNEL,
+                                                channelId,
                                                 packageId: pkg.id,
                                                 version,
                                             })
@@ -221,7 +263,7 @@ export function ModsWorkspace() {
                                                 instanceId &&
                                                 setEnabled.mutate({
                                                     instanceId,
-                                                    channelId: DEFAULT_CHANNEL,
+                                                    channelId,
                                                     packageId: pkg.id,
                                                     enabled: !enabled,
                                                 })
@@ -238,7 +280,7 @@ export function ModsWorkspace() {
                                                 instanceId &&
                                                 uninstallContent.mutate({
                                                     instanceId,
-                                                    channelId: DEFAULT_CHANNEL,
+                                                    channelId,
                                                     packageId: pkg.id,
                                                 })
                                             }
@@ -249,9 +291,10 @@ export function ModsWorkspace() {
                                 )}
                             </div>
                         </BapCard>
+                        </motion.div>
                     );
                 })}
-            </div>
+            </motion.div>
         </div>
     );
 }

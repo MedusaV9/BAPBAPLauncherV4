@@ -25,7 +25,7 @@ export function UpdateBanner() {
     const downloading = state?.status === "downloading";
 
     return (
-        <div className="flex items-center gap-3 border-b border-border bg-accent/10 px-4 py-2">
+        <div className="glass-strong fixed left-1/2 top-[68px] z-30 flex max-w-2xl -translate-x-1/2 items-center gap-3 rounded-2xl px-4 py-2.5">
             <RefreshCw size={16} className="shrink-0 text-accent" />
             <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-medium text-foreground">
