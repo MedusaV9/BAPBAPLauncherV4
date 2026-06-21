@@ -473,9 +473,6 @@ export class BundleUpdateService extends EventEmitter {
             await ensureDir(stagingDir);
             stagingCreated = true;
             this.commitState({ ...baseState, status: "downloading" });
-            // TODO(track-6): replace MockManifestFetcher.downloadArchive
-            // with a real call into archive-download.service.ts once the
-            // GitHub release layout is finalized.
             const archive = remoteManifest.sourceUrl?.archive;
             // Track progress emissions across the download. The gate is
             // throttled in handleDownloadProgress so 100 callbacks from the
