@@ -220,6 +220,7 @@ export function registerIpcHandlers(services: IpcServices): void {
         return instances.installCustomMod(String(instanceId), selectedFilePath, overwrite);
     });
     handle(IPC_CHANNELS.instancesRemove, async instanceId => instances.remove(String(instanceId)));
+    handle(IPC_CHANNELS.instancesGetSteamPersonaName, async () => instances.getSteamPersonaName());
 
     handle(IPC_CHANNELS.launchStart, async input => launch.launch(input as Parameters<typeof launch.launch>[0]));
     handle(IPC_CHANNELS.launchStop, async () => launch.stop());

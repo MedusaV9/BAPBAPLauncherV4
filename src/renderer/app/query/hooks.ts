@@ -103,6 +103,14 @@ export function useInstances() {
     return useQuery({ queryKey: qk.instances, queryFn: () => api.instances.list() });
 }
 
+export function useSteamPersonaName() {
+    return useQuery({
+        queryKey: qk.steamPersona,
+        queryFn: () => api.instances.getSteamPersonaName(),
+        staleTime: Infinity,
+    });
+}
+
 export function useInstallState() {
     return useQuery({
         queryKey: qk.installState,

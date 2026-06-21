@@ -604,6 +604,19 @@ export class InstanceService {
         return Array.from(results);
     }
 
+    async getSteamPersonaName(): Promise<string | null> {
+        const steamRoot = await this.resolveSteamRootPath();
+        if (!steamRoot) {
+            return null;
+        }
+        const loginUsersPath = path.join(steamRoot, "config", "loginusers.vdf");
+        if (!(await pathExists(loginUsersPath))) {
+            return null;
+        }
+        const raw = await fs.promises.readFile(loginUsersPath, "utf8").catch(() => "");
+        return parseSteamPersonaName(raw);
+    }
+
     private async resolveSteamRootPath(): Promise<string | null> {
         const registryLookups = [
             { key: "HKCU\\Software\\Valve\\Steam", value: "SteamPath" },
@@ -771,6 +784,37 @@ function parseSteamLibraryPaths(source: string): string[] {
         }
     }
     return Array.from(values);
+}
+
+// loginusers.vdf holds one flat block per Steam account keyed by 17-digit
+// SteamID64. Prefer the account flagged MostRecent (the one that's actually
+// signed in), then fall back to the newest Timestamp, then the first entry.
+function parseSteamPersonaName(source: string): string | null {
+    let firstPersona: string | null = null;
+    let mostRecentPersona: string | null = null;
+    let newestPersona: string | null = null;
+    let newestTimestamp = -1;
+
+    for (const match of source.matchAll(/"\d{17}"\s*\{([^}]*)\}/g)) {
+        const body = match[1] ?? "";
+        const persona = parseQuotedValue(body, "PersonaName");
+        if (!persona) {
+            continue;
+        }
+        if (firstPersona === null) {
+            firstPersona = persona;
+        }
+        if (parseQuotedValue(body, "MostRecent") === "1") {
+            mostRecentPersona = persona;
+        }
+        const timestamp = Number(parseQuotedValue(body, "Timestamp") ?? "0");
+        if (Number.isFinite(timestamp) && timestamp > newestTimestamp) {
+            newestTimestamp = timestamp;
+            newestPersona = persona;
+        }
+    }
+
+    return mostRecentPersona ?? newestPersona ?? firstPersona;
 }
 
 async function readRegistryValue(key: string, valueName: string): Promise<string | null> {

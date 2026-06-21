@@ -1,8 +1,9 @@
-import { lazy, Suspense } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { TopNav } from "./TopNav";
 import { UpdateBanner } from "./UpdateBanner";
 import { SetupWizard } from "./SetupWizard";
+import { StartupSplash } from "./StartupSplash";
 import { useBootstrap } from "./useBootstrap";
 import { useShellStore } from "../stores/useShellStore";
 import { useAudioEngine } from "../audio/useAudioEngine";
@@ -44,35 +45,59 @@ export function AppShell() {
     const reduceMotion = useReducedMotion();
     useAudioEngine();
 
-    if (phase === "splash" || phase === "bootstrap") return <Splash />;
+    const [minTimeElapsed, setMinTimeElapsed] = useState(false);
+    useEffect(() => {
+        const timer = setTimeout(() => setMinTimeElapsed(true), reduceMotion ? 400 : 1800);
+        return () => clearTimeout(timer);
+    }, [reduceMotion]);
+
     if (phase === "fatal") return <Fatal message={fatalMessage ?? "Unknown error"} />;
 
+    const splashVisible = phase !== "ready" || !minTimeElapsed;
     const Workspace = WORKSPACES[activeWorkspace];
 
     return (
-        <div className="flex h-screen w-screen flex-col overflow-hidden text-foreground">
-            <a
-                href="#main-content"
-                className="sr-only rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:outline-none focus:ring-2 focus:ring-ring"
-            >
-                Skip to content
-            </a>
-            <SetupWizard />
-            <TopNav />
-            <UpdateBanner />
-            <main id="main-content" tabIndex={-1} className="min-h-0 flex-1 overflow-hidden">
-                <Suspense fallback={<Splash />}>
+        <>
+            <AnimatePresence>
+                {splashVisible && (
                     <motion.div
-                        key={activeWorkspace}
-                        className="h-full"
-                        initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                        key="startup-splash"
+                        className="pointer-events-none fixed inset-0 z-[100]"
+                        initial={false}
+                        exit={reduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <Workspace />
+                        <StartupSplash />
                     </motion.div>
-                </Suspense>
-            </main>
-        </div>
+                )}
+            </AnimatePresence>
+
+            {phase === "ready" && (
+                <div className="flex h-screen w-screen flex-col overflow-hidden text-foreground">
+                    <a
+                        href="#main-content"
+                        className="sr-only rounded-md bg-accent px-4 py-2 text-sm font-medium text-accent-foreground focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:outline-none focus:ring-2 focus:ring-ring"
+                    >
+                        Skip to content
+                    </a>
+                    <SetupWizard />
+                    <TopNav />
+                    <UpdateBanner />
+                    <main id="main-content" tabIndex={-1} className="min-h-0 flex-1 overflow-hidden">
+                        <Suspense fallback={<Splash />}>
+                            <motion.div
+                                key={activeWorkspace}
+                                className="h-full"
+                                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                                <Workspace />
+                            </motion.div>
+                        </Suspense>
+                    </main>
+                </div>
+            )}
+        </>
     );
 }

@@ -246,3 +246,53 @@ h1, h2, h3, h4 {
   background:
     radial-gradient(60% 80% at 50% 0%, rgba(233, 30, 140, 0.12), transparent 70%);
 }
+
+/* ════════════════════════════════════════════════════════════════
+   STARTUP SPLASH — drifting magenta/purple/cyan "spotlight" blobs
+   behind the personalized greeting. Pure CSS, ~20s loops, disabled
+   under prefers-reduced-motion / reduced-transparency.
+   ════════════════════════════════════════════════════════════════ */
+.splash-spot {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.55;
+  pointer-events: none;
+  will-change: transform;
+}
+.splash-spot-magenta {
+  width: 46vw; height: 46vw;
+  left: 8%; top: 12%;
+  background: radial-gradient(circle, rgba(233, 30, 140, 0.85), transparent 68%);
+  animation: splash-drift-a 22s ease-in-out infinite;
+}
+.splash-spot-purple {
+  width: 40vw; height: 40vw;
+  right: 6%; top: 22%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.7), transparent 68%);
+  animation: splash-drift-b 26s ease-in-out infinite;
+}
+.splash-spot-cyan {
+  width: 38vw; height: 38vw;
+  left: 30%; bottom: 6%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.55), transparent 68%);
+  animation: splash-drift-c 30s ease-in-out infinite;
+}
+@keyframes splash-drift-a {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(8vw, 6vh, 0) scale(1.12); }
+}
+@keyframes splash-drift-b {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50% { transform: translate3d(-7vw, 8vh, 0) scale(0.92); }
+}
+@keyframes splash-drift-c {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(0.95); }
+  50% { transform: translate3d(6vw, -7vh, 0) scale(1.15); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-spot { animation: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .splash-spot { filter: blur(60px); opacity: 0.4; }
+}

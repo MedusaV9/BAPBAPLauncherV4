@@ -10,6 +10,7 @@ export const qk = {
 
     instances: ["instances", "list"] as const,
     installState: ["instances", "installState"] as const,
+    steamPersona: ["instances", "steamPersona"] as const,
 
     runtimeState: ["launch", "runtimeState"] as const,
     runtimeLog: ["launch", "runtimeLog"] as const,

@@ -59,6 +59,7 @@ const v2Api: V2Api = {
         hasRelativeFile: (instanceId, relativePath) => ipcRenderer.invoke(IPC_CHANNELS.instancesHasRelativeFile, instanceId, relativePath),
         installCustomMod: instanceId => ipcRenderer.invoke(IPC_CHANNELS.instancesInstallCustomMod, instanceId),
         remove: instanceId => ipcRenderer.invoke(IPC_CHANNELS.instancesRemove, instanceId),
+        getSteamPersonaName: () => ipcRenderer.invoke(IPC_CHANNELS.instancesGetSteamPersonaName),
     },
     launch: {
         start: input => ipcRenderer.invoke(IPC_CHANNELS.launchStart, input),

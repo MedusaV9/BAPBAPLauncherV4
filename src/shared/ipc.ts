@@ -383,6 +383,7 @@ export interface V2Api {
         hasRelativeFile(instanceId: string, relativePath: string): Promise<boolean>;
         installCustomMod(instanceId: string): Promise<CustomModInstallResult>;
         remove(instanceId: string): Promise<void>;
+        getSteamPersonaName(): Promise<string | null>;
     };
     launch: {
         start(input: LaunchInput): Promise<void>;
@@ -507,6 +508,7 @@ export const IPC_CHANNELS = {
     instancesHasRelativeFile: "v2.instances.hasRelativeFile",
     instancesInstallCustomMod: "v2.instances.installCustomMod",
     instancesRemove: "v2.instances.remove",
+    instancesGetSteamPersonaName: "v2.instances.getSteamPersonaName",
     launchStart: "v2.launch.start",
     launchStop: "v2.launch.stop",
     launchGetRuntimeState: "v2.launch.getRuntimeState",

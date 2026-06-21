@@ -956,6 +956,9 @@ export function createHarnessApi(): V2Api {
                     settings = { ...settings, launchDefaultProfileId: null };
                 }
             },
+            async getSteamPersonaName() {
+                return "Sonic081010";
+            },
         },
         launch: {
             async start(input) {
