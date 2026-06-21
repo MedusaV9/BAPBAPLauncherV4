@@ -40,8 +40,9 @@ function TileArt({ src, fallbackIcon: Icon = Package }: { src?: string; fallback
     const [failed, setFailed] = useState(false);
     if (!src || failed) {
         return (
-            <div className="flex h-32 w-full items-center justify-center rounded-lg bg-gradient-to-br from-white/[0.07] to-white/[0.02]">
-                <Icon size={30} className="text-muted-foreground/55" />
+            <div className="relative flex h-32 w-full items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-accent/25 via-purple/15 to-cyan/15 ring-1 ring-white/10">
+                <div className="absolute -right-5 -top-5 h-20 w-20 rounded-full bg-accent/30 blur-2xl" />
+                <Icon size={30} className="relative text-foreground/70" />
             </div>
         );
     }

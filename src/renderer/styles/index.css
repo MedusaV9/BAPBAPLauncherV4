@@ -100,37 +100,40 @@
    the modern Apple-style depth. Tune opacity to stay legible on dark.
    ════════════════════════════════════════════════════════════════ */
 .glass {
-  background: color-mix(in oklab, var(--card) 60%, transparent);
-  backdrop-filter: blur(20px) saturate(165%);
-  -webkit-backdrop-filter: blur(20px) saturate(165%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: color-mix(in oklab, var(--card) 82%, transparent);
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.10),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.20),
-    0 8px 32px rgba(0, 0, 0, 0.38);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.22),
+    0 8px 32px rgba(0, 0, 0, 0.42);
 }
 
 .glass-strong {
-  background: color-mix(in oklab, var(--popover) 76%, transparent);
-  backdrop-filter: blur(30px) saturate(185%);
-  -webkit-backdrop-filter: blur(30px) saturate(185%);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: color-mix(in oklab, var(--popover) 88%, transparent);
+  backdrop-filter: blur(32px) saturate(190%);
+  -webkit-backdrop-filter: blur(32px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.16),
-    inset 0 -1px 0 0 rgba(0, 0, 0, 0.25),
-    0 12px 44px rgba(0, 0, 0, 0.5);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.20),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.28),
+    0 12px 44px rgba(0, 0, 0, 0.55);
 }
 
-/* Modern surface card — now frosted glass so the whole launcher reads as
-   one cohesive liquid-glass material. */
+/* Modern surface card — frosted glass with a subtle top-edge sheen so the
+   whole launcher reads as one cohesive, legible liquid-glass material. */
 .bap-card {
-  background: color-mix(in oklab, var(--card) 62%, transparent);
-  backdrop-filter: blur(16px) saturate(150%);
-  -webkit-backdrop-filter: blur(16px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 45%),
+    color-mix(in oklab, var(--card) 84%, transparent);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: var(--radius);
   box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
     var(--shadow-soft);
 }
 
@@ -166,11 +169,11 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(42% 38% at 18% 12%, rgba(233, 30, 140, 0.18), transparent 70%),
-    radial-gradient(40% 40% at 85% 18%, rgba(124, 58, 237, 0.16), transparent 72%),
-    radial-gradient(46% 44% at 78% 88%, rgba(34, 211, 238, 0.13), transparent 72%),
-    radial-gradient(38% 36% at 12% 84%, rgba(255, 184, 0, 0.10), transparent 70%);
-  filter: saturate(120%);
+    radial-gradient(46% 42% at 16% 10%, rgba(233, 30, 140, 0.26), transparent 70%),
+    radial-gradient(44% 44% at 86% 16%, rgba(124, 58, 237, 0.22), transparent 72%),
+    radial-gradient(50% 48% at 80% 90%, rgba(34, 211, 238, 0.18), transparent 72%),
+    radial-gradient(42% 40% at 10% 86%, rgba(255, 184, 0, 0.14), transparent 70%);
+  filter: saturate(125%);
 }
 
 #root {
