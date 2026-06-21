@@ -9,8 +9,8 @@ import {
     type BundleManifestFetcher,
     type BundleRemoteManifest,
 } from "./bundle-update.service";
-import { verifySha256 } from "../utils/file-hash";
-import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../utils/timeout-fetch";
+import { verifySha256 } from "../../utils/file-hash";
+import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../../utils/timeout-fetch";
 
 const { ensureDir, readdir } = fsExtra;
 

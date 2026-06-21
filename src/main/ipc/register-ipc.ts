@@ -1,18 +1,18 @@
 import { createHash } from "node:crypto";
 import electron from "electron";
 import { IPC_CHANNELS, AppSettings, StartupFatalInput } from "../../shared/ipc";
-import { ManifestClient } from "../services/manifest-client";
-import { SettingsStoreService } from "../services/settings-store";
-import { InstanceService } from "../services/instance.service";
-import { ContentService } from "../services/content.service";
-import { LaunchService } from "../services/launch.service";
-import { LauncherUpdaterService } from "../services/launcher-updater.service";
-import { ConfigEditorService } from "../services/config-editor.service";
-import { TrustedTimeService } from "../services/trusted-time.service";
-import { RadioService } from "../services/radio.service";
-import { RebalanceBackendService } from "../services/rebalance-backend.service";
-import { BundleService } from "../services/bundle.service";
-import { BundleUpdateService } from "../services/bundle-update.service";
+import { ManifestClient } from "../services/vendored/manifest-client";
+import { SettingsStoreService } from "../services/core/settings-store";
+import { InstanceService } from "../services/core/instance.service";
+import { ContentService } from "../services/core/content.service";
+import { LaunchService } from "../services/core/launch.service";
+import { LauncherUpdaterService } from "../services/core/launcher-updater.service";
+import { ConfigEditorService } from "../services/core/config-editor.service";
+import { TrustedTimeService } from "../services/vendored/trusted-time.service";
+import { RadioService } from "../services/core/radio.service";
+import { RebalanceBackendService } from "../services/vendored/rebalance-backend.service";
+import { BundleService } from "../services/vendored/bundle.service";
+import { BundleUpdateService } from "../services/vendored/bundle-update.service";
 import { computeStringSha256 } from "../utils/file-hash";
 
 type IpcServices = {

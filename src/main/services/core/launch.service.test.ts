@@ -1,6 +1,6 @@
 import { EventEmitter } from "node:events";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { InstalledInstance } from "../../shared/manifest";
+import type { InstalledInstance } from "../../../shared/manifest";
 
 const spawnMock = vi.hoisted(() => vi.fn());
 

@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import fsExtra from "fs-extra";
-import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../utils/timeout-fetch";
-import { KeyedMutex } from "../utils/async-mutex";
+import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../../utils/timeout-fetch";
+import { KeyedMutex } from "../../utils/async-mutex";
 import {
     ContentInstallInput,
     ContentToggleInput,
@@ -10,10 +10,10 @@ import {
     PackageCard,
     PackageManifest,
     PackageVersionManifest,
-} from "../../shared/manifest";
-import { ManifestClient } from "./manifest-client";
+} from "../../../shared/manifest";
+import { ManifestClient } from "../vendored/manifest-client";
 import { InstanceService } from "./instance.service";
-import { ArchiveDownloadService } from "./archive-download.service";
+import { ArchiveDownloadService } from "../vendored/archive-download.service";
 import {
     ContentBulkApplyInput,
     ContentBulkApplyResult,
@@ -22,9 +22,9 @@ import {
     ContentModSetPackageState,
     ContentModSetState,
     ContentStateMap,
-} from "../../shared/ipc";
-import { resolveUnlockStatus } from "../../shared/unlock-time";
-import { TrustedTimeService } from "./trusted-time.service";
+} from "../../../shared/ipc";
+import { resolveUnlockStatus } from "../../../shared/unlock-time";
+import { TrustedTimeService } from "../vendored/trusted-time.service";
 
 const { ensureDir, move, pathExists, remove } = fsExtra;
 

@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import fsExtra from "fs-extra";
-import type { ConfigFileContent, ConfigFileEntry, ConfigFileSection } from "../../shared/ipc";
+import type { ConfigFileContent, ConfigFileEntry, ConfigFileSection } from "../../../shared/ipc";
 import { InstanceService } from "./instance.service";
 
 const { ensureDir, pathExists } = fsExtra;

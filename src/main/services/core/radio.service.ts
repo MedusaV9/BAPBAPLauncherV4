@@ -6,7 +6,7 @@ import path from "node:path";
 import { pathToFileURL, URL } from "node:url";
 import electron from "electron";
 import Store from "electron-store";
-import type { RadioManifest } from "../../shared/manifest";
+import type { RadioManifest } from "../../../shared/manifest";
 import {
     createEmptyRadioState,
     type RadioCollection,
@@ -16,9 +16,9 @@ import {
     type RadioSetPlaybackStateInput,
     type RadioState,
     type RadioSyncState,
-} from "../../shared/radio";
-import { ArchiveDownloadService } from "./archive-download.service";
-import { ManifestClient } from "./manifest-client";
+} from "../../../shared/radio";
+import { ArchiveDownloadService } from "../vendored/archive-download.service";
+import { ManifestClient } from "../vendored/manifest-client";
 import { SettingsStoreService } from "./settings-store";
 
 const { app } = electron;

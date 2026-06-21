@@ -5,7 +5,7 @@ import path from "node:path";
 import { URL } from "node:url";
 import fsExtra from "fs-extra";
 import JSZip from "jszip";
-import { DOWNLOAD_TIMEOUT_MS, fetchWithTimeout } from "../utils/timeout-fetch";
+import { DOWNLOAD_TIMEOUT_MS, fetchWithTimeout } from "../../utils/timeout-fetch";
 
 const { ensureDir, move, pathExists, remove } = fsExtra;
 

@@ -1,6 +1,6 @@
 import { performance } from "node:perf_hooks";
 import { ManifestClient } from "./manifest-client";
-import type { TrustedTimeState } from "../../shared/ipc";
+import type { TrustedTimeState } from "../../../shared/ipc";
 
 const SYNC_INTERVAL_MS = 5 * 60 * 1000;
 

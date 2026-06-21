@@ -10,8 +10,8 @@ import {
     BUNDLE_STATE_CHANGED_EVENT,
     BundleUpdateService,
     MockManifestFetcher,
-} from "../bundle-update.service";
-import { BundleService } from "../bundle.service";
+} from "../vendored/bundle-update.service";
+import { BundleService } from "../vendored/bundle.service";
 
 /**
  * End-to-end smoke test for the Bundle Instance pipeline.

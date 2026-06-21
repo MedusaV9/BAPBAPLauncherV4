@@ -6,15 +6,15 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import electron from "electron";
 import fsExtra from "fs-extra";
-import { AsyncMutex } from "../utils/async-mutex";
-import { ArchiveDownloadService } from "./archive-download.service";
-import { ManifestClient } from "./manifest-client";
-import { MelonLoaderService } from "./melonloader.service";
+import { AsyncMutex } from "../../utils/async-mutex";
+import { ArchiveDownloadService } from "../vendored/archive-download.service";
+import { ManifestClient } from "../vendored/manifest-client";
+import { MelonLoaderService } from "../vendored/melonloader.service";
 import { SettingsStoreService } from "./settings-store";
-import { InstallOfficialInput, InstalledInstance, InstanceType } from "../../shared/manifest";
-import type { ContentModSet, ContentModSetPackageState, ContentModSetState, CustomModInstallResult, InstanceInstallState } from "../../shared/ipc";
-import { resolveUnlockStatus } from "../../shared/unlock-time";
-import { TrustedTimeService } from "./trusted-time.service";
+import { InstallOfficialInput, InstalledInstance, InstanceType } from "../../../shared/manifest";
+import type { ContentModSet, ContentModSetPackageState, ContentModSetState, CustomModInstallResult, InstanceInstallState } from "../../../shared/ipc";
+import { resolveUnlockStatus } from "../../../shared/unlock-time";
+import { TrustedTimeService } from "../vendored/trusted-time.service";
 
 const { ensureDir, pathExists, readJson, remove, writeJson } = fsExtra;
 

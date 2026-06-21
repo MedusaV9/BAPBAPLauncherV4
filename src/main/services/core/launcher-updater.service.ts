@@ -3,18 +3,18 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import electron from "electron";
 import fsExtra from "fs-extra";
-import type { LauncherUpdateAsset, LauncherUpdateRelease, LauncherUpdatesManifest } from "../../shared/manifest";
+import type { LauncherUpdateAsset, LauncherUpdateRelease, LauncherUpdatesManifest } from "../../../shared/manifest";
 import type {
     LauncherInstallUpdateResult,
     LauncherUpdateCheckResult,
     LauncherUpdaterState,
     LauncherUpdaterStatus,
-} from "../../shared/ipc";
-import type { DownloadFileProgress } from "./archive-download.service";
-import { ArchiveDownloadService } from "./archive-download.service";
-import { ManifestClient } from "./manifest-client";
+} from "../../../shared/ipc";
+import type { DownloadFileProgress } from "../vendored/archive-download.service";
+import { ArchiveDownloadService } from "../vendored/archive-download.service";
+import { ManifestClient } from "../vendored/manifest-client";
 import { SettingsStoreService } from "./settings-store";
-import { verifySha256 } from "../utils/file-hash";
+import { verifySha256 } from "../../utils/file-hash";
 
 const { app } = electron;
 const { ensureDir, pathExists, readJson, remove, writeJson } = fsExtra;

@@ -2,11 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
-import type { LaunchInput } from "../../shared/ipc";
-import { InstanceService } from "./instance.service";
-import { LaunchService } from "./launch.service";
-import { SettingsStoreService } from "./settings-store";
-import { assertInside, assertSafeExtension, DOCUMENT_ALLOWED_EXTENSIONS, FILESRC_ALLOWED_EXTENSIONS } from "../utils/path-containment";
+import type { LaunchInput } from "../../../shared/ipc";
+import { InstanceService } from "../core/instance.service";
+import { LaunchService } from "../core/launch.service";
+import { SettingsStoreService } from "../core/settings-store";
+import { assertInside, assertSafeExtension, DOCUMENT_ALLOWED_EXTENSIONS, FILESRC_ALLOWED_EXTENSIONS } from "../../utils/path-containment";
 
 const require = createRequire(import.meta.url);
 

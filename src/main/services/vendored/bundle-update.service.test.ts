@@ -3,8 +3,8 @@ import os from "node:os";
 import path from "node:path";
 import JSZip from "jszip";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import type { InstalledInstance } from "../../shared/manifest";
-import type { BundleUpdateState, BundleUpdateStatus } from "../../shared/ipc";
+import type { InstalledInstance } from "../../../shared/manifest";
+import type { BundleUpdateState, BundleUpdateStatus } from "../../../shared/ipc";
 import {
     BUNDLE_HASH_MISMATCH_CODE,
     BUNDLE_LOCAL_MANIFEST_FILE,

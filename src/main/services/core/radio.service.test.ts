@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { RadioManifest } from "../../shared/manifest";
+import type { RadioManifest } from "../../../shared/manifest";
 
 const electronState = vi.hoisted(() => ({
     userData: "",

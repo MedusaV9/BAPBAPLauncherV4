@@ -5,14 +5,14 @@ import os from "node:os";
 import path from "node:path";
 import fsExtra from "fs-extra";
 import JSZip from "jszip";
-import type { BundleInstallProgressState } from "../../shared/ipc";
-import type { BundleEntry, InstalledInstance } from "../../shared/manifest";
+import type { BundleInstallProgressState } from "../../../shared/ipc";
+import type { BundleEntry, InstalledInstance } from "../../../shared/manifest";
 import { ArchiveDownloadService } from "./archive-download.service";
 import type { DownloadFileProgress } from "./archive-download.service";
-import { InstanceService } from "./instance.service";
+import { InstanceService } from "../core/instance.service";
 import { ManifestClient } from "./manifest-client";
 import { MelonLoaderService } from "./melonloader.service";
-import { SettingsStoreService } from "./settings-store";
+import { SettingsStoreService } from "../core/settings-store";
 
 const { ensureDir, pathExists, remove, writeJson } = fsExtra;
 

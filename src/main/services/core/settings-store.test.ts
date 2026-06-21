@@ -28,8 +28,8 @@ vi.mock("electron-store", () => {
 });
 
 import { SettingsStoreService } from "./settings-store";
-import { CURRENT_SETUP_VERSION } from "../../shared/setup";
-import { LOCKED_FX_SETTINGS } from "../../shared/fx-settings";
+import { CURRENT_SETUP_VERSION } from "../../../shared/setup";
+import { LOCKED_FX_SETTINGS } from "../../../shared/fx-settings";
 
 beforeEach(() => {
     STORE.data.clear();

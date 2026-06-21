@@ -1,5 +1,5 @@
 import { URL } from "node:url";
-import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../utils/timeout-fetch";
+import { fetchWithTimeout, MANIFEST_TIMEOUT_MS } from "../../utils/timeout-fetch";
 import {
     BundlesManifest,
     ChannelManifest,
@@ -13,8 +13,8 @@ import {
     PackageIndexManifest,
     PackageManifest,
     RadioManifest,
-} from "../../shared/manifest";
-import { SettingsStoreService } from "./settings-store";
+} from "../../../shared/manifest";
+import { SettingsStoreService } from "../core/settings-store";
 
 type CacheState = {
     index?: ManifestIndex;

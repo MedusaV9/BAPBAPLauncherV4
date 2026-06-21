@@ -1,10 +1,10 @@
 import path from "node:path";
 import { spawn, type ChildProcess } from "node:child_process";
 import { EventEmitter } from "node:events";
-import { ManifestClient } from "./manifest-client";
+import { ManifestClient } from "../vendored/manifest-client";
 import { InstanceService } from "./instance.service";
-import { LaunchInput, LaunchRuntimeLogEntry, LaunchRuntimeState } from "../../shared/ipc";
-import { MelonLoaderService } from "./melonloader.service";
+import { LaunchInput, LaunchRuntimeLogEntry, LaunchRuntimeState } from "../../../shared/ipc";
+import { MelonLoaderService } from "../vendored/melonloader.service";
 import { SettingsStoreService } from "./settings-store";
 import { splitWindowsArgs } from "./launch-args";
 

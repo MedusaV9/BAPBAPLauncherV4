@@ -3,12 +3,12 @@ import fs from "node:fs";
 import path from "node:path";
 import fsExtra from "fs-extra";
 import JSZip from "jszip";
-import type { BundleUpdateState, BundleUpdateStatus } from "../../shared/ipc";
-import type { InstalledInstance } from "../../shared/manifest";
-import { KeyedMutex } from "../utils/async-mutex";
+import type { BundleUpdateState, BundleUpdateStatus } from "../../../shared/ipc";
+import type { InstalledInstance } from "../../../shared/manifest";
+import { KeyedMutex } from "../../utils/async-mutex";
 import type { ArchiveDownloadService, DownloadFileProgress } from "./archive-download.service";
-import type { InstanceService } from "./instance.service";
-import type { SettingsStoreService } from "./settings-store";
+import type { InstanceService } from "../core/instance.service";
+import type { SettingsStoreService } from "../core/settings-store";
 
 const { ensureDir, pathExists, readJson, remove, writeJson, move, copy, readdir } = fsExtra;
 
