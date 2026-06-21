@@ -81,6 +81,11 @@ describe("isValidMessageOrigin", () => {
     it("accepts an event whose origin matches the current origin", () => {
         expect(isValidMessageOrigin({ origin: window.location.origin } as MessageEvent)).toBe(true);
     });
+
+    it("rejects an event from a foreign origin", () => {
+        // Guards against an inverted/removed origin check passing unnoticed.
+        expect(isValidMessageOrigin({ origin: "https://evil.test" } as MessageEvent)).toBe(false);
+    });
 });
 
 describe("handleRebalanceHostRequest", () => {

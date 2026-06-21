@@ -58,6 +58,18 @@ async function upNextCount(page) {
     return m ? Number(m[1]) : 0;
 }
 
+// State-based poll: wait for the up-next count to settle on `expected` rather
+// than sleeping a fixed interval (which races the mutation -> cache -> re-render).
+async function waitForUpNext(page, expected, timeoutMs = 6_000) {
+    const deadline = Date.now() + timeoutMs;
+    let last = await upNextCount(page);
+    while (last !== expected && Date.now() < deadline) {
+        await page.waitForTimeout(100);
+        last = await upNextCount(page);
+    }
+    return last;
+}
+
 async function main() {
     const port = await reservePort();
     const baseUrl = `http://127.0.0.1:${port}/harness.html`;
@@ -89,21 +101,17 @@ async function main() {
         record("radio workspace renders track rows with enqueue buttons", trackCount >= 2, `${trackCount} tracks`);
 
         await enqueueButtons.nth(0).click();
-        await page.waitForTimeout(300);
         await enqueueButtons.nth(1).click();
-        await page.waitForTimeout(300);
-        const afterEnqueue = await upNextCount(page);
+        const afterEnqueue = await waitForUpNext(page, 2);
         record("clicking 'Add to queue' twice fills the up-next panel", afterEnqueue === 2, `up-next=${afterEnqueue}`);
 
         const nextButton = page.locator('button[aria-label="Next track"]');
         await nextButton.click();
-        await page.waitForTimeout(400);
-        const afterNext = await upNextCount(page);
+        const afterNext = await waitForUpNext(page, 1);
         record("Next drains one queued track (the b173544 fix)", afterNext === 1, `up-next ${afterEnqueue} -> ${afterNext}`);
 
         await nextButton.click();
-        await page.waitForTimeout(400);
-        const afterSecondNext = await upNextCount(page);
+        const afterSecondNext = await waitForUpNext(page, 0);
         record("a second Next empties the queue (no infinite replay)", afterSecondNext === 0, `up-next -> ${afterSecondNext}`);
 
         const nothingPlaying = await page.locator("text=/Nothing playing/").count();

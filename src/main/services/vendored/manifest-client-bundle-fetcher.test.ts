@@ -132,7 +132,13 @@ describe("ManifestClientBundleFetcher.downloadArchive", () => {
         hashState.matches = true;
 
         await fetcher.downloadArchive({ archiveUrl: "https://github.com/x/a.zip", archiveSha256: "a".repeat(64), stagingDir: dir });
-        expect(downloadFile).toHaveBeenCalledOnce();
+        expect(downloadFile).toHaveBeenCalledWith(
+            expect.objectContaining({
+                url: "https://github.com/x/a.zip",
+                sha256: "a".repeat(64),
+                outputPath: path.join(dir, "bundle.zip"),
+            })
+        );
     });
 
     it("fails closed with the mismatch code when re-verification fails", async () => {
