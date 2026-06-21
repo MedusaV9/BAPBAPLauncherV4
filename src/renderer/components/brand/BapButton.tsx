@@ -15,6 +15,8 @@ type BapButtonProps = {
     showChevron?: boolean;
     /** Cursor-following magnetic pull (use on hero/conversion CTAs). */
     magnetic?: boolean;
+    /** Peak-moment treatment: pulsing accent glow + tactile pressed depth. */
+    glow?: boolean;
     disabled?: boolean;
     className?: string;
 };
@@ -41,6 +43,7 @@ export function BapButton({
     icon: Icon,
     showChevron = true,
     magnetic = false,
+    glow = false,
     disabled = false,
     className = "",
 }: BapButtonProps) {
@@ -60,6 +63,8 @@ export function BapButton({
               : "bg-secondary text-foreground border border-border hover:bg-muted";
 
     const accentStyle = accentColor ? { background: accentColor, color: readableInk(accentColor) } : undefined;
+    const glowVar = glow ? ({ ["--cta-accent" as string]: accentColor ?? "#22d3ee" } as React.CSSProperties) : undefined;
+    const press = variant === "primary" && !magnetic ? "bap-press" : "";
 
     return (
         <motion.button
@@ -67,10 +72,11 @@ export function BapButton({
             onClick={onClick}
             disabled={disabled}
             {...(magnetic ? { onPointerMove: mag.onPointerMove, onPointerLeave: mag.onPointerLeave } : {})}
-            className={`font-display focus-ring group inline-flex items-center justify-center gap-2 ${base} ${sizing.padX} ${sizing.padY} rounded-xl tracking-wide transition-all duration-200 ease-pop hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none ${className}`}
+            className={`font-display focus-ring group inline-flex items-center justify-center gap-2 ${base} ${glow ? "bap-cta-glow" : ""} ${press} ${sizing.padX} ${sizing.padY} rounded-xl tracking-wide transition-all duration-200 ease-pop hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:pointer-events-none ${className}`}
             style={{
                 fontSize: sizing.text,
                 ...(accentColor && variant === "primary" ? accentStyle : {}),
+                ...(glowVar ?? {}),
                 ...(magnetic ? { x: mag.x, y: mag.y } : {}),
             }}
         >

@@ -3,6 +3,7 @@ import { Play, Square, Terminal, Boxes } from "lucide-react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
 import { BapButton } from "../../components/brand/BapButton";
+import { StatusChip, type StatusTone } from "../../components/brand/StatusChip";
 import { Badge } from "../../components/ui/badge";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { cn } from "../lib/utils";
@@ -43,6 +44,7 @@ export function LaunchWorkspace() {
     const status = runtime?.status ?? "idle";
     const isBusy = status === "launching" || status === "stopping";
     const isRunning = status === "running";
+    const statusTone: StatusTone = isRunning ? "active" : isBusy ? "busy" : status === "failed" ? "error" : "idle";
 
     const logViewport = useRef<HTMLDivElement>(null);
     useEffect(() => {
@@ -120,9 +122,12 @@ export function LaunchWorkspace() {
                     </div>
 
                     <div className="mt-auto flex flex-col gap-2">
-                        <Badge variant="outline" className="w-fit">
-                            {getLaunchRuntimeLabel(runtime ?? { status: "idle" })}
-                        </Badge>
+                        <StatusChip
+                            tone={statusTone}
+                            label={getLaunchRuntimeLabel(runtime ?? { status: "idle" })}
+                            pulse={isRunning || isBusy}
+                            className="w-fit"
+                        />
                         {isRunning || isBusy ? (
                             <BapButton
                                 onClick={() => stopLaunch.mutate()}
@@ -141,6 +146,7 @@ export function LaunchWorkspace() {
                                 showChevron={false}
                                 disabled={!selectedId}
                                 magnetic
+                                glow
                             >
                                 Launch
                             </BapButton>

@@ -134,7 +134,8 @@
   border-radius: var(--radius);
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
-    var(--shadow-soft);
+    0 4px 16px rgba(6, 3, 10, 0.5),
+    0 2px 10px -2px rgba(233, 30, 140, 0.07);
 }
 
 @media (prefers-reduced-transparency: reduce) {
@@ -245,6 +246,53 @@ h1, h2, h3, h4 {
 .bap-glow {
   background:
     radial-gradient(60% 80% at 50% 0%, rgba(233, 30, 140, 0.12), transparent 70%);
+}
+
+/* ════════════════════════════════════════════════════════════════
+   PEAK-MOMENT CTA — the primary Launch/play action glows and gently
+   pulses so it reads as the most important, "fun" button in the app.
+   Adds a tactile pressed-depth shadow (Duolingo-style) under the fill.
+   ════════════════════════════════════════════════════════════════ */
+.bap-cta-glow {
+  position: relative;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 6px 18px -4px color-mix(in oklab, var(--cta-accent, #22d3ee) 70%, transparent),
+    0 0 28px -2px color-mix(in oklab, var(--cta-accent, #22d3ee) 55%, transparent);
+  animation: bap-cta-pulse 3.2s var(--ease-pop) infinite;
+}
+.bap-cta-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 8px 24px -4px color-mix(in oklab, var(--cta-accent, #22d3ee) 80%, transparent),
+    0 0 40px 0 color-mix(in oklab, var(--cta-accent, #22d3ee) 65%, transparent);
+}
+@keyframes bap-cta-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+      0 6px 18px -4px color-mix(in oklab, var(--cta-accent, #22d3ee) 70%, transparent),
+      0 0 22px -4px color-mix(in oklab, var(--cta-accent, #22d3ee) 45%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+      0 6px 18px -4px color-mix(in oklab, var(--cta-accent, #22d3ee) 75%, transparent),
+      0 0 34px 0 color-mix(in oklab, var(--cta-accent, #22d3ee) 60%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bap-cta-glow { animation: none; }
+}
+
+/* Tactile pressed depth for primary action buttons. */
+.bap-press {
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.35);
+  transition: transform 0.12s var(--ease-pop), box-shadow 0.12s var(--ease-pop);
+}
+.bap-press:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.35);
 }
 
 /* ════════════════════════════════════════════════════════════════
