@@ -9,8 +9,8 @@ import { _electron as electron, chromium } from "playwright";
 const appDir = path.resolve(import.meta.dirname, "..");
 const artifactDir = path.join(appDir, "output", "playwright");
 const packagedExeCandidates = [
-  path.join(appDir, "release", "build", "win-unpacked", "BAPBAP Launcher V2.exe"),
-  path.join(appDir, "release", "build-tools", "win-unpacked", "BAPBAP Launcher V2.exe"),
+  path.join(appDir, "release", "build", "win-unpacked", "BAPBAP Launcher.exe"),
+  path.join(appDir, "release", "build-tools", "win-unpacked", "BAPBAP Launcher.exe"),
 ];
 const packagedSmokeUserDataDir = path.join(appDir, "output", ".tmp", "packaged-real-user-data");
 const toolsOnly = process.argv.includes("--tools-only");
@@ -48,7 +48,7 @@ async function resolvePackagedExe() {
   for (const root of fallbackRoots) {
     try {
       const matches = await readdir(root, { recursive: true });
-      const relativeMatch = matches.find((entry) => entry === path.join("win-unpacked", "BAPBAP Launcher V2.exe"));
+      const relativeMatch = matches.find((entry) => entry === path.join("win-unpacked", "BAPBAP Launcher.exe"));
       if (relativeMatch) {
         return path.join(root, relativeMatch);
       }

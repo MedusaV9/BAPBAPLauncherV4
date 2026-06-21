@@ -8,7 +8,7 @@ import { _electron as electron, chromium } from "playwright";
 
 const appDir = path.resolve(import.meta.dirname, "..");
 const artifactDir = path.join(appDir, "output", "playwright");
-const packagedExe = path.join(appDir, "release", "build", "win-unpacked", "BAPBAP Launcher V2.exe");
+const packagedExe = path.join(appDir, "release", "build", "win-unpacked", "BAPBAP Launcher.exe");
 const packagedSmokeUserDataDir = path.join(appDir, "output", ".tmp", "packaged-smoke-user-data");
 
 async function reservePort() {
