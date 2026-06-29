@@ -300,6 +300,15 @@ function createRiftWindow(): void {
     riftWindow.setIgnoreMouseEvents(true);
     riftWindow.setAlwaysOnTop(true, "screen-saver");
 
+    riftWindow.webContents.on("did-finish-load", () => {
+        console.log("[rift] overlay loaded");
+    });
+    riftWindow.webContents.on("did-fail-load", (_e, code, desc, url) => {
+        console.warn(`[rift] overlay failed to load (${code}: ${desc}) ${url} — revealing main directly`);
+        revealMainFromRift();
+        closeRiftWindow();
+    });
+
     const reduced = settingsRef?.getAll().uiMotionEnabled === false ? "?reduced=1" : "";
     const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
     const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
