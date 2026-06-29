@@ -3,6 +3,7 @@
 // oscillator sweeps and filtered noise bursts.
 
 let ctx: AudioContext | null = null;
+let master: AudioNode | null = null;
 
 function getCtx(): AudioContext | null {
     if (typeof window === "undefined") return null;
@@ -12,6 +13,23 @@ function getCtx(): AudioContext | null {
         ctx = new Ctor();
     }
     return ctx;
+}
+
+// Shared master bus: a gain into a limiter so the layered rumble/crack/
+// whoosh/boom never sum past 0 dB and clip into distortion.
+function getMaster(ac: AudioContext): AudioNode {
+    if (master) return master;
+    const gain = ac.createGain();
+    gain.gain.value = 0.82;
+    const limiter = ac.createDynamicsCompressor();
+    limiter.threshold.value = -3;
+    limiter.knee.value = 0;
+    limiter.ratio.value = 20;
+    limiter.attack.value = 0.002;
+    limiter.release.value = 0.18;
+    gain.connect(limiter).connect(getMaster(ac));
+    master = gain;
+    return master;
 }
 
 export function primeAudio(): void {
@@ -51,7 +69,7 @@ export function playRumble(volume = 1): void {
     gain.gain.exponentialRampToValueAtTime(0.45 * volume, now + 0.5);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
 
-    osc.connect(lowpass).connect(gain).connect(ac.destination);
+    osc.connect(lowpass).connect(gain).connect(getMaster(ac));
     osc.start(now);
     osc.stop(now + 1.55);
 }
@@ -76,7 +94,7 @@ export function playCrack(volume = 1): void {
     gain.gain.exponentialRampToValueAtTime(0.9 * volume, now + 0.005);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
 
-    noise.connect(bandpass).connect(gain).connect(ac.destination);
+    noise.connect(bandpass).connect(gain).connect(getMaster(ac));
     noise.start(now);
     noise.stop(now + 0.4);
 
@@ -88,7 +106,7 @@ export function playCrack(volume = 1): void {
     const oscGain = ac.createGain();
     oscGain.gain.setValueAtTime(0.4 * volume, now);
     oscGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.2);
-    osc.connect(oscGain).connect(ac.destination);
+    osc.connect(oscGain).connect(getMaster(ac));
     osc.start(now);
     osc.stop(now + 0.22);
 }
@@ -113,7 +131,7 @@ export function playWhoosh(volume = 1): void {
     gain.gain.exponentialRampToValueAtTime(0.5 * volume, now + 0.5);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.1);
 
-    noise.connect(lowpass).connect(gain).connect(ac.destination);
+    noise.connect(lowpass).connect(gain).connect(getMaster(ac));
     noise.start(now);
     noise.stop(now + 1.2);
 }
@@ -134,7 +152,7 @@ export function playBoom(volume = 1): void {
     gain.gain.exponentialRampToValueAtTime(1.0 * volume, now + 0.02);
     gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.9);
 
-    osc.connect(gain).connect(ac.destination);
+    osc.connect(gain).connect(getMaster(ac));
     osc.start(now);
     osc.stop(now + 0.95);
 
@@ -147,7 +165,7 @@ export function playBoom(volume = 1): void {
     const noiseGain = ac.createGain();
     noiseGain.gain.setValueAtTime(0.6 * volume, now);
     noiseGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
-    noise.connect(lowpass).connect(noiseGain).connect(ac.destination);
+    noise.connect(lowpass).connect(noiseGain).connect(getMaster(ac));
     noise.start(now);
     noise.stop(now + 0.9);
 }
