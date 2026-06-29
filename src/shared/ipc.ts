@@ -59,6 +59,8 @@ export type AppSettings = {
     closeToTrayEnabled: boolean;
     /** UI language code (e.g. "en", "de", "ru", "es"). */
     language: string;
+    /** Stable per-install Battle Royale account id (format "custom-..."). Generated once. */
+    brAccountId: string;
 };
 
 export type DirectoryDialogInput = {

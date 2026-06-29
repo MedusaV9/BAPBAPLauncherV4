@@ -6,6 +6,7 @@ import type { AppSettings } from "../../../shared/ipc";
 import { applyLockedFxSettings, isLockedFxSettingKey, LOCKED_FX_SETTINGS } from "../../../shared/fx-settings";
 import { normalizeInstancesRootPath } from "../../../shared/instances-root";
 import { CURRENT_SETUP_VERSION } from "../../../shared/setup";
+import { readExistingAccountId, getBattleRoyaleConfigPath, generateBrAccountId } from "./battle-royale-config";
 
 const { app } = electron;
 
@@ -54,6 +55,7 @@ export class SettingsStoreService {
                 uiScale: 1,
                 closeToTrayEnabled: true,
                 language: "en",
+                brAccountId: "",
                 instancesRoot: defaultInstancesRoot,
             },
         });
@@ -99,6 +101,7 @@ export class SettingsStoreService {
             uiScale: this.store.get("uiScale"),
             closeToTrayEnabled: this.store.get("closeToTrayEnabled"),
             language: this.store.get("language"),
+            brAccountId: this.store.get("brAccountId"),
         });
     }
 
@@ -178,6 +181,20 @@ export class SettingsStoreService {
 
     getCloseToTrayEnabled(): boolean {
         return this.store.get("closeToTrayEnabled") !== false;
+    }
+
+    // Returns the stable Battle Royale account id, generating it once on first
+    // use. If the game already wrote an INI with a custom-* id, adopt that so a
+    // returning player keeps their existing account instead of being orphaned.
+    getOrCreateBrAccountId(): string {
+        const stored = `${this.store.get("brAccountId") ?? ""}`.trim();
+        if (stored.startsWith("custom-")) {
+            return stored;
+        }
+        const adopted = readExistingAccountId(getBattleRoyaleConfigPath());
+        const accountId = adopted ?? generateBrAccountId();
+        this.store.set("brAccountId", accountId as never);
+        return accountId;
     }
 
     unlockSecretMods(secretUnlockId: string): boolean {

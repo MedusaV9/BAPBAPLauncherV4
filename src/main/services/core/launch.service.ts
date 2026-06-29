@@ -6,6 +6,7 @@ import { InstanceService } from "./instance.service";
 import { LaunchInput, LaunchRuntimeLogEntry, LaunchRuntimeState } from "../../../shared/ipc";
 import { MelonLoaderService } from "../vendored/melonloader.service";
 import { SettingsStoreService } from "./settings-store";
+import { writeBattleRoyaleConfig } from "./battle-royale-config";
 import { splitWindowsArgs } from "./launch-args";
 
 const RUNTIME_STATE_EVENT = "runtime-state";
@@ -108,6 +109,19 @@ export class LaunchService {
         }
 
         this.pushLog("system", "MelonLoader ready.");
+
+        if (instance.instanceType === "bundle") {
+            try {
+                const accountId = this.settings.getOrCreateBrAccountId();
+                const username = (await this.instances.getSteamPersonaName().catch(() => null))?.trim() || "Player";
+                writeBattleRoyaleConfig(accountId, username);
+                this.pushLog("system", `Battle Royale identity ready (${username}).`);
+            } catch (error) {
+                const message = error instanceof Error ? error.message : String(error);
+                this.pushLog("system", `Could not write Battle Royale config: ${message}`);
+            }
+        }
+
         this.pushLog("system", `Launching ${instance.profileName || instance.name}...`);
 
         const child = spawn(executablePath, args, {

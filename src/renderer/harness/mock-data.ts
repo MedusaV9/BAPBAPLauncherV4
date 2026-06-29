@@ -115,6 +115,7 @@ export const harnessSettings: AppSettings = {
     uiScale: 1,
     closeToTrayEnabled: true,
     language: "en",
+    brAccountId: "custom-harness00000",
 };
 
 export const harnessBuildInfo = {
