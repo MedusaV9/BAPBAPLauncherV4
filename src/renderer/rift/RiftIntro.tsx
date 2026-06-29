@@ -88,9 +88,9 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
         let raf = 0;
         const start = performance.now();
         // Timeline (ms): rumble 0–500, cracks spread 300–1500, glow 1100–1900,
-        // flash 1900–2100 (revealMain), settle 2100–2700 (done).
-        const DUR_REVEAL = 1950;
-        const DUR_DONE = 2700;
+        // boom/flash 1750, window emerges shortly after, overlay settles out.
+        const DUR_REVEAL = 1880;
+        const DUR_DONE = 2480;
 
         let rumbleSoundPlayed = false;
         let crackSoundPlayed = false;
@@ -214,8 +214,10 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
                 const flash = Math.min(1, (elapsed - 1750) / 320);
                 const portalR = Math.min(W, H) * 0.62 * easeOut(flash);
                 const grad = ctx!.createRadialGradient(cx, cy, 0, cx, cy, portalR);
-                grad.addColorStop(0, `rgba(255,255,255,${0.92 * flash})`);
-                grad.addColorStop(0.5, `rgba(255,140,220,${0.6 * flash})`);
+                // Warm core rather than pure blinding white — softer on the
+                // eyes and avoids a full-screen white photosensitivity flash.
+                grad.addColorStop(0, `rgba(255,236,250,${0.78 * flash})`);
+                grad.addColorStop(0.5, `rgba(255,130,214,${0.55 * flash})`);
                 grad.addColorStop(1, "rgba(0,0,0,0)");
                 ctx!.fillStyle = grad;
                 ctx!.beginPath();
