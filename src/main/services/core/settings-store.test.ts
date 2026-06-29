@@ -47,6 +47,20 @@ describe("SettingsStoreService", () => {
         expect(settings.toolsUnlocked).toBe(false);
         expect(settings.modsUnlockedSecretIds).toEqual([]);
         expect(settings.radioVolume).toBeCloseTo(0.72);
+        // Rift intro and close-to-tray default on.
+        expect(settings.riftIntroEnabled).toBe(true);
+        expect(settings.closeToTrayEnabled).toBe(true);
+    });
+
+    it("exposes rift/tray getters that honor stored values", () => {
+        const service = new SettingsStoreService();
+        expect(service.getRiftIntroEnabled()).toBe(true);
+        expect(service.getCloseToTrayEnabled()).toBe(true);
+
+        service.set("riftIntroEnabled", false);
+        service.set("closeToTrayEnabled", false);
+        expect(service.getRiftIntroEnabled()).toBe(false);
+        expect(service.getCloseToTrayEnabled()).toBe(false);
     });
 
     it("forces locked FX settings to their canonical values, ignoring writes", () => {
