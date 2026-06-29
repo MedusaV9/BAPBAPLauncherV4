@@ -8,9 +8,12 @@ if (!container) {
 }
 
 const params = new URLSearchParams(window.location.search);
-const reduced =
-    params.get("reduced") === "1" ||
-    window.matchMedia?.("(prefers-reduced-motion: reduce)").matches === true;
+// Honor only the explicit ?reduced=1 the main process sets from the user's
+// uiMotionEnabled setting. We deliberately do NOT auto-detect the OS
+// prefers-reduced-motion here: Windows servers/VMs frequently ship with
+// system animations disabled, which would silently skip the rift the user
+// explicitly turned on.
+const reduced = params.get("reduced") === "1";
 
 createRoot(container).render(
     <React.StrictMode>
