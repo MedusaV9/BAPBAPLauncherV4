@@ -1,4 +1,14 @@
-export type LanguageCode = "en" | "de" | "ru" | "es";
+export type LanguageCode =
+    | "de"
+    | "en"
+    | "es"
+    | "fr"
+    | "nl"
+    | "pt"
+    | "ru"
+    | "tr"
+    | "zh"
+    | "ja";
 
 export type LanguageMeta = {
     code: LanguageCode;
@@ -8,10 +18,16 @@ export type LanguageMeta = {
 
 // Order is the order shown in the Settings selector.
 export const LANGUAGES: LanguageMeta[] = [
-    { code: "en", name: "English" },
     { code: "de", name: "Deutsch" },
-    { code: "ru", name: "Русский" },
+    { code: "en", name: "English" },
     { code: "es", name: "Español" },
+    { code: "fr", name: "Français" },
+    { code: "nl", name: "Nederlands" },
+    { code: "pt", name: "Português" },
+    { code: "ru", name: "Русский" },
+    { code: "tr", name: "Türkçe" },
+    { code: "zh", name: "简体中文" },
+    { code: "ja", name: "日本語" },
 ];
 
 export const DEFAULT_LANGUAGE: LanguageCode = "en";

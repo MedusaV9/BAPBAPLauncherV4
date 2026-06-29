@@ -3,12 +3,18 @@ import en, { type StringKey } from "./en";
 import de from "./de";
 import ru from "./ru";
 import es from "./es";
+import fr from "./fr";
+import nl from "./nl";
+import pt from "./pt";
+import tr from "./tr";
+import zh from "./zh";
+import ja from "./ja";
 import { normalizeLanguage, type LanguageCode } from "./languages";
 import { useSettings } from "../query/hooks";
 
 type Dict = Partial<Record<StringKey, string>>;
 
-const DICTS: Record<LanguageCode, Dict> = { en, de, ru, es };
+const DICTS: Record<LanguageCode, Dict> = { en, de, ru, es, fr, nl, pt, tr, zh, ja };
 
 export type TranslateFn = (key: StringKey, fallback?: string) => string;
 
