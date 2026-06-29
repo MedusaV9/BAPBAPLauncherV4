@@ -280,7 +280,7 @@ function createRiftWindow(): void {
         width,
         height,
         frame: false,
-        transparent: true,
+        transparent: false,
         alwaysOnTop: true,
         skipTaskbar: true,
         resizable: false,
@@ -288,7 +288,7 @@ function createRiftWindow(): void {
         hasShadow: false,
         focusable: false,
         fullscreenable: false,
-        backgroundColor: "#00000000",
+        backgroundColor: "#06090f",
         webPreferences: {
             preload: path.join(__dirname, "../preload/index.cjs"),
             contextIsolation: true,
@@ -349,9 +349,44 @@ function revealMainFromRift(): void {
     if (settingsRef?.getAll().uiMotionEnabled === false) {
         mainWindow.show();
         mainWindow.focus();
+        fadeRiftWindowOut(200);
         return;
     }
     growWindowFromRift(mainWindow);
+    // The overlay is opaque (so it can't render invisibly under software
+    // compositing), so it must fade its own window out to reveal the main
+    // window growing behind it.
+    fadeRiftWindowOut(420);
+}
+
+// Fade the opaque rift overlay window out via window alpha (works without GPU
+// compositing), then close it.
+function fadeRiftWindowOut(durationMs: number): void {
+    if (!riftWindow || riftWindow.isDestroyed()) {
+        return;
+    }
+    const win = riftWindow;
+    const steps = Math.max(1, Math.round(durationMs / 16));
+    let i = 0;
+    const tick = () => {
+        if (!win || win.isDestroyed()) {
+            return;
+        }
+        i += 1;
+        const opacity = Math.max(0, 1 - i / steps);
+        try {
+            win.setOpacity(opacity);
+        } catch {
+            closeRiftWindow();
+            return;
+        }
+        if (i >= steps) {
+            closeRiftWindow();
+            return;
+        }
+        setTimeout(tick, 16);
+    };
+    setTimeout(tick, 16);
 }
 
 // Animate the window emerging from the rift: start as a small rect at the
