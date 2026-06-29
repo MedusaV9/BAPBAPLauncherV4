@@ -14,6 +14,9 @@ import {
     useRefreshManifest,
 } from "../query/hooks";
 import { getLauncherUpdateBannerTitle } from "../../helpers/launcher-update-ui";
+import { LANGUAGES } from "../i18n/languages";
+import { LanguageFlag } from "../i18n/flags";
+import { useT, useLanguage } from "../i18n";
 import { api } from "../../api";
 import type { AppSettings } from "../../../shared/ipc";
 
@@ -127,6 +130,55 @@ function ScaleSlider() {
                 {Math.round(value * 100)}%
             </span>
         </div>
+    );
+}
+
+function LanguageGroup() {
+    const { data: settings } = useSettings();
+    const setSetting = useSetSetting();
+    const t = useT();
+    const current = useLanguage();
+
+    if (!settings) return null;
+
+    return (
+        <Group title={t("settings.group.language")}>
+            <Row
+                label={t("settings.language.label")}
+                description={t("settings.language.description")}
+                align="start"
+                control={
+                    <div className="flex flex-col gap-1.5">
+                        {LANGUAGES.map(lang => {
+                            const active = lang.code === current;
+                            return (
+                                <button
+                                    key={lang.code}
+                                    type="button"
+                                    onClick={() =>
+                                        setSetting.mutate({ key: "language", value: lang.code } as Parameters<typeof setSetting.mutate>[0])
+                                    }
+                                    className={`focus-ring flex w-44 items-center gap-2.5 rounded-[0.625rem] border px-3 py-2 text-sm transition-colors ${
+                                        active
+                                            ? "border-accent bg-accent/10 text-foreground"
+                                            : "border-input bg-[var(--surface-inset)] text-muted-foreground hover:border-white/20"
+                                    }`}
+                                    aria-pressed={active}
+                                >
+                                    <LanguageFlag code={lang.code} />
+                                    <span>{lang.name}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                }
+            />
+            <Row
+                label=""
+                description={t("settings.language.aiWarning")}
+                control={null}
+            />
+        </Group>
     );
 }
 
@@ -326,6 +378,8 @@ export function SettingsWorkspace() {
                         }
                     />
                 </Group>
+
+                <LanguageGroup />
 
                 <Group title="Startup & window">
                     <Row

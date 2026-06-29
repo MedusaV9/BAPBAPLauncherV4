@@ -38,6 +38,7 @@ function createSettings(overrides: Partial<AppSettings> = {}): AppSettings {
         uiScale: 1,
         riftIntroEnabled: true,
         closeToTrayEnabled: true,
+        language: "en",
         ...overrides,
     };
 }

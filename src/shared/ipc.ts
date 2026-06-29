@@ -59,6 +59,8 @@ export type AppSettings = {
     riftIntroEnabled: boolean;
     /** Closing the window hides to the system tray instead of quitting. */
     closeToTrayEnabled: boolean;
+    /** UI language code (e.g. "en", "de", "ru", "es"). */
+    language: string;
 };
 
 export type DirectoryDialogInput = {

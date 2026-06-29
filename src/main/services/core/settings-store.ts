@@ -54,6 +54,7 @@ export class SettingsStoreService {
                 uiScale: 1,
                 riftIntroEnabled: true,
                 closeToTrayEnabled: true,
+                language: "en",
                 instancesRoot: defaultInstancesRoot,
             },
         });
@@ -99,6 +100,7 @@ export class SettingsStoreService {
             uiScale: this.store.get("uiScale"),
             riftIntroEnabled: this.store.get("riftIntroEnabled"),
             closeToTrayEnabled: this.store.get("closeToTrayEnabled"),
+            language: this.store.get("language"),
         });
     }
 

@@ -115,6 +115,7 @@ export const harnessSettings: AppSettings = {
     uiScale: 1,
     riftIntroEnabled: true,
     closeToTrayEnabled: true,
+    language: "en",
 };
 
 export const harnessBuildInfo = {

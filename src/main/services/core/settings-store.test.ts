@@ -50,6 +50,8 @@ describe("SettingsStoreService", () => {
         // Rift intro and close-to-tray default on.
         expect(settings.riftIntroEnabled).toBe(true);
         expect(settings.closeToTrayEnabled).toBe(true);
+        // Language defaults to English.
+        expect(settings.language).toBe("en");
     });
 
     it("exposes rift/tray getters that honor stored values", () => {
