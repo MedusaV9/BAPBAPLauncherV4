@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { primeAudio, playCrack, playWhoosh, playBoom, closeAudio } from "./riftSound";
+import { primeAudio, playRumble, playCrack, playWhoosh, playBoom, closeAudio } from "./riftSound";
 
 type Crack = {
     angle: number;
@@ -92,6 +92,7 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
         const DUR_REVEAL = 1950;
         const DUR_DONE = 2700;
 
+        let rumbleSoundPlayed = false;
         let crackSoundPlayed = false;
         let whooshPlayed = false;
         let boomPlayed = false;
@@ -140,6 +141,10 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
             ctx!.fillStyle = `rgba(6,9,18,${0.18 * rumble})`;
             ctx!.fillRect(0, 0, W, H);
 
+            if (!rumbleSoundPlayed) {
+                rumbleSoundPlayed = true;
+                playRumble(0.9);
+            }
             if (elapsed > 220 && !crackSoundPlayed) {
                 crackSoundPlayed = true;
                 playCrack(0.9);

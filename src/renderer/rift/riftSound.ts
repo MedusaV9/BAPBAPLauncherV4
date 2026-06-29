@@ -31,6 +31,31 @@ function makeNoiseBuffer(ac: AudioContext, seconds: number): AudioBuffer {
     return buffer;
 }
 
+// Low building drone — the ground rumbling before the crack.
+export function playRumble(volume = 1): void {
+    const ac = getCtx();
+    if (!ac) return;
+    const now = ac.currentTime;
+
+    const osc = ac.createOscillator();
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(34, now);
+    osc.frequency.linearRampToValueAtTime(52, now + 1.4);
+
+    const lowpass = ac.createBiquadFilter();
+    lowpass.type = "lowpass";
+    lowpass.frequency.value = 140;
+
+    const gain = ac.createGain();
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.45 * volume, now + 0.5);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.5);
+
+    osc.connect(lowpass).connect(gain).connect(ac.destination);
+    osc.start(now);
+    osc.stop(now + 1.55);
+}
+
 // Sharp, bright transient — the screen cracking.
 export function playCrack(volume = 1): void {
     const ac = getCtx();
