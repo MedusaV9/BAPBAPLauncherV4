@@ -27,7 +27,7 @@ function getMaster(ac: AudioContext): AudioNode {
     limiter.ratio.value = 20;
     limiter.attack.value = 0.002;
     limiter.release.value = 0.18;
-    gain.connect(limiter).connect(getMaster(ac));
+    gain.connect(limiter).connect(ac.destination);
     master = gain;
     return master;
 }
