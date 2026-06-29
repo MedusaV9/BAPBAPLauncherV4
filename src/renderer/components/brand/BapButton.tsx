@@ -50,7 +50,7 @@ export function BapButton({
     const mag = useMagnetic(0.35);
     const sizing =
         size === "xl"
-            ? { padY: "py-3.5", padX: "px-7", text: "1rem", icon: 20 }
+            ? { padY: "py-5", padX: "px-10", text: "1.2rem", icon: 24 }
             : size === "lg"
               ? { padY: "py-3", padX: "px-6", text: "0.95rem", icon: 18 }
               : { padY: "py-2.5", padX: "px-5", text: "0.875rem", icon: 16 };

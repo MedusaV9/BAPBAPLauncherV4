@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { Lock } from "lucide-react";
-import { SectionHeading } from "../../components/brand/SectionHeading";
+import { Lock, ShieldCheck } from "lucide-react";
 import { BapCard } from "../../components/brand/BapCard";
-import { BapButton } from "../../components/brand/BapButton";
-import { Input } from "../../components/ui/input";
+import { InputWell } from "../../components/brand/InputWell";
+import { Button } from "../../components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../components/ui/tabs";
 import { RebalanceEmbedPanel } from "../../components/tools/RebalanceEmbedPanel";
 import { ConfigEditorPanel } from "../../components/tools/ConfigEditorPanel";
+import { cn } from "../lib/utils";
 import { useSettings, useUnlockTools, useInstances } from "../query/hooks";
 
 function UnlockGate() {
@@ -17,33 +17,59 @@ function UnlockGate() {
     async function submit() {
         setError(false);
         const ok = await unlockTools.mutateAsync(code);
-        if (!ok) setError(true);
+        if (!ok) {
+            setError(true);
+            setCode("");
+        }
     }
 
     return (
-        <div className="bap-glow relative flex h-full items-center justify-center overflow-hidden p-8">
-            <BapCard className="relative flex w-full max-w-sm flex-col items-center gap-4 p-8 text-center">
-                <span className="absolute -top-3 right-6 rounded-full border border-border bg-secondary px-3 py-1 text-[0.65rem] font-medium uppercase tracking-wide text-muted-foreground">
-                    Locked
-                </span>
-                <Lock size={28} className="text-accent" />
-                <div>
-                    <h2 className="font-display text-lg text-foreground">Tools are locked</h2>
-                    <p className="mt-1 text-sm text-muted-foreground">Enter the unlock code to continue.</p>
-                </div>
-                <Input
-                    value={code}
-                    onChange={e => setCode(e.target.value)}
-                    onKeyDown={e => e.key === "Enter" && submit()}
-                    placeholder="Unlock code"
-                    type="password"
-                    className={error ? "border-destructive" : ""}
-                />
-                {error && <p className="text-xs text-destructive">That code didn't work.</p>}
-                <BapButton onClick={submit} showChevron={false} disabled={!code || unlockTools.isPending}>
-                    Unlock
-                </BapButton>
-            </BapCard>
+        <div className="bap-dotgrid relative flex h-full items-center justify-center overflow-hidden p-8">
+            <div
+                className="pointer-events-none absolute inset-0"
+                style={{ background: "radial-gradient(60% 50% at 50% 38%, rgba(233,30,140,0.10), transparent 70%)" }}
+            />
+            <div className="relative w-full max-w-[460px]">
+                <BapCard className="relative flex flex-col items-center gap-6 p-10 text-center shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)]">
+                    <div className="relative flex h-16 w-16 items-center justify-center">
+                        <span className="absolute inset-0 rounded-full border-2 border-gold/20" />
+                        <span className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-[var(--surface-inset)]">
+                            <Lock size={28} className="text-gold" />
+                        </span>
+                    </div>
+                    <div>
+                        <h2 className="font-display text-xl uppercase tracking-[0.04em] text-foreground">Restricted Access</h2>
+                    </div>
+                    <div className={cn("w-full", error && "bap-shake")}>
+                        <InputWell
+                            value={code}
+                            onChange={e => {
+                                setCode(e.target.value);
+                                if (error) setError(false);
+                            }}
+                            onKeyDown={e => e.key === "Enter" && submit()}
+                            placeholder="ENTER UNLOCK CODE"
+                            type="password"
+                            autoFocus
+                            className={cn(
+                                "h-12 text-center font-mono text-lg tracking-[0.42em]",
+                                error && "border-destructive focus-visible:border-destructive focus-visible:ring-destructive/25"
+                            )}
+                        />
+                        <p className={cn("mt-2 h-4 text-center font-mono text-xs text-destructive transition-opacity", error ? "opacity-100" : "opacity-0")}>
+                            That code didn't work.
+                        </p>
+                    </div>
+                    <Button
+                        variant="pop"
+                        className="w-full"
+                        onClick={submit}
+                        disabled={!code || unlockTools.isPending}
+                    >
+                        <ShieldCheck size={16} /> Unlock
+                    </Button>
+                </BapCard>
+            </div>
         </div>
     );
 }
@@ -54,7 +80,11 @@ export function ToolsWorkspace() {
     const [selectedId, setSelectedId] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!selectedId && instances && instances.length > 0) {
+        if (!instances || instances.length === 0) {
+            if (selectedId) setSelectedId(null);
+            return;
+        }
+        if (!selectedId || !instances.some(i => i.id === selectedId)) {
             setSelectedId(instances[0].id);
         }
     }, [instances, selectedId]);
@@ -72,31 +102,48 @@ export function ToolsWorkspace() {
     const selected = instances?.find(i => i.id === selectedId) ?? null;
 
     return (
-        <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-20">
-            <div className="mb-4 flex items-center justify-between gap-4">
-                <SectionHeading eyebrow="Studio" className="mb-0" subtitle="Rebalance Studio — author and tune content packs.">
-                    Tools
-                </SectionHeading>
-                <select
-                    value={selectedId ?? ""}
-                    onChange={e => setSelectedId(e.target.value)}
-                    aria-label="Profile"
-                    className="h-10 rounded-lg border border-border bg-card px-3 text-sm text-foreground transition-colors hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                    {instances?.map(i => (
-                        <option key={i.id} value={i.id}>
-                            {i.profileName}
-                        </option>
-                    ))}
-                </select>
+        <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-16">
+            {/* Workbench header */}
+            <div className="mb-4 flex flex-col gap-4 rounded-[1.125rem] border border-border bg-card p-5 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0">
+                    <h1 className="font-display text-lg uppercase leading-tight text-foreground">Tools</h1>
+                    <p className="text-xs text-muted-foreground">Rebalance Studio — author and tune content packs.</p>
+                </div>
+                <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1.5 rounded-[0.625rem] border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-accent">
+                        <ShieldCheck size={12} /> Unlocked
+                    </span>
+                    <select
+                        value={selectedId ?? ""}
+                        onChange={e => setSelectedId(e.target.value)}
+                        aria-label="Profile"
+                        className="focus-ring h-10 rounded-[0.625rem] border border-input bg-[var(--surface-inset)] px-3 text-sm text-foreground transition-colors hover:border-white/20"
+                    >
+                        {instances?.map(i => (
+                            <option key={i.id} value={i.id}>
+                                {i.profileName}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             <div className="min-h-0 flex-1">
                 {selected ? (
                     <Tabs defaultValue="rebalance" className="flex h-full flex-col">
-                        <TabsList>
-                            <TabsTrigger value="rebalance">Rebalance Studio</TabsTrigger>
-                            <TabsTrigger value="config">Config editor</TabsTrigger>
+                        <TabsList className="h-auto justify-start gap-1 rounded-none border-0 border-b border-border bg-transparent p-0">
+                            <TabsTrigger
+                                value="rebalance"
+                                className="rounded-none border-b-2 border-transparent bg-transparent px-3 pb-2.5 pt-1 font-medium text-muted-foreground data-[state=active]:border-accent data-[state=active]:bg-transparent data-[state=active]:font-semibold data-[state=active]:text-foreground"
+                            >
+                                Rebalance Studio
+                            </TabsTrigger>
+                            <TabsTrigger
+                                value="config"
+                                className="rounded-none border-b-2 border-transparent bg-transparent px-3 pb-2.5 pt-1 font-medium text-muted-foreground data-[state=active]:border-accent data-[state=active]:bg-transparent data-[state=active]:font-semibold data-[state=active]:text-foreground"
+                            >
+                                Config editor
+                            </TabsTrigger>
                         </TabsList>
                         <TabsContent value="rebalance" className="min-h-0 flex-1">
                             <RebalanceEmbedPanel key={selected.id} selectedInstance={selected} />

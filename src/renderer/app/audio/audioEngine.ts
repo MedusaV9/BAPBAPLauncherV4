@@ -182,6 +182,11 @@ export class AudioEngine {
             await this.waitForDeckReady(nextDeck, params.playbackUrl);
         } catch (error) {
             if (requestId === this.playRequestId) {
+                // The requested track failed to load and no newer request has
+                // superseded us — stop the outgoing track so the old song does
+                // not keep playing, then surface the error.
+                activeDeck.pause();
+                this.currentTrackId = null;
                 this.callbacks.onError?.(error instanceof Error ? error.message : String(error));
             }
             return;
@@ -194,7 +199,16 @@ export class AudioEngine {
         }
         nextDeck.volume = 0;
         const result = await this.tryPlay(nextDeck, requestId);
-        if (result !== "started") return;
+        if (result !== "started") {
+            // When play() failed (not just interrupted by a newer request),
+            // stop the outgoing active deck so the old track does not keep
+            // playing audibly while the UI shows a paused/error state.
+            if (result === "failed" && this.currentTrackId) {
+                activeDeck.pause();
+                this.currentTrackId = null;
+            }
+            return;
+        }
         this.crossfade(this.currentTrackId ? activeDeck : null, nextDeck, targetVolume, crossfadeMs);
         this.activeIndex = nextIndex;
         this.currentTrackId = params.trackId;

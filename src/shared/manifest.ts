@@ -315,6 +315,7 @@ export interface InstalledInstance {
 export interface InstallOfficialInput {
     versionId: string;
     profileName: string;
+    installPath?: string;
 }
 
 export interface ContentInstallInput {

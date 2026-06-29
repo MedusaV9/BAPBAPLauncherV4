@@ -198,6 +198,16 @@ export class ContentService {
         for (const desired of Object.values(desiredStates)) {
             const stateKey = this.toStateKey(desired.channelId, desired.packageId);
             const current = rawState[stateKey] as ManagedPackageState | undefined;
+            // Fast path: a package already installed at the desired version and
+            // enabled state needs no work — the common case when switching between
+            // a set and its clone, where most packages overlap.
+            if (
+                current &&
+                (!desired.version || current.version === desired.version) &&
+                Boolean(current.enabled) === desired.enabled
+            ) {
+                continue;
+            }
             if (!current) {
                 if (!desired.version) {
                     continue;
@@ -387,22 +397,27 @@ export class ContentService {
             throw new Error(`No installable files found for ${input.packageId}@${input.version}.`);
         }
 
-        const managedFiles: ManagedPackageState["files"] = [];
-        for (const file of versionManifest.files) {
-            const sourceUrl = this.manifests.resolveManifestPath(file.sourcePath, versionManifestUrl);
-            const targetAbsolute = this.resolveSafeTargetPath(instance.path, file.targetPath);
-            await ensureDir(path.dirname(targetAbsolute));
-            await this.downloader.downloadFile({
-                url: sourceUrl,
-                outputPath: targetAbsolute,
-                sha256: file.sha256,
-            });
-            managedFiles.push({
-                targetPath: file.targetPath,
-                sha256: file.sha256,
-                sourcePath: file.sourcePath,
-            });
-        }
+        // Files are independent, so download them concurrently rather than one at
+        // a time — the big win when switching mod sets that pull multi-file
+        // packages. The content-state write below still happens once, after all
+        // downloads resolve, so there's no state-file race.
+        const managedFiles: ManagedPackageState["files"] = await Promise.all(
+            versionManifest.files.map(async file => {
+                const sourceUrl = this.manifests.resolveManifestPath(file.sourcePath, versionManifestUrl);
+                const targetAbsolute = this.resolveSafeTargetPath(instance.path, file.targetPath);
+                await ensureDir(path.dirname(targetAbsolute));
+                await this.downloader.downloadFile({
+                    url: sourceUrl,
+                    outputPath: targetAbsolute,
+                    sha256: file.sha256,
+                });
+                return {
+                    targetPath: file.targetPath,
+                    sha256: file.sha256,
+                    sourcePath: file.sourcePath,
+                };
+            })
+        );
 
         const key = this.toStateKey(input.channelId, input.packageId);
         const state = await this.instances.readContentState(instance.path);

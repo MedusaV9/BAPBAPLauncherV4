@@ -1,46 +1,34 @@
 import { motion, useReducedMotion } from "motion/react";
-import { useSteamPersonaName } from "../query/hooks";
+import logoWordmark from "../../assets/brand/BAPBAP_Logo_Horizontal_White.svg";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function StartupSplash() {
-    const { data: persona, isPending } = useSteamPersonaName();
     const reduceMotion = useReducedMotion();
-    const name = persona?.trim() || "Player";
-    const chars = [...name];
 
     return (
         <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden bg-background">
-            <div className="splash-spot splash-spot-magenta" />
-            <div className="splash-spot splash-spot-purple" />
-            <div className="splash-spot splash-spot-cyan" />
-
-            <div className="relative z-10 flex flex-col items-center px-8 text-center">
-                <motion.p
-                    className="font-body mb-3 text-sm font-medium uppercase tracking-[0.4em] text-muted-foreground"
-                    initial={reduceMotion ? false : { opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, ease: EASE }}
+            <div className="relative z-10 flex flex-col items-center gap-7 px-8">
+                <motion.img
+                    src={logoWordmark}
+                    alt="BAPBAP"
+                    className="h-12 w-auto select-none sm:h-16 md:h-20"
+                    draggable={false}
+                    initial={reduceMotion ? false : { opacity: 0, y: 12, scale: 0.97 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.7, ease: EASE }}
+                />
+                <motion.div
+                    className="flex items-center gap-2"
+                    aria-label="Loading"
+                    initial={reduceMotion ? false : { opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.35, duration: 0.5, ease: EASE }}
                 >
-                    Hello
-                </motion.p>
-                <h1
-                    className="font-display text-5xl leading-none text-foreground sm:text-7xl md:text-8xl"
-                    aria-label={`Hello ${name}`}
-                >
-                    {!isPending && chars.map((ch, i) => (
-                        <motion.span
-                            key={i}
-                            aria-hidden
-                            className="inline-block"
-                            initial={reduceMotion ? false : { opacity: 0, y: "0.55em" }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.05 + i * 0.04, duration: 0.6, ease: EASE }}
-                        >
-                            {ch === " " ? " " : ch}
-                        </motion.span>
-                    ))}
-                </h1>
+                    <span className="splash-loader-dot" />
+                    <span className="splash-loader-dot" style={{ animationDelay: "0.16s" }} />
+                    <span className="splash-loader-dot" style={{ animationDelay: "0.32s" }} />
+                </motion.div>
             </div>
         </div>
     );

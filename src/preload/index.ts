@@ -8,6 +8,9 @@ const v2Api: V2Api = {
         getBuildInfo: () => ipcRenderer.invoke(IPC_CHANNELS.diagnosticsGetBuildInfo),
         reportStartupFatal: input => ipcRenderer.invoke(IPC_CHANNELS.diagnosticsReportStartupFatal, input),
     },
+    shell: {
+        openExternal: url => ipcRenderer.invoke(IPC_CHANNELS.shellOpenExternal, url),
+    },
     updater: {
         check: force => ipcRenderer.invoke(IPC_CHANNELS.updaterCheck, force),
         downloadAndInstall: force => ipcRenderer.invoke(IPC_CHANNELS.updaterDownloadAndInstall, force),
@@ -59,7 +62,9 @@ const v2Api: V2Api = {
         hasRelativeFile: (instanceId, relativePath) => ipcRenderer.invoke(IPC_CHANNELS.instancesHasRelativeFile, instanceId, relativePath),
         installCustomMod: instanceId => ipcRenderer.invoke(IPC_CHANNELS.instancesInstallCustomMod, instanceId),
         remove: instanceId => ipcRenderer.invoke(IPC_CHANNELS.instancesRemove, instanceId),
+        rename: (instanceId, name) => ipcRenderer.invoke(IPC_CHANNELS.instancesRename, instanceId, name),
         getSteamPersonaName: () => ipcRenderer.invoke(IPC_CHANNELS.instancesGetSteamPersonaName),
+        migrateFromV3: sourceDir => ipcRenderer.invoke(IPC_CHANNELS.instancesMigrateFromV3, sourceDir),
     },
     launch: {
         start: input => ipcRenderer.invoke(IPC_CHANNELS.launchStart, input),

@@ -77,6 +77,7 @@ const INSTANCE_META_FILE = ".bapbap-instance.json";
 /** Filename for the per-version bundle manifest snapshot consumed by BundleUpdateService. */
 const BUNDLE_MANIFEST_FILE = ".bundle-manifest.json";
 
+
 /**
  * Event emitted whenever the per-bundle install pipeline transitions to a
  * new stage or makes meaningful download progress. Mirrors the
@@ -117,6 +118,10 @@ export interface BundleSummary {
     sizeBytes?: number;
     isInstalled: boolean;
     isUpdateAvailable: boolean;
+    /** True when the remote manifest advertises an archiveUrl — the
+     *  bundle can be downloaded. False for pre-release entries that
+     *  have metadata and artwork but no zip yet. */
+    isDownloadable?: boolean;
 }
 
 /**
@@ -145,6 +150,8 @@ interface BundleManifestSummary {
         isPlaceholder?: boolean;
         logoUrl?: string;
     };
+    /** Set to false when the remote entry has no archiveUrl (pre-release). */
+    isDownloadable?: boolean;
 }
 
 export class BundleService extends EventEmitter {
@@ -223,6 +230,7 @@ export class BundleService extends EventEmitter {
                 if (!BundleService.isValidBundleId(id)) {
                     continue;
                 }
+                const hasArchive = `${entry.archiveUrl ?? ""}`.trim().length > 0;
                 manifestsById.set(id, {
                     id,
                     name: entry.name,
@@ -233,6 +241,7 @@ export class BundleService extends EventEmitter {
                     buildNumber: entry.buildNumber,
                     sizeBytes: entry.sizeBytes,
                     publishedAtUtc: entry.publishedAtUtc,
+                    isDownloadable: hasArchive,
                 });
             }
         } catch (error) {
@@ -284,6 +293,7 @@ export class BundleService extends EventEmitter {
                     sizeBytes: typeof manifest.sizeBytes === "number" ? manifest.sizeBytes : undefined,
                     isInstalled,
                     isUpdateAvailable,
+                    isDownloadable: manifest.isDownloadable !== false,
                 };
             })
             .filter((entry): entry is BundleSummary => entry !== null)
@@ -549,7 +559,9 @@ export class BundleService extends EventEmitter {
             const channel =
                 `${remoteEntry.channel ?? fallbackManifest?.channel ?? "stable"}`.trim() || "stable";
             const displayName =
-                `${remoteEntry.name ?? fallbackManifest?.name ?? sanitizedName}`.trim() || sanitizedName;
+                (profileName ?? "").trim() ||
+                `${remoteEntry.name ?? fallbackManifest?.name ?? sanitizedName}`.trim() ||
+                sanitizedName;
 
             const instance: InstalledInstance = {
                 id: profileId,
@@ -560,9 +572,11 @@ export class BundleService extends EventEmitter {
                 version: fullVersion,
                 track: "bundle",
                 path: destination,
+                imageUrl: `${remoteEntry.imageUrl ?? fallbackManifest?.imageUrl ?? ""}`.trim() || undefined,
                 officialManaged: true,
                 officialTrack: "bundle",
                 lastUpdatedUtc: nowUtc,
+                melonLoaderFirstRunPending: true,
                 instanceSource: "official-managed",
                 instanceType: "bundle",
                 bundleId: id,

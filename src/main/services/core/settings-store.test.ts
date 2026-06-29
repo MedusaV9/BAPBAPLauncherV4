@@ -103,7 +103,8 @@ describe("SettingsStoreService", () => {
         expect(service.unlockToolsTab()).toBe(true);
         expect(service.getAll().toolsUnlocked).toBe(true);
 
-        expect(service.getBundlesRevealed()).toBe(false);
+        // bundlesRevealed is permanently true — no code gate needed.
+        expect(service.getBundlesRevealed()).toBe(true);
         expect(service.revealBundles()).toBe(true);
         expect(service.getBundlesRevealed()).toBe(true);
     });
@@ -114,5 +115,22 @@ describe("SettingsStoreService", () => {
         service.set("instancesRoot", "" as never);
         // Empty input normalizes back to the default, not a blank path.
         expect(service.getInstancesRoot()).toBe(original);
+    });
+
+    it("heals secret-mods consistency during a legacy setup-version upgrade", () => {
+        // Legacy state: onboarding done at version 0 (triggers the version
+        // migration branch) AND the secret flag set with an empty id list.
+        // The consistency block must still run in the same pass, not be skipped
+        // by an early return after the version migration.
+        STORE.data.set("uiOnboardingCompleted", true);
+        STORE.data.set("setupVersionCompleted", 0);
+        STORE.data.set("modsSecretUnlocked", true);
+        STORE.data.set("modsUnlockedSecretIds", []);
+
+        const service = new SettingsStoreService();
+        const settings = service.getAll();
+        expect(settings.setupVersionCompleted).toBe(CURRENT_SETUP_VERSION);
+        expect(settings.modsUnlockedSecretIds).toEqual(["default"]);
+        expect(settings.modsSecretUnlocked).toBe(true);
     });
 });

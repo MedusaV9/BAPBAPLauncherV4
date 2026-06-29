@@ -10,7 +10,7 @@ const WORKSPACES = [
     { label: "Start", expect: "Start" },
     { label: "Instances", expect: "Instances" },
     { label: "Mods", expect: "Mods" },
-    { label: "Radio", expect: "soundtrack station" },
+    { label: "Radio", expect: "Sync" },
     { label: "Tools", expect: "Tools" },
     { label: "Settings", expect: "Settings" },
 ];

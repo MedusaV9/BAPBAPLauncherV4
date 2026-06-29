@@ -222,4 +222,21 @@ describe("RadioService imports", () => {
         expect(state.sync.importedTrackCount).toBe(1);
         expect(state.tracks.filter(track => track.source === "local-import")).toHaveLength(1);
     });
+
+    it("removeFromQueue drops only the first matching occurrence of a duplicated track", async () => {
+        const { root, service } = await createService(null);
+        const importedFile = await writeAudioFile(root, "queued.wav", 500);
+
+        await service.importTracks([importedFile]);
+        const trackId = service.getState().tracks.find(track => track.source === "local-import")!.id;
+
+        // Enqueue the same track twice, plus mark the queue so order is checkable.
+        service.enqueue(trackId);
+        service.enqueue(trackId);
+        expect(service.getState().playback.queueTrackIds).toEqual([trackId, trackId]);
+
+        const state = service.removeFromQueue(trackId);
+        // Only one occurrence removed, not both.
+        expect(state.playback.queueTrackIds).toEqual([trackId]);
+    });
 });

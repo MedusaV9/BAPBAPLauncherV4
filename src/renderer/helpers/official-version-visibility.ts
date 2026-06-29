@@ -3,7 +3,7 @@ import { resolveUnlockStatus, type UnlockStatus } from "../../shared/unlock-time
 
 export type InstancesHeroTrack = "bapbap" | "boss-rush" | "bundle";
 
-export const INSTANCES_HERO_TRACKS: InstancesHeroTrack[] = ["bapbap", "boss-rush", "bundle"];
+export const INSTANCES_HERO_TRACKS: InstancesHeroTrack[] = ["boss-rush", "bundle", "bapbap"];
 
 export function hasDirectDownloadUrl(version: OfficialVersionEntry): boolean {
     const value = `${version.directDownloadUrl || ""}`.trim();

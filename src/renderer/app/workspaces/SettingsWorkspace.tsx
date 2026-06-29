@@ -1,28 +1,131 @@
-import { FolderOpen } from "lucide-react";
-import { SectionHeading } from "../../components/brand/SectionHeading";
-import { BapCard } from "../../components/brand/BapCard";
+import { useState, type ReactNode } from "react";
+import { FolderOpen, User, RefreshCw, DownloadCloud } from "lucide-react";
 import { Switch } from "../../components/ui/switch";
-import { Input } from "../../components/ui/input";
+import { InputWell } from "../../components/brand/InputWell";
 import { Button } from "../../components/ui/button";
-import { useSettings, useSetSetting } from "../query/hooks";
+import {
+    useSettings,
+    useSetSetting,
+    useSteamPersonaName,
+    useBuildInfo,
+    useInstances,
+    useUpdaterState,
+    useCheckUpdate,
+    useRefreshManifest,
+} from "../query/hooks";
+import { getLauncherUpdateBannerTitle } from "../../helpers/launcher-update-ui";
 import { api } from "../../api";
 import type { AppSettings } from "../../../shared/ipc";
 
-type ToggleRowProps = {
+function MetaChip({ label, value }: { label: string; value: string }) {
+    return (
+        <div className="flex items-center gap-2 rounded-[0.625rem] border border-border bg-popover px-2.5 py-1.5">
+            <span className="font-mono text-[0.6875rem] uppercase tracking-[0.12em] text-muted-foreground">{label}</span>
+            <span className="font-mono text-[0.6875rem] text-foreground">{value}</span>
+        </div>
+    );
+}
+
+function ControlPanelHeader() {
+    const { data: persona } = useSteamPersonaName();
+    const { data: build } = useBuildInfo();
+    const { data: instances } = useInstances();
+
+    const name = persona?.trim() || "Player";
+    const monogram = name.charAt(0).toUpperCase();
+    const profileCount = instances?.length ?? 0;
+
+    return (
+        <div className="mb-8 flex flex-col gap-4 rounded-[1.125rem] border border-border bg-card p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-[var(--surface-inset)]">
+                    {persona ? (
+                        <span className="font-display text-base uppercase text-foreground">{monogram}</span>
+                    ) : (
+                        <User size={20} className="text-muted-foreground" />
+                    )}
+                </div>
+                <div className="min-w-0">
+                    <h1 className="truncate font-display text-lg uppercase leading-tight text-foreground">{name}</h1>
+                    <p className="font-mono text-xs text-muted-foreground">
+                        {persona ? "Signed in via Steam" : "No Steam profile detected"}
+                    </p>
+                </div>
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+                {build?.appVersion && <MetaChip label="Build" value={`v${build.appVersion}`} />}
+                <MetaChip label="Profiles" value={String(profileCount)} />
+            </div>
+        </div>
+    );
+}
+
+function Group({ title, description, children }: { title: string; description?: string; children: ReactNode }) {
+    return (
+        <section className="flex flex-col gap-3">
+            <div className="px-1">
+                <h2 className="font-display text-xs uppercase tracking-[0.1em] text-foreground">{title}</h2>
+                {description && <p className="mt-1 text-xs text-muted-foreground">{description}</p>}
+            </div>
+            <div className="overflow-hidden rounded-[1.125rem] border border-border bg-card divide-y divide-border px-4">
+                {children}
+            </div>
+        </section>
+    );
+}
+
+function Row({
+    label,
+    description,
+    control,
+    align = "center",
+}: {
     label: string;
     description?: string;
-    checked: boolean;
-    onChange: (value: boolean) => void;
-};
-
-function ToggleRow({ label, description, checked, onChange }: ToggleRowProps) {
+    control: ReactNode;
+    align?: "center" | "start";
+}) {
     return (
-        <div className="flex items-center justify-between gap-4 py-2">
-            <div>
-                <p className="text-sm text-foreground">{label}</p>
-                {description && <p className="text-xs text-muted-foreground">{description}</p>}
+        <div className={`flex min-h-[56px] justify-between gap-6 py-3.5 ${align === "start" ? "items-start" : "items-center"}`}>
+            <div className="min-w-0">
+                <p className="text-sm font-medium text-foreground">{label}</p>
+                {description && <p className="mt-0.5 text-xs leading-snug text-muted-foreground">{description}</p>}
             </div>
-            <Switch checked={checked} onCheckedChange={onChange} />
+            <div className="shrink-0">{control}</div>
+        </div>
+    );
+}
+
+function ScaleSlider() {
+    const { data: settings } = useSettings();
+    const setSetting = useSetSetting();
+    const [draft, setDraft] = useState<number | null>(null);
+    const value = draft ?? settings?.uiScale ?? 1;
+
+    function commit(v: number) {
+        setDraft(null);
+        setSetting.mutate({ key: "uiScale", value: v } as Parameters<typeof setSetting.mutate>[0]);
+    }
+
+    return (
+        <div className="flex w-48 items-center gap-3">
+            <input
+                type="range"
+                min={0.8}
+                max={1.5}
+                step={0.05}
+                value={value}
+                onChange={e => setDraft(Number(e.target.value))}
+                onPointerUp={e => commit(Number((e.target as HTMLInputElement).value))}
+                onKeyUp={e => {
+                    if (e.key === "Enter" || e.key === " ") commit(Number((e.target as HTMLInputElement).value));
+                }}
+                className="h-1 flex-1 cursor-pointer accent-[#e91e8c]"
+                aria-label="UI scale"
+            />
+            <span className="w-10 font-mono text-xs text-muted-foreground">
+                {Math.round(value * 100)}%
+            </span>
         </div>
     );
 }
@@ -30,6 +133,27 @@ function ToggleRow({ label, description, checked, onChange }: ToggleRowProps) {
 export function SettingsWorkspace() {
     const { data: settings } = useSettings();
     const setSetting = useSetSetting();
+    const { data: updaterState } = useUpdaterState();
+    const checkUpdate = useCheckUpdate();
+    const refreshManifest = useRefreshManifest();
+    const [migrating, setMigrating] = useState(false);
+
+    async function migrateV3() {
+        const dir = await api.dialog.chooseDirectory({ title: "Choose V3 instances folder" });
+        if (!dir) return;
+        setMigrating(true);
+        try {
+            const result = await api.instances.migrateFromV3(dir);
+            const msg = [`Imported ${result.imported}, skipped ${result.skipped}`];
+            if (result.errors.length > 0) msg.push(`Errors: ${result.errors.slice(0, 3).join("; ")}`);
+            alert(msg.join("\n"));
+            location.reload();
+        } catch (error) {
+            alert(`Migration failed: ${error instanceof Error ? error.message : String(error)}`);
+        } finally {
+            setMigrating(false);
+        }
+    }
 
     if (!settings) {
         return (
@@ -49,72 +173,195 @@ export function SettingsWorkspace() {
     }
 
     return (
-        <div className="bap-glow relative h-full overflow-auto px-8 pb-8 pt-20">
-            <SectionHeading eyebrow="Preferences" subtitle="Configure the launcher to your liking.">
-                Settings
-            </SectionHeading>
+        <div className="bap-glow relative h-full overflow-auto px-8 pb-8 pt-16">
+            <ControlPanelHeader />
 
-            <div className="flex max-w-2xl flex-col gap-6">
-                <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Updates</h2>
-                    <ToggleRow
+            <div className="flex max-w-2xl flex-col gap-7">
+                <Group title="Updates">
+                    <Row
                         label="Automatic updates"
                         description="Check for launcher updates on startup."
-                        checked={settings.launcherAutoUpdate}
-                        onChange={v => set("launcherAutoUpdate", v)}
+                        control={
+                            <Switch
+                                checked={settings.launcherAutoUpdate}
+                                onCheckedChange={v => set("launcherAutoUpdate", v)}
+                            />
+                        }
                     />
-                    <ToggleRow
+                    <Row
                         label="Auto-download updates"
                         description="Download updates in the background when available."
-                        checked={settings.launcherAutoDownloadUpdates}
-                        onChange={v => set("launcherAutoDownloadUpdates", v)}
+                        control={
+                            <Switch
+                                checked={settings.launcherAutoDownloadUpdates}
+                                onCheckedChange={v => set("launcherAutoDownloadUpdates", v)}
+                            />
+                        }
                     />
-                </BapCard>
+                    <Row
+                        label="Check for launcher updates"
+                        description={
+                            updaterState
+                                ? getLauncherUpdateBannerTitle(updaterState)
+                                : "Look for a newer launcher version now."
+                        }
+                        control={
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                disabled={checkUpdate.isPending || updaterState?.status === "downloading"}
+                                onClick={() => checkUpdate.mutate(true)}
+                            >
+                                <DownloadCloud
+                                    size={14}
+                                    className={checkUpdate.isPending ? "animate-spin" : undefined}
+                                />
+                                {checkUpdate.isPending ? "Checking…" : "Check now"}
+                            </Button>
+                        }
+                    />
+                    <Row
+                        label="Refresh content library"
+                        description="Re-fetch the manifest (versions, mods, bundles) from the source."
+                        control={
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                disabled={refreshManifest.isPending}
+                                onClick={() => refreshManifest.mutate()}
+                            >
+                                <RefreshCw
+                                    size={14}
+                                    className={refreshManifest.isPending ? "animate-spin" : undefined}
+                                />
+                                {refreshManifest.isPending ? "Refreshing…" : "Refresh"}
+                            </Button>
+                        }
+                    />
+                </Group>
 
-                <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Launch</h2>
-                    <ToggleRow
+                <Group title="Launch">
+                    <Row
                         label="Show MelonLoader console"
                         description="Open the MelonLoader console window when launching."
-                        checked={settings.launchShowMelonConsole}
-                        onChange={v => set("launchShowMelonConsole", v)}
+                        control={
+                            <Switch
+                                checked={settings.launchShowMelonConsole}
+                                onCheckedChange={v => set("launchShowMelonConsole", v)}
+                            />
+                        }
                     />
-                </BapCard>
-
-                <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Storage</h2>
-                    <p className="mb-1 text-sm text-foreground">Instances folder</p>
-                    <div className="flex items-center gap-2">
-                        <Input value={settings.instancesRoot} readOnly className="flex-1" />
-                        <Button variant="outline" size="icon" onClick={chooseInstancesRoot} title="Choose folder" aria-label="Choose instances folder">
-                            <FolderOpen size={16} />
-                        </Button>
-                    </div>
-                </BapCard>
-
-                <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Manifest source</h2>
-                    <Input
-                        defaultValue={settings.manifestUrl}
-                        onBlur={e => {
-                            const next = e.target.value.trim();
-                            if (next && next !== settings.manifestUrl) set("manifestUrl", next);
-                        }}
+                    <Row
+                        label="Autoplay background videos"
+                        description="Play the animated mode video on the Start tab (disable for a static image)."
+                        control={
+                            <Switch
+                                checked={settings.launchAutoplayVideos}
+                                onCheckedChange={v => set("launchAutoplayVideos", v)}
+                            />
+                        }
                     />
-                    <p className="mt-1 text-xs text-muted-foreground">
-                        URL of the manifest index used to discover versions, mods, and bundles.
-                    </p>
-                </BapCard>
+                </Group>
 
-                <BapCard className="p-5">
-                    <h2 className="font-display mb-3 text-xs tracking-[0.18em] text-muted-foreground">Motion &amp; effects</h2>
-                    <ToggleRow
+                <Group title="Storage">
+                    <Row
+                        label="Instances folder"
+                        description="Where game versions and profiles are installed."
+                        align="start"
+                        control={
+                            <div className="flex w-72 items-center gap-2">
+                                <InputWell value={settings.instancesRoot} readOnly className="flex-1 font-mono text-xs" />
+                                <Button
+                                    variant="outline"
+                                    size="icon"
+                                    onClick={chooseInstancesRoot}
+                                    title="Choose folder"
+                                    aria-label="Choose instances folder"
+                                >
+                                    <FolderOpen size={16} />
+                                </Button>
+                            </div>
+                        }
+                    />
+                </Group>
+
+                <Group title="Manifest source">
+                    <Row
+                        label="Manifest URL"
+                        description="Source for versions, mods, and bundles."
+                        align="start"
+                        control={
+                            <InputWell
+                                defaultValue={settings.manifestUrl}
+                                onBlur={e => {
+                                    const next = e.target.value.trim();
+                                    if (next && next !== settings.manifestUrl) set("manifestUrl", next);
+                                }}
+                                className="w-72 font-mono text-xs"
+                            />
+                        }
+                    />
+                </Group>
+
+                <Group title="Motion & effects">
+                    <Row
                         label="Enable motion"
                         description="Animate transitions and reveals (disable for calm mode)."
-                        checked={settings.uiMotionEnabled}
-                        onChange={v => set("uiMotionEnabled", v)}
+                        control={
+                            <Switch
+                                checked={settings.uiMotionEnabled}
+                                onCheckedChange={v => set("uiMotionEnabled", v)}
+                            />
+                        }
                     />
-                </BapCard>
+                </Group>
+
+                <Group title="Display">
+                    <Row
+                        label="UI scale"
+                        description="Make the interface larger or smaller."
+                        align="start"
+                        control={
+                            <ScaleSlider />
+                        }
+                    />
+                </Group>
+
+                <Group title="Security & tools">
+                    <Row
+                        label="Reset Tools access"
+                        description="Reset Tools unlock state."
+                        control={
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => set("toolsUnlocked", false)}
+                                disabled={!settings.toolsUnlocked}
+                            >
+                                Reset tools
+                            </Button>
+                        }
+                    />
+                </Group>
+
+                <Group title="Migration">
+                    <Row
+                        label="Import V3 instances"
+                        description="Copy profiles from the legacy BAPBAP Launcher (V3) into this version. Installed mod files are preserved and will be recognized after re-syncing the Mods tab."
+                        align="start"
+                        control={
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                disabled={migrating}
+                                onClick={migrateV3}
+                            >
+                                <DownloadCloud size={14} className={migrating ? "animate-spin" : undefined} />
+                                {migrating ? "Importing…" : "Import V3 profiles"}
+                            </Button>
+                        }
+                    />
+                </Group>
             </div>
         </div>
     );

@@ -25,6 +25,13 @@ const { app } = electron;
 const LEGACY_LOCAL_RADIO_IMPORT_DIR = path.join(app.getPath("downloads"), "font", "bapbap sound assets");
 const SUPPORTED_AUDIO_EXTENSIONS = new Set([".mp3", ".wav", ".ogg", ".m4a", ".aac", ".flac"]);
 
+// In Electron with sandbox: true, HTMLAudioElement cannot load file:// URLs.
+// The main process registers a bap-audio:// custom protocol that proxies
+// local file access; convert a Windows/Linux path to that scheme.
+function pathToBapAudioUrl(filePath: string): string {
+    return "bap-audio://" + filePath.replace(/\\/g, "/");
+}
+
 type PersistedTrackFile = {
     audioPath?: string;
     audioSha256?: string;
@@ -442,9 +449,16 @@ export class RadioService {
 
     removeFromQueue(trackId: string): RadioState {
         const playback = this.store.get("playback");
+        // Remove only the first matching occurrence so a track enqueued twice
+        // can be dequeued one row at a time (filtering by id would drop both).
+        const idx = playback.queueTrackIds.indexOf(trackId);
+        const queueTrackIds =
+            idx === -1
+                ? playback.queueTrackIds
+                : [...playback.queueTrackIds.slice(0, idx), ...playback.queueTrackIds.slice(idx + 1)];
         this.store.set("playback", {
             ...playback,
-            queueTrackIds: playback.queueTrackIds.filter(id => id !== trackId),
+            queueTrackIds,
         });
         this.emit();
         return this.getState();
@@ -678,7 +692,7 @@ export class RadioService {
                 return {
                     ...track,
                     artworkUrl: localArtworkPath ? pathToFileURL(localArtworkPath).toString() : track.artworkPath,
-                    playbackUrl: localAudioPath ? pathToFileURL(localAudioPath).toString() : track.audioUrl,
+                    playbackUrl: localAudioPath ? pathToBapAudioUrl(localAudioPath) : track.audioUrl,
                     availableOffline: Boolean(localAudioPath),
                     source: "synced",
                 };
@@ -696,7 +710,7 @@ export class RadioService {
                 audioUrl: pathToFileURL(track.audioPath).toString(),
                 sha256: track.audioSha256,
                 order: syncedTracks.length + index,
-                playbackUrl: pathToFileURL(track.audioPath).toString(),
+                playbackUrl: pathToBapAudioUrl(track.audioPath),
                 availableOffline: true,
                 source: "local-import",
                 importedAtUtc: track.importedAtUtc,

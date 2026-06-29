@@ -15,6 +15,7 @@ function createSettings(overrides: Partial<AppSettings> = {}): AppSettings {
         launchShowMelonConsole: true,
         launchHideMelonLoaderStartupWarning: false,
         launchDefaultProfileId: null,
+        launchAutoplayVideos: true,
         instancesRoot: "C:/BAPBAP/Profiles",
         leftRailCollapsed: false,
         leftRailAutoHover: true,
@@ -34,6 +35,7 @@ function createSettings(overrides: Partial<AppSettings> = {}): AppSettings {
         radioCrossfadeMs: 2200,
         radioAutoplayOnLaunch: false,
         radioRememberPlaybackState: true,
+        uiScale: 1,
         ...overrides,
     };
 }

@@ -92,6 +92,7 @@ export const harnessSettings: AppSettings = {
     launchShowMelonConsole: true,
     launchHideMelonLoaderStartupWarning: false,
     launchDefaultProfileId: "profile-standard",
+    launchAutoplayVideos: true,
     instancesRoot: "C:/BAPBAP/Profiles",
     leftRailCollapsed: false,
     leftRailAutoHover: true,
@@ -111,6 +112,7 @@ export const harnessSettings: AppSettings = {
     radioCrossfadeMs: 2200,
     radioAutoplayOnLaunch: false,
     radioRememberPlaybackState: true,
+    uiScale: 1,
 };
 
 export const harnessBuildInfo = {

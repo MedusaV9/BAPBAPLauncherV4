@@ -4,24 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../../app/lib/utils";
 
 const buttonVariants = cva(
-    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+    "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold tracking-tight ease-pop transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-45 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
     {
         variants: {
             variant: {
-                default: "bg-primary text-primary-foreground hover:bg-primary/90",
+                default: "bap-tactile bg-primary text-primary-foreground hover:brightness-110 active:translate-y-px",
                 destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
                 outline:
-                    "border border-border bg-transparent text-foreground hover:bg-secondary",
+                    "border border-border bg-white/[0.02] text-foreground hover:border-white/20 hover:bg-white/[0.05]",
                 secondary: "bg-secondary text-secondary-foreground hover:bg-muted",
-                ghost: "hover:bg-secondary hover:text-foreground",
+                ghost: "text-muted-foreground hover:bg-white/[0.06] hover:text-foreground",
                 link: "text-accent underline-offset-4 hover:underline",
                 // Brand accent: filled magenta with soft lift.
-                pop: "bg-primary text-primary-foreground shadow-soft-sm ease-pop hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0",
+                pop: "bap-tactile bg-primary text-primary-foreground hover:brightness-110 hover:-translate-y-0.5 active:translate-y-px",
             },
             size: {
                 default: "h-10 px-4 py-2",
-                sm: "h-9 rounded-md px-3",
-                lg: "h-11 rounded-md px-8",
+                sm: "h-9 rounded-lg px-3",
+                lg: "h-11 rounded-xl px-8",
                 icon: "h-10 w-10",
             },
         },

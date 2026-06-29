@@ -664,6 +664,9 @@ export function createHarnessApi(): V2Api {
     };
 
     return {
+        shell: {
+            async openExternal() { return undefined; },
+        },
         diagnostics: {
             async getBuildInfo() {
                 return clone(harnessBuildInfo);
@@ -956,8 +959,18 @@ export function createHarnessApi(): V2Api {
                     settings = { ...settings, launchDefaultProfileId: null };
                 }
             },
+            async rename(instanceId: string, name: string) {
+                const target = instances.find(item => item.id === instanceId);
+                if (target) {
+                    target.profileName = name;
+                    target.name = name;
+                }
+            },
             async getSteamPersonaName() {
                 return "Sonic081010";
+            },
+            async migrateFromV3() {
+                return { imported: 0, skipped: 0, errors: [] as string[] };
             },
         },
         launch: {

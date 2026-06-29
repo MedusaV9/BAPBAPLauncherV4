@@ -190,4 +190,31 @@ describe("radio shuffle", () => {
         const delta = buildPlayTrackPlayback(value, "a");
         expect(delta.historyTrackIds).toEqual([]);
     });
+
+    it("loop 'off' stops at the end of the collection", () => {
+        const value = state({
+            tracks: [track({ id: "a" }), track({ id: "b" })],
+            playback: {
+                ...createEmptyRadioState().playback,
+                currentTrackId: "b",
+                shuffleEnabled: false,
+                loopMode: "off",
+            },
+        });
+        expect(buildNextTrackId(value)).toBeNull();
+        expect(buildAdvancePlayback(value)).toBeNull();
+    });
+
+    it("loop 'all' wraps around to the first track at the end", () => {
+        const value = state({
+            tracks: [track({ id: "a" }), track({ id: "b" })],
+            playback: {
+                ...createEmptyRadioState().playback,
+                currentTrackId: "b",
+                shuffleEnabled: false,
+                loopMode: "all",
+            },
+        });
+        expect(buildNextTrackId(value)).toBe("a");
+    });
 });

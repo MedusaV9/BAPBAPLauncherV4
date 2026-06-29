@@ -33,6 +33,7 @@ export type AppSettings = {
     launchShowMelonConsole: boolean;
     launchHideMelonLoaderStartupWarning: boolean;
     launchDefaultProfileId: string | null;
+    launchAutoplayVideos: boolean;
     instancesRoot: string;
     leftRailCollapsed: boolean;
     leftRailAutoHover: boolean;
@@ -52,6 +53,8 @@ export type AppSettings = {
     radioCrossfadeMs: number;
     radioAutoplayOnLaunch: boolean;
     radioRememberPlaybackState: boolean;
+    /** UI scale factor (0.8–1.5). Applied via webContents.setZoomFactor. */
+    uiScale: number;
 };
 
 export type DirectoryDialogInput = {
@@ -350,6 +353,9 @@ export interface V2Api {
         getBuildInfo(): Promise<{ appVersion: string; environment: string; buildTimestamp: string }>;
         reportStartupFatal(input: StartupFatalInput): Promise<void>;
     };
+    shell: {
+        openExternal(url: string): Promise<void>;
+    };
     updater: {
         check(force?: boolean): Promise<LauncherUpdateCheckResult>;
         downloadAndInstall(force?: boolean): Promise<LauncherInstallUpdateResult>;
@@ -383,7 +389,10 @@ export interface V2Api {
         hasRelativeFile(instanceId: string, relativePath: string): Promise<boolean>;
         installCustomMod(instanceId: string): Promise<CustomModInstallResult>;
         remove(instanceId: string): Promise<void>;
+        rename(instanceId: string, name: string): Promise<void>;
         getSteamPersonaName(): Promise<string | null>;
+        /** Import instances from a V3/BAPBAPLauncher instances root directory. */
+        migrateFromV3(sourceDir: string): Promise<{ imported: number; skipped: number; errors: string[] }>;
     };
     launch: {
         start(input: LaunchInput): Promise<void>;
@@ -479,6 +488,7 @@ export type BundleSummary = {
     sizeBytes?: number;
     isInstalled: boolean;
     isUpdateAvailable: boolean;
+    isDownloadable?: boolean;
 };
 
 export const IPC_CHANNELS = {
@@ -508,6 +518,7 @@ export const IPC_CHANNELS = {
     instancesHasRelativeFile: "v2.instances.hasRelativeFile",
     instancesInstallCustomMod: "v2.instances.installCustomMod",
     instancesRemove: "v2.instances.remove",
+    instancesRename: "v2.instances.rename",
     instancesGetSteamPersonaName: "v2.instances.getSteamPersonaName",
     launchStart: "v2.launch.start",
     launchStop: "v2.launch.stop",
@@ -554,4 +565,6 @@ export const IPC_CHANNELS = {
     bundleApplyUpdate: "v2.bundle.applyUpdate",
     bundleGetUpdateState: "v2.bundle.getUpdateState",
     bundleUpdateStateChanged: "v2.bundle.updateStateChanged",
+    shellOpenExternal: "v2.shell.openExternal",
+    instancesMigrateFromV3: "v2.instances.migrateFromV3",
 } as const;

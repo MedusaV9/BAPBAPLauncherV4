@@ -10,17 +10,21 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ children, subtitle, eyebrow, className = "" }: SectionHeadingProps) {
     return (
-        <div className={cn("mb-6", className)}>
+        <div className={cn("mb-7", className)}>
             {eyebrow && (
-                <div className="mb-2 flex items-center gap-2">
-                    <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
-                    <span className="font-display text-[0.7rem] uppercase tracking-[0.25em] text-muted-foreground">
+                <div className="mb-3 flex items-center gap-2.5">
+                    <span className="h-3.5 w-[3px] shrink-0 rounded-full bg-accent" />
+                    <span className="font-body text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-accent">
                         {eyebrow}
                     </span>
                 </div>
             )}
-            <h1 className="font-display text-3xl leading-[1.05] tracking-tight text-foreground">{children}</h1>
-            {subtitle && <p className="mt-2 max-w-prose text-sm leading-relaxed text-muted-foreground">{subtitle}</p>}
+            <h1 className="font-display text-4xl leading-[0.95] tracking-tight text-foreground sm:text-[2.85rem]">
+                {children}
+            </h1>
+            {subtitle && (
+                <p className="mt-3 max-w-prose text-[0.95rem] leading-relaxed text-muted-foreground">{subtitle}</p>
+            )}
         </div>
     );
 }

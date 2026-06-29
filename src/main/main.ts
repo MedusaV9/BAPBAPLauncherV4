@@ -1,4 +1,12 @@
+/**
+ * BAPBAP Nexus — the next-generation BAPBAP modding suite.
+ *
+ * Built on the legacy of Sonic0810's BAPBAP Launcher.
+ * Original author: Sonic0810 (https://github.com/Sonic0810)
+ * License: MIT
+ */
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import electron from "electron";
 import { registerIpcHandlers } from "./ipc/register-ipc";
 import { SettingsStoreService } from "./services/core/settings-store";
@@ -17,7 +25,20 @@ import { BundleService } from "./services/vendored/bundle.service";
 import { BundleUpdateService } from "./services/vendored/bundle-update.service";
 import { ManifestClientBundleFetcher } from "./services/vendored/manifest-client-bundle-fetcher";
 
-const { app, BrowserWindow, dialog, screen, shell } = electron;
+const { app, BrowserWindow, dialog, screen, shell, protocol, net } = electron;
+
+protocol.registerSchemesAsPrivileged([
+    {
+        scheme: "bap-audio",
+        privileges: {
+            standard: true,
+            secure: true,
+            supportFetchAPI: true,
+            corsEnabled: true,
+            stream: true,
+        },
+    },
+]);
 
 let mainWindow: Electron.BrowserWindow | null = null;
 const buildTimestamp = process.env.V2_BUILD_TIMESTAMP?.trim() || "development";
@@ -32,6 +53,15 @@ const allowTestMultiInstance = process.env.V2_ALLOW_MULTI_INSTANCE_FOR_TESTS ===
 
 if (requestedUserDataDir) {
     app.setPath("userData", path.resolve(requestedUserDataDir));
+}
+
+// When packaged, inherit V2's userData directory so that settings,
+// instances, radio cache, and MelonLoader state from V2 are picked up
+// automatically — no migration step needed. The NSIS installer uses the
+// same appId (com.bapbap.launcher.v2), so it replaces V2 in-place.
+if (!requestedUserDataDir && app.isPackaged) {
+    const parentDir = path.dirname(app.getPath("userData"));
+    app.setPath("userData", path.join(parentDir, "bapbap-launcher-v2"));
 }
 
 const hasSingleInstanceLock = allowTestMultiInstance ? true : app.requestSingleInstanceLock();
@@ -64,9 +94,10 @@ app.on("second-instance", () => {
     }
 });
 
-function createMainWindow(): void {
+function createMainWindow(options?: { initialScale?: number }): void {
     const windowIcon = resolveWindowIconPath();
     const { width, height, minWidth, minHeight } = getInitialWindowMetrics();
+    const initialScale = options?.initialScale ?? 1;
     const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
     const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
     const rendererFile = path.join(__dirname, "../renderer/index.html");
@@ -79,7 +110,7 @@ function createMainWindow(): void {
         minHeight,
         backgroundColor: "#0c1220",
         autoHideMenuBar: true,
-        title: "BAPBAP Launcher V2",
+        title: "BAPBAP Nexus",
         icon: windowIcon,
         webPreferences: {
             preload: path.join(__dirname, "../preload/index.cjs"),
@@ -102,12 +133,15 @@ function createMainWindow(): void {
         return true;
     };
 
-    mainWindow.webContents.on("did-fail-load", (_event, errorCode, errorDescription, validatedURL) => {
+    mainWindow.webContents.on("did-fail-load", (_event, errorCode, errorDescription, validatedURL, isMainFrame) => {
+        if (!isMainFrame) {
+            return;
+        }
         if (fallbackToLocalRenderer(`did-fail-load (${errorCode}: ${errorDescription})`)) {
             return;
         }
         requestFatalExit(
-            "BAPBAP Launcher V2 - Renderer Load Error",
+            "BAPBAP Nexus - Renderer Load Error",
             `Failed to load renderer (${errorCode}: ${errorDescription}).\nURL: ${validatedURL || "n/a"}`
         );
     });
@@ -117,11 +151,14 @@ function createMainWindow(): void {
         if (activeUrl.startsWith("chrome-error://") && fallbackToLocalRenderer(`chrome-error-shell (${activeUrl})`)) {
             return;
         }
+        // Reset to the user's saved UI scale on every navigation so
+        // accidental Ctrl+Scroll / pinch-zoom doesn't persist.
+        mainWindow?.webContents.setZoomFactor(initialScale);
     });
 
     mainWindow.webContents.on("render-process-gone", (_event, details) => {
         requestFatalExit(
-            "BAPBAP Launcher V2 - Renderer Crashed",
+            "BAPBAP Nexus - Renderer Crashed",
             `Renderer process exited unexpectedly.\nReason: ${details.reason}\nExit code: ${details.exitCode}`
         );
     });
@@ -147,11 +184,32 @@ function createMainWindow(): void {
         mainWindow = null;
     });
 
+    // Route external window.open calls to the system browser (fallback
+    // for shell.openExternal when the preload bridge is not available).
+    mainWindow.webContents.setWindowOpenHandler(details => {
+        const url = details.url;
+        if (url.startsWith("https://") || url.startsWith("http://")) {
+            shell.openExternal(url);
+        }
+        return { action: "deny" };
+    });
+
     mainWindow.center();
 }
 
 app.whenReady().then(async () => {
     try {
+        protocol.handle("bap-audio", request => {
+            let filePath = decodeURIComponent(request.url.slice("bap-audio://".length));
+            // Strip any leading slashes
+            filePath = filePath.replace(/^\/+/, "");
+            // Restore Windows drive letter colon if normalized away by Chromium standard URL parsing
+            if (/^[a-zA-Z]\//.test(filePath)) {
+                filePath = filePath[0] + ":" + filePath.slice(1);
+            }
+            return net.fetch(pathToFileURL(filePath).toString());
+        });
+
         if (process.platform === "win32") {
             app.setAppUserModelId("com.bapbap.launcher.v2");
         }
@@ -201,7 +259,7 @@ app.whenReady().then(async () => {
             buildTimestamp,
         });
 
-        createMainWindow();
+        createMainWindow({ initialScale: settings.getUiScale() });
         void radio.sync(false).catch(error => {
             console.warn("[radio-sync] initial sync failed", error);
         });
@@ -225,14 +283,14 @@ app.on("activate", () => {
 function assertRuntimeGuards(): void {
     if (process.env.ELECTRON_RUN_AS_NODE === "1") {
         requestFatalExit(
-            "BAPBAP Launcher V2 - Invalid Runtime",
+            "BAPBAP Nexus - Invalid Runtime",
             "ELECTRON_RUN_AS_NODE=1 was detected. Please clear this environment variable before starting the launcher."
         );
     }
 
     if (!app || typeof app.whenReady !== "function" || typeof BrowserWindow !== "function") {
         requestFatalExit(
-            "BAPBAP Launcher V2 - Electron API Error",
+            "BAPBAP Nexus - Electron API Error",
             "Electron runtime APIs are unavailable. The launcher cannot start."
         );
     }
@@ -243,7 +301,7 @@ function reportMainProcessError(type: "uncaughtException" | "unhandledRejection"
     const context = formatted.context ? `\nContext: ${JSON.stringify(formatted.context)}` : "";
     const message = `[${type}] ${formatted.code}: ${formatted.message}${context}`;
     console.error(message, error);
-    requestFatalExit("BAPBAP Launcher V2 - Main Process Error", message);
+    requestFatalExit("BAPBAP Nexus - Main Process Error", message);
 }
 
 function formatMainError(error: unknown): { code: string; message: string; context?: Record<string, unknown> } {

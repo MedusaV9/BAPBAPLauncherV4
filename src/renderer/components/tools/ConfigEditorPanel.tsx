@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FileText, Save } from "lucide-react";
 import { BapCard } from "../brand/BapCard";
+import { Row } from "../brand/Row";
 import { Button } from "../ui/button";
 import { ScrollArea } from "../ui/scroll-area";
 import { Badge } from "../ui/badge";
@@ -43,32 +44,23 @@ export function ConfigEditorPanel({ instanceId }: ConfigEditorPanelProps) {
                     <span className="font-display text-xs text-foreground">Config files</span>
                 </div>
                 <ScrollArea className="flex-1">
-                    <div className="flex flex-col gap-1 p-2">
+                    <div className="flex flex-col gap-0.5 p-2">
                         {isLoading && <p className="px-2 text-xs text-muted-foreground">Loading…</p>}
                         {files?.length === 0 && (
                             <p className="px-2 text-xs text-muted-foreground">No editable config files found.</p>
                         )}
                         {files?.map(entry => (
-                            <button
+                            <Row
                                 key={entry.path}
+                                active={selectedPath === entry.path}
                                 onClick={() => setSelectedPath(entry.path)}
-                                className={cn(
-                                    "focus-ring flex flex-col items-start gap-0.5 rounded px-2 py-1.5 text-left transition-colors",
-                                    selectedPath === entry.path ? "bg-primary text-primary-foreground" : "hover:bg-muted"
-                                )}
+                                className="flex-col items-start gap-0.5"
                             >
-                                <span className="truncate text-xs font-medium">
+                                <span className="truncate font-mono text-xs text-foreground">
                                     {entry.path.split(/[\\/]/).pop()}
                                 </span>
-                                <span
-                                    className={cn(
-                                        "text-[10px]",
-                                        selectedPath === entry.path ? "text-primary-foreground/70" : "text-muted-foreground"
-                                    )}
-                                >
-                                    {entry.section}
-                                </span>
-                            </button>
+                                <span className="text-[10px] text-muted-foreground">{entry.section}</span>
+                            </Row>
                         ))}
                     </div>
                 </ScrollArea>
@@ -83,6 +75,14 @@ export function ConfigEditorPanel({ instanceId }: ConfigEditorPanelProps) {
                                 <FileText size={14} className="shrink-0 text-muted-foreground" />
                                 <span className="truncate font-mono text-xs text-foreground">{selectedPath}</span>
                                 <Badge variant="secondary">{file.extension}</Badge>
+                                <span
+                                    className={cn(
+                                        "shrink-0 font-mono text-[0.65rem] uppercase tracking-wide",
+                                        dirty ? "text-gold" : "text-muted-foreground"
+                                    )}
+                                >
+                                    {dirty ? "Unsaved changes" : "All changes saved"}
+                                </span>
                             </div>
                             <Button
                                 size="sm"
@@ -100,7 +100,7 @@ export function ConfigEditorPanel({ instanceId }: ConfigEditorPanelProps) {
                                 setDirty(true);
                             }}
                             spellCheck={false}
-                            className="flex-1 resize-none bg-card p-4 font-mono text-xs leading-relaxed text-foreground focus:outline-none"
+                            className="flex-1 resize-none bg-background p-4 font-mono text-[0.8125rem] leading-[1.6] text-foreground caret-accent selection:bg-cyan/20 focus:outline-none"
                         />
                     </>
                 ) : (

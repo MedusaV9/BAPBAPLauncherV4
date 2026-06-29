@@ -26,12 +26,13 @@ export class SettingsStoreService {
                 launcherAutoDownloadUpdates: true,
                 launcherAutoInstallOnNextStart: true,
                 toolsUnlocked: false,
-                bundlesRevealed: false,
+                bundlesRevealed: true,
                 modsSecretUnlocked: false,
                 modsUnlockedSecretIds: [],
                 launchShowMelonConsole: true,
                 launchHideMelonLoaderStartupWarning: false,
                 launchDefaultProfileId: null,
+                launchAutoplayVideos: true,
                 leftRailCollapsed: false,
                 leftRailAutoHover: true,
                 instancesViewMode: "tiles",
@@ -50,6 +51,7 @@ export class SettingsStoreService {
                 radioCrossfadeMs: 2200,
                 radioAutoplayOnLaunch: false,
                 radioRememberPlaybackState: true,
+                uiScale: 1,
                 instancesRoot: defaultInstancesRoot,
             },
         });
@@ -66,12 +68,13 @@ export class SettingsStoreService {
             launcherAutoDownloadUpdates: this.store.get("launcherAutoDownloadUpdates"),
             launcherAutoInstallOnNextStart: this.store.get("launcherAutoInstallOnNextStart"),
             toolsUnlocked: this.store.get("toolsUnlocked"),
-            bundlesRevealed: this.store.get("bundlesRevealed"),
+            bundlesRevealed: true,
             modsSecretUnlocked: this.store.get("modsSecretUnlocked"),
             modsUnlockedSecretIds: normalizeUnlockedSecretIds(this.store.get("modsUnlockedSecretIds")),
             launchShowMelonConsole: this.store.get("launchShowMelonConsole"),
             launchHideMelonLoaderStartupWarning: this.store.get("launchHideMelonLoaderStartupWarning"),
             launchDefaultProfileId: this.store.get("launchDefaultProfileId"),
+            launchAutoplayVideos: this.store.get("launchAutoplayVideos"),
             instancesRoot: normalizeInstancesRootPath(this.store.get("instancesRoot"), defaultInstancesRoot),
             leftRailCollapsed: this.store.get("leftRailCollapsed"),
             leftRailAutoHover: this.store.get("leftRailAutoHover"),
@@ -91,6 +94,7 @@ export class SettingsStoreService {
             radioCrossfadeMs: this.store.get("radioCrossfadeMs"),
             radioAutoplayOnLaunch: this.store.get("radioAutoplayOnLaunch"),
             radioRememberPlaybackState: this.store.get("radioRememberPlaybackState"),
+            uiScale: this.store.get("uiScale"),
         });
     }
 
@@ -127,7 +131,7 @@ export class SettingsStoreService {
             return;
         }
         if (key === "bundlesRevealed") {
-            this.store.set("bundlesRevealed", Boolean(value) as never);
+            // Always true — bundles are permanently unlocked.
             return;
         }
         if (key === "modsSecretUnlocked") {
@@ -156,12 +160,16 @@ export class SettingsStoreService {
     }
 
     revealBundles(): boolean {
-        this.store.set("bundlesRevealed", true as never);
         return true;
     }
 
     getBundlesRevealed(): boolean {
-        return Boolean(this.store.get("bundlesRevealed"));
+        return true;
+    }
+
+    getUiScale(): number {
+        const value = Number(this.store.get("uiScale"));
+        return Number.isFinite(value) ? Math.min(1.5, Math.max(0.8, value)) : 1;
     }
 
     unlockSecretMods(secretUnlockId: string): boolean {
@@ -191,20 +199,18 @@ export class SettingsStoreService {
 
         if (normalizedVersion <= 0 && legacyCompleted) {
             this.store.set("setupVersionCompleted", CURRENT_SETUP_VERSION);
-            return;
-        }
-
-        if (normalizedVersion >= CURRENT_SETUP_VERSION && !legacyCompleted) {
+        } else if (normalizedVersion >= CURRENT_SETUP_VERSION && !legacyCompleted) {
             this.store.set("uiOnboardingCompleted", true);
         }
 
+        // Secret-mods consistency must run regardless of which setup-version
+        // branch fired above, otherwise a legacy upgrade leaves the flag and the
+        // id list out of sync until the next restart.
         const unlockedSecretIds = normalizeUnlockedSecretIds(this.store.get("modsUnlockedSecretIds"));
         const legacySecretUnlocked = Boolean(this.store.get("modsSecretUnlocked"));
         if (legacySecretUnlocked && unlockedSecretIds.length === 0) {
             this.store.set("modsUnlockedSecretIds", ["default"] as never);
-            return;
-        }
-        if (!legacySecretUnlocked && unlockedSecretIds.length > 0) {
+        } else if (!legacySecretUnlocked && unlockedSecretIds.length > 0) {
             this.store.set("modsSecretUnlocked", true as never);
         }
     }

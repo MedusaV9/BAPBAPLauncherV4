@@ -36,6 +36,16 @@ export function useBootstrap() {
                     // offline / network failure — degrade gracefully
                 }
 
+                // Prefetch the Steam persona so the greeting renders immediately
+                // when the splash appears, instead of popping in late once the
+                // splash has already faded and the launcher is interactive.
+                try {
+                    const persona = await api.instances.getSteamPersonaName();
+                    if (!cancelled) queryClient.setQueryData(qk.steamPersona, persona);
+                } catch {
+                    // Steam not installed / detection failed — greeting falls back to "Player"
+                }
+
                 if (!cancelled) setStartupPhase("ready");
             } catch (error) {
                 if (cancelled) return;

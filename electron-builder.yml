@@ -1,5 +1,5 @@
-appId: com.bapbap.launcher.v4
-productName: BAPBAP Launcher
+appId: com.bapbap.launcher.v2
+productName: BAPBAP Nexus
 directories:
   output: release/build
   buildResources: build
@@ -8,6 +8,7 @@ files:
   - dist/preload/**
   - dist/renderer/**
   - package.json
+afterPack: scripts/electron-builder-after-pack.cjs
 extraResources:
   - from: build/icon.ico
     to: icon.ico

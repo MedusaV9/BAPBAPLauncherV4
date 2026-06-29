@@ -28,6 +28,27 @@ export function useDownloadAndInstallUpdate() {
     });
 }
 
+export function useCheckUpdate() {
+    const qc = useQueryClient();
+    return useMutation({
+        mutationFn: (force?: boolean) => api.updater.check(force ?? true),
+        onSettled: () => qc.invalidateQueries({ queryKey: qk.updaterState }),
+    });
+}
+
+export function useRefreshManifest() {
+    const qc = useQueryClient();
+    return useMutation({
+        mutationFn: () => api.manifest.getIndex(true),
+        onSettled: () => {
+            qc.invalidateQueries({ queryKey: qk.manifestIndex });
+            qc.invalidateQueries({ queryKey: qk.gameVersions });
+            qc.invalidateQueries({ queryKey: ["manifest", "channel"] });
+            qc.invalidateQueries({ queryKey: qk.bundles });
+        },
+    });
+}
+
 /* ── settings ──────────────────────────────────────────────── */
 export function useSettings() {
     return useQuery({ queryKey: qk.settings, queryFn: () => api.settings.getAll() });
@@ -139,6 +160,15 @@ export function useRemoveInstance() {
     });
 }
 
+export function useRenameInstance() {
+    const qc = useQueryClient();
+    return useMutation({
+        mutationFn: (vars: { instanceId: string; name: string }) =>
+            api.instances.rename(vars.instanceId, vars.name),
+        onSuccess: () => qc.invalidateQueries({ queryKey: qk.instances }),
+    });
+}
+
 /* ── launch ────────────────────────────────────────────────── */
 export function useRuntimeState() {
     return useQuery({
@@ -240,8 +270,10 @@ export function useInstallContent() {
     const qc = useQueryClient();
     return useMutation({
         mutationFn: (input: ContentInstallInput) => api.content.install(input),
-        onSuccess: (_data, input) =>
-            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) }),
+        onSuccess: (_data, input) => {
+            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) });
+            qc.invalidateQueries({ queryKey: qk.modSets(input.instanceId) });
+        },
     });
 }
 
@@ -250,8 +282,10 @@ export function useUninstallContent() {
     return useMutation({
         mutationFn: (vars: { instanceId: string; channelId: string; packageId: string }) =>
             api.content.uninstall(vars.instanceId, vars.channelId, vars.packageId),
-        onSuccess: (_data, vars) =>
-            qc.invalidateQueries({ queryKey: qk.contentStates(vars.instanceId) }),
+        onSuccess: (_data, vars) => {
+            qc.invalidateQueries({ queryKey: qk.contentStates(vars.instanceId) });
+            qc.invalidateQueries({ queryKey: qk.modSets(vars.instanceId) });
+        },
     });
 }
 
@@ -259,8 +293,10 @@ export function useSetContentEnabled() {
     const qc = useQueryClient();
     return useMutation({
         mutationFn: (input: ContentToggleInput) => api.content.setEnabled(input),
-        onSuccess: (_data, input) =>
-            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) }),
+        onSuccess: (_data, input) => {
+            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) });
+            qc.invalidateQueries({ queryKey: qk.modSets(input.instanceId) });
+        },
     });
 }
 
@@ -268,8 +304,10 @@ export function useBulkApply() {
     const qc = useQueryClient();
     return useMutation({
         mutationFn: (input: ContentBulkApplyInput) => api.content.bulkApply(input),
-        onSuccess: (_data, input) =>
-            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) }),
+        onSuccess: (_data, input) => {
+            qc.invalidateQueries({ queryKey: qk.contentStates(input.instanceId) });
+            qc.invalidateQueries({ queryKey: qk.modSets(input.instanceId) });
+        },
     });
 }
 
@@ -410,5 +448,21 @@ export function useBundleInstallProgress(bundleId: string | undefined) {
         queryKey: qk.bundleInstallProgress(bundleId ?? ""),
         queryFn: () => api.bundle.getInstallProgressState(bundleId as string),
         enabled: Boolean(bundleId),
+    });
+}
+
+export function useApplyBundleUpdate() {
+    const qc = useQueryClient();
+    return useMutation({
+        mutationFn: (instanceId: string) => {
+            if (!api.bundle.applyUpdate) {
+                return Promise.reject(new Error("Bundle updates are not supported in this build."));
+            }
+            return api.bundle.applyUpdate(instanceId);
+        },
+        onSuccess: () => {
+            qc.invalidateQueries({ queryKey: qk.instances });
+            qc.invalidateQueries({ queryKey: qk.bundles });
+        },
     });
 }

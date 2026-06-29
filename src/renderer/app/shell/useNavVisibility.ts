@@ -5,10 +5,18 @@ import { useEffect, useRef, useState } from "react";
  * scrolls down, revealed on scroll-up or when the pointer nears the top edge.
  * Listens in the capture phase so it catches scrolls from any nested workspace
  * scroll container, not just window.
+ *
+ * `resetKey` (the active workspace) forces the nav back to visible whenever it
+ * changes, so the active-pill morph on a tab switch never competes with a
+ * half-hidden nav left over from scrolling the previous workspace.
  */
-export function useNavVisibility(revealZonePx = 90): boolean {
+export function useNavVisibility(resetKey?: unknown, revealZonePx = 90): boolean {
     const [visible, setVisible] = useState(true);
     const lastTops = useRef(new WeakMap<EventTarget, number>());
+
+    useEffect(() => {
+        setVisible(true);
+    }, [resetKey]);
 
     useEffect(() => {
         function onScroll(e: Event) {

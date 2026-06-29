@@ -17,9 +17,14 @@ class FakeAudio {
     readyState = 1;
     playCount = 0;
     pauseCount = 0;
+    rejectPlay = false;
     private listeners: Record<string, Array<(e: Event) => void>> = {};
 
     play = async () => {
+        if (this.rejectPlay) {
+            this.rejectPlay = false; // one-shot
+            throw new Error("media play blocked");
+        }
         this.paused = false;
         this.playCount += 1;
     };
@@ -120,5 +125,48 @@ describe("AudioEngine", () => {
         expect(onEnded).not.toHaveBeenCalled();
         decks[1].emit("ended");
         expect(onEnded).toHaveBeenCalledTimes(1);
+    });
+
+    it("pauses the old track when a newly requested track fails to load", async () => {
+        const { engine, decks } = makeEngine();
+        active = engine;
+        const onError = vi.fn();
+        engine.setCallbacks({ onError });
+        await engine.playTrack({ trackId: "a", playbackUrl: "file:///a.mp3", ...TRACK });
+        // active deck is now deck 1, playing track a
+        expect(decks[1].paused).toBe(false);
+
+        // Request track b on deck 0, which is not ready and will error out.
+        decks[0].readyState = 0;
+        const pending = engine.playTrack({ trackId: "b", playbackUrl: "file:///b.mp3", ...TRACK });
+        decks[0].emit("error");
+        await pending;
+
+        // The old song must not keep playing once its successor failed to load.
+        expect(decks[1].paused).toBe(true);
+        expect(engine.getCurrentTrackId()).toBeNull();
+        expect(onError).toHaveBeenCalledTimes(1);
+    });
+
+    it("pauses the old track when the next track loads OK but play() rejects (not a load error)", async () => {
+        const { engine, decks } = makeEngine();
+        active = engine;
+        const onError = vi.fn();
+        engine.setCallbacks({ onError });
+        await engine.playTrack({ trackId: "a", playbackUrl: "file:///a.mp3", ...TRACK });
+        // active deck is now deck 1, playing track a
+        expect(decks[1].paused).toBe(false);
+
+        // Request track b on deck 0. This time waitForDeckReady will succeed
+        // (readyState defaults to HAVE_METADATA), but the play() call itself
+        // will throw a non-benign error.
+        decks[0].rejectPlay = true;
+        await engine.playTrack({ trackId: "b", playbackUrl: "file:///b.mp3", ...TRACK });
+
+        // The old track must stop — the UI should not show "paused" while
+        // audio is still playing.
+        expect(decks[1].paused).toBe(true);
+        expect(engine.getCurrentTrackId()).toBeNull();
+        expect(onError).toHaveBeenCalledTimes(1);
     });
 });

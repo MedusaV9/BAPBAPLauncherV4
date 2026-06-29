@@ -10,6 +10,7 @@ type ShellState = {
     railCollapsed: boolean;
     railHoverExpanded: boolean;
     updateBannerDismissed: boolean;
+    pendingModsInstanceId: string | null;
 
     setStartupPhase: (phase: StartupPhase) => void;
     setFatal: (message: string) => void;
@@ -17,6 +18,8 @@ type ShellState = {
     setRailCollapsed: (collapsed: boolean) => void;
     setRailHoverExpanded: (expanded: boolean) => void;
     dismissUpdateBanner: () => void;
+    openModsForInstance: (instanceId: string) => void;
+    consumePendingModsInstanceId: () => void;
 };
 
 export const useShellStore = create<ShellState>(set => ({
@@ -26,6 +29,7 @@ export const useShellStore = create<ShellState>(set => ({
     railCollapsed: false,
     railHoverExpanded: false,
     updateBannerDismissed: false,
+    pendingModsInstanceId: null,
 
     setStartupPhase: phase => set({ startupPhase: phase }),
     setFatal: message => set({ startupPhase: "fatal", fatalMessage: message }),
@@ -33,4 +37,7 @@ export const useShellStore = create<ShellState>(set => ({
     setRailCollapsed: collapsed => set({ railCollapsed: collapsed }),
     setRailHoverExpanded: expanded => set({ railHoverExpanded: expanded }),
     dismissUpdateBanner: () => set({ updateBannerDismissed: true }),
+    openModsForInstance: instanceId =>
+        set({ activeWorkspace: "mods", pendingModsInstanceId: instanceId }),
+    consumePendingModsInstanceId: () => set({ pendingModsInstanceId: null }),
 }));

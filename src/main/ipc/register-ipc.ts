@@ -36,8 +36,15 @@ const TOOLS_UNLOCK_CODE_SHA256 = process.env.V2_TOOLS_UNLOCK_CODE_SHA256 || "752
 const BUNDLE_REVEAL_CODE_SHA256 = process.env.V2_BUNDLE_REVEAL_CODE_SHA256 || "cf055880de15544fa31dab66a228ebc06538c9a0daa6b5aa2d85aab29748eff1";
 
 export function registerIpcHandlers(services: IpcServices): void {
-    const { app, dialog, BrowserWindow } = electron;
+    const { app, dialog, BrowserWindow, shell } = electron;
     const { settings, manifests, instances, content, launch, updater, trustedTime, config, radio, rebalance, bundle, bundleUpdate, buildTimestamp } = services;
+
+    // ── shell ──────────────────────────────────────────────────────────
+    handle(IPC_CHANNELS.shellOpenExternal, async (url) => {
+        if (typeof url === "string" && url.startsWith("https://")) {
+            await shell.openExternal(url);
+        }
+    });
 
     updater.onStateChanged(state => {
         for (const window of BrowserWindow.getAllWindows()) {
@@ -97,7 +104,7 @@ export function registerIpcHandlers(services: IpcServices): void {
         const fatal = input as StartupFatalInput;
         const contextText = fatal.context ? `\n\nContext: ${JSON.stringify(fatal.context)}` : "";
         dialog.showErrorBox(
-            "BAPBAP Launcher V2 - Startup Error",
+            "BAPBAP Nexus - Startup Error",
             `[${fatal.code}] ${fatal.message}${contextText}`
         );
         app.exit(1);
@@ -109,6 +116,14 @@ export function registerIpcHandlers(services: IpcServices): void {
     handle(IPC_CHANNELS.settingsGetAll, async () => settings.getAll());
     handle(IPC_CHANNELS.settingsSet, async (key: keyof AppSettings, value: AppSettings[keyof AppSettings]) => {
         settings.set(key, value as never);
+        if (key === "uiScale") {
+            const scale = Number(value) || 1;
+            for (const window of BrowserWindow.getAllWindows()) {
+                if (!window.isDestroyed()) {
+                    window.webContents.setZoomFactor(Math.min(1.5, Math.max(0.8, scale)));
+                }
+            }
+        }
     });
     handle(IPC_CHANNELS.settingsUnlockToolsTab, async code => {
         const normalizedCode = String(code ?? "").trim();
@@ -220,7 +235,9 @@ export function registerIpcHandlers(services: IpcServices): void {
         return instances.installCustomMod(String(instanceId), selectedFilePath, overwrite);
     });
     handle(IPC_CHANNELS.instancesRemove, async instanceId => instances.remove(String(instanceId)));
+    handle(IPC_CHANNELS.instancesRename, async (instanceId, name) => instances.rename(String(instanceId), String(name)));
     handle(IPC_CHANNELS.instancesGetSteamPersonaName, async () => instances.getSteamPersonaName());
+    handle(IPC_CHANNELS.instancesMigrateFromV3, async (_event, sourceDir) => instances.migrateFromV3(String(sourceDir)));
 
     handle(IPC_CHANNELS.launchStart, async input => launch.launch(input as Parameters<typeof launch.launch>[0]));
     handle(IPC_CHANNELS.launchStop, async () => launch.stop());

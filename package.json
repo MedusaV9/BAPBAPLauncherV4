@@ -1,11 +1,11 @@
 {
   "name": "bapbap-launcher",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "private": true,
   "type": "module",
   "main": "dist/main/main.cjs",
-  "description": "BAPBAP Launcher V4",
-  "author": "BAPBAP Community",
+  "description": "BAPBAP Nexus — The BAPBAP modding suite. Built on the legacy of Sonic0810's BAPBAP Launcher.",
+  "author": "Sonic0810 & BAPBAP Community",
   "scripts": {
     "dev": "electron-vite dev",
     "dev:harness": "vite --config vite.harness.config.ts --force",
@@ -24,6 +24,8 @@
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-separator": "^1.1.2",

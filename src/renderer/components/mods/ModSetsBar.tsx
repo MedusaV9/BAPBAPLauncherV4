@@ -33,7 +33,13 @@ export function ModSetsBar({ instanceId }: ModSetsBarProps) {
 
     function submitCreate() {
         const name = newName.trim();
-        if (!name) return;
+        if (!name) {
+            // Blank submit (incl. blur with no text) cancels rather than leaving
+            // the input stuck open.
+            setNewName("");
+            setCreating(false);
+            return;
+        }
         createModSet.mutate(
             { instanceId, name },
             {

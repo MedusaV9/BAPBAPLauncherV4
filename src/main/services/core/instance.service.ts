@@ -179,7 +179,7 @@ export class InstanceService {
             throw new Error(`Version '${target.id}' does not provide directDownloadUrl. Manifest-only mode requires it.`);
         }
 
-        const instancesRoot = this.settings.getInstancesRoot();
+        const instancesRoot = `${input.installPath ?? ""}`.trim() || this.settings.getInstancesRoot();
         await ensureDir(instancesRoot);
         const destination = await this.allocateProfileDestination(instancesRoot, profileName);
         const profileId = randomUUID();
@@ -413,6 +413,25 @@ export class InstanceService {
         return path.join(instancePath, CONTENT_STATE_FILE);
     }
 
+    async rename(instanceId: string, name: string): Promise<void> {
+        const instance = await this.getById(instanceId);
+        const nextName = normalizeProfileName(name);
+        if (!nextName) {
+            throw new Error("Profile name is required.");
+        }
+        const metaPath = path.join(instance.path, INSTANCE_META_FILE);
+        if (!(await pathExists(metaPath))) {
+            throw new Error("This instance has no editable metadata.");
+        }
+        const meta = (await readJson(metaPath).catch(() => null)) as Partial<InstanceMetadata> | null;
+        if (!meta) {
+            throw new Error("Could not read instance metadata.");
+        }
+        // Folder stays put — renaming only the display name avoids the breakage
+        // of moving a live install path that other state may reference.
+        await writeJson(metaPath, { ...meta, profileName: nextName, name: nextName }, { spaces: 2 });
+    }
+
     async readContentState(instancePath: string): Promise<Record<string, any>> {
         const statePath = await this.getContentStatePath(instancePath);
         try {
@@ -520,6 +539,41 @@ export class InstanceService {
     private setInstallState(state: InstanceInstallState): void {
         this.installState = state;
         this.installEvents.emit(INSTALL_STATE_EVENT, state);
+    }
+
+    /**
+     * Import instances from a V3/BAPBAPLauncher instances root directory.
+     * Scans sourceDir for folders containing .bapbap-instance.json and copies
+     * them into V4's instances root. Already-existing folders are skipped.
+     */
+    async migrateFromV3(sourceDir: string): Promise<{ imported: number; skipped: number; errors: string[] }> {
+        const result = { imported: 0, skipped: 0, errors: [] as string[] };
+        const targetRoot = this.settings.getInstancesRoot();
+        if (!sourceDir || !(await pathExists(sourceDir))) {
+            result.errors.push(`Source directory does not exist: ${sourceDir}`);
+            return result;
+        }
+        const entries = await fs.promises.readdir(sourceDir, { withFileTypes: true }).catch(() => []);
+        for (const entry of entries) {
+            if (!entry.isDirectory()) continue;
+            const sourceFolder = path.join(sourceDir, entry.name);
+            const metaPath = path.join(sourceFolder, INSTANCE_META_FILE);
+            if (!(await pathExists(metaPath))) continue;
+            try {
+                const meta = (await readJson(metaPath)) as Partial<InstanceMetadata>;
+                const profileName = `${meta.profileName || meta.name || entry.name}`.trim();
+                const destination = await this.allocateProfileDestination(targetRoot, profileName);
+                if (destination === sourceFolder) {
+                    result.skipped++;
+                    continue;
+                }
+                await fs.promises.cp(sourceFolder, destination, { recursive: true, force: false });
+                result.imported++;
+            } catch (error) {
+                result.errors.push(`${entry.name}: ${error instanceof Error ? error.message : String(error)}`);
+            }
+        }
+        return result;
     }
 
     private async detectSteamInstances(): Promise<InstalledInstance[]> {

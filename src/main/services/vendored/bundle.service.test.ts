@@ -185,6 +185,7 @@ describe("BundleService.listAvailable", () => {
                 sizeBytes: 12345,
                 isInstalled: false,
                 isUpdateAvailable: false,
+                isDownloadable: true,
             },
         ]);
         // Only the manifest.json under the boss-rush directory should be read.

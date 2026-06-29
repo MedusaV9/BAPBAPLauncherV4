@@ -126,6 +126,10 @@ export function buildNextTrackId(state: RadioState): string | null {
         if (currentIndex === -1) {
             return poolTrackIds[0];
         }
+        // Loop "off" stops at the end of the collection; "all" wraps around.
+        if (currentIndex === poolTrackIds.length - 1 && state.playback.loopMode === "off") {
+            return null;
+        }
         return poolTrackIds[(currentIndex + 1) % poolTrackIds.length] || null;
     }
 

@@ -15,7 +15,7 @@ const DialogOverlay = React.forwardRef<
     <DialogPrimitive.Overlay
         ref={ref}
         className={cn(
-            "fixed inset-0 z-50 bg-black/60 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+            "bap-dialog-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm",
             className
         )}
         {...props}
@@ -29,20 +29,26 @@ const DialogContent = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <DialogPortal>
         <DialogOverlay />
-        <DialogPrimitive.Content
-            ref={ref}
-            className={cn(
-                "fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 rounded-xl border border-border bg-popover p-6 shadow-soft-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
-                className
-            )}
-            {...props}
-        >
-            {children}
-            <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                <X className="h-4 w-4" />
-                <span className="sr-only">Close</span>
-            </DialogPrimitive.Close>
-        </DialogPrimitive.Content>
+        {/* Fixed grid centering wrapper — avoids the translate(-50%,-50%)
+            flash-of-wrong-position that Radix's default fixed+transform
+            approach produces when the DOM/paint tree is not fully settled
+            on the first frame. place-items centers content at layout time. */}
+        <div className="fixed inset-0 z-50 grid place-items-center overflow-auto">
+            <DialogPrimitive.Content
+                ref={ref}
+                className={cn(
+                    "bap-dialog-content relative w-full max-w-lg gap-4 rounded-xl border border-border bg-popover p-6 shadow-soft-lg",
+                    className
+                )}
+                {...props}
+            >
+                {children}
+                <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <X className="h-4 w-4" />
+                    <span className="sr-only">Close</span>
+                </DialogPrimitive.Close>
+            </DialogPrimitive.Content>
+        </div>
     </DialogPortal>
 ));
 DialogContent.displayName = DialogPrimitive.Content.displayName;
