@@ -41,6 +41,8 @@ const nl: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "Interfaceschaal",
     "settings.uiScale.description": "Maak de interface groter of kleiner.",
+
+    "mods.translationWarning": "Mod-vertalingen zijn voorlopig geen functie.",
 };
 
 export default nl;

@@ -41,6 +41,8 @@ const fr: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "Échelle de l'interface",
     "settings.uiScale.description": "Agrandir ou réduire l'interface.",
+
+    "mods.translationWarning": "La traduction des mods n'est pas une fonctionnalité pour le moment.",
 };
 
 export default fr;

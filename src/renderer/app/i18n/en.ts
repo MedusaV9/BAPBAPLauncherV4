@@ -46,6 +46,9 @@ const en = {
     // Settings — display
     "settings.uiScale.label": "UI scale",
     "settings.uiScale.description": "Make the interface larger or smaller.",
+
+    // Mods
+    "mods.translationWarning": "Mod translations are not a feature for the time being.",
 } as const;
 
 export type StringKey = keyof typeof en;

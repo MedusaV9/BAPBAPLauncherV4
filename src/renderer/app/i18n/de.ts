@@ -41,6 +41,8 @@ const de: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "UI-Skalierung",
     "settings.uiScale.description": "Mache die Oberfläche größer oder kleiner.",
+
+    "mods.translationWarning": "Mod-Übersetzungen sind derzeit keine Funktion.",
 };
 
 export default de;

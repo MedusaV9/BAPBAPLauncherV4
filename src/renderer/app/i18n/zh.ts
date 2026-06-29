@@ -40,6 +40,8 @@ const zh: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "界面缩放",
     "settings.uiScale.description": "放大或缩小界面。",
+
+    "mods.translationWarning": "模组翻译暂时不是一项功能。",
 };
 
 export default zh;

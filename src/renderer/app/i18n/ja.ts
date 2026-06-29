@@ -41,6 +41,8 @@ const ja: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "UIスケール",
     "settings.uiScale.description": "インターフェースを拡大または縮小します。",
+
+    "mods.translationWarning": "MODの翻訳は現時点では対応していません。",
 };
 
 export default ja;

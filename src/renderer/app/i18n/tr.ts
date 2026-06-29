@@ -41,6 +41,8 @@ const tr: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "Arayüz ölçeği",
     "settings.uiScale.description": "Arayüzü büyütün veya küçültün.",
+
+    "mods.translationWarning": "Mod çevirileri şimdilik bir özellik değildir.",
 };
 
 export default tr;

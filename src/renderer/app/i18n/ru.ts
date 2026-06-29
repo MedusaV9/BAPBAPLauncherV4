@@ -41,6 +41,8 @@ const ru: Partial<Record<StringKey, string>> = {
 
     "settings.uiScale.label": "Масштаб интерфейса",
     "settings.uiScale.description": "Увеличьте или уменьшите размер интерфейса.",
+
+    "mods.translationWarning": "Перевод модов на данный момент не поддерживается.",
 };
 
 export default ru;
