@@ -125,6 +125,16 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
             const elapsed = now - start;
             ctx!.clearRect(0, 0, W, H);
 
+            // Screen shake: builds through the rumble, steady tremor while the
+            // cracks spread, then a hard jolt at the boom that decays fast.
+            let shakeAmp = 1.5 * Math.min(1, elapsed / 500);
+            if (elapsed > 300 && elapsed < 1750) shakeAmp = 3;
+            if (elapsed >= 1750) shakeAmp = 22 * Math.max(0, 1 - (elapsed - 1750) / 450);
+            const shakeX = (Math.random() * 2 - 1) * shakeAmp;
+            const shakeY = (Math.random() * 2 - 1) * shakeAmp;
+            ctx!.save();
+            ctx!.translate(shakeX, shakeY);
+
             // Rumble: subtle dark vignette that intensifies.
             const rumble = Math.min(1, elapsed / 500);
             ctx!.fillStyle = `rgba(6,9,18,${0.18 * rumble})`;
@@ -238,6 +248,8 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
                 revealFired = true;
                 api?.revealMain();
             }
+
+            ctx!.restore();
 
             // Fade the overlay out so the real window shows through.
             if (elapsed > DUR_REVEAL) {
