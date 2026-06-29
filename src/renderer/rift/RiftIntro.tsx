@@ -9,6 +9,15 @@ type Crack = {
     branches: { at: number; angle: number; length: number; targetLength: number }[];
 };
 
+type Shard = {
+    angle: number;
+    speed: number;
+    dist: number;
+    size: number;
+    rot: number;
+    spin: number;
+};
+
 function riftApi(): { revealMain(): void; done(): void } | null {
     const api = (window as unknown as { v2Api?: { rift?: { revealMain(): void; done(): void } } }).v2Api;
     return api?.rift ?? null;
@@ -74,6 +83,8 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
             cracks.push({ angle, length: 0, targetLength, width: 2.6 - (i % 3) * 0.5, branches });
         }
 
+        const shards: Shard[] = [];
+        let shardsSpawned = false;
         let raf = 0;
         const start = performance.now();
         // Timeline (ms): rumble 0–500, cracks spread 300–1500, glow 1100–1900,
@@ -171,6 +182,20 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
                     boomPlayed = true;
                     playBoom(1);
                 }
+                if (!shardsSpawned) {
+                    shardsSpawned = true;
+                    const count = 26;
+                    for (let s = 0; s < count; s += 1) {
+                        shards.push({
+                            angle: (s / count) * Math.PI * 2 + ((s * 2.3) % 1) - 0.5,
+                            speed: 6 + ((s * 7.7) % 9),
+                            dist: Math.min(W, H) * 0.08,
+                            size: 6 + ((s * 5.1) % 16),
+                            rot: (s * 1.7) % Math.PI,
+                            spin: ((s % 2 ? 1 : -1) * (0.04 + ((s * 3.1) % 0.12))),
+                        });
+                    }
+                }
                 const flash = Math.min(1, (elapsed - 1750) / 320);
                 const portalR = Math.min(W, H) * 0.62 * easeOut(flash);
                 const grad = ctx!.createRadialGradient(cx, cy, 0, cx, cy, portalR);
@@ -181,6 +206,32 @@ export function RiftIntro({ reduced }: { reduced: boolean }) {
                 ctx!.beginPath();
                 ctx!.arc(cx, cy, portalR, 0, Math.PI * 2);
                 ctx!.fill();
+            }
+
+            // Debris shards flung outward from the rift.
+            if (shards.length) {
+                const shardFade = Math.max(0, 1 - (elapsed - 1750) / 900);
+                ctx!.fillStyle = `rgba(18,22,38,${0.9 * shardFade})`;
+                ctx!.strokeStyle = `rgba(255,150,220,${0.7 * shardFade})`;
+                ctx!.lineWidth = 1;
+                for (const sh of shards) {
+                    sh.dist += sh.speed;
+                    sh.speed *= 0.985;
+                    sh.rot += sh.spin;
+                    const px = cx + Math.cos(sh.angle) * sh.dist;
+                    const py = cy + Math.sin(sh.angle) * sh.dist;
+                    ctx!.save();
+                    ctx!.translate(px, py);
+                    ctx!.rotate(sh.rot);
+                    ctx!.beginPath();
+                    ctx!.moveTo(0, -sh.size);
+                    ctx!.lineTo(sh.size * 0.6, sh.size * 0.5);
+                    ctx!.lineTo(-sh.size * 0.5, sh.size * 0.4);
+                    ctx!.closePath();
+                    ctx!.fill();
+                    ctx!.stroke();
+                    ctx!.restore();
+                }
             }
 
             if (elapsed > DUR_REVEAL && !revealFired) {

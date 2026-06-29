@@ -320,10 +320,75 @@ function revealMainFromRift(): void {
         pendingReveal = true;
         return;
     }
-    if (!mainWindow.isVisible()) {
-        mainWindow.show();
+    if (mainWindow.isVisible()) {
+        mainWindow.focus();
+        return;
     }
-    mainWindow.focus();
+    growWindowFromRift(mainWindow);
+}
+
+// Animate the window emerging from the rift: start as a small rect at the
+// screen center (where the portal opened) and grow to its final bounds.
+function growWindowFromRift(win: Electron.BrowserWindow): void {
+    const finalBounds = win.getBounds();
+    const display = screen.getPrimaryDisplay();
+    const center = {
+        x: display.bounds.x + display.bounds.width / 2,
+        y: display.bounds.y + display.bounds.height / 2,
+    };
+
+    const steps = 18;
+    const stepMs = 16;
+    const startScale = 0.18;
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
+
+    const boundsAt = (scale: number): Electron.Rectangle => {
+        const w = Math.max(120, Math.round(finalBounds.width * scale));
+        const h = Math.max(90, Math.round(finalBounds.height * scale));
+        return {
+            width: w,
+            height: h,
+            x: Math.round(center.x - w / 2),
+            y: Math.round(center.y - h / 2),
+        };
+    };
+
+    try {
+        win.setOpacity(0);
+        win.setBounds(boundsAt(startScale));
+        win.show();
+    } catch {
+        win.show();
+        win.focus();
+        return;
+    }
+
+    let i = 0;
+    const tick = () => {
+        if (!mainWindow || mainWindow.isDestroyed()) {
+            return;
+        }
+        i += 1;
+        const t = easeOut(i / steps);
+        const scale = startScale + (1 - startScale) * t;
+        try {
+            mainWindow.setOpacity(Math.min(1, t * 1.4));
+            if (i >= steps) {
+                mainWindow.setBounds(finalBounds);
+                mainWindow.setOpacity(1);
+                mainWindow.focus();
+                return;
+            }
+            mainWindow.setBounds(boundsAt(scale));
+        } catch {
+            mainWindow.setBounds(finalBounds);
+            mainWindow.setOpacity(1);
+            mainWindow.focus();
+            return;
+        }
+        setTimeout(tick, stepMs);
+    };
+    setTimeout(tick, stepMs);
 }
 
 function closeRiftWindow(): void {
