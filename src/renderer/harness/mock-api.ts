@@ -667,6 +667,10 @@ export function createHarnessApi(): V2Api {
         shell: {
             async openExternal() { return undefined; },
         },
+        rift: {
+            revealMain() { /* no-op in harness */ },
+            done() { /* no-op in harness */ },
+        },
         diagnostics: {
             async getBuildInfo() {
                 return clone(harnessBuildInfo);

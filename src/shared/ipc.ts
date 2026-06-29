@@ -55,6 +55,10 @@ export type AppSettings = {
     radioRememberPlaybackState: boolean;
     /** UI scale factor (0.8–1.5). Applied via webContents.setZoomFactor. */
     uiScale: number;
+    /** Play the rift "crack open" intro animation on launch. */
+    riftIntroEnabled: boolean;
+    /** Closing the window hides to the system tray instead of quitting. */
+    closeToTrayEnabled: boolean;
 };
 
 export type DirectoryDialogInput = {
@@ -369,6 +373,10 @@ export interface V2Api {
         unlockSecretMods(password: string): Promise<boolean>;
         revealBundles(code: string): Promise<boolean>;
     };
+    rift: {
+        revealMain(): void;
+        done(): void;
+    };
     dialog: {
         chooseDirectory(input?: DirectoryDialogInput): Promise<string | null>;
         chooseAudioFiles(input?: AudioFileDialogInput): Promise<string[]>;
@@ -503,6 +511,8 @@ export const IPC_CHANNELS = {
     settingsUnlockToolsTab: "v2.settings.unlockToolsTab",
     settingsUnlockSecretMods: "v2.settings.unlockSecretMods",
     settingsRevealBundles: "v2.settings.revealBundles",
+    riftRevealMain: "v2.rift.revealMain",
+    riftDone: "v2.rift.done",
     dialogChooseDirectory: "v2.dialog.chooseDirectory",
     dialogChooseAudioFiles: "v2.dialog.chooseAudioFiles",
     manifestGetIndex: "v2.manifest.getIndex",

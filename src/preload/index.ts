@@ -30,6 +30,10 @@ const v2Api: V2Api = {
         unlockSecretMods: password => ipcRenderer.invoke(IPC_CHANNELS.settingsUnlockSecretMods, password),
         revealBundles: code => ipcRenderer.invoke(IPC_CHANNELS.settingsRevealBundles, code),
     },
+    rift: {
+        revealMain: () => ipcRenderer.send(IPC_CHANNELS.riftRevealMain),
+        done: () => ipcRenderer.send(IPC_CHANNELS.riftDone),
+    },
     dialog: {
         chooseDirectory: input => ipcRenderer.invoke(IPC_CHANNELS.dialogChooseDirectory, input),
         chooseAudioFiles: input => ipcRenderer.invoke(IPC_CHANNELS.dialogChooseAudioFiles, input),

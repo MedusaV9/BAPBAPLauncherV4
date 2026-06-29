@@ -9,6 +9,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import electron from "electron";
 import { registerIpcHandlers } from "./ipc/register-ipc";
+import { IPC_CHANNELS } from "../shared/ipc";
 import { SettingsStoreService } from "./services/core/settings-store";
 import { ManifestClient } from "./services/vendored/manifest-client";
 import { ArchiveDownloadService } from "./services/vendored/archive-download.service";
@@ -25,7 +26,7 @@ import { BundleService } from "./services/vendored/bundle.service";
 import { BundleUpdateService } from "./services/vendored/bundle-update.service";
 import { ManifestClientBundleFetcher } from "./services/vendored/manifest-client-bundle-fetcher";
 
-const { app, BrowserWindow, dialog, screen, shell, protocol, net } = electron;
+const { app, BrowserWindow, Menu, Tray, dialog, screen, shell, protocol, net, nativeImage, ipcMain } = electron;
 
 protocol.registerSchemesAsPrivileged([
     {
@@ -41,6 +42,12 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 let mainWindow: Electron.BrowserWindow | null = null;
+let riftWindow: Electron.BrowserWindow | null = null;
+let tray: Electron.Tray | null = null;
+let isQuitting = false;
+let pendingReveal = false;
+let mainWindowReady = false;
+let settingsRef: SettingsStoreService | null = null;
 const buildTimestamp = process.env.V2_BUILD_TIMESTAMP?.trim() || "development";
 let fatalExitRequested = false;
 let rendererFallbackAttempted = false;
@@ -83,10 +90,7 @@ process.on("unhandledRejection", reason => {
 
 app.on("second-instance", () => {
     if (mainWindow) {
-        if (mainWindow.isMinimized()) {
-            mainWindow.restore();
-        }
-        mainWindow.focus();
+        showMainWindow();
         return;
     }
     if (app.isReady()) {
@@ -94,10 +98,11 @@ app.on("second-instance", () => {
     }
 });
 
-function createMainWindow(options?: { initialScale?: number }): void {
+function createMainWindow(options?: { initialScale?: number; show?: boolean }): void {
     const windowIcon = resolveWindowIconPath();
     const { width, height, minWidth, minHeight } = getInitialWindowMetrics();
     const initialScale = options?.initialScale ?? 1;
+    const showOnReady = options?.show ?? true;
     const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
     const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
     const rendererFile = path.join(__dirname, "../renderer/index.html");
@@ -110,6 +115,7 @@ function createMainWindow(options?: { initialScale?: number }): void {
         minHeight,
         backgroundColor: "#0c1220",
         autoHideMenuBar: true,
+        show: showOnReady,
         title: "BAPBAP Nexus",
         icon: windowIcon,
         webPreferences: {
@@ -154,6 +160,11 @@ function createMainWindow(options?: { initialScale?: number }): void {
         // Reset to the user's saved UI scale on every navigation so
         // accidental Ctrl+Scroll / pinch-zoom doesn't persist.
         mainWindow?.webContents.setZoomFactor(initialScale);
+        mainWindowReady = true;
+        if (pendingReveal) {
+            pendingReveal = false;
+            revealMainFromRift();
+        }
     });
 
     mainWindow.webContents.on("render-process-gone", (_event, details) => {
@@ -180,8 +191,19 @@ function createMainWindow(options?: { initialScale?: number }): void {
         mainWindow.webContents.openDevTools({ mode: "detach" });
     }
 
+    mainWindow.on("close", event => {
+        if (isQuitting) {
+            return;
+        }
+        if (settingsRef?.getCloseToTrayEnabled() && tray) {
+            event.preventDefault();
+            mainWindow?.hide();
+        }
+    });
+
     mainWindow.on("closed", () => {
         mainWindow = null;
+        mainWindowReady = false;
     });
 
     // Route external window.open calls to the system browser (fallback
@@ -196,6 +218,121 @@ function createMainWindow(options?: { initialScale?: number }): void {
 
     mainWindow.center();
 }
+
+function showMainWindow(): void {
+    if (!mainWindow) {
+        createMainWindow({ initialScale: settingsRef?.getUiScale() ?? 1 });
+        return;
+    }
+    if (mainWindow.isMinimized()) {
+        mainWindow.restore();
+    }
+    mainWindow.show();
+    mainWindow.focus();
+}
+
+function createTray(): void {
+    if (tray) {
+        return;
+    }
+    const iconPath = resolveWindowIconPath();
+    const image = iconPath ? nativeImage.createFromPath(iconPath) : nativeImage.createEmpty();
+    try {
+        tray = new Tray(image);
+    } catch (error) {
+        console.warn("[tray] failed to create tray", error);
+        return;
+    }
+    tray.setToolTip("BAPBAP Nexus");
+    const menu = Menu.buildFromTemplate([
+        { label: "Open BAPBAP Nexus", click: () => showMainWindow() },
+        { type: "separator" },
+        {
+            label: "Quit",
+            click: () => {
+                isQuitting = true;
+                app.quit();
+            },
+        },
+    ]);
+    tray.setContextMenu(menu);
+    tray.on("click", () => showMainWindow());
+}
+
+function createRiftWindow(): void {
+    const display = screen.getPrimaryDisplay();
+    const { x, y, width, height } = display.bounds;
+    riftWindow = new BrowserWindow({
+        x,
+        y,
+        width,
+        height,
+        frame: false,
+        transparent: true,
+        alwaysOnTop: true,
+        skipTaskbar: true,
+        resizable: false,
+        movable: false,
+        hasShadow: false,
+        focusable: false,
+        fullscreenable: false,
+        backgroundColor: "#00000000",
+        webPreferences: {
+            preload: path.join(__dirname, "../preload/index.cjs"),
+            contextIsolation: true,
+            nodeIntegration: false,
+            sandbox: true,
+            devTools: !app.isPackaged,
+        },
+    });
+    riftWindow.setIgnoreMouseEvents(true);
+    riftWindow.setAlwaysOnTop(true, "screen-saver");
+
+    const reduced = settingsRef?.getAll().uiMotionEnabled === false ? "?reduced=1" : "";
+    const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
+    const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
+    if (rendererUrl) {
+        void riftWindow.loadURL(`${rendererUrl}/rift.html${reduced}`);
+    } else {
+        void riftWindow.loadFile(path.join(__dirname, "../renderer/rift.html"), {
+            search: reduced ? "reduced=1" : undefined,
+        });
+    }
+
+    riftWindow.on("closed", () => {
+        riftWindow = null;
+    });
+
+    // Safety net: if the rift renderer never signals, reveal the main window anyway.
+    setTimeout(() => {
+        if (riftWindow || !mainWindow?.isVisible()) {
+            revealMainFromRift();
+            closeRiftWindow();
+        }
+    }, 8000);
+}
+
+function revealMainFromRift(): void {
+    if (!mainWindow) {
+        return;
+    }
+    if (!mainWindowReady) {
+        pendingReveal = true;
+        return;
+    }
+    if (!mainWindow.isVisible()) {
+        mainWindow.show();
+    }
+    mainWindow.focus();
+}
+
+function closeRiftWindow(): void {
+    if (riftWindow && !riftWindow.isDestroyed()) {
+        riftWindow.close();
+    }
+    riftWindow = null;
+}
+
 
 app.whenReady().then(async () => {
     try {
@@ -259,7 +396,24 @@ app.whenReady().then(async () => {
             buildTimestamp,
         });
 
-        createMainWindow({ initialScale: settings.getUiScale() });
+        settingsRef = settings;
+        createTray();
+
+        ipcMain.on(IPC_CHANNELS.riftRevealMain, () => {
+            revealMainFromRift();
+        });
+        ipcMain.on(IPC_CHANNELS.riftDone, () => {
+            closeRiftWindow();
+        });
+
+        const riftEnabled = settings.getRiftIntroEnabled();
+        if (riftEnabled) {
+            // Warm the main window hidden, then let it emerge from the rift.
+            createMainWindow({ initialScale: settings.getUiScale(), show: false });
+            createRiftWindow();
+        } else {
+            createMainWindow({ initialScale: settings.getUiScale() });
+        }
         void radio.sync(false).catch(error => {
             console.warn("[radio-sync] initial sync failed", error);
         });
@@ -274,9 +428,15 @@ app.on("window-all-closed", () => {
     }
 });
 
+app.on("before-quit", () => {
+    isQuitting = true;
+});
+
 app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createMainWindow();
+    } else {
+        showMainWindow();
     }
 });
 
