@@ -48,6 +48,7 @@ let isQuitting = false;
 let pendingReveal = false;
 let mainWindowReady = false;
 let settingsRef: SettingsStoreService | null = null;
+let trayBalloonShown = false;
 const buildTimestamp = process.env.V2_BUILD_TIMESTAMP?.trim() || "development";
 let fatalExitRequested = false;
 let rendererFallbackAttempted = false;
@@ -198,6 +199,17 @@ function createMainWindow(options?: { initialScale?: number; show?: boolean }): 
         if (settingsRef?.getCloseToTrayEnabled() && tray) {
             event.preventDefault();
             mainWindow?.hide();
+            if (!trayBalloonShown) {
+                trayBalloonShown = true;
+                try {
+                    tray.displayBalloon?.({
+                        title: "BAPBAP Nexus",
+                        content: "Still running in the tray. Right-click the icon to quit.",
+                    });
+                } catch {
+                    // displayBalloon is Windows-only and can throw on some shells.
+                }
+            }
         }
     });
 
@@ -321,6 +333,12 @@ function revealMainFromRift(): void {
         return;
     }
     if (mainWindow.isVisible()) {
+        mainWindow.focus();
+        return;
+    }
+    // Reduced motion: skip the grow animation, just show.
+    if (settingsRef?.getAll().uiMotionEnabled === false) {
+        mainWindow.show();
         mainWindow.focus();
         return;
     }
