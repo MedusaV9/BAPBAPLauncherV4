@@ -32,9 +32,6 @@ const ru: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Переводы созданы ИИ. Если вы заметили ошибки, сообщите о них в Discord.",
 
-    "settings.rift.label": "Анимация открытия разлома",
-    "settings.rift.description":
-        "Раскалывает экран, и при запуске лаунчер появляется из разлома.",
     "settings.tray.label": "Сворачивать в трей при закрытии",
     "settings.tray.description":
         "При закрытии окно остаётся работать в системном трее. Нажмите правой кнопкой по значку в трее, чтобы выйти.",

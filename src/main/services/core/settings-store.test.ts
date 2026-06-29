@@ -47,21 +47,17 @@ describe("SettingsStoreService", () => {
         expect(settings.toolsUnlocked).toBe(false);
         expect(settings.modsUnlockedSecretIds).toEqual([]);
         expect(settings.radioVolume).toBeCloseTo(0.72);
-        // Rift intro and close-to-tray default on.
-        expect(settings.riftIntroEnabled).toBe(true);
+        // Close-to-tray defaults on.
         expect(settings.closeToTrayEnabled).toBe(true);
         // Language defaults to English.
         expect(settings.language).toBe("en");
     });
 
-    it("exposes rift/tray getters that honor stored values", () => {
+    it("exposes the close-to-tray getter that honors stored values", () => {
         const service = new SettingsStoreService();
-        expect(service.getRiftIntroEnabled()).toBe(true);
         expect(service.getCloseToTrayEnabled()).toBe(true);
 
-        service.set("riftIntroEnabled", false);
         service.set("closeToTrayEnabled", false);
-        expect(service.getRiftIntroEnabled()).toBe(false);
         expect(service.getCloseToTrayEnabled()).toBe(false);
     });
 

@@ -32,9 +32,6 @@ const es: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Las traducciones están hechas por IA. Si encuentras errores, repórtalos en el Discord.",
 
-    "settings.rift.label": "Animación de apertura de grieta",
-    "settings.rift.description":
-        "Resquebraja la pantalla y deja que el launcher emerja de una grieta al iniciar.",
     "settings.tray.label": "Minimizar a la bandeja al cerrar",
     "settings.tray.description":
         "Al cerrar la ventana, esta sigue ejecutándose en la bandeja del sistema. Haz clic derecho en el icono de la bandeja para salir.",

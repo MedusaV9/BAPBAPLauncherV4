@@ -113,7 +113,6 @@ export const harnessSettings: AppSettings = {
     radioAutoplayOnLaunch: false,
     radioRememberPlaybackState: true,
     uiScale: 1,
-    riftIntroEnabled: true,
     closeToTrayEnabled: true,
     language: "en",
 };

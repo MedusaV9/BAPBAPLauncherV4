@@ -46,17 +46,13 @@ export function AppShell() {
     const osReducedMotion = useReducedMotion();
     const { data: settings } = useSettings();
     const reduceMotion = osReducedMotion || settings?.uiMotionEnabled === false;
-    const riftIntro = settings?.riftIntroEnabled !== false;
     useAudioEngine();
 
     const [minTimeElapsed, setMinTimeElapsed] = useState(false);
     useEffect(() => {
-        // When the rift intro plays, it already covers the launch beat — keep
-        // the in-app splash short to avoid a double intro.
-        const minTime = reduceMotion || riftIntro ? 600 : 5000;
-        const timer = setTimeout(() => setMinTimeElapsed(true), minTime);
+        const timer = setTimeout(() => setMinTimeElapsed(true), reduceMotion ? 600 : 5000);
         return () => clearTimeout(timer);
-    }, [reduceMotion, riftIntro]);
+    }, [reduceMotion]);
 
     const [visited, setVisited] = useState<Record<string, boolean>>(() => ({
         [activeWorkspace]: true,

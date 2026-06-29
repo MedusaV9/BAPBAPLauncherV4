@@ -52,7 +52,6 @@ export class SettingsStoreService {
                 radioAutoplayOnLaunch: false,
                 radioRememberPlaybackState: true,
                 uiScale: 1,
-                riftIntroEnabled: true,
                 closeToTrayEnabled: true,
                 language: "en",
                 instancesRoot: defaultInstancesRoot,
@@ -98,7 +97,6 @@ export class SettingsStoreService {
             radioAutoplayOnLaunch: this.store.get("radioAutoplayOnLaunch"),
             radioRememberPlaybackState: this.store.get("radioRememberPlaybackState"),
             uiScale: this.store.get("uiScale"),
-            riftIntroEnabled: this.store.get("riftIntroEnabled"),
             closeToTrayEnabled: this.store.get("closeToTrayEnabled"),
             language: this.store.get("language"),
         });
@@ -176,10 +174,6 @@ export class SettingsStoreService {
     getUiScale(): number {
         const value = Number(this.store.get("uiScale"));
         return Number.isFinite(value) ? Math.min(1.5, Math.max(0.8, value)) : 1;
-    }
-
-    getRiftIntroEnabled(): boolean {
-        return this.store.get("riftIntroEnabled") !== false;
     }
 
     getCloseToTrayEnabled(): boolean {

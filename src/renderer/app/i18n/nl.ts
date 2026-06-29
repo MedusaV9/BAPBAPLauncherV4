@@ -32,9 +32,6 @@ const nl: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Vertalingen zijn gemaakt door AI. Als je fouten vindt, meld ze dan op de Discord.",
 
-    "settings.rift.label": "Rift-openingsanimatie",
-    "settings.rift.description":
-        "Laat het scherm openbarsten en de launcher bij het starten uit een rift tevoorschijn komen.",
     "settings.tray.label": "Bij sluiten minimaliseren naar systeemvak",
     "settings.tray.description":
         "Bij het sluiten blijft het venster actief in het systeemvak. Klik met de rechtermuisknop op het pictogram om af te sluiten.",

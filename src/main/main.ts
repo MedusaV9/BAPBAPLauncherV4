@@ -9,7 +9,6 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import electron from "electron";
 import { registerIpcHandlers } from "./ipc/register-ipc";
-import { IPC_CHANNELS } from "../shared/ipc";
 import { SettingsStoreService } from "./services/core/settings-store";
 import { ManifestClient } from "./services/vendored/manifest-client";
 import { ArchiveDownloadService } from "./services/vendored/archive-download.service";
@@ -26,7 +25,7 @@ import { BundleService } from "./services/vendored/bundle.service";
 import { BundleUpdateService } from "./services/vendored/bundle-update.service";
 import { ManifestClientBundleFetcher } from "./services/vendored/manifest-client-bundle-fetcher";
 
-const { app, BrowserWindow, Menu, Tray, dialog, screen, shell, protocol, net, nativeImage, ipcMain } = electron;
+const { app, BrowserWindow, Menu, Tray, dialog, screen, shell, protocol, net, nativeImage } = electron;
 
 protocol.registerSchemesAsPrivileged([
     {
@@ -42,11 +41,8 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 let mainWindow: Electron.BrowserWindow | null = null;
-let riftWindow: Electron.BrowserWindow | null = null;
 let tray: Electron.Tray | null = null;
 let isQuitting = false;
-let pendingReveal = false;
-let mainWindowReady = false;
 let settingsRef: SettingsStoreService | null = null;
 let trayBalloonShown = false;
 const buildTimestamp = process.env.V2_BUILD_TIMESTAMP?.trim() || "development";
@@ -99,11 +95,10 @@ app.on("second-instance", () => {
     }
 });
 
-function createMainWindow(options?: { initialScale?: number; show?: boolean }): void {
+function createMainWindow(options?: { initialScale?: number }): void {
     const windowIcon = resolveWindowIconPath();
     const { width, height, minWidth, minHeight } = getInitialWindowMetrics();
     const initialScale = options?.initialScale ?? 1;
-    const showOnReady = options?.show ?? true;
     const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
     const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
     const rendererFile = path.join(__dirname, "../renderer/index.html");
@@ -116,7 +111,6 @@ function createMainWindow(options?: { initialScale?: number; show?: boolean }): 
         minHeight,
         backgroundColor: "#0c1220",
         autoHideMenuBar: true,
-        show: showOnReady,
         title: "BAPBAP Nexus",
         icon: windowIcon,
         webPreferences: {
@@ -161,11 +155,6 @@ function createMainWindow(options?: { initialScale?: number; show?: boolean }): 
         // Reset to the user's saved UI scale on every navigation so
         // accidental Ctrl+Scroll / pinch-zoom doesn't persist.
         mainWindow?.webContents.setZoomFactor(initialScale);
-        mainWindowReady = true;
-        if (pendingReveal) {
-            pendingReveal = false;
-            revealMainFromRift();
-        }
     });
 
     mainWindow.webContents.on("render-process-gone", (_event, details) => {
@@ -215,7 +204,6 @@ function createMainWindow(options?: { initialScale?: number; show?: boolean }): 
 
     mainWindow.on("closed", () => {
         mainWindow = null;
-        mainWindowReady = false;
     });
 
     // Route external window.open calls to the system browser (fallback
@@ -270,196 +258,6 @@ function createTray(): void {
     tray.setContextMenu(menu);
     tray.on("click", () => showMainWindow());
 }
-
-function createRiftWindow(): void {
-    const display = screen.getPrimaryDisplay();
-    const { x, y, width, height } = display.bounds;
-    riftWindow = new BrowserWindow({
-        x,
-        y,
-        width,
-        height,
-        frame: false,
-        transparent: false,
-        alwaysOnTop: true,
-        skipTaskbar: true,
-        resizable: false,
-        movable: false,
-        hasShadow: false,
-        focusable: false,
-        fullscreenable: false,
-        backgroundColor: "#06090f",
-        webPreferences: {
-            preload: path.join(__dirname, "../preload/index.cjs"),
-            contextIsolation: true,
-            nodeIntegration: false,
-            sandbox: true,
-            devTools: !app.isPackaged,
-        },
-    });
-    riftWindow.setIgnoreMouseEvents(true);
-    riftWindow.setAlwaysOnTop(true, "screen-saver");
-
-    riftWindow.webContents.on("did-finish-load", () => {
-        console.log("[rift] overlay loaded");
-    });
-    riftWindow.webContents.on("did-fail-load", (_e, code, desc, url) => {
-        console.warn(`[rift] overlay failed to load (${code}: ${desc}) ${url} — revealing main directly`);
-        revealMainFromRift();
-        closeRiftWindow();
-    });
-
-    const reduced = settingsRef?.getAll().uiMotionEnabled === false ? "?reduced=1" : "";
-    const allowExternalRenderer = !app.isPackaged || process.env.V2_ALLOW_REMOTE_RENDERER === "1";
-    const rendererUrl = allowExternalRenderer ? process.env.ELECTRON_RENDERER_URL?.trim() : undefined;
-    if (rendererUrl) {
-        void riftWindow.loadURL(`${rendererUrl}/rift.html${reduced}`);
-    } else {
-        void riftWindow.loadFile(path.join(__dirname, "../renderer/rift.html"), {
-            search: reduced ? "reduced=1" : undefined,
-        });
-    }
-
-    riftWindow.on("closed", () => {
-        riftWindow = null;
-    });
-
-    // Safety net: if the rift renderer never signals, reveal the main window anyway.
-    setTimeout(() => {
-        if (riftWindow || !mainWindow?.isVisible()) {
-            revealMainFromRift();
-            closeRiftWindow();
-        }
-    }, 8000);
-}
-
-function revealMainFromRift(): void {
-    if (!mainWindow) {
-        return;
-    }
-    if (!mainWindowReady) {
-        pendingReveal = true;
-        return;
-    }
-    if (mainWindow.isVisible()) {
-        mainWindow.focus();
-        return;
-    }
-    // Reduced motion: skip the grow animation, just show.
-    if (settingsRef?.getAll().uiMotionEnabled === false) {
-        mainWindow.show();
-        mainWindow.focus();
-        fadeRiftWindowOut(200);
-        return;
-    }
-    growWindowFromRift(mainWindow);
-    // The overlay is opaque (so it can't render invisibly under software
-    // compositing), so it must fade its own window out to reveal the main
-    // window growing behind it.
-    fadeRiftWindowOut(420);
-}
-
-// Fade the opaque rift overlay window out via window alpha (works without GPU
-// compositing), then close it.
-function fadeRiftWindowOut(durationMs: number): void {
-    if (!riftWindow || riftWindow.isDestroyed()) {
-        return;
-    }
-    const win = riftWindow;
-    const steps = Math.max(1, Math.round(durationMs / 16));
-    let i = 0;
-    const tick = () => {
-        if (!win || win.isDestroyed()) {
-            return;
-        }
-        i += 1;
-        const opacity = Math.max(0, 1 - i / steps);
-        try {
-            win.setOpacity(opacity);
-        } catch {
-            closeRiftWindow();
-            return;
-        }
-        if (i >= steps) {
-            closeRiftWindow();
-            return;
-        }
-        setTimeout(tick, 16);
-    };
-    setTimeout(tick, 16);
-}
-
-// Animate the window emerging from the rift: start as a small rect at the
-// screen center (where the portal opened) and grow to its final bounds.
-function growWindowFromRift(win: Electron.BrowserWindow): void {
-    const finalBounds = win.getBounds();
-    const display = screen.getPrimaryDisplay();
-    const center = {
-        x: display.bounds.x + display.bounds.width / 2,
-        y: display.bounds.y + display.bounds.height / 2,
-    };
-
-    const steps = 18;
-    const stepMs = 16;
-    const startScale = 0.18;
-    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
-
-    const boundsAt = (scale: number): Electron.Rectangle => {
-        const w = Math.max(120, Math.round(finalBounds.width * scale));
-        const h = Math.max(90, Math.round(finalBounds.height * scale));
-        return {
-            width: w,
-            height: h,
-            x: Math.round(center.x - w / 2),
-            y: Math.round(center.y - h / 2),
-        };
-    };
-
-    try {
-        win.setOpacity(0);
-        win.setBounds(boundsAt(startScale));
-        win.show();
-    } catch {
-        win.show();
-        win.focus();
-        return;
-    }
-
-    let i = 0;
-    const tick = () => {
-        if (!mainWindow || mainWindow.isDestroyed()) {
-            return;
-        }
-        i += 1;
-        const t = easeOut(i / steps);
-        const scale = startScale + (1 - startScale) * t;
-        try {
-            mainWindow.setOpacity(Math.min(1, t * 1.4));
-            if (i >= steps) {
-                mainWindow.setBounds(finalBounds);
-                mainWindow.setOpacity(1);
-                mainWindow.focus();
-                return;
-            }
-            mainWindow.setBounds(boundsAt(scale));
-        } catch {
-            mainWindow.setBounds(finalBounds);
-            mainWindow.setOpacity(1);
-            mainWindow.focus();
-            return;
-        }
-        setTimeout(tick, stepMs);
-    };
-    setTimeout(tick, stepMs);
-}
-
-function closeRiftWindow(): void {
-    if (riftWindow && !riftWindow.isDestroyed()) {
-        riftWindow.close();
-    }
-    riftWindow = null;
-}
-
 
 app.whenReady().then(async () => {
     try {
@@ -526,21 +324,7 @@ app.whenReady().then(async () => {
         settingsRef = settings;
         createTray();
 
-        ipcMain.on(IPC_CHANNELS.riftRevealMain, () => {
-            revealMainFromRift();
-        });
-        ipcMain.on(IPC_CHANNELS.riftDone, () => {
-            closeRiftWindow();
-        });
-
-        const riftEnabled = settings.getRiftIntroEnabled();
-        if (riftEnabled) {
-            // Warm the main window hidden, then let it emerge from the rift.
-            createMainWindow({ initialScale: settings.getUiScale(), show: false });
-            createRiftWindow();
-        } else {
-            createMainWindow({ initialScale: settings.getUiScale() });
-        }
+        createMainWindow({ initialScale: settings.getUiScale() });
         void radio.sync(false).catch(error => {
             console.warn("[radio-sync] initial sync failed", error);
         });

@@ -36,9 +36,6 @@ const en = {
         "Translations are made by AI. If you find issues please report them to the Discord.",
 
     // Settings — startup & window
-    "settings.rift.label": "Rift opening animation",
-    "settings.rift.description":
-        "Crack the screen open and let the launcher emerge from a rift on launch.",
     "settings.tray.label": "Minimize to tray on close",
     "settings.tray.description":
         "Closing the window keeps it running in the system tray. Right-click the tray icon to quit.",

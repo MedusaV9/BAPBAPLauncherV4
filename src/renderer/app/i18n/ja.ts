@@ -32,9 +32,6 @@ const ja: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "翻訳はAIによって作成されています。問題を見つけた場合はDiscordで報告してください。",
 
-    "settings.rift.label": "リフト オープニング アニメーション",
-    "settings.rift.description":
-        "起動時に画面を割り、ランチャーがリフトから現れます。",
     "settings.tray.label": "閉じるときにトレイに最小化",
     "settings.tray.description":
         "ウィンドウを閉じてもシステムトレイで動作し続けます。終了するにはトレイアイコンを右クリックしてください。",

@@ -32,8 +32,6 @@ const zh: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "翻译由 AI 生成。如发现问题，请在 Discord 反馈。",
 
-    "settings.rift.label": "裂隙开场动画",
-    "settings.rift.description": "启动时让屏幕裂开，启动器从裂隙中浮现。",
     "settings.tray.label": "关闭时最小化到托盘",
     "settings.tray.description":
         "关闭窗口后程序会继续在系统托盘中运行。右键点击托盘图标即可退出。",

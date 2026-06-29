@@ -32,9 +32,6 @@ const pt: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "As traduções são feitas por IA. Se encontrar erros, comunique-os no Discord.",
 
-    "settings.rift.label": "Animação de abertura da fenda",
-    "settings.rift.description":
-        "Faz o ecrã estalar e o launcher surgir de uma fenda ao iniciar.",
     "settings.tray.label": "Minimizar para a bandeja ao fechar",
     "settings.tray.description":
         "Ao fechar, a janela continua em execução na bandeja do sistema. Clique com o botão direito no ícone para sair.",

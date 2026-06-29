@@ -32,9 +32,6 @@ const de: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Übersetzungen werden von KI erstellt. Wenn du Fehler findest, melde sie bitte im Discord.",
 
-    "settings.rift.label": "Riss-Eröffnungsanimation",
-    "settings.rift.description":
-        "Lässt den Bildschirm aufbrechen und den Launcher beim Start aus einem Riss hervortreten.",
     "settings.tray.label": "Beim Schließen in den Infobereich minimieren",
     "settings.tray.description":
         "Beim Schließen läuft das Fenster im System-Infobereich weiter. Rechtsklick auf das Symbol zum Beenden.",

@@ -32,9 +32,6 @@ const tr: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Çeviriler yapay zeka tarafından yapılmıştır. Hata bulursanız lütfen Discord'da bildirin.",
 
-    "settings.rift.label": "Yarık açılış animasyonu",
-    "settings.rift.description":
-        "Ekranı çatlatır ve başlatıcının açılışta bir yarıktan çıkmasını sağlar.",
     "settings.tray.label": "Kapatınca sistem tepsisine küçült",
     "settings.tray.description":
         "Pencere kapatıldığında sistem tepsisinde çalışmaya devam eder. Çıkmak için tepsi simgesine sağ tıklayın.",

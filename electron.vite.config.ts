@@ -50,7 +50,6 @@ export default defineConfig({
                 input: {
                     main: path.resolve(__dirname, "src/renderer/index.html"),
                     rebalance: path.resolve(__dirname, "src/renderer/rebalance.html"),
-                    rift: path.resolve(__dirname, "src/renderer/rift.html"),
                 },
             },
         },

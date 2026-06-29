@@ -32,9 +32,6 @@ const fr: Partial<Record<StringKey, string>> = {
     "settings.language.aiWarning":
         "Les traductions sont réalisées par IA. Si vous trouvez des erreurs, signalez-les sur le Discord.",
 
-    "settings.rift.label": "Animation d'ouverture de faille",
-    "settings.rift.description":
-        "Fissure l'écran et fait émerger le launcher d'une faille au démarrage.",
     "settings.tray.label": "Réduire dans la barre d'état au lieu de fermer",
     "settings.tray.description":
         "À la fermeture, la fenêtre continue de tourner dans la barre d'état système. Clic droit sur l'icône pour quitter.",

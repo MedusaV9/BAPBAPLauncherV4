@@ -383,16 +383,6 @@ export function SettingsWorkspace() {
 
                 <Group title="Startup & window">
                     <Row
-                        label="Rift opening animation"
-                        description="Crack the screen open and let the launcher emerge from a rift on launch."
-                        control={
-                            <Switch
-                                checked={settings.riftIntroEnabled}
-                                onCheckedChange={v => set("riftIntroEnabled", v)}
-                            />
-                        }
-                    />
-                    <Row
                         label="Minimize to tray on close"
                         description="Closing the window keeps it running in the system tray. Right-click the tray icon to quit."
                         control={
