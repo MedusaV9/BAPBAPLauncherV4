@@ -20,6 +20,7 @@ import {
     useSettings,
 } from "../query/hooks";
 import { useShellStore } from "../stores/useShellStore";
+import { useT } from "../i18n";
 import { api } from "../../api";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../../components/ui/dialog";
 import { Input } from "../../components/ui/input";
@@ -34,13 +35,14 @@ import { isTrustedTimeReady } from "../../helpers/unlock-ui";
 import { suggestProfileName, getInstallStateLabel, isInstallStateBusy } from "../../helpers/instances-ui";
 import { containerVariants, itemUp, EASE_POP } from "../../motion";
 import type { BundleSummary } from "../../../shared/ipc";
+import type { StringKey } from "../i18n/en";
 
-const BUNDLE_PROGRESS_LABEL: Record<string, string> = {
-    resolving: "Resolving…",
-    downloading: "Downloading…",
-    verifying: "Verifying…",
-    extracting: "Extracting…",
-    installing: "Installing…",
+const BUNDLE_PROGRESS_LABEL: Record<string, StringKey> = {
+    resolving: "instances.bundleProgressResolving",
+    downloading: "instances.bundleProgressDownloading",
+    verifying: "instances.bundleProgressVerifying",
+    extracting: "instances.bundleProgressExtracting",
+    installing: "instances.bundleProgressInstalling",
 };
 
 function suggestBundleProfileName(bundle: BundleSummary, instances: Array<{ profileName: string }>): string {
@@ -148,6 +150,7 @@ const HeroPanel = forwardRef<HTMLDivElement, {
     const artRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
     const [imgFailed, setImgFailed] = useState(false);
+    const t = useT();
     const Icon = MODE[data.track].icon;
 
     const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -260,7 +263,7 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                         </span>
                         {data.updateAvailable && (
                             <span className="rounded-full border border-gold/50 bg-gold/10 px-2 py-0.5 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-gold">
-                                Update
+                                {t("instances.updateBadge")}
                             </span>
                         )}
                     </span>
@@ -320,7 +323,7 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                             className="mt-1 inline-flex w-fit items-center gap-2 rounded-[0.625rem] border border-gold/50 bg-gold/10 px-5 py-3.5 font-body text-sm font-semibold uppercase tracking-[0.08em] text-gold transition-[filter,transform] duration-150 ease-pop hover:-translate-y-px hover:bg-gold/15"
                         >
                             <RefreshCw size={16} />
-                            {data.updateLabel ?? "Update"}
+                                {data.updateLabel ?? "Update"}
                         </button>
                     )}
                 </div>
@@ -330,6 +333,7 @@ const HeroPanel = forwardRef<HTMLDivElement, {
 });
 
 export function InstancesWorkspace() {
+    const t = useT();
     const { data: instances = [], isLoading } = useInstances();
     const { data: gameVersions } = useGameVersions();
     const { data: bundles = [] } = useBundles();
@@ -386,7 +390,7 @@ export function InstancesWorkspace() {
                     art: primaryBundle?.imageUrl,
                     installed,
                     available: primaryBundle?.isDownloadable ?? false,
-                    actionLabel: installed ? (updateAvailable ? "Update now" : "Play") : (primaryBundle?.isDownloadable ? "Install" : "Soon"),
+                    actionLabel: installed ? (updateAvailable ? t("instances.updateNowButton") : t("instances.playButton")) : (primaryBundle?.isDownloadable ? t("instances.installButton") : t("instances.soonLabel")),
                     onAction: () => {
                         if (!primaryBundle || !primaryBundle.isDownloadable) return;
                         if (updateAvailable && bundleInstance) {
@@ -401,7 +405,7 @@ export function InstancesWorkspace() {
                     secondaryLabel: undefined,
                     onSecondaryAction: undefined,
                     updateAvailable,
-                    updateLabel: applyBundleUpdate.isPending ? "Updating…" : "Update",
+                    updateLabel: applyBundleUpdate.isPending ? "Updating…" : t("instances.updateButton"),
                     onUpdate:
                         updateAvailable && bundleInstance
                             ? () => applyBundleUpdate.mutate(bundleInstance.id)
@@ -419,7 +423,7 @@ export function InstancesWorkspace() {
                 art: version?.imagePath,
                 installed,
                 available: Boolean(version),
-                actionLabel: installed ? "Play" : "Install",
+                actionLabel: installed ? t("instances.playButton") : t("instances.installButton"),
                 onAction: () => {
                     if (!version) return;
                     if (installed) setActiveWorkspace("launch");
@@ -472,7 +476,7 @@ export function InstancesWorkspace() {
             <div className="bap-page-ambient pointer-events-none absolute inset-0 z-0" />
             <div className="relative z-[1] h-full overflow-auto px-8 pb-8 pt-16">
             <SectionHeading subtitle="Pick your mode, then manage your profiles below.">
-                Instances
+                {t("instances.sectionHeading")}
             </SectionHeading>
 
             {busy && installState && (
@@ -489,7 +493,7 @@ export function InstancesWorkspace() {
             <div
                 className="mb-10"
                 role="radiogroup"
-                aria-label="Game modes"
+                aria-label={t("instances.gameModesSelectorAriaLabel")}
                 onKeyDown={(e: KeyboardEvent) => {
                     if (e.key === "ArrowRight") {
                         e.preventDefault();
@@ -523,7 +527,7 @@ export function InstancesWorkspace() {
                 {bundleInstalling && bundleProgress && (
                     <div className="mt-4 bap-card p-4">
                         <p className="mb-2 text-sm text-foreground">
-                            {BUNDLE_PROGRESS_LABEL[bundleProgress.status] ?? "Installing…"} — {MODE.bundle.title}
+                            {(BUNDLE_PROGRESS_LABEL[bundleProgress.status] ? t(BUNDLE_PROGRESS_LABEL[bundleProgress.status]) : t("instances.bundleProgressInstalling"))} — {MODE.bundle.title}
                         </p>
                         <Progress value={bundleProgress.progressPercent ?? 0} />
                     </div>
@@ -532,16 +536,16 @@ export function InstancesWorkspace() {
 
             {/* Installed profiles */}
             <div className="mb-3 flex items-center gap-2">
-                <h2 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">Your profiles</h2>
+                <h2 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{t("instances.yourProfilesHeading")}</h2>
                 <span className="rounded-full bg-white/[0.06] px-2 py-0.5 font-mono text-[0.6rem] text-muted-foreground">
                     {instances.length}
                 </span>
                 <span className="ml-1 h-px flex-1 bg-border" />
             </div>
-            {isLoading && <p className="text-sm text-muted-foreground">Loading instances…</p>}
+            {isLoading && <p className="text-sm text-muted-foreground">{t("instances.loadingInstancesMessage")}</p>}
             {instances.length === 0 && !isLoading && (
                 <div className="bap-card p-6 text-sm text-muted-foreground">
-                    No profiles yet. Pick a mode above to install your first one.
+                    {t("instances.emptyStateMessage")}
                 </div>
             )}
             <motion.div
@@ -575,33 +579,33 @@ export function InstancesWorkspace() {
                                     <button
                                         onClick={() => setActiveWorkspace("launch")}
                                         className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                        title="Play"
+                                        title={t("instances.playButton")}
                                     >
-                                        <Play size={13} /> Play
+                                        <Play size={13} /> {t("instances.playButton")}
                                     </button>
                                     {!isBundle && (
                                         <button
                                             onClick={() => openModsForInstance(instance.id)}
                                             className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                            title="Add mods"
+                                            title={t("instances.addModsButtonTitle")}
                                         >
-                                            <Package size={13} /> Mods
+                                            <Package size={13} /> {t("instances.modsButton")}
                                         </button>
                                     )}
                                     <span className="flex-1" />
                                     <button
                                         onClick={() => setRenameDraft({ id: instance.id, name: instance.profileName })}
                                         className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                        title="Rename"
-                                        aria-label="Rename profile"
+                                        title={t("instances.renameProfileDialogTitle")}
+                                        aria-label={t("instances.renameProfileAriaLabel")}
                                     >
                                         <Pencil size={13} />
                                     </button>
                                     <button
                                         onClick={() => setConfirmDelete({ id: instance.id, name: instance.profileName })}
                                         className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-                                        title="Delete"
-                                        aria-label="Delete profile"
+                                        title={t("instances.deleteProfileDialogTitle")}
+                                        aria-label={t("instances.deleteProfileAriaLabel")}
                                     >
                                         <Trash2 size={13} />
                                     </button>
@@ -616,24 +620,24 @@ export function InstancesWorkspace() {
             <Dialog open={Boolean(createDraft)} onOpenChange={open => !open && setCreateDraft(null)}>
                 <DialogContent className="max-w-md">
                     <DialogHeader>
-                        <DialogTitle>New instance</DialogTitle>
+                        <DialogTitle>{t("instances.newInstanceDialogTitle")}</DialogTitle>
                     </DialogHeader>
                     {createDraft && (
                         <div className="flex flex-col gap-4">
                             <label className="flex flex-col gap-1.5">
                                 <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground">
-                                    Name
+                                    {t("instances.nameInputLabel")}
                                 </span>
                                 <Input
                                     autoFocus
                                     value={createDraft.name}
                                     onChange={e => setCreateDraft({ ...createDraft, name: e.target.value })}
-                                    placeholder="My profile"
+                                    placeholder={t("instances.profileNamePlaceholder")}
                                 />
                             </label>
                             <label className="flex flex-col gap-1.5">
                                 <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground">
-                                    Install folder
+                                    {t("instances.installFolderLabel")}
                                 </span>
                                 <div className="flex items-center gap-2">
                                     <Input
@@ -645,8 +649,8 @@ export function InstancesWorkspace() {
                                     <Button
                                         variant="outline"
                                         size="icon"
-                                        title="Choose folder"
-                                        aria-label="Choose install folder"
+                                        title={t("instances.chooseFolderButtonTitle")}
+                                        aria-label={t("instances.chooseFolderAriaLabel")}
                                         onClick={async () => {
                                             const dir = await api.dialog.chooseDirectory({ title: "Choose install folder" });
                                             if (dir) setCreateDraft({ ...createDraft, folder: dir });
@@ -658,7 +662,7 @@ export function InstancesWorkspace() {
                             </label>
                             <div className="flex justify-end gap-2">
                                 <Button variant="ghost" onClick={() => setCreateDraft(null)}>
-                                    Cancel
+                                    {t("instances.cancelButton")}
                                 </Button>
                                 <Button
                                     disabled={!createDraft.name.trim() || installOfficial.isPending}
@@ -671,7 +675,7 @@ export function InstancesWorkspace() {
                                         setCreateDraft(null);
                                     }}
                                 >
-                                    <Download size={15} /> Install
+                                    <Download size={15} /> {t("instances.installButton")}
                                 </Button>
                             </div>
                         </div>
@@ -683,24 +687,24 @@ export function InstancesWorkspace() {
             <Dialog open={Boolean(bundleDraft)} onOpenChange={open => !open && setBundleDraft(null)}>
                 <DialogContent className="max-w-sm">
                     <DialogHeader>
-                        <DialogTitle>New Battle Royale profile</DialogTitle>
+                        <DialogTitle>{t("instances.newBattleRoyaleDialogTitle")}</DialogTitle>
                     </DialogHeader>
                     {bundleDraft && (
                         <div className="flex flex-col gap-4">
                             <label className="flex flex-col gap-1.5">
                                 <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-muted-foreground">
-                                    Name
+                                    {t("instances.nameInputLabel")}
                                 </span>
                                 <Input
                                     autoFocus
                                     value={bundleDraft.name}
                                     onChange={e => setBundleDraft({ ...bundleDraft, name: e.target.value })}
-                                    placeholder="Battle Royale"
+                                    placeholder={t("instances.battleRoyaleProfileNamePlaceholder")}
                                 />
                             </label>
                             <div className="flex justify-end gap-2">
                                 <Button variant="ghost" onClick={() => setBundleDraft(null)}>
-                                    Cancel
+                                    {t("instances.cancelButton")}
                                 </Button>
                                 <Button
                                     disabled={!bundleDraft.name.trim() || installBundle.isPending}
@@ -713,7 +717,7 @@ export function InstancesWorkspace() {
                                         }
                                     }}
                                 >
-                                    <Download size={15} /> {installBundle.isPending ? "Installing…" : "Install"}
+                                    <Download size={15} /> {installBundle.isPending ? t("instances.installingLabel") : t("instances.installButton")}
                                 </Button>
                             </div>
                         </div>
@@ -725,7 +729,7 @@ export function InstancesWorkspace() {
             <Dialog open={Boolean(renameDraft)} onOpenChange={open => !open && setRenameDraft(null)}>
                 <DialogContent className="max-w-sm">
                     <DialogHeader>
-                        <DialogTitle>Rename profile</DialogTitle>
+                        <DialogTitle>{t("instances.renameProfileDialogTitle")}</DialogTitle>
                     </DialogHeader>
                     {renameDraft && (
                         <div className="flex flex-col gap-4">
@@ -742,7 +746,7 @@ export function InstancesWorkspace() {
                             />
                             <div className="flex justify-end gap-2">
                                 <Button variant="ghost" onClick={() => setRenameDraft(null)}>
-                                    Cancel
+                                    {t("instances.cancelButton")}
                                 </Button>
                                 <Button
                                     disabled={!renameDraft.name.trim() || renameInstance.isPending}
@@ -751,7 +755,7 @@ export function InstancesWorkspace() {
                                         setRenameDraft(null);
                                     }}
                                 >
-                                    Save
+                                    {t("instances.saveButton")}
                                 </Button>
                             </div>
                         </div>
@@ -763,16 +767,16 @@ export function InstancesWorkspace() {
             <Dialog open={Boolean(confirmDelete)} onOpenChange={open => !open && setConfirmDelete(null)}>
                 <DialogContent className="max-w-sm">
                     <DialogHeader>
-                        <DialogTitle>Delete profile</DialogTitle>
+                        <DialogTitle>{t("instances.deleteProfileDialogTitle")}</DialogTitle>
                     </DialogHeader>
                     {confirmDelete && (
                         <div className="flex flex-col gap-4">
                             <p className="text-sm text-muted-foreground">
-                                Permanently delete <span className="font-display uppercase text-foreground">{confirmDelete.name}</span> and its files? This cannot be undone.
+                                {t("instances.deleteConfirmationMessage", { profileName: confirmDelete.name })}
                             </p>
                             <div className="flex justify-end gap-2">
                                 <Button variant="ghost" onClick={() => setConfirmDelete(null)}>
-                                    Cancel
+                                    {t("instances.cancelButton")}
                                 </Button>
                                 <Button
                                     variant="destructive"
@@ -782,7 +786,7 @@ export function InstancesWorkspace() {
                                         setConfirmDelete(null);
                                     }}
                                 >
-                                    <Trash2 size={15} /> Delete
+                                    <Trash2 size={15} /> {t("instances.deleteButton")}
                                 </Button>
                             </div>
                         </div>

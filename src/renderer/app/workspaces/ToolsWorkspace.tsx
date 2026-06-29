@@ -7,9 +7,11 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../../components/ui/ta
 import { RebalanceEmbedPanel } from "../../components/tools/RebalanceEmbedPanel";
 import { ConfigEditorPanel } from "../../components/tools/ConfigEditorPanel";
 import { cn } from "../lib/utils";
+import { useT } from "../i18n";
 import { useSettings, useUnlockTools, useInstances } from "../query/hooks";
 
 function UnlockGate() {
+    const t = useT();
     const unlockTools = useUnlockTools();
     const [code, setCode] = useState("");
     const [error, setError] = useState(false);
@@ -38,7 +40,7 @@ function UnlockGate() {
                         </span>
                     </div>
                     <div>
-                        <h2 className="font-display text-xl uppercase tracking-[0.04em] text-foreground">Restricted Access</h2>
+                        <h2 className="font-display text-xl uppercase tracking-[0.04em] text-foreground">{t("tools.restrictedAccessHeading")}</h2>
                     </div>
                     <div className={cn("w-full", error && "bap-shake")}>
                         <InputWell
@@ -48,7 +50,7 @@ function UnlockGate() {
                                 if (error) setError(false);
                             }}
                             onKeyDown={e => e.key === "Enter" && submit()}
-                            placeholder="ENTER UNLOCK CODE"
+                            placeholder={t("tools.enterUnlockCodePlaceholder")}
                             type="password"
                             autoFocus
                             className={cn(
@@ -57,7 +59,7 @@ function UnlockGate() {
                             )}
                         />
                         <p className={cn("mt-2 h-4 text-center font-mono text-xs text-destructive transition-opacity", error ? "opacity-100" : "opacity-0")}>
-                            That code didn't work.
+                            {t("tools.invalidUnlockCodeError")}
                         </p>
                     </div>
                     <Button
@@ -66,7 +68,7 @@ function UnlockGate() {
                         onClick={submit}
                         disabled={!code || unlockTools.isPending}
                     >
-                        <ShieldCheck size={16} /> Unlock
+                        <ShieldCheck size={16} /> {t("tools.unlockButton")}
                     </Button>
                 </BapCard>
             </div>
@@ -75,6 +77,7 @@ function UnlockGate() {
 }
 
 export function ToolsWorkspace() {
+    const t = useT();
     const { data: settings, isLoading: settingsLoading } = useSettings();
     const { data: instances } = useInstances();
     const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -106,17 +109,17 @@ export function ToolsWorkspace() {
             {/* Workbench header */}
             <div className="mb-4 flex flex-col gap-4 rounded-[1.125rem] border border-border bg-card p-5 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
-                    <h1 className="font-display text-lg uppercase leading-tight text-foreground">Tools</h1>
-                    <p className="text-xs text-muted-foreground">Rebalance Studio — author and tune content packs.</p>
+                    <h1 className="font-display text-lg uppercase leading-tight text-foreground">{t("tools.heading")}</h1>
+                    <p className="text-xs text-muted-foreground">{t("tools.subtitle")}</p>
                 </div>
                 <div className="flex items-center gap-3">
                     <span className="flex items-center gap-1.5 rounded-[0.625rem] border border-accent/30 bg-accent/10 px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.14em] text-accent">
-                        <ShieldCheck size={12} /> Unlocked
+                        <ShieldCheck size={12} /> {t("tools.unlockedStatus")}
                     </span>
                     <select
                         value={selectedId ?? ""}
                         onChange={e => setSelectedId(e.target.value)}
-                        aria-label="Profile"
+                        aria-label={t("tools.profileLabel")}
                         className="focus-ring h-10 rounded-[0.625rem] border border-input bg-[var(--surface-inset)] px-3 text-sm text-foreground transition-colors hover:border-white/20"
                     >
                         {instances?.map(i => (
@@ -136,13 +139,13 @@ export function ToolsWorkspace() {
                                 value="rebalance"
                                 className="rounded-none border-b-2 border-transparent bg-transparent px-3 pb-2.5 pt-1 font-medium text-muted-foreground data-[state=active]:border-accent data-[state=active]:bg-transparent data-[state=active]:font-semibold data-[state=active]:text-foreground"
                             >
-                                Rebalance Studio
+                                {t("tools.rebalanceStudioTab")}
                             </TabsTrigger>
                             <TabsTrigger
                                 value="config"
                                 className="rounded-none border-b-2 border-transparent bg-transparent px-3 pb-2.5 pt-1 font-medium text-muted-foreground data-[state=active]:border-accent data-[state=active]:bg-transparent data-[state=active]:font-semibold data-[state=active]:text-foreground"
                             >
-                                Config editor
+                                {t("tools.configEditorTab")}
                             </TabsTrigger>
                         </TabsList>
                         <TabsContent value="rebalance" className="min-h-0 flex-1">
@@ -154,7 +157,7 @@ export function ToolsWorkspace() {
                     </Tabs>
                 ) : (
                     <BapCard className="p-6 text-sm text-muted-foreground">
-                        Install an instance to use these tools.
+                        {t("tools.emptyStateMessage")}
                     </BapCard>
                 )}
             </div>

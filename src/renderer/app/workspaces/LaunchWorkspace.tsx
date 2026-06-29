@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../../componen
 import { Input } from "../../components/ui/input";
 import { cn } from "../lib/utils";
 import { useShellStore } from "../stores/useShellStore";
+import { useT } from "../i18n";
 import {
     useInstances,
     useRuntimeState,
@@ -125,6 +126,7 @@ const LaunchBackdrop = memo(function LaunchBackdrop({
 });
 
 export function LaunchWorkspace() {
+    const t = useT();
     const { data: instances } = useInstances();
     const { data: runtime } = useRuntimeState();
     const { data: log } = useRuntimeLog();
@@ -204,8 +206,8 @@ export function LaunchWorkspace() {
     if (instances && instances.length === 0) {
         return (
             <div className="flex h-full flex-col overflow-hidden px-8 pb-8 pt-16">
-                <SectionHeading eyebrow="Play" subtitle="Pick a profile, launch the game, and watch live runtime logs.">
-                    Start
+                <SectionHeading eyebrow={t("launch.eyebrow")} subtitle={t("launch.subtitle")}>
+                    {t("launch.heading")}
                 </SectionHeading>
                 <div className="flex min-h-0 flex-1 items-center justify-center">
                     <BapCard className="flex max-w-md flex-col items-center gap-4 p-10 text-center">
@@ -213,13 +215,13 @@ export function LaunchWorkspace() {
                             <Boxes size={26} className="text-muted-foreground" />
                         </div>
                         <div>
-                            <h2 className="font-display text-lg text-foreground">No profiles yet</h2>
+                            <h2 className="font-display text-lg text-foreground">{t("launch.emptyStateHeading")}</h2>
                             <p className="mt-1 text-sm text-muted-foreground">
-                                Install a game version or bundle to create your first profile, then come back here to play.
+                                {t("launch.emptyStateDescription")}
                             </p>
                         </div>
                         <BapButton onClick={() => setActiveWorkspace("instances")} icon={Boxes} showChevron={false}>
-                            Go to Instances
+                            {t("launch.goToInstancesButton")}
                         </BapButton>
                     </BapCard>
                 </div>
@@ -262,8 +264,8 @@ export function LaunchWorkspace() {
                     <button
                         onClick={() => setVideoPaused(p => !p)}
                         className="focus-ring absolute right-6 bottom-6 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-black/40 text-foreground backdrop-blur transition-colors hover:border-accent/60 hover:bg-black/55"
-                        title={videoPaused ? "Play background video" : "Pause background video"}
-                        aria-label={videoPaused ? "Play background video" : "Pause background video"}
+                        title={videoPaused ? t("launch.playBackgroundVideo") : t("launch.pauseBackgroundVideo")}
+                        aria-label={videoPaused ? t("launch.playBackgroundVideo") : t("launch.pauseBackgroundVideo")}
                     >
                         {videoPaused ? <Play size={15} className="translate-x-0.5" /> : <Pause size={15} />}
                     </button>
@@ -299,7 +301,7 @@ export function LaunchWorkspace() {
                         {selectedInstance?.melonLoaderFirstRunPending && (
                             <div className="flex w-fit gap-2 rounded-[0.625rem] border border-gold/35 bg-gold/10 p-2 text-xs leading-relaxed text-gold">
                                 <Clock3 size={14} className="mt-0.5 shrink-0" />
-                                <span>First launch can take longer while MelonLoader finishes setup.</span>
+                                <span>{t("launch.melonLoaderWarning")}</span>
                             </div>
                         )}
 
@@ -313,7 +315,7 @@ export function LaunchWorkspace() {
                                     disabled={status !== "running"}
                                     size="xl"
                                 >
-                                    Stop
+                                    {t("launch.stopButton")}
                                 </BapButton>
                             ) : (
                                 <BapButton
@@ -326,7 +328,7 @@ export function LaunchWorkspace() {
                                     magnetic
                                     glow
                                 >
-                                    Launch
+                                    {t("launch.launchButton")}
                                 </BapButton>
                             )}
                             {selectedInstance?.officialTrack === "boss-rush" && (
@@ -341,7 +343,7 @@ export function LaunchWorkspace() {
                                     magnetic
                                     glow
                                 >
-                                    Leaderboard
+                                    {t("launch.leaderboardButton")}
                                 </BapButton>
                             )}
                             {selectedId && defaultProfileId !== selectedId && (
@@ -351,7 +353,7 @@ export function LaunchWorkspace() {
                                     }
                                     className="focus-ring flex items-center gap-1.5 text-sm text-muted-foreground hover:text-accent"
                                 >
-                                    <Star size={13} /> Set as default profile
+                                    <Star size={13} /> {t("launch.setDefaultProfileButton")}
                                 </button>
                             )}
                         </div>
@@ -361,14 +363,14 @@ export function LaunchWorkspace() {
                                 onClick={() => setSwitcherOpen(true)}
                                 className="focus-ring flex items-center gap-2 rounded-full border border-border bg-card/90 px-5 py-3 text-base text-foreground transition-colors hover:border-accent/60"
                             >
-                                <ArrowLeftRight size={16} /> Switch instance
+                                <ArrowLeftRight size={16} /> {t("launch.switchInstanceButton")}
                             </button>
                             {selectedId && selectedInstance?.instanceType !== "bundle" && (
                                 <button
                                     onClick={() => openModsForInstance(selectedId)}
                                     className="focus-ring flex items-center gap-2 rounded-full border border-border bg-card/90 px-5 py-3 text-base text-foreground transition-colors hover:border-accent/60"
                                 >
-                                    <Package size={14} /> Add mods
+                                    <Package size={14} /> {t("launch.addModsButton")}
                                 </button>
                             )}
                         </div>
@@ -385,9 +387,9 @@ export function LaunchWorkspace() {
                         aria-expanded={logExpanded}
                     >
                         <Terminal size={15} className="text-accent" />
-                        <span className="font-display text-xs text-foreground">Runtime log</span>
+                        <span className="font-display text-xs text-foreground">{t("launch.runtimeLogLabel")}</span>
                         <span className="rounded-full bg-white/[0.06] px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-wide text-muted-foreground">
-                            {lineCount} {lineCount === 1 ? "line" : "lines"}
+                            {lineCount} {lineCount === 1 ? t("launch.lineSingular") : t("launch.linePlural")}
                         </span>
                     </button>
                     <div className="flex items-center gap-1">
@@ -401,13 +403,13 @@ export function LaunchWorkspace() {
                                     )}
                                     title="Toggle autoscroll"
                                 >
-                                    Auto
+                                    {t("launch.autoButton")}
                                 </button>
                                 <button
                                     onClick={copyLog}
                                     className="focus-ring rounded-md p-1.5 text-muted-foreground hover:text-foreground"
-                                    title="Copy log"
-                                    aria-label="Copy log"
+                                    title={t("launch.copyLogButton")}
+                                    aria-label={t("launch.copyLogButton")}
                                 >
                                     <Copy size={14} />
                                 </button>
@@ -416,7 +418,7 @@ export function LaunchWorkspace() {
                         <button
                             onClick={() => setLogExpanded(v => !v)}
                             className="focus-ring rounded-md p-1.5 text-muted-foreground hover:text-foreground"
-                            aria-label={logExpanded ? "Collapse runtime log" : "Expand runtime log"}
+                            aria-label={logExpanded ? t("launch.collapseRuntimeLog") : t("launch.expandRuntimeLog")}
                         >
                             {logExpanded ? <ChevronDown size={15} /> : <ChevronUp size={15} />}
                         </button>
@@ -435,7 +437,7 @@ export function LaunchWorkspace() {
                         >
                             <ScrollArea ref={logViewport} className="h-[clamp(160px,32vh,320px)] bg-background">
                                 <div className="p-4 font-mono text-[0.78rem] leading-[1.55] text-muted-foreground">
-                                    {lineCount === 0 && <p className="text-muted-foreground">No output yet.</p>}
+                                    {lineCount === 0 && <p className="text-muted-foreground">{t("launch.noOutput")}</p>}
                                     {log?.map(entry => (
                                         <div
                                             key={entry.id}
@@ -460,7 +462,7 @@ export function LaunchWorkspace() {
                                     onClick={scrollToBottom}
                                     className="focus-ring absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-accent px-3 py-1.5 text-xs font-medium text-accent-foreground shadow-soft-lg"
                                 >
-                                    <ArrowDownToLine size={14} /> Jump to latest
+                                    <ArrowDownToLine size={14} /> {t("launch.jumpToLatest")}
                                 </button>
                             )}
                         </motion.div>
@@ -471,7 +473,7 @@ export function LaunchWorkspace() {
             <Dialog open={switcherOpen} onOpenChange={setSwitcherOpen}>
                 <DialogContent className="max-w-md">
                     <DialogHeader>
-                        <DialogTitle>Switch instance</DialogTitle>
+                        <DialogTitle>{t("launch.switchInstanceButton")}</DialogTitle>
                     </DialogHeader>
                     {(instances?.length ?? 0) > 6 && (
                         <div className="relative">
@@ -479,8 +481,8 @@ export function LaunchWorkspace() {
                             <Input
                                 value={switcherQuery}
                                 onChange={e => setSwitcherQuery(e.target.value)}
-                                placeholder="Search instances…"
-                                aria-label="Search instances"
+                                placeholder={t("launch.searchInstancesPlaceholder")}
+                                aria-label={t("launch.searchInstancesAriaLabel")}
                                 className="pl-9"
                                 autoFocus
                             />
@@ -544,7 +546,7 @@ export function LaunchWorkspace() {
                         }}
                         className="focus-ring flex items-center justify-center gap-1.5 rounded-[0.625rem] border border-dashed border-border py-2.5 text-sm text-muted-foreground transition-colors hover:border-accent/50 hover:text-foreground"
                     >
-                        <Boxes size={14} /> New instance
+                        <Boxes size={14} /> {t("launch.newInstanceButton")}
                     </button>
                 </DialogContent>
             </Dialog>

@@ -16,11 +16,19 @@ type Dict = Partial<Record<StringKey, string>>;
 
 const DICTS: Record<LanguageCode, Dict> = { en, de, ru, es, fr, nl, pt, tr, zh, ja };
 
-export type TranslateFn = (key: StringKey, fallback?: string) => string;
+export type TranslateParams = Record<string, string | number>;
+export type TranslateFn = (key: StringKey, params?: TranslateParams) => string;
+
+function interpolate(template: string, params?: TranslateParams): string {
+    if (!params) return template;
+    return template.replace(/\{(\w+)\}/g, (match, name) =>
+        name in params ? String(params[name]) : match
+    );
+}
 
 const I18nContext = createContext<{ language: LanguageCode; t: TranslateFn }>({
     language: "en",
-    t: (key, fallback) => fallback ?? en[key] ?? key,
+    t: (key, params) => interpolate(en[key] ?? key, params),
 });
 
 export function I18nProvider({ children }: { children: ReactNode }) {
@@ -28,7 +36,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
     const language = normalizeLanguage(settings?.language);
 
     const t = useCallback<TranslateFn>(
-        (key, fallback) => DICTS[language]?.[key] ?? en[key] ?? fallback ?? key,
+        (key, params) => interpolate(DICTS[language]?.[key] ?? en[key] ?? key, params),
         [language]
     );
 
