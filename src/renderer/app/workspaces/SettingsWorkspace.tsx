@@ -228,7 +228,7 @@ export function SettingsWorkspace() {
         <div className="bap-glow relative h-full overflow-auto px-8 pb-8 pt-16">
             <ControlPanelHeader />
 
-            <div className="flex max-w-2xl flex-col gap-7">
+            <div className="max-w-5xl columns-1 gap-7 lg:columns-2 [&>*]:mb-7 [&>*]:break-inside-avoid">
                 <Group title="Updates">
                     <Row
                         label="Automatic updates"
