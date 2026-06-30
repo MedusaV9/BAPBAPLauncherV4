@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, forwardRef, type KeyboardEvent } from "react";
 import { Download, Play, Boxes, Package, Layers, Sword, RefreshCw, Pencil, Trash2, FolderOpen } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
-import { SectionHeading } from "../../components/brand/SectionHeading";
 import { FeatureCard } from "../../components/brand/FeatureCard";
 import { Progress } from "../../components/ui/progress";
 import { cn } from "../lib/utils";
@@ -474,11 +473,7 @@ export function InstancesWorkspace() {
             {/* Full-page atmosphere behind the scroll, so the background reads as
                 the whole page rather than a band clipped to the hero. */}
             <div className="bap-page-ambient pointer-events-none absolute inset-0 z-0" />
-            <div className="relative z-[1] h-full overflow-auto px-8 pb-8 pt-16">
-            <SectionHeading subtitle="Pick your mode, then manage your profiles below.">
-                {t("instances.sectionHeading")}
-            </SectionHeading>
-
+            <div className="relative z-[1] h-full overflow-auto px-8 pb-8 pt-24">
             {busy && installState && (
                 <div className="bap-card mb-6 p-4">
                     <p className="mb-2 text-sm text-foreground">

@@ -28,6 +28,8 @@ const en = {
     "settings.group.startupWindow": "Startup & window",
     "settings.group.security": "Security & tools",
     "settings.group.migration": "Migration",
+    "settings.group.account": "Account",
+    "settings.account.username": "Steam username",
 
     // Settings — language
     "settings.language.label": "Language",
@@ -43,6 +45,57 @@ const en = {
     // Settings — display
     "settings.uiScale.label": "UI scale",
     "settings.uiScale.description": "Make the interface larger or smaller.",
+
+    // Settings — header
+    "settings.loading": "Loading settings…",
+    "settings.header.signedInSteam": "Signed in via Steam",
+    "settings.header.noSteam": "No Steam profile detected",
+    "settings.header.build": "Build",
+    "settings.header.profiles": "Profiles",
+
+    // Settings — updates
+    "settings.autoUpdate.label": "Automatic updates",
+    "settings.autoUpdate.description": "Check for launcher updates on startup.",
+    "settings.autoDownload.label": "Auto-download updates",
+    "settings.autoDownload.description": "Download updates in the background when available.",
+    "settings.checkUpdate.label": "Check for launcher updates",
+    "settings.checkUpdate.description": "Look for a newer launcher version now.",
+    "settings.checkUpdate.checking": "Checking…",
+    "settings.checkUpdate.action": "Check now",
+    "settings.refresh.label": "Refresh content library",
+    "settings.refresh.description": "Re-fetch the manifest (versions, mods, bundles) from the source.",
+    "settings.refresh.refreshing": "Refreshing…",
+    "settings.refresh.action": "Refresh",
+
+    // Settings — launch
+    "settings.melonConsole.label": "Show MelonLoader console",
+    "settings.melonConsole.description": "Open the MelonLoader console window when launching.",
+    "settings.autoplayVideos.label": "Autoplay background videos",
+    "settings.autoplayVideos.description": "Play the animated mode video on the Start tab (disable for a static image).",
+
+    // Settings — storage
+    "settings.instancesFolder.label": "Instances folder",
+    "settings.instancesFolder.description": "Where game versions and profiles are installed.",
+    "settings.chooseFolder": "Choose instances folder",
+
+    // Settings — manifest
+    "settings.manifestUrl.label": "Manifest URL",
+    "settings.manifestUrl.description": "Source for versions, mods, and bundles.",
+
+    // Settings — motion
+    "settings.motion.label": "Enable motion",
+    "settings.motion.description": "Animate transitions and reveals (disable for calm mode).",
+
+    // Settings — security
+    "settings.resetTools.label": "Reset Tools access",
+    "settings.resetTools.description": "Reset Tools unlock state.",
+    "settings.resetTools.action": "Reset tools",
+
+    // Settings — migration
+    "settings.migration.label": "Import V3 instances",
+    "settings.migration.description": "Copy profiles from the legacy BAPBAP Launcher (V3) into this version. Installed mod files are preserved and will be recognized after re-syncing the Mods tab.",
+    "settings.migration.importing": "Importing…",
+    "settings.migration.action": "Import V3 profiles",
 
     // Mods
     "mods.translationWarning": "Mod translations are not a feature for the time being.",

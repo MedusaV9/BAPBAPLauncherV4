@@ -1,7 +1,6 @@
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Search, Plus, Check, Power, X, Package as PackageIcon, Trash2, Download } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
-import { SectionHeading } from "../../components/brand/SectionHeading";
 import { FeatureCard } from "../../components/brand/FeatureCard";
 import { StatusPill, type StatusTone } from "../../components/brand/StatusPill";
 import { Input } from "../../components/ui/input";
@@ -413,11 +412,7 @@ export function ModsWorkspace() {
     }
 
     return (
-        <div className="bap-glow relative h-full overflow-y-auto px-8 pb-8 pt-16">
-            <SectionHeading subtitle="Browse the catalog and manage mods per profile.">
-                Mods
-            </SectionHeading>
-
+        <div className="bap-glow relative h-full overflow-y-auto px-8 pb-8 pt-24">
             {language !== "en" && (
                 <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-amber-400/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
                     <PackageIcon size={16} className="mt-0.5 shrink-0" />
