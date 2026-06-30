@@ -10,6 +10,7 @@ import { ModSetsBar } from "../../components/mods/ModSetsBar";
 import { ModDetailDialog } from "../../components/mods/ModDetailDialog";
 import { cn } from "../lib/utils";
 import { useShellStore } from "../stores/useShellStore";
+import { useT, useLanguage } from "../i18n";
 import {
     useInstances,
     useManifestIndex,
@@ -274,6 +275,8 @@ function ModCard({
 }
 
 export function ModsWorkspace() {
+    const t = useT();
+    const language = useLanguage();
     const { data: instances } = useInstances();
     const { data: manifestIndex } = useManifestIndex();
     const pendingModsInstanceId = useShellStore(s => s.pendingModsInstanceId);
@@ -414,6 +417,13 @@ export function ModsWorkspace() {
             <SectionHeading subtitle="Browse the catalog and manage mods per profile.">
                 Mods
             </SectionHeading>
+
+            {language !== "en" && (
+                <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-amber-400/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
+                    <PackageIcon size={16} className="mt-0.5 shrink-0" />
+                    <p className="min-w-0 flex-1">{t("mods.translationWarning")}</p>
+                </div>
+            )}
 
             {showError && (
                 <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">

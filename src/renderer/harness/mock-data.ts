@@ -113,6 +113,9 @@ export const harnessSettings: AppSettings = {
     radioAutoplayOnLaunch: false,
     radioRememberPlaybackState: true,
     uiScale: 1,
+    closeToTrayEnabled: true,
+    language: "en",
+    brAccountId: "custom-harness00000",
 };
 
 export const harnessBuildInfo = {

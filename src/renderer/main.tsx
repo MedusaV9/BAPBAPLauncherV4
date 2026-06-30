@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { AppShell } from "./app/shell/AppShell";
+import { I18nProvider } from "./app/i18n";
 import { queryClient } from "./app/query/queryClient";
 import { installEventBridge } from "./app/query/eventBridge";
 import "@fontsource/inter/400.css";
@@ -26,7 +27,9 @@ if (!container) {
 createRoot(container).render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
-            <Root />
+            <I18nProvider>
+                <Root />
+            </I18nProvider>
         </QueryClientProvider>
     </React.StrictMode>
 );

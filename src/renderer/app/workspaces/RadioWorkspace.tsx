@@ -7,6 +7,7 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { useRadioPlayerStore } from "../stores/useRadioPlayerStore";
+import { useT, type TranslateFn } from "../i18n";
 import { cn } from "../lib/utils";
 import {
     useRadioState,
@@ -37,6 +38,7 @@ function AddToPlaylistMenu({
     onCreate: (name: string) => void;
     onClose: () => void;
 }) {
+    const t = useT();
     const [creating, setCreating] = useState(false);
     const [name, setName] = useState("");
     return (
@@ -48,10 +50,10 @@ function AddToPlaylistMenu({
                 role="menu"
             >
                 <p className="px-2 py-1 font-mono text-[0.6rem] uppercase tracking-wide text-muted-foreground">
-                    Add to playlist
+                    {t("radio.addToPlaylist")}
                 </p>
                 {playlists.length === 0 && !creating && (
-                    <p className="px-2 py-1 text-xs text-muted-foreground">No playlists yet</p>
+                    <p className="px-2 py-1 text-xs text-muted-foreground">{t("radio.noPlaylistsYet")}</p>
                 )}
                 {playlists.map(pl => (
                     <button
@@ -79,7 +81,7 @@ function AddToPlaylistMenu({
                                 setCreating(false);
                             }
                         }}
-                        placeholder="New playlist…"
+                        placeholder={t("radio.newPlaylist")}
                         className="h-7 text-xs"
                     />
                 ) : (
@@ -87,7 +89,7 @@ function AddToPlaylistMenu({
                         onClick={() => setCreating(true)}
                         className="focus-ring flex w-full items-center gap-2 rounded px-2 py-1.5 text-left text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                     >
-                        <Plus size={13} className="shrink-0" /> New playlist…
+                        <Plus size={13} className="shrink-0" /> {t("radio.newPlaylist")}
                     </button>
                 )}
             </div>
@@ -132,29 +134,30 @@ function formatTime(seconds: number): string {
     return `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, "0")}`;
 }
 
-function formatSyncTime(value?: string): string {
-    if (!value) return "Never synced";
+function formatSyncTime(value: string | undefined, t: TranslateFn): string {
+    if (!value) return t("radio.neverSynced");
     const d = new Date(value);
-    if (!Number.isFinite(d.getTime())) return "Sync time unknown";
+    if (!Number.isFinite(d.getTime())) return t("radio.syncTimeUnknown");
     return `Synced ${d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}`;
 }
 
-function syncStatusLabel(status: string): string {
+function syncStatusLabel(status: string, t: TranslateFn): string {
     switch (status) {
         case "syncing":
-            return "Syncing";
+            return t("radio.syncingStatus");
         case "ready":
-            return "Ready";
+            return t("radio.readyStatus");
         case "error":
-            return "Sync error";
+            return t("radio.syncErrorStatus");
         case "unconfigured":
-            return "Not configured";
+            return t("radio.notConfiguredStatus");
         default:
-            return "Idle";
+            return t("radio.idleStatus");
     }
 }
 
 function SeekBar({ durationSeconds }: { durationSeconds: number }) {
+    const t = useT();
     const positionSeconds = useRadioPlayerStore(s => s.positionSeconds);
     const seekHandler = useRadioPlayerStore(s => s.seekHandler);
     const trackRef = useRef<HTMLDivElement>(null);
@@ -178,7 +181,7 @@ function SeekBar({ durationSeconds }: { durationSeconds: number }) {
             <div
                 ref={trackRef}
                 role="slider"
-                aria-label="Seek"
+                aria-label={t("radio.seekLabel")}
                 aria-valuemin={0}
                 aria-valuemax={Math.round(duration)}
                 aria-valuenow={Math.round(display)}
@@ -256,6 +259,7 @@ function NowPlayingStage({
     onVolume: (v: number) => void;
     onToggleMute: () => void;
 }) {
+    const t = useT();
     const [artFailed, setArtFailed] = useState(false);
     const showArt = art && !artFailed;
 
@@ -299,9 +303,9 @@ function NowPlayingStage({
 
                     {audioError && (
                         <div className="rounded-[0.625rem] border border-destructive/40 bg-destructive/10 px-3 py-2 text-xs text-destructive">
-                            <p className="font-display uppercase tracking-[0.12em]">Audio could not start</p>
+                            <p className="font-display uppercase tracking-[0.12em]">{t("radio.audioCouldNotStart")}</p>
                             <p className="mt-1 break-words font-mono text-[0.7rem] text-destructive/90">{audioError}</p>
-                            <p className="mt-1 text-destructive/80">Try another track or sync the station again.</p>
+                            <p className="mt-1 text-destructive/80">{t("radio.audioErrorHint")}</p>
                         </div>
                     )}
 
@@ -311,8 +315,8 @@ function NowPlayingStage({
                         <div className="flex items-center gap-2">
                             <button
                                 onClick={onToggleShuffle}
-                                title="Shuffle"
-                                aria-label="Toggle shuffle"
+                                title={t("radio.shuffleButton")}
+                                aria-label={t("radio.toggleShuffleLabel")}
                                 aria-pressed={shuffleEnabled}
                                 className={cn(
                                     "focus-ring flex h-9 w-9 items-center justify-center rounded-full transition-colors",
@@ -323,8 +327,8 @@ function NowPlayingStage({
                             </button>
                             <button
                                 onClick={onPrev}
-                                title="Previous"
-                                aria-label="Previous track"
+                                title={t("radio.previousButton")}
+                                aria-label={t("radio.previousTrackLabel")}
                                 className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent/60"
                             >
                                 <SkipBack size={18} />
@@ -332,16 +336,16 @@ function NowPlayingStage({
                             <button
                                 onClick={onTogglePlay}
                                 disabled={!canPlay}
-                                title={isPlaying ? "Pause" : "Play"}
-                                aria-label={isPlaying ? "Pause" : "Play"}
+                                title={isPlaying ? t("radio.pauseButton") : t("radio.playButton")}
+                                aria-label={isPlaying ? t("radio.pauseButton") : t("radio.playButton")}
                                 className="focus-ring flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground transition-transform duration-150 ease-pop hover:scale-[1.04] active:scale-95 disabled:opacity-50"
                             >
                                 {isPlaying ? <Pause size={26} /> : <Play size={26} className="translate-x-0.5" />}
                             </button>
                             <button
                                 onClick={onNext}
-                                title="Next"
-                                aria-label="Next track"
+                                title={t("radio.nextButton")}
+                                aria-label={t("radio.nextTrackLabel")}
                                 className="focus-ring flex h-10 w-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent/60"
                             >
                                 <SkipForward size={18} />
@@ -349,7 +353,7 @@ function NowPlayingStage({
                             <button
                                 onClick={onCycleLoop}
                                 title={`Loop: ${loopMode}`}
-                                aria-label="Cycle loop mode"
+                                aria-label={t("radio.cycleLoopLabel")}
                                 aria-pressed={loopMode !== "off"}
                                 className={cn(
                                     "focus-ring flex h-9 w-9 items-center justify-center rounded-full transition-colors",
@@ -363,8 +367,8 @@ function NowPlayingStage({
                         <div className="ml-auto flex items-center gap-2">
                             <button
                                 onClick={onToggleMute}
-                                title={muted ? "Unmute" : "Mute"}
-                                aria-label={muted ? "Unmute" : "Mute"}
+                                title={muted ? t("radio.unmuteButton") : t("radio.muteButton")}
+                                aria-label={muted ? t("radio.unmuteButton") : t("radio.muteButton")}
                                 className="focus-ring flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground"
                             >
                                 {muted || volume === 0 ? <VolumeX size={17} /> : <Volume2 size={17} />}
@@ -388,6 +392,7 @@ function NowPlayingStage({
 }
 
 export function RadioWorkspace() {
+    const t = useT();
     const { data: radio, isLoading, isError, error, refetch, isFetching } = useRadioState();
     const audioError = useRadioPlayerStore(s => s.errorMessage);
     const setPlayback = useSetRadioPlayback();
@@ -509,7 +514,7 @@ export function RadioWorkspace() {
     const syncProgress = sync.progressPercent ?? 0;
     const syncDetail = sync.status === "syncing"
         ? `${syncProgress}% · ${sync.availableTrackCount}/${sync.trackCount} tracks ready`
-        : `${sync.availableTrackCount}/${sync.trackCount} tracks ready · ${formatSyncTime(sync.lastSyncedAtUtc)}`;
+        : `${sync.availableTrackCount}/${sync.trackCount} tracks ready · ${formatSyncTime(sync.lastSyncedAtUtc, t)}`;
 
     return (
         <div className="bap-glow flex h-full flex-col overflow-hidden px-8 pb-8 pt-16">
@@ -524,7 +529,7 @@ export function RadioWorkspace() {
                             sync.status === "error" ? "text-destructive" : sync.status === "syncing" ? "text-accent" : "text-foreground"
                         )}>
                             <RefreshCw size={13} className={cn(sync.status === "syncing" && "animate-spin")} />
-                            {syncStatusLabel(sync.status)}
+                            {syncStatusLabel(sync.status, t)}
                         </span>
                         <span className="h-3 w-px bg-border" />
                         <span className="font-mono">{syncDetail}</span>
@@ -574,12 +579,12 @@ export function RadioWorkspace() {
                     {queueTracks.length > 0 && (
                         <BapCard className="flex max-h-[38%] shrink-0 flex-col overflow-hidden p-0">
                             <div className="flex items-center justify-between border-b border-border px-4 py-2">
-                                <span className="font-display text-xs uppercase tracking-[0.12em] text-foreground">Up next ({queueTracks.length})</span>
+                                <span className="font-display text-xs uppercase tracking-[0.12em] text-foreground">{t("radio.upNextLabel")} ({queueTracks.length})</span>
                                 <button
                                     onClick={() => clearQueue.mutate()}
                                     className="focus-ring rounded px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-muted hover:text-destructive"
                                 >
-                                    Clear
+                                    {t("radio.clearButton")}
                                 </button>
                             </div>
                             <ScrollArea className="min-h-0 flex-1">
@@ -591,8 +596,8 @@ export function RadioWorkspace() {
                                             <button
                                                 onClick={() => removeFromQueue.mutate(track.id)}
                                                 className="focus-ring shrink-0 rounded p-1 text-muted-foreground opacity-0 transition-all hover:text-destructive group-hover:opacity-100"
-                                                title="Remove from queue"
-                                                aria-label="Remove from queue"
+                                                title={t("radio.removeFromQueue")}
+                                                aria-label={t("radio.removeFromQueue")}
                                             >
                                                 <X size={14} />
                                             </button>
@@ -605,17 +610,17 @@ export function RadioWorkspace() {
 
                     {/* Tracks */}
                     <div className="flex min-h-0 flex-1 flex-col">
-                        <span className="mb-2 font-display text-xs uppercase tracking-[0.16em] text-muted-foreground">Tracks</span>
+                        <span className="mb-2 font-display text-xs uppercase tracking-[0.16em] text-muted-foreground">{t("radio.tracksLabel")}</span>
 
                         {/* Collection switcher */}
                         <div className="mb-3 flex flex-wrap items-center gap-2">
                             <CollectionChip
-                                label="All tracks"
+                                label={t("radio.allTracks")}
                                 active={collection.kind === "all-tracks"}
                                 onClick={() => selectCollection({ kind: "all-tracks" })}
                             />
                             <CollectionChip
-                                label="Favorites"
+                                label={t("radio.favorites")}
                                 active={collection.kind === "favorites"}
                                 onClick={() => selectCollection({ kind: "favorites" })}
                             />
@@ -631,7 +636,7 @@ export function RadioWorkspace() {
                                             if (e.key === "Enter") submitRenamePlaylist(pl.id);
                                             if (e.key === "Escape") setRenamingId(null);
                                         }}
-                                        placeholder="Playlist name…"
+                                        placeholder={t("radio.playlistNamePlaceholder")}
                                         className="h-8 w-40"
                                     />
                                 ) : (
@@ -680,16 +685,16 @@ export function RadioWorkspace() {
                                             setCreatingPlaylist(false);
                                         }
                                     }}
-                                    placeholder="Playlist name…"
+                                    placeholder={t("radio.playlistNamePlaceholder")}
                                     className="h-8 w-40"
                                 />
                             ) : (
                                 <button
                                     onClick={() => setCreatingPlaylist(true)}
                                     className="focus-ring flex items-center gap-1 rounded-full border border-dashed border-border px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-[0.1em] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                                    title="New playlist"
+                                    title={t("radio.newPlaylist")}
                                 >
-                                    <Plus size={13} /> Playlist
+                                    <Plus size={13} /> {t("radio.playlistButton")}
                                 </button>
                             )}
                         </div>
@@ -700,8 +705,8 @@ export function RadioWorkspace() {
                                 {visibleTracks.length === 0 && (
                                     <p className="text-sm text-muted-foreground">
                                         {tracks.length === 0
-                                            ? "No tracks yet — sync the station to load the library."
-                                            : "Nothing in this collection yet."}
+                                            ? t("radio.noTracksEmpty")
+                                            : t("radio.emptyCollection")}
                                     </p>
                                 )}
                                 {visibleTracks.map((track, index) => {
@@ -731,7 +736,7 @@ export function RadioWorkspace() {
                                             </div>
                                             {!track.availableOffline && (
                                                 <span className="shrink-0 font-mono text-[0.6rem] uppercase tracking-wide text-muted-foreground">
-                                                    not downloaded
+                                                    {t("radio.notDownloaded")}
                                                 </span>
                                             )}
                                             <button
@@ -741,8 +746,8 @@ export function RadioWorkspace() {
                                                     setAddToPlaylist({ trackId: track.id, x: r.right - 192, y: r.bottom + 4 });
                                                 }}
                                                 className="focus-ring shrink-0 rounded p-1 text-muted-foreground opacity-0 transition-all hover:text-foreground group-hover:opacity-100"
-                                                title="Add to playlist"
-                                                aria-label="Add to playlist"
+                                                title={t("radio.addToPlaylist")}
+                                                aria-label={t("radio.addToPlaylist")}
                                             >
                                                 <Plus size={16} />
                                             </button>

@@ -36,6 +36,9 @@ function createSettings(overrides: Partial<AppSettings> = {}): AppSettings {
         radioAutoplayOnLaunch: false,
         radioRememberPlaybackState: true,
         uiScale: 1,
+        closeToTrayEnabled: true,
+        language: "en",
+        brAccountId: "custom-test00000000",
         ...overrides,
     };
 }

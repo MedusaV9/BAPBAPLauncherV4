@@ -50,7 +50,7 @@ afterEach(() => {
 describe("ToolsWorkspace unlock gate (TOO-01/02)", () => {
     it("shows the unlock gate while tools are locked", async () => {
         renderTools();
-        expect(await screen.findByText("Tools Vault")).toBeTruthy();
+        expect(await screen.findByText("Restricted Access")).toBeTruthy();
     });
 
     it("rejects a wrong code: surfaces the error message and clears the field (TOO-02)", async () => {
@@ -63,7 +63,7 @@ describe("ToolsWorkspace unlock gate (TOO-01/02)", () => {
         await waitFor(() => expect(back.unlockCalls).toContain("nope"));
         // Field cleared on failure, and the still-locked gate remains.
         await waitFor(() => expect(input.value).toBe(""));
-        expect(screen.getByText("Tools Vault")).toBeTruthy();
+        expect(screen.getByText("Restricted Access")).toBeTruthy();
         expect(screen.getByText("That code didn't work.")).toBeTruthy();
     });
 
@@ -75,7 +75,7 @@ describe("ToolsWorkspace unlock gate (TOO-01/02)", () => {
         fireEvent.keyDown(input, { key: "Enter" });
 
         // Settings invalidate → re-fetch with toolsUnlocked=true → workbench shows.
-        await waitFor(() => expect(screen.queryByText("Tools Vault")).toBeNull());
+        await waitFor(() => expect(screen.queryByText("Restricted Access")).toBeNull());
         expect(screen.getByText("Unlocked")).toBeTruthy();
     });
 });

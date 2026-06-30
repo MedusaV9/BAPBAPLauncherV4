@@ -55,6 +55,12 @@ export type AppSettings = {
     radioRememberPlaybackState: boolean;
     /** UI scale factor (0.8–1.5). Applied via webContents.setZoomFactor. */
     uiScale: number;
+    /** Closing the window hides to the system tray instead of quitting. */
+    closeToTrayEnabled: boolean;
+    /** UI language code (e.g. "en", "de", "ru", "es"). */
+    language: string;
+    /** Stable per-install Battle Royale account id (format "custom-..."). Generated once. */
+    brAccountId: string;
 };
 
 export type DirectoryDialogInput = {

@@ -25,7 +25,7 @@ import { BundleService } from "./services/vendored/bundle.service";
 import { BundleUpdateService } from "./services/vendored/bundle-update.service";
 import { ManifestClientBundleFetcher } from "./services/vendored/manifest-client-bundle-fetcher";
 
-const { app, BrowserWindow, dialog, screen, shell, protocol, net } = electron;
+const { app, BrowserWindow, Menu, Tray, dialog, screen, shell, protocol, net, nativeImage } = electron;
 
 protocol.registerSchemesAsPrivileged([
     {
@@ -41,6 +41,10 @@ protocol.registerSchemesAsPrivileged([
 ]);
 
 let mainWindow: Electron.BrowserWindow | null = null;
+let tray: Electron.Tray | null = null;
+let isQuitting = false;
+let settingsRef: SettingsStoreService | null = null;
+let trayBalloonShown = false;
 const buildTimestamp = process.env.V2_BUILD_TIMESTAMP?.trim() || "development";
 let fatalExitRequested = false;
 let rendererFallbackAttempted = false;
@@ -83,10 +87,7 @@ process.on("unhandledRejection", reason => {
 
 app.on("second-instance", () => {
     if (mainWindow) {
-        if (mainWindow.isMinimized()) {
-            mainWindow.restore();
-        }
-        mainWindow.focus();
+        showMainWindow();
         return;
     }
     if (app.isReady()) {
@@ -180,6 +181,27 @@ function createMainWindow(options?: { initialScale?: number }): void {
         mainWindow.webContents.openDevTools({ mode: "detach" });
     }
 
+    mainWindow.on("close", event => {
+        if (isQuitting) {
+            return;
+        }
+        if (settingsRef?.getCloseToTrayEnabled() && tray) {
+            event.preventDefault();
+            mainWindow?.hide();
+            if (!trayBalloonShown) {
+                trayBalloonShown = true;
+                try {
+                    tray.displayBalloon?.({
+                        title: "BAPBAP Nexus",
+                        content: "Still running in the tray. Right-click the icon to quit.",
+                    });
+                } catch {
+                    // displayBalloon is Windows-only and can throw on some shells.
+                }
+            }
+        }
+    });
+
     mainWindow.on("closed", () => {
         mainWindow = null;
     });
@@ -195,6 +217,46 @@ function createMainWindow(options?: { initialScale?: number }): void {
     });
 
     mainWindow.center();
+}
+
+function showMainWindow(): void {
+    if (!mainWindow) {
+        createMainWindow({ initialScale: settingsRef?.getUiScale() ?? 1 });
+        return;
+    }
+    if (mainWindow.isMinimized()) {
+        mainWindow.restore();
+    }
+    mainWindow.show();
+    mainWindow.focus();
+}
+
+function createTray(): void {
+    if (tray) {
+        return;
+    }
+    const iconPath = resolveWindowIconPath();
+    const image = iconPath ? nativeImage.createFromPath(iconPath) : nativeImage.createEmpty();
+    try {
+        tray = new Tray(image);
+    } catch (error) {
+        console.warn("[tray] failed to create tray", error);
+        return;
+    }
+    tray.setToolTip("BAPBAP Nexus");
+    const menu = Menu.buildFromTemplate([
+        { label: "Open BAPBAP Nexus", click: () => showMainWindow() },
+        { type: "separator" },
+        {
+            label: "Quit",
+            click: () => {
+                isQuitting = true;
+                app.quit();
+            },
+        },
+    ]);
+    tray.setContextMenu(menu);
+    tray.on("click", () => showMainWindow());
 }
 
 app.whenReady().then(async () => {
@@ -259,6 +321,9 @@ app.whenReady().then(async () => {
             buildTimestamp,
         });
 
+        settingsRef = settings;
+        createTray();
+
         createMainWindow({ initialScale: settings.getUiScale() });
         void radio.sync(false).catch(error => {
             console.warn("[radio-sync] initial sync failed", error);
@@ -274,9 +339,15 @@ app.on("window-all-closed", () => {
     }
 });
 
+app.on("before-quit", () => {
+    isQuitting = true;
+});
+
 app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
         createMainWindow();
+    } else {
+        showMainWindow();
     }
 });
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import logoIcon from "../../assets/brand/BAPBAP_Desktop_Icon.png";
 import { cn } from "../lib/utils";
 import { useShellStore } from "../stores/useShellStore";
+import { useT } from "../i18n";
 import { useNavVisibility } from "./useNavVisibility";
 import type { WorkspaceId } from "../types/workspaces";
 import { api } from "../../api";
@@ -33,18 +34,19 @@ function DiscordIcon({ size }: { size: number }) {
     );
 }
 
-type NavItem = { id: WorkspaceId; label: string; icon: LucideIcon };
+type NavItem = { id: WorkspaceId; labelKey: import("../i18n/en").StringKey; icon: LucideIcon };
 
 const ITEMS: NavItem[] = [
-    { id: "launch", label: "Start", icon: Home },
-    { id: "instances", label: "Instances", icon: Boxes },
-    { id: "mods", label: "Mods", icon: Package },
-    { id: "radio", label: "Radio", icon: Radio },
-    { id: "tools", label: "Tools", icon: Wrench },
-    { id: "settings", label: "Settings", icon: Settings },
+    { id: "launch", labelKey: "nav.launch", icon: Home },
+    { id: "instances", labelKey: "nav.instances", icon: Boxes },
+    { id: "mods", labelKey: "nav.mods", icon: Package },
+    { id: "radio", labelKey: "nav.radio", icon: Radio },
+    { id: "tools", labelKey: "nav.tools", icon: Wrench },
+    { id: "settings", labelKey: "nav.settings", icon: Settings },
 ];
 
 export function TopNav({ reduceMotion: reduceMotionProp }: { reduceMotion?: boolean } = {}) {
+    const t = useT();
     const activeWorkspace = useShellStore(s => s.activeWorkspace);
     const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
     const osReducedMotion = useReducedMotion();
@@ -98,7 +100,7 @@ export function TopNav({ reduceMotion: reduceMotionProp }: { reduceMotion?: bool
                                 />
                             )}
                             <Icon size={16} className="relative z-10 shrink-0" />
-                            <span className="font-body relative z-10 hidden sm:inline">{item.label}</span>
+                            <span className="font-body relative z-10 hidden sm:inline">{t(item.labelKey)}</span>
                         </button>
                     );
                 })}

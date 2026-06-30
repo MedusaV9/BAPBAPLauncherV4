@@ -47,6 +47,18 @@ describe("SettingsStoreService", () => {
         expect(settings.toolsUnlocked).toBe(false);
         expect(settings.modsUnlockedSecretIds).toEqual([]);
         expect(settings.radioVolume).toBeCloseTo(0.72);
+        // Close-to-tray defaults on.
+        expect(settings.closeToTrayEnabled).toBe(true);
+        // Language defaults to English.
+        expect(settings.language).toBe("en");
+    });
+
+    it("exposes the close-to-tray getter that honors stored values", () => {
+        const service = new SettingsStoreService();
+        expect(service.getCloseToTrayEnabled()).toBe(true);
+
+        service.set("closeToTrayEnabled", false);
+        expect(service.getCloseToTrayEnabled()).toBe(false);
     });
 
     it("forces locked FX settings to their canonical values, ignoring writes", () => {
