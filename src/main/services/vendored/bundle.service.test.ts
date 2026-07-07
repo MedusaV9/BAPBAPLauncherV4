@@ -474,9 +474,10 @@ describe("BundleService.install (Phase D pipeline)", () => {
         });
         expect(bundleManifest.appliedAtUtc).toBeDefined();
 
-        // MelonLoader was bootstrapped inside the new instance dir.
-        expect(services.melonLoader.ensureInstalled).toHaveBeenCalledTimes(1);
-        expect(services.melonLoader.ensureInstalled).toHaveBeenCalledWith(result.path);
+        // Bundles ship their own version-matched MelonLoader; the install
+        // pipeline must NOT re-run ensureInstalled (which would overwrite it
+        // and invalidate the shipped pre-generated Il2Cpp assemblies).
+        expect(services.melonLoader.ensureInstalled).not.toHaveBeenCalled();
 
         // ArchiveDownloadService was called with the verified hash.
         expect(services.archiveDownload.downloadFile).toHaveBeenCalledTimes(1);

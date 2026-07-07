@@ -87,28 +87,40 @@ export class LaunchService {
             recentLogs: [],
         };
         this.emitRuntimeState();
-        this.pushLog("system", `Checking MelonLoader for ${instance.profileName || instance.name}...`);
-        if (firstRunPending) {
-            this.pushLog("system", FIRST_RUN_MELONLOADER_MESSAGE);
-        }
 
-        try {
-            await this.melonLoader.ensureInstalled(instance.path);
-        } catch (error) {
-            const message = error instanceof Error ? error.message : String(error);
-            this.pushLog("system", `Launch failed: ${message}`);
-            this.setRuntimeState({
-                status: "failed",
-                instanceId: instance.id,
-                profileName: instance.profileName || instance.name,
-                startedAtUtc,
-                exitedAtUtc: new Date().toISOString(),
-                error: message,
-            });
-            throw error;
-        }
+        // Bundle instances ship a complete, version-matched, pre-configured
+        // MelonLoader (including pre-generated Il2Cpp interop assemblies).
+        // Re-running ensureInstalled would overwrite it with the manifest's
+        // MelonLoader build, invalidating the shipped assemblies and forcing
+        // a regeneration — so we deliberately leave a Bundle's MelonLoader
+        // untouched. Standard/creator-kit instances still get managed here.
+        const isBundle = instance.instanceType === "bundle";
+        if (isBundle) {
+            this.pushLog("system", "Using bundled MelonLoader for this instance.");
+        } else {
+            this.pushLog("system", `Checking MelonLoader for ${instance.profileName || instance.name}...`);
+            if (firstRunPending) {
+                this.pushLog("system", FIRST_RUN_MELONLOADER_MESSAGE);
+            }
 
-        this.pushLog("system", "MelonLoader ready.");
+            try {
+                await this.melonLoader.ensureInstalled(instance.path);
+            } catch (error) {
+                const message = error instanceof Error ? error.message : String(error);
+                this.pushLog("system", `Launch failed: ${message}`);
+                this.setRuntimeState({
+                    status: "failed",
+                    instanceId: instance.id,
+                    profileName: instance.profileName || instance.name,
+                    startedAtUtc,
+                    exitedAtUtc: new Date().toISOString(),
+                    error: message,
+                });
+                throw error;
+            }
+
+            this.pushLog("system", "MelonLoader ready.");
+        }
 
         if (instance.instanceType === "bundle") {
             try {

@@ -149,6 +149,22 @@ export function LaunchWorkspace() {
         }
     }, [instances, defaultProfileId, selectedId]);
 
+    // Drop a stale selection when the profile was deleted elsewhere (e.g.
+    // from the Instances tab) so launch does not target a missing instance.
+    useEffect(() => {
+        if (!instances || !selectedId) {
+            return;
+        }
+        if (instances.some(instance => instance.id === selectedId)) {
+            return;
+        }
+        const fallback =
+            (defaultProfileId && instances.some(instance => instance.id === defaultProfileId)
+                ? defaultProfileId
+                : instances[0]?.id) ?? null;
+        setSelectedId(fallback);
+    }, [instances, selectedId, defaultProfileId]);
+
     const status = runtime?.status ?? "idle";
     const isBusy = status === "launching" || status === "stopping";
     const isRunning = status === "running";

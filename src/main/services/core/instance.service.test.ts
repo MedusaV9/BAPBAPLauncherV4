@@ -36,6 +36,8 @@ describe("InstanceService.remove", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,
@@ -62,6 +64,8 @@ describe("InstanceService.remove", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,
@@ -87,6 +91,8 @@ describe("InstanceService.remove", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,
@@ -115,6 +121,8 @@ describe("InstanceService.hasRelativeFile", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,
@@ -137,6 +145,8 @@ describe("InstanceService.hasRelativeFile", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,
@@ -158,6 +168,8 @@ describe("InstanceService.hasRelativeFile", () => {
         const service = new InstanceService(
             {
                 getInstancesRoot: () => "C:/Profiles",
+                getAll: () => ({ launchDefaultProfileId: null }),
+                set: vi.fn(),
             } as never,
             {} as never,
             {} as never,

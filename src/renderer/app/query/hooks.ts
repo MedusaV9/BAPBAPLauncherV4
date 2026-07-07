@@ -156,7 +156,13 @@ export function useRemoveInstance() {
     const qc = useQueryClient();
     return useMutation({
         mutationFn: (instanceId: string) => api.instances.remove(instanceId),
-        onSuccess: () => qc.invalidateQueries({ queryKey: qk.instances }),
+        onSuccess: () => {
+            qc.invalidateQueries({ queryKey: qk.instances });
+            // Bundle summaries derive isInstalled from the instance list;
+            // without this invalidation the hero tile keeps showing "Play"
+            // after a bundle profile was deleted.
+            qc.invalidateQueries({ queryKey: qk.bundles });
+        },
     });
 }
 

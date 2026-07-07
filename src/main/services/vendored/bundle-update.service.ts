@@ -753,16 +753,17 @@ async function extractZipSafelyToDir(zipPath: string, destinationDir: string): P
     await ensureDir(resolvedDest);
     for (const entry of Object.values(zip.files)) {
         const entryName = entry.name;
-        if (path.isAbsolute(entryName) || entryName.includes("..")) {
+        if (hasBundleUpdatePathTraversal(entryName)) {
             throw new Error(`Refusing zip entry with path traversal: ${entryName}`);
+        }
+        if (isBundleUpdateZipDirectoryEntry(entry)) {
+            const dirPath = path.resolve(destinationDir, normalizeBundleUpdateZipEntryName(entryName));
+            await ensureDirSafely(dirPath, resolvedDest);
+            continue;
         }
         const resolvedTarget = path.resolve(destinationDir, entryName);
         if (resolvedTarget !== resolvedDest && !resolvedTarget.startsWith(resolvedDest + path.sep)) {
             throw new Error(`Refusing zip entry with path traversal: ${entryName}`);
-        }
-        if (entry.dir) {
-            await ensureDirSafely(resolvedTarget, resolvedDest);
-            continue;
         }
         await ensureDirSafely(path.dirname(resolvedTarget), resolvedDest);
         const stat = await fs.promises.stat(resolvedTarget).catch(() => null);
@@ -772,6 +773,34 @@ async function extractZipSafelyToDir(zipPath: string, destinationDir: string): P
         const content = await entry.async("nodebuffer");
         await fs.promises.writeFile(resolvedTarget, content);
     }
+}
+
+/**
+ * True when a zip entry name contains a real path-traversal component:
+ * an absolute path, or a path SEGMENT that is exactly "..". Splits on both
+ * POSIX and Windows separators. Mirrors hasPathTraversalSegment() in
+ * bundle.service.ts (kept duplicated to keep the two services decoupled).
+ *
+ * We check per-segment rather than a naive `name.includes("..")` so that
+ * legitimate file names containing ".." within a segment (e.g.
+ * "medusa.bundle..bak") are not falsely rejected.
+ */
+function hasBundleUpdatePathTraversal(entryName: string): boolean {
+    if (path.isAbsolute(entryName)) {
+        return true;
+    }
+    return entryName.split(/[\\/]/).some(segment => segment === "..");
+}
+
+function isBundleUpdateZipDirectoryEntry(entry: { dir: boolean; name: string }): boolean {
+    if (entry.dir) {
+        return true;
+    }
+    return /[\\/]+$/.test(entry.name);
+}
+
+function normalizeBundleUpdateZipEntryName(entryName: string): string {
+    return entryName.replace(/[\\/]+$/, "");
 }
 
 /**

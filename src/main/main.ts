@@ -328,6 +328,16 @@ app.whenReady().then(async () => {
         void radio.sync(false).catch(error => {
             console.warn("[radio-sync] initial sync failed", error);
         });
+
+        // Startup update check: honour the "Automatic updates" setting the
+        // UI exposes. Without this the toggle was inert — no check ran on
+        // launch, so auto-download (and the next-start auto-install) never
+        // kicked off. Non-blocking so it never delays window paint.
+        if (settings.getAll().launcherAutoUpdate) {
+            void updater.check(false).catch(error => {
+                console.warn("[launcher-updater] startup check failed", error);
+            });
+        }
     } catch (error) {
         reportMainProcessError("uncaughtException", error);
     }

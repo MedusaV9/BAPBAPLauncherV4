@@ -697,7 +697,15 @@ export function InstancesWorkspace() {
                                     placeholder={t("instances.battleRoyaleProfileNamePlaceholder")}
                                 />
                             </label>
-                            <div className="flex justify-end gap-2">
+                            <div className="flex flex-col gap-2">
+                                {installBundle.isError && (
+                                    <p className="text-sm text-destructive">
+                                        {installBundle.error instanceof Error
+                                            ? installBundle.error.message
+                                            : String(installBundle.error ?? "Install failed.")}
+                                    </p>
+                                )}
+                                <div className="flex justify-end gap-2">
                                 <Button variant="ghost" onClick={() => setBundleDraft(null)}>
                                     {t("instances.cancelButton")}
                                 </Button>
@@ -714,6 +722,7 @@ export function InstancesWorkspace() {
                                 >
                                     <Download size={15} /> {installBundle.isPending ? t("instances.installingLabel") : t("instances.installButton")}
                                 </Button>
+                                </div>
                             </div>
                         </div>
                     )}

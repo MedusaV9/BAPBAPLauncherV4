@@ -374,6 +374,9 @@ export class InstanceService {
             throw new Error("Refusing to delete an install outside the managed instances folder.");
         }
         await remove(instance.path);
+        if (this.settings.getAll().launchDefaultProfileId === instanceId) {
+            this.settings.set("launchDefaultProfileId", null);
+        }
     }
 
     async getById(instanceId: string): Promise<InstalledInstance> {

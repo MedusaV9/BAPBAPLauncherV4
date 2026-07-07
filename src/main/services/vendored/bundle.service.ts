@@ -536,10 +536,14 @@ export class BundleService extends EventEmitter {
             });
             await extractZipSafely(archivePath, destination);
 
-            // (6) MelonLoader bootstrap so the bundle launches on first
-            // run without an extra round-trip. Emit "installing" before
-            // ensureInstalled so the renderer sees the post-extract
-            // bootstrap stage even though it's typically very fast.
+            // (6) Bundle archives ship their own complete, version-matched
+            // MelonLoader (net6/net35, dependencies, and pre-generated Il2Cpp
+            // interop assemblies authored against that exact MelonLoader
+            // build). We must NOT run ensureInstalled here: doing so would
+            // overwrite the shipped MelonLoader with the manifest's build,
+            // which invalidates the pre-generated assemblies and forces a
+            // costly (and sometimes crashing) Il2Cpp regeneration at launch.
+            // The bundle is self-contained — leave its MelonLoader intact.
             this.commitInstallProgress({
                 bundleId: id,
                 status: "installing",
@@ -548,7 +552,6 @@ export class BundleService extends EventEmitter {
                 progressPercent: 100,
                 startedAtUtc,
             });
-            await this.melonLoader.ensureInstalled(destination);
 
             // (7) Sidecar metadata for InstanceService.list and the
             // (planned) BundleUpdateService consumers.
@@ -838,18 +841,19 @@ async function extractZipSafely(zipPath: string, destinationDir: string): Promis
         // destination — defence-in-depth against weirder traversal forms
         // (e.g. mixed separators on Windows).
         const entryName = entry.name;
-        if (path.isAbsolute(entryName) || entryName.includes("..")) {
+        if (hasPathTraversalSegment(entryName)) {
             throw new Error(`Refusing zip entry with path traversal: ${entryName}`);
+        }
+        if (isZipDirectoryEntry(entry)) {
+            const dirPath = path.resolve(destinationDir, normalizeZipEntryName(entryName));
+            await ensureDirSafely(dirPath, resolvedDest);
+            continue;
         }
         const resolvedTarget = path.resolve(destinationDir, entryName);
         if (resolvedTarget !== resolvedDest && !resolvedTarget.startsWith(resolvedDest + path.sep)) {
             throw new Error(`Refusing zip entry with path traversal: ${entryName}`);
         }
 
-        if (entry.dir) {
-            await ensureDirSafely(resolvedTarget, resolvedDest);
-            continue;
-        }
         await ensureDirSafely(path.dirname(resolvedTarget), resolvedDest);
         const stat = await fs.promises.stat(resolvedTarget).catch(() => null);
         if (stat && stat.isDirectory()) {
@@ -858,6 +862,40 @@ async function extractZipSafely(zipPath: string, destinationDir: string): Promis
         const content = await entry.async("nodebuffer");
         await fs.promises.writeFile(resolvedTarget, content);
     }
+}
+
+/**
+ * True when a zip entry name contains a real path-traversal component:
+ * an absolute path, or a path SEGMENT that is exactly "..". Splits on both
+ * POSIX and Windows separators so mixed forms are covered.
+ *
+ * Note: we deliberately check per-segment rather than a naive
+ * `name.includes("..")`, because legitimate file names can contain ".."
+ * inside a segment (e.g. "medusa.bundle..bak") without being traversal.
+ */
+function hasPathTraversalSegment(entryName: string): boolean {
+    if (path.isAbsolute(entryName)) {
+        return true;
+    }
+    return entryName.split(/[\\/]/).some(segment => segment === "..");
+}
+
+/**
+ * Some zip tools (including archiver on Windows) emit directory placeholders
+ * as zero-byte entries with a trailing separator but `dir: false` in JSZip.
+ * Treat those as directories so we never materialize e.g. MelonLoader/Logs as
+ * a regular file — MelonLoader requires that path to be a folder at runtime.
+ */
+function isZipDirectoryEntry(entry: { dir: boolean; name: string }): boolean {
+    if (entry.dir) {
+        return true;
+    }
+    return /[\\/]+$/.test(entry.name);
+}
+
+/** Strip trailing path separators from a zip entry name before resolving it. */
+function normalizeZipEntryName(entryName: string): string {
+    return entryName.replace(/[\\/]+$/, "");
 }
 
 /**
