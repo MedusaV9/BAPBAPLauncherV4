@@ -237,7 +237,7 @@ export function registerIpcHandlers(services: IpcServices): void {
     handle(IPC_CHANNELS.instancesRemove, async instanceId => instances.remove(String(instanceId)));
     handle(IPC_CHANNELS.instancesRename, async (instanceId, name) => instances.rename(String(instanceId), String(name)));
     handle(IPC_CHANNELS.instancesGetSteamPersonaName, async () => instances.getSteamPersonaName());
-    handle(IPC_CHANNELS.instancesMigrateFromV3, async (_event, sourceDir) => instances.migrateFromV3(String(sourceDir)));
+    handle(IPC_CHANNELS.instancesMigrateFromV3, async sourceDir => instances.migrateFromV3(String(sourceDir)));
 
     handle(IPC_CHANNELS.launchStart, async input => launch.launch(input as Parameters<typeof launch.launch>[0]));
     handle(IPC_CHANNELS.launchStop, async () => launch.stop());

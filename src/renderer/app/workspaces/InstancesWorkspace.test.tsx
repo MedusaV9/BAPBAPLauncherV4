@@ -188,9 +188,6 @@ describe("InstancesWorkspace", () => {
         ];
         renderInstances();
 
-        // Find the bundle panel and focus to reveal CTA buttons.
-        const panel = screen.getAllByRole("radio").find(el => el.textContent?.includes("Battle Royale")) as HTMLElement;
-        fireEvent.focus(panel);
         const update = await screen.findByRole("button", { name: "Update" });
         fireEvent.click(update);
         await waitFor(() => expect(back.applyUpdateCalls).toContain("binst-1"));

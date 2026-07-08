@@ -93,6 +93,14 @@ async function writeLocalManifest(instancePath: string, manifest: BundleLocalMan
     );
 }
 
+async function writeInstanceMeta(instancePath: string, instance: InstalledInstance): Promise<void> {
+    await fs.writeFile(
+        path.join(instancePath, ".bapbap-instance.json"),
+        JSON.stringify(instance, null, 2),
+        "utf8",
+    );
+}
+
 function makeService(instancePath: string, fetcher: MockManifestFetcher) {
     const fakeInstance = makeFakeInstance("inst-1", instancePath);
     const instanceServiceStub = {
@@ -229,6 +237,11 @@ describe("BundleUpdateService.applyUpdate", () => {
             version: "1.4.1",
             buildNumber: 141,
         });
+        await writeInstanceMeta(instancePath, {
+            ...makeFakeInstance("inst-1", instancePath),
+            bundleBuildNumber: 141,
+            bundleVersion: "1.4.1",
+        });
 
         const manifestUrl = "https://example.test/bundle/v1.4.2/manifest.json";
         const fetcher = new MockManifestFetcher();
@@ -280,6 +293,13 @@ describe("BundleUpdateService.applyUpdate", () => {
         expect(onDisk.buildNumber).toBe(142);
         expect(onDisk.version).toBe("1.4.2");
         expect(onDisk.appliedAtUtc).toBeDefined();
+
+        const instanceMeta = JSON.parse(
+            await fs.readFile(path.join(instancePath, ".bapbap-instance.json"), "utf8"),
+        ) as InstalledInstance;
+        expect(instanceMeta.bundleBuildNumber).toBe(142);
+        expect(instanceMeta.bundleVersion).toBe("1.4.2");
+        expect(instanceMeta.versionId).toBe("bundle:test-bundle:1.4.2");
     });
 
     it("rolls back the staging directory and emits signature-mismatch on hash mismatch", async () => {

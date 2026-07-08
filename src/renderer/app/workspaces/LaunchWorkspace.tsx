@@ -135,6 +135,7 @@ export function LaunchWorkspace() {
     const stopLaunch = useStopLaunch();
     const setSetting = useSetSetting();
     const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
+    const activeWorkspace = useShellStore(s => s.activeWorkspace);
     const openModsForInstance = useShellStore(s => s.openModsForInstance);
     const reduceMotion = useReducedMotion();
 
@@ -179,6 +180,8 @@ export function LaunchWorkspace() {
     const autoplayVideos = settings?.launchAutoplayVideos !== false;
     const showVideo = autoplayVideos && !reduceMotion;
     const [videoPaused, setVideoPaused] = useState(false);
+    const workspaceActive = activeWorkspace === "launch";
+    const effectiveVideoPaused = videoPaused || !workspaceActive;
 
     const logViewport = useRef<HTMLDivElement>(null);
     const [autoscroll, setAutoscroll] = useState(true);
@@ -257,7 +260,7 @@ export function LaunchWorkspace() {
                     showVideo={showVideo}
                     videoSrc={videoSrc}
                     videoKey={videoKey}
-                    videoPaused={videoPaused}
+                    videoPaused={effectiveVideoPaused}
                     imageUrl={selectedInstance?.imageUrl}
                     imageKey={selectedInstance?.id}
                     reduceMotion={Boolean(reduceMotion)}

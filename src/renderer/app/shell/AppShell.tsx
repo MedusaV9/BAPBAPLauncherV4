@@ -50,7 +50,7 @@ export function AppShell() {
 
     const [minTimeElapsed, setMinTimeElapsed] = useState(false);
     useEffect(() => {
-        const timer = setTimeout(() => setMinTimeElapsed(true), reduceMotion ? 600 : 5000);
+        const timer = setTimeout(() => setMinTimeElapsed(true), reduceMotion ? 600 : 2000);
         return () => clearTimeout(timer);
     }, [reduceMotion]);
 

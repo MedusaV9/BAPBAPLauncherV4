@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState, forwardRef, type KeyboardEvent } from "react";
-import { Download, Play, Boxes, Package, Layers, Sword, RefreshCw, Pencil, Trash2, FolderOpen } from "lucide-react";
+import { Download, Play, Boxes, Package, Sword, RefreshCw, Pencil, Trash2, FolderOpen } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { FeatureCard } from "../../components/brand/FeatureCard";
 import { Progress } from "../../components/ui/progress";
@@ -59,7 +59,7 @@ function suggestBundleProfileName(bundle: BundleSummary, instances: Array<{ prof
 const MODE: Record<InstancesHeroTrack, { accent: string; title: string; eyebrow: string; icon: typeof Boxes }> = {
     bapbap: { accent: "#e91e8c", title: "Arena", eyebrow: "Standard BAPBAP", icon: Boxes },
     "boss-rush": { accent: "#22c55e", title: "Boss Rush", eyebrow: "Challenge Mode", icon: Sword },
-    bundle: { accent: "#ffb800", title: "Battle Royale", eyebrow: "Playtest", icon: Layers },
+    bundle: { accent: "#22d3ee", title: "Battle Royale", eyebrow: "Playtest", icon: Boxes },
 };
 
 type HeroPanelData = {
@@ -80,14 +80,14 @@ type HeroPanelData = {
     onUpdate?: () => void;
 };
 
-function ProfileArt({ imageUrl, isBundle, accent }: { imageUrl?: string; isBundle: boolean; accent: string }) {
+function ProfileArt({ imageUrl, accent }: { imageUrl?: string; accent: string }) {
     // Key the inner state on the URL so a previously-failed image doesn't stay
     // stuck on the fallback icon when the instance's art changes.
     const [failed, setFailed] = useState(false);
     useEffect(() => {
         setFailed(false);
     }, [imageUrl]);
-    const Icon = isBundle ? Layers : Package;
+    const Icon = Package;
 
     return (
         <div className="relative h-full w-full overflow-hidden bg-[var(--surface-inset)]">
@@ -260,11 +260,6 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                         >
                             {data.eyebrow}
                         </span>
-                        {data.updateAvailable && (
-                            <span className="rounded-full border border-gold/50 bg-gold/10 px-2 py-0.5 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-gold">
-                                {t("instances.updateBadge")}
-                            </span>
-                        )}
                     </span>
                     <h3
                         className="font-display leading-[0.95] text-foreground transition-[font-size] duration-[480ms] ease-pop"
@@ -310,19 +305,6 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                         >
                             <Download size={16} />
                             {data.secondaryLabel}
-                        </button>
-                    )}
-                    {data.updateAvailable && data.onUpdate && (
-                        <button
-                            type="button"
-                            onClick={e => {
-                                e.stopPropagation();
-                                data.onUpdate!();
-                            }}
-                            className="mt-1 inline-flex w-fit items-center gap-2 rounded-[0.625rem] border border-gold/50 bg-gold/10 px-5 py-3.5 font-body text-sm font-semibold uppercase tracking-[0.08em] text-gold transition-[filter,transform] duration-150 ease-pop hover:-translate-y-px hover:bg-gold/15"
-                        >
-                            <RefreshCw size={16} />
-                                {data.updateLabel ?? "Update"}
                         </button>
                     )}
                 </div>
@@ -376,10 +358,6 @@ export function InstancesWorkspace() {
             const mode = MODE[track];
             if (track === "bundle") {
                 const installed = primaryBundle?.isInstalled ?? false;
-                const bundleInstance = primaryBundle
-                    ? instances.find(i => i.instanceType === "bundle" && i.bundleId === primaryBundle.id)
-                    : undefined;
-                const updateAvailable = installed && Boolean(primaryBundle?.isUpdateAvailable) && Boolean(bundleInstance) && Boolean(api.bundle.applyUpdate);
                 return {
                     track,
                     accent: mode.accent,
@@ -389,26 +367,17 @@ export function InstancesWorkspace() {
                     art: primaryBundle?.imageUrl,
                     installed,
                     available: primaryBundle?.isDownloadable ?? false,
-                    actionLabel: installed ? (updateAvailable ? t("instances.updateNowButton") : t("instances.playButton")) : (primaryBundle?.isDownloadable ? t("instances.installButton") : t("instances.soonLabel")),
+                    actionLabel: installed ? t("instances.playButton") : (primaryBundle?.isDownloadable ? t("instances.installButton") : t("instances.soonLabel")),
                     onAction: () => {
                         if (!primaryBundle || !primaryBundle.isDownloadable) return;
-                        if (updateAvailable && bundleInstance) {
-                            applyBundleUpdate.mutate(bundleInstance.id);
-                        } else if (installed) {
+                        if (installed) {
                             setActiveWorkspace("launch");
                         } else {
                             setBundleDraft({ bundleId: primaryBundle.id, name: suggestBundleProfileName(primaryBundle, instances) });
                         }
                     },
-                    // Bundle instances: nur 1 Profil erlaubt, kein "Install another"
                     secondaryLabel: undefined,
                     onSecondaryAction: undefined,
-                    updateAvailable,
-                    updateLabel: applyBundleUpdate.isPending ? "Updating…" : t("instances.updateButton"),
-                    onUpdate:
-                        updateAvailable && bundleInstance
-                            ? () => applyBundleUpdate.mutate(bundleInstance.id)
-                            : undefined,
                 };
             }
             const version = resolvePrimaryOfficialVersionForTrack(track, versions, instances, trustedNowMs, trustedTimeAvailable);
@@ -444,7 +413,7 @@ export function InstancesWorkspace() {
                     : undefined,
             };
         });
-    }, [versions, instances, primaryBundle, installBundle, applyBundleUpdate, setActiveWorkspace, settings?.instancesRoot, trustedNowMs, trustedTimeAvailable]);
+    }, [versions, instances, primaryBundle, setActiveWorkspace, settings?.instancesRoot, trustedNowMs, trustedTimeAvailable, t]);
 
     // Seeds the roving tabindex so one panel is always Tab-reachable at rest.
     const defaultIndex = useMemo(() => {
@@ -551,23 +520,31 @@ export function InstancesWorkspace() {
             >
                 {instances.map(instance => {
                     const isBundle = instance.instanceType === "bundle";
-                    const accent = isBundle ? "#ffb800" : instance.officialTrack === "boss-rush" ? "#22d3ee" : "#e91e8c";
-                    // Bundle instances are launcher-managed but not user-renamable/deletable
-                    // (they're recreated from the bundle), and they're mod-locked.
+                    const accent = instance.officialTrack === "boss-rush" ? "#22d3ee" : "#e91e8c";
+                    const bundleSummary =
+                        isBundle && instance.bundleId
+                            ? bundles.find(b => b.id === instance.bundleId)
+                            : undefined;
+                    const bundleUpdateAvailable =
+                        isBundle &&
+                        Boolean(bundleSummary?.isUpdateAvailable) &&
+                        Boolean(api.bundle.applyUpdate);
                     return (
                         <motion.div key={instance.id} variants={reduceMotion ? undefined : itemUp}>
                             <FeatureCard className="group flex h-full flex-col">
                                 <div className="flex flex-1 items-stretch">
                                     <div className="w-20 shrink-0 overflow-hidden">
-                                        <ProfileArt imageUrl={instance.imageUrl} isBundle={isBundle} accent={accent} />
+                                        <ProfileArt imageUrl={instance.imageUrl} accent={accent} />
                                     </div>
                                     <div className="flex flex-1 flex-col justify-center gap-1 p-4">
                                         <h3 className="font-display text-sm uppercase leading-tight text-foreground">
                                             {instance.profileName}
                                         </h3>
-                                        <p className="truncate font-mono text-xs text-muted-foreground" title={instance.path}>
-                                            {instance.gameVersion || instance.version}
-                                        </p>
+                                        {!isBundle && (
+                                            <p className="truncate font-mono text-xs text-muted-foreground" title={instance.path}>
+                                                {instance.gameVersion || instance.version}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-1 border-t border-border px-2 py-1.5">
@@ -587,23 +564,38 @@ export function InstancesWorkspace() {
                                             <Package size={13} /> {t("instances.modsButton")}
                                         </button>
                                     )}
+                                    {bundleUpdateAvailable && (
+                                        <button
+                                            onClick={() => applyBundleUpdate.mutate(instance.id)}
+                                            disabled={applyBundleUpdate.isPending}
+                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
+                                            title={t("instances.updateButton")}
+                                        >
+                                            <RefreshCw size={13} />{" "}
+                                            {applyBundleUpdate.isPending ? "Updating…" : t("instances.updateButton")}
+                                        </button>
+                                    )}
                                     <span className="flex-1" />
-                                    <button
-                                        onClick={() => setRenameDraft({ id: instance.id, name: instance.profileName })}
-                                        className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                        title={t("instances.renameProfileDialogTitle")}
-                                        aria-label={t("instances.renameProfileAriaLabel")}
-                                    >
-                                        <Pencil size={13} />
-                                    </button>
-                                    <button
-                                        onClick={() => setConfirmDelete({ id: instance.id, name: instance.profileName })}
-                                        className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-                                        title={t("instances.deleteProfileDialogTitle")}
-                                        aria-label={t("instances.deleteProfileAriaLabel")}
-                                    >
-                                        <Trash2 size={13} />
-                                    </button>
+                                    {!isBundle && (
+                                        <>
+                                            <button
+                                                onClick={() => setRenameDraft({ id: instance.id, name: instance.profileName })}
+                                                className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                                                title={t("instances.renameProfileDialogTitle")}
+                                                aria-label={t("instances.renameProfileAriaLabel")}
+                                            >
+                                                <Pencil size={13} />
+                                            </button>
+                                            <button
+                                                onClick={() => setConfirmDelete({ id: instance.id, name: instance.profileName })}
+                                                className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+                                                title={t("instances.deleteProfileDialogTitle")}
+                                                aria-label={t("instances.deleteProfileAriaLabel")}
+                                            >
+                                                <Trash2 size={13} />
+                                            </button>
+                                        </>
+                                    )}
                                 </div>
                             </FeatureCard>
                         </motion.div>

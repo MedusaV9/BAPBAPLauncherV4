@@ -20,6 +20,9 @@ const { ensureDir, pathExists, readJson, remove, writeJson, move, copy, readdir 
  */
 export const BUNDLE_LOCAL_MANIFEST_FILE = ".bundle-manifest.json";
 
+/** Sidecar metadata read by InstanceService.list for bundle build tracking. */
+const INSTANCE_META_FILE = ".bapbap-instance.json";
+
 /** Suffix used when staging a new bundle payload before atomic swap. */
 const STAGING_SUFFIX = ".bundle-staging";
 
@@ -550,6 +553,7 @@ export class BundleUpdateService extends EventEmitter {
                 throw applyError;
             }
 
+            const appliedAtUtc = new Date().toISOString();
             await this.writeLocalManifest(instance.path, {
                 schemaVersion: remoteManifest.schemaVersion,
                 id: remoteManifest.id,
@@ -558,8 +562,9 @@ export class BundleUpdateService extends EventEmitter {
                 version: remoteManifest.version,
                 buildNumber: remoteManifest.buildNumber,
                 publishedAtUtc: remoteManifest.publishedAtUtc,
-                appliedAtUtc: new Date().toISOString(),
+                appliedAtUtc,
             });
+            await this.updateInstanceMetadata(instance, remoteManifest, appliedAtUtc);
 
             // GC: keep only the most recent backup so disk usage stays bounded.
             await garbageCollectBackups(instance.path, 1).catch(() => {});
@@ -697,6 +702,37 @@ export class BundleUpdateService extends EventEmitter {
         await ensureDir(instancePath);
         const manifestPath = path.join(instancePath, BUNDLE_LOCAL_MANIFEST_FILE);
         await writeJson(manifestPath, manifest, { spaces: 2 });
+    }
+
+    /** Keep `.bapbap-instance.json` in sync so listAvailable() clears the update badge. */
+    private async updateInstanceMetadata(
+        instance: InstalledInstance,
+        remoteManifest: BundleRemoteManifest,
+        appliedAtUtc: string,
+    ): Promise<void> {
+        const metaPath = path.join(instance.path, INSTANCE_META_FILE);
+        if (!(await pathExists(metaPath))) {
+            return;
+        }
+        try {
+            const raw = (await readJson(metaPath)) as Partial<InstalledInstance>;
+            const fullVersion = remoteManifest.version;
+            const buildNumber = remoteManifest.buildNumber;
+            const bundleId = remoteManifest.id;
+            const updated: InstalledInstance = {
+                ...(raw as InstalledInstance),
+                gameVersion: fullVersion,
+                version: fullVersion,
+                versionId: `bundle:${bundleId}:${fullVersion}`,
+                bundleVersion: fullVersion,
+                bundleBuildNumber: buildNumber,
+                bundleLastApplyUtc: appliedAtUtc,
+                lastUpdatedUtc: appliedAtUtc,
+            };
+            await writeJson(metaPath, updated, { spaces: 2 });
+        } catch (error) {
+            console.warn("[bundle-update] failed to update instance metadata", error);
+        }
     }
 
     private async getInstanceOrFail(instanceId: string): Promise<InstalledInstance> {
