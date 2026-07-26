@@ -1,6 +1,6 @@
 import { Home, Boxes, Package, Radio, Wrench, Settings, Download, RefreshCw, type LucideIcon } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion, LayoutGroup } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logoIcon from "../../assets/brand/BAPBAP_Desktop_Icon.png";
 import { cn } from "../lib/utils";
 import { useShellStore } from "../stores/useShellStore";

@@ -12,6 +12,7 @@ import {
     useInstallOfficial,
     useInstallBundle,
     useBundleInstallProgress,
+    useBundleUpdateState,
     useApplyBundleUpdate,
     useTrustedTime,
     useRemoveInstance,
@@ -44,6 +45,27 @@ const BUNDLE_PROGRESS_LABEL: Record<string, StringKey> = {
     installing: "instances.bundleProgressInstalling",
 };
 
+const BUNDLE_UPDATE_PROGRESS_LABEL: Record<string, StringKey> = {
+    checking: "instances.bundleProgressResolving",
+    downloading: "instances.bundleProgressDownloading",
+    verifying: "instances.bundleProgressVerifying",
+    applying: "instances.bundleProgressInstalling",
+};
+
+const ACTIVE_BUNDLE_UPDATE_STATUSES = new Set([
+    "checking",
+    "downloading",
+    "verifying",
+    "applying",
+]);
+
+const FAILED_BUNDLE_UPDATE_STATUSES = new Set([
+    "failed",
+    "check-failed",
+    "signature-mismatch",
+    "disk-full",
+]);
+
 function suggestBundleProfileName(bundle: BundleSummary, instances: Array<{ profileName: string }>): string {
     const base = bundle.name || "Battle Royale";
     const names = new Set(instances.map(instance => instance.profileName.toLowerCase()));
@@ -59,7 +81,7 @@ function suggestBundleProfileName(bundle: BundleSummary, instances: Array<{ prof
 const MODE: Record<InstancesHeroTrack, { accent: string; title: string; eyebrow: string; icon: typeof Boxes }> = {
     bapbap: { accent: "#e91e8c", title: "Arena", eyebrow: "Standard BAPBAP", icon: Boxes },
     "boss-rush": { accent: "#22c55e", title: "Boss Rush", eyebrow: "Challenge Mode", icon: Sword },
-    bundle: { accent: "#22d3ee", title: "Battle Royale", eyebrow: "Playtest", icon: Boxes },
+    bundle: { accent: "#22d3ee", title: "Battle Royale", eyebrow: "", icon: Boxes },
 };
 
 type HeroPanelData = {
@@ -73,11 +95,11 @@ type HeroPanelData = {
     available: boolean;
     actionLabel: string;
     onAction: () => void;
+    /** When true, primary CTA is Update (no Play) with RefreshCw icon. */
+    primaryIsUpdate?: boolean;
     secondaryLabel?: string;
     onSecondaryAction?: () => void;
-    updateAvailable?: boolean;
-    updateLabel?: string;
-    onUpdate?: () => void;
+    updatePending?: boolean;
 };
 
 function ProfileArt({ imageUrl, accent }: { imageUrl?: string; accent: string }) {
@@ -253,14 +275,16 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                 profiles grid below where they have room to breathe. */}
             <div ref={titleRef} className="absolute inset-x-0 bottom-0 z-10 flex flex-col gap-3 p-7 transition-transform duration-[200ms] ease-pop">
                 <div className="flex flex-col gap-1">
-                    <span className="flex items-center gap-2">
-                        <span
-                            className="font-body text-[0.6875rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-[280ms]"
-                            style={{ color: expanded ? data.accent : "#969cab" }}
-                        >
-                            {data.eyebrow}
+                    {data.eyebrow ? (
+                        <span className="flex items-center gap-2">
+                            <span
+                                className="font-body text-[0.6875rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-[280ms]"
+                                style={{ color: expanded ? data.accent : "#969cab" }}
+                            >
+                                {data.eyebrow}
+                            </span>
                         </span>
-                    </span>
+                    ) : null}
                     <h3
                         className="font-display leading-[0.95] text-foreground transition-[font-size] duration-[480ms] ease-pop"
                         style={{ fontSize: expanded ? "clamp(40px,4vw,60px)" : "clamp(28px,2.6vw,40px)" }}
@@ -287,14 +311,20 @@ const HeroPanel = forwardRef<HTMLDivElement, {
                             e.stopPropagation();
                             data.onAction();
                         }}
-                        disabled={!data.available && !data.installed}
+                        disabled={(!data.available && !data.installed) || data.updatePending}
                         className="mt-1 inline-flex w-fit items-center gap-2 rounded-[0.625rem] px-7 py-3.5 font-body text-sm font-semibold uppercase tracking-[0.08em] transition-[filter,transform] duration-150 ease-pop hover:-translate-y-px hover:brightness-110 disabled:opacity-50"
                         style={{ background: data.accent, color: "#0a0b10" }}
                     >
-                        {data.installed ? <Play size={16} /> : <Download size={16} />}
+                        {data.primaryIsUpdate ? (
+                            <RefreshCw size={16} className={data.updatePending ? "animate-spin" : undefined} />
+                        ) : data.installed ? (
+                            <Play size={16} />
+                        ) : (
+                            <Download size={16} />
+                        )}
                         {data.actionLabel}
                     </button>
-                    {data.secondaryLabel && data.onSecondaryAction && (
+                    {!data.primaryIsUpdate && data.secondaryLabel && data.onSecondaryAction && (
                         <button
                             type="button"
                             onClick={e => {
@@ -346,18 +376,39 @@ export function InstancesWorkspace() {
     const versions = useMemo(() => gameVersions?.versions ?? [], [gameVersions]);
     const busy = installState ? isInstallStateBusy(installState) : false;
     const primaryBundle: BundleSummary | undefined = bundles[0];
+    const installedBundleInstance = useMemo(
+        () =>
+            primaryBundle
+                ? instances.find(
+                      instance =>
+                          instance.instanceType === "bundle" && instance.bundleId === primaryBundle.id,
+                  )
+                : undefined,
+        [instances, primaryBundle],
+    );
     const { data: bundleProgress } = useBundleInstallProgress(primaryBundle?.id ?? "");
+    const { data: bundleUpdateState } = useBundleUpdateState(installedBundleInstance?.id);
     const bundleInstalling =
         bundleProgress &&
         bundleProgress.status !== "idle" &&
         bundleProgress.status !== "done" &&
         bundleProgress.status !== "failed";
+    const bundleUpdating =
+        Boolean(bundleUpdateState && ACTIVE_BUNDLE_UPDATE_STATUSES.has(bundleUpdateState.status)) ||
+        applyBundleUpdate.isPending;
+    const bundleUpdateFailed =
+        Boolean(bundleUpdateState && FAILED_BUNDLE_UPDATE_STATUSES.has(bundleUpdateState.status));
 
     const panels = useMemo<HeroPanelData[]>(() => {
         return INSTANCES_HERO_TRACKS.map(track => {
             const mode = MODE[track];
             if (track === "bundle") {
                 const installed = primaryBundle?.isInstalled ?? false;
+                const canUpdate =
+                    installed &&
+                    Boolean(primaryBundle?.isUpdateAvailable) &&
+                    Boolean(api.bundle.applyUpdate) &&
+                    Boolean(installedBundleInstance);
                 return {
                     track,
                     accent: mode.accent,
@@ -367,9 +418,20 @@ export function InstancesWorkspace() {
                     art: primaryBundle?.imageUrl,
                     installed,
                     available: primaryBundle?.isDownloadable ?? false,
-                    actionLabel: installed ? t("instances.playButton") : (primaryBundle?.isDownloadable ? t("instances.installButton") : t("instances.soonLabel")),
+                    primaryIsUpdate: canUpdate,
+                    actionLabel: canUpdate
+                        ? (applyBundleUpdate.isPending || bundleUpdating ? "Updating…" : t("instances.updateButton"))
+                        : installed
+                            ? t("instances.playButton")
+                            : (primaryBundle?.isDownloadable ? t("instances.installButton") : t("instances.soonLabel")),
+                    updatePending: canUpdate && (applyBundleUpdate.isPending || bundleUpdating),
                     onAction: () => {
                         if (!primaryBundle || !primaryBundle.isDownloadable) return;
+                        if (canUpdate) {
+                            if (!installedBundleInstance) return;
+                            applyBundleUpdate.mutate(installedBundleInstance.id);
+                            return;
+                        }
                         if (installed) {
                             setActiveWorkspace("launch");
                         } else {
@@ -413,7 +475,20 @@ export function InstancesWorkspace() {
                     : undefined,
             };
         });
-    }, [versions, instances, primaryBundle, setActiveWorkspace, settings?.instancesRoot, trustedNowMs, trustedTimeAvailable, t]);
+    }, [
+        versions,
+        instances,
+        primaryBundle,
+        installedBundleInstance,
+        setActiveWorkspace,
+        settings?.instancesRoot,
+        trustedNowMs,
+        trustedTimeAvailable,
+        t,
+        applyBundleUpdate.isPending,
+        applyBundleUpdate.mutate,
+        bundleUpdating,
+    ]);
 
     // Seeds the roving tabindex so one panel is always Tab-reachable at rest.
     const defaultIndex = useMemo(() => {
@@ -496,6 +571,25 @@ export function InstancesWorkspace() {
                         <Progress value={bundleProgress.progressPercent ?? 0} />
                     </div>
                 )}
+                {bundleUpdating && bundleUpdateState && (
+                    <div className="mt-4 bap-card p-4">
+                        <p className="mb-2 text-sm text-foreground">
+                            {(BUNDLE_UPDATE_PROGRESS_LABEL[bundleUpdateState.status]
+                                ? t(BUNDLE_UPDATE_PROGRESS_LABEL[bundleUpdateState.status])
+                                : t("instances.bundleProgressInstalling"))}{" "}
+                            — {MODE.bundle.title}
+                            {bundleUpdateState.remoteVersion ? ` → v${bundleUpdateState.remoteVersion}` : ""}
+                        </p>
+                        <Progress value={bundleUpdateState.progressPercent ?? 0} />
+                    </div>
+                )}
+                {bundleUpdateFailed && bundleUpdateState && !bundleUpdating && (
+                    <div className="mt-4 bap-card border border-destructive/40 p-4">
+                        <p className="text-sm text-destructive">
+                            {bundleUpdateState.errorMessage || t("instances.updateButton")} failed
+                        </p>
+                    </div>
+                )}
             </div>
 
             {/* Installed profiles */}
@@ -548,23 +642,7 @@ export function InstancesWorkspace() {
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-1 border-t border-border px-2 py-1.5">
-                                    <button
-                                        onClick={() => setActiveWorkspace("launch")}
-                                        className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                        title={t("instances.playButton")}
-                                    >
-                                        <Play size={13} /> {t("instances.playButton")}
-                                    </button>
-                                    {!isBundle && (
-                                        <button
-                                            onClick={() => openModsForInstance(instance.id)}
-                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                            title={t("instances.addModsButtonTitle")}
-                                        >
-                                            <Package size={13} /> {t("instances.modsButton")}
-                                        </button>
-                                    )}
-                                    {bundleUpdateAvailable && (
+                                    {bundleUpdateAvailable ? (
                                         <button
                                             onClick={() => applyBundleUpdate.mutate(instance.id)}
                                             disabled={applyBundleUpdate.isPending}
@@ -573,6 +651,23 @@ export function InstancesWorkspace() {
                                         >
                                             <RefreshCw size={13} />{" "}
                                             {applyBundleUpdate.isPending ? "Updating…" : t("instances.updateButton")}
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={() => setActiveWorkspace("launch")}
+                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                                            title={t("instances.playButton")}
+                                        >
+                                            <Play size={13} /> {t("instances.playButton")}
+                                        </button>
+                                    )}
+                                    {!isBundle && (
+                                        <button
+                                            onClick={() => openModsForInstance(instance.id)}
+                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                                            title={t("instances.addModsButtonTitle")}
+                                        >
+                                            <Package size={13} /> {t("instances.modsButton")}
                                         </button>
                                     )}
                                     <span className="flex-1" />

@@ -7,15 +7,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 // selection, launch start, and set-default mutations through the query hooks.
 const back = vi.hoisted(() => ({
     instances: [] as Array<Record<string, unknown>>,
+    bundles: [] as Array<Record<string, unknown>>,
     settings: {} as Record<string, unknown>,
     runtime: { status: "idle" } as Record<string, unknown>,
     startCalls: [] as Array<{ instanceId: string; showMelonConsole: boolean }>,
     setCalls: [] as Array<{ key: string; value: unknown }>,
+    workspaceCalls: [] as string[],
 }));
 
 vi.mock("../../api", () => ({
     api: {
         instances: { list: async () => structuredClone(back.instances) },
+        bundle: { listAvailable: async () => structuredClone(back.bundles) },
         launch: {
             getRuntimeState: async () => structuredClone(back.runtime),
             start: async (input: { instanceId: string; showMelonConsole: boolean }) => {
@@ -35,6 +38,17 @@ vi.mock("../../api", () => ({
     },
 }));
 
+vi.mock("../stores/useShellStore", () => ({
+    useShellStore: (selector: (s: Record<string, unknown>) => unknown) =>
+        selector({
+            activeWorkspace: "launch",
+            setActiveWorkspace: (id: string) => {
+                back.workspaceCalls.push(id);
+            },
+            openModsForInstance: () => undefined,
+        }),
+}));
+
 import { LaunchWorkspace } from "./LaunchWorkspace";
 
 function renderLaunch() {
@@ -47,10 +61,12 @@ beforeEach(() => {
         { id: "inst-1", profileName: "BapBap Main", versionId: "1.0.0", melonLoaderFirstRunPending: true },
         { id: "inst-2", profileName: "Boss Rush", versionId: "1.1.0" },
     ];
+    back.bundles = [];
     back.settings = { launchShowMelonConsole: true, launchDefaultProfileId: null };
     back.runtime = { status: "idle" };
     back.startCalls = [];
     back.setCalls = [];
+    back.workspaceCalls = [];
 });
 
 afterEach(() => {
@@ -110,5 +126,36 @@ describe("LaunchWorkspace", () => {
         await waitFor(() =>
             expect(screen.queryByText("First launch can take longer while MelonLoader finishes setup.")).toBeNull()
         );
+    });
+
+    it("replaces Launch with Update that opens Instances when a bundle update is available", async () => {
+        back.instances = [
+            {
+                id: "binst-1",
+                profileName: "Battle Royale",
+                versionId: "bundle:battle-royale-playtest:0.1.0",
+                instanceType: "bundle",
+                bundleId: "battle-royale-playtest",
+                bundleVersion: "0.1.0",
+            },
+        ];
+        back.bundles = [
+            {
+                id: "battle-royale-playtest",
+                name: "Battle Royale",
+                version: "0.1.1",
+                buildNumber: 3,
+                channel: "stable",
+                isInstalled: true,
+                isUpdateAvailable: true,
+            },
+        ];
+        renderLaunch();
+
+        await screen.findByText("Battle Royale");
+        expect(screen.queryByRole("button", { name: /launch/i })).toBeNull();
+        fireEvent.click(await screen.findByRole("button", { name: /^update$/i }));
+        await waitFor(() => expect(back.workspaceCalls).toContain("instances"));
+        expect(back.startCalls).toEqual([]);
     });
 });

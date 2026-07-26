@@ -9,6 +9,7 @@ const back = vi.hoisted(() => ({
     packages: [] as Array<Record<string, unknown>>,
     instances: [] as Array<Record<string, unknown>>,
     states: {} as Record<string, { status: string; version?: string }>,
+    unlockedSecretIds: [] as string[],
     bulkCalls: [] as Array<{ action: string; packageIds: string[] }>,
 }));
 
@@ -16,6 +17,9 @@ vi.mock("../../api", () => ({
     api: {
         instances: {
             list: async () => structuredClone(back.instances),
+        },
+        settings: {
+            getAll: async () => ({ modsUnlockedSecretIds: structuredClone(back.unlockedSecretIds) }),
         },
         manifest: {
             getIndex: async () => ({ channels: [{ id: "release", enabled: true }] }),
@@ -60,6 +64,7 @@ beforeEach(() => {
     ];
     back.states = { "release::beta": { status: "installed-enabled" } };
     back.instances = [{ id: "inst-1", profileName: "Default" }];
+    back.unlockedSecretIds = [];
     back.bulkCalls = [];
 });
 
@@ -132,7 +137,7 @@ describe("ModsWorkspace", () => {
     it("hides a secret/hidden mod from the grid and does not render a featured recommendation (MOD-05)", async () => {
         // A secret mod sorted first carrying a ribbon tag must NOT appear in the
         // catalog grid. The real manifest does NOT set the `visibility` field — it
-        // signals secret via tags / visual.ribbonTags, so this uses exactly that.
+        // signals secret via exact tags / visual.ribbonTags ("secret" | "hidden").
         back.packages = [
             pkg("secret", "Secret Mod", { tags: ["secret"], visual: { ribbonTags: ["secret"] } }),
             pkg("public", "Public Mod", { visual: { ribbonTags: ["editor"] } }),
@@ -144,6 +149,43 @@ describe("ModsWorkspace", () => {
         expect(screen.queryAllByText("Secret Mod").length).toBe(0);
         expect(screen.getAllByText("Public Mod").length).toBe(1);
         expect(screen.queryByText(/editor's pick/i)).toBeNull();
+    });
+
+    it("does not treat visual style tokens like hidden_candy as secret (MOD-05b)", async () => {
+        // Live manifest uses visual.tags like "hidden_candy" / "hidden_ember" as
+        // style presets — substring matching would hide public mods like Hidden
+        // Dev Arguments and BR UI (Old But Gold).
+        back.packages = [
+            pkg("dev-args", "Hidden Dev Arguments", {
+                tags: ["mod", "dev", "arguments"],
+                visual: { tags: ["hidden_candy"], ribbonTags: ["host-only"] },
+            }),
+            pkg("br-ui", "BR UI Old But Gold", {
+                visual: { tags: ["hidden_ember"] },
+            }),
+            pkg("secret", "Secret Mod", { tags: ["secret"] }),
+        ];
+        back.states = {};
+
+        renderMods();
+        await waitFor(() => expect(cardCount()).toBe(2));
+        expect(screen.getByText("Hidden Dev Arguments")).toBeTruthy();
+        expect(screen.getByText("BR UI Old But Gold")).toBeTruthy();
+        expect(screen.queryAllByText("Secret Mod").length).toBe(0);
+    });
+
+    it("shows a secretUnlockId mod after that unlock group is unlocked (MOD-05c)", async () => {
+        back.packages = [
+            pkg("locked", "Locked Secret", { secretUnlockId: "default", tags: ["secret"] }),
+            pkg("public", "Public Mod"),
+        ];
+        back.unlockedSecretIds = ["default"];
+        back.states = {};
+
+        renderMods();
+        await waitFor(() => expect(cardCount()).toBe(2));
+        expect(screen.getByText("Locked Secret")).toBeTruthy();
+        expect(screen.getByText("Public Mod")).toBeTruthy();
     });
 
     it("filters bundle profiles out of the install target selector (MOD-02/MOD-06)", async () => {

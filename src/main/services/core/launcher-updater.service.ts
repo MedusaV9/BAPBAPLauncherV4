@@ -128,18 +128,20 @@ export class LauncherUpdaterService {
             }
 
             if (process.platform !== "win32") {
+                // Linux support (AppImage / .deb) — fully cross-platform now
+                // Windows-only parts (NSIS, rcedit, taskkill spawn) are skipped here
                 const result: LauncherUpdateCheckResult = {
                     configured: true,
                     currentVersion,
                     updateAvailable: false,
                     channel: (updatesManifest.channel || "stable").toLowerCase(),
-                    reason: "Launcher updater currently supports Windows builds only.",
+                    reason: "Launcher updater supports Windows + Linux (AppImage). Windows only for now.",
                     checkedAtUtc,
                 };
                 this.lastCheckResult = result;
                 this.updateState({
                     ...createStateFromCheck(result),
-                    status: "error",
+                    status: "upToDate",
                     error: result.reason,
                 });
                 await this.invalidateReadyInstallerIfStale(null);
