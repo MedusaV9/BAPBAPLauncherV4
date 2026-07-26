@@ -149,6 +149,32 @@ export class SettingsStoreService {
             }
             return;
         }
+        if (key === "manifestUrl") {
+            const url = String(value ?? "").trim();
+            if (!url) {
+                throw new Error("manifestUrl cannot be empty.");
+            }
+            let parsed: URL;
+            try {
+                parsed = new URL(url);
+            } catch {
+                throw new Error("manifestUrl must be a valid URL.");
+            }
+            if (parsed.protocol !== "https:") {
+                throw new Error("manifestUrl must use HTTPS.");
+            }
+            const allowedHosts = new Set([
+                "github.com",
+                "raw.githubusercontent.com",
+                "objects.githubusercontent.com",
+                "release-assets.githubusercontent.com",
+            ]);
+            if (!allowedHosts.has(parsed.hostname.toLowerCase())) {
+                throw new Error(`manifestUrl host is not allowed: ${parsed.hostname}`);
+            }
+            this.store.set(key, url as never);
+            return;
+        }
         this.store.set(key, value as never);
     }
 

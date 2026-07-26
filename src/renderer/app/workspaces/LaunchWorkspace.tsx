@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { Play, Pause, Square, Terminal, Boxes, Star, Copy, ArrowDownToLine, Clock3, ChevronUp, ChevronDown, ArrowLeftRight, Package, Search, Trophy } from "lucide-react";
+import { Play, Pause, Square, Terminal, Boxes, Star, Copy, ArrowDownToLine, Clock3, ChevronUp, ChevronDown, ArrowLeftRight, Package, Search, Trophy, RefreshCw } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
@@ -19,6 +19,7 @@ import {
     useStopLaunch,
     useSettings,
     useSetSetting,
+    useBundles,
 } from "../query/hooks";
 import { getLaunchRuntimeLabel, resolveModeVideoKey, type ModeVideoKey } from "../../helpers/launch-ui";
 import { api } from "../../api";
@@ -128,6 +129,7 @@ const LaunchBackdrop = memo(function LaunchBackdrop({
 export function LaunchWorkspace() {
     const t = useT();
     const { data: instances } = useInstances();
+    const { data: bundles = [] } = useBundles();
     const { data: runtime } = useRuntimeState();
     const { data: log } = useRuntimeLog();
     const { data: settings } = useSettings();
@@ -135,6 +137,7 @@ export function LaunchWorkspace() {
     const stopLaunch = useStopLaunch();
     const setSetting = useSetSetting();
     const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
+    const activeWorkspace = useShellStore(s => s.activeWorkspace);
     const openModsForInstance = useShellStore(s => s.openModsForInstance);
     const reduceMotion = useReducedMotion();
 
@@ -170,6 +173,11 @@ export function LaunchWorkspace() {
     const isRunning = status === "running";
     const statusTone: StatusTone = isRunning ? "active" : isBusy ? "busy" : status === "failed" ? "error" : "idle";
     const selectedInstance = instances?.find(instance => instance.id === selectedId) ?? null;
+    const selectedBundleNeedsUpdate = Boolean(
+        selectedInstance?.instanceType === "bundle" &&
+            selectedInstance.bundleId &&
+            bundles.find(bundle => bundle.id === selectedInstance.bundleId)?.isUpdateAvailable,
+    );
 
     // Background video, mapped to the selected instance's track. Honors the
     // launchAutoplayVideos setting and OS reduced-motion (both fall back to the
@@ -179,6 +187,8 @@ export function LaunchWorkspace() {
     const autoplayVideos = settings?.launchAutoplayVideos !== false;
     const showVideo = autoplayVideos && !reduceMotion;
     const [videoPaused, setVideoPaused] = useState(false);
+    const workspaceActive = activeWorkspace === "launch";
+    const effectiveVideoPaused = videoPaused || !workspaceActive;
 
     const logViewport = useRef<HTMLDivElement>(null);
     const [autoscroll, setAutoscroll] = useState(true);
@@ -257,7 +267,7 @@ export function LaunchWorkspace() {
                     showVideo={showVideo}
                     videoSrc={videoSrc}
                     videoKey={videoKey}
-                    videoPaused={videoPaused}
+                    videoPaused={effectiveVideoPaused}
                     imageUrl={selectedInstance?.imageUrl}
                     imageKey={selectedInstance?.id}
                     reduceMotion={Boolean(reduceMotion)}
@@ -310,7 +320,9 @@ export function LaunchWorkspace() {
                                 {selectedInstance?.profileName ?? "Select a profile"}
                             </h1>
                             <span className="font-mono text-sm text-muted-foreground">
-                                {selectedInstance?.versionId}
+                                {selectedInstance?.instanceType === "bundle"
+                                    ? (selectedInstance.bundleVersion || selectedInstance.version || selectedInstance.gameVersion)
+                                    : selectedInstance?.versionId}
                             </span>
                         </div>
 
@@ -332,6 +344,19 @@ export function LaunchWorkspace() {
                                     size="xl"
                                 >
                                     {t("launch.stopButton")}
+                                </BapButton>
+                            ) : selectedBundleNeedsUpdate ? (
+                                <BapButton
+                                    onClick={() => setActiveWorkspace("instances")}
+                                    icon={RefreshCw}
+                                    accentColor={LAUNCH_ACCENT}
+                                    showChevron={false}
+                                    disabled={!selectedId}
+                                    size="xl"
+                                    magnetic
+                                    glow
+                                >
+                                    {t("instances.updateButton")}
                                 </BapButton>
                             ) : (
                                 <BapButton
@@ -549,7 +574,11 @@ export function LaunchWorkspace() {
                                                     {instance.profileName}
                                                 </span>
                                             </div>
-                                            <span className="font-mono text-xs text-muted-foreground">{instance.versionId}</span>
+                                            <span className="font-mono text-xs text-muted-foreground">
+                                                {instance.instanceType === "bundle"
+                                                    ? (instance.bundleVersion || instance.version || instance.gameVersion)
+                                                    : instance.versionId}
+                                            </span>
                                         </div>
                                     </button>
                                 );

@@ -7,6 +7,16 @@ import { qk } from "./queryKeys";
 
 const RUNTIME_LOG_BUFFER = 400;
 
+const TERMINAL_INSTALL_STATUSES = new Set(["done", "error"]);
+const TERMINAL_BUNDLE_UPDATE_STATUSES = new Set([
+    "done",
+    "failed",
+    "check-failed",
+    "signature-mismatch",
+    "disk-full",
+    "up-to-date",
+]);
+
 /**
  * Wires every `onXChanged` / `onRuntimeLog` IPC subscription into the Query
  * cache so components read live backend state through ordinary `useQuery`
@@ -31,8 +41,9 @@ export function installEventBridge(qc: QueryClient): () => void {
     unsubs.push(
         api.instances.onInstallStateChanged(state => {
             qc.setQueryData(qk.installState, state);
-            // A finished install changes the instance list.
-            qc.invalidateQueries({ queryKey: qk.instances });
+            if (TERMINAL_INSTALL_STATUSES.has(state.status)) {
+                qc.invalidateQueries({ queryKey: qk.instances });
+            }
         })
     );
 
@@ -71,7 +82,10 @@ export function installEventBridge(qc: QueryClient): () => void {
         unsubs.push(
             api.bundle.onUpdateStateChanged(state => {
                 qc.setQueryData(qk.bundleUpdate(state.instanceId), state);
-                qc.invalidateQueries({ queryKey: qk.bundles });
+                if (TERMINAL_BUNDLE_UPDATE_STATUSES.has(state.status)) {
+                    qc.invalidateQueries({ queryKey: qk.bundles });
+                    qc.invalidateQueries({ queryKey: qk.instances });
+                }
             })
         );
     }

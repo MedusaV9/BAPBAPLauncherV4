@@ -51,6 +51,8 @@ export class InstanceService {
     private readonly installEvents = new EventEmitter();
     private readonly installMutex = new AsyncMutex();
     private installState: InstanceInstallState = { status: "idle" };
+    private steamRootCache: { value: string | null; expiresAt: number } | null = null;
+    private static readonly STEAM_ROOT_CACHE_MS = 60_000;
 
     constructor(settings: SettingsStoreService, manifests: ManifestClient, downloader: ArchiveDownloadService, trustedTime: TrustedTimeService, melonLoader: MelonLoaderService) {
         this.settings = settings;
@@ -675,6 +677,11 @@ export class InstanceService {
     }
 
     private async resolveSteamRootPath(): Promise<string | null> {
+        const now = Date.now();
+        if (this.steamRootCache && now < this.steamRootCache.expiresAt) {
+            return this.steamRootCache.value;
+        }
+
         const registryLookups = [
             { key: "HKCU\\Software\\Valve\\Steam", value: "SteamPath" },
             { key: "HKLM\\Software\\WOW6432Node\\Valve\\Steam", value: "InstallPath" },
@@ -684,6 +691,10 @@ export class InstanceService {
         for (const lookup of registryLookups) {
             const value = await readRegistryValue(lookup.key, lookup.value);
             if (value && await pathExists(value)) {
+                this.steamRootCache = {
+                    value,
+                    expiresAt: now + InstanceService.STEAM_ROOT_CACHE_MS,
+                };
                 return value;
             }
         }
@@ -694,10 +705,18 @@ export class InstanceService {
         ];
         for (const fallback of fallbacks) {
             if (await pathExists(fallback)) {
+                this.steamRootCache = {
+                    value: fallback,
+                    expiresAt: now + InstanceService.STEAM_ROOT_CACHE_MS,
+                };
                 return fallback;
             }
         }
 
+        this.steamRootCache = {
+            value: null,
+            expiresAt: now + InstanceService.STEAM_ROOT_CACHE_MS,
+        };
         return null;
     }
 }

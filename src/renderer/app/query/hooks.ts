@@ -457,6 +457,19 @@ export function useBundleInstallProgress(bundleId: string | undefined) {
     });
 }
 
+export function useBundleUpdateState(instanceId: string | undefined) {
+    return useQuery({
+        queryKey: qk.bundleUpdate(instanceId ?? ""),
+        queryFn: () => {
+            if (!api.bundle.getUpdateState) {
+                return Promise.reject(new Error("Bundle update state is not supported in this build."));
+            }
+            return api.bundle.getUpdateState(instanceId as string);
+        },
+        enabled: Boolean(instanceId && api.bundle.getUpdateState),
+    });
+}
+
 export function useApplyBundleUpdate() {
     const qc = useQueryClient();
     return useMutation({

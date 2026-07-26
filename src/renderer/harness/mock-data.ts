@@ -296,8 +296,8 @@ export const harnessPackages: PackageCard[] = [
         thumbnailPath: svgDataUrl("Hidden Dev Arguments", "#291333", "#ff79cc"),
         packageManifestPath: "release/sonic.bapbap.hidden-dev-arguments.json",
         latestVersion: "1.0.0",
-        tags: ["mod", "dev", "arguments", "arena", "secret"],
-        visual: { tags: ["hidden_candy"], ribbonTags: ["secret"] },
+        tags: ["mod", "dev", "arguments", "arena"],
+        visual: { ribbonTags: ["host-only"] },
         supportedTracks: ["bapbap", "boss-rush"],
     },
     {
@@ -353,7 +353,7 @@ export const harnessPackages: PackageCard[] = [
         packageManifestPath: "release/sonic.bapbap.br-ui-old-but-gold.json",
         latestVersion: "1.0.0",
         tags: ["mod", "ui", "battle-royale", "legacy"],
-        visual: { tags: ["hidden_ember"] },
+        visual: {},
         supportedTracks: ["bapbap"],
     },
     {

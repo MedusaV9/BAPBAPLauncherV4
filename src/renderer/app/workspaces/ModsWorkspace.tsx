@@ -19,6 +19,7 @@ import {
     useUninstallContent,
     useSetContentEnabled,
     useBulkApply,
+    useSettings,
 } from "../query/hooks";
 import { containerVariants, itemUp, EASE_POP } from "../../motion";
 import type { ContentInstallState, ContentStateMap, ContentBulkAction, ContentBulkApplyResult } from "../../../shared/ipc";
@@ -61,22 +62,29 @@ function getPackageState(
     return states?.[stateKey(channelId, packageId)] ?? states?.[packageId];
 }
 
-// A mod is "secret" if the manifest marks it hidden or tags it as such. The real
-// manifest never sets the `visibility` field — it signals secret via a "secret"
-// or "hidden" entry in tags / visual.ribbonTags / visual.tags — so check all of
-// them. Secret mods are kept out of the catalog grid.
-function isSecretPackage(p: PackageCard): boolean {
-    const hasSecretTag = (tags?: string[]) =>
+// A mod is "secret" if the manifest marks it as such. Real secrecy signals:
+//   - visibility: "secret"
+//   - secretUnlockId (password-gated group)
+//   - exact tag "secret" or "hidden" on tags / visual.ribbonTags / visual.tags
+// Style tokens like "hidden_candy" / "hidden_ember" must NOT match — those are
+// visual presets, not secrecy flags (substring includes("hidden") false-positive).
+// Once the matching secretUnlockId is in the user's unlocked list, show the mod.
+function isSecretPackage(p: PackageCard, unlockedSecretIds: string[] = []): boolean {
+    const unlockId = (p.secretUnlockId ?? "").trim().toLowerCase();
+    if (unlockId && unlockedSecretIds.some(id => id.trim().toLowerCase() === unlockId)) {
+        return false;
+    }
+    const hasExactSecretTag = (tags?: string[]) =>
         (tags ?? []).some(t => {
-            const v = t.toLowerCase();
-            return v.includes("secret") || v.includes("hidden");
+            const v = t.trim().toLowerCase();
+            return v === "secret" || v === "hidden";
         });
     return (
         p.visibility === "secret" ||
-        Boolean(p.secretUnlockId) ||
-        hasSecretTag(p.tags) ||
-        hasSecretTag(p.visual?.ribbonTags) ||
-        hasSecretTag(p.visual?.tags)
+        Boolean(unlockId) ||
+        hasExactSecretTag(p.tags) ||
+        hasExactSecretTag(p.visual?.ribbonTags) ||
+        hasExactSecretTag(p.visual?.tags)
     );
 }
 
@@ -334,6 +342,10 @@ export function ModsWorkspace() {
 
     const { data: packages, isLoading } = usePackages(channelId);
     const { data: states } = useContentStates(instanceId ?? undefined);
+    const { data: settings } = useSettings();
+    // Prefer the settings array reference (stable) over `?? []` so the filter
+    // memo does not recompute every render while settings are still loading.
+    const unlockedSecretIds = settings?.modsUnlockedSecretIds;
     const installContent = useInstallContent();
     const uninstallContent = useUninstallContent();
     const setEnabled = useSetContentEnabled();
@@ -355,9 +367,8 @@ export function ModsWorkspace() {
     const showError = Boolean(errorMessage) && errorMessage !== dismissedError;
 
     const filtered = useMemo(() => {
-        // Secret/hidden mods never appear in the catalog grid (they're revealed
-        // through their own unlock flow, not browsed here).
-        let list = (packages ?? []).filter(p => !isSecretPackage(p));
+        // Secret/hidden mods stay out of the catalog until unlocked.
+        let list = (packages ?? []).filter(p => !isSecretPackage(p, unlockedSecretIds ?? []));
         const q = deferredQuery.trim().toLowerCase();
         if (q) {
             list = list.filter(
@@ -378,7 +389,7 @@ export function ModsWorkspace() {
             });
         }
         return list;
-    }, [packages, deferredQuery, statusFilter, states, channelId]);
+    }, [packages, deferredQuery, statusFilter, states, channelId, unlockedSecretIds]);
 
     const hasActiveFilters = query.trim().length > 0 || statusFilter !== "all";
 

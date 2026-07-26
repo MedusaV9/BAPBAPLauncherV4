@@ -40,6 +40,7 @@ vi.mock("../../api", () => ({
                 return undefined;
             },
             getInstallProgressState: async () => ({ status: "idle" }),
+            getUpdateState: async (instanceId: string) => ({ instanceId, status: "idle" }),
             applyUpdate: async (instanceId: string) => {
                 back.applyUpdateCalls.push(instanceId);
                 return { instanceId, status: "done" };
@@ -123,12 +124,38 @@ describe("InstancesWorkspace", () => {
         expect(await screen.findByText("My Profile")).toBeTruthy();
     });
 
-    it("labels Battle Royale as Playtest instead of Curated Bundle (INS-13)", async () => {
+    it("shows Battle Royale hero without Playtest tag (INS-13)", async () => {
         renderInstances();
 
         expect(await screen.findByText("Battle Royale")).toBeTruthy();
-        expect(screen.getByText("Playtest")).toBeTruthy();
+        expect(screen.queryByText("Playtest")).toBeNull();
         expect(screen.queryByText("Curated Bundle")).toBeNull();
+    });
+
+    it("shows Update as the only primary action on the Battle Royale hero when an update is available", async () => {
+        back.bundles = [
+            {
+                id: "bap-bundle",
+                name: "BAPBAP Bundle",
+                version: "1.3.0",
+                buildNumber: 3,
+                channel: "release",
+                isInstalled: true,
+                isUpdateAvailable: true,
+                isDownloadable: true,
+            },
+        ];
+        back.instances = [
+            { id: "binst-1", profileName: "Bundle Profile", versionId: "1.2.0", instanceType: "bundle", bundleId: "bap-bundle" },
+        ];
+        renderInstances();
+
+        await screen.findByText("Bundle Profile");
+        // Profile grid replaces Play with Update while an update is pending.
+        expect(screen.queryByRole("button", { name: "Play" })).toBeNull();
+        const profileUpdate = await screen.findByRole("button", { name: "Update" });
+        fireEvent.click(profileUpdate);
+        await waitFor(() => expect(back.applyUpdateCalls).toContain("binst-1"));
     });
 
     it("lets an installed official mode install another named profile (INS-14)", async () => {
@@ -188,12 +215,12 @@ describe("InstancesWorkspace", () => {
         ];
         renderInstances();
 
-        // Find the bundle panel and focus to reveal CTA buttons.
-        const panel = screen.getAllByRole("radio").find(el => el.textContent?.includes("Battle Royale")) as HTMLElement;
-        fireEvent.focus(panel);
-        const update = await screen.findByRole("button", { name: "Update" });
-        fireEvent.click(update);
+        await screen.findByText("Bundle Profile");
+        const updateButtons = await screen.findAllByRole("button", { name: "Update" });
+        // Profile card Update (hero may also expose Update when focused).
+        fireEvent.click(updateButtons[updateButtons.length - 1]!);
         await waitFor(() => expect(back.applyUpdateCalls).toContain("binst-1"));
+        expect(screen.queryByRole("button", { name: "Play" })).toBeNull();
     });
 
     it("does not show an update button when the installed bundle is up to date (INS-12)", async () => {

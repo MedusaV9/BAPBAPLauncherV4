@@ -253,7 +253,7 @@ export function createHarnessApi(): V2Api {
             }
         };
 
-        applyRibbonTags("sonic.bapbap.hidden-dev-arguments", ["secret"]);
+        applyRibbonTags("sonic.bapbap.hidden-dev-arguments", ["host-only"]);
         applyRibbonTags("sonic.bapbap.arena-random-chars", ["host-only"]);
         applyRibbonTags("sonic.bapbap.fps-camera", ["host-only"]);
         applyRibbonTags("sonic.bapbap.br-ui-old-but-gold", ["recommended"]);

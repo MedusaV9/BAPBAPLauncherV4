@@ -26,3 +26,11 @@ nsis:
   oneClick: false
   perMachine: false
   allowToChangeInstallationDirectory: true
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: "Game"
+  icon: build/icon.ico
+  # desktop: optional integration for .desktop files

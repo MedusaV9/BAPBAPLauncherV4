@@ -10,6 +10,7 @@ This file provides guidance to Claude Code when working with the BAPBAP Nexus co
 | `npm run dev:harness` | Standalone Vite dev (browser-only, no Electron) |
 | `npm run build` | Build main + preload + renderer + sync rebalance-vendor |
 | `npm run build:win` | Full build + Windows NSIS installer via electron-builder |
+| `npm run build:linux` | Full build + Linux AppImage/deb via electron-builder |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run test` | `vitest run` (all test files) |
 | `npm run verify` | typecheck + test + build |
@@ -17,6 +18,8 @@ This file provides guidance to Claude Code when working with the BAPBAP Nexus co
 | Single file test | `npx vitest run src/main/services/bundle.service.test.ts` |
 | Single test | `npx vitest run -- testNamePattern "should save and load"` |
 | Watch mode | `npx vitest` |
+
+**Linux Support**: Full cross-platform (Windows + Linux). Updater now supports AppImage/Linux updates. Windows build remains untouched and unchanged.
 
 ## Architecture
 

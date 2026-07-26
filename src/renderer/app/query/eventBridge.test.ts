@@ -60,6 +60,26 @@ describe("installEventBridge", () => {
         expect(qc.invalidateQueries).toHaveBeenCalled();
     });
 
+    it("does not invalidate instances on non-terminal install progress", () => {
+        const qc = fakeQc();
+        installEventBridge(qc as never);
+
+        captured.listeners.install({ status: "downloading", progressPercent: 42 });
+
+        expect(qc.invalidateQueries).not.toHaveBeenCalled();
+    });
+
+    it("invalidates bundles only on terminal bundle update states", () => {
+        const qc = fakeQc();
+        installEventBridge(qc as never);
+
+        captured.listeners.bundleUpdate({ instanceId: "inst-1", status: "downloading", progressPercent: 10 });
+        expect(qc.invalidateQueries).not.toHaveBeenCalled();
+
+        captured.listeners.bundleUpdate({ instanceId: "inst-1", status: "done" });
+        expect(qc.invalidateQueries).toHaveBeenCalled();
+    });
+
     it("caps the runtime log ring buffer at 400 entries, keeping the most recent", () => {
         const qc = fakeQc();
         installEventBridge(qc as never);
