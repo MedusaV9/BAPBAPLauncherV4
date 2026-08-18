@@ -23,6 +23,7 @@ export class SettingsStoreService {
             name: "bapbap-launcher-v2",
             defaults: {
                 manifestUrl: DEFAULT_MANIFEST_URL,
+                githubToken: "",
                 launcherAutoUpdate: true,
                 launcherAutoDownloadUpdates: true,
                 launcherAutoInstallOnNextStart: true,
@@ -68,6 +69,7 @@ export class SettingsStoreService {
         const defaultInstancesRoot = path.join(app.getPath("userData"), "instances");
         return applyLockedFxSettings({
             manifestUrl: this.store.get("manifestUrl"),
+            githubToken: this.store.get("githubToken") ?? "",
             launcherAutoUpdate: this.store.get("launcherAutoUpdate"),
             launcherAutoDownloadUpdates: this.store.get("launcherAutoDownloadUpdates"),
             launcherAutoInstallOnNextStart: this.store.get("launcherAutoInstallOnNextStart"),
@@ -175,11 +177,20 @@ export class SettingsStoreService {
             this.store.set(key, url as never);
             return;
         }
+        if (key === "githubToken") {
+            this.store.set(key, String(value ?? "").trim() as never);
+            return;
+        }
         this.store.set(key, value as never);
     }
 
     getManifestUrl(): string {
         return this.store.get("manifestUrl");
+    }
+
+    /** Trimmed PAT for private GitHub lab manifests/releases; empty if unset. */
+    getGithubToken(): string {
+        return `${this.store.get("githubToken") ?? ""}`.trim();
     }
 
     getInstancesRoot(): string {

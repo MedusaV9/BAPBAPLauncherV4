@@ -15,6 +15,7 @@ import {
     RadioManifest,
 } from "../../../shared/manifest";
 import { SettingsStoreService } from "../core/settings-store";
+import { githubAuthHeaders } from "../../utils/github-auth";
 
 type CacheState = {
     index?: ManifestIndex;
@@ -313,13 +314,19 @@ export class ManifestClient {
     }
 
     private async fetchJson<T>(url: string): Promise<T> {
-        const response = await fetchWithTimeout(url, {
-            method: "GET",
-            cache: "no-store",
-            headers: {
-                "Accept": "application/json",
+        const response = await fetchWithTimeout(
+            url,
+            {
+                method: "GET",
+                cache: "no-store",
+                headers: {
+                    Accept: "application/json",
+                    // Private lab repos (e.g. bapbap-manifest-lab) need a PAT.
+                    ...githubAuthHeaders(this.settings.getGithubToken(), url),
+                },
             },
-        }, MANIFEST_TIMEOUT_MS);
+            MANIFEST_TIMEOUT_MS
+        );
         if (!response.ok) {
             throw new Error(`Manifest request failed (${response.status}) for ${url}`);
         }

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useRef, useState, forwardRef, type KeyboardEvent } from "react";
-import { Download, Play, Boxes, Package, Sword, RefreshCw, Pencil, Trash2, FolderOpen } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
-import { FeatureCard } from "../../components/brand/FeatureCard";
+import { Download, Play, Boxes, Sword, RefreshCw, FolderOpen } from "lucide-react";
+import { useReducedMotion } from "motion/react";
 import { Progress } from "../../components/ui/progress";
 import { cn } from "../lib/utils";
 import {
@@ -15,8 +14,6 @@ import {
     useBundleUpdateState,
     useApplyBundleUpdate,
     useTrustedTime,
-    useRemoveInstance,
-    useRenameInstance,
     useSettings,
 } from "../query/hooks";
 import { useShellStore } from "../stores/useShellStore";
@@ -33,9 +30,10 @@ import {
 } from "../../helpers/official-version-visibility";
 import { isTrustedTimeReady } from "../../helpers/unlock-ui";
 import { suggestProfileName, getInstallStateLabel, isInstallStateBusy } from "../../helpers/instances-ui";
-import { containerVariants, itemUp, EASE_POP } from "../../motion";
+import { EASE_POP } from "../../motion";
 import type { BundleSummary } from "../../../shared/ipc";
 import type { StringKey } from "../i18n/en";
+import { ArchiveSectionPrototype } from "./ArchiveSectionPrototype";
 
 const BUNDLE_PROGRESS_LABEL: Record<string, StringKey> = {
     resolving: "instances.bundleProgressResolving",
@@ -81,7 +79,7 @@ function suggestBundleProfileName(bundle: BundleSummary, instances: Array<{ prof
 const MODE: Record<InstancesHeroTrack, { accent: string; title: string; eyebrow: string; icon: typeof Boxes }> = {
     bapbap: { accent: "#e91e8c", title: "Arena", eyebrow: "Standard BAPBAP", icon: Boxes },
     "boss-rush": { accent: "#22c55e", title: "Boss Rush", eyebrow: "Challenge Mode", icon: Sword },
-    bundle: { accent: "#22d3ee", title: "Battle Royale", eyebrow: "", icon: Boxes },
+    bundle: { accent: "#eab308", title: "Battle Royale", eyebrow: "Public Playtest", icon: Boxes },
 };
 
 type HeroPanelData = {
@@ -101,35 +99,6 @@ type HeroPanelData = {
     onSecondaryAction?: () => void;
     updatePending?: boolean;
 };
-
-function ProfileArt({ imageUrl, accent }: { imageUrl?: string; accent: string }) {
-    // Key the inner state on the URL so a previously-failed image doesn't stay
-    // stuck on the fallback icon when the instance's art changes.
-    const [failed, setFailed] = useState(false);
-    useEffect(() => {
-        setFailed(false);
-    }, [imageUrl]);
-    const Icon = Package;
-
-    return (
-        <div className="relative h-full w-full overflow-hidden bg-[var(--surface-inset)]">
-            {imageUrl && !failed ? (
-                <img
-                    src={imageUrl}
-                    alt=""
-                    loading="lazy"
-                    onError={() => setFailed(true)}
-                    className="h-full w-full object-cover"
-                />
-            ) : (
-                <div className="flex h-full w-full items-center justify-center">
-                    <Icon size={22} className="text-muted-foreground" />
-                </div>
-            )}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-0.5 rounded-full" style={{ background: accent }} />
-        </div>
-    );
-}
 
 function ProceduralArt({ accent, glyph }: { accent: string; glyph: string }) {
     return (
@@ -173,6 +142,11 @@ const HeroPanel = forwardRef<HTMLDivElement, {
     const [imgFailed, setImgFailed] = useState(false);
     const t = useT();
     const Icon = MODE[data.track].icon;
+
+    // Reset fail state when art URL changes (avoids permanent ProceduralArt fallback).
+    useEffect(() => {
+        setImgFailed(false);
+    }, [data.art]);
 
     const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
         if (reduceMotion) return;
@@ -237,21 +211,26 @@ const HeroPanel = forwardRef<HTMLDivElement, {
             >
                 {data.art && !imgFailed ? (
                     <img
+                        key={data.art}
                         src={data.art}
                         alt=""
-                        loading="lazy"
+                        decoding="async"
+                        fetchPriority="high"
                         onError={() => setImgFailed(true)}
-                        className="h-full w-full object-cover group-hover:[filter:brightness(0.85)]"
+                        className="absolute inset-0 h-full w-full object-cover object-center group-hover:[filter:brightness(0.9)]"
                     />
                 ) : (
                     <ProceduralArt accent={data.accent} glyph={data.title.charAt(0)} />
                 )}
             </div>
 
-            {/* Tonal overlay (idle dim) */}
+            {/* Tonal overlay (idle dim) — lighter when custom art is present so it reads */}
             <div
                 className="pointer-events-none absolute inset-0 transition-opacity duration-[280ms] ease-pop"
-                style={{ background: "#0a0b10", opacity: expanded ? 0 : 0.35 }}
+                style={{
+                    background: "#0a0b10",
+                    opacity: expanded ? 0 : data.art && !imgFailed ? 0.18 : 0.35,
+                }}
             />
             {/* Vignette */}
             <div className="pointer-events-none absolute inset-0" style={{ boxShadow: "inset 0 0 120px -40px rgba(0,0,0,0.55)" }} />
@@ -345,7 +324,7 @@ const HeroPanel = forwardRef<HTMLDivElement, {
 
 export function InstancesWorkspace() {
     const t = useT();
-    const { data: instances = [], isLoading } = useInstances();
+    const { data: instances = [] } = useInstances();
     const { data: gameVersions } = useGameVersions();
     const { data: bundles = [] } = useBundles();
     const { data: installState } = useInstallState();
@@ -353,19 +332,14 @@ export function InstancesWorkspace() {
     const installOfficial = useInstallOfficial();
     const installBundle = useInstallBundle();
     const applyBundleUpdate = useApplyBundleUpdate();
-    const removeInstance = useRemoveInstance();
-    const renameInstance = useRenameInstance();
     const { data: settings } = useSettings();
     const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
-    const openModsForInstance = useShellStore(s => s.openModsForInstance);
     const reduceMotion = useReducedMotion() ?? false;
 
     // Create-instance dialog: a track + version to install, plus a freely-chosen
     // name and install folder (defaults to the global instances root).
     const [createDraft, setCreateDraft] = useState<{ versionId: string; name: string; folder: string } | null>(null);
     const [bundleDraft, setBundleDraft] = useState<{ bundleId: string; name: string } | null>(null);
-    const [renameDraft, setRenameDraft] = useState<{ id: string; name: string } | null>(null);
-    const [confirmDelete, setConfirmDelete] = useState<{ id: string; name: string } | null>(null);
 
     // Time-gated official builds need a trusted clock to evaluate their unlock
     // window; without a finite trustedNowMs, resolveUnlockStatus treats every
@@ -517,7 +491,7 @@ export function InstancesWorkspace() {
             {/* Full-page atmosphere behind the scroll, so the background reads as
                 the whole page rather than a band clipped to the hero. */}
             <div className="bap-page-ambient pointer-events-none absolute inset-0 z-0" />
-            <div className="relative z-[1] h-full overflow-auto px-8 pb-8 pt-24">
+            <div className="relative z-[1] h-full overflow-auto px-8 pb-36 pt-24">
             {busy && installState && (
                 <div className="bap-card mb-6 p-4">
                     <p className="mb-2 text-sm text-foreground">
@@ -528,9 +502,9 @@ export function InstancesWorkspace() {
                 </div>
             )}
 
-            {/* Three-up mode-select hero */}
+            {/* Three-up mode-select hero — sized so archive below is in view without a toggle */}
             <div
-                className="mb-10"
+                className="relative mb-8"
                 role="radiogroup"
                 aria-label={t("instances.gameModesSelectorAriaLabel")}
                 onKeyDown={(e: KeyboardEvent) => {
@@ -543,7 +517,10 @@ export function InstancesWorkspace() {
                     }
                 }}
             >
-                <div className="relative z-[1] flex gap-4" style={{ height: "min(80vh, 760px)" }}>
+                <div
+                    className="relative z-[1] flex gap-4"
+                    style={{ height: "min(86vh, 860px)" }}
+                >
                     {panels.map((panel, idx) => (
                         <HeroPanel
                             key={panel.track}
@@ -592,111 +569,8 @@ export function InstancesWorkspace() {
                 )}
             </div>
 
-            {/* Installed profiles */}
-            <div className="mb-3 flex items-center gap-2">
-                <h2 className="font-display text-xs uppercase tracking-[0.18em] text-muted-foreground">{t("instances.yourProfilesHeading")}</h2>
-                <span className="rounded-full bg-white/[0.06] px-2 py-0.5 font-mono text-[0.6rem] text-muted-foreground">
-                    {instances.length}
-                </span>
-                <span className="ml-1 h-px flex-1 bg-border" />
-            </div>
-            {isLoading && <p className="text-sm text-muted-foreground">{t("instances.loadingInstancesMessage")}</p>}
-            {instances.length === 0 && !isLoading && (
-                <div className="bap-card p-6 text-sm text-muted-foreground">
-                    {t("instances.emptyStateMessage")}
-                </div>
-            )}
-            <motion.div
-                className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3"
-                variants={reduceMotion ? undefined : containerVariants}
-                initial={reduceMotion ? undefined : "hidden"}
-                animate={reduceMotion ? undefined : "show"}
-            >
-                {instances.map(instance => {
-                    const isBundle = instance.instanceType === "bundle";
-                    const accent = instance.officialTrack === "boss-rush" ? "#22d3ee" : "#e91e8c";
-                    const bundleSummary =
-                        isBundle && instance.bundleId
-                            ? bundles.find(b => b.id === instance.bundleId)
-                            : undefined;
-                    const bundleUpdateAvailable =
-                        isBundle &&
-                        Boolean(bundleSummary?.isUpdateAvailable) &&
-                        Boolean(api.bundle.applyUpdate);
-                    return (
-                        <motion.div key={instance.id} variants={reduceMotion ? undefined : itemUp}>
-                            <FeatureCard className="group flex h-full flex-col">
-                                <div className="flex flex-1 items-stretch">
-                                    <div className="w-20 shrink-0 overflow-hidden">
-                                        <ProfileArt imageUrl={instance.imageUrl} accent={accent} />
-                                    </div>
-                                    <div className="flex flex-1 flex-col justify-center gap-1 p-4">
-                                        <h3 className="font-display text-sm uppercase leading-tight text-foreground">
-                                            {instance.profileName}
-                                        </h3>
-                                        {!isBundle && (
-                                            <p className="truncate font-mono text-xs text-muted-foreground" title={instance.path}>
-                                                {instance.gameVersion || instance.version}
-                                            </p>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-1 border-t border-border px-2 py-1.5">
-                                    {bundleUpdateAvailable ? (
-                                        <button
-                                            onClick={() => applyBundleUpdate.mutate(instance.id)}
-                                            disabled={applyBundleUpdate.isPending}
-                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground disabled:opacity-50"
-                                            title={t("instances.updateButton")}
-                                        >
-                                            <RefreshCw size={13} />{" "}
-                                            {applyBundleUpdate.isPending ? "Updating…" : t("instances.updateButton")}
-                                        </button>
-                                    ) : (
-                                        <button
-                                            onClick={() => setActiveWorkspace("launch")}
-                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                            title={t("instances.playButton")}
-                                        >
-                                            <Play size={13} /> {t("instances.playButton")}
-                                        </button>
-                                    )}
-                                    {!isBundle && (
-                                        <button
-                                            onClick={() => openModsForInstance(instance.id)}
-                                            className="focus-ring flex items-center gap-1 rounded-md px-2 py-1 text-xs text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                            title={t("instances.addModsButtonTitle")}
-                                        >
-                                            <Package size={13} /> {t("instances.modsButton")}
-                                        </button>
-                                    )}
-                                    <span className="flex-1" />
-                                    {!isBundle && (
-                                        <>
-                                            <button
-                                                onClick={() => setRenameDraft({ id: instance.id, name: instance.profileName })}
-                                                className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                                                title={t("instances.renameProfileDialogTitle")}
-                                                aria-label={t("instances.renameProfileAriaLabel")}
-                                            >
-                                                <Pencil size={13} />
-                                            </button>
-                                            <button
-                                                onClick={() => setConfirmDelete({ id: instance.id, name: instance.profileName })}
-                                                className="focus-ring rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-                                                title={t("instances.deleteProfileDialogTitle")}
-                                                aria-label={t("instances.deleteProfileAriaLabel")}
-                                            >
-                                                <Trash2 size={13} />
-                                            </button>
-                                        </>
-                                    )}
-                                </div>
-                            </FeatureCard>
-                        </motion.div>
-                    );
-                })}
-            </motion.div>
+            {/* Always-visible archive catalog (uses remaining vertical space under the hero) */}
+            <ArchiveSectionPrototype />
 
             {/* Create instance — choose a name + install folder. */}
             <Dialog open={Boolean(createDraft)} onOpenChange={open => !open && setCreateDraft(null)}>
@@ -816,74 +690,6 @@ export function InstancesWorkspace() {
                 </DialogContent>
             </Dialog>
 
-            {/* Rename profile — display name only; the folder stays put. */}
-            <Dialog open={Boolean(renameDraft)} onOpenChange={open => !open && setRenameDraft(null)}>
-                <DialogContent className="max-w-sm">
-                    <DialogHeader>
-                        <DialogTitle>{t("instances.renameProfileDialogTitle")}</DialogTitle>
-                    </DialogHeader>
-                    {renameDraft && (
-                        <div className="flex flex-col gap-4">
-                            <Input
-                                autoFocus
-                                value={renameDraft.name}
-                                onChange={e => setRenameDraft({ ...renameDraft, name: e.target.value })}
-                                onKeyDown={e => {
-                                    if (e.key === "Enter" && renameDraft.name.trim()) {
-                                        renameInstance.mutate({ instanceId: renameDraft.id, name: renameDraft.name.trim() });
-                                        setRenameDraft(null);
-                                    }
-                                }}
-                            />
-                            <div className="flex justify-end gap-2">
-                                <Button variant="ghost" onClick={() => setRenameDraft(null)}>
-                                    {t("instances.cancelButton")}
-                                </Button>
-                                <Button
-                                    disabled={!renameDraft.name.trim() || renameInstance.isPending}
-                                    onClick={() => {
-                                        renameInstance.mutate({ instanceId: renameDraft.id, name: renameDraft.name.trim() });
-                                        setRenameDraft(null);
-                                    }}
-                                >
-                                    {t("instances.saveButton")}
-                                </Button>
-                            </div>
-                        </div>
-                    )}
-                </DialogContent>
-            </Dialog>
-
-            {/* Delete confirmation. */}
-            <Dialog open={Boolean(confirmDelete)} onOpenChange={open => !open && setConfirmDelete(null)}>
-                <DialogContent className="max-w-sm">
-                    <DialogHeader>
-                        <DialogTitle>{t("instances.deleteProfileDialogTitle")}</DialogTitle>
-                    </DialogHeader>
-                    {confirmDelete && (
-                        <div className="flex flex-col gap-4">
-                            <p className="text-sm text-muted-foreground">
-                                {t("instances.deleteConfirmationMessage", { profileName: confirmDelete.name })}
-                            </p>
-                            <div className="flex justify-end gap-2">
-                                <Button variant="ghost" onClick={() => setConfirmDelete(null)}>
-                                    {t("instances.cancelButton")}
-                                </Button>
-                                <Button
-                                    variant="destructive"
-                                    disabled={removeInstance.isPending}
-                                    onClick={() => {
-                                        removeInstance.mutate(confirmDelete.id);
-                                        setConfirmDelete(null);
-                                    }}
-                                >
-                                    <Trash2 size={15} /> {t("instances.deleteButton")}
-                                </Button>
-                            </div>
-                        </div>
-                    )}
-                </DialogContent>
-            </Dialog>
             </div>
         </div>
     );

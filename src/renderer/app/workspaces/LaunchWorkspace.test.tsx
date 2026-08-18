@@ -17,7 +17,18 @@ const back = vi.hoisted(() => ({
 
 vi.mock("../../api", () => ({
     api: {
-        instances: { list: async () => structuredClone(back.instances) },
+        instances: {
+            list: async () => structuredClone(back.instances),
+            rename: async (instanceId: string, name: string) => {
+                const row = back.instances.find(i => i.id === instanceId);
+                if (row) row.profileName = name;
+                return undefined;
+            },
+            remove: async (instanceId: string) => {
+                back.instances = back.instances.filter(i => i.id !== instanceId);
+                return undefined;
+            },
+        },
         bundle: { listAvailable: async () => structuredClone(back.bundles) },
         launch: {
             getRuntimeState: async () => structuredClone(back.runtime),
@@ -110,6 +121,21 @@ describe("LaunchWorkspace", () => {
 
         expect(await screen.findByText("No profiles yet")).toBeTruthy();
         expect(screen.getByRole("button", { name: /go to instances/i })).toBeTruthy();
+    });
+
+    it("renames a profile from the switcher gear menu", async () => {
+        renderLaunch();
+        fireEvent.click(await screen.findByRole("button", { name: /switch instance/i }));
+        fireEvent.click(await screen.findByRole("button", { name: /manage boss rush/i }));
+        fireEvent.click(await screen.findByRole("menuitem", { name: /rename profile/i }));
+
+        const input = await screen.findByDisplayValue("Boss Rush");
+        fireEvent.change(input, { target: { value: "Boss Rush Renamed" } });
+        fireEvent.click(screen.getByRole("button", { name: /^save$/i }));
+
+        await waitFor(() => {
+            expect(back.instances.find(i => i.id === "inst-2")?.profileName).toBe("Boss Rush Renamed");
+        });
     });
 
     it("warns when the selected profile still has first-run MelonLoader setup pending (LAU-05)", async () => {

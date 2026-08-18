@@ -2,7 +2,6 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { Search, Plus, Check, Power, X, Package as PackageIcon, Trash2, Download } from "lucide-react";
 import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 import { FeatureCard } from "../../components/brand/FeatureCard";
-import { StatusPill, type StatusTone } from "../../components/brand/StatusPill";
 import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { ModSetsBar } from "../../components/mods/ModSetsBar";
@@ -32,19 +31,6 @@ const STATUS_FILTERS = [
     { id: "available", label: "Available" },
 ] as const;
 type StatusFilter = (typeof STATUS_FILTERS)[number]["id"];
-
-function statusMeta(state: ContentInstallState | undefined): { label: string; tone: StatusTone } {
-    switch (state?.status) {
-        case "installed-enabled":
-            return { label: "Enabled", tone: "new" };
-        case "installed-disabled":
-            return { label: "Disabled", tone: "neutral" };
-        case "partial":
-            return { label: "Partial", tone: "installed" };
-        default:
-            return { label: "Available", tone: "curated" };
-    }
-}
 
 function isInstalled(state: ContentInstallState | undefined) {
     return state?.status === "installed-enabled" || state?.status === "installed-disabled";
@@ -158,7 +144,6 @@ function ModCard({
     onSetEnabled: (enabled: boolean) => void;
     onUninstall: () => void;
 }) {
-    const meta = statusMeta(state);
     const installed = isInstalled(state);
     const enabled = state?.status === "installed-enabled";
     const updateAvailable = installed && Boolean(version && state?.version && state.version !== version);
@@ -192,31 +177,29 @@ function ModCard({
                     >
                         <Check size={14} strokeWidth={3} />
                     </button>
-
-                    <div className="absolute left-3 top-3 z-10">
-                        <StatusPill tone={meta.tone} onImage>
-                            {meta.label}
-                        </StatusPill>
-                    </div>
                 </div>
 
                 <div className="flex flex-1 flex-col gap-2 p-4">
                     <div className="flex items-baseline justify-between gap-2">
-                        <h2 className="font-display text-sm uppercase leading-tight text-foreground">{pkg.name}</h2>
+                        <h2 className="font-display text-sm uppercase leading-[0.95] tracking-tight text-foreground">
+                            {pkg.name}
+                        </h2>
                         {version && (
-                            <span className="shrink-0 rounded-[0.625rem] bg-[var(--surface-inset)] px-1.5 py-0.5 font-mono text-[0.65rem] uppercase tracking-wide text-muted-foreground">
+                            <span className="shrink-0 rounded-[0.625rem] bg-[var(--surface-inset)] px-1.5 py-0.5 font-body text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                                 v{version}
                             </span>
                         )}
                     </div>
                     {pkg.summary && (
-                        <p className="line-clamp-2 text-xs leading-relaxed text-muted-foreground">{pkg.summary}</p>
+                        <p className="line-clamp-2 font-body text-xs leading-relaxed text-muted-foreground">
+                            {pkg.summary}
+                        </p>
                     )}
 
                     <div className="mt-auto pt-2">
                         {!supported ? (
                             <div
-                                className="flex w-full items-center justify-center gap-1.5 rounded-[0.625rem] border border-gold/35 bg-gold/10 px-3 py-2 text-center font-mono text-[0.65rem] uppercase tracking-[0.1em] text-gold"
+                                className="flex w-full items-center justify-center gap-1.5 rounded-[0.625rem] border border-gold/35 bg-gold/10 px-3 py-2 text-center font-body text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-gold"
                                 title={`Only installs on: ${(pkg.supportedTracks ?? []).join(", ")}`}
                             >
                                 Not available for this profile
@@ -225,7 +208,7 @@ function ModCard({
                             <Button
                                 size="sm"
                                 variant="default"
-                                className="w-full"
+                                className="w-full uppercase"
                                 disabled={busy || !version || !installable}
                                 onClick={onInstall}
                                 title={!installable ? "Select a profile to install mods into" : undefined}
@@ -238,7 +221,7 @@ function ModCard({
                                     <Button
                                         size="sm"
                                         variant="default"
-                                        className="flex-1"
+                                        className="flex-1 uppercase"
                                         disabled={busy}
                                         onClick={onInstall}
                                         title={`Update from v${state?.version} to v${version}`}
@@ -250,7 +233,7 @@ function ModCard({
                                         size="sm"
                                         variant="outline"
                                         className={cn(
-                                            "flex-1",
+                                            "flex-1 uppercase",
                                             enabled &&
                                                 "border-[#22d3ee]/50 bg-[#22d3ee]/10 text-[#22d3ee] hover:bg-[#22d3ee]/15 hover:text-[#22d3ee]"
                                         )}
@@ -425,7 +408,7 @@ export function ModsWorkspace() {
     return (
         <div className="bap-glow relative h-full overflow-y-auto px-8 pb-8 pt-24">
             {language !== "en" && (
-                <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-amber-400/40 bg-amber-400/10 px-4 py-3 text-sm text-amber-200">
+                <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-amber-400/40 bg-amber-400/10 px-4 py-3 font-body text-sm text-amber-200">
                     <PackageIcon size={16} className="mt-0.5 shrink-0" />
                     <p className="min-w-0 flex-1">{t("mods.translationWarning")}</p>
                 </div>
@@ -435,8 +418,8 @@ export function ModsWorkspace() {
                 <div className="mb-4 flex items-start gap-3 rounded-[0.625rem] border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">
                     <X size={16} className="mt-0.5 shrink-0" />
                     <div className="min-w-0 flex-1">
-                        <p className="font-display text-xs uppercase tracking-wide">Mod action failed</p>
-                        <p className="mt-0.5 break-words font-mono text-xs text-destructive/90">{errorMessage}</p>
+                        <p className="font-display text-xs uppercase tracking-[0.14em]">Mod action failed</p>
+                        <p className="mt-0.5 break-words font-body text-xs text-destructive/90">{errorMessage}</p>
                     </div>
                     <button
                         onClick={() => setDismissedError(errorMessage)}
@@ -447,36 +430,6 @@ export function ModsWorkspace() {
                     </button>
                 </div>
             )}
-
-            {/* Install target — the single most important control on this tab,
-                so it gets a full-width prominent bar of its own above the
-                search/filter row, not a small dropdown lost at the far right. */}
-            <div className="mb-3 flex flex-wrap items-center gap-3 rounded-[1.125rem] border border-accent/30 bg-accent/[0.06] px-4 py-3">
-                <div className="flex items-center gap-2">
-                    <Download size={16} className="text-accent" />
-                    <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-accent">
-                        Installing mods into
-                    </span>
-                </div>
-                {modTargets.length > 0 ? (
-                    <select
-                        value={instanceId ?? ""}
-                        onChange={e => setInstanceId(e.target.value)}
-                        aria-label="Profile"
-                        className="focus-ring h-9 rounded-lg border border-border bg-card px-3 font-display text-sm text-foreground transition-colors hover:bg-secondary"
-                    >
-                        {modTargets.map(i => (
-                            <option key={i.id} value={i.id}>
-                                {i.profileName}
-                            </option>
-                        ))}
-                    </select>
-                ) : (
-                    <span className="font-display text-sm text-gold">
-                        Battle Royale profiles are mod-locked
-                    </span>
-                )}
-            </div>
 
             <div className="mb-4 flex flex-wrap items-center gap-3">
                 <div className="relative min-w-[200px] max-w-md flex-1">
@@ -499,7 +452,7 @@ export function ModsWorkspace() {
                                 onClick={() => setStatusFilter(f.id)}
                                 aria-pressed={active}
                                 className={cn(
-                                    "focus-ring rounded-full border px-3 py-1.5 font-mono text-[0.65rem] uppercase tracking-[0.1em] transition-all duration-200 ease-pop",
+                                    "focus-ring rounded-full border px-3 py-1.5 font-body text-[0.65rem] font-semibold uppercase tracking-[0.1em] transition-all duration-200 ease-pop",
                                     active
                                         ? "border-accent bg-accent/12 text-foreground"
                                         : "border-border bg-popover text-muted-foreground hover:border-white/20 hover:text-foreground"
@@ -513,6 +466,34 @@ export function ModsWorkspace() {
             </div>
 
             {instanceId && <ModSetsBar instanceId={instanceId} />}
+
+            {/* Install target — under mod sets so profile choice sits near the grid */}
+            <div className="mb-4 flex flex-wrap items-center gap-3 rounded-[1.125rem] border border-accent/30 bg-accent/[0.06] px-4 py-3">
+                <div className="flex items-center gap-2">
+                    <Download size={16} className="text-accent" />
+                    <span className="font-body text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-accent">
+                        Installing mods into
+                    </span>
+                </div>
+                {modTargets.length > 0 ? (
+                    <select
+                        value={instanceId ?? ""}
+                        onChange={e => setInstanceId(e.target.value)}
+                        aria-label="Profile"
+                        className="focus-ring h-9 rounded-lg border border-border bg-card px-3 font-body text-sm text-foreground transition-colors hover:bg-secondary"
+                    >
+                        {modTargets.map(i => (
+                            <option key={i.id} value={i.id}>
+                                {i.profileName}
+                            </option>
+                        ))}
+                    </select>
+                ) : (
+                    <span className="font-body text-sm text-gold">
+                        Battle Royale profiles are mod-locked
+                    </span>
+                )}
+            </div>
 
             {isLoading && (
                 <div className="grid min-h-0 flex-1 grid-cols-1 content-start gap-4 overflow-hidden pr-1 sm:grid-cols-2 xl:grid-cols-3">
@@ -535,10 +516,10 @@ export function ModsWorkspace() {
                         <Search size={26} className="text-muted-foreground" />
                     </div>
                     <div>
-                        <h2 className="font-display text-base text-foreground">
+                        <h2 className="font-display text-base uppercase tracking-tight text-foreground">
                             {hasActiveFilters ? "No mods match" : "No mods available"}
                         </h2>
-                        <p className="mt-1 max-w-xs text-sm text-muted-foreground">
+                        <p className="mt-1 max-w-xs font-body text-sm text-muted-foreground">
                             {hasActiveFilters
                                 ? "Try a different name or clear your filters."
                                 : "This channel has no mods yet."}
@@ -548,6 +529,7 @@ export function ModsWorkspace() {
                         <Button
                             variant="outline"
                             size="sm"
+                            className="uppercase"
                             onClick={() => {
                                 setQuery("");
                                 setStatusFilter("all");
@@ -623,31 +605,31 @@ export function ModsWorkspace() {
                         transition={{ duration: 0.24, ease: EASE_POP }}
                         className="glass-strong fixed bottom-6 left-1/2 z-50 flex items-center gap-2 rounded-full px-4 py-2.5 shadow-soft-lg"
                     >
-                        <span className="font-display px-1 text-xs text-foreground">
+                        <span className="px-1 font-body text-xs font-semibold uppercase tracking-[0.08em] text-foreground">
                             <span className="text-accent">{selected.size}</span> selected
                         </span>
                         <span className="h-5 w-px bg-border" />
-                        <Button size="sm" variant="ghost" disabled={bulkApply.isPending} onClick={() => runBulk("install")}>
+                        <Button size="sm" variant="ghost" className="uppercase" disabled={bulkApply.isPending} onClick={() => runBulk("install")}>
                             Install
                         </Button>
-                        <Button size="sm" variant="ghost" disabled={bulkApply.isPending} onClick={() => runBulk("enable")}>
+                        <Button size="sm" variant="ghost" className="uppercase" disabled={bulkApply.isPending} onClick={() => runBulk("enable")}>
                             Enable
                         </Button>
-                        <Button size="sm" variant="ghost" disabled={bulkApply.isPending} onClick={() => runBulk("disable")}>
+                        <Button size="sm" variant="ghost" className="uppercase" disabled={bulkApply.isPending} onClick={() => runBulk("disable")}>
                             Disable
                         </Button>
                         <span className="h-5 w-px bg-border" />
                         <Button
                             size="sm"
                             variant="ghost"
-                            className="text-destructive hover:bg-destructive/10 hover:text-destructive"
+                            className="uppercase text-destructive hover:bg-destructive/10 hover:text-destructive"
                             disabled={bulkApply.isPending}
                             onClick={() => runBulk("uninstall")}
                         >
                             <Trash2 size={14} /> Uninstall
                         </Button>
                         {bulkResult && bulkResult.failedCount > 0 && (
-                            <span className="font-mono text-xs text-destructive">
+                            <span className="font-body text-xs text-destructive">
                                 {bulkResult.successCount}/{bulkResult.total} succeeded
                             </span>
                         )}

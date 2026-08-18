@@ -64,10 +64,12 @@ export function ModSetsBar({ instanceId }: ModSetsBarProps) {
     }
 
     return (
-        <div className="mb-4 flex flex-wrap items-center gap-2 rounded-lg border border-border bg-card p-3">
+        <div className="mb-4 flex flex-wrap items-center gap-2 rounded-[1.125rem] border border-border bg-card p-3">
             <div className="flex items-center gap-1.5 text-muted-foreground">
                 <Layers size={15} />
-                <span className="font-display text-xs text-foreground">Mod sets</span>
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.14em] text-foreground">
+                    Mod sets
+                </span>
             </div>
 
             {sets.map(set => {
@@ -92,14 +94,14 @@ export function ModSetsBar({ instanceId }: ModSetsBarProps) {
                     <div
                         key={set.id}
                         className={cn(
-                            "group flex items-center gap-1 rounded-full border px-2 py-1 text-xs transition-colors",
+                            "group flex items-center gap-1 rounded-full border px-2.5 py-1 font-body text-xs transition-colors",
                             isActive ? "border-accent bg-accent/10" : "border-border"
                         )}
                     >
                         <button
                             onClick={() => activateModSet.mutate({ instanceId, modSetId: set.id })}
                             disabled={isActive || activateModSet.isPending}
-                            className="focus-ring flex items-center gap-1 font-medium text-foreground disabled:cursor-default"
+                            className="focus-ring flex items-center gap-1 font-body font-medium text-foreground disabled:cursor-default"
                             title={isActive ? "Active mod set" : "Activate this mod set"}
                         >
                             {isActive && <Check size={12} className="text-accent" />}
@@ -153,7 +155,7 @@ export function ModSetsBar({ instanceId }: ModSetsBarProps) {
                     size="sm"
                     variant="outline"
                     onClick={() => setCreating(true)}
-                    className="ml-auto"
+                    className="ml-auto uppercase"
                 >
                     <Plus size={14} /> New set
                 </Button>

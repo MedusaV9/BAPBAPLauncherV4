@@ -331,6 +331,25 @@ export function SettingsWorkspace() {
                             />
                         }
                     />
+                    <Row
+                        label={t("settings.githubToken.label")}
+                        description={t("settings.githubToken.description")}
+                        align="start"
+                        control={
+                            <InputWell
+                                type="password"
+                                autoComplete="off"
+                                spellCheck={false}
+                                placeholder={t("settings.githubToken.placeholder")}
+                                defaultValue={settings.githubToken}
+                                onBlur={e => {
+                                    const next = e.target.value.trim();
+                                    if (next !== settings.githubToken) set("githubToken", next);
+                                }}
+                                className="w-72 font-mono text-xs"
+                            />
+                        }
+                    />
                 </Group>
 
                 <Group title={t("settings.group.motion")}>

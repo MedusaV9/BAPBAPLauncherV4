@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState } from "react";
-import { Play, Pause, Square, Terminal, Boxes, Star, Copy, ArrowDownToLine, Clock3, ChevronUp, ChevronDown, ArrowLeftRight, Package, Search, Trophy, RefreshCw } from "lucide-react";
+import { Play, Pause, Square, Terminal, Boxes, Star, Copy, ArrowDownToLine, Clock3, ChevronUp, ChevronDown, ArrowLeftRight, Package, Search, Trophy, RefreshCw, Settings2, Pencil, Trash2 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { SectionHeading } from "../../components/brand/SectionHeading";
 import { BapCard } from "../../components/brand/BapCard";
@@ -8,6 +8,7 @@ import { StatusChip, type StatusTone } from "../../components/brand/StatusChip";
 import { ScrollArea } from "../../components/ui/scroll-area";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../../components/ui/dialog";
 import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 import { cn } from "../lib/utils";
 import { useShellStore } from "../stores/useShellStore";
 import { useT } from "../i18n";
@@ -20,6 +21,8 @@ import {
     useSettings,
     useSetSetting,
     useBundles,
+    useRenameInstance,
+    useRemoveInstance,
 } from "../query/hooks";
 import { getLaunchRuntimeLabel, resolveModeVideoKey, type ModeVideoKey } from "../../helpers/launch-ui";
 import { api } from "../../api";
@@ -136,6 +139,8 @@ export function LaunchWorkspace() {
     const startLaunch = useStartLaunch();
     const stopLaunch = useStopLaunch();
     const setSetting = useSetSetting();
+    const renameInstance = useRenameInstance();
+    const removeInstance = useRemoveInstance();
     const setActiveWorkspace = useShellStore(s => s.setActiveWorkspace);
     const activeWorkspace = useShellStore(s => s.activeWorkspace);
     const openModsForInstance = useShellStore(s => s.openModsForInstance);
@@ -145,6 +150,10 @@ export function LaunchWorkspace() {
     const [selectedId, setSelectedId] = useState<string | null>(defaultProfileId);
     const [switcherOpen, setSwitcherOpen] = useState(false);
     const [switcherQuery, setSwitcherQuery] = useState("");
+    /** Which row's gear menu is open in the switcher (instance id). */
+    const [menuOpenId, setMenuOpenId] = useState<string | null>(null);
+    const [renameDraft, setRenameDraft] = useState<{ id: string; name: string } | null>(null);
+    const [confirmDelete, setConfirmDelete] = useState<{ id: string; name: string } | null>(null);
 
     useEffect(() => {
         if (!selectedId && instances && instances.length > 0) {
@@ -511,12 +520,21 @@ export function LaunchWorkspace() {
                 </AnimatePresence>
             </div>
 
-            <Dialog open={switcherOpen} onOpenChange={setSwitcherOpen}>
-                <DialogContent className="max-w-md">
+            <Dialog
+                open={switcherOpen}
+                onOpenChange={open => {
+                    setSwitcherOpen(open);
+                    if (!open) {
+                        setMenuOpenId(null);
+                        setSwitcherQuery("");
+                    }
+                }}
+            >
+                <DialogContent className="max-w-2xl sm:max-w-2xl">
                     <DialogHeader>
                         <DialogTitle>{t("launch.switchInstanceButton")}</DialogTitle>
                     </DialogHeader>
-                    {(instances?.length ?? 0) > 6 && (
+                    {(instances?.length ?? 0) > 4 && (
                         <div className="relative">
                             <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                             <Input
@@ -529,7 +547,7 @@ export function LaunchWorkspace() {
                             />
                         </div>
                     )}
-                    <div className="-mx-1 flex max-h-[min(60vh,420px)] flex-col gap-1 overflow-auto px-1">
+                    <div className="-mx-1 flex max-h-[min(72vh,560px)] flex-col gap-1.5 overflow-auto px-1">
                         {(instances ?? [])
                             .filter(i => {
                                 const q = switcherQuery.trim().toLowerCase();
@@ -542,45 +560,119 @@ export function LaunchWorkspace() {
                             .map(instance => {
                                 const active = selectedId === instance.id;
                                 const isDefault = defaultProfileId === instance.id;
+                                const menuOpen = menuOpenId === instance.id;
                                 return (
-                                    <button
+                                    <div
                                         key={instance.id}
-                                        onClick={() => {
-                                            setSelectedId(instance.id);
-                                            setSwitcherOpen(false);
-                                            setSwitcherQuery("");
-                                        }}
                                         className={cn(
-                                            "focus-ring relative flex items-center gap-3 rounded-[0.625rem] border px-3 py-2.5 text-left transition-colors",
+                                            "relative flex items-center gap-1 rounded-[0.625rem] border transition-colors",
                                             active
                                                 ? "border-accent/50 bg-accent/10"
                                                 : "border-border bg-card hover:bg-secondary"
                                         )}
                                     >
-                                        {active && <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-accent" />}
-                                        <div className="h-11 w-11 shrink-0 overflow-hidden rounded-[0.5rem] border border-border bg-secondary">
-                                            {instance.imageUrl ? (
-                                                <img src={instance.imageUrl} alt="" className="h-full w-full object-cover" />
-                                            ) : (
-                                                <div className="flex h-full w-full items-center justify-center">
-                                                    <Boxes size={18} className="text-muted-foreground" />
+                                        {active && (
+                                            <span className="absolute inset-y-1.5 left-0 w-0.5 rounded-full bg-accent" />
+                                        )}
+                                        <button
+                                            type="button"
+                                            onClick={() => {
+                                                setSelectedId(instance.id);
+                                                setSwitcherOpen(false);
+                                                setSwitcherQuery("");
+                                                setMenuOpenId(null);
+                                            }}
+                                            className="focus-ring flex min-w-0 flex-1 items-center gap-3.5 rounded-[0.625rem] px-3.5 py-3 text-left"
+                                        >
+                                            <div className="h-14 w-14 shrink-0 overflow-hidden rounded-[0.625rem] border border-border bg-secondary">
+                                                {instance.imageUrl ? (
+                                                    <img
+                                                        src={instance.imageUrl}
+                                                        alt=""
+                                                        className="h-full w-full object-cover"
+                                                    />
+                                                ) : (
+                                                    <div className="flex h-full w-full items-center justify-center">
+                                                        <Boxes size={22} className="text-muted-foreground" />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="min-w-0 flex-1">
+                                                <div className="flex items-center gap-1.5">
+                                                    {isDefault && (
+                                                        <Star size={12} className="shrink-0 fill-gold text-gold" />
+                                                    )}
+                                                    <span className="truncate font-display text-[0.95rem] uppercase text-foreground">
+                                                        {instance.profileName}
+                                                    </span>
+                                                </div>
+                                                <span className="font-mono text-sm text-muted-foreground">
+                                                    {instance.instanceType === "bundle"
+                                                        ? instance.bundleVersion ||
+                                                          instance.version ||
+                                                          instance.gameVersion
+                                                        : instance.versionId}
+                                                </span>
+                                            </div>
+                                        </button>
+
+                                        {/* Gear — rename / delete (right side) */}
+                                        <div className="relative shrink-0 pr-1.5">
+                                            <button
+                                                type="button"
+                                                onClick={e => {
+                                                    e.stopPropagation();
+                                                    setMenuOpenId(prev =>
+                                                        prev === instance.id ? null : instance.id
+                                                    );
+                                                }}
+                                                className="focus-ring flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-white/[0.06] hover:text-foreground"
+                                                aria-label={`Manage ${instance.profileName}`}
+                                                aria-expanded={menuOpen}
+                                            >
+                                                <Settings2 size={15} />
+                                            </button>
+                                            {menuOpen && (
+                                                <div
+                                                    className="absolute right-0 top-[calc(100%+4px)] z-20 min-w-[9.5rem] overflow-hidden rounded-[0.625rem] border border-border bg-popover py-1 shadow-soft-lg"
+                                                    role="menu"
+                                                >
+                                                    <button
+                                                        type="button"
+                                                        role="menuitem"
+                                                        className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-foreground transition-colors hover:bg-secondary"
+                                                        onClick={e => {
+                                                            e.stopPropagation();
+                                                            setMenuOpenId(null);
+                                                            setRenameDraft({
+                                                                id: instance.id,
+                                                                name: instance.profileName,
+                                                            });
+                                                        }}
+                                                    >
+                                                        <Pencil size={13} className="text-muted-foreground" />
+                                                        {t("instances.renameProfileDialogTitle")}
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        role="menuitem"
+                                                        className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-destructive transition-colors hover:bg-destructive/10"
+                                                        onClick={e => {
+                                                            e.stopPropagation();
+                                                            setMenuOpenId(null);
+                                                            setConfirmDelete({
+                                                                id: instance.id,
+                                                                name: instance.profileName,
+                                                            });
+                                                        }}
+                                                    >
+                                                        <Trash2 size={13} />
+                                                        {t("instances.deleteButton")}
+                                                    </button>
                                                 </div>
                                             )}
                                         </div>
-                                        <div className="min-w-0 flex-1">
-                                            <div className="flex items-center gap-1.5">
-                                                {isDefault && <Star size={11} className="shrink-0 fill-gold text-gold" />}
-                                                <span className="truncate font-display text-sm uppercase text-foreground">
-                                                    {instance.profileName}
-                                                </span>
-                                            </div>
-                                            <span className="font-mono text-xs text-muted-foreground">
-                                                {instance.instanceType === "bundle"
-                                                    ? (instance.bundleVersion || instance.version || instance.gameVersion)
-                                                    : instance.versionId}
-                                            </span>
-                                        </div>
-                                    </button>
+                                    </div>
                                 );
                             })}
                     </div>
@@ -593,6 +685,85 @@ export function LaunchWorkspace() {
                     >
                         <Boxes size={14} /> {t("launch.newInstanceButton")}
                     </button>
+                </DialogContent>
+            </Dialog>
+
+            {/* Rename from switcher gear */}
+            <Dialog open={Boolean(renameDraft)} onOpenChange={open => !open && setRenameDraft(null)}>
+                <DialogContent className="max-w-sm">
+                    <DialogHeader>
+                        <DialogTitle>{t("instances.renameProfileDialogTitle")}</DialogTitle>
+                    </DialogHeader>
+                    {renameDraft && (
+                        <div className="flex flex-col gap-4">
+                            <Input
+                                autoFocus
+                                value={renameDraft.name}
+                                onChange={e => setRenameDraft({ ...renameDraft, name: e.target.value })}
+                                onKeyDown={e => {
+                                    if (e.key === "Enter" && renameDraft.name.trim()) {
+                                        renameInstance.mutate({
+                                            instanceId: renameDraft.id,
+                                            name: renameDraft.name.trim(),
+                                        });
+                                        setRenameDraft(null);
+                                    }
+                                }}
+                            />
+                            <div className="flex justify-end gap-2">
+                                <Button variant="ghost" onClick={() => setRenameDraft(null)}>
+                                    {t("instances.cancelButton")}
+                                </Button>
+                                <Button
+                                    disabled={!renameDraft.name.trim() || renameInstance.isPending}
+                                    onClick={() => {
+                                        renameInstance.mutate({
+                                            instanceId: renameDraft.id,
+                                            name: renameDraft.name.trim(),
+                                        });
+                                        setRenameDraft(null);
+                                    }}
+                                >
+                                    {t("instances.saveButton")}
+                                </Button>
+                            </div>
+                        </div>
+                    )}
+                </DialogContent>
+            </Dialog>
+
+            {/* Delete from switcher gear */}
+            <Dialog open={Boolean(confirmDelete)} onOpenChange={open => !open && setConfirmDelete(null)}>
+                <DialogContent className="max-w-sm">
+                    <DialogHeader>
+                        <DialogTitle>{t("instances.deleteProfileDialogTitle")}</DialogTitle>
+                    </DialogHeader>
+                    {confirmDelete && (
+                        <div className="flex flex-col gap-4">
+                            <p className="text-sm text-muted-foreground">
+                                {t("instances.deleteConfirmationMessage", {
+                                    profileName: confirmDelete.name,
+                                })}
+                            </p>
+                            <div className="flex justify-end gap-2">
+                                <Button variant="ghost" onClick={() => setConfirmDelete(null)}>
+                                    {t("instances.cancelButton")}
+                                </Button>
+                                <Button
+                                    variant="destructive"
+                                    disabled={removeInstance.isPending}
+                                    onClick={() => {
+                                        const id = confirmDelete.id;
+                                        removeInstance.mutate(id);
+                                        if (selectedId === id) setSelectedId(null);
+                                        setConfirmDelete(null);
+                                    }}
+                                >
+                                    <Trash2 size={15} /> {t("instances.deleteButton")}
+                                </Button>
+                            </div>
+                        </div>
+                    )}
                 </DialogContent>
             </Dialog>
         </div>

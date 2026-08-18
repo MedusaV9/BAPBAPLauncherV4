@@ -5,6 +5,7 @@ import { applyLockedFxSettings, LOCKED_FX_SETTINGS } from "./fx-settings";
 function createSettings(overrides: Partial<AppSettings> = {}): AppSettings {
     return {
         manifestUrl: "https://example.test/manifest/index.json",
+        githubToken: "",
         launcherAutoUpdate: true,
         launcherAutoDownloadUpdates: true,
         launcherAutoInstallOnNextStart: true,

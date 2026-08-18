@@ -22,6 +22,9 @@ const en = {
     "settings.group.launch": "Launch",
     "settings.group.storage": "Storage",
     "settings.group.manifest": "Manifest source",
+    "settings.githubToken.label": "GitHub token (lab)",
+    "settings.githubToken.description": "Optional PAT for private lab manifests and release zips. Leave empty for public production. Never shared outside GitHub hosts.",
+    "settings.githubToken.placeholder": "ghp_… or github_pat_…",
     "settings.group.motion": "Motion & effects",
     "settings.group.display": "Display",
     "settings.group.language": "Language",
@@ -80,7 +83,7 @@ const en = {
 
     // Settings — manifest
     "settings.manifestUrl.label": "Manifest URL",
-    "settings.manifestUrl.description": "Source for versions, mods, and bundles.",
+    "settings.manifestUrl.description": "Source for versions, mods, and bundles. Lab: raw.githubusercontent.com/Sonic0810/bapbap-manifest-lab/master/manifest/index.json",
 
     // Settings — motion
     "settings.motion.label": "Enable motion",

@@ -45,20 +45,26 @@ export function ModDetailDialog({ channelId, packageId, installed, busy, onInsta
                             </div>
                         )}
                         <DialogHeader>
-                            <DialogTitle>{detail.name}</DialogTitle>
-                            {detail.summary && <DialogDescription>{detail.summary}</DialogDescription>}
+                            <DialogTitle className="font-display uppercase tracking-wide">
+                                {detail.name}
+                            </DialogTitle>
+                            {detail.summary && (
+                                <DialogDescription className="font-body">
+                                    {detail.summary}
+                                </DialogDescription>
+                            )}
                         </DialogHeader>
 
                         <div className="flex flex-col gap-4 py-1">
                             {detail.description && (
-                                <p className="whitespace-pre-wrap text-sm leading-relaxed text-muted-foreground">
+                                <p className="whitespace-pre-wrap font-body text-sm leading-relaxed text-muted-foreground">
                                     {detail.description}
                                 </p>
                             )}
 
-                            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-xs text-muted-foreground">
                                 {version && (
-                                    <span className="font-mono">
+                                    <span className="font-semibold uppercase tracking-[0.08em]">
                                         Latest <span className="text-foreground">v{version}</span>
                                     </span>
                                 )}
@@ -68,7 +74,7 @@ export function ModDetailDialog({ channelId, packageId, installed, busy, onInsta
                                     </span>
                                 )}
                                 {detail.versions && detail.versions.length > 0 && (
-                                    <span className="font-mono">{detail.versions.length} versions</span>
+                                    <span>{detail.versions.length} versions</span>
                                 )}
                             </div>
 
@@ -76,7 +82,7 @@ export function ModDetailDialog({ channelId, packageId, installed, busy, onInsta
                                 <div className="flex flex-wrap items-center gap-1.5">
                                     <Tag size={12} className="text-muted-foreground" />
                                     {detail.tags.map(tag => (
-                                        <Badge key={tag} variant="secondary">
+                                        <Badge key={tag} variant="secondary" className="font-body">
                                             {tag}
                                         </Badge>
                                     ))}
@@ -85,16 +91,17 @@ export function ModDetailDialog({ channelId, packageId, installed, busy, onInsta
                         </div>
 
                         <div className="flex justify-end gap-2">
-                            <Button variant="ghost" onClick={onClose}>
+                            <Button variant="ghost" className="uppercase" onClick={onClose}>
                                 Close
                             </Button>
                             {installed ? (
-                                <Button variant="outline" disabled>
+                                <Button variant="outline" className="uppercase" disabled>
                                     <Check size={14} /> Installed
                                 </Button>
                             ) : (
                                 <Button
                                     variant="default"
+                                    className="uppercase"
                                     disabled={busy || !version}
                                     onClick={() => onInstall(version)}
                                 >

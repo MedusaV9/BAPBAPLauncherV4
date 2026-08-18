@@ -6,6 +6,8 @@ import { URL } from "node:url";
 import fsExtra from "fs-extra";
 import JSZip from "jszip";
 import { DOWNLOAD_TIMEOUT_MS, fetchWithTimeout } from "../../utils/timeout-fetch";
+import { githubAuthHeaders } from "../../utils/github-auth";
+import type { SettingsStoreService } from "../core/settings-store";
 
 const { ensureDir, move, pathExists, remove } = fsExtra;
 
@@ -37,7 +39,10 @@ export class ArchiveDownloadService {
         "raw.githubusercontent.com",
         "objects.githubusercontent.com",
         "release-assets.githubusercontent.com",
+        "codeload.github.com",
     ]);
+
+    constructor(private readonly settings?: SettingsStoreService) {}
 
     async downloadAndExtractZip(input: {
         url: string;
@@ -150,7 +155,20 @@ export class ArchiveDownloadService {
 
 
     private async downloadToFile(url: string, outputPath: string, onProgress?: (progress: DownloadFileProgress) => void): Promise<void> {
-        const response = await fetchWithTimeout(url, { method: "GET" }, DOWNLOAD_TIMEOUT_MS);
+        const token = this.settings?.getGithubToken() ?? "";
+        const response = await fetchWithTimeout(
+            url,
+            {
+                method: "GET",
+                // Private GitHub release assets require auth + octet-stream accept.
+                headers: {
+                    Accept: "application/octet-stream",
+                    ...githubAuthHeaders(token, url),
+                },
+                redirect: "follow",
+            },
+            DOWNLOAD_TIMEOUT_MS
+        );
         if (!response.ok || !response.body) {
             throw new Error(`Download failed (${response.status}) for ${url}`);
         }

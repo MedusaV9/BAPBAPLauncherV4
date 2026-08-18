@@ -23,6 +23,12 @@ export type LaunchInput = {
 
 export type AppSettings = {
     manifestUrl: string;
+    /**
+     * Optional GitHub personal access token for private lab manifests and
+     * private release assets. Empty = public-only (production default).
+     * Never sent to non-GitHub hosts.
+     */
+    githubToken: string;
     launcherAutoUpdate: boolean;
     launcherAutoDownloadUpdates: boolean;
     launcherAutoInstallOnNextStart: boolean;

@@ -97,6 +97,8 @@ describe("InstancesWorkspace", () => {
         // Mode titles come from the MODE map.
         expect(await screen.findByText("Arena")).toBeTruthy();
         expect(screen.getByText("Boss Rush")).toBeTruthy();
+        expect(screen.queryByText("BAPBAP Mobile")).toBeNull();
+        expect(screen.queryByText("Arriving Soon")).toBeNull();
     });
 
     it("shows a past-unlock build in the hero once trusted time is available (INS-11)", async () => {
@@ -116,20 +118,25 @@ describe("InstancesWorkspace", () => {
         expect(screen.getByText("Standard BAPBAP")).toBeTruthy();
     });
 
-    it("lists installed profiles", async () => {
+    it("does not render a Your Profiles grid (manage via Start → Switch instance)", async () => {
         back.instances = [
             { id: "p1", profileName: "My Profile", versionId: "1.0.0", gameVersion: "1.0.0", officialTrack: "bapbap" },
         ];
         renderInstances();
-        expect(await screen.findByText("My Profile")).toBeTruthy();
+        expect(await screen.findByText("Arena")).toBeTruthy();
+        expect(screen.queryByText("My Profile")).toBeNull();
+        expect(screen.queryByText(/your profiles/i)).toBeNull();
     });
 
-    it("shows Battle Royale hero without Playtest tag (INS-13)", async () => {
+    it("shows Battle Royale hero with Public Playtest eyebrow (INS-13)", async () => {
         renderInstances();
 
-        expect(await screen.findByText("Battle Royale")).toBeTruthy();
-        expect(screen.queryByText("Playtest")).toBeNull();
-        expect(screen.queryByText("Curated Bundle")).toBeNull();
+        const panel = (await screen.findAllByRole("radio")).find(el =>
+            el.textContent?.includes("Battle Royale")
+        ) as HTMLElement;
+        expect(panel).toBeTruthy();
+        expect(panel.textContent).toMatch(/Public Playtest/i);
+        expect(panel.textContent).not.toMatch(/Curated Bundle/);
     });
 
     it("shows Update as the only primary action on the Battle Royale hero when an update is available", async () => {
@@ -150,11 +157,18 @@ describe("InstancesWorkspace", () => {
         ];
         renderInstances();
 
-        await screen.findByText("Bundle Profile");
-        // Profile grid replaces Play with Update while an update is pending.
-        expect(screen.queryByRole("button", { name: "Play" })).toBeNull();
-        const profileUpdate = await screen.findByRole("button", { name: "Update" });
-        fireEvent.click(profileUpdate);
+        const panel = (await screen.findAllByRole("radio")).find(el =>
+            el.textContent?.includes("Battle Royale")
+        ) as HTMLElement;
+        fireEvent.pointerEnter(panel);
+        fireEvent.focus(panel);
+        const updateBtn = await waitFor(() => {
+            const buttons = Array.from(panel.querySelectorAll("button"));
+            const found = buttons.find(b => b.textContent?.includes("Update"));
+            if (!found) throw new Error("Update not rendered");
+            return found;
+        });
+        fireEvent.click(updateBtn);
         await waitFor(() => expect(back.applyUpdateCalls).toContain("binst-1"));
     });
 
@@ -173,9 +187,22 @@ describe("InstancesWorkspace", () => {
         renderInstances();
 
         // Find the installed panel by its eyebrow text (no status pill anymore).
-        const panel = screen.getAllByRole("radio").find(el => el.textContent?.includes("Standard BAPBAP")) as HTMLElement;
+        const panel = (await screen.findAllByRole("radio")).find(el =>
+            el.textContent?.includes("Standard BAPBAP")
+        ) as HTMLElement;
+        fireEvent.pointerEnter(panel);
         fireEvent.focus(panel);
-        fireEvent.click(await screen.findByRole("button", { name: "Install another" }));
+
+        // Secondary CTA is collapsed when not expanded; query by text incl. hidden nodes.
+        const installAnother = await waitFor(() => {
+            const btn = panel.querySelector("button");
+            // Prefer the secondary control by scanning all buttons in the panel
+            const buttons = Array.from(panel.querySelectorAll("button"));
+            const found = buttons.find(b => b.textContent?.includes("Install another"));
+            if (!found) throw new Error("Install another not rendered yet");
+            return found;
+        });
+        fireEvent.click(installAnother);
 
         expect(await screen.findByText("New instance")).toBeTruthy();
         const name = screen.getByPlaceholderText("My profile") as HTMLInputElement;
@@ -206,33 +233,65 @@ describe("InstancesWorkspace", () => {
         expect(screen.queryByRole("button", { name: "Install another" })).toBeNull();
     });
 
-    it("shows an Update button for an installed bundle with an update (INS-12)", async () => {
+    it("shows an Update button on the Battle Royale hero when an installed bundle has an update (INS-12)", async () => {
         back.bundles = [
-            { id: "bap-bundle", name: "BAPBAP Bundle", version: "1.3.0", buildNumber: 3, channel: "release", isInstalled: true, isUpdateAvailable: true },
+            {
+                id: "bap-bundle",
+                name: "BAPBAP Bundle",
+                version: "1.3.0",
+                buildNumber: 3,
+                channel: "release",
+                isInstalled: true,
+                isUpdateAvailable: true,
+                isDownloadable: true,
+            },
         ];
         back.instances = [
             { id: "binst-1", profileName: "Bundle Profile", versionId: "1.2.0", instanceType: "bundle", bundleId: "bap-bundle" },
         ];
         renderInstances();
 
-        await screen.findByText("Bundle Profile");
-        const updateButtons = await screen.findAllByRole("button", { name: "Update" });
-        // Profile card Update (hero may also expose Update when focused).
-        fireEvent.click(updateButtons[updateButtons.length - 1]!);
+        const panel = (await screen.findAllByRole("radio")).find(el =>
+            el.textContent?.includes("Battle Royale")
+        ) as HTMLElement;
+        fireEvent.pointerEnter(panel);
+        fireEvent.focus(panel);
+        const updateBtn = await waitFor(() => {
+            const buttons = Array.from(panel.querySelectorAll("button"));
+            const found = buttons.find(b => b.textContent?.includes("Update"));
+            if (!found) throw new Error("Update not rendered");
+            return found;
+        });
+        fireEvent.click(updateBtn);
         await waitFor(() => expect(back.applyUpdateCalls).toContain("binst-1"));
-        expect(screen.queryByRole("button", { name: "Play" })).toBeNull();
     });
 
     it("does not show an update button when the installed bundle is up to date (INS-12)", async () => {
         back.bundles = [
-            { id: "bap-bundle", name: "BAPBAP Bundle", version: "1.3.0", buildNumber: 3, channel: "release", isInstalled: true, isUpdateAvailable: false },
+            {
+                id: "bap-bundle",
+                name: "BAPBAP Bundle",
+                version: "1.3.0",
+                buildNumber: 3,
+                channel: "release",
+                isInstalled: true,
+                isUpdateAvailable: false,
+                isDownloadable: true,
+            },
         ];
         back.instances = [
             { id: "binst-1", profileName: "Bundle Profile", versionId: "1.3.0", instanceType: "bundle", bundleId: "bap-bundle" },
         ];
         renderInstances();
 
-        await screen.findByText("Bundle Profile");
-        await waitFor(() => expect(screen.queryByRole("button", { name: "Update" })).toBeNull());
+        expect(await screen.findByText("Battle Royale")).toBeTruthy();
+        const panel = screen.getAllByRole("radio").find(el => el.textContent?.includes("Battle Royale")) as HTMLElement;
+        fireEvent.pointerEnter(panel);
+        fireEvent.focus(panel);
+        await waitFor(() => {
+            const buttons = Array.from(panel.querySelectorAll("button"));
+            expect(buttons.some(b => b.textContent?.includes("Play"))).toBe(true);
+            expect(buttons.some(b => b.textContent?.includes("Update"))).toBe(false);
+        });
     });
 });

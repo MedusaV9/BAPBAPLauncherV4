@@ -82,6 +82,7 @@ const bossRushImage = bossRushHeroImage;
 
 export const harnessSettings: AppSettings = {
     manifestUrl: "https://example.test/manifest/index.json",
+    githubToken: "",
     launcherAutoUpdate: true,
     launcherAutoDownloadUpdates: true,
     launcherAutoInstallOnNextStart: true,
